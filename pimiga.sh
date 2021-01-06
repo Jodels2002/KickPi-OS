@@ -52,11 +52,7 @@ sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
 sudo __nodialog=1 ./retropie_packages.sh setup giana
 sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
-
-
-
 # Install Amiberry
-
 
 cd /home/amibian/
  
@@ -69,6 +65,14 @@ cd /home/amibian/
    
 
   sudo chmod -R 777 /home/amibian/amiberry
+  
+#Install PiKISS
+cd
+git clone --depth=1 https://github.com/jmcerrejon/PiKISS
+sudo chmod -R 777 PiKISS
+cd PiKiSS
+
+sudo ./piKISS.sh
   
 
 # Compile WebAdmin https://127.0.0.1:10000
