@@ -46,10 +46,10 @@ cd /home/amibian/
   #Install Retropie/Setup
 
 sudo apt-get install -y git dialog unzip xmlstarlet
-git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git /opt/RetroPie-Setup
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
-sudo chmod -R 777 /opt/RetroPie-Setup/
-cd /opt/RetroPie-Setup
+sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+cd /home/amibian/RetroPie-Setup
 
 sudo __nodialog=1 ./retropie_packages.sh setup basic_install
 sudo __nodialog=1 ./retropie_packages.sh setup amiberry
