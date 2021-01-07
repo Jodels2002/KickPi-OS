@@ -30,10 +30,10 @@ make
 sudo make install
 sudo./compton -cCf -D 5
 
-cp -r /usr/share/lxdm/themes/Industrial ~
+cp -r /usr/share/themes/default ~
 cd
-mv Industrial Pimiga
-sudo ln -s Mein_Thema /usr/share/lxdm/themes
+mv default Pimiga
+sudo ln -s Pimiga /usr/share/lxdm/themes
 
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
