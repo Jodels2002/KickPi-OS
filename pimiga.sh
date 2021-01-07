@@ -14,17 +14,21 @@ echo " "
 echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
-echo "XServer Update..... "
+echo "XServer Update.....# For shure :) "
 
-sudo apt-get remove --auto-remove xserver-common*
-
-
-
+#sudo apt-get remove --auto-remove xserver-common*
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 
- 
+
 sudo apt-get -y install git mc xorg lxde
+cd
+#Some little Tweaks....LXDE
+git clone https://github.com/chjj/compton.git
+cd compton
+make
+sudo make install
+sudo./compton -cCf -D 5
 
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
