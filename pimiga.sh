@@ -22,7 +22,7 @@ sudo apt-get -y upgrade
 
 
 sudo apt-get -y install git mc xorg lxde
-cd
+cd /home/amibian/
 #Some little Tweaks....LXDE
 git clone https://github.com/chjj/compton.git
 cd compton
@@ -73,7 +73,7 @@ cd /home/amibian/
   sudo chmod -R 777 /home/amibian/amiberry
   
 #Install PiKISS
-cd
+cd /home/amibian/
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 sudo chmod -R 777 PiKISS
 cd PiKiSS
