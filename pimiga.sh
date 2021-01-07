@@ -14,6 +14,14 @@ echo " "
 echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
+
+
+# Backup Settings
+
+cp -r .config ~/Pimiga_mini
+cp -r .x11 ~/Pimiga_mini
+cp -r .local ~/Pimiga_mini
+
 echo "XServer Update.....# For shure :) "
 
 #sudo apt-get remove --auto-remove xserver-common*
@@ -23,12 +31,17 @@ sudo apt-get -y upgrade
 
 sudo apt-get -y install git mc xorg lxde
 cd /home/amibian/
+
 #Some little Tweaks....LXDE
+sudo apt install gtk2-engines
+sudo apt install dmz-cursor-theme xcursor-themes moblin-cursor-theme
+
 git clone https://github.com/chjj/compton.git
 cd compton
+sudo apt install libconfig-dev asciidoc libdrm-dev libgl1-mesa-glx libgl1-mesa-dev
 make
 sudo make install
-sudo./compton -cCf -D 5
+sudo./compton -cC -i 0.8 -e 0.8 -m 0.9 -r 4 -l -4 -t -4
 
 cp -r /usr/share/themes/Clearlooks ~
 cd
