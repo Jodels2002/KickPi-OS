@@ -30,9 +30,9 @@ make
 sudo make install
 sudo./compton -cCf -D 5
 
-cp -r /usr/share/themes/default ~
+cp -r /usr/share/themes/Clearlooks ~
 cd
-mv default Pimiga
+mv Clearlooks Pimiga
 sudo ln -s Pimiga /usr/share/lxdm/themes
 
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
