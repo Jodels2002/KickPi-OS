@@ -28,22 +28,19 @@ echo "XServer Update.....# For shure :) "
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get clean
 
-sudo apt-get -y install git mc xorg lxde synaptic
-sudo apt-get install xserver-xorg
-sudo apt-get install xinit
-sudo apt-get install lxde-core lxterminal lxappearance network-manager
 
 cd /home/amibian/
 
 #Some little Tweaks....LXDE
-sudo apt install gtk2-engines
-sudo apt install dmz-cursor-theme xcursor-themes moblin-cursor-theme
+
+sudo apt-get -y install git mc xorg lxde synaptic mz-cursor-theme xcursor-themes moblin-cursor-theme
+sudo apt-get -y install lxde-core lxterminal lxappearance network-manager
+
 
 git clone https://github.com/chjj/compton.git
 cd compton
-sudo apt install libconfig-dev asciidoc libdrm-dev libgl1-mesa-glx libgl1-mesa-dev
+
 make
 sudo make install
 sudo./compton -cC -i 0.8 -e 0.8 -m 0.9 -r 4 -l -4 -t -4
