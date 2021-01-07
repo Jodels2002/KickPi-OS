@@ -22,12 +22,10 @@ sudo apt-get remove --auto-remove xserver-common*
 
 sudo apt-get -y update 
 sudo apt-get -y upgrade
-sudo apt-get -y autoremove
- 
-sudo apt-get -y install git
-sudo apt-get -y install mc
 
-sudo apt-get -y install xorg
+ 
+sudo apt-get -y install git mc xorg lxde
+
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo apt-get install -y libraspberrypi-dev
@@ -49,8 +47,8 @@ sudo __nodialog=1 ./retropie_packages.sh setup basic_install packages_gui_setup
 sudo __nodialog=1 ./retropie_packages.sh setup amiberry
 sudo __nodialog=1 ./retropie_packages.sh setup vice
 sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
-sudo __nodialog=1 ./retropie_packages.sh setup giana
-sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+#sudo __nodialog=1 ./retropie_packages.sh setup giana
+#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry
 
@@ -61,7 +59,7 @@ cd /home/amibian/
   cd amiberry
   
  # Compile Amiberry
- #  make -j2 PLATFORM=rpi4
+   make -j2 PLATFORM=rpi4
    
 
   sudo chmod -R 777 /home/amibian/amiberry
@@ -83,9 +81,11 @@ echo "Webadmin install? Y/N"
 echo " "
    
    
-sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
-sudo dpkg --install webmin_1.920_all.deb
+#sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+#wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
+#sudo dpkg --install webmin_1.920_all.deb
 
 sudo apt-get autoremove
-whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Amiga :-)" 20 60 1
+#whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Amiga :-)" 20 60 1
+permission
+sudo reboot
