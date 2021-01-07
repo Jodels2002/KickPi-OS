@@ -27,9 +27,14 @@ echo "XServer Update.....# For shure :) "
 #sudo apt-get remove --auto-remove xserver-common*
 sudo apt-get -y update 
 sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
+sudo apt-get clean
 
+sudo apt-get -y install git mc xorg lxde synaptic
+sudo apt-get install xserver-xorg
+sudo apt-get install xinit
+sudo apt-get install lxde-core lxterminal lxappearance network-manager
 
-sudo apt-get -y install git mc xorg lxde
 cd /home/amibian/
 
 #Some little Tweaks....LXDE
