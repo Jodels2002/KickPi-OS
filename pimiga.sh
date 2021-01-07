@@ -47,7 +47,6 @@ sudo chmod -R 777 /opt/RetroPie-Setup/
 cd /opt/RetroPie-Setup
 
 sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-sudo __nodialog=1 ./retropie_packages.sh setup basic_install packages_gui_setup
 sudo __nodialog=1 ./retropie_packages.sh setup amiberry
 sudo __nodialog=1 ./retropie_packages.sh setup vice
 sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
@@ -81,7 +80,7 @@ sudo ./piKISS.sh
 
 echo " "
 echo " "
-echo "Webadmin install? Y/N"
+#echo "Webadmin install? Y/N"
 echo " "
    
    
