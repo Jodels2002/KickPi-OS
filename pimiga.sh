@@ -28,14 +28,14 @@ cp -r .local ~/Pimiga_mini
 
 echo "XServer Update.....# For shure :) "
 
-sudo apt-get -y remove --auto-remove xserver-common*
-sudo apt-get -y sudo apt-get purge openbox lxde
+#sudo apt-get -y remove --auto-remove xserver-common*
+#sudo apt-get -y sudo apt-get purge openbox lxde
 
 
 sudo apt-get -y update 
-sudo apt-get -y upgrade
+#sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install xorg lxde libfm-extra libfm-extra libfm-extra
+#sudo apt-get -y install xorg lxde libfm-extra libfm-extra libfm-extra
 
 cd /home/amibian/
 
@@ -81,9 +81,9 @@ cd /home/amibian/
 #Install PiKISS
 cd /home/amibian/
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
-sudo chmod -R 777 PiKISS
-cd PiKiSS
 
+cd PiKiSS
+sudo chmod -R 777 ./piKISS.sh
 sudo ./piKISS.sh
   
 
