@@ -29,13 +29,13 @@ cp -r .local ~/Pimiga_mini
 echo "XServer Update.....# For shure :) "
 
 #sudo apt-get -y remove --auto-remove xserver-common*
-#sudo apt-get -y sudo apt-get purge openbox lxde
+#sudo apt-get -y sudo apt-get purge openbox 
 
 
 sudo apt-get -y update 
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-#sudo apt-get -y install xorg lxde libfm-extra libfm-extra libfm-extra
+sudo apt-get -y install openbox-menu openbox-themes obconf obconf-qt obmenu libfm-extra libfm-extra libfm-extra
 
 cd /home/amibian/
 
