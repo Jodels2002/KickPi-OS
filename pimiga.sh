@@ -21,7 +21,7 @@ cp -R ~/.local/ ~/.backup/.local
 
 echo "Update Settings since Panel is corrupt...No Image"
 unzip ~/Pimiga_mini/.data.zip 
-mv  ~/.config/lxpanel Pimiga_mini/.data/.config/lxpanel_old
+#mv  ~/.config/lxpanel Pimiga_mini/.data/.config/lxpanel_old
 mv Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
 
 
@@ -32,13 +32,14 @@ echo "XServer Update.....# For shure :) "
 
 
 sudo apt-get -y update 
-#sudo apt-get -y upgrade
+sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 
 
-cd /home/amibian/
+cd ~
 
 #Some little Tweaks....
+
 sudo apt-get -y install openbox-menu openbox-themes obconf obconf-qt obmenu libfm-extra libfm-extra libfm-extra
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -48,24 +49,23 @@ sudo chmod -R 777 /usr/local/share/
 cd /home/amibian/
 
 
-  #Install Retropie/Setup
+#Install Retropie/Setup
 
-#sudo apt-get install -y git dialog unzip xmlstarlet
-#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+sudo apt-get install -y git dialog unzip xmlstarlet
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+cd /home/amibian/RetroPie-Setup
 
-#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-#cd /home/amibian/RetroPie-Setup
-
-#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-#sudo __nodialog=1 ./retropie_packages.sh setup vice
-#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
-#sudo __nodialog=1 ./retropie_packages.sh setup giana
-#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+sudo __nodialog=1 ./retropie_packages.sh setup vice
+sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+sudo __nodialog=1 ./retropie_packages.sh setup giana
+sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry
 
-cd /home/amibian/
+cd ~
  
   #git clone https://github.com/midwan/amiberry
   
@@ -78,12 +78,12 @@ cd /home/amibian/
   #sudo chmod -R 777 /home/amibian/amiberry
   
 #Install PiKISS
-cd /home/amibian/
+cd ~
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKiSS
 sudo chmod -R 777 ./piKISS.sh
-sudo ./piKISS.sh
+sudo ./piKiss.sh
   
 
 # Compile WebAdmin https://127.0.0.1:10000
