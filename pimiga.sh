@@ -51,16 +51,16 @@ cd /home/amibian/
 
   #Install Retropie/Setup
 
-sudo apt-get install -y git dialog unzip xmlstarlet
-git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+#sudo apt-get install -y git dialog unzip xmlstarlet
+#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
-sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-cd /home/amibian/RetroPie-Setup
+#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+#cd /home/amibian/RetroPie-Setup
 
-sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-sudo __nodialog=1 ./retropie_packages.sh setup vice
-sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+#sudo __nodialog=1 ./retropie_packages.sh setup vice
+#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
 #sudo __nodialog=1 ./retropie_packages.sh setup giana
 #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
@@ -68,15 +68,15 @@ sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
 
 cd /home/amibian/
  
-  git clone https://github.com/midwan/amiberry
+  #git clone https://github.com/midwan/amiberry
   
-  cd amiberry
+  #cd amiberry
   
  # Compile Amiberry
-   make -j2 PLATFORM=rpi4
+   #make -j2 PLATFORM=rpi4
    
 
-  sudo chmod -R 777 /home/amibian/amiberry
+  #sudo chmod -R 777 /home/amibian/amiberry
   
 #Install PiKISS
 cd /home/amibian/
