@@ -15,16 +15,15 @@ echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 
+echo "Backup Settings...."
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
 
-# Backup Settings
-cp -r /usr/share/themes/PiXflat ~
-cd
-mv PiXflat Pimiga
-sudo ln -s Pimiga /usr/share/lxdm/themes
+echo "Update Settings since Panel is corrupt...No Image"
+unzip ~/Pimiga_mini/.data.zip 
+mv  ~/.config/lxpanel Pimiga_mini/.data/.config/lxpanel_old
+mv Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
 
-cp -r .config ~/Pimiga_mini
-cp -r .x11 ~/Pimiga_mini
-cp -r .local ~/Pimiga_mini
 
 echo "XServer Update.....# For shure :) "
 
@@ -35,12 +34,12 @@ echo "XServer Update.....# For shure :) "
 sudo apt-get -y update 
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install openbox-menu openbox-themes obconf obconf-qt obmenu libfm-extra libfm-extra libfm-extra
+
 
 cd /home/amibian/
 
-#Some little Tweaks....to Mate
-
+#Some little Tweaks....
+sudo apt-get -y install openbox-menu openbox-themes obconf obconf-qt obmenu libfm-extra libfm-extra libfm-extra
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo apt-get install -y libraspberrypi-dev
