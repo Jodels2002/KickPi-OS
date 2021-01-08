@@ -35,7 +35,7 @@ sudo apt-get -y sudo apt-get purge openbox lxde
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install xorg xfce4 libfm-extra libfm-extra libfm-extra
+sudo apt-get -y install xorg lxde libfm-extra libfm-extra libfm-extra
 
 cd /home/amibian/
 
