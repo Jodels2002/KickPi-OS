@@ -24,9 +24,12 @@ echo " "
 echo "Backup Settings...."
 sudo mkdir /home/amibian/.backup/
 sudo mkdir /home/amibian/.backup/usr/
-cp -R /home/amibian/.config/ /home/amibian/.backup/.config
-cp -R /home/amibian/.local/ /home/amibian/.backup/.local
+sudo chmod -R 777 /home/amibian/.backup/
+
+sudo cp -R /home/amibian/.config/ /home/amibian/.backup/.config
+sudo cp -R /home/amibian/.local/ /home/amibian/.backup/.local
 sudo cp -R /usr/local/bin /home/amibian/.backup/usr
+
 
 echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 cd ~/Pimiga_mini
