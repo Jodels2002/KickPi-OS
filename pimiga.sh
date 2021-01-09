@@ -8,6 +8,7 @@
 # -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
 # -Customised Webadmin ( Amiga ) for access from Amiga Side
 # -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
+# -Amibian Colour Menue in Amiga colours - consultation with G.K from Amibian! Only if its allowed
 
 echo " "
 echo " "
