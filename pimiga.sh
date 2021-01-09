@@ -10,6 +10,7 @@
 # -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
 # -Amibian Colour Menue in Amiga colours - consultation with G.K from Amibian! Only if its allowed
 # -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K from Amibian! Only if its allowed
+# Useful PiKiss Modules, CoolTerm, Certificates....stuff
 
 echo " "
 echo " "
@@ -20,12 +21,12 @@ echo " "
 echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
-
 echo "Backup Settings...."
-mkdir ~/.backup/usr/local/bin
-cp -R ~/.config/ ~/.backup/.config
-cp -R ~/.local/ ~/.backup/.local
-sudo cp -R /usr/local/bin ~/.backup/
+sudo mkdir /home/amibian/.backup/
+sudo mkdir /home/amibian/.backup/usr/
+cp -R /home/amibian/.config/ /home/amibian/.backup/.config
+cp -R /home/amibian/.local/ /home/amibian/.backup/.local
+sudo cp -R /usr/local/bin /home/amibian/.backup/usr
 
 echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 cd ~/Pimiga_mini
