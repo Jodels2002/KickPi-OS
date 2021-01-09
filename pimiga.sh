@@ -9,7 +9,7 @@
 # -Customised Webadmin ( Amiga ) for access from Amiga Side
 # -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
 # -Amibian Colour Menue in Amiga colours - consultation with G.K from Amibian! Only if its allowed
-
+# -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K from Amibian! Only if its allowed
 
 echo " "
 echo " "
