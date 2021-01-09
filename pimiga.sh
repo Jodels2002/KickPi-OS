@@ -1,6 +1,6 @@
 
 #!
-# Install Pimiga
+# Install Pimiga - not for use!!!
 # B.Titze 2020
 
 
@@ -16,34 +16,41 @@ echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 
 echo "Backup Settings...."
+mkdir ~/.backup/usr/local/bin
 cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
+sudo cp -R /usr/local/bin ~/.backup/
 
 echo "Update Settings since Panel is corrupt...No Image"
-unzip ~/Pimiga_mini/.data.zip 
-#mv  ~/.config/lxpanel Pimiga_mini/.data/.config/lxpanel_old
-mv Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
+cd ~/Pimiga_mini
+unzip ~/Pimiga_mini/.data.pac  ~/Pimiga_mini/.data
+mv ~/Pimiga_mini/.data/.config/ ~/.config/
 
 
-echo "XServer Update.....# For shure :) "
+
+echo "XServer re-install.....# if needed :) "
 
 #sudo apt-get -y remove --auto-remove xserver-common*
-#sudo apt-get -y sudo apt-get purge openbox 
+#sudo apt-get -y sudo apt-get purge openbox lxde
 
-
+echo "Time to update:) "
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 
-
+#restore.....#  if needed:) "
+#sudo cp -R  /home/amibian/.backup/ usr/local/bin
 cd ~
 
 #Some little Tweaks....
-
 sudo apt-get -y install openbox-menu openbox-themes obconf obconf-qt obmenu libfm-extra libfm-extra libfm-extra
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo apt-get install -y libraspberrypi-dev
+
+#Some little Amiga stuff....
+sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+
 sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /usr/local/share/
 cd /home/amibian/
