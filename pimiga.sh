@@ -30,11 +30,18 @@ sudo cp -R /home/amibian/.config/ /home/amibian/.backup/.config
 sudo cp -R /home/amibian/.local/ /home/amibian/.backup/.local
 sudo cp -R /usr/local/bin /home/amibian/.backup/usr
 
+cd ~/Pimiga_mini
 
 echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
-cd ~/Pimiga_mini
-unzip ~/Pimiga_mini/.data.pac  ~/Pimiga_mini/.data
-mv ~/Pimiga_mini/.data/.config/ ~/.config/
+# Todo create a clean Menu
+unzip ~/Pimiga_mini/.data.pac
+rm -r ~/.config/lxpanel ~/.config/lxsession ~/.config/lxterminal
+
+mv /home/amibian/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
+mv /home/amibian/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+mv /home/amibian/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+
+
 
 
 
