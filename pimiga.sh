@@ -1,5 +1,5 @@
 
-#!
+#!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 #
