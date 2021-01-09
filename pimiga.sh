@@ -107,6 +107,7 @@ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
 sudo dpkg --install webmin_1.920_all.deb
 
 sudo apt-get autoremove
-#whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Amiga :-)" 20 60 1
+whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Pimiga :-)" 20 60 1
+#Amibian permission for shure...
 permission
 sudo reboot
