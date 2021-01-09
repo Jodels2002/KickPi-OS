@@ -2,8 +2,12 @@
 #!
 # Install Pimiga - not for use!!!
 # B.Titze 2020
-
-
+#
+# -language set instal for GB,DE,IT,ES..
+# -OLED DISPLAY Amiga þ- bootpic... amyberry, amibian, Amiga Logo
+# -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
+# -Customised Webadmin ( Amiga ) for access from Amiga Side
+# -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
 
 echo " "
 echo " "
@@ -70,18 +74,13 @@ sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
 sudo __nodialog=1 ./retropie_packages.sh setup giana
 sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
-# Install Amiberry
+# Install Amiberry Raspberry Pi with SDL2 + DispmanX
 
 cd ~
  
   #git clone https://github.com/midwan/amiberry
-  
   #cd amiberry
-  
- # Compile Amiberry
-   #make -j2 PLATFORM=rpi4
-   
-
+  #make -j2 PLATFORM=rpi4
   #sudo chmod -R 777 /home/amibian/amiberry
   
 #Install PiKISS
@@ -101,9 +100,9 @@ echo " "
 echo " "
    
    
-#sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
-#wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
-#sudo dpkg --install webmin_1.920_all.deb
+sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
+sudo dpkg --install webmin_1.920_all.deb
 
 sudo apt-get autoremove
 #whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Amiga :-)" 20 60 1
