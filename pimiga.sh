@@ -3,12 +3,13 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 #
-# -language set instal for GB,DE,IT,ES..
+# -language set for GB,DE,IT,ES..
 # -OLED DISPLAY Amiga þ- bootpic... amyberry, amibian, Amiga Logo
 # -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
 # -Customised Webadmin ( Amiga ) for access from Amiga Side
 # -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
 # -Amibian Colour Menue in Amiga colours - consultation with G.K from Amibian! Only if its allowed
+
 
 echo " "
 echo " "
@@ -26,7 +27,7 @@ cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
 sudo cp -R /usr/local/bin ~/.backup/
 
-echo "Update Settings since Panel is corrupt...No Image"
+echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 cd ~/Pimiga_mini
 unzip ~/Pimiga_mini/.data.pac  ~/Pimiga_mini/.data
 mv ~/Pimiga_mini/.data/.config/ ~/.config/
