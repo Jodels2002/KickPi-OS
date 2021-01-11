@@ -52,7 +52,7 @@ echo "XServer re-install.....# if needed :) "
 
 echo "Time to update:) "
 sudo apt-get -y update 
-sudo apt-get -y upgrade
+#sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 
 #restore.....#  if needed:) "
@@ -75,17 +75,17 @@ cd /home/amibian/
 
 #Install Retropie/Setup
 
-sudo apt-get install -y git dialog unzip xmlstarlet
-git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-cd /home/amibian/RetroPie-Setup
+#sudo apt-get install -y git dialog unzip xmlstarlet
+#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+#cd /home/amibian/RetroPie-Setup
 
-sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-sudo __nodialog=1 ./retropie_packages.sh setup vice
-sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
-sudo __nodialog=1 ./retropie_packages.sh setup giana
-sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+#sudo __nodialog=1 ./retropie_packages.sh setup vice
+#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+#sudo __nodialog=1 ./retropie_packages.sh setup giana
+#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
 
@@ -101,7 +101,7 @@ cd ~
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKiSS
-sudo chmod -R 777 ./piKISS.sh
+sudo chmod -R 777 ./piKiss.sh
 sudo ./piKiss.sh
   
 
@@ -113,12 +113,12 @@ echo " "
 echo " "
    
    
-sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
-sudo dpkg --install webmin_1.920_all.deb
+#sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+#wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
+#sudo dpkg --install webmin_1.920_all.deb
 
 sudo apt-get autoremove
-whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Pimiga :-)" 20 60 1
+#whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Pimiga :-)" 20 60 1
 #Amibian permission for shure...
 permission
 sudo reboot
