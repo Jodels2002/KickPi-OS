@@ -84,17 +84,17 @@ cd /home/amibian/
 
 #Install Retropie/Setup
 
-#sudo apt-get install -y git dialog unzip xmlstarlet
-#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-#cd /home/amibian/RetroPie-Setup
+sudo apt-get install -y git dialog unzip xmlstarlet
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+cd /home/amibian/RetroPie-Setup
 
-#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-#sudo __nodialog=1 ./retropie_packages.sh setup vice
-#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
-#sudo __nodialog=1 ./retropie_packages.sh setup giana
-#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+sudo __nodialog=1 ./retropie_packages.sh setup vice
+sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+sudo __nodialog=1 ./retropie_packages.sh setup giana
+sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
 
@@ -109,7 +109,7 @@ cd ~
 cd ~
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
-cd PiKiSS
+cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
 sudo ./piKiss.sh
   
