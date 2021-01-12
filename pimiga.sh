@@ -6,16 +6,45 @@
 # -language set for GB,DE,IT,ES..
 # -OLED DISPLAY Amiga þ- bootpic... amyberry, amibian, Amiga Logo
 # -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
-# -Customised Webadmin ( Amiga ) for access from Amiga Side
+# -Cusom Webserver, RaspiControl, ( Lights, FAN, OLED;...) -> WebAdmin is overkill
 # -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
-# -Amibian Colour Menue in Amiga colours - consultation with G.K from Amibian! Only if its allowed
-# -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K from Amibian! Only if its allowed
+# -Amibian Colour Menue in Amiga colours - consultation with G.K -> OK
+# -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K -> 
 # Useful PiKiss Modules, CoolTerm, Certificates....stuff
+# 11.01.2021 Amibian update & Settings Ok 
+# 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 
-if [[ "$(whoami)" == "root" ]]; then
-  echo "Please don't start as root....."
-  exit 1
+if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
+      then
+      echo "Don't be root to run this script!"
+      echo "Pleas don't use 'sudo !!'"
+      exit 1
 fi
+
+# Script Menu ..... 
+
+#if [ "$#" -eq 0 ] ; 
+#then
+
+  #echo -e "Please select 1 - 3:"
+  #exit 1
+#elif [ "$#" -gt 1 ] ;
+#then
+
+  #echo -e "Please select 1 - 3:"
+  #exit 1
+#else
+  #numb=$1
+  #case "$numb" in
+    #1) echo "Install Basic Pimiga3000 ";;
+    #2) echo "Install Pimiga3000, Retropie & more";;
+    #3) echo "Install Pimiga3000, Retropie & OLED Display";;
+    
+    #*) echo -e "Wrong input. Please write a number between 1 and 3.";;
+  #esac
+#fi
+#exit 2
+#exit 0
 
 echo " "
 echo " "
@@ -48,21 +77,17 @@ mv /home/amibian/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 
 
 
-
-
-echo "XServer re-install.....# if needed :) "
-
-
-#sudo apt-get -y remove --auto-remove xserver-common*
-#sudo apt-get -y sudo apt-get purge openbox lxde
-
 echo "Time to update:) "
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 
 #xfce Desktop
+#echo "XfCE4 install possible.....# if if whished:) "
+#sudo apt-get -y remove --auto-remove xserver-common*
+#sudo apt-get -y sudo apt-get purge openbox lxde
 #sudo apt install -y xserver-xorg xfce4 xfce4-goodies
-#sudo dpkg-reconfigure lightd
+#sudo apt install -y xorg lightdm
+#sudo dpkg-reconfigure lightdm
 
 #restore.....#  if needed:) "
 #sudo cp -R  /home/amibian/.backup/ usr/local/bin
@@ -111,23 +136,10 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
-sudo ./piKiss.sh
+# sudo ./piKiss.sh  Could start here but....
   
-
-# Compile WebAdmin https://127.0.0.1:10000
-
-echo " "
-echo " "
-#echo "Webadmin install? Y/N"
-echo " "
-   
-   
-#sudo apt-get  install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
-#wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
-#sudo dpkg --install webmin_1.920_all.deb
-
 sudo apt-get autoremove
-#whiptail --msgbox " Ready... WebAdmin https://127.0.0.1:10000...Lets Pimiga :-)" 20 60 1
-#Amibian permission for shure...
+whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
+#Amibian permission 
 permission
 sudo reboot
