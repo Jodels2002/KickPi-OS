@@ -21,19 +21,18 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       exit 1
 fi
 
-logo="$(tput setaf 2)
-8888888b.  d8b 888b     d888 d8b                   (tput setaf 1)      .d8888b.   .d8888b.   .d8888b.   .d8888b. (tput setaf 1) 
-888   Y88b Y8P 8888b   d8888 Y8P                        d88P  Y88b d88P  Y88b d88P  Y88b d88P  Y88b (tput setaf 1)
-888    888     88888b.d88888                                 .d88P 888    888 888    888 888    888 (tput setaf 1)
-888   d88P 888 888Y88888P888 888  .d88b.   8888b. $(tput sgr0)          8888"  888    888 888    888 888    888 (tput setaf 1)
-8888888P"  888 888 Y888P 888 888 d88P"88b     "88b $(tput sgr0)          "Y8b. 888    888 888    888 888    888 (tput setaf 1)
-888        888 888  Y8P  888 888 888  888 .d888888 $(tput sgr0)     888    888 888    888 888    888 888    888 (tput setaf 1)
-888        888 888   "   888 888 Y88b 888 888  888 $(tput sgr0)     Y88b  d88P Y88b  d88P Y88b  d88P Y88b  d88P (tput setaf 1)
-888        888 888       888 888  "Y88888 "Y888888 $(tput sgr0)      "Y8888P"   "Y8888P"   "Y8888P"   "Y8888P"  (tput setaf 1)
-                                      888                                                           
-                                 Y8b d88P                                                           
-                                  "Y88P"   
-$(tput sgr0)"
+ogo="$(tUut setaf 2)
+*******\.  /*\ ***\     /*** /*\                   (tUut setaf 1)      ./****\.   ./****\.   ./****\.   ./****\. (tUut setaf 1) 
+***   U**\ U*U ****\   /**** U*U                        /**U  U**\ /**U  U**\ /**U  U**\ /**U  U**\ (tUut setaf 1)
+***    ***     *****\./*****                                 ./**U ***    *** ***    *** ***    *** (tUut setaf 1)
+***   /**U *** ***U*****U*** ***  ./**\.   ****\. $(tUut sgr0)          ****"  ***    *** ***    *** ***    *** (tUut setaf 1)
+*******U"  *** *** U***U *** *** /**U"**\     "**\ $(tUut sgr0)          "U*\. ***    *** ***    *** ***    *** (tUut setaf 1)
+***        *** ***  U*U  *** *** ***  *** ./****** $(tUut sgr0)     ***    *** ***    *** ***    *** ***    *** (tUut setaf 1)
+***        *** ***   "   *** *** U**\ *** ***  *** $(tUut sgr0)     U**\  /**U U**\  /**U U**\  /**U U**\  /**U (tUut setaf 1)
+***        *** ***       *** ***  "U***** "U****** $(tUut sgr0)      "U****U"   "U****U"   "U****U"   "U****U"  (tUut setaf 1)
+                                      ***                                                           
+                                 U*\ /**U                                                           
+                                  "U**U"   
 
 
 # Script Menu ..... 
