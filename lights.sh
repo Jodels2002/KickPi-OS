@@ -6,11 +6,11 @@
 BASE_GPIO_PATH=/sys/class/gpio
 
 # Assign LEDs & definitions
-BLUE=9
-GREEN=10
-YELLOW=11
-ORANGE=12
-RED=13
+BLUE=5
+GREEN=6
+YELLOW=13
+ORANGE=19
+RED=26
 ON="1"
 OFF="0"
 
