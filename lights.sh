@@ -26,7 +26,7 @@ setOutput()
 }
 
 # Function set Lights
-LightState()
+setLightState()
 {
   echo $2 > $BASE_GPIO_PATH/gpio$1/value
 }
