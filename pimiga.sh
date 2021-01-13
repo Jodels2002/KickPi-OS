@@ -70,13 +70,13 @@ echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 echo "Backup Settings...."
-sudo mkdir /home/amibian/.backup/
-sudo mkdir /home/amibian/.backup/usr/
-sudo chmod -R 777 /home/amibian/.backup/
+sudo mkdir ~/.backup/
+sudo mkdir~/.backup/usr/
+sudo chmod -R 777 ~/.backup/
 
-sudo cp -R /home/amibian/.config/ /home/amibian/.backup/.config
-sudo cp -R /home/amibian/.local/ /home/amibian/.backup/.local
-sudo cp -R /usr/local/bin /home/amibian/.backup/usr
+sudo cp -R ~/.config/ ~/.backup/.config
+sudo cp -R ~/.local/ ~/.backup/.local
+sudo cp -R /usr/local/bin ~/.backup/usr
 
 cd ~/Pimiga_mini
 
@@ -85,9 +85,9 @@ echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock
 unzip ~/Pimiga_mini/.data.pac
 rm -r ~/.config/lxpanel ~/.config/lxsession ~/.config/lxterminal
 
-mv /home/amibian/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
-mv /home/amibian/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
-mv /home/amibian/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+mv ~/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
+mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 
 
 
@@ -97,18 +97,18 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-#sudo apt-get -y remove --auto-remove xserver-common*
-#sudo apt-get -y sudo apt-get purge openbox lxde
-#sudo apt install -y xserver-xorg xfce4 xfce4-goodies
-#sudo apt install -y xorg lightdm
-#sudo dpkg-reconfigure lightdm
+sudo apt-get -y remove --auto-remove xserver-common*
+sudo apt-get -y sudo apt-get purge openbox lxde
+sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+sudo apt install -y xorg lightdm
+sudo dpkg-reconfigure lightdm
 
 #restore.....#  if needed:) "
 #sudo cp -R  /home/amibian/.backup/ usr/local/bin
 cd ~
 
 #Some little Tweaks....
-sudo apt-get -y install openbox-menu  obconf obconf-qt obmenu imagemagick
+#sudo apt-get -y install openbox-menu  obconf obconf-qt obmenu imagemagick
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo apt-get install -y libraspberrypi-dev
@@ -118,22 +118,22 @@ sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worke
 
 sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /usr/local/share/
-cd /home/amibian/
+cd ~
 
 
 #Install Retropie/Setup
 
-sudo apt-get install -y git dialog unzip xmlstarlet
-git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-cd /home/amibian/RetroPie-Setup
+#sudo apt-get install -y git dialog unzip xmlstarlet
+#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+#cd /home/amibian/RetroPie-Setup
 
-sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-sudo __nodialog=1 ./retropie_packages.sh setup vice
-sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
-sudo __nodialog=1 ./retropie_packages.sh setup giana
-sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+#sudo __nodialog=1 ./retropie_packages.sh setup vice
+#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+#sudo __nodialog=1 ./retropie_packages.sh setup giana
+#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
 
