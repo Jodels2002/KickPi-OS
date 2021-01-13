@@ -61,7 +61,9 @@ sudo apt-get -y upgrade
 #echo "XfCE4 install possible.....# if if whished:) "
 #sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y sudo apt-get purge openbox lxde
+
 sudo apt install -y xserver-xorg xfce4 xfce4-goodies libxfce4menu libxfce4ui xfce4-utils xfce4-themes
+sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
 sudo apt install -y xorg lightdm
 sudo dpkg-reconfigure lightdm
 
