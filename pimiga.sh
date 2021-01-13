@@ -59,7 +59,7 @@ echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 echo "Backup Settings...."
 sudo mkdir ~/.backup/
-sudo mkdir~/.backup/usr/
+sudo mkdir ~/.backup/usr/
 sudo chmod -R 777 ~/.backup/
 
 sudo cp -R ~/.config/ ~/.backup/.config
