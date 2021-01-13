@@ -22,32 +22,6 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
 fi
 
 
-
-# Script Menu ..... 
-
-#if [ "$#" -eq 0 ] ; 
-#then
-
-  #echo -e "Please select 1 - 3:"
-  #exit 1
-#elif [ "$#" -gt 1 ] ;
-#then
-
-  #echo -e "Please select 1 - 3:"
-  #exit 1
-#else
-  #numb=$1
-  #case "$numb" in
-    #1) echo "Install Basic Pimiga3000 ";;
-    #2) echo "Install Pimiga3000, Retropie & more";;
-    #3) echo "Install Pimiga3000, Retropie & OLED Display";;
-    
-    #*) echo -e "Wrong input. Please write a number between 1 and 3.";;
-  #esac
-#fi
-#exit 2
-#exit 0
-
 echo " "
 echo " "
 echo " "
@@ -58,24 +32,24 @@ echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 echo "Backup Settings...."
-sudo mkdir ~/.backup/
-sudo mkdir ~/.backup/usr/
-sudo chmod -R 777 ~/.backup/
+#sudo mkdir ~/.backup/
+#sudo mkdir ~/.backup/usr/
+#sudo chmod -R 777 ~/.backup/
 
-sudo cp -R ~/.config/ ~/.backup/.config
-sudo cp -R ~/.local/ ~/.backup/.local
-sudo cp -R /usr/local/bin ~/.backup/usr
+#sudo cp -R ~/.config/ ~/.backup/.config
+#sudo cp -R ~/.local/ ~/.backup/.local
+#sudo cp -R /usr/local/bin ~/.backup/usr
 
 cd ~/Pimiga_mini
 
-echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
+#echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 # Todo create a clean Menu
 unzip ~/Pimiga_mini/.data.pac
-rm -r ~/.config/lxpanel ~/.config/lxsession ~/.config/lxterminal
+#rm -r ~/.config/lxpanel ~/.config/lxsession ~/.config/lxterminal
 
-mv ~/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
-mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
-mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+#mv ~/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
+#mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+#mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 
 
 
@@ -85,9 +59,9 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-sudo apt-get -y remove --auto-remove xserver-common*
+#sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y sudo apt-get purge openbox lxde
-sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+sudo apt install -y xserver-xorg xfce4 xfce4-goodies libxfce4menu libxfce4ui xfce4-utils xfce4-themes
 sudo apt install -y xorg lightdm
 sudo dpkg-reconfigure lightdm
 
