@@ -67,7 +67,7 @@ sudo apt-get -y sudo apt-get purge lxde
 
 sudo apt install -y xserver-xorg xfce4 xfce4-goodies 
 sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
-#sudo apt install -y xorg lightdm
+apt install -y dialog
 #sudo dpkg-reconfigure lightdm
 
 #restore.....#  if needed:) "
