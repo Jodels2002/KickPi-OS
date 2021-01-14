@@ -116,6 +116,7 @@ cd ~
   wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
   unzip ./ClassicWB_UAE_v28.zip
   wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
+  unzip ./AROS-20210114-raspi-armhf-system.tar.bz2
   
 #Install PiKISS
 cd ~
