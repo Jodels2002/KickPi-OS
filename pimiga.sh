@@ -51,7 +51,7 @@ unzip ~/Pimiga_mini/.data.pac
 rm -r ~/.config
 mkdir ~/.config
 mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-sudo mv /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX/usr/local/share/icons
+sudo cp -R /home/$USER/Pimiga_mini/.data/ /usr/local/share/icons
 sudo apt install -y toilet
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
