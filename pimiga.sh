@@ -110,6 +110,13 @@ cd ~
   make -j2 PLATFORM=rpi4
   sudo chmod -R 777 /home/amibian/amiberry
   
+  # Preinstall Classic WB UAE
+  mkdir /home/$USER/Amiga
+  cd cd ~/Amiga
+  wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+  unzip ./ClassicWB_UAE_v28.zip
+  
+  
 #Install PiKISS
 cd ~
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
