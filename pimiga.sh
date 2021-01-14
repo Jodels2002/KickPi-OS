@@ -32,8 +32,10 @@ echo " "
 echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 echo "Backup Settings...."
-#sudo mkdir ~/.backup/
-#sudo mkdir ~/.backup/usr/
+
+
+#mkdir /home/$USER/.backup/
+#sudo mkdir /home/$USER/.backup/usr/
 #sudo chmod -R 777 ~/.backup/
 
 #sudo cp -R ~/.config/ ~/.backup/.config
@@ -62,10 +64,10 @@ sudo apt-get -y upgrade
 #sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y sudo apt-get purge openbox lxde
 
-sudo apt install -y xserver-xorg xfce4 xfce4-goodies libxfce4menu libxfce4ui xfce4-utils xfce4-themes
+sudo apt install -y xserver-xorg xfce4 xfce4-goodies 
 sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
-sudo apt install -y xorg lightdm
-sudo dpkg-reconfigure lightdm
+#sudo apt install -y xorg lightdm
+#sudo dpkg-reconfigure lightdm
 
 #restore.....#  if needed:) "
 #sudo cp -R  /home/amibian/.backup/ usr/local/bin
@@ -103,10 +105,10 @@ cd ~
 
 cd ~
  
-  #git clone https://github.com/midwan/amiberry
-  #cd amiberry
-  #make -j2 PLATFORM=rpi4
-  #sudo chmod -R 777 /home/amibian/amiberry
+  git clone https://github.com/midwan/amiberry
+  cd amiberry
+  make -j2 PLATFORM=rpi4
+  sudo chmod -R 777 /home/amibian/amiberry
   
 #Install PiKISS
 cd ~
@@ -114,10 +116,9 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
-# sudo ./piKiss.sh  Could start here but....
+sudo ./piKiss.sh  Could start here but....
   
 sudo apt-get autoremove
 whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
-#Amibian permission 
-permission
+
 sudo reboot
