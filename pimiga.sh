@@ -1,4 +1,6 @@
 
+
+
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
@@ -50,12 +52,14 @@ rm -r ~/.config
 mkdir ~/.config
 mv ~/Pimiga_mini/.data/.config/ /home/$USER/
 sudo mv /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX/usr/local/share/icons
+sudo apt install -y toilet
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
-
-
-
-echo "Time to update:) "
+clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "            Time to update:)              "
 sudo apt-get -y update 
 sudo apt-get -y upgrade
 
@@ -75,8 +79,13 @@ apt install -y dialog
 #restore.....#  if needed:) "
 #sudo cp -R  /home/amibian/.backup/ usr/local/bin
 cd ~
+clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "  ... some litte tweaks       "    
 
-#Some little Tweaks....
+    
 #sudo apt-get -y install openbox-menu  obconf obconf-qt obmenu imagemagick
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -88,7 +97,11 @@ sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worke
 sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /usr/local/share/
 cd ~
-
+clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "  ... here comes Retropie      "   
 
 #Install Retropie/Setup
 
@@ -105,7 +118,11 @@ cd ~
 #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
-
+clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "  ... here comes Amiberry     "   
 cd ~
  
   git clone https://github.com/midwan/amiberry
@@ -113,7 +130,14 @@ cd ~
   make -j2 PLATFORM=rpi4
   sudo chmod -R 777 /home/amibian/amiberry
 
-  
+  clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "  Amiberry is compiled...     " 
+echo " ... lets configer ClassicWB"  
+
+
   # Preinstall Classic WB UAE
   mkdir /home/$USER/Amiga
   mkdir /home/$USER/Amiga/HDD
@@ -137,12 +161,22 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
+clear
+toilet -F12 gay Pimiga3000
+echo " "
+echo " "
+echo "  PiKiss is ready for you...     " 
+    echo "Here you can install additional software :-)"
+    echo " · TIP: F12 = Menu."
+    echo
+    read -p "Press [ENTER] to continue..."
 sudo ./piKiss.sh 
-sudo ./piKiss.sh  
+
 
   
-sudo apt-get autoremove
+sudo apt-get -y autoremove
 whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
 
 startx
+
 
