@@ -61,8 +61,9 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-#sudo apt-get -y remove --auto-remove xserver-common*
-sudo apt-get -y sudo apt-get purge openbox lxde
+sudo apt-get -y remove --auto-remove xserver-common*
+sudo apt-get -y sudo apt-get purge openbox
+sudo apt-get -y sudo apt-get purge lxde
 
 sudo apt install -y xserver-xorg xfce4 xfce4-goodies 
 sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
@@ -124,7 +125,8 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
-sudo ./piKiss.sh  Could start here but....
+sudo ./piKiss.sh  
+
   
 sudo apt-get autoremove
 whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
