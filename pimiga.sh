@@ -65,7 +65,9 @@ sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y sudo apt-get purge openbox
 sudo apt-get -y sudo apt-get purge lxde
 
-sudo apt install -y xserver-xorg xfce4 xfce4-goodies 
+sudo apt install -y xserver-xorg xfce4 
+sudo apt install -y xfce4-goodies
+sudo apt install -y xfce4-utils
 sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
 apt install -y dialog
 #sudo dpkg-reconfigure lightdm
@@ -110,14 +112,24 @@ cd ~
   cd amiberry
   make -j2 PLATFORM=rpi4
   sudo chmod -R 777 /home/amibian/amiberry
+
   
   # Preinstall Classic WB UAE
   mkdir /home/$USER/Amiga
+  mkdir /home/$USER/Amiga/HDD
+  mkdir /home/$USER/Amiga/FDD
+  
+  sudo mkdir /boot/Amiga
+  sudo cp -R /home/$USER/amiberry/kickstarts /boot/Amiga
   cd cd ~/Amiga
   wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
   unzip ./ClassicWB_UAE_v28.zip
+  
+  
+  mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
+ 
   wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
-  unzip ./AROS-20210114-raspi-armhf-system.tar.bz2
+  #unzip ./AROS-20210114-raspi-armhf-system.tar.bz2
   
 #Install PiKISS
 cd ~
@@ -125,10 +137,12 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
+sudo ./piKiss.sh 
 sudo ./piKiss.sh  
 
   
 sudo apt-get autoremove
 whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
 
-sudo reboot
+startx
+
