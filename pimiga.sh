@@ -34,22 +34,22 @@ echo " "
 echo "Backup Settings...."
 
 
-#mkdir /home/$USER/.backup/
-#sudo mkdir /home/$USER/.backup/usr/
-#sudo chmod -R 777 ~/.backup/
+mkdir /home/$USER/.backup/
+sudo chmod -R 777 ~/.backup/
 
-#sudo cp -R ~/.config/ ~/.backup/.config
-#sudo cp -R ~/.local/ ~/.backup/.local
-#sudo cp -R /usr/local/bin ~/.backup/usr
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
 
 cd ~/Pimiga_mini
 
 #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 # Todo create a clean Menu
 unzip ~/Pimiga_mini/.data.pac
-#rm -r ~/.config/lxpanel ~/.config/lxsession ~/.config/lxterminal
-
-#mv ~/Pimiga_mini/.data/.config/lxpanel ~/.config/lxpanel
+rm -r ~/.config
+mkdir ~/.config
+mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+sudo mv /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX/usr/local/share/icons
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 
