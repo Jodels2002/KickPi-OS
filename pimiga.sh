@@ -4,7 +4,10 @@
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
-#
+## PWR-LED (green)
+#dtoverlay = pwr-led, gpio = 17
+# HDD LED (orange)
+#dtoverlay = act-led, gpio = 27
 # -language set for GB,DE,IT,ES..
 # -OLED DISPLAY Amiga þ- bootpic... amyberry, amibian, Amiga Logo
 # -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
