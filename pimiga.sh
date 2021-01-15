@@ -25,8 +25,10 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Pleas don't use 'sudo !!'"
       exit 1
 fi
-
-
+sudo apt-get -y update 
+sudo apt install -y toilet
+clear
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo " "
@@ -38,24 +40,33 @@ echo "Lets start a upgrade.... sit down and relaxe...!"
 echo " "
 echo "Backup Settings...."
 
-
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
-
+clear
+toilet -F gay Pimiga3000
 cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
 cp -R /usr/local/bin ~/.backup/usr
-
+clear
+toilet -F gay Pimiga3000
 cd ~/Pimiga_mini
-
+clear
+toilet -F gay Pimiga3000
 #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 # Todo create a clean Menu
-unzip ~/Pimiga_mini/.data.pac
+unzip ~/Pimiga_mini/data.pac
 rm -r ~/.config
 mkdir ~/.config
-mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-sudo cp -R /home/$USER/Pimiga_mini/.data/ /usr/local/share/icons
-sudo apt install -y toilet
+rm -r ~/.local
+mkdir ~/.local
+mv ~/Pimiga_mini/data/.config/ /home/$USER/
+mv ~/Pimiga_mini/data/.local/ /home/$USER/
+clear
+toilet -F gay Pimiga3000
+sudo cp -R /home/$USER/Pimiga_mini/data/AMIGAOSLINUX.zip /usr/local/share/icons
+sudo unzip /usr/local/share/icons/AMIGAOSLINUX.zip
+sudo cp -R /home/$USER/Pimiga_mini/data/ /usr/local/share/icons
+
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 clear
@@ -63,7 +74,7 @@ toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Time to update:)              "
-sudo apt-get -y update 
+
 sudo apt-get -y upgrade
 
 #xfce Desktop
@@ -76,9 +87,17 @@ sudo apt-get -y remove --auto-remove lxde*
 sudo apt-get -y remove --auto-remove lxde*
 sudo apt-get -y sudo apt-get purge openbox
 sudo apt-get -y sudo apt-get purge lxde xfce4 xfce4-goodies xfce4-utils
+clear
+toilet -F gay Pimiga3000
 sudo apt install -y xserver-xorg 
+clear
+toilet -F gay Pimiga3000
 sudo apt-get install ubuntu-gnome-desktop
+clear
+toilet -F gay Pimiga3000
 sudo apt install -y gnome-core
+clear
+toilet -F gay Pimiga3000
 #sudo apt install -y gdm
 
 #sudo apt install -y xserver-xorg xfce4 
@@ -100,7 +119,11 @@ echo "  ... some litte tweaks       "
     
 #sudo apt-get -y install openbox-menu  obconf obconf-qt obmenu imagemagick
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+clear
+toilet -F gay Pimiga3000
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+clear
+toilet -F gay Pimiga3000
 sudo apt-get install -y libraspberrypi-dev
 clear
 toilet -F gay Pimiga3000
@@ -124,10 +147,20 @@ echo "  ... here comes Retropie :-)     "
 #cd /home/amibian/RetroPie-Setup
 
 #sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+clear
+toilet -F gay Pimiga3000
 #sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+clear
+toilet -F gay Pimiga3000
 #sudo __nodialog=1 ./retropie_packages.sh setup vice
-#sudo __nodialog=1 ./retropie_packages.sh setup lr-vice
+
+#sudo _clear
+toilet -F gay Pimiga3000_nodialog=1 ./retropie_packages.sh setup lr-vice
+clear
+toilet -F gay Pimiga3000
 #sudo __nodialog=1 ./retropie_packages.sh setup giana
+clear
+toilet -F gay Pimiga3000
 #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
@@ -209,7 +242,8 @@ sudo ./piKiss.sh
   
 sudo apt-get -y autoremove
 whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
-
+clear
+toilet -F gay Pimiga3000
 startx
 
 
