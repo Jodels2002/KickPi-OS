@@ -61,7 +61,7 @@ toilet -F gay Pimiga3000
 cd /usr/share/icons/
 sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
 sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
-sudo cp -R /home/$USER/Pimiga_mini/data/ /usr/share/icons/
+
 
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
@@ -75,17 +75,17 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-sudo apt-get -y remove --auto-remove xserver-common*
-sudo apt-get -y remove --auto-remove openbox*
+#sudo apt-get -y remove --auto-remove xserver-common*
+#sudo apt-get -y remove --auto-remove openbox*
 
 clear
 toilet -F gay Pimiga3000
 sudo apt install -y xserver-xorg 
 clear
 toilet -F gay Pimiga3000
-sudo apt install -y xserver-xorg xfce4 
-sudo apt install -y xfce4-goodies
-sudo apt install -y xfce4-utils
+#sudo apt install -y xserver-xorg xfce4 
+#sudo apt install -y xfce4-goodies
+#sudo apt install -y xfce4-utils
 sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common
 clear
 toilet -F gay Pimiga3000
