@@ -2,15 +2,18 @@
 
 # LED Control PiMiga 3000 B.Titze...
 # ...to be finished :-)...möööp
+sudo chmod 222 /sys/class/gpio/export /sys/class/gpio/unexport 
+echo "out" > /sys/class/gpio/gpio17/direction
+echo "1" > /sys/class/gpio/gpio17/value
 
 BASE_GPIO_PATH=/sys/class/gpio
 
 # Assign LEDs & definitions
-BLUE=5
-GREEN=6
-YELLOW=13
-ORANGE=19
-RED=26
+BLUE=13
+GREEN=19
+YELLOW=5
+ORANGE=26
+RED=6
 ON="1"
 OFF="0"
 
