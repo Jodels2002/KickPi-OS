@@ -102,7 +102,8 @@ echo "  ... some litte tweaks       "
 sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
 sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo apt-get install -y libraspberrypi-dev
-
+clear
+toilet -F gay Pimiga3000
 #Some little Amiga stuff....
 sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
 
@@ -113,7 +114,7 @@ clear
 toilet -F gay Pimiga3000
 echo " "
 echo " "
-echo "  ... here comes Retropie      "   
+echo "  ... here comes Retropie :-)     "   
 
 #Install Retropie/Setup
 
@@ -134,7 +135,7 @@ clear
 toilet -F gay Pimiga3000
 echo " "
 echo " "
-echo "  ... here comes Amiberry     "   
+echo "  ... here comes Amiberry  :-)   "   
 cd ~
  
   git clone https://github.com/midwan/amiberry
@@ -146,10 +147,14 @@ cd ~
 toilet -F gay Pimiga3000
 echo " "
 echo " "
-echo "  Amiberry is compiled...     " 
-echo " ... lets configer ClassicWB"  
+echo "  Amiberry is compiled ...     " 
 
 
+clear
+toilet -F gay Pimiga3000
+
+eecho " "
+echo " "cho " ... lets configer ClassicWB"  
   # Preinstall Classic WB UAE
   mkdir /home/$USER/Amiga
   mkdir /home/$USER/Amiga/HDD
@@ -158,16 +163,31 @@ echo " ... lets configer ClassicWB"
   sudo mkdir /boot/Amiga
   sudo cp -R /home/$USER/amiberry/kickstarts /boot/Amiga
   cd cd ~/Amiga
+  clear
+  toilet -F gay Pimiga3000
   wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+  clear
+  toilet -F gay Pimiga3000
+  echo " "
+  echo " "
+  echo "  ClassicWB extracting ...     " 
   unzip ./ClassicWB_UAE_v28.zip
   
-  
+  clear
+  toilet -F gay Pimiga3000
+  echo " "
+  echo " "
+  echo "  Configure ClassicWB ...     " 
   mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
  
   wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
   #unzip ./AROS-20210114-raspi-armhf-system.tar.bz2
   
 #Install PiKISS
+toilet -F gay Pimiga3000
+echo " "
+echo " "
+echo "  Here comes PiKiss :-)    " 
 cd ~
 git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
@@ -180,6 +200,7 @@ echo " "
 echo "  PiKiss is ready for you...     " 
     echo "Here you can install additional software :-)"
     echo " · TIP: F12 = Menu."
+    echo "I hardly recommend: Coolterm, Tweaks, ..."
     echo
     read -p "Press [ENTER] to continue..."
 sudo ./piKiss.sh 
@@ -187,7 +208,7 @@ sudo ./piKiss.sh
 
   
 sudo apt-get -y autoremove
-whiptail --msgbox " Ready,... Okey, here we are ...Lets Pimiga3000 :-)" 20 60 1
+whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 
 startx
 
