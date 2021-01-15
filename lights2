@@ -1,0 +1,4 @@
+git clone git://git.drogon.net/wiringPi
+cd WiringPi
+~/WiringPi $ ./build 
+gpio -g write 5 1 
