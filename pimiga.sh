@@ -81,18 +81,16 @@ sudo apt-get -y upgrade
 #echo "XfCE4 install possible.....# if if whished:) "
 sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y remove --auto-remove openbox*
-sudo apt-get -y remove --auto-remove lxde*
-sudo apt-get -y remove --auto-remove xfce4
-sudo apt-get -y remove --auto-remove lxde*
-sudo apt-get -y remove --auto-remove lxde*
-sudo apt-get -y sudo apt-get purge openbox
-sudo apt-get -y sudo apt-get purge lxde xfce4 xfce4-goodies xfce4-utils
+
 clear
 toilet -F gay Pimiga3000
 sudo apt install -y xserver-xorg 
 clear
 toilet -F gay Pimiga3000
-sudo apt-get install ubuntu-gnome-desktop
+sudo apt install -y xserver-xorg xfce4 
+sudo apt install -y xfce4-goodies
+sudo apt install -y xfce4-utils
+sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
 clear
 toilet -F gay Pimiga3000
 sudo apt install -y gnome-core
@@ -100,10 +98,7 @@ clear
 toilet -F gay Pimiga3000
 #sudo apt install -y gdm
 
-#sudo apt install -y xserver-xorg xfce4 
-#sudo apt install -y xfce4-goodies
-#sudo apt install -y xfce4-utils
-#sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
+
 apt install -y dialog
 #sudo dpkg-reconfigure lightdm
 
