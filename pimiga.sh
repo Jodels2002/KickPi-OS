@@ -59,7 +59,7 @@ sudo apt install -y toilet
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Time to update:)              "
@@ -68,14 +68,18 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-sudo apt-get -y remove --auto-remove xserver-common*
+#sudo apt-get -y remove --auto-remove xserver-common*
 sudo apt-get -y sudo apt-get purge openbox
-sudo apt-get -y sudo apt-get purge lxde
+sudo apt-get -y sudo apt-get purge lxde xfce4
 
-sudo apt install -y xserver-xorg xfce4 
-sudo apt install -y xfce4-goodies
-sudo apt install -y xfce4-utils
-sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
+sudo apt install -y install gnome-desktop
+sudo apt install -y gnome-core
+#sudo apt install -y gdm
+
+#sudo apt install -y xserver-xorg xfce4 
+#sudo apt install -y xfce4-goodies
+#sudo apt install -y xfce4-utils
+#sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
 apt install -y dialog
 #sudo dpkg-reconfigure lightdm
 
@@ -83,7 +87,7 @@ apt install -y dialog
 #sudo cp -R  /home/amibian/.backup/ usr/local/bin
 cd ~
 clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "  ... some litte tweaks       "    
@@ -101,7 +105,7 @@ sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /usr/local/share/
 cd ~
 clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "  ... here comes Retropie      "   
@@ -122,7 +126,7 @@ echo "  ... here comes Retropie      "
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
 clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "  ... here comes Amiberry     "   
@@ -134,7 +138,7 @@ cd ~
   sudo chmod -R 777 /home/amibian/amiberry
 
   clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "  Amiberry is compiled...     " 
@@ -165,7 +169,7 @@ git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 cd PiKISS
 sudo chmod -R 777 ./piKiss.sh
 clear
-toilet -F12 gay Pimiga3000
+toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "  PiKiss is ready for you...     " 
