@@ -42,12 +42,7 @@ echo "Backup Settings...."
 
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
-clear
-toilet -F gay Pimiga3000
-cp -R ~/.config/ ~/.backup/.config
-cp -R ~/.local/ ~/.backup/.local
-cp -R /usr/local/bin ~/.backup/usr
-clear
+
 toilet -F gay Pimiga3000
 cd ~/Pimiga_mini
 clear
@@ -97,7 +92,12 @@ sudo apt install -y gnome-core
 clear
 toilet -F gay Pimiga3000
 #sudo apt install -y gdm
-
+clear
+toilet -F gay Pimiga3000
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
+clear
 
 apt install -y dialog
 #sudo dpkg-reconfigure lightdm
