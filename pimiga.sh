@@ -50,17 +50,18 @@ toilet -F gay Pimiga3000
 #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
 # Todo create a clean Menu
 unzip ~/Pimiga_mini/data.pac
-rm -r ~/.config
-mkdir ~/.config
-rm -r ~/.local
-mkdir ~/.local
-mv ~/Pimiga_mini/data/.config/ /home/$USER/
-mv ~/Pimiga_mini/data/.local/ /home/$USER/
+#rm -r ~/.config
+#mkdir ~/.config
+#rm -r ~/.local
+#mkdir ~/.local
+#mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+#mv ~/Pimiga_mini/.data/.local/ /home/$USER/
 clear
 toilet -F gay Pimiga3000
-sudo cp -R /home/$USER/Pimiga_mini/data/AMIGAOSLINUX.zip /usr/local/share/icons
-sudo unzip /usr/local/share/icons/AMIGAOSLINUX.zip
-sudo cp -R /home/$USER/Pimiga_mini/data/ /usr/local/share/icons
+cd /usr/share/icons/
+sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
+sudo cp -R /home/$USER/Pimiga_mini/data/ /usr/share/icons/
 
 #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
 #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
@@ -85,7 +86,7 @@ toilet -F gay Pimiga3000
 sudo apt install -y xserver-xorg xfce4 
 sudo apt install -y xfce4-goodies
 sudo apt install -y xfce4-utils
-sudo apt install -y mc git gparted synaptic geany geany-plugins-common geany-common
+sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common
 clear
 toilet -F gay Pimiga3000
 sudo apt install -y gnome-core
