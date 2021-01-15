@@ -1,0 +1,4 @@
+# Install Pimiga
+# B.Titze 2020
+
+Here are the scrips for LED control
