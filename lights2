@@ -1,4 +1,17 @@
+
+#BLUE=13
+#GREEN=19
+#YELLOW=5
+#RED=6
+#(ORANGE=26)
+
+#ON="1"
+#OFF="0"
+
 git clone git://git.drogon.net/wiringPi
 cd WiringPi
 ~/WiringPi $ ./build 
-gpio -g write 5 1 
+gpio -g write 5 1
+gpio -g write 13 1 
+gpio -g write 19 1 
+gpio -g write 6 1 
