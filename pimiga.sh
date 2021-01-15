@@ -68,11 +68,16 @@ sudo apt-get -y upgrade
 
 #xfce Desktop
 #echo "XfCE4 install possible.....# if if whished:) "
-#sudo apt-get -y remove --auto-remove xserver-common*
+sudo apt-get -y remove --auto-remove xserver-common*
+sudo apt-get -y remove --auto-remove openbox*
+sudo apt-get -y remove --auto-remove lxde*
+sudo apt-get -y remove --auto-remove xfce4
+sudo apt-get -y remove --auto-remove lxde*
+sudo apt-get -y remove --auto-remove lxde*
 sudo apt-get -y sudo apt-get purge openbox
-sudo apt-get -y sudo apt-get purge lxde xfce4
-
-sudo apt install -y install gnome-desktop
+sudo apt-get -y sudo apt-get purge lxde xfce4 xfce4-goodies xfce4-utils
+sudo apt install -y xserver-xorg 
+sudo apt-get install ubuntu-gnome-desktop
 sudo apt install -y gnome-core
 #sudo apt install -y gdm
 
