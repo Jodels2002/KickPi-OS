@@ -79,6 +79,7 @@ sudo apt-get -y sudo apt-get purge lxde xfce4 xfce4-goodies xfce4-utils
 sudo apt install -y xserver-xorg 
 sudo apt-get install ubuntu-gnome-desktop
 sudo apt install -y gnome-core
+
 #sudo apt install -y gdm
 
 #sudo apt install -y xserver-xorg xfce4 
