@@ -5,7 +5,7 @@ WIDTH=40
 CHOICE_HEIGHT=4
 BACKTITLE="Pimiga3000"
 TITLE="Title here"
-MENU="Please hoose one:"
+MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000"
          2 "Install Pimiga3000, Retropie & Tools"
