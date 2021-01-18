@@ -18,6 +18,7 @@
 # Useful PiKiss Modules, CoolTerm, Certificates....stuff
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
+# 18.01 Menu & Funktions
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
@@ -36,71 +37,88 @@ echo " "
 echo "Pimiga3000 mini  Setup"
 echo " "
 echo " "
-echo "Lets start a upgrade.... sit down and relaxe...!"
+echo "Lets start ..."
 echo " "
 echo "Backup Settings...."
 
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
+
+clear
 
 toilet -F gay Pimiga3000
 cd ~/Pimiga_mini
 clear
 toilet -F gay Pimiga3000
-#echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
-# Todo create a clean Menu
-unzip ~/Pimiga_mini/data.pac
-#rm -r ~/.config
-#mkdir ~/.config
-#rm -r ~/.local
-#mkdir ~/.local
-#mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-#mv ~/Pimiga_mini/.data/.local/ /home/$USER/
-clear
-toilet -F gay Pimiga3000
-cd /usr/share/icons/
-sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
-sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
+ #****************************************************************************************************************
+Pimiga_Desktop() {
+   echo "Installing Pimiga3000 Desktop ..."
 
+      #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
+      # Todo create a clean Menu
+      unzip ~/Pimiga_mini/data.pac
+      #rm -r ~/.config
+      #mkdir ~/.config
+      #rm -r ~/.local
+      #mkdir ~/.local
+      #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+      #sudo apt install -y xserver-xorg xfce4 
+      #sudo apt install -y xfce4-goodies
+      #sudo apt install -y xfce4-utils
+      sudo apt install -y xserver-xorg 
+      cd /usr/share/icons/
+      sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
+      #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+      #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+}
+ #****************************************************************************************************************
 
-#mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
-#mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 clear
 toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Time to update:)              "
 
+Pimiga_Update() {
+   echo "Installing Pimiga3000 Update System ..."
 sudo apt-get -y upgrade
 
-#xfce Desktop
-#echo "XfCE4 install possible.....# if if whished:) "
-#sudo apt-get -y remove --auto-remove xserver-common*
-#sudo apt-get -y remove --auto-remove openbox*
+}
+
+#****************************************************************************************************************
+
+
+ #****************************************************************************************************************
 
 clear
 toilet -F gay Pimiga3000
-sudo apt install -y xserver-xorg 
-clear
-toilet -F gay Pimiga3000
-#sudo apt install -y xserver-xorg xfce4 
-#sudo apt install -y xfce4-goodies
-#sudo apt install -y xfce4-utils
-sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common
-clear
-toilet -F gay Pimiga3000
-sudo apt install -y gnome-core
-clear
-toilet -F gay Pimiga3000
-#sudo apt install -y gdm
-clear
-toilet -F gay Pimiga3000
-cp -R ~/.config/ ~/.backup/.config
-cp -R ~/.local/ ~/.backup/.local
-cp -R /usr/local/bin ~/.backup/usr
-clear
+echo " "
+echo " "
+echo "            Lets install some usefull Tools:)              "
 
-apt install -y dialog
+Pimiga_Tools() {
+sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
+sudo apt-get -y install openbox-menu  obmenu 
+sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+sudo apt-get install -y libraspberrypi-dev
+
+clear
+toilet -F gay Pimiga3000
+#Some little Amiga stuff....
+sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+clear
+toilet -F gay Pimiga3000
+}
+
+clear
+toilet -F gay Pimiga3000
+
+
 #sudo dpkg-reconfigure lightdm
 
 #restore.....#  if needed:) "
@@ -108,23 +126,10 @@ apt install -y dialog
 cd ~
 clear
 toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  ... some litte tweaks       "    
+
 
     
-#sudo apt-get -y install openbox-menu  obconf obconf-qt obmenu imagemagick
-sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-clear
-toilet -F gay Pimiga3000
-sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-clear
-toilet -F gay Pimiga3000
-sudo apt-get install -y libraspberrypi-dev
-clear
-toilet -F gay Pimiga3000
-#Some little Amiga stuff....
-sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+
 
 sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /usr/local/share/
@@ -166,7 +171,7 @@ echo " "
 echo " "
 echo "  ... here comes Amiberry  :-)   "   
 cd ~
- 
+ sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
   git clone https://github.com/midwan/amiberry
   cd amiberry
   make -j2 PLATFORM=rpi4
