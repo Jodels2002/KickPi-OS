@@ -46,6 +46,55 @@ cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
 cp -R /usr/local/bin ~/.backup/usr
 
+#****************************************************************************************************************
+
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=4
+BACKTITLE="Pimiga3000"
+TITLE="Title here"
+MENU="Please select:"
+
+OPTIONS=(1 "Install Pimiga3000"
+         2 "Install Pimiga3000, Retropie & Tools"
+         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$Pimiga3000" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+        1)
+            echo "Pimiga3000"
+            Pimiga_Tools()
+            Pimiga_Amiberry()
+            Pimiga_PiKiss()
+            ;;
+        2)
+            echo "Pimiga3000, Retropie & Tools"
+            Pimiga_Update()
+            Pimiga_Tools()
+            Pimiga_Amiberry()
+            Pimiga_Retropie()
+            Pimiga_PiKiss()
+            ;;
+        3)
+            echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
+            Pimiga_Update()
+            Pimiga_Tools()
+            Pimiga_Amiberry()
+            Pimiga_Retropie()
+            Pimiga_PiKiss()
+            Pimiga_Desktop()
+            ;;
+esac
+ #****************************************************************************************************************
+
 cd ~/Pimiga_mini
 clear
 toilet -F gay Pimiga3000
@@ -202,33 +251,28 @@ Pimiga_Retropie() {
  #****************************************************************************************************************
 
 Pimiga_PiKiss() {
-      # Install Amiberry Raspberry Pi with SDL2 + DispmanX
+     #Install PiKISS
       clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
       echo "  ... here comes PiKiss  :-)   "     
-#Install PiKISS
-toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  Here comes PiKiss :-)    " 
-cd ~
-git clone --depth=1 https://github.com/jmcerrejon/PiKISS
+      cd ~
+      git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
-cd PiKISS
-sudo chmod -R 777 ./piKiss.sh
-clear
-toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  PiKiss is ready for you...     " 
-    echo "Here you can install additional software :-)"
-    echo " · TIP: F12 = Menu."
-    echo "I hardly recommend: Coolterm, Tweaks, ..."
-    echo
-    read -p "Press [ENTER] to continue..."
-sudo ./piKiss.sh 
+      cd PiKISS
+      sudo chmod -R 777 ./piKiss.sh
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  PiKiss is ready for you...     " 
+      echo "Here you can install additional software :-)"
+      echo " · TIP: F12 = Menu."
+      echo "I hardly recommend: Coolterm, Tweaks, ..."
+      echo
+      read -p "Press [ENTER] to continue..."
+      sudo ./piKiss.sh 
 }
  #****************************************************************************************************************
 
