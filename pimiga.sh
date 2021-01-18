@@ -25,7 +25,7 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Don't be root to run this script!"
       echo "Pleas don't use 'sudo !!'"
       exit 1
-fi
+      fi
 sudo apt-get -y update 
 sudo apt install -y toilet
 clear
@@ -33,7 +33,6 @@ toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo " "
-
 echo "Pimiga3000 mini  Setup"
 echo " "
 echo " "
@@ -47,9 +46,6 @@ cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
 cp -R /usr/local/bin ~/.backup/usr
 
-clear
-
-toilet -F gay Pimiga3000
 cd ~/Pimiga_mini
 clear
 toilet -F gay Pimiga3000
@@ -85,34 +81,32 @@ echo " "
 echo "            Time to update:)              "
 
 Pimiga_Update() {
-   echo "Installing Pimiga3000 Update System ..."
-sudo apt-get -y upgrade
+      echo "Installing Pimiga3000 Update System ..."
+      sudo apt-get -y upgrade
 
 }
 
 #****************************************************************************************************************
 
-
- #****************************************************************************************************************
-
+Pimiga_Tools() {
 clear
 toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Lets install some usefull Tools:)              "
 
-Pimiga_Tools() {
-sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
-sudo apt-get -y install openbox-menu  obmenu 
-sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-sudo apt-get install -y libraspberrypi-dev
 
-clear
-toilet -F gay Pimiga3000
-#Some little Amiga stuff....
-sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
-clear
-toilet -F gay Pimiga3000
+      sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
+      sudo apt-get -y install openbox-menu  obmenu 
+      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+      sudo apt-get install -y libraspberrypi-dev
+
+      clear
+      toilet -F gay Pimiga3000
+      #Some little Amiga stuff....
+      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+      clear
+      toilet -F gay Pimiga3000
 }
  
  #****************************************************************************************************************
@@ -145,61 +139,75 @@ Pimiga_Retropie() {
       #sudo __nodialog=1 ./retropie_packages.sh setup giana
       clear
       toilet -F gay Pimiga3000
-#sudo __nodialog=1 ./retropie_packages.sh setup eduke32
-
-# Install Amiberry Raspberry Pi with SDL2 + DispmanX
-clear
-toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  ... here comes Amiberry  :-)   "   
-cd ~
- sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-  git clone https://github.com/midwan/amiberry
-  cd amiberry
-  make -j2 PLATFORM=rpi4
-  sudo chmod -R 777 /home/amibian/amiberry
-
-  clear
-toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  Amiberry is compiled ...     " 
-
-
-clear
-toilet -F gay Pimiga3000
-
-eecho " "
-echo " "cho " ... lets configer ClassicWB"  
-  # Preinstall Classic WB UAE
-  mkdir /home/$USER/Amiga
-  mkdir /home/$USER/Amiga/HDD
-  mkdir /home/$USER/Amiga/FDD
+      #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+      
+}
+ #****************************************************************************************************************
+     
+     Pimiga_Amiberry() {
+      # Install Amiberry Raspberry Pi with SDL2 + DispmanX
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  ... here comes Amiberry  :-)   "   
+      cd ~
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      git clone https://github.com/midwan/amiberry
+      cd amiberry
+      make -j2 PLATFORM=rpi4
+      sudo chmod -R 777 /home/$USER/amiberry
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Amiberry is compiled ...     " 
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... lets configer ClassicWB"  
+      # Preinstall Classic WB UAE
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
   
-  sudo mkdir /boot/Amiga
-  sudo cp -R /home/$USER/amiberry/kickstarts /boot/Amiga
-  cd cd ~/Amiga
-  clear
-  toilet -F gay Pimiga3000
-  wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-  clear
-  toilet -F gay Pimiga3000
-  echo " "
-  echo " "
-  echo "  ClassicWB extracting ...     " 
-  unzip ./ClassicWB_UAE_v28.zip
+      sudo mkdir /boot/Amiga
+      sudo chmod -R 777 /home/$USER/Amiga
+      sudo cp -R /home/$USER/amiberry/kickstarts /boot/Amiga
+      cd cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  ClassicWB extracting ...     " 
+      unzip ./ClassicWB_UAE_v28.zip
   
-  clear
-  toilet -F gay Pimiga3000
-  echo " "
-  echo " "
-  echo "  Configure ClassicWB ...     " 
-  mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
- 
-  wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
-  #unzip ./AROS-20210114-raspi-armhf-system.tar.bz2
-  
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB ...     " 
+      mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
+        # Preinstall AROS
+      wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
+      #entpacken ./AROS-20210114-raspi-armhf-system.tar.bz2
+      sudo chmod -R 777 /home/$USER/Amiga
+      sudo chmod -R 777 /home/$USER/amiberry
+      
+    }
+    
+ #****************************************************************************************************************
+
+Pimiga_PiKiss() {
+      # Install Amiberry Raspberry Pi with SDL2 + DispmanX
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  ... here comes PiKiss  :-)   "     
 #Install PiKISS
 toilet -F gay Pimiga3000
 echo " "
@@ -221,20 +229,25 @@ echo "  PiKiss is ready for you...     "
     echo
     read -p "Press [ENTER] to continue..."
 sudo ./piKiss.sh 
+}
+ #****************************************************************************************************************
 
 
-  cd ~
+ cd ~
 clear
 toilet -F gay Pimiga3000
 
+ echo " "
+      echo " "
+      echo "  ... cleanup and finish setup  "   
+      sudo apt-get -y autoremove
+      sudo chmod -R 777 /usr/local/bin/
+      sudo chmod -R 777 /usr/local/share/
+      sudo chmod -R 777 /home/$USER/.backup/
+      sudo chmod -R 777 /home/$USER/.config/
+      sudo chmod -R 777 /home/$USER/.local/
 
-    
-
-
-sudo chmod -R 777 /usr/local/bin/
-sudo chmod -R 777 /usr/local/share/
-sudo apt-get -y autoremove
-whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
+      whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 clear
 toilet -F gay Pimiga3000
 startx
