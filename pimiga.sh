@@ -114,54 +114,37 @@ sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worke
 clear
 toilet -F gay Pimiga3000
 }
-
-clear
-toilet -F gay Pimiga3000
-
-
-#sudo dpkg-reconfigure lightdm
-
-#restore.....#  if needed:) "
-#sudo cp -R  /home/amibian/.backup/ usr/local/bin
-cd ~
-clear
-toilet -F gay Pimiga3000
-
-
-    
-
-
-sudo chmod -R 777 /usr/local/bin/
-sudo chmod -R 777 /usr/local/share/
-cd ~
-clear
-toilet -F gay Pimiga3000
-echo " "
-echo " "
-echo "  ... here comes Retropie :-)     "   
-
+ 
+ #****************************************************************************************************************
+ 
+Pimiga_Retropie() {
 #Install Retropie/Setup
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  ... here comes Retropie :-)     "   
 
-#sudo apt-get install -y git dialog unzip xmlstarlet
-#git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-#sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-#cd /home/amibian/RetroPie-Setup
+      sudo apt-get install -y git dialog unzip xmlstarlet
+      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      sudo chmod -R 777 /home/amibian/RetroPie-Setup/
+      cd /home/amibian/RetroPie-Setup
 
-#sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-clear
-toilet -F gay Pimiga3000
-#sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-clear
-toilet -F gay Pimiga3000
-#sudo __nodialog=1 ./retropie_packages.sh setup vice
-
-#sudo _clear
-toilet -F gay Pimiga3000_nodialog=1 ./retropie_packages.sh setup lr-vice
-clear
-toilet -F gay Pimiga3000
-#sudo __nodialog=1 ./retropie_packages.sh setup giana
-clear
-toilet -F gay Pimiga3000
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      clear
+      toilet -F gay Pimiga3000
+      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+      clear
+      toilet -F gay Pimiga3000
+      sudo __nodialog=1 ./retropie_packages.sh setup vice
+      sudo _clear
+      toilet -F gay Pimiga3000
+      sudo _nodialog=1 ./retropie_packages.sh setup lr-vice
+      clear
+      toilet -F gay Pimiga3000
+      #sudo __nodialog=1 ./retropie_packages.sh setup giana
+      clear
+      toilet -F gay Pimiga3000
 #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
 
 # Install Amiberry Raspberry Pi with SDL2 + DispmanX
@@ -240,7 +223,16 @@ echo "  PiKiss is ready for you...     "
 sudo ./piKiss.sh 
 
 
-  
+  cd ~
+clear
+toilet -F gay Pimiga3000
+
+
+    
+
+
+sudo chmod -R 777 /usr/local/bin/
+sudo chmod -R 777 /usr/local/share/
 sudo apt-get -y autoremove
 whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 clear
