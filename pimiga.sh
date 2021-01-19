@@ -249,9 +249,16 @@ Pimiga_Retropie() {
       echo " "
       echo "  Configure ClassicWB ...     " 
       mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
+        
         # Preinstall AROS
-      wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2
-      #entpacken ./AROS-20210114-raspi-armhf-system.tar.bz2
+        mkdir /home/$USER/Amiga/HDD
+        CD /home/$USER/Amiga/HDD
+        
+        # wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2 "Raspberry Image"
+        # wgethttps://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz
+        # gunzip ./amiga-m68k-20201206-135516.tar.gz
+        # tar -xvf datei.tar amiga-m68k-20201206-135516.tar
+      
       sudo chmod -R 777 /home/$USER/Amiga
       sudo chmod -R 777 /home/$USER/amiberry
       
