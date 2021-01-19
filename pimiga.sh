@@ -16,6 +16,11 @@
 # -Amibian Colour Menue in Amiga colours - consultation with G.K -> OK
 # -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K -> 
 # Useful PiKiss Modules, CoolTerm, Certificates....stuff
+
+# https://github.com/rewtnull/amigafonts
+# https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
+# https://github.com/HoraceAndTheSpider/UAEConfigMaker
+
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
