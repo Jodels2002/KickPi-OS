@@ -17,6 +17,7 @@
 # -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K -> 
 # Useful PiKiss Modules, CoolTerm, Certificates....stuff
 
+# https://vps691225.ovh.net/download/builds/AROS/   https://github.com/deadw00d/AROS
 # https://github.com/rewtnull/amigafonts
 # https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
 # https://github.com/HoraceAndTheSpider/UAEConfigMaker
