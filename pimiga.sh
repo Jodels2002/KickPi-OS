@@ -20,6 +20,9 @@
 # https://github.com/rewtnull/amigafonts
 # https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
 # https://github.com/HoraceAndTheSpider/UAEConfigMaker
+# https://github.com/Lana-chan/nes-boingball :-) 
+# https://github.com/x64k/amitk
+# https://github.com/alpine9000/squirt
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
