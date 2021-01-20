@@ -1,6 +1,3 @@
-
-
-
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
@@ -47,16 +44,36 @@ echo " "
 echo " "
 echo "Lets start ..."
 echo " "
-echo "... Backup Settings..."
-echo " "
-echo " "
+echo "Backup Settings...."
 
-mkdir /home/$USER/.backup/
-sudo chmod -R 777 ~/.backup/
-cp -R ~/.config/ ~/.backup/.config
-cp -R ~/.local/ ~/.backup/.local
-cp -R /usr/local/bin ~/.backup/usr
+#mkdir /home/$USER/.backup/
+#sudo chmod -R 777 ~/.backup/
+#cp -R ~/.config/ ~/.backup/.config
+#cp -R ~/.local/ ~/.backup/.local
+#cp -R /usr/local/bin ~/.backup/usr
 
+#****************************************************************************************************************
+
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=4
+BACKTITLE="Pimiga3000"
+TITLE="Title here"
+MENU="Please select:"
+
+OPTIONS=(1 "Install Pimiga3000"
+         2 "Install Pimiga3000, Retropie & Tools"
+         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$Pimiga3000" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
 
  #****************************************************************************************************************
 
@@ -164,7 +181,9 @@ Pimiga_Retropie() {
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo "  ... here comes Amiberry  :-)   "   
+      echo "  ... here comes Amiberry  :-)   " 
+      echo " "
+      echo " "  
       cd ~
       sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       git clone https://github.com/midwan/amiberry
@@ -176,10 +195,14 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       echo "  Amiberry is compiled ...     " 
+      echo " "
+      echo " "
       clear
       toilet -F gay Pimiga3000
       echo " "
-      echo "  ... lets configer ClassicWB"  
+      echo "  ... lets configer ClassicWB" 
+      echo " "
+      echo " " 
       # Preinstall Classic WB UAE
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
@@ -187,33 +210,56 @@ Pimiga_Retropie() {
   
       sudo mkdir /boot/Amiga
       sudo chmod -R 777 /home/$USER/Amiga
-      sudo cp -R /home/$USER/amiberry/kickstarts /boot/Amiga
-      cd cd ~/Amiga
+      
+      cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... downloading  ClassicWB"  
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      #wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2 --no-check-certificate
+      echo " "
+      echo "  ... downloading  AROS " 
+      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
       clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
       echo "  ClassicWB extracting ...     " 
+      echo " "
+      echo " "
       unzip ./ClassicWB_UAE_v28.zip
-  
+    
       clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
       echo "  Configure ClassicWB ...     " 
-      mv /home/$USER/amiberry/ClassicWB_UAE_v28 /home/$USER/Amiga/HDD
+      
+        mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
+        mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB
+        rm -r ~/Amiga/ClassicWB_UAE_v28
         
         # Preinstall AROS
-        mkdir /home/$USER/Amiga/HDD
-        CD /home/$USER/Amiga/HDD
+        echo " "
+        echo " "
+        echo "  Configure AROS...     " 
+        echo " "
+        echo " "
         
-        # wget https://netcologne.dl.sourceforge.net/project/aros/nightly2/20210114/Binaries/AROS-20210114-raspi-armhf-system.tar.bz2 "Raspberry Image"
-        # wgethttps://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz
-        # gunzip ./amiga-m68k-20201206-135516.tar.gz
-        # tar -xvf datei.tar amiga-m68k-20201206-135516.tar
+        CD /home/$USER/Amiga/
+        gunzip ./amiga-m68k-20201206-135516.tar.gz
+        tar -xvf ./amiga-m68k-20201206-135516.tar
+        
+        mv  "/home/$USER/Amiga/amiga-m68k-20201206-135516/" /home/$USER/Amiga/HDD/
+        mv "/home/pi/Amiga/HDD/amiga-m68k-20201206-135516" /home/$USER/Amiga/HDD/AROS
+      
+        #rm -r ~/Amiga/ClassicWB_UAE_v28
+        
+        
+
       
       sudo chmod -R 777 /home/$USER/Amiga
       sudo chmod -R 777 /home/$USER/amiberry
@@ -252,34 +298,13 @@ Pimiga_PiKiss() {
  cd ~
 clear
 toilet -F gay Pimiga3000
-#****************************************************************************************************************
 
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=4
-BACKTITLE="Pimiga3000"
-TITLE="Title here"
-MENU="Please select:"
-
-OPTIONS=(1 "Install Pimiga3000"
-         2 "Install Pimiga3000, Retropie & Tools"
-         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
-
-CHOICE=$(dialog --clear \
-                --backtitle "$Pimiga3000" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
 case $CHOICE in
         1)
             echo "Pimiga3000"
-            Pimiga_Tools()
-            Pimiga_Amiberry()
-            Pimiga_PiKiss()
+            Pimiga_Tools
+            Pimiga_Amiberry
+            Pimiga_PiKiss
             ;;
         2)
             echo "Pimiga3000, Retropie & Tools"
@@ -299,6 +324,10 @@ case $CHOICE in
             Pimiga_Desktop
             ;;
 esac
+
+
+
+
  echo " "
       echo " "
       echo "  ... cleanup and finish setup  "   
@@ -309,9 +338,9 @@ esac
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
 
-      whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
+    #  whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 clear
 toilet -F gay Pimiga3000
-startx
+#startx
 
 
