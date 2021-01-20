@@ -59,7 +59,7 @@ HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
 BACKTITLE="Pimiga3000"
-TITLE="Title here"
+TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000"
@@ -87,7 +87,7 @@ Pimiga_Desktop() {
 
       #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
       # Todo create a clean Menu
-      unzip ~/Pimiga_mini/data.pac
+      
       #rm -r ~/.config
       #mkdir ~/.config
       #rm -r ~/.local
@@ -97,12 +97,12 @@ Pimiga_Desktop() {
       #sudo apt install -y xserver-xorg xfce4 
       #sudo apt install -y xfce4-goodies
       #sudo apt install -y xfce4-utils
-      sudo apt install -y xserver-xorg 
+      
+      #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+      #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
       cd /usr/share/icons/
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
-      #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
-      #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
 }
  #****************************************************************************************************************
 
@@ -139,10 +139,13 @@ echo "            Lets install some usefull Tools:)              "
       sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
       clear
       toilet -F gay Pimiga3000
+      
+      
 }
  
  #****************************************************************************************************************
- 
+ unzip ~/Pimiga_mini/data.pac
+      sudo apt install -y xserver-xorg 
 Pimiga_Retropie() {
 #Install Retropie/Setup
       clear
