@@ -151,10 +151,11 @@ Pimiga_Retropie() {
       echo " "
       echo "  ... here comes Retropie :-)     "   
 
+      cd ~
       sudo apt-get install -y git dialog unzip xmlstarlet
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      sudo chmod -R 777 /home/amibian/RetroPie-Setup/
-      cd /home/amibian/RetroPie-Setup
+      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      cd  /home/$USER/RetroPie-Setup
 
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       clear
@@ -253,6 +254,7 @@ Pimiga_Retropie() {
       
         mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
         mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB
+        cp -R /home/pi/games/amiberry/kickstarts /home/pi/amiberry/
         rm -r ~/Amiga/ClassicWB_UAE_v28
         
         # Preinstall AROS
@@ -297,13 +299,9 @@ Pimiga_PiKiss() {
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo "  PiKiss is ready for you...     " 
-      echo "Here you can install additional software :-)"
-      echo " · TIP: F12 = Menu."
-      echo "I hardly recommend: Coolterm, Tweaks, ..."
-      echo
-      read -p "Press [ENTER] to continue..."
-      sudo ./piKiss.sh 
+     
+      #sudo ./piKiss.sh 
+      /home/pi/PiKISS/scripts/emus/amiga.sh
 }
  #****************************************************************************************************************
 
@@ -316,21 +314,22 @@ case $CHOICE in
         1)
             echo "Pimiga3000"
             Pimiga_Tools
-            Pimiga_Amiberry
             Pimiga_PiKiss
+            Pimiga_Amiberry
             ;;
         2)
             echo "Pimiga3000, Retropie & Tools"
-            Pimiga_Update
-            Pimiga_Tools
-            Pimiga_Amiberry
-            Pimiga_Retropie
+            #Pimiga_Update
+            #Pimiga_Tools
+            #Pimiga_Amiberry
+            #Pimiga_Retropie
             Pimiga_PiKiss
             ;;
         3)
             echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
             Pimiga_Update
             Pimiga_Tools
+            Pimiga_PiKiss
             Pimiga_Amiberry
             Pimiga_Retropie
             Pimiga_PiKiss
