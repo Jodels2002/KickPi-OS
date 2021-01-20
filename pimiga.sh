@@ -47,7 +47,9 @@ echo " "
 echo " "
 echo "Lets start ..."
 echo " "
-echo "Backup Settings...."
+echo "... Backup Settings..."
+echo " "
+echo " "
 
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
@@ -55,53 +57,7 @@ cp -R ~/.config/ ~/.backup/.config
 cp -R ~/.local/ ~/.backup/.local
 cp -R /usr/local/bin ~/.backup/usr
 
-#****************************************************************************************************************
 
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=4
-BACKTITLE="Pimiga3000"
-TITLE="Title here"
-MENU="Please select:"
-
-OPTIONS=(1 "Install Pimiga3000"
-         2 "Install Pimiga3000, Retropie & Tools"
-         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
-
-CHOICE=$(dialog --clear \
-                --backtitle "$Pimiga3000" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
-case $CHOICE in
-        1)
-            echo "Pimiga3000"
-            Pimiga_Tools()
-            Pimiga_Amiberry()
-            Pimiga_PiKiss()
-            ;;
-        2)
-            echo "Pimiga3000, Retropie & Tools"
-            Pimiga_Update()
-            Pimiga_Tools()
-            Pimiga_Amiberry()
-            Pimiga_Retropie()
-            Pimiga_PiKiss()
-            ;;
-        3)
-            echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
-            Pimiga_Update()
-            Pimiga_Tools()
-            Pimiga_Amiberry()
-            Pimiga_Retropie()
-            Pimiga_PiKiss()
-            Pimiga_Desktop()
-            ;;
-esac
  #****************************************************************************************************************
 
 cd ~/Pimiga_mini
@@ -296,7 +252,53 @@ Pimiga_PiKiss() {
  cd ~
 clear
 toilet -F gay Pimiga3000
+#****************************************************************************************************************
 
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=4
+BACKTITLE="Pimiga3000"
+TITLE="Title here"
+MENU="Please select:"
+
+OPTIONS=(1 "Install Pimiga3000"
+         2 "Install Pimiga3000, Retropie & Tools"
+         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$Pimiga3000" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+        1)
+            echo "Pimiga3000"
+            Pimiga_Tools()
+            Pimiga_Amiberry()
+            Pimiga_PiKiss()
+            ;;
+        2)
+            echo "Pimiga3000, Retropie & Tools"
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_Amiberry
+            Pimiga_Retropie
+            Pimiga_PiKiss
+            ;;
+        3)
+            echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_Amiberry
+            Pimiga_Retropie
+            Pimiga_PiKiss
+            Pimiga_Desktop
+            ;;
+esac
  echo " "
       echo " "
       echo "  ... cleanup and finish setup  "   
