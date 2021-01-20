@@ -34,6 +34,7 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       fi
 sudo apt-get -y update 
 sudo apt install -y toilet
+sudo apt install -y dialog
 clear
 toilet -F gay Pimiga3000
 echo " "
