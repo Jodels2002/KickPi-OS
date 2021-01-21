@@ -114,7 +114,7 @@ Pimiga_Desktop() {
       cd /usr/share/icons/
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      
+      mkdir -p ~/.iris-install && cd ~/.iris-install && wget https://github.com/xyl0n/iris/archive/master.zip && unzip master.zip && sudo cp -a iris-master /usr/share/themes && gsettings set org.gnome.desktop.interface gtk-theme 'iris-master' && cd ~ && rm -R ~/.iris-install
       https://github.com/x64k/amitk
        cd ~
       git clone --depth=1  https://github.com/x64k/amitk.git
