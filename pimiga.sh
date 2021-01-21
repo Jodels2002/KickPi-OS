@@ -100,15 +100,15 @@ Pimiga_Desktop() {
       sudo systemctl set-default graphical.target
       sudo update-alternatives --config x-window-manager
       sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
-      #rm -r ~/.config
-      #mkdir ~/.config
-      #rm -r ~/.local
-      #mkdir ~/.local
-      #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-      #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+      rm -r ~/.config
+      mkdir ~/.config
+      rm -r ~/.local
+      mkdir ~/.local
+      mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      mv ~/Pimiga_mini/.data/.local/ /home/$USER/
       
-      #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
-      #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+      mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
+      mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
       
       # Fresh install Amiga Desktop
       cd /usr/share/icons/
@@ -145,7 +145,7 @@ echo "            Lets install some usefull Tools:)              "
 
 
       sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
-      #sudo apt-get -y install openbox-menu  obmenu 
+      sudo apt-get -y install openbox-menu  obmenu 
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
 
@@ -351,7 +351,7 @@ case $CHOICE in
             Pimiga_PiKiss
             Pimiga_Amiberry
             Pimiga_Retropie
-            Pimiga_PiKiss
+          
             
             ;;
 esac
