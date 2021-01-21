@@ -58,7 +58,7 @@ echo "Backup Settings...."
 #****************************************************************************************************************
 
 HEIGHT=20
-WIDTH=45
+WIDTH=65
 CHOICE_HEIGHT=4
 BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
