@@ -49,11 +49,11 @@ echo "Lets start ..."
 echo " "
 echo "Backup Settings...."
 
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
+mkdir /home/$USER/.backup/
+sudo chmod -R 777 ~/.backup/
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
 
 #****************************************************************************************************************
 
@@ -107,6 +107,7 @@ Pimiga_Desktop() {
       mkdir ~/.local
       mv ~/Pimiga_mini/.data/.config/ /home/$USER/
       mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+      mv ~/Pimiga_mini/Amiga_Logos/ /home/$USER/.local/
       
       mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
       mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
