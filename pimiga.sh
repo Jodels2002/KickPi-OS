@@ -35,6 +35,7 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
+sudo apt install -y mc git gparted synaptic 
 unzip ~/Pimiga_mini/data.pac
     
 toilet -F gay Pimiga3000
@@ -56,8 +57,8 @@ echo "Backup Settings...."
 
 #****************************************************************************************************************
 
-HEIGHT=15
-WIDTH=40
+HEIGHT=20
+WIDTH=45
 CHOICE_HEIGHT=4
 BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
@@ -144,7 +145,7 @@ echo " "
 echo "            Lets install some usefull Tools:)              "
 
 
-      sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
+      sudo apt install -y  firefox-esr geany geany-plugins-common geany-common imagemagick 
       sudo apt-get -y install openbox-menu  obmenu 
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
