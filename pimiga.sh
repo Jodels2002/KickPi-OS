@@ -113,7 +113,7 @@ Pimiga_Desktop() {
       # Fresh install Amiga Desktop
       cd /usr/share/icons/
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
-      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       
       https://github.com/x64k/amitk
        cd ~
