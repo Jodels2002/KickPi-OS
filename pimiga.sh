@@ -35,7 +35,8 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
-clear
+unzip ~/Pimiga_mini/data.pac
+    
 toilet -F gay Pimiga3000
 echo " "
 echo " "
@@ -81,12 +82,23 @@ clear
 cd ~/Pimiga_mini
 clear
 toilet -F gay Pimiga3000
+
+
  #****************************************************************************************************************
 Pimiga_Desktop() {
+   
+   
    echo "Installing Pimiga3000 Desktop ..."
 
       #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
-      # Todo create a clean Menu
+      # Make fresh install
+      
+      sudo apt purge -y xorg xserver-xorg lxde
+      
+      # Fresh install XFCE4
+      sudo apt install -y xserver-xorg xfce4 
+      sudo apt install -y xfce4-goodies
+      sudo apt install -y xfce4-utils
       
       #rm -r ~/.config
       #mkdir ~/.config
@@ -94,15 +106,19 @@ Pimiga_Desktop() {
       #mkdir ~/.local
       #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
       #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
-      #sudo apt install -y xserver-xorg xfce4 
-      #sudo apt install -y xfce4-goodies
-      #sudo apt install -y xfce4-utils
       
       #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
       #mv ~/Pimiga_mini/.data/.config/lxterminal ~/.config/lxterminal
+      
+      # Fresh install Amiga Desktop
       cd /usr/share/icons/
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip /usr/share/icons/
+      
+      https://github.com/x64k/amitk
+       cd ~
+      git clone --depth=1  https://github.com/x64k/amitk.git
+      #sudo chmod -R 777 /home/$USER/
 }
  #****************************************************************************************************************
 
@@ -129,7 +145,7 @@ echo "            Lets install some usefull Tools:)              "
 
 
       sudo apt install -y mc git gparted synaptic firefox-esr geany geany-plugins-common geany-common imagemagick 
-      sudo apt-get -y install openbox-menu  obmenu 
+      #sudo apt-get -y install openbox-menu  obmenu 
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
 
@@ -144,8 +160,7 @@ echo "            Lets install some usefull Tools:)              "
 }
  
  #****************************************************************************************************************
- unzip ~/Pimiga_mini/data.pac
-      sudo apt install -y xserver-xorg 
+  
 Pimiga_Retropie() {
 #Install Retropie/Setup
       clear
@@ -331,12 +346,13 @@ case $CHOICE in
         3)
             echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
             Pimiga_Update
+            Pimiga_Desktop
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
             Pimiga_Retropie
             Pimiga_PiKiss
-            Pimiga_Desktop
+            
             ;;
 esac
 
