@@ -94,12 +94,12 @@ Pimiga_Desktop() {
       # Make fresh install
       
       sudo apt purge -y xorg xserver-xorg lxde
-      
+     
       # Fresh install XFCE4
-      sudo apt install -y xserver-xorg xfce4 
-      sudo apt install -y xfce4-goodies
-      sudo apt install -y xfce4-utils
-      
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+      sudo systemctl set-default graphical.target
+      sudo update-alternatives --config x-window-manager
+      sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       #rm -r ~/.config
       #mkdir ~/.config
       #rm -r ~/.local
