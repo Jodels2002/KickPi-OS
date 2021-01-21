@@ -256,6 +256,18 @@ Pimiga_Retropie() {
       echo " "
       echo "  ... downloading  AROS " 
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%202%20of%206%29%28Workbench%29.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%202%20of%206%29%28Workbench%29.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%201%20of%206%29%28Install%29%5Bm%5D.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%203%20of%206%29%28Extras%29.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%204%20of%206%29%28Storage%29.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%205%20of%206%29%28Locale%29.zip
+      wget http://archive.org/download/Commodore_Amiga_TOSEC_2012_04_10/Commodore_Amiga_TOSEC_2012_04_10.zip/Commodore%20Amiga%20%5BTOSEC%20v2012-04-10%5D%2FOperating%20Systems%2FWorkbench%2FCommodore%20Amiga%20-%20Operating%20Systems%20-%20Workbench%20%28TOSEC-v2011-11-01_CM%29%2FWorkbench%20v3.1%20rev%2040.42%20%281996%29%28ESCOM%29%28M10%29%28Disk%206%20of%206%29%28Fonts%29.zip
+     
+     
+      
+      
+      
       clear
       toilet -F gay Pimiga3000
       echo " "
