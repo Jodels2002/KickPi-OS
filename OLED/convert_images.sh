@@ -13,10 +13,10 @@ cd
 set -e
 
 # Default values
-idir=/home/$USER/Pimiga_mini/OLED/
-odir=/home/$USER/Pimiga_mini/OLED/
+idir=/home/$USER/Pimiga_mini/OLED/import_folder/
+odir=/home/$USER/Pimiga_mini/OLED/output/folder/
 resize=128x64
-ext=jpg
+ext=png
 depth=2
 usage() {
   echo "USAGE"
@@ -24,27 +24,17 @@ usage() {
   echo
   echo "              DESCRIPTION     "
   echo "  Resize all images for OLED Display. Requires ImageMagick."
-  echo 
-  echo "OPTIONS                                             [DEFAULT]"
+                                       
 
   echo "  -r: Resize specification (ImageMagick syntax)     [128x64]"
-  echo "  -e: File extension of images in input directory   [jpg]"
+  echo "  -e: File extension of images in input directory   [png]"
 }
 [[ "$1" = -h ]] && { usage; exit; }
 
 [[ $(which convert) = "" ]] && \
   { echo "Error: ImageMagick not installed"; exit 1; }
 
-while getopts ":i:o:r:e:" opt; do
-  case $opt in
-    i) idir=${OPTARG%/}; ;;  # Remove trailing slash if present
-    o) odir=${OPTARG%/}; ;;  # Remove trailing slash if present
-    r) resize=$OPTARG;   ;;
-    e) ext=$OPTARG;      ;;
-    \?) echo "Error: invalid option: -$OPTARG";             exit 1 ;;
-    :)  echo "Error: option -$OPTARG requires an argument"; exit 1 ;;
-  esac
-done
+
 
 [[ -z "$idir" ]] && { echo "Error: Must specify input directory";  exit 1; }
 [[ -z "$odir" ]] && { echo "Error: Must specify output directory"; exit 1; }
