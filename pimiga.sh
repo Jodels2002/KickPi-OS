@@ -38,11 +38,14 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Don't be root to run this script!"
       echo "Pleas don't use 'sudo !!'"
       exit 1
-      fi
+fi
+
+sudo chmod -R 777 /home/$USER/Pimiga_mini  
+
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
-sudo apt install -y mc git gparted synaptic 
+sudo apt install -y mc git 
 unzip ~/Pimiga_mini/data.pac
     
 toilet -F gay Pimiga3000
@@ -94,7 +97,8 @@ toilet -F gay Pimiga3000
 
  #****************************************************************************************************************
 Pimiga_Desktop() {
-   
+      clear
+      toilet -F gay Pimiga3000 
    
    echo "Installing Pimiga3000 Desktop ..."
 
@@ -131,8 +135,10 @@ Pimiga_Desktop() {
 }
  #****************************************************************************************************************
 Pimiga_Update() {
+
 clear
 toilet -F gay Pimiga3000
+
 echo " "
 echo " "
 echo "            Time to update:)              "
@@ -146,14 +152,16 @@ echo "            Time to update:)              "
 #****************************************************************************************************************
 
 Pimiga_Tools() {
+
 clear
 toilet -F gay Pimiga3000
+
 echo " "
 echo " "
 echo "            Lets install some usefull Tools:)              "
 
 
-      sudo apt install -y  firefox-esr geany geany-plugins-common geany-common imagemagick 
+      sudo apt install -y  firefox-esr geany geany-plugins-common geany-common imagemagick gparted synaptic 
       sudo apt-get -y install openbox-menu  obmenu 
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
@@ -172,8 +180,10 @@ echo "            Lets install some usefull Tools:)              "
   
 Pimiga_Retropie() {
 #Install Retropie/Setup
+      
       clear
       toilet -F gay Pimiga3000
+      
       echo " "
       echo " "
       echo "  ... here comes Retropie :-)     "   
@@ -206,8 +216,10 @@ Pimiga_Retropie() {
      
      Pimiga_Amiberry() {
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
+      
       clear
       toilet -F gay Pimiga3000
+      
       echo " "
       echo " "
       echo "  ... here comes Amiberry  :-)   " 
@@ -315,8 +327,10 @@ Pimiga_Retropie() {
 
 Pimiga_PiKiss() {
      #Install PiKISS
+      
       clear
       toilet -F gay Pimiga3000
+      
       echo " "
       echo " "
       echo "  ... here comes PiKiss  :-)   "     
@@ -370,8 +384,10 @@ esac
 
 
 
+clear
+toilet -F gay Pimiga3000
 
- echo " "
+echo " "
       echo " "
       echo "  ... cleanup and finish setup  "   
       sudo apt-get -y autoremove
