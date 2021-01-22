@@ -19,22 +19,15 @@ resize=128x64
 ext=png
 depth=2
 usage() {
-  echo "USAGE"
-  echo "  $(basename $0) -i dir -o dir [-r resizing] [-e extension]"
-  echo
-  echo "              DESCRIPTION     "
+  echo "Info"
   echo "  Resize all images for OLED Display. Requires ImageMagick."
-                                       
-
-  echo "  -r: Resize specification (ImageMagick syntax)     [128x64]"
-  echo "  -e: File extension of images in input directory   [png]"
+  echo "  Resize specification                       [128x64]"
+  echo "  File extension of images in input directory   [png]"
 }
 [[ "$1" = -h ]] && { usage; exit; }
 
 [[ $(which convert) = "" ]] && \
   { echo "Error: ImageMagick not installed"; exit 1; }
-
-
 
 [[ -z "$idir" ]] && { echo "Error: Must specify input directory";  exit 1; }
 [[ -z "$odir" ]] && { echo "Error: Must specify output directory"; exit 1; }
@@ -52,5 +45,4 @@ for image in "$idir"/*.$ext; do
     -depth=$depth
     "$odir"/$(basename "$image")
   
-
-done
+ done
