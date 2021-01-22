@@ -1,4 +1,5 @@
 #!/bin/bash
+# Ist noch nicht fertig... sol mal die "Arbeit" erleichtern :-)"
 
 for i in *.png; do
     printf "Resize $i\n"
