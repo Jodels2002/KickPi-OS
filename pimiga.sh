@@ -124,14 +124,14 @@ Pimiga_Desktop() {
       #sudo chmod -R 777 /home/$USER/
 }
  #****************************************************************************************************************
-
+Pimiga_Update() {
 clear
 toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Time to update:)              "
 
-Pimiga_Update() {
+
       echo "Installing Pimiga3000 Update System ..."
       sudo apt-get -y upgrade
 
