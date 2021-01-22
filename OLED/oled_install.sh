@@ -34,7 +34,22 @@ echo " Should Say: "3C"
 cd ~
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
+cd ~
+clear
+toilet -F gay Pimiga3000
 
+case $CHOICE in
+        1)
+            echo "Pimiga3000 OLED install.. Phython2"
+            Install_for_Python_2
+            
+            ;;
+        2)
+           echo "Pimiga3000 OLED install.. Phython3"
+            Install_for_Python_3
+      
+            ;;
+esac
 #install the library for Python 2 :
 #sudo python3 setup.py install
 
