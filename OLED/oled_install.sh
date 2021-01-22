@@ -2,14 +2,15 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 
-echo "Enable the I2C Interface on the Raspberry Pi"
+whiptail --msgbox " OLED install,...  Enable the I2C Interface on the Raspberry Pi :-) Options - " 20 60 1
 
 sudo raspi-config
 
 cd ~
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
-cd ~
+sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
+
 clear
 toilet -F gay Pimiga3000
 
@@ -49,6 +50,7 @@ sudo python setup.py install
 # Test OLED
 cd examples
 python shapes.py
+
 }
 
 i2cdetect -y 1
@@ -70,7 +72,5 @@ case $CHOICE in
 esac
 
 
-# Test OLED
-cd examples
 
 
