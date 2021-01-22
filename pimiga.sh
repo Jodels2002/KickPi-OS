@@ -23,6 +23,11 @@
 # https://github.com/Lana-chan/nes-boingball :-) 
 # https://github.com/x64k/amitk
 # https://github.com/alpine9000/squirt
+# Host: grandis.nu
+# Port: 21
+# Username: ftp
+# Password: any password will do
+# ftp://ftp:amiga@grandis.nu/Retroplay%20WHDLoad%20Packs/
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
