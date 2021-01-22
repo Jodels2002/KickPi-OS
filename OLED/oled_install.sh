@@ -2,9 +2,10 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 
-# usr/local/bin/convert image.jpg -resize 128x64\! -depth 2 oled.jpg
+# sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000
 
-whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)  " 20 60 1
+
+whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-) Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
 
 sudo raspi-config
 clear
