@@ -2,7 +2,7 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 
-whiptail --msgbox " OLED install,...  Enable the I2C Interface on the Raspberry Pi :-) Options - " 20 60 1
+whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)  " 20 60 1
 
 sudo raspi-config
 
