@@ -2,6 +2,8 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
 
+# usr/local/bin/convert image.jpg -resize 1000x1000\! -depth 2 result.jpg
+
 whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)  " 20 60 1
 
 sudo raspi-config
