@@ -5,17 +5,19 @@
 whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)  " 20 60 1
 
 sudo raspi-config
-
+clear
+toilet -F gay Pimiga3000
 cd ~
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
 sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
 
-clear
-toilet -F gay Pimiga3000
 
+i2cdetect -y 1
 
 Install_for_Python_3() {
+clear
+toilet -F gay Pimiga3000
 # If you are using Python 3
 sudo apt install -y python3-dev
 sudo apt install -y python-smbus i2c-tools
@@ -34,6 +36,8 @@ python3 shapes.py
 
 # If you are using Python 2
 Install_for_Python_2() {
+clear
+toilet -F gay Pimiga3000
 sudo apt install -y python-dev
 sudo apt install -y python-smbus i2c-tools
 sudo apt install -y python-pil
@@ -53,7 +57,7 @@ python shapes.py
 
 }
 
-i2cdetect -y 1
+
 
 echo " Should Say: "3C"
 
