@@ -1,5 +1,7 @@
 #!/bin/bash
 # Ist noch nicht fertig... sol mal die "Arbeit" erleichtern :-)"
+
+# Use internal convert: image = Image.open('example.png').resize((disp.width, disp.height), Image.ANTIALIAS).convert('1')
 cd
 #for i in *.png; do
 #    printf "Resize $i\n"
@@ -11,6 +13,8 @@ cd
 set -e
 
 # Default values
+idir=/home/$USER/Pimiga_mini/OLED/
+odir=/home/$USER/Pimiga_mini/OLED/
 resize=128x64
 ext=jpg
 depth=2
@@ -18,13 +22,12 @@ usage() {
   echo "USAGE"
   echo "  $(basename $0) -i dir -o dir [-r resizing] [-e extension]"
   echo
-  echo "DESCRIPTION"
-  echo "  Resize all images in a directory. Requires ImageMagick."
+  echo "              DESCRIPTION     "
+  echo "  Resize all images for OLED Display. Requires ImageMagick."
   echo 
   echo "OPTIONS                                             [DEFAULT]"
-  echo "  -i: Directory containing images to resize"
-  echo "  -o: Output directory"
-  echo "  -r: Resize specification (ImageMagick syntax)     [50%]"
+
+  echo "  -r: Resize specification (ImageMagick syntax)     [128x64]"
   echo "  -e: File extension of images in input directory   [jpg]"
 }
 [[ "$1" = -h ]] && { usage; exit; }
@@ -46,8 +49,6 @@ done
 [[ -z "$idir" ]] && { echo "Error: Must specify input directory";  exit 1; }
 [[ -z "$odir" ]] && { echo "Error: Must specify output directory"; exit 1; }
 
-# nullglob: if *.jpg doesn't match any files, glob is replaced by "" not "*.jpg"
-# nullglob should always be unset, so we activate it only in a subshell ($())
 [[ $(shopt -s nullglob; echo "$idir"/*.$ext) = "" ]] \
   && { echo "Error: No files with extension $ext in directory $idir"; exit 1; }
 
