@@ -17,6 +17,7 @@ sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
 
 
 i2cdetect -y 1
+echo " Should Say: "3C"
 
 Install_for_Python_3() {
 clear
@@ -62,7 +63,7 @@ python shapes.py
 
 
 
-echo " Should Say: "3C"
+
 
 
 case $CHOICE in
