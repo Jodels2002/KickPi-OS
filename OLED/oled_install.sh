@@ -1,3 +1,6 @@
+#!/bin/bash
+# Install Pimiga - not for use!!!
+# B.Titze 2020
 
 echo "Enable the I2C Interface on the Raspberry Pi"
 
