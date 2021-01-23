@@ -49,7 +49,8 @@ sudo apt install -y mc git
 unzip ~/Pimiga_mini/data.pac
 clear  
 toilet -F gay Pimiga3000
-/home/pi/Pimiga_mini/LED/LED.sh
+/home/$USER/Pimiga_mini/LED/LED.sh
+python /home/$USER/Pimiga_mini/OLED/Amiga.py
 echo " "
 echo " "
 echo " "
