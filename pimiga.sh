@@ -118,12 +118,13 @@ Pimiga_Desktop() {
       sudo systemctl set-default graphical.target
       sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
-      #rm -r ~/.config
-      #mkdir ~/.config
-      #rm -r ~/.local
-      #mkdir ~/.local
-      #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-      #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+      
+      rm -r ~/.config
+      mkdir ~/.config
+      rm -r ~/.local
+      mkdir ~/.local
+      mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      mv ~/Pimiga_mini/.data/.local/ /home/$USER/
       #mv ~/Pimiga_mini/Amiga_Logos/ /home/$USER/.local/
       
       #mv ~/Pimiga_mini/.data/.config/lxsession ~/.config/lxsession
@@ -134,6 +135,9 @@ Pimiga_Desktop() {
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Tango
+      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/gnome
+      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/nuoveXT2/
       
       cd ~
       #git clone --depth=1  https://github.com/x64k/amitk.git
@@ -217,6 +221,10 @@ Pimiga_Retropie() {
       toilet -F gay Pimiga3000
       #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
       
+      
+      
+      
+      
 }
  #****************************************************************************************************************
      
@@ -266,6 +274,12 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
+      
+      cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/Workbench/ /home/$USER/Amiga/FDD/
+      cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/sysinfo.ADF /home/$USER/Amiga/FDD/
+     
+      cp -R /home/$USER/amiberry/kickstarts/ /home/$USER/Amiga/
+      cp -R /home/$USER/Pimiga_mini/.data/Amiga/kickstarts /home/$USER/Amiga/
   
       sudo mkdir /boot/Amiga
       sudo chmod -R 777 /home/$USER/Amiga
@@ -380,9 +394,9 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Desktop
             Pimiga_Tools
-            Pimiga_PiKiss
-            Pimiga_Amiberry
-            Pimiga_Retropie
+            #Pimiga_PiKiss
+            #Pimiga_Amiberry
+            #Pimiga_Retropie
           
             
             ;;
@@ -407,6 +421,9 @@ echo " "
 clear
 toilet -F gay Pimiga3000
 #startx
+
+
+
 
 
 
