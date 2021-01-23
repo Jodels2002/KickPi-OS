@@ -105,10 +105,14 @@ Pimiga_Desktop() {
       #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
       # Make fresh install
       
-      sudo apt purge -y xorg xserver-xorg lxde
+      #sudo apt purge -y xorg xserver-xorg lxde
+      sudo  apt purge -y lxde
       sudo add-apt-repository ppa:lubuntu-dev/lubuntu-daily
       sudo add-apt-repository ppa:gilir/q-project
       sudo apt-get -y install lxqt-metapackage lxqt-panel openbox
+      sudo apt install snapd
+      sudo snap install lxqt-l10n-snap --edge
+      
       # Fresh install XFCE4
       #sudo apt install -y xserver-xorg xfce4 xfce4-goodies
       #sudo systemctl set-default graphical.target
