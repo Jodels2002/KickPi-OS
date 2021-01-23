@@ -174,7 +174,7 @@ echo " "
 echo "            Lets install some usefull Tools:)              "
 
 
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic 
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
       sudo apt-get -y install openbox-menu  obmenu 
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
