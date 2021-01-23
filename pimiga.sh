@@ -139,6 +139,7 @@ Pimiga_Desktop() {
       sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Tango
       sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/gnome
       sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/nuoveXT2/
+      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Adwaita/
       
       cd ~
       #git clone --depth=1  https://github.com/x64k/amitk.git
@@ -395,9 +396,9 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Desktop
             Pimiga_Tools
-            #Pimiga_PiKiss
-            #Pimiga_Amiberry
-            #Pimiga_Retropie
+            Pimiga_PiKiss
+            Pimiga_Amiberry
+            Pimiga_Retropie
           
             
             ;;
