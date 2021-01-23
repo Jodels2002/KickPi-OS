@@ -95,7 +95,7 @@ clear
 toilet -F gay Pimiga3000
 
 
- #****************************************************************************************************************
+#****************************************************************************************************************
 Pimiga_Desktop() {
       clear
       toilet -F gay Pimiga3000 
@@ -105,7 +105,7 @@ Pimiga_Desktop() {
       #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
       # Make fresh install
       
-      #sudo apt purge -y xorg xserver-xorg lxde
+      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt-get -y install deborphan
       sudo apt-get -y autoremove --purge libx11-.* lxde-.* raspberrypi-artwork xkb-data omxplayer penguinspuzzle sgml-base xml-core alsa-.* cifs-.* samba-.* fonts-.* desktop-* gnome-.*
       sudo apt-get -y autoremove --purge $(deborphan)
@@ -114,7 +114,7 @@ Pimiga_Desktop() {
       
       
       # Fresh install XFCE4
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       sudo systemctl set-default graphical.target
       sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
@@ -136,7 +136,7 @@ Pimiga_Desktop() {
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       
       cd ~
-      git clone --depth=1  https://github.com/x64k/amitk.git
+      #git clone --depth=1  https://github.com/x64k/amitk.git
       #sudo chmod -R 777 /home/$USER/
 }
  #****************************************************************************************************************
