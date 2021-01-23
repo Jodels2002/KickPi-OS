@@ -106,11 +106,13 @@ Pimiga_Desktop() {
       # Make fresh install
       
       sudo apt purge -y xorg xserver-xorg lxde
-     
+      sudo add-apt-repository ppa:lubuntu-dev/lubuntu-daily
+      sudo add-apt-repository ppa:gilir/q-project
+      sudo apt-get -y install lxqt-metapackage lxqt-panel openbox
       # Fresh install XFCE4
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies
-      sudo systemctl set-default graphical.target
-      sudo update-alternatives --config x-window-manager
+      #sudo apt install -y xserver-xorg xfce4 xfce4-goodies
+      #sudo systemctl set-default graphical.target
+      #sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       #rm -r ~/.config
       #mkdir ~/.config
