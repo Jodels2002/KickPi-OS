@@ -47,8 +47,9 @@ sudo apt install -y toilet
 sudo apt install -y dialog
 sudo apt install -y mc git 
 unzip ~/Pimiga_mini/data.pac
-    
+clear  
 toilet -F gay Pimiga3000
+/home/pi/Pimiga_mini/LED/LED.sh
 echo " "
 echo " "
 echo " "
