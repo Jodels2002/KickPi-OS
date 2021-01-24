@@ -386,16 +386,17 @@ case $CHOICE in
             ;;
         2)
             echo "Pimiga3000, Retropie & Tools"
-            #Pimiga_Update
-            #Pimiga_Tools
-            #Pimiga_Amiberry
-            #Pimiga_Retropie
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_Amiberry
+            Pimiga_Retropie
             Pimiga_PiKiss
             ;;
         3)
             echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
-            Pimiga_Update
+           
             Pimiga_Desktop
+            Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
