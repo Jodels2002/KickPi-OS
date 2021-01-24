@@ -109,7 +109,7 @@ Pimiga_Desktop() {
       
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       #sudo apt-get -y install deborphan
-      sudo apt-get -y autoremove --purge libx11-.* lxde-.* 
+      #sudo apt-get -y autoremove --purge libx11-.* lxde-.* 
       #sudo apt-get -y autoremove --purge $(deborphan)
       #sudo apt-get -y autoremove --purge
       #sudo apt-get -y autoclean
