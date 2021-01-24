@@ -172,7 +172,8 @@ toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Lets install some usefull Tools:)              "
-
+echo " "
+echo " "
 
       sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
       sudo apt-get -y install openbox-menu  obmenu 
@@ -200,7 +201,8 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       echo "  ... here comes Retropie :-)     "   
-
+      echo " "
+      echo " "
       cd ~
       sudo apt-get install -y git dialog unzip xmlstarlet
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
@@ -316,7 +318,8 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       echo "  Configure ClassicWB ...     " 
-      
+      echo " "
+      echo " "
         mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
         mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB
         cp -R /home/pi/games/amiberry/kickstarts /home/pi/amiberry/
@@ -357,6 +360,8 @@ Pimiga_PiKiss() {
       echo " "
       echo " "
       echo "  ... here comes PiKiss  :-)   "     
+      echo " "
+      echo " "
       cd ~
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
