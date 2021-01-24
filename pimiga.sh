@@ -344,7 +344,7 @@ Pimiga_Retropie() {
         echo " "
         echo " "
         
-        CD /home/$USER/Amiga/
+        cd /home/$USER/Amiga/
         gunzip ./amiga-m68k-20201206-135516.tar.gz
         tar -xvf ./amiga-m68k-20201206-135516.tar
         
