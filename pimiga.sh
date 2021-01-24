@@ -142,8 +142,20 @@ Pimiga_Desktop() {
       sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/nuoveXT2/
       sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Adwaita/
       
-      cd ~
-      #git clone --depth=1  https://github.com/x64k/amitk.git
+      cd /home/$USER/Pimiga_mini/Amiga_Logos
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+    
+      
+      #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
+      #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
+
+      #These mousepointers from xBreeze are great with the theme, too:
+      #http://xfce-look.org/content/show.php/Amiga+Classic+Red?content=128152
+
+      #Use it with the one and only Topaz font here:
+      #https://github.com/rewtnull/amigafonts
+      
+      
       #sudo chmod -R 777 /home/$USER/
 }
  #****************************************************************************************************************
