@@ -50,4 +50,4 @@ draw.bitmap((32, 0), logo, fill=1)
 oled.display()
 sleep(1)
 
-oled.cls()      # Oled still on, but screen contents now blacked out
+#oled.cls()      # Oled still on, but screen contents now blacked out
