@@ -329,14 +329,11 @@ Pimiga_Retropie() {
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      wget https://preterhuman.net/software/download/261/
-      
-      
+          
       echo " "
       echo "  ... downloading  AROS " 
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-        
-
+       
       cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
@@ -354,10 +351,7 @@ Pimiga_Retropie() {
       unzip ./Amiga_roms.zip
 	  rm -r ./Amiga_roms.zip
 	  cd ~/Amiga
-      mv /home/$USER/Amiga/index.html /home/$USER/Amiga/FDD/Workbench
-      cd /home/$USER/Amiga/FDD/Workbench/
-      unzip ./index.html
-      rm -r ./index.html
+      
       
       cd ~/Amiga
       
