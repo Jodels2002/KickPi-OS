@@ -157,7 +157,7 @@ Pimiga_Desktop() {
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-         
+      sudo cp -R /usr/share/icons/AMIGAOSLINUX /usr/share/themes/Default/
       cd /home/$USER/Pimiga_mini/Amiga_Logos
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       git clone --depth=1 https://github.com/x64k/amitk
