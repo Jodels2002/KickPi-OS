@@ -6,14 +6,7 @@
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
-# -language set for GB,DE,IT,ES..
-# -OLED DISPLAY Amiga þ- bootpic... amyberry, amibian, Amiga Logo
-# -since USBþStick possible... update BOOT and script create USBSTick (PI400) 
-# -Cusom Webserver, RaspiControl, ( Lights, FAN, OLED;...) -> WebAdmin is overkill
-# -Preinstalled ClassicWB for amyberry..... -> extract HDF to folder for easy acces from Linux
-# -Amibian Colour Menue in Amiga colours - consultation with G.K -> OK
-# -rename the Amibian Version of raspi-config ( Update proof) - consultation with G.K -> 
-# Useful PiKiss Modules, CoolTerm, Certificates....stuff
+
 
 # https://vps691225.ovh.net/download/builds/AROS/   https://github.com/deadw00d/AROS
 # https://github.com/rewtnull/amigafonts
@@ -32,6 +25,7 @@
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
+# 25.01 Amiga XFCE4 Desktop, OLED, bugfix
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
@@ -53,7 +47,7 @@ toilet -F gay Pimiga3000
 #/home/$USER/Pimiga_mini/LED/LED.sh
 #python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
-whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-) Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
+whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)                            Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
 
 sudo raspi-config
 clear
@@ -77,15 +71,11 @@ sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
 
 python Amiga.py
 
-i2cdetect -y 1
-echo " Should Say: "3C""
-
+#i2cdetect -y 1
+#echo " Should Say: "3C""
 
 clear
 toilet -F gay Pimiga3000
-
-
-
 
 echo " "
 echo " "
@@ -96,7 +86,8 @@ echo " "
 echo "Lets start ..."
 echo " "
 echo "Backup Settings...."
-
+echo " "
+echo " "
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
 #cp -R ~/.config/ ~/.backup/.config
@@ -139,21 +130,13 @@ Pimiga_Desktop() {
       toilet -F gay Pimiga3000 
    
    echo "Installing Pimiga3000 Desktop ..."
-
-      #echo "Update Settings since LXDEPanel has a bug... to mutch applications on Dock ...No Image"
-      # Make fresh install
-      
-      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
-      #sudo apt-get -y install deborphan
-      #sudo apt-get -y autoremove --purge libx11-.* lxde-.* 
-      #sudo apt-get -y autoremove --purge $(deborphan)
-      #sudo apt-get -y autoremove --purge
-      #sudo apt-get -y autoclean
-      
-      
+   echo " "
+   echo " "
+  
+    
       # Fresh install XFCE4
+      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      sudo systemctl set-default graphical.target
       sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
@@ -207,7 +190,8 @@ toilet -F gay Pimiga3000
 echo " "
 echo " "
 echo "            Time to update:)              "
-
+echo " "
+echo " "
 
       echo "Installing Pimiga3000 Update System ..."
       sudo apt-get -y upgrade
@@ -238,7 +222,8 @@ echo " "
       sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
       clear
       toilet -F gay Pimiga3000
-      
+      echo " "
+      echo " "
       
 }
  
