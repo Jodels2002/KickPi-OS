@@ -40,7 +40,7 @@ sudo apt-get -y update
 sudo apt install -y toilet
 sudo apt install -y dialog
 sudo apt install -y mc git 
-gunzip ~/Pimiga_mini/data.pac
+
 clear  
 toilet -F gay Pimiga3000
 
@@ -68,11 +68,12 @@ sudo apt install -y python-setuptools
 cd /home/$USER/Pimiga_mini/OLED
 sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
 # Test OLED
-
-python Amiga.py
-
 #i2cdetect -y 1
 #echo " Should Say: "3C""
+python Amiga.py
+
+cd /home/$USER/Pimiga_mini/LED
+python LED.py
 
 clear
 toilet -F gay Pimiga3000
@@ -88,6 +89,7 @@ echo " "
 echo "Backup Settings...."
 echo " "
 echo " "
+gunzip ~/Pimiga_mini/data.pac
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
 cp -R ~/.config/ ~/.backup/.config
