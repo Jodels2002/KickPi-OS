@@ -153,11 +153,7 @@ Pimiga_Desktop() {
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Tango
-      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/gnome
-      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/nuoveXT2/
-      sudo cp -R /usr/share/icons/AMIGAOSLINUX/scalable/ /usr/share/icons/Adwaita/
-      
+         
       cd /home/$USER/Pimiga_mini/Amiga_Logos
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       git clone --depth=1 https://github.com/x64k/amitk
@@ -313,6 +309,7 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
       
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/Workbench/ /home/$USER/Amiga/FDD/
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/sysinfo.ADF /home/$USER/Amiga/FDD/
@@ -357,10 +354,10 @@ Pimiga_Retropie() {
       unzip ./Amiga_roms.zip
 	  rm -r ./Amiga_roms.zip
 	  cd ~/Amiga
-      cp -R ~/.index.html /home/$USER/Amiga/FDD/Workbench/workbench3.1.zip
+      mv /home/$USER/Amiga/index.html /home/$USER/Amiga/FDD/Workbench
       cd /home/$USER/Amiga/FDD/Workbench/
-      unzip ./workbench3.1.zip
-	  rm -r ./workbench3.1.zip
+      unzip ./index.html
+      rm -r ./index.html
       
       cd ~/Amiga
       
@@ -374,10 +371,7 @@ Pimiga_Retropie() {
       echo " "
         cd ~/Amiga
         
-        
-        
-       
-        
+               
         # Preinstall AROS
         echo " "
         echo " "
