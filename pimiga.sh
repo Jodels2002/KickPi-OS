@@ -89,7 +89,9 @@ echo " "
 echo "Backup Settings...."
 echo " "
 echo " "
-gunzip ~/Pimiga_mini/data.pac
+
+cd /home/$USER/Pimiga_mini/
+unzip ~/Pimiga_mini/data.pac
 mkdir /home/$USER/.backup/
 sudo chmod -R 777 ~/.backup/
 cp -R ~/.config/ ~/.backup/.config
