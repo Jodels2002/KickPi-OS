@@ -182,6 +182,12 @@ Pimiga_Desktop() {
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+      cp -R /home/$USER/Pimiga_mini/Amiga_Logos/xfce4/ ~/.config
+      
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/Adwaita.gz /usr/share/icons/Adwaita/
+      cd /usr/share/icons/Adwaita/
+      sudo gunzip /usr/share/icons/Adwaita/Adwaita.gz
+      
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
       #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
 
@@ -191,8 +197,6 @@ Pimiga_Desktop() {
       #Use it with the one and only Topaz font here:
       #https://github.com/rewtnull/amigafonts
       
-      
-      #sudo chmod -R 777 /home/$USER/
 }
  #****************************************************************************************************************
 Pimiga_Update() {
