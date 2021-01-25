@@ -53,6 +53,40 @@ toilet -F gay Pimiga3000
 #/home/$USER/Pimiga_mini/LED/LED.sh
 #python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
+whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-) Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
+
+sudo raspi-config
+clear
+toilet -F gay Pimiga3000
+cd ~
+sudo apt install -y python-dev
+sudo apt install -y python-smbus i2c-tools
+sudo apt install -y python-pil
+sudo apt install -y python-pip
+sudo apt install -y python-setuptools 
+sudo apt install -y python-dev
+sudo apt install -y python-smbus i2c-tools
+sudo apt install -y python-pil
+sudo apt install -y python-pip
+sudo apt install -y python-setuptools 
+
+#git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+cd /home/$USER/Pimiga_mini/OLED
+sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
+# Test OLED
+
+python Amiga.py
+
+i2cdetect -y 1
+echo " Should Say: "3C""
+
+
+clear
+toilet -F gay Pimiga3000
+
+
+
+
 echo " "
 echo " "
 echo " "
@@ -146,8 +180,8 @@ Pimiga_Desktop() {
       
       cd /home/$USER/Pimiga_mini/Amiga_Logos
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-    
-      
+      git clone --depth=1 https://github.com/x64k/amitk
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
       #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
 
@@ -429,12 +463,12 @@ case $CHOICE in
         3)
             echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
            
-            #Pimiga_Desktop
-            #Pimiga_Update
-            #Pimiga_Tools
+            Pimiga_Desktop
+            Pimiga_Update
+            Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
-            #Pimiga_Retropie
+            Pimiga_Retropie
           
             
             ;;
@@ -459,6 +493,11 @@ echo " "
 clear
 toilet -F gay Pimiga3000
 #startx
+
+
+
+
+
 
 
 
