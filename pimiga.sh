@@ -327,30 +327,30 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
+      echo "File not found!"
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
-      #mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
-      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_UAE_v28
-      #rm -r ~/Amiga/ClassicWB_UAE_v28
+      fi
       
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
+      echo "File not found!"
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
-      #mv "/home/$USER/Amiga/ClassicWB_P96_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_P96_v28
-      #rm -r ~/Amiga/ClassicWB_P96_v28
+      fi
       
+       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      echo "File not found!"
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip ./ClassicWB_OS39_v28.zip
-      #mv "/home/$USER/Amiga/ClassicWB_OS39_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_OS39_v28
-      #rm -r ~/Amiga/ClassicWB_OS39_v28
+      fi
       
+        if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      echo "File not found!"
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
-      #mv "/home/$USER/Amiga/ClassicWB_68K_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_68K_v28
-      #rm -r ~/Amiga/ClassicWB_68K_v28
-      
+      fi
       
       echo " "
       echo "  ... downloading  AROS " 
