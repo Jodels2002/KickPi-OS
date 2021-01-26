@@ -162,10 +162,10 @@ Pimiga_Desktop() {
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       
       cd /home/$USER/Pimiga_mini/Amiga_Logos
-      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
-      sudo cp -R /home/$USER/Pimiga_mini/amigaos_xfwm4_themes/ /usr/share/themes/    
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      sudo mv /home/$USER/Pimiga_mini/amigaos_xfwm4_themes/* /usr/share/themes/    
       
            
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
