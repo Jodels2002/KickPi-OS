@@ -165,14 +165,9 @@ Pimiga_Desktop() {
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+      sudo cp -R /home/$USER/Pimiga_mini/amigaos_xfwm4_themes/ /usr/share/themes/    
       
-      
-      sudo cp -R /home/$USER/Pimiga_mini/amigaos_xfwm4_themes/Amiga3.x/xfwm4 /usr/share/themes/Default/
-      
-      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/Adwaita.gz /usr/share/icons/Adwaita/
-      cd /usr/share/icons/Adwaita/
-      sudo gunzip /usr/share/icons/Adwaita/Adwaita.gz
-      
+           
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
       #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
 
