@@ -483,7 +483,7 @@ case $CHOICE in
             Pimiga_PiKiss
             ;;
         3)
-            echo "Pimiga3000, Pimiga3000 Desktop, Retropie & Tools"
+            echo "Convert RaspianOS to Pimiga3000"
            
             Pimiga_Desktop
             Pimiga_Update
