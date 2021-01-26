@@ -26,6 +26,8 @@
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
 # 25.01 Amiga XFCE4 Desktop, OLED, bugfix
+# 26.01 added Convert Raspberry Pi OS to Pimiga3000
+# 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 64bit
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
