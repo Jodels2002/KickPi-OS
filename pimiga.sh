@@ -451,18 +451,23 @@ Pimiga_Retropie() {
       
       echo " "
       echo " "
-      echo "  ... here comes Amiberry  :-)   " 
+      echo "  ... here comes Amiberry 64 bit :-)   " 
       echo " "
       echo " "  
       cd ~
       
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
+      
       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
-      #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      #git clone https://github.com/midwan/amiberry
-      #cd amiberry
-      #make -j2 PLATFORM=rpi4
-      #sudo chmod -R 777 /home/$USER/amiberry
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      
+      git clone https://github.com/midwan/amiberry/tree/dev
+      make -j2 PLATFORM=pi64
+      sudo chmod -R 777 /home/$USER/amiberry
    
       
       #echo "  Amiberry is compiled ...     " 
@@ -474,18 +479,15 @@ Pimiga_Retropie() {
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      # Install Amiberry
+      # Install Amiberry 64
       
       cd /home/$USER
+      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
       
-      mkdir /home/$USER/Amiga
-      mkdir /home/$USER/Amiga/HDD
-      mkdir /home/$USER/Amiga/FDD
-      mkdir /home/$USER/Amiga/FDD/Workbench
-      
+            
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
