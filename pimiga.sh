@@ -165,7 +165,7 @@ Pimiga_Desktop() {
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/Pimiga_mini//Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/    
+      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/    
       
            
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
@@ -326,7 +326,7 @@ Pimiga_Retropie() {
       echo "  ... downloading  ClassicWB"  
       echo " "
       echo " "
-      /home/$USER/Amiga/HDD
+      cd /home/$USER/Amiga/HDD
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
       #mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
