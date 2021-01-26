@@ -305,9 +305,10 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-      cd /home/$USER/Amiga
+      cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga
       unzip ./Amiga.zip
+      rm -r ./Amiga.zip
       
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/Workbench/ /home/$USER/Amiga/FDD/
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/sysinfo.ADF /home/$USER/Amiga/FDD/
