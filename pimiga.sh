@@ -108,7 +108,7 @@ MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000"
          2 "Install Pimiga3000, Retropie & Tools"
-         3 "Install Pimiga3000, Pimiga3000 Desktop, Retropie & Tools")
+         3 "Convert RaspianOS to Pimiga3000 ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -164,7 +164,9 @@ Pimiga_Desktop() {
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/    
+      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -r /usr/share/themes/Default/xfwm4/
+      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
            
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
@@ -299,6 +301,12 @@ Pimiga_Retropie() {
       echo " "
       echo " " 
       # Install Amiberry
+      
+      cd /home/$USER
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
+      
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
