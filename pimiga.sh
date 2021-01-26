@@ -133,6 +133,7 @@ Pimiga_Desktop() {
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      #sudo apt-get -y install openbox-menu  obmenu 
       #sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
@@ -204,7 +205,7 @@ echo " "
 echo " "
 
       sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
-      sudo apt-get -y install openbox-menu  obmenu 
+      sudo apt-get -y krita
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libraspberrypi-dev
 
