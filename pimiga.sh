@@ -108,7 +108,8 @@ MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000"
          2 "Install Pimiga3000, Retropie & Tools"
-         3 "Convert RaspianOS to Pimiga3000 ")
+         3 "Convert RaspianOS to Pimiga3000 "
+         4 "Convert RaspianOS 64bit to Pimiga3000 64bit ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -442,6 +443,179 @@ Pimiga_Retropie() {
       
     }
     
+   Pimiga_Amiberry64() {
+      # Install Amiberry 64bit Raspberry 
+      
+      clear
+      toilet -F gay Pimiga3000
+      
+      echo " "
+      echo " "
+      echo "  ... here comes Amiberry  :-)   " 
+      echo " "
+      echo " "  
+      cd ~
+      
+      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      #git clone https://github.com/midwan/amiberry
+      #cd amiberry
+      #make -j2 PLATFORM=rpi4
+      #sudo chmod -R 777 /home/$USER/amiberry
+   
+      
+      #echo "  Amiberry is compiled ...     " 
+      echo " "
+      echo " "
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... lets configer ClassicWB" 
+      echo " "
+      echo " " 
+      # Install Amiberry
+      
+      cd /home/$USER
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
+      
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
+      
+      cd /home/$USER
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
+      
+      sudo chmod -R 777 /home/$USER/Amiga
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... downloading  ClassicWB"  
+      echo " "
+      echo " "
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip ./ClassicWB_UAE_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_P96_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip ./ClassicWB_P96_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip ./ClassicWB_OS39_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip ./ClassicWB_68K_v28.zip
+      
+      fi
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo " Downloading  AROS... " 
+      echo " "
+      echo " "
+      
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
+      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
+      echo " "
+      echo " "
+    
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure  AROS... " 
+      echo " "
+      echo " " 
+      gunzip ./amiga-m68k-20201206-135516.tar.gz
+      tar -xvf ./amiga-m68k-20201206-135516.tar
+      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
+      
+      fi
+        
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+   
+      echo " "
+      echo " "
+      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      echo "File not found!"
+      # Preinstall AROS
+        echo " "
+        echo " "
+       
+      wget https://misapuntesde.com/res/Amiga_roms.zip
+      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
+      cd ~/Amiga/kickstarts/
+      unzip ./Amiga_roms.zip
+     
+    
+      fi
+      
+      cd /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      unzip ./Amiga.zip
+      sudo rm -r ./Amiga.zip
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+    
+
+      sudo chmod -R 777 /home/$USER/Amiga
+    
+      
+    }  
+    
  #****************************************************************************************************************
 
 Pimiga_PiKiss() {
@@ -499,6 +673,18 @@ case $CHOICE in
             Pimiga_PiKiss
             Pimiga_Amiberry
             #Pimiga_Retropie
+          
+            
+            ;;
+         4)
+            echo "Convert RaspianOS to Pimiga3000"
+           
+            Pimiga_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_PiKiss
+            Pimiga_Amiberry64
+            #Pimiga_Retropie does not work :-(
           
             
             ;;
