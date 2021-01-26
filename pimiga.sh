@@ -309,13 +309,6 @@ Pimiga_Retropie() {
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
       
-      cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/Workbench/ /home/$USER/Amiga/FDD/
-      cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/sysinfo.ADF /home/$USER/Amiga/FDD/
-     
-      cp -R /home/$USER/amiberry/kickstarts/ /home/$USER/Amiga/
-      cp -R /home/$USER/Pimiga_mini/.data/Amiga/kickstarts /home/$USER/Amiga/
-  
-    
       sudo chmod -R 777 /home/$USER/Amiga
       
       cd ~/Amiga
