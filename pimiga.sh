@@ -2,7 +2,7 @@
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
-## PWR-LED (green)
+## PWR-LED (green) 
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
@@ -165,7 +165,7 @@ Pimiga_Desktop() {
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/Pimiga_mini/amigaos_xfwm4_themes/* /usr/share/themes/    
+      sudo mv /home/$USER/Pimiga_mini//Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/    
       
            
       #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
@@ -326,29 +326,30 @@ Pimiga_Retropie() {
       echo "  ... downloading  ClassicWB"  
       echo " "
       echo " "
+      /home/$USER/Amiga/HDD
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
-      mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
-      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_UAE_v28
-      rm -r ~/Amiga/ClassicWB_UAE_v28
+      #mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
+      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_UAE_v28
+      #rm -r ~/Amiga/ClassicWB_UAE_v28
       
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
-      mv "/home/$USER/Amiga/ClassicWB_P96_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_P96_v28
-      rm -r ~/Amiga/ClassicWB_P96_v28
+      #mv "/home/$USER/Amiga/ClassicWB_P96_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_P96_v28
+      #rm -r ~/Amiga/ClassicWB_P96_v28
       
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip ./ClassicWB_OS39_v28.zip
-      mv "/home/$USER/Amiga/ClassicWB_OS39_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_OS39_v28
-      rm -r ~/Amiga/ClassicWB_OS39_v28
+      #mv "/home/$USER/Amiga/ClassicWB_OS39_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_OS39_v28
+      #rm -r ~/Amiga/ClassicWB_OS39_v28
       
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
-      mv "/home/$USER/Amiga/ClassicWB_68K_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
-      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_68K_v28
-      rm -r ~/Amiga/ClassicWB_68K_v28
+      #mv "/home/$USER/Amiga/ClassicWB_68K_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      #mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_68K_v28
+      #rm -r ~/Amiga/ClassicWB_68K_v28
       
       
       echo " "
