@@ -5,6 +5,7 @@
 # LED Yellow GPIO 13
 # LED Green GPIO 6
 # LED Blue GPIO 5
+# LED Ambient Blue GPIO 11
 # PWR-LED (green)
 # dtoverlay = pwr-led, gpio = 17 (3.3V)
 # HDD LED (orange)
@@ -15,8 +16,13 @@
 import RPi.GPIO as GPIO
 import time
 
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
+
+GPIO.setup(11,GPIO.OUT)
+print "LED Blue on"
+GPIO.output(11,GPIO.HIGH)
 
 GPIO.setup(5,GPIO.OUT)
 print "LED Blue on"
