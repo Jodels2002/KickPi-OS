@@ -326,12 +326,11 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      wget https://misapuntesde.com/res/Amiga_roms.zip
-          
       echo " "
       echo "  ... downloading  AROS " 
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-       
+      echo " "
+      echo " " 
       cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
@@ -344,11 +343,12 @@ Pimiga_Retropie() {
       mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
       mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB
       rm -r ~/Amiga/ClassicWB_UAE_v28
+      wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
-	  rm -r ./Amiga_roms.zip
-	  cd ~/Amiga
+      rm -r ./Amiga_roms.zip
+      cd ~/Amiga
       
       
       cd ~/Amiga
@@ -408,7 +408,7 @@ Pimiga_PiKiss() {
       echo " "
      
       #sudo ./piKiss.sh 
-      /home/pi/PiKISS/scripts/emus/amiga.sh
+      
 }
  #****************************************************************************************************************
 
@@ -460,11 +460,12 @@ echo " "
       sudo chmod -R 777 /home/$USER/.backup/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
+      sudo chmod -R 777 /home/$USER/Amiga
 
     #  whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 clear
 toilet -F gay Pimiga3000
-#startx
+startx
 
 
 
