@@ -289,12 +289,7 @@ Pimiga_Retropie() {
       #make -j2 PLATFORM=rpi4
       #sudo chmod -R 777 /home/$USER/amiberry
    
-      cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      sudo rm -r ./Amiga.zip
-
- 
+      
       #echo "  Amiberry is compiled ...     " 
       echo " "
       echo " "
@@ -329,79 +324,115 @@ Pimiga_Retropie() {
       cd /home/$USER/Amiga/HDD
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
-      echo "File not found!"
+       
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
+      
       fi
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
-      echo "File not found!"
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_P96_v28 ...     " 
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
+      
       fi
       
-       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
-      echo "File not found!"
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip ./ClassicWB_OS39_v28.zip
+      
       fi
       
-        if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
-      echo "File not found!"
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
-      fi
       
+      fi
+      toilet -F gay Pimiga3000
       echo " "
-      echo "  ... downloading  AROS " 
+      echo " "
+      echo " Downloading  AROS... " 
+      echo " "
+      echo " "
+      
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
       echo " "
+      echo " "
+      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
+    
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure  AROS... " 
+      echo " "
       echo " " 
+      gunzip ./amiga-m68k-20201206-135516.tar.gz
+      tar -xvf ./amiga-m68k-20201206-135516.tar
+      mv "/home//$USER/Amiga/HDD/amiga-m68k-20201206-135516" /home/$USER/Amiga/HDD/AROS
+      
+      fi
+        
+      
       cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
    
       echo " "
       echo " "
-      
+      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      echo "File not found!"
+      # Preinstall AROS
+        echo " "
+        echo " "
+       
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
       rm -r ./Amiga_roms.zip
-      cd ~/Amiga
+    
+      fi
       
-      
-      cd ~/Amiga
-      
-      clear
+      /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      unzip ./Amiga.zip
+      sudo rm -r ./Amiga.zip
       
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo "  Configure ClassicWB ...     " 
-      echo " "
-      echo " "
-        cd ~/Amiga
+    
+      cd ~/Amiga
         
                
-        # Preinstall AROS
-        echo " "
-        echo " "
-        echo "  Configure AROS...     " 
-        echo " "
-        echo " "
-        
-        cd /home/$USER/Amiga/
-        gunzip ./amiga-m68k-20201206-135516.tar.gz
-        tar -xvf ./amiga-m68k-20201206-135516.tar
-        
-        mv  "/home/$USER/Amiga/amiga-m68k-20201206-135516/" /home/$USER/Amiga/HDD/
-        mv "/home/pi/Amiga/HDD/amiga-m68k-20201206-135516" /home/$USER/Amiga/HDD/AROS
-      
-      
       sudo chmod -R 777 /home/$USER/Amiga
-      sudo chmod -R 777 /home/$USER/amiberry
+    
       
     }
     
