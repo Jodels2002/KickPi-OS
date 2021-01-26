@@ -389,7 +389,7 @@ Pimiga_Retropie() {
       
       cd /home/$USER/Amiga/HDD
       
-      if [ ! -f amiga-m68k-20201206-135516.tar.gz ]; then
+      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
       echo " "
       echo " "
@@ -423,7 +423,7 @@ Pimiga_Retropie() {
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
-      rm -r ./Amiga_roms.zip
+     
     
       fi
       
