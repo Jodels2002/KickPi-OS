@@ -299,11 +299,15 @@ Pimiga_Retropie() {
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      # Preinstall Classic WB UAE
+      # Install Amiberry
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
+      
+      cd /home/$USER/Amiga
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga
+      unzip ./Amiga.zip
       
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/Workbench/ /home/$USER/Amiga/FDD/
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/Floppys/sysinfo.ADF /home/$USER/Amiga/FDD/
@@ -311,7 +315,7 @@ Pimiga_Retropie() {
       cp -R /home/$USER/amiberry/kickstarts/ /home/$USER/Amiga/
       cp -R /home/$USER/Pimiga_mini/.data/Amiga/kickstarts /home/$USER/Amiga/
   
-      sudo mkdir /boot/Amiga
+    
       sudo chmod -R 777 /home/$USER/Amiga
       
       cd ~/Amiga
