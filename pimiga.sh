@@ -8,19 +8,9 @@
 #dtoverlay = act-led, gpio = 27
 
 
-# https://vps691225.ovh.net/download/builds/AROS/   https://github.com/deadw00d/AROS
-# https://github.com/rewtnull/amigafonts
-# https://github.com/henrikstengaard
 # https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
-# https://github.com/HoraceAndTheSpider/UAEConfigMaker
 # https://github.com/Lana-chan/nes-boingball :-) 
-# https://github.com/x64k/amitk
 # https://github.com/alpine9000/squirt
-# Host: grandis.nu
-# Port: 21
-# Username: ftp
-# Password: any password will do
-# ftp://ftp:amiga@grandis.nu/Retroplay%20WHDLoad%20Packs/
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
@@ -226,6 +216,10 @@ echo " "
       toilet -F gay Pimiga3000
       echo " "
       echo " "
+      cd /home/$USER
+      git clone --depth=1 https://github.com/rewtnull/amigafonts
+      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
+      rm -r /home/$USER/amigafonts
       
 }
  
