@@ -108,8 +108,8 @@ MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000"
          2 "Install Pimiga3000, Retropie & Tools"
-         3 "Convert RaspianOS to Pimiga3000 "
-         4 "Convert RaspianOS 64bit to Pimiga3000 64bit ")
+         3 "Convert Raspberry Pi OS to Pimiga3000 "
+         4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -665,7 +665,7 @@ case $CHOICE in
             Pimiga_PiKiss
             ;;
         3)
-            echo "Convert RaspianOS to Pimiga3000"
+            echo "Convert Raspberry Pi OS to Pimiga3000"
            
             Pimiga_Desktop
             Pimiga_Update
@@ -677,7 +677,7 @@ case $CHOICE in
             
             ;;
          4)
-            echo "Convert RaspianOS to Pimiga3000"
+            echo "Convert Raspberry Pi OS 64 to Pimiga3000 64"
            
             Pimiga_Desktop
             Pimiga_Update
