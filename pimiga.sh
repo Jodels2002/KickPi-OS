@@ -324,7 +324,7 @@ Pimiga_Retropie() {
       cd /home/$USER/Amiga/HDD
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
-       
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -337,7 +337,7 @@ Pimiga_Retropie() {
       fi
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
-      
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -350,7 +350,7 @@ Pimiga_Retropie() {
       fi
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
-      
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -363,7 +363,7 @@ Pimiga_Retropie() {
       fi
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
-      
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -374,6 +374,7 @@ Pimiga_Retropie() {
       unzip ./ClassicWB_68K_v28.zip
       
       fi
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -385,7 +386,7 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
-    
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -423,7 +424,7 @@ Pimiga_Retropie() {
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
       unzip ./Amiga.zip
       sudo rm -r ./Amiga.zip
-      
+      clear
       toilet -F gay Pimiga3000
       echo " "
       echo " "
