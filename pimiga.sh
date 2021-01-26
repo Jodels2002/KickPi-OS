@@ -382,11 +382,13 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f amiga-m68k-20201206-135516.tar.gz ]; then
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
       echo " "
       echo " "
-      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
-      clear
+    
       toilet -F gay Pimiga3000
       echo " "
       echo " "
@@ -395,7 +397,7 @@ Pimiga_Retropie() {
       echo " " 
       gunzip ./amiga-m68k-20201206-135516.tar.gz
       tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv "/home//$USER/Amiga/HDD/amiga-m68k-20201206-135516" /home/$USER/Amiga/HDD/AROS
+      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
       
       fi
         
@@ -420,18 +422,16 @@ Pimiga_Retropie() {
     
       fi
       
-      /home/$USER/Amiga/FDD
+      cd /home/$USER/Amiga/FDD
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
       unzip ./Amiga.zip
       sudo rm -r ./Amiga.zip
-      clear
+      
       toilet -F gay Pimiga3000
       echo " "
       echo " "
     
-      cd ~/Amiga
-        
-               
+
       sudo chmod -R 777 /home/$USER/Amiga
     
       
