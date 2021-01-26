@@ -33,8 +33,7 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Pleas don't use 'sudo !!'"
       exit 1
 fi
-
-sudo chmod -R 777 /home/$USER/Pimiga_mini  
+i  
 
 sudo apt-get -y update 
 sudo apt install -y toilet
@@ -306,7 +305,7 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD/Workbench
       
       cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
       
