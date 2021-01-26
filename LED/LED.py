@@ -1,6 +1,14 @@
 # Install Pimiga - not for use!!!
 # B.Titze 2020
-
+# LED Red GPIO 26
+# LED Orange GPIO 19
+# LED Yellow GPIO 13
+# LED Green GPIO 6
+# LED Blue GPIO 5
+# PWR-LED (green)
+# dtoverlay = pwr-led, gpio = 17 (3.3V)
+# HDD LED (orange)
+# dtoverlay = act-led, gpio = 27
 # LED all on
 # sudo python LED.py
 
@@ -11,23 +19,23 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 GPIO.setup(5,GPIO.OUT)
-print "LED on"
+print "LED Blue on"
 GPIO.output(5,GPIO.HIGH)
 
 GPIO.setup(13,GPIO.OUT)
-print "LED on"
+print "LED Yellow on"
 GPIO.output(13,GPIO.HIGH)
 
 GPIO.setup(6,GPIO.OUT)
-print "LED on"
+print "LED Green on"
 GPIO.output(6,GPIO.HIGH)
 
 GPIO.setup(19,GPIO.OUT)
-print "LED on"
+print "LED Orange on"
 GPIO.output(19,GPIO.HIGH)
 
 GPIO.setup(26,GPIO.OUT)
-print "LED on"
+print "LED Red on"
 GPIO.output(26,GPIO.HIGH)
 
 
