@@ -181,16 +181,17 @@ Pimiga_Desktop() {
  #****************************************************************************************************************
 Pimiga_Update() {
 
-clear
-toilet -F gay Pimiga3000
+      clear
+      toilet -F gay Pimiga3000
 
-echo " "
-echo " "
-echo "            Time to update:)              "
-echo " "
-echo " "
-
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      echo " "
       echo "Installing Pimiga3000 Update System ..."
+      echo " "
+      echo " "
       sudo apt-get -y upgrade
 
 }
