@@ -327,6 +327,30 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip ./ClassicWB_UAE_v28.zip
+      mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
+      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_UAE_v28
+      rm -r ~/Amiga/ClassicWB_UAE_v28
+      
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip ./ClassicWB_P96_v28.zip
+      mv "/home/$USER/Amiga/ClassicWB_P96_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_P96_v28
+      rm -r ~/Amiga/ClassicWB_P96_v28
+      
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip ./ClassicWB_OS39_v28.zip
+      mv "/home/$USER/Amiga/ClassicWB_OS39_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_OS39_v28
+      rm -r ~/Amiga/ClassicWB_OS39_v28
+      
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip ./ClassicWB_68K_v28.zip
+      mv "/home/$USER/Amiga/ClassicWB_68K_v28.zip/Hard Disk/" /home/$USER/Amiga/HDD/
+      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB_68K_v28
+      rm -r ~/Amiga/ClassicWB_68K_v28
+      
+      
       echo " "
       echo "  ... downloading  AROS " 
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
@@ -335,15 +359,10 @@ Pimiga_Retropie() {
       cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
+   
       echo " "
       echo " "
-      echo "  ClassicWB extracting ...     " 
-      echo " "
-      echo " "
-      unzip ./ClassicWB_UAE_v28.zip
-      mv "/home/$USER/Amiga/ClassicWB_UAE_v28/Hard Disk/" /home/$USER/Amiga/HDD/
-      mv "/home/pi/Amiga/HDD/Hard Disk/" /home/$USER/Amiga/HDD/ClassicWB
-      rm -r ~/Amiga/ClassicWB_UAE_v28
+      
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
