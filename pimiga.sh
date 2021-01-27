@@ -225,7 +225,7 @@ echo " "
       cd /home/$USER
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
-      rm -r /home/$USER/amigafonts
+      
       
 }
  
@@ -395,7 +395,7 @@ Pimiga_Retropie() {
       
       cd /home/$USER/Amiga/HDD
       
-      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
+      if [ ! -f /home/$USER/Amiga/HDD/AROS/aros-rom.bin ]; then
       wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
       echo " "
       echo " "
