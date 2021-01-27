@@ -38,7 +38,7 @@ toilet -F gay Pimiga3000
 #/home/$USER/Pimiga_mini/LED/LED.sh
 #python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
-whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)                            Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
+whiptail --msgbox " Please go to System Options/ Boot Auto Login/ B2 Console Autologin! Start again nd Skip reboot at 2th time from raspi-config!" 20 60 1
 
 sudo raspi-config
 clear
@@ -204,11 +204,17 @@ echo "            Lets install some usefull Tools:)              "
 echo " "
 echo " "
 
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
-      sudo apt-get -y krita
-      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y libraspberrypi-dev
-
+      
+      
+	  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita
+      
+      
+      
       clear
       toilet -F gay Pimiga3000
       #Some little Amiga stuff....
@@ -412,11 +418,15 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      echo "File not found!"
-      # Preinstall AROS
-        echo " "
-        echo " "
-       
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 4s
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
@@ -458,16 +468,18 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
-      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+       # Install Amiberry 64
       
-      git clone https://github.com/midwan/amiberry/tree/dev
+      cd /home/$USER/
+      
+      git clone https://github.com/midwan/amiberry
+      cd //home/$USER/amiberry
       make -j2 PLATFORM=pi64
-      sudo chmod -R 777 /home/$USER/amiberry
-   
       
-      #echo "  Amiberry is compiled ...     " 
+      sudo chmod -R 777 /home/$USER/amiberry
+      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+      
+      #echo "  Amiberry64 is compiled ...     " 
       echo " "
       echo " "
       clear
@@ -478,11 +490,11 @@ Pimiga_Retropie() {
       echo " " 
       # Install Amiberry 64
       
-      cd /home/$USER
-      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      rm -r ./Amiga.zip
+      #cd /home/$USER
+      #cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit.zip /home/$USER/Amiga
+      #unzip ./Amiga.zip
+      #rm -r ./Amiga.zip
       
             
       cd /home/$USER
@@ -581,17 +593,21 @@ Pimiga_Retropie() {
         
       
       cd ~/Amiga
-      clear
-      toilet -F gay Pimiga3000
+      
    
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      echo "File not found!"
-      # Preinstall AROS
-        echo " "
-        echo " "
-       
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 4s
+      
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
@@ -696,7 +712,11 @@ toilet -F gay Pimiga3000
 
 echo " "
       echo " "
-      echo "  ... cleanup and finish setup  "   
+      echo "  ... cleanup and finish setup  "  
+      
+      sudo rm -r /home/$USER/.local/share/Trash/
+      sudo rm -r /home/pi/amigafonts/
+      
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
@@ -709,6 +729,18 @@ echo " "
 clear
 toilet -F gay Pimiga3000
 startx
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
