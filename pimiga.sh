@@ -39,7 +39,7 @@ toilet -F gay Pimiga3000
 #/home/$USER/Pimiga_mini/LED/LED.sh
 #python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
-whiptail --msgbox " Please go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! Start again nd Skip reboot at 2th time from raspi-config!" 20 60 1
+whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
 #sudo raspi-config
 clear
@@ -124,21 +124,7 @@ Pimiga_Desktop() {
    echo " "
    echo " "
         
-  	# Make your own Desktop Settings
-  	cd /home/$USER/Pimiga_mini/
-  	unzip ~/Pimiga_mini/data.pac
-  	mkdir /home/$USER/.backup/
-  	sudo chmod -R 777 ~/.backup/
-  	cp -R ~/.config/ ~/.backup/.config
-  	cp -R ~/.local/ ~/.backup/.local
-  	cp -R /usr/local/bin ~/.backup/usr
-	#sudo rm -r ~/.config
-      	mkdir ~/.config
-      	sudo rm -r ~/.local
-     	mkdir ~/.local
-      	mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-      	mv ~/Pimiga_mini/.data/.local/ /home/$USER/
-      
+  	
       # Fresh change to  XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
@@ -163,7 +149,23 @@ Pimiga_Desktop() {
         sudo rm -r /usr/share/themes/Default/xfwm4/
        sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
    
-    
+    # Make your own Desktop Settings
+  	cd /home/$USER/Pimiga_mini/
+  	unzip ~/Pimiga_mini/data.pac
+  	mkdir /home/$USER/.backup/
+  	sudo chmod -R 777 ~/.backup/
+  	cp -R ~/.config/ ~/.backup/.config
+  	cp -R ~/.local/ ~/.backup/.local
+  	cp -R /usr/local/bin ~/.backup/usr
+	
+	# If the Image is not Amibian
+	sudo rm -r /home/pi/.config
+      	mkdir /home/pi/.config
+      	sudo rm -r /home/pi/.local
+     	mkdir /home/pi/.local
+      	mv ~/Pimiga_mini/.data/.config/ /home/pi/
+      	mv ~/Pimiga_mini/.data/.local/ /home/pi/
+      
      
 }
 
@@ -600,14 +602,16 @@ Pimiga_Retropie() {
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
-      toilet -F gay NOTE!
+      toilet -F gay ** NOTE! **
+      toilet -F gay ****************************
       echo " "
       echo " "
       echo "The roms and workbench files are under copyrigt! "
       echo "Use only if you have the original!  "
+      echo " "
       echo " (Original Amiga, Amiga Forever,..."
       echo " Be fair and honest!"
-      sleep 4s
+      sleep 6s
       
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
@@ -720,7 +724,7 @@ echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
       
-      sudo rm -r /home/$USER/.local/share/Trash/
+      sudo rm -r /home/pi/.local/share/Trash/
       sudo rm -r /home/pi/amigafonts/
       
       sudo apt-get -y autoremove
