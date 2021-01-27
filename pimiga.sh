@@ -123,7 +123,8 @@ Pimiga_Desktop() {
    echo "Installing Pimiga3000 Desktktop ..."
    echo " "
    echo " "
-  
+  if [ ! -f /home/pi/ ]; then
+  	# Not Amibian, make your own Desktop Settings
   	cd /home/$USER/Pimiga_mini/
   	unzip ~/Pimiga_mini/data.pac
   	mkdir /home/$USER/.backup/
@@ -137,35 +138,31 @@ Pimiga_Desktop() {
      	mkdir ~/.local
       	mv ~/Pimiga_mini/.data/.config/ /home/$USER/
       	mv ~/Pimiga_mini/.data/.local/ /home/$USER/
-
+	
+	# Fresh install Amiga Workbench 3.1 Desktop
+      
+        cd /usr/share/icons/
+        sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
+        sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+        sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+        sudo rm -r /usr/share/icons/default
+        sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+        sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      
+        cd /home/$USER/Pimiga_mini/Amiga_Logos
+        git clone --depth=1 https://github.com/x64k/amitk
+        sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+        git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+        sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+        sudo rm -r /usr/share/themes/Default/xfwm4/
+       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+   fi
     
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
     
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
-      
-      
-  
-      
-      # Fresh install Amiga Desktop
-      cd /usr/share/icons/
-      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
-      sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
-      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      sudo rm -r /usr/share/icons/default
-      sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      
-      cd /home/$USER/Pimiga_mini/Amiga_Logos
-      git clone --depth=1 https://github.com/x64k/amitk
-      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
-      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
-      sudo rm -r /usr/share/themes/Default/xfwm4/
-      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-      
-           
       
 }
 
