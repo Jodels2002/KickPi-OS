@@ -7,10 +7,8 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 
-
-# https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
-# https://github.com/Lana-chan/nes-boingball :-) 
-# https://github.com/alpine9000/squirt
+#******************************************** #History ************* ********************************************
+#****************************************************************************************************************
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
@@ -18,6 +16,9 @@
 # 25.01 Amiga XFCE4 Desktop, OLED, bugfix
 # 26.01 added Convert Raspberry Pi OS to Pimiga3000
 # 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 64bit
+
+#***********************************************  #Preinstall stuff *********************************************
+#****************************************************************************************************************
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
@@ -38,9 +39,9 @@ toilet -F gay Pimiga3000
 #/home/$USER/Pimiga_mini/LED/LED.sh
 #python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
-whiptail --msgbox " Please go to System Options/ Boot Auto Login/ B2 Console Autologin! Start again nd Skip reboot at 2th time from raspi-config!" 20 60 1
+whiptail --msgbox " Please go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! Start again nd Skip reboot at 2th time from raspi-config!" 20 60 1
 
-sudo raspi-config
+#sudo raspi-config
 clear
 toilet -F gay Pimiga3000
 cd ~
@@ -58,11 +59,10 @@ sudo apt install -y python-setuptools
 #git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd /home/$USER/Pimiga_mini/OLED
 sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
-# Test OLED
-#i2cdetect -y 1
-#echo " Should Say: "3C""
-python Amiga.py
+# Activate OLED
 
+python Amiga.py
+# Activate LED
 cd /home/$USER/Pimiga_mini/LED
 python LED.py
 
@@ -81,14 +81,8 @@ echo "Backup Settings...."
 echo " "
 echo " "
 
-cd /home/$USER/Pimiga_mini/
-unzip ~/Pimiga_mini/data.pac
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
 
+#******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
@@ -98,8 +92,8 @@ BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
-OPTIONS=(1 "Install Pimiga3000"
-         2 "Install Pimiga3000, Retropie & Tools"
+OPTIONS=(1 "Install Pimiga3000 on Amibian"
+         2 "Convert Amibian to Pimiga3000"
          3 "Convert Raspberry Pi OS to Pimiga3000 "
          4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
 
@@ -113,36 +107,45 @@ CHOICE=$(dialog --clear \
 
 clear
 
- #****************************************************************************************************************
+#*********************************************  #Installing Pimiga3000 Desktktop*********************************
+#****************************************************************************************************************
 
 cd ~/Pimiga_mini
 clear
 toilet -F gay Pimiga3000
 
 
-#****************************************************************************************************************
+
 Pimiga_Desktop() {
       clear
       toilet -F gay Pimiga3000 
    
-   echo "Installing Pimiga3000 Desktop ..."
+   echo "Installing Pimiga3000 Desktktop ..."
    echo " "
    echo " "
   
+  	cd /home/$USER/Pimiga_mini/
+  	unzip ~/Pimiga_mini/data.pac
+  	mkdir /home/$USER/.backup/
+  	sudo chmod -R 777 ~/.backup/
+  	cp -R ~/.config/ ~/.backup/.config
+  	cp -R ~/.local/ ~/.backup/.local
+  	cp -R /usr/local/bin ~/.backup/usr
+	sudo rm -r ~/.config
+      	mkdir ~/.config
+      	sudo rm -r ~/.local
+     	mkdir ~/.local
+      	mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      	mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+
     
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      #sudo apt-get -y install openbox-menu  obmenu 
-      #sudo update-alternatives --config x-window-manager
+    
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
-      rm -r ~/.config
-      mkdir ~/.config
-      rm -r ~/.local
-      mkdir ~/.local
-      mv ~/Pimiga_mini/.data/.config/ /home/$USER/
-      mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+      
   
       
       # Fresh install Amiga Desktop
@@ -163,17 +166,12 @@ Pimiga_Desktop() {
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
            
-      #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
-      #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
-
-      #These mousepointers from xBreeze are great with the theme, too:
-      #http://xfce-look.org/content/show.php/Amiga+Classic+Red?content=128152
-
-      #Use it with the one and only Topaz font here:
-      #https://github.com/rewtnull/amigafonts
       
 }
- #****************************************************************************************************************
+
+#*********************************************  #Time to update:)  **********************************************
+#****************************************************************************************************************
+
 Pimiga_Update() {
 
       clear
@@ -191,6 +189,7 @@ Pimiga_Update() {
 
 }
 
+#*******************************************  #Lets install some usefull Tools:)*********************************
 #****************************************************************************************************************
 
 Pimiga_Tools() {
@@ -206,7 +205,7 @@ echo " "
 
       
       
-	  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
@@ -230,10 +229,11 @@ echo " "
       
 }
  
- #****************************************************************************************************************
+#**********************************************  #Install Retropie/Setup  ***************************************
+#****************************************************************************************************************
   
 Pimiga_Retropie() {
-#Install Retropie/Setup
+
       
       clear
       toilet -F gay Pimiga3000
@@ -271,7 +271,9 @@ Pimiga_Retropie() {
       
       
 }
- #****************************************************************************************************************
+
+#***************************************** # Install Amiberry 32bit *********************************************
+#****************************************************************************************************************
      
      Pimiga_Amiberry() {
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
@@ -304,7 +306,7 @@ Pimiga_Retropie() {
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      # Install Amiberry
+     
       
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
@@ -319,7 +321,7 @@ Pimiga_Retropie() {
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
-      rm -r ./Amiga.zip
+      sudo rm -r ./Amiga.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -449,9 +451,10 @@ Pimiga_Retropie() {
     
       
     }
-    
+#****************************************  Install Amiberry 64bit Raspberry *************************************
+#****************************************************************************************************************    
    Pimiga_Amiberry64() {
-      # Install Amiberry 64bit Raspberry 
+     
       
       clear
       toilet -F gay Pimiga3000
@@ -500,7 +503,7 @@ Pimiga_Retropie() {
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
-      rm -r ./Amiga.zip
+      sudo rm -r ./Amiga.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -631,10 +634,11 @@ Pimiga_Retropie() {
       
     }  
     
- #****************************************************************************************************************
+#****************************************   #Install PiKISS  ****************************************************
+#****************************************************************************************************************
 
 Pimiga_PiKiss() {
-     #Install PiKISS
+    
       
       clear
       toilet -F gay Pimiga3000
@@ -657,7 +661,9 @@ Pimiga_PiKiss() {
       #sudo ./piKiss.sh 
       
 }
- #****************************************************************************************************************
+
+#****************************************   #finish all   *******************************************************
+#****************************************************************************************************************
 
 
  cd ~
@@ -666,18 +672,20 @@ toilet -F gay Pimiga3000
 
 case $CHOICE in
         1)
-            echo "Pimiga3000"
+            echo "Install Pimiga3000 on Amibian"
+           
+            Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
             ;;
         2)
-            echo "Pimiga3000, Retropie & Tools"
+            echo "Convert Amibian to Pimiga3000"
+            Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
-            Pimiga_Amiberry
-            Pimiga_Retropie
             Pimiga_PiKiss
+            Pimiga_Amiberry
             ;;
         3)
             echo "Convert Raspberry Pi OS to Pimiga3000"
@@ -730,6 +738,8 @@ clear
 toilet -F gay Pimiga3000
 startx
 
+#****************************************   #bye bye   **********************************************************
+#****************************************************************************************************************
 
 
 
