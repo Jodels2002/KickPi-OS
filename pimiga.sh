@@ -123,8 +123,8 @@ Pimiga_Desktop() {
    echo "Installing Pimiga3000 Desktktop ..."
    echo " "
    echo " "
-  if [ ! -f /home/pi/ ]; then
-  	# Not Amibian, make your own Desktop Settings
+        
+  	# Make your own Desktop Settings
   	cd /home/$USER/Pimiga_mini/
   	unzip ~/Pimiga_mini/data.pac
   	mkdir /home/$USER/.backup/
@@ -138,7 +138,13 @@ Pimiga_Desktop() {
      	mkdir ~/.local
       	mv ~/Pimiga_mini/.data/.config/ /home/$USER/
       	mv ~/Pimiga_mini/.data/.local/ /home/$USER/
-	
+      
+      # Fresh change to  XFCE4
+      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+    
+      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      
 	# Fresh install Amiga Workbench 3.1 Desktop
       
         cd /usr/share/icons/
@@ -158,12 +164,7 @@ Pimiga_Desktop() {
        sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
    fi
     
-      # Fresh install XFCE4
-      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-    
-      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
-      
+     
 }
 
 #*********************************************  #Time to update:)  **********************************************
