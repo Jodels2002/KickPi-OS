@@ -132,7 +132,7 @@ Pimiga_Desktop() {
   	cp -R ~/.config/ ~/.backup/.config
   	cp -R ~/.local/ ~/.backup/.local
   	cp -R /usr/local/bin ~/.backup/usr
-	sudo rm -r ~/.config
+	#sudo rm -r ~/.config
       	mkdir ~/.config
       	sudo rm -r ~/.local
      	mkdir ~/.local
