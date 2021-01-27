@@ -162,7 +162,7 @@ Pimiga_Desktop() {
         sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
         sudo rm -r /usr/share/themes/Default/xfwm4/
        sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-   fi
+   
     
      
 }
