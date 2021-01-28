@@ -115,60 +115,48 @@ clear
 toilet -F gay Pimiga3000
 
 
-
 Pimiga_Desktop() {
       clear
       toilet -F gay Pimiga3000 
    
-   echo "Installing Pimiga3000 Desktktop ..."
+   echo "Installing Pimiga3000 Desktop ..."
    echo " "
    echo " "
-        
-  	
-      # Fresh change to  XFCE4
+  
+    
+      # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-    
-      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+     #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
-	# Fresh install Amiga Workbench 3.1 Desktop
+      rm -r ~/.config
+      mkdir ~/.config
+      rm -r ~/.local
+      mkdir ~/.local
+      mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+  
       
-        cd /usr/share/icons/
-        sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
-        sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
-        sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-        sudo rm -r /usr/share/icons/default
-        sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-        sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      # Fresh install Amiga Desktop
+      cd /usr/share/icons/
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
+      sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo rm -r /usr/share/icons/default
+      sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       
-        cd /home/$USER/Pimiga_mini/Amiga_Logos
-        git clone --depth=1 https://github.com/x64k/amitk
-        sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
-        git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-        sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
-        sudo rm -r /usr/share/themes/Default/xfwm4/
-       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      cd /home/$USER/Pimiga_mini/Amiga_Logos
+      git clone --depth=1 https://github.com/x64k/amitk
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -r /usr/share/themes/Default/xfwm4/
+      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      
    
-    # Make your own Desktop Settings
-  	cd /home/$USER/Pimiga_mini/
-  	unzip ~/Pimiga_mini/data.pac
-  	mkdir /home/$USER/.backup/
-  	sudo chmod -R 777 ~/.backup/
-  	cp -R ~/.config/ ~/.backup/.config
-  	cp -R ~/.local/ ~/.backup/.local
-  	cp -R /usr/local/bin ~/.backup/usr
-	
-	# If the Image is not Amibian
-	sudo rm -r /home/pi/.config
-      	mkdir /home/pi/.config
-      	sudo rm -r /home/pi/.local
-     	mkdir /home/pi/.local
-      	mv ~/Pimiga_mini/.data/.config/ /home/pi/
-      	mv ~/Pimiga_mini/.data/.local/ /home/pi/
       
-     
 }
-
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
