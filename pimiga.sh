@@ -76,17 +76,7 @@ echo " "
 echo " "
 echo "Lets start ..."
 echo " "
-echo "Backup Settings...."
-echo " "
-echo " "
 
-cd /home/$USER/Pimiga_mini/
-unzip ~/Pimiga_mini/data.pac
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
 
 #******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
@@ -122,7 +112,17 @@ Pimiga_Desktop() {
    echo "Installing Pimiga3000 Desktop ..."
    echo " "
    echo " "
-  
+  echo "Backup Settings...."
+echo " "
+echo " "
+
+cd /home/$USER/Pimiga_mini/
+unzip ~/Pimiga_mini/data.pac
+#mkdir /home/$USER/.backup/
+#sudo chmod -R 777 ~/.backup/
+#cp -R ~/.config/ ~/.backup/.config
+#cp -R ~/.local/ ~/.backup/.local
+#cp -R /usr/local/bin ~/.backup/usr
     
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
