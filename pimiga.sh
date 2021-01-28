@@ -25,8 +25,8 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Pleas don't use 'sudo !!'"
       exit 1
 fi
-i  
-
+  
+sudo apt-mark hold lxpanel
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
