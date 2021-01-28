@@ -221,6 +221,9 @@ echo " "
       cd /home/$USER
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
+      
+}      
+
 #**********************************************  #Install Retropie/Setup  ***************************************
 #****************************************************************************************************************
   
