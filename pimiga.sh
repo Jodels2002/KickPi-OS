@@ -705,7 +705,8 @@ toilet -F gay Pimiga3000
 case $CHOICE in
         1)
             echo "Install Pimiga3000 on Amibian"
-           
+            sudo apt-mark hold lxpanel
+            sudo apt install -y opconf obmenu
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
