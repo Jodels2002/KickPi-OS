@@ -82,11 +82,11 @@ echo " "
 
 cd /home/$USER/Pimiga_mini/
 unzip ~/Pimiga_mini/data.pac
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
+mkdir /home/$USER/.backup/
+sudo chmod -R 777 ~/.backup/
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
 
 #******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
@@ -113,7 +113,7 @@ CHOICE=$(dialog --clear \
 
 clear
 
-#*********************************************  #Installing Amibian Desktktop*********************************
+#*********************************************  #Installing Pimiga Desktktop*********************************
 #****************************************************************************************************************
 Pimiga_Desktop() {
       clear
@@ -135,6 +135,50 @@ Pimiga_Desktop() {
       mkdir ~/.local
       mv ~/Pimiga_mini/.data/.config/ /home/$USER/
       mv ~/Pimiga_mini/.data/.local/ /home/$USER/
+  
+      
+      # Fresh install Amiga Desktop
+      cd /usr/share/icons/
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
+      sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo rm -r /usr/share/icons/default
+      sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      
+      cd /home/$USER/Pimiga_mini/Amiga_Logos
+      git clone --depth=1 https://github.com/x64k/amitk
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -r /usr/share/themes/Default/xfwm4/
+      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      
+   
+}
+
+#*********************************************  #Installing Amibian Pimiga Desktktop*********************************
+#****************************************************************************************************************
+Amibian_Desktop() {
+      clear
+      toilet -F gay Pimiga3000 
+   
+   echo "Installing Pimiga3000 Desktop ..."
+   echo " "
+   echo " "
+  
+    
+      # Fresh install XFCE4
+      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      
+      #rm -r ~/.config
+      #mkdir ~/.config
+      #rm -r ~/.local
+      #mkdir ~/.local
+      #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
   
       
       # Fresh install Amiga Desktop
@@ -197,7 +241,7 @@ echo " "
       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
       
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita synaptic mc
       
       
       
@@ -367,33 +411,33 @@ Pimiga_Retropie() {
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
       
-      fi
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo " Downloading  AROS... " 
-      echo " "
-      echo " "
+      #fi
+      #clear
+      #toilet -F gay Pimiga3000
+      #echo " "
+      #echo " "
+      #echo " Downloading  AROS... " 
+      #echo " "
+      #echo " "
       
-      cd /home/$USER/Amiga/HDD
+      #cd /home/$USER/Amiga/HDD
       
-      if [ ! -f /home/$USER/Amiga/HDD/AROS/aros-rom.bin ]; then
-      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-      echo " "
-      echo " "
+      #if [ ! -f /home/$USER/Amiga/HDD/AROS/aros-rom.bin ]; then
+      #wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
+      #echo " "
+      #echo " "
     
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure  AROS... " 
-      echo " "
-      echo " " 
-      gunzip ./amiga-m68k-20201206-135516.tar.gz
-      tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
+      #toilet -F gay Pimiga3000
+      #echo " "
+      #echo " "
+      #cho "  Configure  AROS... " 
+      #echo " "
+      #echo " " 
+      #gunzip ./amiga-m68k-20201206-135516.tar.gz
+      #tar -xvf ./amiga-m68k-20201206-135516.tar
+      #mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
       
-      fi
+      #fi
         
       
       cd ~/Amiga
@@ -402,28 +446,30 @@ Pimiga_Retropie() {
    
       echo " "
       echo " "
-      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
-      toilet -F gay NOTE!
+      toilet -F gay ** NOTE! **
+      toilet -F gay ****************************
       echo " "
       echo " "
       echo "The roms and workbench files are under copyrigt! "
       echo "Use only if you have the original!  "
+      echo " "
       echo " (Original Amiga, Amiga Forever,..."
       echo " Be fair and honest!"
-      sleep 4s
+      sleep 6s
+      
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
-      cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
+      #sudo rm -r ./Amiga.zip
      
     
-      fi
+fi
       
       cd /home/$USER/Amiga/FDD
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga
       unzip ./Amiga.zip
-      sudo rm -r ./Amiga.zip
+      #sudo rm -r ./Amiga.zip
       
       toilet -F gay Pimiga3000
       echo " "
@@ -431,9 +477,8 @@ Pimiga_Retropie() {
     
 
       sudo chmod -R 777 /home/$USER/Amiga
-    
       
-    }
+      
 #****************************************  Install Amiberry 64bit Raspberry *************************************
 #****************************************************************************************************************    
    Pimiga_Amiberry64() {
@@ -549,33 +594,33 @@ Pimiga_Retropie() {
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
       
-      fi
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo " Downloading  AROS... " 
-      echo " "
-      echo " "
+      #fi
+      #clear
+      #toilet -F gay Pimiga3000
+      #echo " "
+      #echo " "
+      #echo " Downloading  AROS... " 
+      #echo " "
+      #echo " "
       
-      cd /home/$USER/Amiga/HDD
+      #cd /home/$USER/Amiga/HDD
       
-      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
-      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-      echo " "
-      echo " "
+      #if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
+      #wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
+      #echo " "
+      #echo " "
     
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure  AROS... " 
-      echo " "
-      echo " " 
-      gunzip ./amiga-m68k-20201206-135516.tar.gz
-      tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
+      #toilet -F gay Pimiga3000
+      #echo " "
+      #echo " "
+      #echo "  Configure  AROS... " 
+      #echo " "
+      #echo " " 
+      #gunzip ./amiga-m68k-20201206-135516.tar.gz
+      #tar -xvf ./amiga-m68k-20201206-135516.tar
+      #mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
       
-      fi
+     # fi
         
       
       cd ~/Amiga
@@ -583,7 +628,8 @@ Pimiga_Retropie() {
    
       echo " "
       echo " "
-      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      
+if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
       toilet -F gay ** NOTE! **
       toilet -F gay ****************************
@@ -597,17 +643,16 @@ Pimiga_Retropie() {
       sleep 6s
       
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
-      cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
+      #sudo rm -r ./Amiga.zip
      
     
-      fi
+fi
       
       cd /home/$USER/Amiga/FDD
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga
       unzip ./Amiga.zip
-      sudo rm -r ./Amiga.zip
+      #sudo rm -r ./Amiga.zip
       
       toilet -F gay Pimiga3000
       echo " "
