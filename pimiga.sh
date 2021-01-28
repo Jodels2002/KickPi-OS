@@ -301,6 +301,7 @@ Pimiga_Retropie() {
       
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/HDD
+       mkdir /home/$USER/Amiga/HDD/Pimiga
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
@@ -420,7 +421,7 @@ Pimiga_Retropie() {
       fi
       
       cd /home/$USER/Amiga/FDD
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/
       unzip ./Amiga.zip
       sudo rm -r ./Amiga.zip
       
