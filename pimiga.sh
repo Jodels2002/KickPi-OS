@@ -154,16 +154,7 @@ Pimiga_Desktop() {
       sudo rm -r /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
-           
-      #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
-      #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
-
-      #These mousepointers from xBreeze are great with the theme, too:
-      #http://xfce-look.org/content/show.php/Amiga+Classic+Red?content=128152
-
-      #Use it with the one and only Topaz font here:
-      #https://github.com/rewtnull/amigafonts
-      
+   
 }
 
 #*********************************************  #Time to update:)  **********************************************
