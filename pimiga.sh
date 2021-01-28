@@ -76,10 +76,7 @@ echo "Pimiga3000 mini  Setup"
 echo " "
 echo " "
 echo "Lets start ..."
-echo " "
-echo "Backup Settings...."
-echo " "
-echo " "
+
 
 
 #******************************************** #Pimiga3000 mini  Menu ********************************************
@@ -155,6 +152,61 @@ Pimiga_Desktop() {
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
      
+}
+#*********************************************  #Installing Amibian Desktktop*********************************
+#****************************************************************************************************************
+
+
+Amibian_Desktop() {
+      clear
+      toilet -F gay Pimiga3000 
+   
+   echo "Installing Pimiga3000 Desktop ..."
+   echo " "
+   echo " "
+   echo " "
+      echo "Backup Settings...."
+      echo " "
+      echo " "
+      mkdir ~/.backup
+      mkdir ~/.backup/.local
+      mkdir ~/.backup/.config
+      cp -r ~/.local ~/.backup/.config
+      cp -r ~/.config ~/.backup/.local
+      
+      
+    
+      # Fresh install XFCE4
+      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      
+
+  
+      
+      # Fresh install Amiga Desktop
+      cd /usr/share/icons/
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
+      sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo rm -r /usr/share/icons/default
+      sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      
+      cd /home/$USER/Pimiga_mini/Amiga_Logos
+      git clone --depth=1 https://github.com/x64k/amitk
+      sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      sudo mv /home/$USER/Pimiga_mini/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -r /usr/share/themes/Default/xfwm4/
+      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      
+      #rm -r ~/.config
+      #mkdir ~/.config
+      #rm -r ~/.local
+      #mkdir ~/.local
+      #mv ~/Pimiga_mini/.data/.config/ /home/$USER/
+      #mv ~/Pimiga_mini/.data/.local/ /home/$USER/
 }
 
 
@@ -307,10 +359,6 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-      cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      sudo rm -r ./Amiga.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -668,11 +716,11 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry
+            
             ;;
         2)
             echo "Convert Amibian to Pimiga3000"
-            Pimiga_Desktop
+            Amibian_Desktop
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
