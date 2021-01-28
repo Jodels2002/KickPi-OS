@@ -154,15 +154,7 @@ unzip ~/Pimiga_mini/data.pac
       sudo rm -r /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
-           
-      #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
-      #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
 
-      #These mousepointers from xBreeze are great with the theme, too:
-      #http://xfce-look.org/content/show.php/Amiga+Classic+Red?content=128152
-
-      #Use it with the one and only Topaz font here:
-      #https://github.com/rewtnull/amigafonts
       
 }
 
@@ -380,29 +372,8 @@ Pimiga_Retropie() {
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo " Downloading  AROS... " 
-      echo " "
-      echo " "
       
       cd /home/$USER/Amiga/HDD
-      
-      if [ ! -f /home/$USER/Amiga/HDD/AROS/aros-rom.bin ]; then
-      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-      echo " "
-      echo " "
-    
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure  AROS... " 
-      echo " "
-      echo " " 
-      gunzip ./amiga-m68k-20201206-135516.tar.gz
-      tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
-      
-      fi
-        
       
       cd ~/Amiga
       clear
@@ -576,15 +547,7 @@ Pimiga_Retropie() {
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo "  Configure  AROS... " 
-      echo " "
-      echo " " 
-      gunzip ./amiga-m68k-20201206-135516.tar.gz
-      tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
       
-      fi
-        
       
       cd ~/Amiga
       
