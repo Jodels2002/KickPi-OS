@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
@@ -7,25 +6,18 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 
-
-# https://vps691225.ovh.net/download/builds/AROS/   https://github.com/deadw00d/AROS
-# https://github.com/rewtnull/amigafonts
-# https://github.com/henrikstengaard
-# https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
-# https://github.com/HoraceAndTheSpider/UAEConfigMaker
-# https://github.com/Lana-chan/nes-boingball :-) 
-# https://github.com/x64k/amitk
-# https://github.com/alpine9000/squirt
-# Host: grandis.nu
-# Port: 21
-# Username: ftp
-# Password: any password will do
-# ftp://ftp:amiga@grandis.nu/Retroplay%20WHDLoad%20Packs/
+#******************************************** #History ************* ********************************************
+#****************************************************************************************************************
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
 # 25.01 Amiga XFCE4 Desktop, OLED, bugfix
+# 26.01 added Convert Raspberry Pi OS to Pimiga3000
+# 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 64bit
+
+#***********************************************  #Preinstall stuff *********************************************
+#****************************************************************************************************************
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
@@ -43,12 +35,11 @@ sudo apt install -y mc git
 clear  
 toilet -F gay Pimiga3000
 
-#/home/$USER/Pimiga_mini/LED/LED.sh
-#python /home/$USER/Pimiga_mini/OLED/Amiga.py
 
-whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)                            Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
+whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
-sudo raspi-config
+#sudo raspi-config
+
 clear
 toilet -F gay Pimiga3000
 cd ~
@@ -97,6 +88,7 @@ unzip ~/Pimiga_mini/data.pac
 #cp -R ~/.local/ ~/.backup/.local
 #cp -R /usr/local/bin ~/.backup/usr
 
+#******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
@@ -106,9 +98,10 @@ BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
-OPTIONS=(1 "Install Pimiga3000"
-         2 "Install Pimiga3000, Retropie & Tools"
-         3 "Convert RaspianOS to Pimiga3000 ")
+OPTIONS=(1 "Install Pimiga3000 on Amibian - not working"
+         2 "Convert Amibian to Pimiga3000 - not working"
+         3 "Convert Raspberry Pi OS to Pimiga3000 "
+         4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -120,13 +113,7 @@ CHOICE=$(dialog --clear \
 
 clear
 
- #****************************************************************************************************************
-
-cd ~/Pimiga_mini
-clear
-toilet -F gay Pimiga3000
-
-
+#*********************************************  #Installing Amibian Desktktop*********************************
 #****************************************************************************************************************
 Pimiga_Desktop() {
       clear
@@ -140,7 +127,6 @@ Pimiga_Desktop() {
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      #sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
       rm -r ~/.config
@@ -179,7 +165,10 @@ Pimiga_Desktop() {
       #https://github.com/rewtnull/amigafonts
       
 }
- #****************************************************************************************************************
+
+#*********************************************  #Time to update:)  **********************************************
+#****************************************************************************************************************
+
 Pimiga_Update() {
 
       clear
@@ -196,7 +185,7 @@ Pimiga_Update() {
       sudo apt-get -y upgrade
 
 }
-
+#*******************************************  #Lets install some usefull Tools:)*********************************
 #****************************************************************************************************************
 
 Pimiga_Tools() {
@@ -210,11 +199,17 @@ echo "            Lets install some usefull Tools:)              "
 echo " "
 echo " "
 
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
-      sudo apt-get -y install openbox-menu  obmenu 
+      
+      
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y libraspberrypi-dev
-
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita
+      
+      
+      
       clear
       toilet -F gay Pimiga3000
       #Some little Amiga stuff....
@@ -223,10 +218,12 @@ echo " "
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      
-}
- 
- #****************************************************************************************************************
+      cd /home/$USER
+      git clone --depth=1 https://github.com/rewtnull/amigafonts
+      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
+#**********************************************  #Install Retropie/Setup  ***************************************
+#****************************************************************************************************************
+  
   
 Pimiga_Retropie() {
 #Install Retropie/Setup
@@ -267,7 +264,8 @@ Pimiga_Retropie() {
       
       
 }
- #****************************************************************************************************************
+#***************************************** # Install Amiberry 32bit *********************************************
+#****************************************************************************************************************
      
      Pimiga_Amiberry() {
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
@@ -300,7 +298,7 @@ Pimiga_Retropie() {
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      # Install Amiberry
+     
       
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
@@ -312,10 +310,188 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
+      
+      sudo chmod -R 777 /home/$USER/Amiga
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... downloading  ClassicWB"  
+      echo " "
+      echo " "
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip ./ClassicWB_UAE_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_P96_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip ./ClassicWB_P96_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip ./ClassicWB_OS39_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip ./ClassicWB_68K_v28.zip
+      
+      fi
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo " Downloading  AROS... " 
+      echo " "
+      echo " "
+      
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/AROS/aros-rom.bin ]; then
+      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
+      echo " "
+      echo " "
+    
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure  AROS... " 
+      echo " "
+      echo " " 
+      gunzip ./amiga-m68k-20201206-135516.tar.gz
+      tar -xvf ./amiga-m68k-20201206-135516.tar
+      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
+      
+      fi
+        
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+   
+      echo " "
+      echo " "
+      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 4s
+      wget https://misapuntesde.com/res/Amiga_roms.zip
+      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
+      cd ~/Amiga/kickstarts/
+      unzip ./Amiga_roms.zip
+     
+    
+      fi
+      
+      cd /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      unzip ./Amiga.zip
+      sudo rm -r ./Amiga.zip
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+    
+
+      sudo chmod -R 777 /home/$USER/Amiga
+    
+      
+    }
+#****************************************  Install Amiberry 64bit Raspberry *************************************
+#****************************************************************************************************************    
+   Pimiga_Amiberry64() {
+     
+      
+      clear
+      toilet -F gay Pimiga3000
+      
+      echo " "
+      echo " "
+      echo "  ... here comes Amiberry 64 bit :-)   " 
+      echo " "
+      echo " "  
+      cd ~
+      
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
+      
+       # Install Amiberry 64
+      
+      cd /home/$USER/
+      
+      git clone https://github.com/midwan/amiberry
+      cd //home/$USER/amiberry
+      make -j2 PLATFORM=pi64
+      
+      sudo chmod -R 777 /home/$USER/amiberry
+      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+      
+      #echo "  Amiberry64 is compiled ...     " 
+      echo " "
+      echo " "
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... lets configer ClassicWB" 
+      echo " "
+      echo " " 
+      # Install Amiberry 64
+      
+      #cd /home/$USER
+      #cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit.zip /home/$USER/Amiga
+      #unzip ./Amiga.zip
+      #rm -r ./Amiga.zip
+      
+            
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
-      rm -r ./Amiga.zip
+      sudo rm -r ./Amiga.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -408,17 +584,23 @@ Pimiga_Retropie() {
         
       
       cd ~/Amiga
-      clear
-      toilet -F gay Pimiga3000
+      
    
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      echo "File not found!"
-      # Preinstall AROS
-        echo " "
-        echo " "
-       
+      clear
+      toilet -F gay ** NOTE! **
+      toilet -F gay ****************************
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 6s
+      
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
@@ -440,9 +622,10 @@ Pimiga_Retropie() {
       sudo chmod -R 777 /home/$USER/Amiga
     
       
-    }
+    }  
     
- #****************************************************************************************************************
+#****************************************   #Install PiKISS  ****************************************************
+#****************************************************************************************************************
 
 Pimiga_PiKiss() {
      #Install PiKISS
@@ -468,7 +651,11 @@ Pimiga_PiKiss() {
       #sudo ./piKiss.sh 
       
 }
- #****************************************************************************************************************
+
+
+#****************************************   #finish all   *******************************************************
+#****************************************************************************************************************
+
 
 
  cd ~
@@ -477,21 +664,23 @@ toilet -F gay Pimiga3000
 
 case $CHOICE in
         1)
-            echo "Pimiga3000"
-            Pimiga_Tools
-            Pimiga_PiKiss
-            Pimiga_Amiberry
-            ;;
-        2)
-            echo "Pimiga3000, Retropie & Tools"
+            echo "Install Pimiga3000 on Amibian"
+           
             Pimiga_Update
             Pimiga_Tools
-            Pimiga_Amiberry
-            Pimiga_Retropie
             Pimiga_PiKiss
+            
+            ;;
+        2)
+            echo "Convert Amibian to Pimiga3000"
+            Amibian_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_PiKiss
+            Pimiga_Amiberry
             ;;
         3)
-            echo "Convert RaspianOS to Pimiga3000"
+            echo "Convert Raspberry Pi OS to Pimiga3000"
            
             Pimiga_Desktop
             Pimiga_Update
@@ -502,16 +691,30 @@ case $CHOICE in
           
             
             ;;
+         4)
+            echo "Convert Raspberry Pi OS 64 to Pimiga3000 64"
+           
+            Pimiga_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_PiKiss
+            Pimiga_Amiberry64
+            #Pimiga_Retropie does not work :-(
+          
+            
+            ;;
 esac
-
-
 
 clear
 toilet -F gay Pimiga3000
 
 echo " "
       echo " "
-      echo "  ... cleanup and finish setup  "   
+      echo "  ... cleanup and finish setup  "  
+      
+      sudo rm -r /home/pi/.local/share/Trash/
+      sudo rm -r /home/pi/amigafonts/
+      
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
@@ -525,6 +728,8 @@ clear
 toilet -F gay Pimiga3000
 startx
 
+#****************************************   #bye bye   **********************************************************
+#****************************************************************************************************************
 
 
 
