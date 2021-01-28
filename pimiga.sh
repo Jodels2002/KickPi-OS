@@ -154,9 +154,10 @@ Pimiga_Desktop() {
       sudo rm -r /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
-   
-      
+     
 }
+
+
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
