@@ -92,8 +92,8 @@ BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
-OPTIONS=(1 "Install Pimiga3000 on Amibian"
-         2 "Convert Amibian to Pimiga3000"
+OPTIONS=(1 "Install Pimiga3000 on Amibian - not working"
+         2 "Convert Amibian to Pimiga3000 - not working"
          3 "Convert Raspberry Pi OS to Pimiga3000 "
          4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
 
