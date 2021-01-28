@@ -27,7 +27,7 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       exit 1
 fi
 
-
+sudo apt-mark hold lxpanel
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
