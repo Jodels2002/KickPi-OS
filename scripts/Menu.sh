@@ -48,7 +48,7 @@ case $CHOICE in
         
             ;;
          4)
-            echo "Retropie - Let´s play Games easy4"
+            echo "Retropie - Let´s play Games easy"
            
    
           
