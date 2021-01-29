@@ -704,7 +704,7 @@ echo " "
     #  whiptail --msgbox " Ready,... Okey, here we are ... Lets Pimiga3000 (mini) :-)" 20 60 1
 clear
 toilet -F gay Pimiga3000
-startx
+pimiga.sh
 
 
 
