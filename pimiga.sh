@@ -149,11 +149,6 @@ echo " "
 echo " "
 
 
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
     
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
@@ -551,7 +546,12 @@ echo " "
 #****************************************************************************************************************
 
  Amibian() {
-
+ 
+mkdir /home/$USER/.backup/
+sudo chmod -R 777 ~/.backup/
+cp -R ~/.config/ ~/.backup/.config
+cp -R ~/.local/ ~/.backup/.local
+cp -R /usr/local/bin ~/.backup/usr
      
      
 }
