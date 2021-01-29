@@ -198,11 +198,17 @@ echo "            Lets install some usefull Tools:)              "
 echo " "
 echo " "
 
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser
-      sudo apt-get -y install openbox-menu  obmenu 
+      
+      
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y libraspberrypi-dev
-
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita-l10n synaptic zip
+      
+      
+      
       clear
       toilet -F gay Pimiga3000
       #Some little Amiga stuff....
@@ -211,6 +217,9 @@ echo " "
       toilet -F gay Pimiga3000
       echo " "
       echo " "
+      cd /home/$USER
+      git clone --depth=1 https://github.com/rewtnull/amigafonts
+      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
       
 }
  
