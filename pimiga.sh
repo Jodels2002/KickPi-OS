@@ -36,8 +36,9 @@ sudo apt install -y mc git
 clear  
 toilet -F gay Pimiga3000
 cd /home/$USER/Pimiga_mini/
+if [ ! -f /home/$USER/Pimiga_mini/.data ]; then
 unzip ~/Pimiga_mini/data.pac
-
+fi
 whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
 #sudo raspi-config
@@ -102,17 +103,6 @@ CHOICE=$(dialog --clear \
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
-
-clear
-
- #****************************************************************************************************************
-
-cd ~/Pimiga_mini
-clear
-toilet -F gay Pimiga3000
-
-
-
 
 
 
