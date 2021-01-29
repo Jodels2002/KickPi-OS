@@ -275,7 +275,7 @@ echo " "
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
-      
+      mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
       
       
       
@@ -408,11 +408,11 @@ echo " "
       
      
       
-      cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
-      unzip ./Amiga64.zip
-      rm -r ./Amiga64.zip
-       
+       cd /home/$USER
+       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
+       unzip ./Amiga64.zip
+       rm -r ./Amiga64.zip
+       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
        
        # Compile Amiberry 64
        # /home/$USER/Amiga/
