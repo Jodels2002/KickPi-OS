@@ -112,8 +112,32 @@ clear
 toilet -F gay Pimiga3000
 
 
+
+
+
+
+#*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
-Pimiga_Desktop() {
+
+Pimiga_Update() {
+
+      clear
+      toilet -F gay Pimiga3000
+
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      echo " "
+      echo "Installing Pimiga3000 Update System ..."
+      echo " "
+      echo " "
+      sudo apt-get -y upgrade
+
+}
+
+#*********************************************  #Installing Pimiga Desktop*********************************
+#**********************************************************************************************************
       clear
       toilet -F gay Pimiga3000 
    
@@ -166,24 +190,6 @@ echo " "
 }
 
 
- #****************************************************************************************************************
-
-Pimiga_Update() {
-
-      clear
-      toilet -F gay Pimiga3000
-
-      echo " "
-      echo " "
-      echo "            Time to update:)              "
-      echo " "
-      echo " "
-      echo "Installing Pimiga3000 Update System ..."
-      echo " "
-      echo " "
-      sudo apt-get -y upgrade
-
-}
 
 
 #****************************************************************************************************************
@@ -223,49 +229,11 @@ echo " "
       sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
       
 }
- 
- #****************************************************************************************************************
-  
-Pimiga_Retropie() {
-#Install Retropie/Setup
-      
-      clear
-      toilet -F gay Pimiga3000
-      
-      echo " "
-      echo " "
-      echo "  ... here comes Retropie :-)     "   
-      echo " "
-      echo " "
-      cd ~
-      sudo apt-get install -y git dialog unzip xmlstarlet
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd  /home/$USER/RetroPie-Setup
 
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      clear
-      toilet -F gay Pimiga3000
-      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-      clear
-      toilet -F gay Pimiga3000
-      sudo __nodialog=1 ./retropie_packages.sh setup vice
-      sudo _clear
-      toilet -F gay Pimiga3000
-      sudo _nodialog=1 ./retropie_packages.sh setup lr-vice
-      clear
-      toilet -F gay Pimiga3000
-      #sudo __nodialog=1 ./retropie_packages.sh setup giana
-      clear
-      toilet -F gay Pimiga3000
-      #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
-      
-      
-      
-      
-      
-}
- #****************************************************************************************************************
+
+#***************************************** # Install Amiberry 32bit *********************************************
+#****************************************************************************************************************
+     
      
       Pimiga_Amiberry() {
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
@@ -579,6 +547,17 @@ Pimiga_Retropie() {
       
     } 
     
+#*********************************************  #Make it like Amibian  **********************************************
+#****************************************************************************************************************
+
+ Amibian() {
+
+     
+     
+}
+
+
+    
 #****************************************   #Install PiKISS  ****************************************************
 #****************************************************************************************************************
 
@@ -606,9 +585,54 @@ Pimiga_PiKiss() {
       #sudo ./piKiss.sh 
       
 }
- #****************************************************************************************************************
 
+     
+#**********************************************  #Install Retropie/Setup  ***************************************
+#****************************************************************************************************************
+  
+  
+Pimiga_Retropie() {
+#Install Retropie/Setup
+      
+      clear
+      toilet -F gay Pimiga3000
+      
+      echo " "
+      echo " "
+      echo "  ... here comes Retropie :-)     "   
+      echo " "
+      echo " "
+      cd ~
+      sudo apt-get install -y git dialog unzip xmlstarlet
+      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      cd  /home/$USER/RetroPie-Setup
 
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      clear
+      toilet -F gay Pimiga3000
+      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+      clear
+      toilet -F gay Pimiga3000
+      sudo __nodialog=1 ./retropie_packages.sh setup vice
+      sudo _clear
+      toilet -F gay Pimiga3000
+      sudo _nodialog=1 ./retropie_packages.sh setup lr-vice
+      clear
+      toilet -F gay Pimiga3000
+      #sudo __nodialog=1 ./retropie_packages.sh setup giana
+      clear
+      toilet -F gay Pimiga3000
+      #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
+      
+      
+      
+      
+      
+}
+
+#**********************************************  #Finish setup  ***************************************
+#****************************************************************************************************************
  cd ~
 clear
 toilet -F gay Pimiga3000
@@ -620,6 +644,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
+            Amibian
             
             ;;
         2)
