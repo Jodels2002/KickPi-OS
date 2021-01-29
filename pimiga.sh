@@ -406,24 +406,22 @@ echo " "
      
       
        cd ~
-       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
-       unzip ./Amiga64.zip
+        # cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
+        # unzip ./Amiga64.zip
        
-       mv /home/$USER/Amiga64/* /home/$USER/Amiga
-       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
+        # mv /home/$USER/Amiga64/* /home/$USER/Amiga
+        # mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
        
-       rm -r ./Amiga64.zip
-       rm -r ./Amiga64
+        # rm -r ./Amiga64.zip
+        # rm -r ./Amiga64
        sudo chmod +x /home/$USER/Amiga/amiberry
        
        # Compile Amiberry 64
-       # /home/$USER/Amiga/
-       # git clone https://github.com/midwan/amiberry
-       # cd //home/$USER/Amiga
-       # make -j2 PLATFORM=pi64
-      
-       # sudo chmod -R 777 /home/$USER/amiberry
-       # cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+       cd 
+        git clone https://github.com/midwan/amiberry
+       cd ~/amiberry
+       make -j2 PLATFORM=pi64
+       cp -R /home/$USER/amiberry/* /home/$USER/Amiga
       
 
       echo " "
