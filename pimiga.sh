@@ -418,8 +418,169 @@ Pimiga_Retropie() {
     
       
     }
+ #****************************************  Install Amiberry 64bit Raspberry *************************************
+#****************************************************************************************************************    
+   Pimiga_Amiberry64() {
+     
+      
+      clear
+      toilet -F gay Pimiga3000
+      
+      echo " "
+      echo " "
+      echo "  ... here comes Amiberry 64 bit :-)   " 
+      echo " "
+      echo " "  
+      cd ~
+      
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
+      
+       # Install Amiberry 64
+      
+      cd /home/$USER/
+      
+      git clone https://github.com/midwan/amiberry
+      cd //home/$USER/amiberry
+      make -j2 PLATFORM=pi64
+      
+      sudo chmod -R 777 /home/$USER/amiberry
+      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+      
+      #echo "  Amiberry is compiled ...     " 
+      echo " "
+      echo " "
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... lets configer ClassicWB" 
+      echo " "
+      echo " " 
+     
+      
+      cd /home/$USER
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
+      
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
+      
+      
+      sudo chmod -R 777 /home/$USER/Amiga
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo "  ... downloading  ClassicWB"  
+      echo " "
+      echo " "
+      cd /home/$USER/Amiga/HDD
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip ./ClassicWB_UAE_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_P96_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip ./ClassicWB_P96_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip ./ClassicWB_OS39_v28.zip
+      
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip ./ClassicWB_68K_v28.zip
+      
+      fi
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      
+      cd /home/$USER/Amiga/HDD
+      
+      cd ~/Amiga
+      clear
+      toilet -F gay Pimiga3000
+   
+      echo " "
+      echo " "
+      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 4s
+      wget https://misapuntesde.com/res/Amiga_roms.zip
+      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
+      cd ~/Amiga/kickstarts/
+      unzip ./Amiga_roms.zip
+     
     
- #****************************************************************************************************************
+      fi
+      
+      cd /home/$USER/Amiga/FDD
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER/Amiga/FDD
+      unzip ./Amiga.zip
+      sudo rm -r ./Amiga.zip
+      
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+    
+
+      sudo chmod -R 777 /home/$USER/Amiga
+    
+      
+    } 
+    
+#****************************************   #Install PiKISS  ****************************************************
+#****************************************************************************************************************
 
 Pimiga_PiKiss() {
      #Install PiKISS
@@ -476,7 +637,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            #Pimiga_Amiberry
+            Pimiga_Amiberry
             #Pimiga_Retropie
           
             
@@ -488,7 +649,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            #Pimiga_Amiberry64
+            Pimiga_Amiberry64
             #Pimiga_Retropie does not work :-(
           
            ;;
