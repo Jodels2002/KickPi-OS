@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Install Pimiga - not for use!!!
 # B.Titze 2020
@@ -7,25 +6,18 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 
-
-# https://vps691225.ovh.net/download/builds/AROS/   https://github.com/deadw00d/AROS
-# https://github.com/rewtnull/amigafonts
-# https://github.com/henrikstengaard
-# https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
-# https://github.com/HoraceAndTheSpider/UAEConfigMaker
-# https://github.com/Lana-chan/nes-boingball :-) 
-# https://github.com/x64k/amitk
-# https://github.com/alpine9000/squirt
-# Host: grandis.nu
-# Port: 21
-# Username: ftp
-# Password: any password will do
-# ftp://ftp:amiga@grandis.nu/Retroplay%20WHDLoad%20Packs/
+#******************************************** #History ************* ********************************************
+#****************************************************************************************************************
 
 # 11.01.2021 Amibian update & Settings Ok 
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
 # 25.01 Amiga XFCE4 Desktop, OLED, bugfix
+# 26.01 added Convert Raspberry Pi OS to Pimiga3000
+# 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 64bit
+
+#***********************************************  #Preinstall stuff *********************************************
+#****************************************************************************************************************
 
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
       then
@@ -33,8 +25,8 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       echo "Pleas don't use 'sudo !!'"
       exit 1
 fi
-i  
-
+  
+sudo apt-mark hold lxpanel
 sudo apt-get -y update 
 sudo apt install -y toilet
 sudo apt install -y dialog
@@ -42,13 +34,13 @@ sudo apt install -y mc git
 
 clear  
 toilet -F gay Pimiga3000
+cd /home/$USER/Pimiga_mini/
+unzip ~/Pimiga_mini/data.pac
 
-#/home/$USER/Pimiga_mini/LED/LED.sh
-#python /home/$USER/Pimiga_mini/OLED/Amiga.py
+whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
-whiptail --msgbox " OLED install,...  Please enable the I2C Interface on the Raspberry Pi first! :-)                            Please also increase speed with: sudo nano /boot/config.txt -> dtparam=i2c_arm=on,i2c_arm_baudrate=400000 " 20 60 1
+#sudo raspi-config
 
-sudo raspi-config
 clear
 toilet -F gay Pimiga3000
 cd ~
@@ -85,18 +77,9 @@ echo " "
 echo " "
 echo "Lets start ..."
 echo " "
-echo "Backup Settings...."
-echo " "
-echo " "
 
-cd /home/$USER/Pimiga_mini/
-unzip ~/Pimiga_mini/data.pac
-#mkdir /home/$USER/.backup/
-#sudo chmod -R 777 ~/.backup/
-#cp -R ~/.config/ ~/.backup/.config
-#cp -R ~/.local/ ~/.backup/.local
-#cp -R /usr/local/bin ~/.backup/usr
 
+#******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
@@ -106,9 +89,10 @@ BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
-OPTIONS=(1 "Install Pimiga3000"
-         2 "Install Pimiga3000, Retropie & Tools"
-         3 "Convert RaspianOS to Pimiga3000 ")
+OPTIONS=(1 "Install Pimiga3000 on Amibian - not working"
+         2 "Convert Amibian to Pimiga3000 - not working"
+         3 "Convert Raspberry Pi OS to Pimiga3000 "
+         4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -505,13 +489,16 @@ case $CHOICE in
 esac
 
 
-
 clear
 toilet -F gay Pimiga3000
 
 echo " "
       echo " "
-      echo "  ... cleanup and finish setup  "   
+      echo "  ... cleanup and finish setup  "  
+      
+      sudo rm -r /home/pi/.local/share/Trash/
+      sudo rm -r /home/pi/amigafonts/
+      
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
