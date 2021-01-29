@@ -412,7 +412,7 @@ echo " "
        cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
        unzip ./Amiga64.zip
        
-       mv /home/$USER/Pimiga_mini/Amiga64/* /home/$USER/Amiga
+       mv /home/$USER/Amiga64/* /home/$USER/Amiga
        mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
        
        rm -r ./Amiga64.zip
