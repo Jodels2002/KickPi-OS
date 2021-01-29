@@ -156,6 +156,9 @@ echo " "
   
       
       # Fresh install Amiga Desktop
+    
+if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
+
       cd /usr/share/icons/
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos /usr/share/icons
       sudo cp -R /home/$USER/Pimiga_mini/.data/AMIGAOSLINUX.zip /usr/share/icons
@@ -163,7 +166,9 @@ echo " "
       sudo rm -r /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      
+fi     
+
+if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/Pimiga_mini/Amiga_Logos
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/Pimiga_mini/Amiga_Logos/amitk /usr/share/themes
@@ -172,7 +177,7 @@ echo " "
       sudo rm -r /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
-
+fi
       
 }
 
