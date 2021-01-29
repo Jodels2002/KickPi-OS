@@ -284,9 +284,13 @@ echo " "
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
+      
       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
       
-      
+      cd /home/$USER/Amiga/hdf
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
+      unzip ./Amiga1000.zip
+      rm -r ./Amiga1000.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -412,6 +416,12 @@ echo " "
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
+      mkdir /home/$USER/Amiga/adf
+      mkdir /home/$USER/Amiga/dir
+      mkdir /home/$USER/Amiga/hdf
+      mkdir /home/$USER/Amiga/rom
+      mkdir /home/$USER/Amiga/Workbench
+      
       
      
       
@@ -424,7 +434,11 @@ echo " "
        
         # rm -r ./Amiga64.zip
         # rm -r ./Amiga64
-       sudo chmod +x /home/$USER/Amiga/amiberry
+        cd /home/$USER/Amiga/hdf
+        cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
+        unzip ./Amiga1000.zip
+        rm -r ./Amiga1000.zip
+     
        
        # Compile Amiberry 64
        cd 
@@ -432,7 +446,7 @@ echo " "
        cd ~/amiberry
        make -j2 PLATFORM=pi64
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-      
+       sudo chmod +x /home/$USER/Amiga/amiberry
 
       echo " "
       echo " "
