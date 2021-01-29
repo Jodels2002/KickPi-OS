@@ -461,21 +461,23 @@ toilet -F gay Pimiga3000
 
 case $CHOICE in
         1)
-            echo "Pimiga3000"
-            Pimiga_Tools
-            Pimiga_PiKiss
-            Pimiga_Amiberry
-            ;;
-        2)
-            echo "Pimiga3000, Retropie & Tools"
+            echo "Install Pimiga3000 on Amibian"
+           
             Pimiga_Update
             Pimiga_Tools
-            Pimiga_Amiberry
-            Pimiga_Retropie
             Pimiga_PiKiss
+            
+            ;;
+        2)
+            echo "Convert Amibian to Pimiga3000"
+            Amibian_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_PiKiss
+            Pimiga_Amiberry
             ;;
         3)
-            echo "Convert RaspianOS to Pimiga3000"
+            echo "Convert Raspberry Pi OS to Pimiga3000"
            
             Pimiga_Desktop
             Pimiga_Update
@@ -486,6 +488,18 @@ case $CHOICE in
           
             
             ;;
+         4)
+            echo "Convert Raspberry Pi OS 64 to Pimiga3000 64"
+           
+            Pimiga_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_PiKiss
+            Pimiga_Amiberry64
+            #Pimiga_Retropie does not work :-(
+          
+           ;;
+
 esac
 
 
