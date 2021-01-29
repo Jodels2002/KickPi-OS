@@ -664,7 +664,7 @@ case $CHOICE in
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
-            #Pimiga_Retropie
+            Pimiga_Retropie
           
             
             ;;
