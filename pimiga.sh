@@ -272,6 +272,7 @@ echo " "
       mkdir /home/$USER/Amiga
       mkdir /home/$USER/Amiga/conf
       mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/HDD/Pimiga
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       mkdir /home/$USER/Amiga/adf
@@ -287,6 +288,10 @@ echo " "
       
       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
       
+      cd /home/$USER/Amiga/hdf
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
+      unzip ./Amiga1000.zip
+      rm -r ./Amiga1000.zip
       cd /home/$USER/Amiga/hdf
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
       unzip ./Amiga1000.zip
@@ -434,10 +439,7 @@ echo " "
        
         # rm -r ./Amiga64.zip
         # rm -r ./Amiga64
-        cd /home/$USER/Amiga/hdf
-        cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
-        unzip ./Amiga1000.zip
-        rm -r ./Amiga1000.zip
+        
      
        
        # Compile Amiberry 64
