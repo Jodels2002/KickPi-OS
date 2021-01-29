@@ -265,17 +265,18 @@ echo " "
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-     
+      
+      mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/HDD
+      mkdir /home/$USER/Amiga/FDD
+      mkdir /home/$USER/Amiga/FDD/Workbench
       
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
       
-      mkdir /home/$USER/Amiga
-      mkdir /home/$USER/Amiga/HDD
-      mkdir /home/$USER/Amiga/FDD
-      mkdir /home/$USER/Amiga/FDD/Workbench
+      
       
       
       sudo chmod -R 777 /home/$USER/Amiga
@@ -405,18 +406,24 @@ echo " "
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-       # Install Amiberry 64
+     
       
-      cd /home/$USER/
+      cd /home/$USER
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
+      unzip ./Amiga64.zip
+      rm -r ./Amiga64.zip
+       
+       
+       # Compile Amiberry 64
+       # /home/$USER/Amiga/
+       # git clone https://github.com/midwan/amiberry
+       # cd //home/$USER/Amiga
+       # make -j2 PLATFORM=pi64
       
-      git clone https://github.com/midwan/amiberry
-      cd //home/$USER/amiberry
-      make -j2 PLATFORM=pi64
+       # sudo chmod -R 777 /home/$USER/amiberry
+       # cp -R /home/$USER/amiberry/* /home/$USER/Amiga
       
-      sudo chmod -R 777 /home/$USER/amiberry
-      cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-      
-      #echo "  Amiberry is compiled ...     " 
+
       echo " "
       echo " "
       clear
@@ -427,16 +434,7 @@ echo " "
       echo " " 
      
       
-      cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      rm -r ./Amiga.zip
-      
-      mkdir /home/$USER/Amiga
-      mkdir /home/$USER/Amiga/HDD
-      mkdir /home/$USER/Amiga/FDD
-      mkdir /home/$USER/Amiga/FDD/Workbench
-      
+    
       
       sudo chmod -R 777 /home/$USER/Amiga
       
