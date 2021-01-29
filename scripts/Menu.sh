@@ -34,21 +34,21 @@ clear
 
 case $CHOICE in
         1)
-            echo "Pimiga3000 Desktop)"
+            amiberry
            
            
             ;;
         2)
-            echo "Pimiga3000 Desktop"
+            startx
           
             ;;
         3)
-            echo "Vice - Your Commodore 64"
+            vice
            
         
             ;;
          4)
-            echo "Retropie - Let´s play Games easy"
+           emulationstation
            
    
           
