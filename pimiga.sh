@@ -268,6 +268,7 @@ echo " "
       echo " " 
       
       mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/conf
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
@@ -400,6 +401,7 @@ echo " "
       cd ~
       
       mkdir /home/$USER/Amiga
+      mkdir /home/$USER/Amiga/conf
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
