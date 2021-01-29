@@ -138,7 +138,9 @@ Pimiga_Update() {
 
 #*********************************************  #Installing Pimiga Desktop*********************************
 #**********************************************************************************************************
-      clear
+ 
+ Pimiga_Desktop()
+ clear
       toilet -F gay Pimiga3000 
    
    echo "Installing Pimiga3000 Desktop ..."
@@ -649,7 +651,7 @@ case $CHOICE in
             ;;
         2)
             echo "Convert Amibian to Pimiga3000"
-            Amibian_Desktop
+            Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
