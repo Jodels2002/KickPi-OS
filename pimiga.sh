@@ -274,6 +274,11 @@ echo " "
       mkdir /home/$USER/Amiga/HDD
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
+      mkdir /home/$USER/Amiga/adf
+      mkdir /home/$USER/Amiga/dir
+      mkdir /home/$USER/Amiga/hdf
+      mkdir /home/$USER/Amiga/rom
+      mkdir /home/$USER/Amiga/Workbench
       
       cd ~
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
