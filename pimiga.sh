@@ -46,7 +46,7 @@ cd /home/$USER/Pimiga_mini/
 if [ ! -f /home/$USER/Pimiga_mini/.data ]; then
 unzip ~/Pimiga_mini/data.pac
 fi
-whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
+# whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
 #sudo raspi-config
 
