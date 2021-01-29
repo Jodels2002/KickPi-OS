@@ -267,7 +267,7 @@ Pimiga_Retropie() {
 }
  #****************************************************************************************************************
      
-     Pimiga_Amiberry() {
+      Pimiga_Amiberry() {
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
       
       clear
@@ -298,7 +298,7 @@ Pimiga_Retropie() {
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      # Install Amiberry
+     
       
       cd /home/$USER
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
@@ -310,10 +310,6 @@ Pimiga_Retropie() {
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-      cd /home/$USER
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      rm -r ./Amiga.zip
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -381,29 +377,8 @@ Pimiga_Retropie() {
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-      echo " Downloading  AROS... " 
-      echo " "
-      echo " "
       
       cd /home/$USER/Amiga/HDD
-      
-      if [ ! -f /home/$USER/Amiga/HDD/amiga-m68k-20201206-135516.tar.gz ]; then
-      wget https://vps691225.ovh.net/download/builds/AROS/amiga-m68k-20201206-135516.tar.gz --no-check-certificate
-      echo " "
-      echo " "
-    
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure  AROS... " 
-      echo " "
-      echo " " 
-      gunzip ./amiga-m68k-20201206-135516.tar.gz
-      tar -xvf ./amiga-m68k-20201206-135516.tar
-      mv /home//$USER/Amiga/HDD/amiga-m68k-20201206-135516 /home/$USER/Amiga/HDD/AROS
-      
-      fi
-        
       
       cd ~/Amiga
       clear
@@ -412,11 +387,15 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      echo "File not found!"
-      # Preinstall AROS
-        echo " "
-        echo " "
-       
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " Be fair and honest!"
+      sleep 4s
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
