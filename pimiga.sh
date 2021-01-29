@@ -119,12 +119,20 @@ Pimiga_Desktop() {
    echo "Installing Pimiga3000 Desktop ..."
    echo " "
    echo " "
-  
+  echo "Backup Settings...."
+echo " "
+echo " "
+
+
+#mkdir /home/$USER/.backup/
+#sudo chmod -R 777 ~/.backup/
+#cp -R ~/.config/ ~/.backup/.config
+#cp -R ~/.local/ ~/.backup/.local
+#cp -R /usr/local/bin ~/.backup/usr
     
       # Fresh install XFCE4
       sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      #sudo update-alternatives --config x-window-manager
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
       rm -r ~/.config
@@ -152,18 +160,13 @@ Pimiga_Desktop() {
       sudo rm -r /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
-           
-      #I am combining the theme with the Amiga3.x gtk2 theme from untouchable89:
-      #http://xfce-look.org/content/show.php/Amiga3.x?content=127251
 
-      #These mousepointers from xBreeze are great with the theme, too:
-      #http://xfce-look.org/content/show.php/Amiga+Classic+Red?content=128152
-
-      #Use it with the one and only Topaz font here:
-      #https://github.com/rewtnull/amigafonts
       
 }
+
+
  #****************************************************************************************************************
+
 Pimiga_Update() {
 
       clear
@@ -180,6 +183,7 @@ Pimiga_Update() {
       sudo apt-get -y upgrade
 
 }
+
 
 #****************************************************************************************************************
 
