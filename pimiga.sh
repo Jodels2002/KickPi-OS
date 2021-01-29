@@ -271,7 +271,7 @@ echo " "
       mkdir /home/$USER/Amiga/FDD
       mkdir /home/$USER/Amiga/FDD/Workbench
       
-      cd /home/$USER
+      cd ~
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
@@ -408,7 +408,7 @@ echo " "
       
      
       
-       cd /home/$USER
+       cd ~
        cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
        unzip ./Amiga64.zip
        rm -r ./Amiga64.zip
