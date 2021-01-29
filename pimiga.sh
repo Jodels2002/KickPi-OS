@@ -474,7 +474,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry
+            #Pimiga_Amiberry
             ;;
         3)
             echo "Convert Raspberry Pi OS to Pimiga3000"
@@ -483,7 +483,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry
+            #Pimiga_Amiberry
             #Pimiga_Retropie
           
             
@@ -495,7 +495,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry64
+            #Pimiga_Amiberry64
             #Pimiga_Retropie does not work :-(
           
            ;;
