@@ -30,11 +30,13 @@ if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root
       then
       echo "Don't be root to run this script!"
       echo "Please don't use 'sudo !!'"
+      sleep 15s
       exit 1
 fi
 #***********************************************  #Are you runing Desktop?  ***********************************
 if  xset q &>/dev/null; then
     echo "No X server at \$DISPLAY [$DISPLAY]" >&2
+    sleep 15s
     exit 1
 fi 
 #***********************************************  #Ok, we are ready...  ***************************************
@@ -206,12 +208,7 @@ Pimiga_Tools() {
       echo "Installing Pimiga3000 Desktop ..."
       echo " "
       echo " "
-      echo "Backup Settings...."
-      echo " "
-      echo " "
-
-
-    
+      
       # Fresh install XFCE4
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
       #Test! sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
@@ -307,7 +304,7 @@ Pimiga_Amiberry64() {
      
       
       clear
-      toilet -F gay Pimiga3000
+      toilet -F gay Pimiga3000 64bit
       
       echo " "
       echo " "
@@ -330,6 +327,8 @@ Pimiga_Amiberry64() {
        git clone https://github.com/midwan/amiberry
        cd ~/amiberry
        make -j2 PLATFORM=pi64
+       clear
+       toilet -F gay Pimiga3000 64bit
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
        sudo chmod +x /home/$USER/Amiga/amiberry
 }    
@@ -424,8 +423,10 @@ Pimiga_Amiberry64() {
       echo " "
       echo " "
       echo "The roms and workbench files are under copyrigt! "
+      echo " "
       echo "Use only if you have the original!  "
       echo " (Original Amiga, Amiga Forever,..."
+      echo " "
       echo " Be fair and honest!"
       sleep 4s
       wget https://misapuntesde.com/res/Amiga_roms.zip
@@ -455,6 +456,11 @@ Pimiga_Amiberry64() {
 #********************************************# Not testet! *******************************************************
 
  Amibian() {
+ 
+      echo "Backup Settings...."
+
+      echo " "
+      echo " "
  
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
