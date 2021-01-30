@@ -559,7 +559,7 @@ case $CHOICE in
             ;;
         2)
             echo "Convert Amibian to Pimiga3000"
-            Poser
+            #Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
@@ -571,7 +571,7 @@ case $CHOICE in
             ;;
         3)
             echo "Convert Raspberry Pi OS to Pimiga3000"
-            Poser
+            #Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
@@ -585,7 +585,7 @@ case $CHOICE in
             ;;
          4)
             echo "Convert Raspberry Pi OS 64 to Pimiga3000 64"
-           
+            #Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
