@@ -21,6 +21,9 @@
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
+Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
+Amiberry64=amiberry-v3.3-rpi4-64bit.zip
+
 
 #***********************************************  #Are you sudo? *********************************************
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
@@ -45,8 +48,9 @@ sudo apt install -y mc git
 clear  
 toilet -F gay Pimiga3000
 cd /home/$USER/Pimiga_mini/
+
 if [ ! -f /home/$USER/Pimiga_mini/.data ]; then
-unzip ~/Pimiga_mini/data.pac
+      unzip ~/Pimiga_mini/data.pac
 fi
 # whiptail --msgbox " Please start in CLI Mode! Go to "raspi-config" System Options/ Boot Auto Login/ B2 Console Autologin! !" 20 60 1
 
@@ -137,19 +141,65 @@ Pimiga_Update() {
 
 }
 
+
+
+#*********************************************  #Installing Pimiga_Tools*********************************
+#**********************************************************************************************************
+
+Pimiga_Tools() {
+
+      clear
+      toilet -F gay Pimiga3000
+
+      echo " "
+      echo " "
+      echo "            Lets install some usefull Tools:)              "
+      echo " "
+      echo " "
+
+      
+      
+      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      sudo apt-get install krita-l10n synaptic zip
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted firefox-esr
+      
+      
+      
+      clear
+      toilet -F gay Pimiga3000
+      
+      #Some little Amiga stuff....
+      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+      clear
+      toilet -F gay Pimiga3000
+      echo " "
+      echo " "
+      cd /home/$USER
+      git clone --depth=1 https://github.com/rewtnull/amigafonts
+      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
+      sudo cp -R /home/$USER/Pimiga_mini/scripts/pimiga.sh /usr/local/bin
+      
+}
+
+
+
 #*********************************************  #Installing Pimiga Desktop*********************************
 #**********************************************************************************************************
  
  Pimiga_Desktop() {
- clear
+ 
+      clear
       toilet -F gay Pimiga3000 
    
-   echo "Installing Pimiga3000 Desktop ..."
-   echo " "
-   echo " "
-  echo "Backup Settings...."
-echo " "
-echo " "
+      echo "Installing Pimiga3000 Desktop ..."
+      echo " "
+      echo " "
+      echo "Backup Settings...."
+      echo " "
+      echo " "
 
 
     
@@ -195,52 +245,12 @@ fi
 
 
 
-
-#****************************************************************************************************************
-
-Pimiga_Tools() {
-
-clear
-toilet -F gay Pimiga3000
-
-echo " "
-echo " "
-echo "            Lets install some usefull Tools:)              "
-echo " "
-echo " "
-
-      
-      
-      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
-      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
-      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      sudo apt-get install krita-l10n synaptic zip
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted firefox-esr
-      
-      
-      
-      clear
-      toilet -F gay Pimiga3000
-      #Some little Amiga stuff....
-      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      cd /home/$USER
-      git clone --depth=1 https://github.com/rewtnull/amigafonts
-      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
-      sudo cp -R /home/$USER/Pimiga_mini/scripts/pimiga.sh /usr/local/bin
-      
-}
-
-
 #***************************************** # Install Amiberry 32bit *********************************************
 #****************************************************************************************************************
      
      
-      Pimiga_Amiberry() {
+ Pimiga_Amiberry32() {
+      
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
       
       clear
@@ -248,7 +258,7 @@ echo " "
       
       echo " "
       echo " "
-      echo "  ... here comes Amiberry  :-)   " 
+      echo "  ... here comes Amiberry 32bit  :-)   " 
       echo " "
       echo " "  
       cd ~
@@ -271,126 +281,20 @@ echo " "
       echo "  ... lets configer ClassicWB" 
       echo " "
       echo " " 
-      
+      cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry32 /home/$USER
+      unzip ./$Amiberry32 
+      rm -r ./$Amiberry32 
    
-      cd ~
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      rm -r ./Amiga.zip
-      
-      cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip /home/$USER
-      unzip ./amiberry-v3.3-rpi4-64bit.zip
-      cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip/* /home/$USER/Amiga
-      #rm -r ./amiberry-v3.3-rpi4-64bit.zip
-      
-      mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf  
-      
-  
-      
-      sudo chmod -R 777 /home/$USER/Amiga
-      
-      cd ~/Amiga
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo "  ... downloading  ClassicWB"  
-      echo " "
-      echo " "
-      cd /home/$USER/Amiga/HDD
-      
-      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip ./ClassicWB_UAE_v28.zip
-      
-      fi
-      
-      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_P96_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
-      unzip ./ClassicWB_P96_v28.zip
-      
-      fi
-      
-      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip ./ClassicWB_OS39_v28.zip
-      
-      fi
-      
-      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip ./ClassicWB_68K_v28.zip
-      
-      fi
-    
-      
-      cd /home/$USER/Amiga/HDD
-      
-      cd ~/Amiga
-      clear
-      toilet -F gay Pimiga3000
    
-      echo " "
-      echo " "
-      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      clear
-      toilet -F gay NOTE!
-      echo " "
-      echo " "
-      echo "The roms and workbench files are under copyrigt! "
-      echo "Use only if you have the original!  "
-      echo " (Original Amiga, Amiga Forever,..."
-      echo " Be fair and honest!"
-      sleep 4s
-      wget https://misapuntesde.com/res/Amiga_roms.zip
-      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
-      cd ~/Amiga/kickstarts/
-      unzip ./Amiga_roms.zip
-     
     
-      fi
-      
-     
-      
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
-      m 
+}
 
-      sudo chmod -R 777 /home/$USER/Amiga
-    
+
+      #****************************************  Install Amiberry 64bit Raspberry *************************************
+      #****************************************************************************************************************  
       
-    }
- #****************************************  Install Amiberry 64bit Raspberry *************************************
-#****************************************************************************************************************    
-   Pimiga_Amiberry64() {
+      
+Pimiga_Amiberry64() {
      
       
       clear
@@ -403,40 +307,32 @@ echo " "
       echo " "  
       cd ~
       
-      d ~
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
-      rm -r ./Amiga.zip
-      
-      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit.zip /home/$USER
-      #unzip ./amiberry-v3.3-rpi4-64bit.zip
+        
+      # Test (Speed)  * First trz SDL Error / should be bossible. Corrupt Imge bz tests_ 
+      #cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry64 /home/$USER
+      #unzip ./$Amiberry64
       #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
-      #rm -r ./amiberry-v3.3-rpi4-64bit.zip
+      #rm -r ./$Amiberry64
       
             
        #Compile Amiberry 64
+       
        cd 
        git clone https://github.com/midwan/amiberry
        cd ~/amiberry
        make -j2 PLATFORM=pi64
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
        sudo chmod +x /home/$USER/Amiga/amiberry
-       
-       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf  
-       
-      echo " "
-      echo " "
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo "  ... lets configer ClassicWB" 
-      echo " "
-      echo " " 
+}    
+           
+
+#***************************************** # Configure Amiga *********************************************
+#****************************************************************************************************************
      
-      
-    
      
-      
+      Configure_Amiga() {
+       
+             
       cd ~/Amiga
       clear
       toilet -F gay Pimiga3000
@@ -444,6 +340,12 @@ echo " "
       echo "  ... downloading  ClassicWB"  
       echo " "
       echo " "
+      
+      cd ~
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
+      
       cd /home/$USER/Amiga/HDD
       
       if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
@@ -497,10 +399,7 @@ echo " "
       unzip ./ClassicWB_68K_v28.zip
       
       fi
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
+    
       
       cd /home/$USER/Amiga/HDD
       
@@ -528,32 +427,34 @@ echo " "
     
       fi
       
-  
+     
       
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-    
+      
+      
+      mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
     
-      
-    } 
-    
-#*********************************************  #Make it like Amibian  **********************************************
-#****************************************************************************************************************
+}    
+   
+
+       
+#*********************************************  # Amibian  **********************************************
+#********************************************# Not testet! *******************************************************
 
  Amibian() {
  
-mkdir /home/$USER/.backup/
-sudo chmod -R 777 ~/.backup/
-cp -R ~/.config/ ~/.backup/.config
-cp -R ~/.local/ ~/.backup/.local
-cp -R /usr/local/bin ~/.backup/usr
+      mkdir /home/$USER/.backup/
+      sudo chmod -R 777 ~/.backup/
+      cp -R ~/.config/ ~/.backup/.config
+      cp -R ~/.local/ ~/.backup/.local
+      cp -R /usr/local/bin ~/.backup/usr
      
      
 }
-
 
     
 #****************************************   #Install PiKISS  ****************************************************
@@ -631,7 +532,9 @@ Pimiga_Retropie() {
 
 #**********************************************  #Finish setup  ***************************************
 #****************************************************************************************************************
- cd ~
+
+cd ~
+
 clear
 toilet -F gay Pimiga3000
 
@@ -643,7 +546,7 @@ case $CHOICE in
             Pimiga_Tools
             Pimiga_PiKiss
             Amibian
-            
+            Configure_Amiga
             ;;
         2)
             echo "Convert Amibian to Pimiga3000"
@@ -651,7 +554,10 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            #Pimiga_Amiberry
+            Amibian()            
+            Pimiga_Amiberry64
+            Configure_Amiga
+            
             ;;
         3)
             echo "Convert Raspberry Pi OS to Pimiga3000"
@@ -661,6 +567,8 @@ case $CHOICE in
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
+            Pimiga_Amiberry64
+            Configure_Amiga
             Pimiga_Retropie
           
             
@@ -672,7 +580,8 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry64
+            Pimiga_Amiberry64()
+            Configure_Amiga()
             #Pimiga_Retropie does not work :-(
           
            ;;
