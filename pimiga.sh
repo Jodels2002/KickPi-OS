@@ -572,7 +572,7 @@ case $CHOICE in
             Pimiga_Tools
             Pimiga_PiKiss
             Amibian            
-            Pimiga_Amiberry64
+            Pimiga_Amiberry32
             Configure_Amiga
             
             ;;
@@ -584,7 +584,7 @@ case $CHOICE in
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
-            Pimiga_Amiberry64
+            Pimiga_Amiberry32
             Configure_Amiga
             #Pimiga_Retropie
           
