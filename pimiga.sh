@@ -66,16 +66,18 @@ sudo apt install -y python-pil
 sudo apt install -y python-pip
 sudo apt install -y python-setuptools 
 
-#git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
-cd /home/$USER/Pimiga_mini/OLED
-sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
+#its ok but dissabled
+#cd /home/$USER/Pimiga_mini/OLED
+#sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
+
+
 # Test OLED
 #i2cdetect -y 1
 #echo " Should Say: "3C""
-python Amiga.py
+#python Amiga.py
 
 cd /home/$USER/Pimiga_mini/LED
-python LED.py
+#python LED.py
 
 clear
 toilet -F gay Pimiga3000
