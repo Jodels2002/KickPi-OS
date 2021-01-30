@@ -13,7 +13,7 @@ echo "Backup Settings...."
 
       echo " "
       echo "PimigaOS - Have fun :-)"
- 
+      sudo cp -R /home/$USER/Pimiga_mini/scripts/* /usr/local/bin
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
       cp  /home/$USER/.bashrc /home/$USER/.backup/.bashrc
