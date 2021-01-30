@@ -321,10 +321,14 @@ Pimiga_Amiberry64() {
       rm -r ./$Amiberry64
       
             
-        toilet -F gay Compile Amiberry 64
+
        
        sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev  build-essential
+       clear
+       toilet -F gay Pimiga3000 64bit
        sudo apt-get install -y  libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+       clear
+       toilet -F gay Pimiga3000 64bit
        cd /home/$USER
        git clone https://github.com/midwan/amiberry
        cd ~/amiberry
