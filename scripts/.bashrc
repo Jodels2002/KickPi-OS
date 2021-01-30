@@ -111,3 +111,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+echo "Hello PimigaOS"
+/home/$USER/Pimiga_mini/pimiga.sh
+
