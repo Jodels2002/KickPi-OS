@@ -408,7 +408,7 @@ Pimiga_Amiberry64() {
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
       
-      #fi
+      fi
     
       
       cd /home/$USER/Amiga/HDD
