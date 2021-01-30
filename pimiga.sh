@@ -154,7 +154,8 @@ echo " "
 
     
       # Fresh install XFCE4
-      sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
+      sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
+      #Test! sudo apt purge -y xorg xserver-xorg lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
