@@ -7,7 +7,7 @@
 #dtoverlay = act-led, gpio = 27
 #https://archive.org/compress/Amiga_WHD_Games
 
-# Todo: Em neut, AFor strukt, Rena pro
+# Todo: Em neut, AFor strukt, Rena pro  . Boot Co ...Spe,  Cat Boo, AWallWal, Ami Tur
 
 #******************************************** #History ************* ****************************************
 #************************************************************************************************************
