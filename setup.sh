@@ -23,4 +23,4 @@ echo "Backup Settings...."
       echo " "
       echo "Assign >NIL: Okey, rebooting..."
       echo " "
-      sudo reboot
+      #sudo reboot
