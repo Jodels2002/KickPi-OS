@@ -28,15 +28,6 @@
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
-W  = '\033[0m'  # white (normal)
-R  = '\033[31m' # red
-G  = '\033[32m' # green
-O  = '\033[33m' # orange
-B  = '\033[34m' # blue
-P  = '\033[35m' # purple
-
-
-
 
 #***********************************************  #Are you sudo? *********************************************
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
@@ -79,31 +70,20 @@ cd ~
 clear
 toilet -F gay Pimiga3000
 
-echo " "
-echo " "
-echo " "
-echo "Pimiga3000 mini  Setup \B"
-echo " "
-echo " "
-echo "Lets start ..."
-echo " "
-
-
 #******************************************** #Pimiga3000 mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
 WIDTH=70
 CHOICE_HEIGHT=4
-BACKTITLE="Pimiga3000"
-TITLE="Pimiga3000 mini"
+BACKTITLE="PimigaOS"
+TITLE="Please select your OS"
 MENU="Please select:"
 
 OPTIONS=(1 "Install Pimiga3000  - not working"
          2 "Convert Amibian to Pimiga3000 - not working"
          3 "Convert Raspberry Pi OS to Pimiga3000         (32bit) "
-         4 "Convert Raspberry Pi OS 64bit to Pimiga3000   (64bit) "
-         a "About  \B")
+         4 "Convert Raspberry Pi OS 64bit to Pimiga3000   (64bit) ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
@@ -637,11 +617,7 @@ case $CHOICE in
           
            ;;
            
-           a)
-            echo "Convert Raspberry Pi OS 64 to Amiga  \B"
-            about
-           ;;
-
+          
 
 esac
 
