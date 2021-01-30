@@ -1,0 +1,4 @@
+# PWR-LED (green) 
+#dtoverlay = pwr-led, gpio = 17
+# HDD LED (orange)
+#dtoverlay = act-led, gpio = 27
