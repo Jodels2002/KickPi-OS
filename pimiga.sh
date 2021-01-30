@@ -564,7 +564,7 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Amibian()            
+            Amibian            
             Pimiga_Amiberry64
             Configure_Amiga
             
@@ -590,8 +590,8 @@ case $CHOICE in
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry64()
-            Configure_Amiga()
+            Pimiga_Amiberry64
+            Configure_Amiga
             #Pimiga_Retropie does not work :-(
           
            ;;
