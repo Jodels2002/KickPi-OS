@@ -59,29 +59,7 @@ fi
 clear
 toilet -F gay Pimiga3000
 cd ~
-sudo apt install -y python-dev
-sudo apt install -y python-smbus i2c-tools
-sudo apt install -y python-pil
-sudo apt install -y python-pip
-sudo apt install -y python-setuptools 
-sudo apt install -y python-dev
-sudo apt install -y python-smbus i2c-tools
-sudo apt install -y python-pil
-sudo apt install -y python-pip
-sudo apt install -y python-setuptools 
 
-#its ok but dissabled
-#cd /home/$USER/Pimiga_mini/OLED
-#sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
-
-
-# Test OLED
-#i2cdetect -y 1
-#echo " Should Say: "3C""
-#python Amiga.py
-
-cd /home/$USER/Pimiga_mini/LED
-#python LED.py
 
 clear
 toilet -F gay Pimiga3000
@@ -118,9 +96,40 @@ CHOICE=$(dialog --clear \
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
+                
+                
+                
+#*********************************************  #OLED & LED comming soon, maybe :)  *****************************
+#****************************************************************************************************************
+
+Poser() {
+
+sudo apt install -y python-dev
+sudo apt install -y python-smbus i2c-tools
+sudo apt install -y python-pil
+sudo apt install -y python-pip
+sudo apt install -y python-setuptools 
+sudo apt install -y python-dev
+sudo apt install -y python-smbus i2c-tools
+sudo apt install -y python-pil
+sudo apt install -y python-pip
+sudo apt install -y python-setuptools 
+
+#its ok but dissabled
+#cd /home/$USER/Pimiga_mini/OLED
+#sudo chmod -R 777 /home/$USER/Pimiga_mini/OLED
 
 
+# Test OLED
+#i2cdetect -y 1
+#echo " Should Say: "3C""
+#python Amiga.py
 
+cd /home/$USER/Pimiga_mini/LED
+#python LED.py
+
+
+}
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
@@ -550,6 +559,7 @@ case $CHOICE in
             ;;
         2)
             echo "Convert Amibian to Pimiga3000"
+            Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
@@ -561,7 +571,7 @@ case $CHOICE in
             ;;
         3)
             echo "Convert Raspberry Pi OS to Pimiga3000"
-           
+            Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
