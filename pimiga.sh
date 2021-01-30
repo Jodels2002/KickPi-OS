@@ -415,7 +415,7 @@ Pimiga_Amiberry64() {
       
       fi
 
-      fi
+    
       
       cd /home/$USER/Amiga/HDD
       
@@ -426,6 +426,9 @@ Pimiga_Amiberry64() {
       echo " "
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      clear
+      toilet -F gay Pimiga3000
+      else 
       clear
       toilet -F gay NOTE!
       echo " "
