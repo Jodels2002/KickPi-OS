@@ -212,8 +212,8 @@ echo " "
       sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      sudo apt-get install libraspberrypi-dev
-      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted synaptic chromium-browser krita-l10n synaptic zip
+      sudo apt-get install krita-l10n synaptic zip
+      sudo apt install -y  geany geany-plugins-common geany-common imagemagick gparted firefox-esr
       
       
       
@@ -269,33 +269,20 @@ echo " "
       echo " "
       echo " " 
       
-      mkdir /home/$USER/Amiga
-      mkdir /home/$USER/Amiga/conf
-      mkdir /home/$USER/Amiga/HDD
-      mkdir /home/$USER/Amiga/HDD/Pimiga
-      mkdir /home/$USER/Amiga/FDD
-      mkdir /home/$USER/Amiga/FDD/Workbench
-      mkdir /home/$USER/Amiga/adf
-      mkdir /home/$USER/Amiga/dir
-      mkdir /home/$USER/Amiga/hdf
-      mkdir /home/$USER/Amiga/rom
-      mkdir /home/$USER/Amiga/Workbench
-      
+   
       cd ~
       cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -r ./Amiga.zip
       
-      mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
+      cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip /home/$USER
+      unzip ./amiberry-v3.3-rpi4-64bit.zip
+      cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip/* /home/$USER/Amiga
+      #rm -r ./amiberry-v3.3-rpi4-64bit.zip
       
-      cd /home/$USER/Amiga/hdf
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
-      unzip ./Amiga1000.zip
-      rm -r ./Amiga1000.zip
-      cd /home/$USER/Amiga/hdf
-      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga1000.zip /home/$USER/Amiga/hdf
-      unzip ./Amiga1000.zip
-      rm -r ./Amiga1000.zip
+      mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf  
+      
+  
       
       sudo chmod -R 777 /home/$USER/Amiga
       
@@ -359,10 +346,7 @@ echo " "
       unzip ./ClassicWB_68K_v28.zip
       
       fi
-      clear
-      toilet -F gay Pimiga3000
-      echo " "
-      echo " "
+    
       
       cd /home/$USER/Amiga/HDD
       
@@ -395,7 +379,7 @@ echo " "
       toilet -F gay Pimiga3000
       echo " "
       echo " "
-    
+      m 
 
       sudo chmod -R 777 /home/$USER/Amiga
     
@@ -416,40 +400,27 @@ echo " "
       echo " "  
       cd ~
       
-      mkdir /home/$USER/Amiga
-      mkdir /home/$USER/Amiga/conf
-      mkdir /home/$USER/Amiga/HDD
-      mkdir /home/$USER/Amiga/FDD
-      mkdir /home/$USER/Amiga/FDD/Workbench
-      mkdir /home/$USER/Amiga/adf
-      mkdir /home/$USER/Amiga/dir
-      mkdir /home/$USER/Amiga/hdf
-      mkdir /home/$USER/Amiga/rom
-      mkdir /home/$USER/Amiga/Workbench
+      d ~
+      cp -R /home/$USER/Pimiga_mini/Amiga/Amiga.zip /home/$USER
+      unzip ./Amiga.zip
+      rm -r ./Amiga.zip
       
+      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit.zip /home/$USER
+      #unzip ./amiberry-v3.3-rpi4-64bit.zip
+      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
+      #rm -r ./amiberry-v3.3-rpi4-64bit.zip
       
-     
-      
-       cd ~
-        # cp -R /home/$USER/Pimiga_mini/Amiga/Amiga64.zip /home/$USER
-        # unzip ./Amiga64.zip
-       
-        # mv /home/$USER/Amiga64/* /home/$USER/Amiga
-        # mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf
-       
-        # rm -r ./Amiga64.zip
-        # rm -r ./Amiga64
-        
-     
-       
-       # Compile Amiberry 64
+            
+       #Compile Amiberry 64
        cd 
-        git clone https://github.com/midwan/amiberry
+       git clone https://github.com/midwan/amiberry
        cd ~/amiberry
        make -j2 PLATFORM=pi64
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
        sudo chmod +x /home/$USER/Amiga/amiberry
-
+       
+       mv /home/$USER/Pimiga_mini/Amiga/conf/* /home/$USER/Amiga/conf  
+       
       echo " "
       echo " "
       clear
