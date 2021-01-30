@@ -569,7 +569,7 @@ case $CHOICE in
             Pimiga_Amiberry
             Pimiga_Amiberry64
             Configure_Amiga
-            Pimiga_Retropie
+            #Pimiga_Retropie
           
             
             ;;
