@@ -335,8 +335,8 @@ Pimiga_Amiberry64() {
        make -j2 PLATFORM=pi64
        clear
        toilet -F gay Pimiga3000 64bit
-       #sudo chmod +x /home/$USER/amiberry
-       #cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+       sudo chmod +x /home/$USER/amiberry/amiberry
+       cp -R /home/$USER/amiberry/* /home/$USER/Amiga
        #sudo chmod +x /home/$USER/Amiga/amiberry
 }    
            
