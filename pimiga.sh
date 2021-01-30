@@ -16,8 +16,8 @@
 # 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
 # 18.01 Menu & Funktions
 # 25.01 Amiga XFCE4 Desktop, OLED, bugfix
-# 26.01 added Convert Raspberry Pi OS to Pimiga3000
-# 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 64bit
+# 26.01 added Convert Raspberry Pi OS to Pimiga3000 (32bit)
+# 26.01 added Convert Raspberry Pi OS 64 bit to Pimiga3000 - 64bit
 # funktions and structure Test 32/64bit OK
 
 #***********************************************  #Preinstall stuff *****************************************
@@ -87,10 +87,10 @@ BACKTITLE="Pimiga3000"
 TITLE="Pimiga3000 mini"
 MENU="Please select:"
 
-OPTIONS=(1 "Install Pimiga3000 on Amibian - not working"
+OPTIONS=(1 "Install Pimiga3000  - not working"
          2 "Convert Amibian to Pimiga3000 - not working"
-         3 "Convert Raspberry Pi OS to Pimiga3000 "
-         4 "Convert Raspberry Pi OS 64bit to Pimiga3000 64bit ")
+         3 "Convert Raspberry Pi OS to Pimiga3000         (32bit)"
+         4 "Convert Raspberry Pi OS 64bit to Pimiga3000   (64bit) ")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$Pimiga3000" \
