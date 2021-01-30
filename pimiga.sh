@@ -171,8 +171,8 @@ Pimiga_Tools() {
 
       
       
-      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+      sudo apt-get install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+     
       # Test
       #sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
       #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
@@ -270,7 +270,7 @@ fi
       echo " "  
       cd ~
       
-      sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
+      #sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
       #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
       #git clone https://github.com/midwan/amiberry
@@ -314,22 +314,23 @@ Pimiga_Amiberry64() {
       
         
       # Test (Speed)  * First trz SDL Error / should be bossible. Corrupt Imge bz tests_ 
-      #cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry64 /home/$USER
-      #unzip ./$Amiberry64
-      #cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
-      #rm -r ./$Amiberry64
+      cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry64 /home/$USER
+      unzip ./$Amiberry64
+      cp -R /home/$USER/Pimiga_mini/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
+      rm -r ./$Amiberry64
       
             
        #Compile Amiberry 64
-       
+       #sudo apt-get install -y  libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
        cd 
-       git clone https://github.com/midwan/amiberry
-       cd ~/amiberry
-       make -j2 PLATFORM=pi64
+       #git clone https://github.com/midwan/amiberry
+       #cd ~/amiberry
+       #make -j2 PLATFORM=pi64
        clear
        toilet -F gay Pimiga3000 64bit
-       cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-       sudo chmod +x /home/$USER/Amiga/amiberry
+       #sudo chmod +x /home/$USER/amiberry
+       #cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+       #sudo chmod +x /home/$USER/Amiga/amiberry
 }    
            
 
