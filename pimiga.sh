@@ -285,8 +285,9 @@ fi
       clear
       toilet -F gay Pimiga3000
       echo " "
-      
-      cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry32 /home/$USER
+     
+      mkdir /home/$USER/Amiga
+      cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry32 /home/$USER/Amiga
       unzip ./$Amiberry32 
       rm -r ./$Amiberry32 
    
