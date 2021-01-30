@@ -280,7 +280,7 @@ fi
       echo " "
      
       mkdir /home/$USER/Amiga
-      cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry32 /home/$USER/Amiga
+      cd /home/$USER/Amiga
       unzip ./$Amiberry32 
       rm -r ./$Amiberry32 
    
@@ -307,7 +307,7 @@ Pimiga_Amiberry64() {
       cd ~
       
       mkdir /home/$USER/Amiga
-        
+      cd /home/$USER/Amiga  
       # Test (Speed)  
       cp -R /home/$USER/Pimiga_mini/Amiga/$Amiberry64 /home/$USER/Amiga
       unzip ./$Amiberry64
@@ -399,7 +399,10 @@ Pimiga_Amiberry64() {
       
       #fi
       
-      if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip ]; then
+      if [ ! -f "/home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip" ]; then
+      clear
+      toilet -F gay Pimiga3000
+      else 
       clear
       toilet -F gay Pimiga3000
       echo " "
@@ -411,7 +414,8 @@ Pimiga_Amiberry64() {
       unzip ./ClassicWB_68K_v28.zip
       
       fi
-    
+
+      fi
       
       cd /home/$USER/Amiga/HDD
       
@@ -549,17 +553,7 @@ Pimiga_Retropie() {
       
 }
 
-about() {
-  whiptail --msgbox "\
-This tool provides a straightforward way to setup your
-Raspberry Pi Amiga.
 
-Have fun B.Titze  2021*
-
-*f**king corona give me te time to do this
-\
-" 20 70 1
-}
 #**********************************************  #Finish setup  ***************************************
 #****************************************************************************************************************
 
