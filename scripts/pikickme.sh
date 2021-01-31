@@ -586,8 +586,17 @@ toilet -F gay PiKickOS
 
 case $CHOICE in
         1)
+            clear
             echo "Install PiKickOS on Amibian"
-           
+            
+   if whiptail --yesno "Would you create a Boot-USB-Stick from SD Card?" 20 60 ;then
+    /home/$USER/PiKickOS/scripts/rpi-clone -u sda
+else
+    echo No
+fi
+   clear
+   echo " "
+   
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
@@ -595,6 +604,15 @@ case $CHOICE in
             Configure_Amiga
             ;;
         2)
+             
+   if whiptail --yesno "Would you create a Boot-USB-Stick from SD Card?" 20 60 ;then
+    /home/$USER/PiKickOS/scripts/rpi-clone -u sda
+else
+    echo No
+fi
+   clear
+   echo " "
+   
             echo "Convert Amibian to PiKickOS"
             #Poser
             Pimiga_Desktop
