@@ -194,9 +194,9 @@ Pimiga_Tools() {
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
-      rm -rf ~/.config
+      sudo rm -rf ~/.config
       mkdir ~/.config
-      rm -rf ~/.local
+      sudo rm -rf ~/.local
       mkdir ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
       cd /home/$USER/.PiKickOS/
