@@ -1,0 +1,192 @@
+#!/bin/sh
+# Part of raspi-config https://github.com/RPi-Distro/raspi-config
+#
+# See LICENSE file for copyright and license details
+
+INTERACTIVE=True
+ASK_TO_REBOOT=0
+BLACKLIST=/etc/modprobe.d/raspi-blacklist.conf
+CONFIG=/boot/config.txt
+
+is_pi () {
+  ARCH=$(dpkg --print-architecture)
+  if [ "$ARCH" = "armhf" ] ; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if is_pi ; then
+  CMDLINE=/boot/cmdline.txt
+else
+  CMDLINE=/proc/cmdline
+fi
+
+is_pione() {
+   if grep -q "^Revision\s*:\s*00[0-9a-fA-F][0-9a-fA-F]$" /proc/cpuinfo; then
+      return 0
+   elif grep -q "^Revision\s*:\s*[ 123][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]0[0-36][0-9a-fA-F]$" /proc/cpuinfo ; then
+      return 0
+   else
+      return 1
+   fi
+}
+
+is_pitwo() {
+   grep -q "^Revision\s*:\s*[ 123][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]04[0-9a-fA-F]$" /proc/cpuinfo
+   return $?
+}
+
+is_pizero() {
+   grep -q "^Revision\s*:\s*[ 123][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]0[9cC][0-9a-fA-F]$" /proc/cpuinfo
+   return $?
+}
+
+get_pi_type() {
+   if is_pione; then
+      echo 1
+   elif is_pitwo; then
+      echo 2
+   else
+      echo 0
+   fi
+}
+
+is_live() {
+    grep -q "boot=live" $CMDLINE
+    return $?
+}
+
+is_ssh() {
+  if pstree -p | egrep --quiet --extended-regexp ".*sshd.*\($$\)"; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+deb_ver () {
+  ver=`cat /etc/debian_version | cut -d . -f 1`
+  echo $ver
+}
+
+calc_wt_size() {
+  # NOTE: it's tempting to redirect stderr to /dev/null, so supress error 
+  # output from tput. However in this case, tput detects neither stdout or 
+  # stderr is a tty and so only gives default 80, 24 values
+  WT_HEIGHT=17
+  WT_WIDTH=$(tput cols)
+
+  if [ -z "$WT_WIDTH" ] || [ "$WT_WIDTH" -lt 60 ]; then
+    WT_WIDTH=80
+  fi
+  if [ "$WT_WIDTH" -gt 178 ]; then
+    WT_WIDTH=120
+  fi
+  WT_MENU_HEIGHT=$(($WT_HEIGHT-7))
+}
+do_amiga_mini() {
+ 1
+}
+
+do_desktop() {
+2
+}
+do_retropie() {
+3
+}
+do_c64() {
+4
+}
+do_mc() {
+5
+}
+do_raspsettings() {
+6
+}
+retropie_settings()  {
+7
+}
+do_reboot() {
+8
+}
+do_shootdown() {
+9
+}
+do_about() {
+  whiptail --msgbox "\
+Ich bin der Beste!.\
+" 20 70 1
+}
+
+do_exit() {
+
+exit 1
+
+}
+do_finish() {
+
+  exit 0
+}
+#
+# Interactive use loop
+#
+if [ "$INTERACTIVE" = True ]; then
+  [ -e $CONFIG ] || touch $CONFIG
+  calc_wt_size
+  while true; do
+    if is_pi ; then
+      FUN=$(whiptail --title "Amiga3000 mini" --backtitle "  " --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT \
+        "1 Amiga3000 mini" "Fire up your Amiga"\
+        "2 TwisterOS" "Starts your Linux Desktop" \
+        "3 Retropie" "Lets have fun with all the games" \
+        "4 C64" "Lets do some C64 (Vice)" \
+        "5 Midnight Commander" "Starts the Folder Manager" \
+        "6 Raspi-Settings" "Raspberry Configuration Tool" \
+        "7 Retropie-Setup" "Configure your Emulationstation" \
+        "8 Reboot" "Are zou in trouble - lets restart" \
+        "9 Shootdown" "You should realy use this!" \
+        "e exit" "Leave this menu" \
+        3>&1 1>&2 2>&3)
+fi
+    RET=$?
+    if [ $RET -eq 1 ]; then
+      do_finish
+    elif [ $RET -eq 0 ]; then
+      if is_pi ; then
+        case "$FUN" in
+          1\ *) do_amiga_mini ;;
+          2\ *) do_desktop ;;
+          3\ *) do_retropie;;
+          4\ *) do_c64 ;;
+          5\ *) do_mc ;;
+          6\ *) do_raspsettings ;;
+          7\ *) retropie_settings ;;
+          8\ *) do_reboot ;;
+          9\ *) do_shootdown ;;
+          e\ *) do_exit ;;
+          a\ *) do_about ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 60 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 60 1
+      else
+        case "$FUN" in
+          1\ *) do_amiga_mini ;;
+          2\ *) do_desktop ;;
+          3\ *) do_retropie;;
+          4\ *) do_c64 ;;
+          5\ *) do_mc ;;
+          6\ *) do_raspsettings ;;
+          7\ *) retropie_settings ;;
+          8\ *) do_reboot ;;
+          9\ *) do_shootdown ;;
+          a\ *) do_about ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 60 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 60 1
+      fi
+    else
+      exit 1
+    fi
+  done
+fi
+
