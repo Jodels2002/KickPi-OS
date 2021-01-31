@@ -115,6 +115,9 @@ fi
 
  1> LOADWB NEWPATH 
       clear 
+      echo " "  
+      echo " "
+
       echo "1> PATH Raspberrybin ADD DH0:"
       echo "LOADWB :-)"
       echo " "
