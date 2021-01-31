@@ -631,7 +631,8 @@ toilet -F gay PiKickOS
 echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
-      
+      sudo rm -rf /home/$USER/.bashrc
+      cp  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
       #sudo rm -rf ~/PiKickOS   Debug!
       sudo rm -rf ~/amigafonts/
