@@ -202,11 +202,11 @@ Pimiga_Tools() {
       
       sudo chmod -R 777 /home/$USER/PiKickOS
       
-      sudo rm -rf ~/.config
-      mkdir ~/.config
+      #sudo rm -rf ~/.config
+      #mkdir ~/.config
       sudo chmod -R 777 /home/$USER/.config
-      sudo rm -rf /home/$USER/.local
-      mkdir ~/.local
+      #sudo rm -rf /home/$USER/.local
+      #mkdir ~/.local
       sudo chmod -R 777 ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
       cd /home/$USER/PiKickOS/
