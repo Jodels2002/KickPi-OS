@@ -12,7 +12,7 @@ echo "Backup Settings...."
 
 
       echo " "
-      echo "PimigaOS - Have fun :-)"
+      echo "PiKickOS - Have fun :-)"
       sudo cp -R /home/$USER/Pimiga_mini/scripts/* /usr/local/bin
       
       
@@ -21,13 +21,12 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
       cp  /home/$USER/.bashrc /home/$USER/.backup/.bashrc
-      cp  /home/$USER/Pimiga_mini/scripts/.bashrc /home/$USER/.bashrc
+      cp  /home/$USER/PiKickOS/scripts/.bashrc /home/$USER/.bashrc
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
       
       fi
       
-      echo "Assign >NIL: Okey, rebooting..."
-      echo "Relaxe! "
+   
       sudo reboot
