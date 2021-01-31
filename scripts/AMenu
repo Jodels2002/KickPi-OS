@@ -86,7 +86,7 @@ calc_wt_size() {
   fi
   WT_MENU_HEIGHT=$(($WT_HEIGHT-7))
 }
-do_amiga_mini() {
+do_amiga() {
  1
 }
 
@@ -116,7 +116,7 @@ do_shootdown() {
 }
 do_about() {
   whiptail --msgbox "\
-Ich bin der Beste!.\
+c B.Titze 2021.\
 " 20 70 1
 }
 
@@ -138,8 +138,8 @@ if [ "$INTERACTIVE" = True ]; then
   while true; do
     if is_pi ; then
       FUN=$(whiptail --title "Amiga3000 mini" --backtitle "  " --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT \
-        "1 Amiga3000 mini" "Fire up your Amiga"\
-        "2 TwisterOS" "Starts your Linux Desktop" \
+        "1 Start your Amiberry Amiga"\
+        "2 PickickOS "Starts your Linux Desktop" \
         "3 Retropie" "Lets have fun with all the games" \
         "4 C64" "Lets do some C64 (Vice)" \
         "5 Midnight Commander" "Starts the Folder Manager" \
@@ -171,7 +171,7 @@ fi
         esac || whiptail --msgbox "There was an error running option $FUN" 20 60 1
       else
         case "$FUN" in
-          1\ *) do_amiga_mini ;;
+          1\ *) do_amiga ;;
           2\ *) do_desktop ;;
           3\ *) do_retropie;;
           4\ *) do_c64 ;;
