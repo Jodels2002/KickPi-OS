@@ -15,8 +15,10 @@ echo "Backup Settings...."
 
       echo " "
       echo "PiKickOS - Have fun :-)"
+      sudo rm -rf ~/.backup
+      sudo rm -rf ~/.PiKickOS
       sudo cp -R /home/$USER/PiKickOS/scripts/* /usr/local/bin
-     
+      
       
       
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
