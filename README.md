@@ -9,7 +9,7 @@ sudo chmod -R 777 PiKickOS
 cd PiKickOS
 
 
-./pimiga.sh
+./setup.sh
 
 
 Souce of Game:
