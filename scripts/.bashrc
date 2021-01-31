@@ -117,13 +117,12 @@ fi
       clear 
       echo " "  
       echo " "
-
-      echo "1> PATH Raspberrybin ADD DH0:"
-      echo "LOADWB :-)"
+      echo "1> PATH Raspberry in ADD DH0:"
+      echo " "  
       echo " "
-      echo "1>Hi Guys,"
+      echo "1>	Hi Guys,"
       echo " "
-      echo "1>welcome to the "PiKickOS" installer! "
+      echo "1>	welcome to the "PiKickOS" installer! "
       echo "1>CLI"
       echo "1>CLI"
       echo "1>Please note that the Kickroms and Workbench files are still copyrights (Amiga Forever, ...)! are. "
@@ -133,6 +132,10 @@ fi
       echo "1>Greetings yours "
       echo "Assign >NIL: Bernd Titze"
       echo " "
+      echo " " 
+      
+      echo " " 
+      echo "LOADWB ...  :-)"
      
       sleep 10s
       /home/$USER/PiKickOS/scripts/pikickme.sh
