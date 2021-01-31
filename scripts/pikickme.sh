@@ -23,7 +23,8 @@
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
 
-
+sudo rm -rf /home/$USER/.local/share/Trash/*
+      
 
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 Amiberry64=amiberry-v3.3-rpi4-64bit.zip
@@ -211,6 +212,7 @@ Pimiga_Tools() {
       mkdir ~/.config
       rm -r ~/.local
       mkdir ~/.local
+      sudo cp -R ~/PiKickOS ~/.PiKickOS
       mv ~/.PiKickOS/.data/.config/ /home/$USER/
       mv ~/.PiKickOS/.data/.local/ /home/$USER/
   
@@ -624,9 +626,8 @@ echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
       
-      sudo rm -r /home/pi/.local/share/Trash/
-      sudo rm -r /home/pi/amigafonts/
-      
+      sudo rm -rf /home/$USER/.local/share/Trash/*
+      sudo rm -rf~/PiKickOS
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
@@ -638,7 +639,7 @@ echo " "
      whiptail --msgbox " Ready,... Okey, here we are ... Lets PiKickOS (mini) :-)" 20 60 1
 clear
 toilet -F gay PiKickOS
-pimiga.sh
+
 
 
 
