@@ -6,7 +6,7 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 #https://archive.org/compress/Amiga_WHD_Games
-
+# https://github.com/billw2/rpi-clone "rpi-clone -f -p 256M sdb"
 # Todo: Em neut, AFor strukt, Rena pro  . Boot Co ...Spe,  Cat Boo, AWallWal, Ami Tur
 
 #******************************************** #History ************* ****************************************
