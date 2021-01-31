@@ -208,9 +208,9 @@ Pimiga_Tools() {
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
-      rm -r ~/.config
+      rm -rf ~/.config
       mkdir ~/.config
-      rm -r ~/.local
+      rm -rf ~/.local
       mkdir ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
       mv ~/.PiKickOS/.data/.config/ /home/$USER/
@@ -225,7 +225,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo cp -R /home/$USER/.PiKickOS/Amiga_Logos /usr/share/icons
       sudo cp -R /home/$USER/.PiKickOS/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
-      sudo rm -r /usr/share/icons/default
+      sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
 fi     
@@ -236,7 +236,7 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -R /home/$USER/.PiKickOS/Amiga_Logos/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       sudo mv /home/$USER/.PiKickOS/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
-      sudo rm -r /usr/share/themes/Default/xfwm4/
+      sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
 fi
@@ -282,7 +282,7 @@ fi
       mkdir /home/$USER/Amiga
       cd /home/$USER/Amiga
       unzip ./$Amiberry32 
-      rm -r ./$Amiberry32 
+      rm -rf ./$Amiberry32 
    
    
     
@@ -312,7 +312,7 @@ Pimiga_Amiberry64() {
       cp -R /home/$USER/.PiKickOS/Amiga/$Amiberry64 /home/$USER/Amiga
       unzip ./$Amiberry64
       
-      rm -r ./$Amiberry64
+      rm -rf ./$Amiberry64
       
             
 
@@ -356,7 +356,7 @@ Pimiga_Amiberry64() {
       cd ~
       cp -R /home/$USER/.PiKickOS/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
-      rm -r ./Amiga.zip
+      rm -rf ./Amiga.zip
       
       cd /home/$USER/Amiga/HDD
       
@@ -626,8 +626,9 @@ echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
       
-      sudo rm -rf /home/$USER/.local/share/Trash/*
-      sudo rm -rf~/PiKickOS
+      sudo rm -rf ~/.local/share/Trash
+      sudo rm -rf ~/PiKickOS
+      sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
