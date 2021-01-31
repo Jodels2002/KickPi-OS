@@ -6,7 +6,7 @@ git clone --depth=1 https://github.com/Jodels2002/PiKickOS
 
 sudo chmod -R 777 PiKickOS
 
-cd Pimiga_mini
+cd PiKickOS
 
 
 ./pimiga.sh
