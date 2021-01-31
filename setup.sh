@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assign >NIL:  Install PimigaOS - not for use!!!
+# Assign >NIL:  Install PiKickOS - not for use!!!
 # Assign >NIL:  B.Titze 2020
 
 
@@ -16,6 +16,7 @@ echo "Backup Settings...."
       echo " "
       echo "PiKickOS - Have fun :-)"
       sudo cp -R /home/$USER/PiKickOS/scripts/* /usr/local/bin
+     
       
       
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
