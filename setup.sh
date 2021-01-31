@@ -17,6 +17,8 @@ echo "Backup Settings...."
       echo "PiKickOS - Have fun :-)"
       sudo rm -rf ~/.backup
       sudo rm -rf ~/.PiKickOS
+      sudo rm -rf ~/Amiga
+     
       sudo cp -R /home/$USER/PiKickOS/scripts/* /usr/local/bin
       
       
