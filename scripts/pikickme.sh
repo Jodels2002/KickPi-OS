@@ -199,14 +199,14 @@ Pimiga_Tools() {
       sudo rm -rf ~/.local
       mkdir ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
-      cd /home/$USER/.PiKickOS/
+      cd /home/$USER/PiKickOS/
 
-if [ ! -f /home/$USER/.PiKickOS/.data ]; then
-      sudo unzip ~/.PiKickOS/.pac/.data.pac
+if [ ! -f /home/$USER/PiKickOS/.data ]; then
+      sudo unzip ~/PiKickOS/.pac/.data.pac
 fi
       
-      sudo cp -R ~/.PiKickOS/.data/.config/ /home/$USER/
-      sudo cp -R ~/.PiKickOS/.data/.local/ /home/$USER/
+      cp -R ~/PiKickOS/.data/.config/ /home/$USER/
+      cp -R ~/PiKickOS/.data/.local/ /home/$USER/
   
       
       # Fresh install Amiga Desktop
@@ -214,8 +214,8 @@ fi
 if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
-      sudo cp -R /home/$USER/.PiKickOS/Amiga_Logos /usr/share/icons
-      sudo cp -R /home/$USER/.PiKickOS/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo cp -R /home/$USER/PiKickOS/Amiga_Logos /usr/share/icons
+      sudo cp -R /home/$USER/PiKickOS/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
@@ -223,11 +223,11 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 fi     
 
 if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
-      cd /home/$USER/.PiKickOS/Amiga_Logos
+      cd /home/$USER/PiKickOS/Amiga_Logos
       git clone --depth=1 https://github.com/x64k/amitk
-      sudo cp -R /home/$USER/.PiKickOS/Amiga_Logos/amitk /usr/share/themes
+      sudo cp -R /home/$USER/PiKickOS/Amiga_Logos/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/.PiKickOS/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo mv /home/$USER/PiKickOS/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       
@@ -301,7 +301,7 @@ Pimiga_Amiberry64() {
       mkdir /home/$USER/Amiga
       cd /home/$USER/Amiga  
       # Test (Speed)  
-      cp -R /home/$USER/.PiKickOS/Amiga/$Amiberry64 /home/$USER/Amiga
+      cp -R /home/$USER/PiKickOS/Amiga/$Amiberry64 /home/$USER/Amiga
       unzip ./$Amiberry64
       
       rm -rf ./$Amiberry64
@@ -346,7 +346,7 @@ Pimiga_Amiberry64() {
       echo " "
       
       cd ~
-      cp -R /home/$USER/.PiKickOS/Amiga/Amiga.zip /home/$USER
+      cp -R /home/$USER/PiKickOS/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -rf ./Amiga.zip
       
@@ -447,7 +447,7 @@ Pimiga_Amiberry64() {
       echo " "
       
       
-      mv /home/$USER/.PiKickOS/Amiga/conf/* /home/$USER/Amiga/conf  
+      mv /home/$USER/PiKickOS/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
     
@@ -619,7 +619,7 @@ echo " "
       echo "  ... cleanup and finish setup  "  
       
       sudo rm -rf ~/.local/share/Trash
-      sudo rm -rf ~/PiKickOS
+      #sudo rm -rf ~/PiKickOS   Debug!
       sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
