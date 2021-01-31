@@ -12,7 +12,7 @@ cd PiKickOS
 ./setup.sh
 
 
-Souce of Game:
+Source of Game:
 
 https://amigaland.de/1318-2
 
