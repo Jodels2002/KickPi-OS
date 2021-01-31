@@ -34,6 +34,17 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo " "
       
       fi
-     sleep 3 
+     sleep 5
+   echo " "
+      echo "  "
    
-      sudo reboot
+   if whiptail --yesno "Would you create a Boot-USB-Stick from SD Card?" 20 60 ;then
+    /home/$USER/PiKickOS/scripts/rpi-clone -u sda
+else
+    echo No
+fi
+   clear
+   echo " "
+   sleep 5 
+   
+      #sudo reboot
