@@ -112,15 +112,18 @@ if ! shopt -oq posix; then
   fi
 fi
       clear      
-      echo " Hi Guys,"
+      echo "Hi Guys,"
       echo " "
       echo "welcome to the "PiKickOS" installer! "
+      echo " "
       echo " "
       echo "Please note that the Kickroms and Workbench files are still copyrights (Amiga Forever, ...)! are. "
       echo " "
       echo "So only use this image if you own the original Amigas, Amiga Forever."
       echo " "
-      echo "Amiga Forever, Greetings yours Bernd Titze"
+      echo "Greetings yours "
+      echo "Bernd Titze"
+      echo " "
      
       sleep 8s
 /home/$USER/PiKickOS/scripts/pikickme.sh
