@@ -284,11 +284,12 @@ fi
       echo " "
      
       mkdir /home/$USER/Amiga
-      cd /home/$USER/Amiga
-      unzip ./$Amiberry32 
-      rm -rf ./$Amiberry32 
+      cd /home/pi/PiKickOS/Amiga
+      unzip /home/pi/PiKickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+      cp -r /home/pi/PiKickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
+      
    
-   
+  
     
 }
 
@@ -313,10 +314,11 @@ Pimiga_Amiberry64() {
       mkdir /home/$USER/Amiga
       cd /home/$USER/Amiga  
       # Test (Speed)  
-      cp -R /home/$USER/PiKickOS/Amiga/$Amiberry64 /home/$USER/Amiga
-      unzip ./$Amiberry64
+       mkdir /home/$USER/Amiga
+      cd /home/pi/PiKickOS/Amiga
+      unzip /home/pi/PiKickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+      #cp -r /home/pi/PiKickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
       
-      rm -rf ./$Amiberry64
       
             
 
@@ -374,7 +376,9 @@ Pimiga_Amiberry64() {
       echo " "
       #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       #unzip ./ClassicWB_UAE_v28.zip
-      
+      #else 
+      clear
+      toilet -F gay PiKickOS
       #fi
       
       #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
@@ -387,7 +391,9 @@ Pimiga_Amiberry64() {
       echo " "
       #wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       #unzip ./ClassicWB_P96_v28.zip
-      
+      #else 
+      clear
+      toilet -F gay PiKickOS
       #fi
       
       #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
@@ -400,7 +406,9 @@ Pimiga_Amiberry64() {
       echo " "
       #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       #unzip ./ClassicWB_OS39_v28.zip
-      
+      #else 
+      clear
+      toilet -F gay PiKickOS
       #fi
       cd /home/$USER/Amiga/hdf
       if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
