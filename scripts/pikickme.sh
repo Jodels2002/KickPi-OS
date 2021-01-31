@@ -29,6 +29,12 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
+      sudo chmod -R 777 /usr/local/bin/
+      sudo chmod -R 777 /usr/local/share/
+      sudo chmod -R 777 /home/$USER/.backup/
+      sudo chmod -R 777 /home/$USER/.config/
+      sudo chmod -R 777 /home/$USER/.local/
+      
 
 #***********************************************  #Are you sudo? *********************************************
 if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
@@ -194,20 +200,26 @@ Pimiga_Tools() {
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
+      sudo chmod -R 777 /home/$USER/PiKickOS
+      
       sudo rm -rf ~/.config
       mkdir ~/.config
-      sudo rm -rf ~/.local
+      sudo chmod -R 777 /home/$USER/.config
+      sudo rm -rf /home/$USER/.local
       mkdir ~/.local
+      sudo chmod -R 777 ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
       cd /home/$USER/PiKickOS/
 
-if [ ! -f /home/$USER/PiKickOS/.data ]; then
+
       sudo unzip ~/PiKickOS/.pac/.data.pac
-fi
+
       
       cp -R ~/PiKickOS/.data/.config/ /home/$USER/
       cp -R ~/PiKickOS/.data/.local/ /home/$USER/
-  
+      sudo chmod -R 777 /home/$USER/PiKickOSPiKickOS
+      sudo chmod -R 777 /home/$USER/.local
+      sudo chmod -R 777 /home/$USER/.config
       
       # Fresh install Amiga Desktop
     
@@ -350,9 +362,9 @@ Pimiga_Amiberry64() {
       unzip ./Amiga.zip
       rm -rf ./Amiga.zip
       
-      cd /home/$USER/Amiga/HDD
+      cd /home/$USER/Amiga/hdf
       
-      #if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_UAE_v28.zip ]; then
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       #clear
       #toilet -F gay PiKickOS
       echo " "
@@ -365,7 +377,7 @@ Pimiga_Amiberry64() {
       
       #fi
       
-      #if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_P96_v28.zip ]; then
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       #clear
       #toilet -F gay PiKickOS
       echo " "
@@ -378,7 +390,7 @@ Pimiga_Amiberry64() {
       
       #fi
       
-      #if [ ! -f /home/$USER/Amiga/HDD/ClassicWB_OS39_v28.zip ]; then
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       #clear
       #toilet -F gay PiKickOS
       echo " "
@@ -391,7 +403,7 @@ Pimiga_Amiberry64() {
       
       #fi
       
-      if [ ! -f "/home/$USER/Amiga/HDD/ClassicWB_68K_v28.zip" ]; then
+      if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet -F gay PiKickOS
       else 
@@ -409,7 +421,7 @@ Pimiga_Amiberry64() {
 
     
       
-      cd /home/$USER/Amiga/HDD
+      cd /home/$USER/Amiga/hdf
       
       cd ~/Amiga
       clear
