@@ -111,20 +111,26 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-      clear      
-      echo "Hi Guys,"
+
+
+ 1> LOADWB NEWPATH 
+      clear 
+      echo "1> PATH Raspberrybin ADD DH0:"
+      echo "LOADWB :-)"
       echo " "
-      echo "welcome to the "PiKickOS" installer! "
+      echo "1>Hi Guys,"
       echo " "
-      echo " "
-      echo "Please note that the Kickroms and Workbench files are still copyrights (Amiga Forever, ...)! are. "
-      echo " "
+      echo "1>welcome to the "PiKickOS" installer! "
+      echo "1>CLI"
+      echo "1>CLI"
+      echo "1>Please note that the Kickroms and Workbench files are still copyrights (Amiga Forever, ...)! are. "
+      echo "1>CLI"
       echo "So only use this image if you own the original Amigas, Amiga Forever."
-      echo " "
-      echo "Greetings yours "
-      echo "Bernd Titze"
+      echo "1>CLI: "
+      echo "1>Greetings yours "
+      echo "Assign >NIL: Bernd Titze"
       echo " "
      
-      sleep 8s
-/home/$USER/PiKickOS/scripts/pikickme.sh
+      sleep 10s
+      /home/$USER/PiKickOS/scripts/pikickme.sh
 
