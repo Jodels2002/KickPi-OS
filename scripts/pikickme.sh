@@ -232,6 +232,8 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      else 
+      clear
 fi     
 
 if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
@@ -242,6 +244,9 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo mv /home/$USER/PiKickOS/Amiga_Logos/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      sudo cp -R /home/$USER/PiKickOS/config/rpd-wallpaper/* /usr/share/backgrounds/
+      else 
+      clear
       
 fi
       
