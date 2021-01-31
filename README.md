@@ -1,8 +1,8 @@
-# Pimiga_mini setup ( under construction! )
+# PiKickOS ( under construction! )
 
 cd
 
-git clone --depth=1 https://github.com/Jodels2002/Pimiga_mini
+git clone --depth=1 https://github.com/Jodels2002/PiKickOS
 
 sudo chmod -R 777 Pimiga_mini
 
