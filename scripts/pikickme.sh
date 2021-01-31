@@ -402,11 +402,8 @@ Pimiga_Amiberry64() {
       #unzip ./ClassicWB_OS39_v28.zip
       
       #fi
-      
+      cd /home/$USER/Amiga/hdf
       if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet -F gay PiKickOS
-      else 
       clear
       toilet -F gay PiKickOS
       echo " "
@@ -416,6 +413,10 @@ Pimiga_Amiberry64() {
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
+      else 
+      clear
+      toilet -F gay PiKickOS
+     
       
       fi
 
@@ -431,10 +432,6 @@ Pimiga_Amiberry64() {
       echo " "
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
-      toilet -F gay PiKickOS
-      else 
-      clear
-      toilet -F gay NOTE!
       echo " "
       echo " "
       echo "The roms and workbench files are under copyrigt! "
@@ -448,6 +445,11 @@ Pimiga_Amiberry64() {
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
+      toilet -F gay PiKickOS
+      else 
+      clear
+      toilet -F gay NOTE!
+      
      
     
       fi
