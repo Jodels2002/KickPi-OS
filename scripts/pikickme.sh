@@ -52,20 +52,6 @@ sudo apt install -y toilet
 sudo apt install -y dialog
 sudo apt install -y mc git 
 
-clear  
-toilet -F gay PiKickOS
-cd /home/$USER/.PiKickOS/
-
-if [ ! -f /home/$USER/.PiKickOS/.data ]; then
-      unzip ~/.PiKickOS/data.pac
-fi
-
-
-clear
-toilet -F gay PiKickOS
-cd ~
-
-
 clear
 toilet -F gay PiKickOS
 
@@ -147,7 +133,7 @@ Pimiga_Update() {
 
 
 
-#*********************************************  #Installing Pimiga_Tools*********************************
+#*********************************************  #Installing PiKickOS_Tools*********************************
 #**********************************************************************************************************
 
 Pimiga_Tools() {
@@ -190,7 +176,7 @@ Pimiga_Tools() {
 
 
 
-#*********************************************  #Installing Pimiga Desktop*********************************
+#*********************************************  #Installing PiKickOS Desktop*********************************
 #**********************************************************************************************************
  
  Pimiga_Desktop() {
@@ -213,8 +199,14 @@ Pimiga_Tools() {
       rm -rf ~/.local
       mkdir ~/.local
       sudo cp -R ~/PiKickOS ~/.PiKickOS
-      mv ~/.PiKickOS/.data/.config/ /home/$USER/
-      mv ~/.PiKickOS/.data/.local/ /home/$USER/
+      cd /home/$USER/.PiKickOS/
+
+if [ ! -f /home/$USER/.PiKickOS/.data ]; then
+      sudo unzip ~/.PiKickOS/.pac/.data.pac
+fi
+      
+      sudo cp -R ~/.PiKickOS/.data/.config/ /home/$USER/
+      sudo cp -R ~/.PiKickOS/.data/.local/ /home/$USER/
   
       
       # Fresh install Amiga Desktop
