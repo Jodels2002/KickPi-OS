@@ -28,9 +28,17 @@ sudo apt install -y toilet dialog mc git
 
 
 clear
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     echo "Raspberry Pi OS 64 bit is running..."
+       
+    else  echo " "
+      echo ""
+    
 toilet -F gay PiKickOS
       echo " "
       echo ""
+      
       echo " "
       echo "1>	Hi Guys,"
       echo " "
@@ -361,9 +369,9 @@ fi
       
       cd /home/$USER/Amiga/hdf
       
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      #clear
-      #toilet -F gay PiKickOS
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay PiKickOS
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...     " 
