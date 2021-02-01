@@ -22,7 +22,35 @@
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
+sudo apt-mark hold lxpanel
+#sudo apt-get -y update 
+sudo apt install -y toilet dialog mc git 
 
+
+clear
+toilet -F gay PiKickOS
+      echo " "
+      echo "\e[1;33m'          Welcome to PiKickOS'\e[0m"
+      echo " "
+      echo "1>	Hi Guys,"
+      echo " "
+      echo "1>	welcome to the "PiKickOS" installer! "
+      echo "1>CLI"
+      echo "1>CLI"
+      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
+      echo "1>CLI"
+      echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
+      echo "1>CLI: "
+      echo "1>                  Greetings your´s "
+      echo "1>Assign >NIL:      Bernd Titze"
+      echo " "
+      echo " " 
+      
+      echo " " 
+      echo "	LOADWB ...  :-)"
+     
+      sleep 8s
+    
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
   if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -52,34 +80,7 @@ if  xset q &>/dev/null; then
 fi 
 #***********************************************  #Ok, we are ready...  ***************************************
 
-sudo apt-mark hold lxpanel
-#sudo apt-get -y update 
-sudo apt install -y toilet dialog mc git 
 
-
-clear
-toilet -F gay PiKickOS
-
-      $ echo $'\e[1;33m'          Welcome to PiKickOS'\e[0m'
-      echo "1>	Hi Guys,"
-      echo " "
-      echo "1>	welcome to the "PiKickOS" installer! "
-      echo "1>CLI"
-      echo "1>CLI"
-      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
-      echo "1>CLI"
-      echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
-      echo "1>CLI: "
-      echo "1>                  Greetings your´s "
-      echo "1>Assign >NIL:      Bernd Titze"
-      echo " "
-      echo " " 
-      
-      echo " " 
-      echo "	LOADWB ...  :-)"
-     
-      sleep 6s
-    
 
 #******************************************** #PiKickOS mini  Menu ********************************************
 #****************************************************************************************************************
