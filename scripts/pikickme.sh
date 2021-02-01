@@ -382,7 +382,7 @@ fi
       else 
       clear
       toilet -F gay PiKickOS
-      #fi
+      fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       clear
@@ -473,8 +473,7 @@ fi
       mv /home/$USER/PiKickOS/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
-    
-}    
+    }    
    
 
        
