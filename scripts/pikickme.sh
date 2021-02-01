@@ -7,7 +7,7 @@
 #dtoverlay = act-led, gpio = 27
 #https://archive.org/compress/Amiga_WHD_Games
 # https://github.com/billw2/rpi-clone "rpi-clone -f -p 256M sdb"
-# Todo: Em neut, AFor strukt, Rena pro  . Boot Co ...Spe,  Cat Boo, AWallWal, Ami Tur
+# Todo: Em neut, AFor strukt, Rena pro  . Boot Co ...Spe,  Cat Boo, AWallWal, Ami Tur 
 
 #******************************************** #History ************* ****************************************
 #************************************************************************************************************
@@ -258,7 +258,13 @@ fi
      
      
  Pimiga_Amiberry32() {
-      
+ 
+ if [ "$(getconf LONG_BIT)" == "64" ]; then
+        true
+    else
+        false
+    fi
+    
       # Install Amiberry Raspberry Pi with SDL2 + DispmanX
       
       clear
