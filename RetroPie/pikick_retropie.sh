@@ -1,13 +1,11 @@
-Code: Select all
-
 #!/bin/bash
 
 cd /home/pi/RetroPie-Setup
-. /home/pi/RetroPie-Setup/retropie_packages.sh
-. /home/pi/RetroPie-Setup/scriptmodules/system.sh
-. /home/pi/RetroPie-Setup/scriptmodules/helpers.sh
-. /home/pi/RetroPie-Setup/scriptmodules/packages.sh
-. /home/pi/RetroPie-Setup/scriptmodules/admin/setup.sh
+sudo ./home/pi/RetroPie-Setup/retropie_packages.sh
+sudo ./home/pi/RetroPie-Setup/scriptmodules/system.sh
+sudo ./home/pi/RetroPie-Setup/scriptmodules/helpers.sh
+sudo ./home/pi/RetroPie-Setup/scriptmodules/packages.sh
+sudo ./home/pi/RetroPie-Setup/scriptmodules/admin/setup.sh
 
 setup_env
 rp_registerAllModules
@@ -22,6 +20,6 @@ function printMsgs() {
     done
 }
 
-binaries_setup
+sudo binaries_setup
 
 exit
