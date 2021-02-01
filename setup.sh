@@ -27,7 +27,7 @@ echo "Good choise :-) "
       else
       
       echo " Wrong"
-      echo " 
+      echo " "
       
 fi
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
