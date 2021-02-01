@@ -163,7 +163,7 @@ Pimiga_Tools() {
           
       sudo apt-get install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      sudo apt install -y  geany geany-plugins-common geany-common zip gparted
+      sudo apt install -y  geany geany-plugins-common geany-common zip gparted unzip xmlstarlet
       #sudo apt install -y imagemagick firefox-esr  krita-l10n
       
       
@@ -484,25 +484,12 @@ fi
 Pimiga_Addons() {
      #Install PiKISS
       
-      clear
-      toilet -F gay PiKickOS
-      
-      echo " "
-      echo " "
-      echo "  ... here comes PiKiss  :-)   "     
-      echo " "
-      echo " "
-      cd ~
+   
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
 
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
-      clear
-      toilet -F gay PiKickOS
-      echo " "
-      echo " "
-     
-      #sudo ./piKiss.sh 
+      
       
 }
 
@@ -514,41 +501,38 @@ Pimiga_Addons() {
 Pimiga_Retropie() {
 #Install Retropie/Setup
       
-      clear
+      
+    
+      
+    if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     clear
       toilet -F gay PiKickOS
       
       echo " "
+      clear
+       toilet -F gay PiKickOS 
+       toilet -F gay 64bit
+      echo " "
+      echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
+      echo " "
+      sleep 3
+      cd ~
+      
+    else
+    echo " "
+      clear
+      toilet -F gay PiKickOS 
       echo " "
       echo "  ... here comes Retropie :-)     "   
       echo " "
       echo " "
-      cd ~
-      sudo apt-get install -y git unzip xmlstarlet
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
-      
-      cd /home/pi/RetroPie-Setup
-. /home/pi/RetroPie-Setup/retropie_packages.sh
-. /home/pi/RetroPie-Setup/scriptmodules/system.sh
-. /home/pi/RetroPie-Setup/scriptmodules/helpers.sh
-. /home/pi/RetroPie-Setup/scriptmodules/packages.sh
-. /home/pi/RetroPie-Setup/scriptmodules/admin/setup.sh
+      mv /home/$USER/PiKickOS/RetroPie/* /home/$USER/RetroPie-Setup 
+ fi      
 
-setup_env
-rp_registerAllModules
-
-function printMsgs() {
-    local type="$1"
-    shift
-    for msg in "$@"; do
-        [[ "$type" == "dialog" ]] && echo "$msg"
-        [[ "$type" == "console" ]] && echo "$msg"
-        [[ "$type" == "heading" ]] && echo -e "\n= = = = = = = = = = = = = = = = = = = = =\n$msg\n= = = = = = = = = = = = = = = = = = = = =\n"
-    done
-}
-
-sudo binaries_setup
 
 exit
 
@@ -561,14 +545,7 @@ exit
       #sudo __nodialog=1 ./retropie_packages.sh setup vice
       sudo _clear
       toilet -F gay PiKickOS
-      sudo _nodialog=1 ./retropie_packages.sh setup lr-vice
-      clear
-      toilet -F gay PiKickOS
-      #sudo __nodialog=1 ./retropie_packages.sh setup giana
-      clear
-      toilet -F gay PiKickOS
-      #sudo __nodialog=1 ./retropie_packages.sh setup eduke32
-      
+
       
       
       
