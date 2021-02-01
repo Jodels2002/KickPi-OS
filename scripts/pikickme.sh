@@ -24,7 +24,14 @@
 #*************************************************************************************************************
 
 sudo rm -rf /home/$USER/.local/share/Trash/*
-      
+  
+  if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     OS="Raspberry Pi OS 64 bit"
+       
+    else
+    OS="Raspberry Pi OS 32 bit"
+ fi     
 
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 Amiberry64=amiberry-v3.3-rpi4-64bit.zip
@@ -35,7 +42,6 @@ Amiberry64=amiberry-v3.3-rpi4-64bit.zip
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       
-
 
 
 #***********************************************  #Are you runing Desktop?  ***********************************
@@ -55,20 +61,28 @@ clear
 toilet -F gay PiKickOS
 toilet -F gay **********
 
+" "
+      echo " "
+      echo "Now we start to convert" +$OS + " to PiKIck=S"
+      echo " "
+      echo " One Question please..."
+      echo " This will take time... relex.... "
+      sleep5
+
 #******************************************** #PiKickOS mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
 WIDTH=70
 CHOICE_HEIGHT=4
-BACKTITLE="PimigaOS"
-TITLE="Please select your OS"
+BACKTITLE="PiKickOS"
+TITLE="Main Menu"
 MENU="Please select:"
 
-OPTIONS=(1 "Install PiKickOS  - not working"
-         2 "Convert Amibian to PiKickOS - not working"
-         3 "Convert Raspberry Pi OS to PiKickOS         (32bit) "
-         4 "Convert Raspberry Pi OS 64bit to PiKickOS   (64bit) ")
+OPTIONS=(1 "Convert Pi OS (32/64 bit) to PiKickOS"
+         2 "Convert to PiKickOS, Retropie"
+         3 "Convert to PiKickOS, Retropie, OlED & LED "
+        
 
 CHOICE=$(dialog --clear \
                 --backtitle "$PiKickOS" \
@@ -78,7 +92,8 @@ CHOICE=$(dialog --clear \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
                 
-                
+   echo " Okey, fine ..this will take time... relex.... "
+      sleep5             
                 
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
 #****************************************************************************************************************
@@ -577,9 +592,8 @@ fi
             #Poser
             Pimiga_Desktop
             Pimiga_Update
-            Pimiga_Tools
-            Pimiga_PiKiss
-            Amibian            
+            #Pimiga_Tools
+            #Pimiga_Addons
             Pimiga_Amiberry
             Configure_Amiga
             
@@ -590,10 +604,10 @@ fi
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
-            Pimiga_PiKiss
+            #Pimiga_Addons
             Pimiga_Amiberry
             Configure_Amiga
-            #Pimiga_Retropie
+            Pimiga_Retropie
           
             
             ;;
