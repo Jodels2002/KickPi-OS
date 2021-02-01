@@ -4,9 +4,9 @@ cd
 
 git clone --depth=1 https://github.com/Jodels2002/PiKickOS
 
-sudo chmod -R 777 PiKickOS
+sudo chmod -R 777 KickPi-OS
 
-cd PiKickOS
+cd KickPi-OS
 
 
 ./setup.sh
