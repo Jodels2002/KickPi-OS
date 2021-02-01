@@ -36,14 +36,8 @@ Amiberry64=amiberry-v3.3-rpi4-64bit.zip
       sudo chmod -R 777 /home/$USER/.local/
       
 
-#***********************************************  #Are you sudo? *********************************************
-if [ "$(whoami &2>/dev/null)" == "root" ] && [ "$(id -un &2>/dev/null)" == "root" ]
-      then
-      echo "Don't be root to run this script!"
-      echo "Please don't use 'sudo !!'"
-      sleep 15s
-      exit 1
-fi
+
+
 #***********************************************  #Are you runing Desktop?  ***********************************
 if  xset q &>/dev/null; then
     echo "No X server at \$DISPLAY [$DISPLAY]" >&2
@@ -59,6 +53,7 @@ sudo apt install -y toilet dialog mc git
 
 clear
 toilet -F gay PiKickOS
+toilet -F gay **********
 
 #******************************************** #PiKickOS mini  Menu ********************************************
 #****************************************************************************************************************
@@ -253,103 +248,63 @@ fi
 
 
 
-#***************************************** # Install Amiberry 32bit *********************************************
+#***************************************** # Install Amiberry  *********************************************
 #****************************************************************************************************************
      
      
  Pimiga_Amiberry32() {
  
+ clear
+      toilet -F gay PiKickOS
+      
+      echo " "
+      echo " "
+      echo "  ... here comes Amiberry   :-)   " 
+      echo " "
+      echo " "  
+      cd ~
+      mkdir /home/$USER/Amiga
+ 
  if [ "$(getconf LONG_BIT)" == "64" ]; then
-        true
-    else
-        false
-    fi
-    
-      # Install Amiberry Raspberry Pi with SDL2 + DispmanX
-      
-      clear
-      toilet -F gay PiKickOS
-      
-      echo " "
-      echo " "
-      echo "  ... here comes Amiberry 32bit  :-)   " 
-      echo " "
-      echo " "  
-      cd ~
-      
-      #sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
-      #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      #git clone https://github.com/midwan/amiberry
-      #cd amiberry
-      #make -j2 PLATFORM=rpi4
-      #sudo chmod -R 777 /home/$USER/amiberry
-   
-      
-      #echo "  Amiberry is compiled ...     " 
-      echo " "
-      echo " "
-      clear
-      toilet -F gay PiKickOS
-      echo " "
-     
-      mkdir /home/$USER/Amiga
-      cd /home/pi/PiKickOS/Amiga
-      unzip /home/pi/PiKickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-      cp -r /home/pi/PiKickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
-      
-   
-  
-    
-}
-
-
-      #****************************************  Install Amiberry 64bit Raspberry *************************************
-      #****************************************************************************************************************  
-      
-      
-Pimiga_Amiberry64() {
-     
-      
-      clear
-      toilet -F gay PiKickOS 64bit
-      
-      echo " "
-      echo " "
-      echo "  ... here comes Amiberry 64 bit :-)   " 
-      echo " "
-      echo " "  
-      cd ~
-      
-      mkdir /home/$USER/Amiga
-      cd /home/$USER/Amiga  
-      # Test (Speed)  
-       mkdir /home/$USER/Amiga
-      cd /home/pi/PiKickOS/Amiga
-      unzip /home/pi/PiKickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-      #cp -r /home/pi/PiKickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
-      
-      
-            
-
+ 
+       echo " "
+       echo " "
+       echo "  ... here comes Amiberry 64 bit :-) "
        
        sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev  build-essential
        clear
        toilet -F gay PiKickOS 64bit
+       
        sudo apt-get install -y  libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
        clear
        toilet -F gay PiKickOS 64bit
+       
        cd /home/$USER
+       
        git clone https://github.com/midwan/amiberry
        cd ~/amiberry
        make -j2 PLATFORM=pi64
+       
        clear
        toilet -F gay PiKickOS 64bit
        sudo chmod +x /home/$USER/amiberry/amiberry
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-       #sudo chmod +x /home/$USER/Amiga/amiberry
-}    
-           
+       sudo chmod +x /home/$USER/Amiga/amiberry
+       
+    else
+    
+       echo" ... here comes Amiberry 32 bit   :-)"
+       
+      cd /home/pi/PiKickOS/Amiga
+      unzip /home/pi/PiKickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+      cp -r /home/pi/PiKickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
+    fi
+    
+    
+}
+
+
+     
 
 #***************************************** # Configure Amiga *********************************************
 #****************************************************************************************************************
@@ -625,7 +580,7 @@ fi
             Pimiga_Tools
             Pimiga_PiKiss
             Amibian            
-            Pimiga_Amiberry32
+            Pimiga_Amiberry
             Configure_Amiga
             
             ;;
@@ -637,7 +592,6 @@ fi
             Pimiga_Tools
             Pimiga_PiKiss
             Pimiga_Amiberry
-            Pimiga_Amiberry32
             Configure_Amiga
             #Pimiga_Retropie
           
@@ -650,7 +604,7 @@ fi
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Pimiga_Amiberry64
+            Pimiga_Amiberry
             Configure_Amiga
             #Pimiga_Retropie does not work :-(
           
