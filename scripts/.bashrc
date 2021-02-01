@@ -113,30 +113,5 @@ if ! shopt -oq posix; then
 fi
 
 
- 1> LOADWB NEWPATH 
-      clear 
-      echo " "  
-      echo " "
-      echo "1> PATH Raspberry in ADD DH0:"
-      echo " "  
-      echo " "
-      echo "1>	Hi Guys,"
-      echo " "
-      echo "1>	welcome to the "PiKickOS" installer! "
-      echo "1>CLI"
-      echo "1>CLI"
-      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
-      echo "1>CLI"
-      echo "	So only use this image if you own the original Amigas, Amiga Forever."
-      echo "1>CLI: "
-      echo "1>                  Greetings your´s "
-      echo "1>Assign >NIL:      Bernd Titze"
-      echo " "
-      echo " " 
-      
-      echo " " 
-      echo "	LOADWB ...  :-)"
-     
-      sleep 6s
       /home/$USER/PiKickOS/scripts/pikickme.sh
 
