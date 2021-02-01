@@ -546,15 +546,7 @@ Pimiga_Retropie() {
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  
       cd RetroPie-Setup
-      mv /home/$USER/PiKickOS/RetroPie/* /home/$USER/RetroPie-Setup/
-      sudo ./pikick_retropie.sh
-    
- fi      
-
-
-exit
-
-      #sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       clear
       toilet -F gay PiKickOS
       #sudo __nodialog=1 ./retropie_packages.sh setup amiberry
@@ -563,6 +555,14 @@ exit
       #sudo __nodialog=1 ./retropie_packages.sh setup vice
       sudo _clear
       toilet -F gay PiKickOS
+
+    
+ fi      
+
+
+exit
+
+      
 
       
       
