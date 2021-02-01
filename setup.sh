@@ -24,10 +24,13 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
+      else
+      
+      
       
       fi
      
   
   sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
    
-      sudo reboot
+      #sudo reboot
