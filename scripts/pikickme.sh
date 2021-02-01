@@ -54,9 +54,8 @@ fi
 
 sudo apt-mark hold lxpanel
 sudo apt-get -y update 
-sudo apt install -y toilet
-sudo apt install -y dialog
-sudo apt install -y mc git 
+sudo apt install -y toilet dialog mc git 
+
 
 clear
 toilet -F gay PiKickOS
