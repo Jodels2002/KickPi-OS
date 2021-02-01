@@ -48,17 +48,23 @@ toilet -F gay PiKickOS
       
       echo " " 
       echo "	LOADWB ...  :-)"
-     
+     f [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     echo "Raspberry Pi OS 64 bit is running..."
+       
+    else
+    echo "Amibian or Raspberry Pi OS 32 bit is running..."
+ fi     
       sleep 8s
     
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
   if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-     OS="Raspberry Pi OS 64 bit"
+     echo "Raspberry Pi OS 64 bit"
        
     else
-    OS="Raspberry Pi OS 32 bit"
+    echo "Raspberry Pi OS 32 bit"
  fi     
 
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
