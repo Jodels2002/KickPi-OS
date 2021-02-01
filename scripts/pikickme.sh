@@ -48,7 +48,7 @@ toilet -F gay PiKickOS
       
       echo " " 
       echo "	LOADWB ...  :-)"
-     f [ "$(getconf LONG_BIT)" == "64" ]; then
+     if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "Raspberry Pi OS 64 bit is running..."
        
