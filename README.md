@@ -1,8 +1,7 @@
 # KickPi-OS( under construction! )
 
 cd
-
-git clone --depth=1 https://github.com/Jodels2002/PiKickOS
+https://github.com/Jodels2002/KickPi-OS
 
 sudo chmod -R 777 KickPi-OS
 
