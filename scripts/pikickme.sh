@@ -530,7 +530,8 @@ Pimiga_Retropie() {
        git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
-      mv /home/$USER/PiKickOS/RetroPie/* /home/$USER/RetroPie-Setup 
+      mv /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh /home/$USER/RetroPie-Setup
+      sudo pikick_retropie.sh
  fi      
 
 
