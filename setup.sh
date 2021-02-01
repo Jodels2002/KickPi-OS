@@ -26,8 +26,8 @@ echo "Good choise :-) "
       
       else
       
-      echo " Wrong"
-      echo " "
+      echo " Not the first try... update?"
+    
       
 fi
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
