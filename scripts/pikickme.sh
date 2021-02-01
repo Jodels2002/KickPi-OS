@@ -501,7 +501,7 @@ Pimiga_Addons() {
 Pimiga_Retropie() {
 #Install Retropie/Setup
       
-      
+    cd  /home/$USER/
     
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -517,9 +517,10 @@ Pimiga_Retropie() {
       echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
       echo " "
       sleep 3
-      cd ~
+      
       
     else
+    /home/$USER/
     echo " "
       clear
       toilet -F gay PiKickOS 
