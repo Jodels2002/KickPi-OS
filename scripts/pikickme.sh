@@ -513,11 +513,11 @@ Pimiga_Addons() {
 Pimiga_Retropie() {
 #Install Retropie/Setup
       
-      cd ~
-    git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+    
+    
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
-      cd ~
+   
      clear
       toilet -F gay PiKickOS
       
@@ -532,7 +532,7 @@ Pimiga_Retropie() {
       
       
     else
-     cd ~
+     
     echo " "
       clear
       toilet -F gay PiKickOS 
@@ -540,11 +540,14 @@ Pimiga_Retropie() {
       echo "  ... here comes Retropie :-)     "   
       echo " "
       echo " "
-      #git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      cd
+      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd  /home/$USER/RetroPie-Setup
-      mv /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh /home/$USER/RetroPie-Setup
-      sudo /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh
+      cd  
+      cd RetroPie-Setup
+      mv /home/$USER/PiKickOS/RetroPie/* /home/$USER/RetroPie-Setup/
+      sudo ./pikick_retropie.sh
+    
  fi      
 
 
