@@ -62,12 +62,12 @@ toilet -F gay PiKickOS
 
 
 " "
-      echo " "
+      $ echo $'\e[1;33m'Welcome to PiKickOS'\e[0m'
       echo "Now we start to convert $OS " 
       echo " "
       echo " One Question please..."
       echo " This will take time... relex.... "
-      sleep5
+      sleep 5
 
 #******************************************** #PiKickOS mini  Menu ********************************************
 #****************************************************************************************************************
@@ -505,7 +505,7 @@ Pimiga_Retropie() {
     
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
+      cd ~
      clear
       toilet -F gay PiKickOS
       
@@ -520,7 +520,7 @@ Pimiga_Retropie() {
       
       
     else
-    /home/$USER/
+     cd ~
     echo " "
       clear
       toilet -F gay PiKickOS 
@@ -528,11 +528,11 @@ Pimiga_Retropie() {
       echo "  ... here comes Retropie :-)     "   
       echo " "
       echo " "
-       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
       mv /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh /home/$USER/RetroPie-Setup
-      sudo pikick_retropie.sh
+      sudo /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh
  fi      
 
 
@@ -626,7 +626,7 @@ echo " "
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
 
-     whiptail --msgbox " Ready,... Okey, here we are ... Lets PiKickOS (mini) :-)" 20 60 1
+whiptail --msgbox " Ready,... Okey, here we are ... Lets PiKickOS (mini) :-)" 20 60 1
 clear
 toilet -F gay PiKickOS
 
