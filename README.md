@@ -1,7 +1,9 @@
 # KickPi-OS( under construction! )
 
-cd
-https://github.com/Jodels2002/KickPi-OS
+Install:
+
+https://github.com/Jodels2002/KickPi-OS.git
+
 
 sudo chmod -R 777 KickPi-OS
 
