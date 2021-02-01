@@ -558,25 +558,17 @@ clear
 toilet -F gay PiKickOS
 
 case $CHOICE in
+        
         1)
+        
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
             Configure_Amiga
             ;;
+        
         2)
              
-   if whiptail --yesno "Would you create a Boot-USB-Stick from SD Card?" 20 60 ;then
-    /home/$USER/PiKickOS/scripts/rpi-clone -u sda
-else
-    echo No
-fi
-   clear
-   echo " "
-
-
-         3 "PiKickOS, Retropie, OlED & LED ")
-        
             echo "PiKickOS, Retropie"
             #Poser
             Pimiga_Desktop
@@ -587,6 +579,7 @@ fi
             Configure_Amiga
             
             ;;
+        
         3)
             echo "PiKickOS, Retropie, OlED & LED"
             Poser
@@ -597,12 +590,9 @@ fi
             Pimiga_Amiberry
             Configure_Amiga
             Pimiga_Retropie
-          
-            
+               
             ;;
-         
-           
-          
+             
 
 esac
 
