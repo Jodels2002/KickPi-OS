@@ -35,7 +35,7 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       
       fi
      
-  sleep 3
+  
   
    
       sudo reboot
