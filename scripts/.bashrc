@@ -113,5 +113,5 @@ if ! shopt -oq posix; then
 fi
 
 
-      /home/$USER/PiKickOS/scripts/pikickme.sh
+      /home/$USER/KickPi-OS/scripts/pikickme.sh
 
