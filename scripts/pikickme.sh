@@ -561,10 +561,14 @@ case $CHOICE in
         
         1)
         
+            #Poser
+            Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
-            Pimiga_PiKiss
+            Pimiga_Addons
+            Pimiga_Amiberry
             Configure_Amiga
+            #Pimiga_Retropie
             ;;
         
         2)
@@ -577,7 +581,7 @@ case $CHOICE in
             Pimiga_Addons
             Pimiga_Amiberry
             Configure_Amiga
-            
+            Pimiga_Retropie
             ;;
         
         3)
