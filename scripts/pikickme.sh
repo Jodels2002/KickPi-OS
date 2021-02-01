@@ -520,14 +520,38 @@ Pimiga_Retropie() {
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
+      
+      cd /home/pi/RetroPie-Setup
+. /home/pi/RetroPie-Setup/retropie_packages.sh
+. /home/pi/RetroPie-Setup/scriptmodules/system.sh
+. /home/pi/RetroPie-Setup/scriptmodules/helpers.sh
+. /home/pi/RetroPie-Setup/scriptmodules/packages.sh
+. /home/pi/RetroPie-Setup/scriptmodules/admin/setup.sh
 
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+setup_env
+rp_registerAllModules
+
+function printMsgs() {
+    local type="$1"
+    shift
+    for msg in "$@"; do
+        [[ "$type" == "dialog" ]] && echo "$msg"
+        [[ "$type" == "console" ]] && echo "$msg"
+        [[ "$type" == "heading" ]] && echo -e "\n= = = = = = = = = = = = = = = = = = = = =\n$msg\n= = = = = = = = = = = = = = = = = = = = =\n"
+    done
+}
+
+binaries_setup
+
+exit
+
+      #sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       clear
       toilet -F gay PiKickOS
-      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+      #sudo __nodialog=1 ./retropie_packages.sh setup amiberry
       clear
       toilet -F gay PiKickOS
-      sudo __nodialog=1 ./retropie_packages.sh setup vice
+      #sudo __nodialog=1 ./retropie_packages.sh setup vice
       sudo _clear
       toilet -F gay PiKickOS
       sudo _nodialog=1 ./retropie_packages.sh setup lr-vice
