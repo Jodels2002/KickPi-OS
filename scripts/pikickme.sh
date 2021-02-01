@@ -59,7 +59,7 @@ sudo apt install -y toilet dialog mc git
 
 clear
 toilet -F gay PiKickOS
-toilet -F gay **********
+
 
 " "
       echo " "
@@ -92,9 +92,7 @@ CHOICE=$(dialog --clear \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
                 
-   echo " Okey, fine ..this will take time... relex.... "
-      sleep5             
-                
+   
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
 #****************************************************************************************************************
 
@@ -585,7 +583,7 @@ fi
             Pimiga_Update
             Pimiga_Tools
             Pimiga_Addons
-            #Pimiga_Amiberry
+            Pimiga_Amiberry
             Configure_Amiga
             
             ;;
@@ -596,7 +594,7 @@ fi
             Pimiga_Update
             Pimiga_Tools
             Pimiga_Addons
-            #Pimiga_Amiberry
+            Pimiga_Amiberry
             Configure_Amiga
             Pimiga_Retropie
           
@@ -631,6 +629,8 @@ echo " "
      whiptail --msgbox " Ready,... Okey, here we are ... Lets PiKickOS (mini) :-)" 20 60 1
 clear
 toilet -F gay PiKickOS
+
+startx
 
 
 
