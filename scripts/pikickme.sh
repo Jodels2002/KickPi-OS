@@ -67,13 +67,7 @@ toilet -F gay PiKickOS
     
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
-  if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     echo "Raspberry Pi OS 64 bit"
-       
-    else
-    echo "Raspberry Pi OS 32 bit"
- fi     
+  
 
 Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 Amiberry64=amiberry-v3.3-rpi4-64bit.zip
@@ -566,7 +560,7 @@ Pimiga_Retropie() {
  fi      
 
 
-exit
+
 
      
 }
