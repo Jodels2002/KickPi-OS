@@ -14,8 +14,7 @@ echo "Good choise :-) "
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       
       
-      
-if [ ! -f /home/$USER/.backup/.bashrc ]; then
+      if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
@@ -24,13 +23,13 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
+      
       else
       
+      echo " Wrong"
+      echo " 
       
-      
-      fi
-     
-  
-  sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+fi
+sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
    
       #sudo reboot
