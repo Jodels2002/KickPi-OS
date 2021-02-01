@@ -516,7 +516,7 @@ Pimiga_Retropie() {
       echo " "
       echo " "
       cd ~
-      sudo apt-get install -y git dialog unzip xmlstarlet
+      sudo apt-get install -y git unzip xmlstarlet
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
