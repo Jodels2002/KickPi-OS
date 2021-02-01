@@ -1,6 +1,6 @@
 #!/bin/bash
-# Assign >NIL:  Install PiKickOS - not for use!!!
-# Assign >NIL:  B.Titze 2020
+# Assign >NIL:  Install KickPi-OS - not for use!!!
+# Assign >NIL:  B.Titze 2021
 
 
 #******************************************** #startup-sequence  :-) ************* ********************************************
@@ -9,16 +9,8 @@
 clear
 echo "Good choise :-) "
 
-sudo raspi-config nonint do_boot_behaviour B2
-echo "Backup Settings...."
-
-
-      echo " "
-      echo "PiKickOS - Have fun :-)"
-      sudo rm -rf ~/.backup
-      sudo rm -rf ~/.KickPi-OS
       
-     
+      sudo rm -rf ~/.KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       
       
@@ -36,6 +28,6 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       fi
      
   
-  
+  sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
    
       sudo reboot
