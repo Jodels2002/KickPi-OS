@@ -60,14 +60,26 @@ sudo apt install -y toilet dialog mc git
 clear
 toilet -F gay PiKickOS
 
-
-" "
-      $ echo $'\e[1;33m'Welcome to PiKickOS'\e[0m'
-      echo "Now we start to convert $OS " 
+      $ echo $'\e[1;33m'          Welcome to PiKickOS'\e[0m'
+      echo "1>	Hi Guys,"
       echo " "
-      echo " One Question please..."
-      echo " This will take time... relex.... "
-      sleep 5
+      echo "1>	welcome to the "PiKickOS" installer! "
+      echo "1>CLI"
+      echo "1>CLI"
+      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
+      echo "1>CLI"
+      echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
+      echo "1>CLI: "
+      echo "1>                  Greetings your´s "
+      echo "1>Assign >NIL:      Bernd Titze"
+      echo " "
+      echo " " 
+      
+      echo " " 
+      echo "	LOADWB ...  :-)"
+     
+      sleep 6s
+    
 
 #******************************************** #PiKickOS mini  Menu ********************************************
 #****************************************************************************************************************
@@ -501,8 +513,8 @@ Pimiga_Addons() {
 Pimiga_Retropie() {
 #Install Retropie/Setup
       
-    cd  /home/$USER/
-    
+      cd ~
+    git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
       cd ~
@@ -528,7 +540,7 @@ Pimiga_Retropie() {
       echo "  ... here comes Retropie :-)     "   
       echo " "
       echo " "
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      #git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  /home/$USER/RetroPie-Setup
       mv /home/$USER/PiKickOS/RetroPie/pikick_retropie.sh /home/$USER/RetroPie-Setup
