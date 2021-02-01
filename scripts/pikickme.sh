@@ -282,11 +282,16 @@ fi
        
        sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev  build-essential
        clear
-       toilet -F gay PiKickOS 64bit
-       
+       toilet -F gay PiKickOS 
+       toilet -F gay 64bit
+       echo " "
+       echo " "
        sudo apt-get install -y  libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
        clear
-       toilet -F gay PiKickOS 64bit
+       toilet -F gay PiKickOS 
+       toilet -F gay 64bit
+       echo " "
+       echo " "
        
        cd /home/$USER
        
@@ -295,10 +300,13 @@ fi
        make -j2 PLATFORM=pi64
        
        clear
-       toilet -F gay PiKickOS 64bit
+       toilet -F gay PiKickOS 
+       toilet -F gay 64bit
+       echo " "
+       echo " "
        sudo chmod +x /home/$USER/amiberry/amiberry
        cp -R /home/$USER/amiberry/* /home/$USER/Amiga
-       sudo chmod +x /home/$USER/Amiga/amiberry
+       
        
     else
     
