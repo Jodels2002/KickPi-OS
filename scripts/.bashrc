@@ -129,14 +129,14 @@ fi
       echo "1>CLI"
       echo "	So only use this image if you own the original Amigas, Amiga Forever."
       echo "1>CLI: "
-      echo "1>			Greetings your´s "
-      echo "1>Assign >NIL: 	Bernd Titze"
+      echo "1>                  Greetings your´s "
+      echo "1>Assign >NIL:      Bernd Titze"
       echo " "
       echo " " 
       
       echo " " 
       echo "	LOADWB ...  :-)"
      
-      sleep 10s
+      sleep 6s
       /home/$USER/PiKickOS/scripts/pikickme.sh
 
