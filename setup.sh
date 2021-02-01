@@ -31,5 +31,6 @@ echo "Good choise :-) "
       fi
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+sudo raspi-config nonint do_boot_behaviour B2
    
-      #sudo reboot
+sudo reboot
