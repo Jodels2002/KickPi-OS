@@ -1,4 +1,4 @@
-# PiKickOS ( under construction! )
+# KickPi-OS( under construction! )
 
 cd
 
