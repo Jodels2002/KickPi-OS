@@ -53,7 +53,7 @@ fi
 #***********************************************  #Ok, we are ready...  ***************************************
 
 sudo apt-mark hold lxpanel
-sudo apt-get -y update 
+#sudo apt-get -y update 
 sudo apt install -y toilet dialog mc git 
 
 
@@ -63,7 +63,7 @@ toilet -F gay **********
 
 " "
       echo " "
-      echo "Now we start to convert" +$OS + " to PiKIck=S"
+      echo "Now we start to convert $OS " 
       echo " "
       echo " One Question please..."
       echo " This will take time... relex.... "
@@ -81,7 +81,7 @@ MENU="Please select:"
 
 OPTIONS=(1 "Convert Pi OS (32/64 bit) to PiKickOS"
          2 "Convert to PiKickOS, Retropie"
-         3 "Convert to PiKickOS, Retropie, OlED & LED "
+         3 "Convert to PiKickOS, Retropie, OlED & LED ")
         
 
 CHOICE=$(dialog --clear \
@@ -480,7 +480,7 @@ fi
 #****************************************   #Install PiKISS  ****************************************************
 #****************************************************************************************************************
 
-Pimiga_PiKiss() {
+Pimiga_Addons() {
      #Install PiKISS
       
       clear
@@ -561,21 +561,9 @@ toilet -F gay PiKickOS
 
 case $CHOICE in
         1)
-            clear
-            echo "Install PiKickOS on Amibian"
-            
-   if whiptail --yesno "Would you create a Boot-USB-Stick from SD Card?" 20 60 ;then
-    /home/$USER/PiKickOS/scripts/rpi-clone -u sda
-else
-    echo No
-fi
-   clear
-   echo " "
-   
             Pimiga_Update
             Pimiga_Tools
             Pimiga_PiKiss
-            Amibian
             Configure_Amiga
             ;;
         2)
@@ -587,42 +575,34 @@ else
 fi
    clear
    echo " "
-   
-            echo "Convert Amibian to PiKickOS"
-            #Poser
-            Pimiga_Desktop
-            Pimiga_Update
-            #Pimiga_Tools
-            #Pimiga_Addons
-            Pimiga_Amiberry
-            Configure_Amiga
-            
-            ;;
-        3)
-            echo "Convert Raspberry Pi OS to PiKickOS"
+
+
+         3 "PiKickOS, Retropie, OlED & LED ")
+        
+            echo "PiKickOS, Retropie"
             #Poser
             Pimiga_Desktop
             Pimiga_Update
             Pimiga_Tools
-            #Pimiga_Addons
-            Pimiga_Amiberry
+            Pimiga_Addons
+            #Pimiga_Amiberry
+            Configure_Amiga
+            
+            ;;
+        3)
+            echo "PiKickOS, Retropie, OlED & LED"
+            Poser
+            Pimiga_Desktop
+            Pimiga_Update
+            Pimiga_Tools
+            Pimiga_Addons
+            #Pimiga_Amiberry
             Configure_Amiga
             Pimiga_Retropie
           
             
             ;;
-         4)
-            echo "Convert Raspberry Pi OS 64 to PiKickOS 64"
-            #Poser
-            Pimiga_Desktop
-            Pimiga_Update
-            Pimiga_Tools
-            Pimiga_PiKiss
-            Pimiga_Amiberry
-            Configure_Amiga
-            #Pimiga_Retropie does not work :-(
-          
-           ;;
+         
            
           
 
