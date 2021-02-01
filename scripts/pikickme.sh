@@ -34,7 +34,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        
     else  echo " "
       echo ""
-    
+fi    
 toilet -F gay PiKickOS
       echo " "
       echo ""
@@ -56,14 +56,8 @@ toilet -F gay PiKickOS
       
       echo " " 
       echo "	LOADWB ...  :-)"
-     if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     echo "Raspberry Pi OS 64 bit is running..."
-       
-    else
-    echo "Amibian or Raspberry Pi OS 32 bit is running..."
- fi     
-      sleep 8s
+
+   sleep 8s
     
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
@@ -642,16 +636,4 @@ clear
 toilet -F gay PiKickOS
 
 startx
-
-
-
-
-
-
-
-
-
-
-
-
 
