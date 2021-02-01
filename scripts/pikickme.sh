@@ -30,7 +30,7 @@ sudo apt install -y toilet dialog mc git
 clear
 toilet -F gay PiKickOS
       echo " "
-      echo "\e[1;33m'          Welcome to PiKickOS'\e[0m"
+      echo ""
       echo " "
       echo "1>	Hi Guys,"
       echo " "
