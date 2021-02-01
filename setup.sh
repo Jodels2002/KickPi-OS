@@ -26,10 +26,10 @@ echo "Good choise :-) "
       
       else
       
-      echo " Not the first try... update?"
+      echo "Everything is fine... :-)"
     
-      
-fi
+      fi
+
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
    
       #sudo reboot
