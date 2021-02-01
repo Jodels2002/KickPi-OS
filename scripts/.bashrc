@@ -135,7 +135,7 @@ fi
       echo " " 
       
       echo " " 
-      echo "LOADWB ...  :-)"
+      echo "	LOADWB ...  :-)"
      
       sleep 10s
       /home/$USER/PiKickOS/scripts/pikickme.sh
