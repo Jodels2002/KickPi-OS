@@ -2,13 +2,11 @@
 
 Install:
 
-https://github.com/Jodels2002/KickPi-OS.git
-
+git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
 sudo chmod -R 777 KickPi-OS
 
 cd KickPi-OS
-
 
 ./setup.sh
 
