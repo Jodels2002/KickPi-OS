@@ -485,8 +485,15 @@ fi
       echo ""
       echo "If you want to keep the Amibian desktop then please answer with no (n)."
       echo ""
-      echo "If you want to switch to the KickPi-OS desktop (modeled after Amiga Workbench) then please answer with yes (y)."
-      
+      echo "If you want to switch to the KickPi-OS desktop "
+      echo "(modeled after Amiga Workbench) then please answer with yes (y)."
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
+      echo ""
       while true; do
 
     read -p "Do you wish to install the KickPi-OS Desktop?" yn
