@@ -471,15 +471,14 @@ fi
      
       if [ $USER == "mibian" ]; then
  
-     echo "This is case Amibian..."
+     echo "This is case Amibian... Debug"
      
       echo $USER
        
     else  
-      echo "This is case Raspian OS"
-      while true; do
-clear
-echo "Dear Amibian user,"
+      echo "This is case Raspian OS DEbug"
+      clear
+     echo "Dear Amibian user,"
 echo ""
 echo ""
 echo "It's your choice."
@@ -487,6 +486,9 @@ echo ""
 echo "If you want to keep the Amibian desktop then please answer with no (n)."
 echo "
 echo "If you want to switch to the KickPi-OS desktop (modeled after Amiga Workbench) then please answer with yes (y)."
+      
+      while true; do
+
     read -p "Do you wish to install the KickPi-OS Desktop?" yn
     case $yn in
         [Yy]* ) 
