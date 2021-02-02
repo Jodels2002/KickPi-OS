@@ -496,7 +496,7 @@ fi
       echo ""
       while true; do
 
-    read -p "Do you wish to install the KickPi-OS Desktop?" yn
+    read -p ""\033[0;31mDo you wish to install the KickPi-OS Desktop?\033[0m"" yn
     case $yn in
         [Yy]* ) 
       
@@ -516,7 +516,7 @@ fi
       KickPi-OS_Desktop;;
         
         [Nn]* ) 
-        
+        break
         #exit 0
         ;;
         * ) echo "Please answer yes or no.";;
