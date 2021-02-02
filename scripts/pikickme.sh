@@ -471,32 +471,9 @@ fi
      
       if [ $USER == "amibian" ]; then
  
-     echo "This is case Amibian... Debug"
-     
-      
-       
-    else  
-      echo "This is case Raspian OS DEbug"
-      clear
-      echo "Dear Amibian user,"
-      echo ""
-      echo ""
-      echo "It's your choice."
-      echo ""
-      echo "If you want to keep the Amibian desktop then please answer with no (n)."
-      echo ""
-      echo "If you want to switch to the KickPi-OS desktop "
-      echo "(modeled after Amiga Workbench) then please answer with yes (y)."
-      echo ""
-      echo ""
-      echo ""
-      echo ""
-      echo ""
-      echo ""
-      echo ""
-
-      
-               echo "Amibian..."
+               clear
+          
+               echo "Amibian... not finaly implementet now....!"
                echo "Backup Settings...."
                echo " "
                echo " "
@@ -507,7 +484,12 @@ fi
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
                echo "Installing KickPi-OS Desktop ..."
-
+      
+       
+    else 
+      clear
+      echo "Raspian OS, nothing to do here..."
+ 
 fi    
      
      sleep 10
