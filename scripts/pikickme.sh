@@ -409,8 +409,8 @@ fi
       echo "  Configure ClassicWB_68K_v28 ...     " 
       echo " "
       echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      #unzip ./ClassicWB_68K_v28.zip
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip ./ClassicWB_68K_v28.zip
       else 
       clear
       toilet -F gay KickPi-OS
