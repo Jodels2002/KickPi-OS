@@ -510,6 +510,14 @@ KickPi-OS_Addons() {
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
       
+      #PiCommander
+      cd
+      git clone --depth=1 https://github.com/Jack477/CommanderPi
+      cd CommanderPi
+      sudo apt install -y  python3-pil 
+      ./install.sh
+      
+      
       
 }
 
