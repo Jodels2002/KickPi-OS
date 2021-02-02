@@ -275,7 +275,7 @@ fi
       
       echo " "
       echo " "
-      echo "  ... here comes Amiberry   :-)   " 
+   
       echo " "
       echo " "  
       cd ~
@@ -317,14 +317,16 @@ fi
        
     else
     
-       echo" ... here comes Amiberry 32 bit   :-)"
+       echo " ... here comes Amiberry 32 bit   :-)"
        
       cd /home/pi/KickPi-OS/Amiga
       unzip /home/pi/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
       cp -r /home/pi/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
     fi
     
-    
+    cd /home/pi/KickPi-OS/Amiga
+    unzip /home/pi/KickPi-OS/Amiga/AROS.zip
+    cp -r /home/pi/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
 }
 
 
