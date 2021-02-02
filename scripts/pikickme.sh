@@ -474,7 +474,7 @@ fi
  
                clear
           
-               echo "Amibian... not finaly implementet now....!"
+               echo "Amibian... not  implementet now....!"
                echo "Backup Settings...."
                echo " "
                echo " "
@@ -484,7 +484,9 @@ fi
                cp -R ~/.config/ ~/.backup/.config
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
-               echo "Installing KickPi-OS Desktop ..."
+               
+               echo" Debug wait... Not finished here..! :-) "
+                 sleep 15
       
        
     else 
@@ -493,7 +495,7 @@ fi
  
 fi    
      
-     sleep 10
+   
      
 }
 
