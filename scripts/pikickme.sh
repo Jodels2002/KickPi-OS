@@ -478,6 +478,15 @@ fi
     else  
       echo "This is case Raspian OS"
       while true; do
+clear
+echo "Dear Amibian user,"
+echo ""
+echo ""
+echo "It's your choice."
+echo ""
+echo "If you want to keep the Amibian desktop then please answer with no (n)."
+echo "
+echo "If you want to switch to the KickPi-OS desktop (modeled after Amiga Workbench) then please answer with yes (y)."
     read -p "Do you wish to install the KickPi-OS Desktop?" yn
     case $yn in
         [Yy]* ) 
@@ -497,7 +506,7 @@ fi
       echo " "
       KickPi-OS_Desktop;;
         
-        [Nn]* ) exit;;
+        [Nn]* ) exit 0;;
         
         * ) echo "Please answer yes or no.";;
     esac
