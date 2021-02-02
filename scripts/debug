@@ -5,4 +5,4 @@ git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
 sudo chmod -R 777 KickPi-OS
 
-cd KickPi-OS/scripts
+https://github.com/Jodels2002/KickPi-OS
