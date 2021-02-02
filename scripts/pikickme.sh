@@ -355,20 +355,20 @@ fi
       
       cd /home/$USER/Amiga/hdf
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet -F gay KickPi-OS
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip ./ClassicWB_UAE_v28.zip
-      else 
-      clear
-      toilet -F gay KickPi-OS
-      fi
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      #clear
+      #toilet -F gay KickPi-OS
+      #echo " "
+      #echo " "
+      #echo "  Configure ClassicWB_UAE_v28 ...     " 
+      #echo " "
+      #echo " "
+      #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      #unzip ./ClassicWB_UAE_v28.zip
+      #else 
+      #clear
+      #toilet -F gay KickPi-OS
+      #fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       clear
@@ -378,27 +378,28 @@ fi
       echo "  Configure ClassicWB_P96_v28 ...     " 
       echo " "
       echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
-      #unzip ./ClassicWB_P96_v28.zip
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip ./ClassicWB_P96_v28.zip
       else 
       clear
       toilet -F gay KickPi-OS
       fi
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet -F gay KickPi-OS
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...     " 
-      echo " "
-      echo " "
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      #clear
+      #toilet -F gay KickPi-OS
+      #echo " "
+      #echo " "
+      #echo "  Configure ClassicWB_OS39_v28 ...     " 
+      #echo " "
+      #echo " "
       #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       #unzip ./ClassicWB_OS39_v28.zip
-      else 
-      clear
-      toilet -F gay KickPi-OS
-      fi
+      #else 
+      #clear
+      #toilet -F gay KickPi-OS
+      #fi
+      
       cd /home/$USER/Amiga/hdf
       if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
       clear
