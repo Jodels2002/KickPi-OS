@@ -516,7 +516,7 @@ KickPi-OS_Addons() {
       cd
       git clone --depth=1 https://github.com/Jack477/CommanderPi
       cd CommanderPi
-      sudo apt install -y  python3-pil 
+       sudo apt install -y python-pil python3-pil python-pil-doc 
       ./install.sh
       
       
@@ -536,17 +536,14 @@ KickPi-OS_Retropie() {
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
    
-     clear
-      toilet -F gay KickPi-OS
-      
-      echo " "
       clear
        toilet -F gay KickPi-OS 
        toilet -F gay 64bit
       echo " "
-      echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
       echo " "
-      sleep 
+      echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
+      
+      sleep 3s
       
       
     else
@@ -573,14 +570,14 @@ KickPi-OS_Retropie() {
       sudo __nodialog=1 ./retropie_packages.sh setup vice
       sudo _clear
       toilet -F gay KickPi-OS
+      
+      cd /home/pi/KickPi-OS/Amiga
+    unzip /home/$USER/KickPi-OS/RetroPie/roms.zip
+    cp -r /home/$USER/KickPi-OS/RetroPie/* /home/$USER/RetroPie/
 
     
  fi      
 
-
-cd /home/pi/KickPi-OS/Amiga
-    unzip /home/$USER/KickPi-OS/RetroPie/roms.zip
-    cp -r /home/$USER/KickPi-OS/RetroPie/* /home/$USER/RetroPie/
 
      
 }
