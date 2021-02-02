@@ -515,7 +515,9 @@ fi
       echo " "
       KickPi-OS_Desktop;;
         
-        [Nn]* ) exit 0;;
+        [Nn]* ) 
+        
+        #exit 0;;
         
         * ) echo "Please answer yes or no.";;
     esac
