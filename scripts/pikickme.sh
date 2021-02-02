@@ -517,8 +517,8 @@ fi
         
         [Nn]* ) 
         
-        #exit 0;;
-        
+        #exit 0
+        ;;
         * ) echo "Please answer yes or no.";;
     esac
 done
