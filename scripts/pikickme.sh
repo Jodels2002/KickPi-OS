@@ -89,8 +89,8 @@ BACKTITLE="KickPi-OS"
 TITLE="Main Menu"
 MENU="Please select:"
 
-OPTIONS=(1 "Convert Pi OS (32/64 bit) to KickPi-OS"
-         2 "Convert to KickPi-OS, Retropie"
+OPTIONS=(1 "Install KickPi-OS light"
+         2 "Install KickPi-OS full, Retropie, ..."
          3 "Convert to KickPi-OS, Retropie, OlED & LED ")
         
 
@@ -206,8 +206,18 @@ KickPi-OS_Tools() {
       echo "Installing KickPi-OS Desktop ..."
       echo " "
       echo " "
-      
-      # Fresh install XFCE4
+      if [ $USER == "Amibian" ]; then
+ 
+     echo "Amibian..."
+       
+    else  
+      echo "Raspian OS"
+      echo ""
+fi    
+     
+     sleep 10
+     
+     # Fresh install XFCE4
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
@@ -489,11 +499,9 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
+     
      #Install PiKISS
-      
-   
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
-
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
       
@@ -523,7 +531,7 @@ KickPi-OS_Retropie() {
       echo " "
       echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
       echo " "
-      sleep 3
+      sleep 
       
       
     else
@@ -539,14 +547,15 @@ KickPi-OS_Retropie() {
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  
-      cd RetroPie-Setup
-      sudo __nodialog=1 ./retropie_packages.sh binaries_setup basic_install
+      cd RetroPie-Setup binaries_setup
+      sudo __nodialog=1 ./retropie_packages.sh setup binaries_setup
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       clear
       toilet -F gay KickPi-OS
-      #sudo __nodialog=1 ./retropie_packages.sh setup amiberry
+      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
       clear
       toilet -F gay KickPi-OS
-      #sudo __nodialog=1 ./retropie_packages.sh setup vice
+      sudo __nodialog=1 ./retropie_packages.sh setup vice
       sudo _clear
       toilet -F gay KickPi-OS
 
@@ -576,7 +585,7 @@ case $CHOICE in
             KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
-            KickPi-OS_Addons
+            #KickPi-OS_Addons
             KickPi-OS_Amiberry
             Configure_Amiga
             #KickPi-OS_Retropie
