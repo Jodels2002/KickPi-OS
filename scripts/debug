@@ -1,8 +1,8 @@
 cd
 sudo rm /$USER/.KickPi-OS
-sudo rm /$USER/.KickPi-OS
+sudo rm /$USER/KickPi-OS
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
 sudo chmod -R 777 KickPi-OS
 
-https://github.com/Jodels2002/KickPi-OS
+reboot
