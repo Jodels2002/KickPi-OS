@@ -469,7 +469,7 @@ fi
  Amibian() {
       
      
-      if [ $USER == "mibian" ]; then
+      if [ $USER == "amibian" ]; then
  
      echo "This is case Amibian... Debug"
      
@@ -494,11 +494,7 @@ fi
       echo ""
       echo ""
       echo ""
-      while true; do
 
-    read -p ""\033[0;31mDo you wish to install the KickPi-OS Desktop?\033[0m"" yn
-    case $yn in
-        [Yy]* ) 
       
                echo "Amibian..."
                echo "Backup Settings...."
@@ -511,17 +507,7 @@ fi
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
                echo "Installing KickPi-OS Desktop ..."
-      echo " "
-      echo " "
-      KickPi-OS_Desktop;;
-        
-        [Nn]* ) 
-        break
-        #exit 0
-        ;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+
 fi    
      
      sleep 10
@@ -616,8 +602,8 @@ case $CHOICE in
         1)
         
             #Poser
+            KickPi-OS_Desktop
             Amibian
-            #KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
             #KickPi-OS_Addons
@@ -630,6 +616,7 @@ case $CHOICE in
              
             echo "KickPi-OS, Retropie"
             #Poser
+            Amibian
             KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
