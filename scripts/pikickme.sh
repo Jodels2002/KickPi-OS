@@ -203,19 +203,7 @@ KickPi-OS_Tools() {
       clear
       toilet -F gay KickPi-OS 
    
-      echo "Installing KickPi-OS Desktop ..."
-      echo " "
-      echo " "
-      if [ $USER == "Amibian" ]; then
- 
-     echo "Amibian..."
-       
-    else  
-      echo "Raspian OS"
-      echo ""
-fi    
-     
-     sleep 10
+
      
      # Fresh install XFCE4
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
@@ -479,7 +467,21 @@ fi
 #********************************************# Not testet! *******************************************************
 
  Amibian() {
+      
+     
+      if [ $USER == "mibian" ]; then
  
+     echo "This is case Amibian..."
+     
+      echo $USER
+       
+    else  
+      echo "This is case Raspian OS"
+      while true; do
+    read -p "Do you wish to install the KickPi-OS Desktop?" yn
+    case $yn in
+        [Yy]* ) 
+         echo "Amibian..."
       echo "Backup Settings...."
 
       echo " "
@@ -490,7 +492,19 @@ fi
       cp -R ~/.config/ ~/.backup/.config
       cp -R ~/.local/ ~/.backup/.local
       cp -R /usr/local/bin ~/.backup/usr
+           echo "Installing KickPi-OS Desktop ..."
+      echo " "
+      echo " "
+      KickPi-OS_Desktop;;
+        
+        [Nn]* ) exit;;
+        
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+fi    
      
+     sleep 10
      
 }
 
@@ -582,7 +596,8 @@ case $CHOICE in
         1)
         
             #Poser
-            KickPi-OS_Desktop
+            Amibian
+            #KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
             #KickPi-OS_Addons
