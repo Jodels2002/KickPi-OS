@@ -25,7 +25,7 @@
 sudo apt-mark hold lxpanel
 #sudo apt-get -y update 
 sudo apt install -y toilet dialog mc git 
-
+sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -189,7 +189,7 @@ KickPi-OS_Tools() {
       cd /home/$USER
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
-      sudo cp -R /home/$USER/.KickPi-OS/scripts/* /usr/local/bin
+      #sudo cp -R /home/$USER/.KickPi-OS/scripts/* /usr/local/bin
       
 }
 
