@@ -388,6 +388,10 @@ fi
       if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet -F gay KickPi-OS
+     
+      else 
+      clear
+      toilet -F gay KickPi-OS
       echo " "
       echo " "
       echo "  Configure ClassicWB_68K_v28 ...     " 
@@ -395,10 +399,6 @@ fi
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
-      else 
-      clear
-      toilet -F gay KickPi-OS
-     
       
       fi
 
