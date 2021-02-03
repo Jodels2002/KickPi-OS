@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install KickPi-OS
-# B.Titze 2020
+# B.Titze 2021
 # KickPi-OS updater
 
 sudo rm -rf /home/$USER/KickPi-OS/
