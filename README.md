@@ -1,12 +1,14 @@
-#KickPi-OS
+KickPi-OS
 
 KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
 
 
-#Preparation:
+
+Preparation:
 
 Install Raspberry Pi OS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
+
 
 
 Install:
