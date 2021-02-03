@@ -19,7 +19,8 @@ https://www.raspberrypi.org/software/
 
 
 
-# Install:
+# Installation:
+On the raspberry you open a terminal window and type following commands:
 
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
@@ -28,10 +29,6 @@ sudo chmod -R 777 KickPi-OS
 cd KickPi-OS
 
 ./setup.sh
-
-
-
-
 
 
 # Used 3rd party tools:
