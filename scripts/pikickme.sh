@@ -519,8 +519,8 @@ KickPi-OS_Addons() {
        sudo apt install -y python-pil python3-pil python-pil-doc 
       ./install.sh
       
-      
-      
+      # Cool-Retro-Term
+      sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
 }
 
      
