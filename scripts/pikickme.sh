@@ -220,7 +220,7 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 ~/.local
       sudo cp -R ~/KickPi-OS ~/.KickPi-OS
       cd /home/$USER/KickPi-OS/
-      cp -R ~/KickPi-OS/config/Desktop/ /home/$USER/Desktop/
+      cp -R ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
       sudo unzip ~/KickPi-OS/.pac/.data.pac
 
@@ -514,9 +514,9 @@ KickPi-OS_Addons() {
       
       #PiCommander
       cd
+       sudo apt install -y python-pil python3-pil python-pil-doc 
       git clone --depth=1 https://github.com/Jack477/CommanderPi
       cd CommanderPi
-       sudo apt install -y python-pil python3-pil python-pil-doc 
       ./install.sh
       
       # Cool-Retro-Term
