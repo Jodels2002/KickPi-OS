@@ -4,7 +4,11 @@
 
 KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
 
+# Supported hardware:
 
+Since it is based on a Raspberry Pi OS, it should work on all Raspbery Pi's.
+
+Please note that the 64 bit version also works, but not all functions are available here.
 
 # Preparation:
 
@@ -31,7 +35,6 @@ cd KickPi-OS
 
 
 # Used 3rd party tools:
-
 
 
 Amiberry:
