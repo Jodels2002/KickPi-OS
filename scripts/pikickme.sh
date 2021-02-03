@@ -253,7 +253,8 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       clear
       
 fi
-      
+       cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
+       cp -R ~/KickPi-OS/.data/.local/ /home/$USER/    
 }
 
 
@@ -578,7 +579,7 @@ case $CHOICE in
         
             #Poser
             KickPi-OS_Desktop
-            Amibian
+            #Amibian
             KickPi-OS_Update
             KickPi-OS_Tools
             #KickPi-OS_Addons
@@ -591,7 +592,7 @@ case $CHOICE in
              
             echo "KickPi-OS, Retropie"
             #Poser
-            Amibian
+            #Amibian
             KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
