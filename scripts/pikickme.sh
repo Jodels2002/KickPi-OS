@@ -476,7 +476,7 @@ fi
  
                clear
           
-               echo "Amibian... not  implementet now....!"
+               echo "Amibian... not full implementet now....!"
                echo "Backup Settings...."
                echo " "
                echo " "
@@ -489,7 +489,8 @@ fi
                
                echo" Debug wait... Not finished here..! :-) "
                  sleep 15
-      
+       #cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
+       #cp -R ~/KickPi-OS/.data/.local/ /home/$USER/
        
     else 
       clear
@@ -520,7 +521,7 @@ KickPi-OS_Addons() {
       ./install.sh
       
       # Cool-Retro-Term
-      sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
+      #sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
 }
 
      
