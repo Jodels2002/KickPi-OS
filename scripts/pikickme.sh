@@ -290,7 +290,7 @@ fi
        echo " "
       cd /home/$USER/KickPi-OS/Amiga
       unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
-      cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip/* /home/$USER/Amiga
+      cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
        cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
        sudo chmod +x /home/$USER/amiberry/amiberry
        
