@@ -612,7 +612,7 @@ case $CHOICE in
             #Configure_Amiga
             #KickPi-OS_Retropie
                
-            ;;
+            #;;
              
 
 esac
