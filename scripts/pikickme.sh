@@ -90,8 +90,7 @@ TITLE="Main Menu"
 MENU="Please select:"
 
 OPTIONS=(1 "Install KickPi-OS light"
-         2 "Install KickPi-OS full, Retropie, ..."
-         3 "Convert to KickPi-OS, Retropie, OlED & LED ")
+         2 "Install KickPi-OS full, Retropie, ...")
         
 
 CHOICE=$(dialog --clear \
@@ -108,16 +107,16 @@ CHOICE=$(dialog --clear \
 
 Poser() {
 
-sudo apt install -y python-dev
-sudo apt install -y python-smbus i2c-tools
-sudo apt install -y python-pil
-sudo apt install -y python-pip
-sudo apt install -y python-setuptools 
-sudo apt install -y python-dev
-sudo apt install -y python-smbus i2c-tools
-sudo apt install -y python-pil
-sudo apt install -y python-pip
-sudo apt install -y python-setuptools 
+#sudo apt install -y python-dev
+#sudo apt install -y python-smbus i2c-tools
+#sudo apt install -y python-pil
+#sudo apt install -y python-pip
+#sudo apt install -y python-setuptools 
+#sudo apt install -y python-dev
+#sudo apt install -y python-smbus i2c-tools
+#sudo apt install -y python-pil
+#sudo apt install -y python-pip
+#sudo apt install -y python-setuptools 
 
 #its ok but dissabled
 #cd /home/$USER/.KickPi-OS/OLED
@@ -129,7 +128,7 @@ sudo apt install -y python-setuptools
 #echo " Should Say: "3C""
 #python Amiga.py
 
-cd /home/$USER/.KickPi-OS/LED
+#cd /home/$USER/.KickPi-OS/LED
 #python LED.py
 
 
@@ -174,7 +173,7 @@ KickPi-OS_Tools() {
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
       sudo apt install -y  geany geany-plugins-common geany-common zip gparted unzip xmlstarlet
-      #sudo apt install -y imagemagick firefox-esr  krita-l10n
+      sudo apt install -y imagemagick firefox-esr  krita-l10n
       
       
       clear
@@ -189,7 +188,7 @@ KickPi-OS_Tools() {
       cd /home/$USER
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
-      #sudo cp -R /home/$USER/.KickPi-OS/scripts/* /usr/local/bin
+  
       
 }
 
@@ -211,12 +210,7 @@ KickPi-OS_Tools() {
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
       sudo chmod -R 777 /home/$USER/KickPi-OS
-      
-      #sudo rm -rf ~/.config
-      #mkdir ~/.config
       sudo chmod -R 777 /home/$USER/.config
-      #sudo rm -rf /home/$USER/.local
-      #mkdir ~/.local
       sudo chmod -R 777 ~/.local
       sudo cp -R ~/KickPi-OS ~/.KickPi-OS
       cd /home/$USER/KickPi-OS/
@@ -287,32 +281,18 @@ fi
        echo " "
        echo "  ... here comes Amiberry 64 bit :-) "
        
-       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev  build-essential
-       clear
-       toilet -F gay KickPi-OS 
-       toilet -F gay 64bit
-       echo " "
-       echo " "
-       sudo apt-get install -y  libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-       clear
-       toilet -F gay KickPi-OS 
-       toilet -F gay 64bit
-       echo " "
-       echo " "
-       
-       cd /home/$USER
-       
-       git clone https://github.com/midwan/amiberry
-       cd ~/amiberry
-       make -j2 PLATFORM=pi64
        
        clear
        toilet -F gay KickPi-OS 
        toilet -F gay 64bit
        echo " "
        echo " "
+      cd /home/$USER/KickPi-OS/Amiga
+      unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
+      cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip/* /home/$USER/Amiga
+       cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
        sudo chmod +x /home/$USER/amiberry/amiberry
-       cp -R /home/$USER/amiberry/* /home/$USER/Amiga
+       
        
        
     else
@@ -562,7 +542,7 @@ KickPi-OS_Retropie() {
       cd  
       cd RetroPie-Setup 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries_setup
-      #sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+    
       clear
       toilet -F gay KickPi-OS
       sudo __nodialog=1 ./retropie_packages.sh setup amiberry
@@ -621,16 +601,16 @@ case $CHOICE in
             KickPi-OS_Retropie
             ;;
         
-        3)
-            echo "KickPi-OS, Retropie, OlED & LED"
-            Poser
-            KickPi-OS_Desktop
-            KickPi-OS_Update
-            KickPi-OS_Tools
-            KickPi-OS_Addons
-            KickPi-OS_Amiberry
-            Configure_Amiga
-            KickPi-OS_Retropie
+        #3)
+            #echo "KickPi-OS, Retropie, OlED & LED"
+            #Poser
+            #KickPi-OS_Desktop
+            #KickPi-OS_Update
+            #KickPi-OS_Tools
+            #KickPi-OS_Addons
+            #KickPi-OS_Amiberry
+            #Configure_Amiga
+            #KickPi-OS_Retropie
                
             ;;
              
