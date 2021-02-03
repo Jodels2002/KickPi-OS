@@ -243,7 +243,7 @@ fi
 if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
-      sudo cp -R /home/$USER/KickPi-OSs/amitk /usr/share/themes
+      sudo cp -R /home/$USER/KickPi-OS/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       sudo mv /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
@@ -361,6 +361,7 @@ fi
       echo "  Configure ClassicWB_P96_v28 ...     " 
       echo " "
       echo " "
+    
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
       else 
