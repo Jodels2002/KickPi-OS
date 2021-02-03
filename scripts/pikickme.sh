@@ -220,7 +220,7 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 ~/.local
       sudo cp -R ~/KickPi-OS ~/.KickPi-OS
       cd /home/$USER/KickPi-OS/
-
+      cp -R ~/KickPi-OS/config/Desktop/ /home/$USER/Desktop/
 
       sudo unzip ~/KickPi-OS/.pac/.data.pac
 
