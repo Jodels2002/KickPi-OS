@@ -86,15 +86,15 @@ HEIGHT=20
 WIDTH=70
 CHOICE_HEIGHT=4
 BACKTITLE="KickPi-OS"
-TITLE="Main Menu"
+TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
 OPTIONS=(1 "Install KickPi-OS light"
-         2 "Install KickPi-OS full, Retropie, ...")
+         2 "Install KickPi-OS full, Retropie, stuff ...")
         
 
 CHOICE=$(dialog --clear \
-                --backtitle "$KickPi-OS" \
+                --backtitle "$BACKTITLE" \
                 --title "$TITLE" \
                 --menu "$MENU" \
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
@@ -173,7 +173,7 @@ KickPi-OS_Tools() {
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
       sudo apt install -y  geany geany-plugins-common geany-common zip gparted unzip xmlstarlet
-      sudo apt install -y imagemagick firefox-esr  krita-l10n
+      sudo apt install -y imagemagick krita-l10n
       
       
       clear
@@ -207,7 +207,7 @@ KickPi-OS_Tools() {
      # Fresh install XFCE4
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.config
@@ -421,8 +421,8 @@ fi
       echo "Use only if you have the original!  "
       echo " (Original Amiga, Amiga Forever,..."
       echo " "
-      echo " Be fair and honest!"
-      sleep 4s
+      echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
+      sleep 5s
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
@@ -458,21 +458,26 @@ fi
  
                clear
           
-               echo "Amibian... not full implementet now....!"
-               echo "Backup Settings...."
-               echo " "
-               echo " "
+               toilet -F gay Amibian
+               echo "
+               echo "Hello Amibian User,"
+               echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
+               echo "There is nothing to improve here. :-)"
+               echo "Only the look of the desktop is adjusted a little ..."
+               sleep 4s
+               echo "Backup Settings.... "
  
                mkdir /home/$USER/.backup/
                sudo chmod -R 777 ~/.backup/
                cp -R ~/.config/ ~/.backup/.config
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
+                           
+               cd  /home/amibian/.pac/amibian/
+               unzip  /home/amibian/.pac/amibian/amibian.zip
+               cp -R /home/amibian/.pac/amibian/amibian* /home/amibian/
                
-               echo" Debug wait... Not finished here..! :-) "
-                 sleep 15
-       #cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-       #cp -R ~/KickPi-OS/data/.local/ /home/$USER/
+             
        
     else 
       clear
@@ -485,7 +490,7 @@ fi
 }
 
     
-#****************************************   #Install PiKISS  ****************************************************
+#****************************************   #KickPi-OS_Addons  ****************************************************
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
@@ -504,6 +509,40 @@ KickPi-OS_Addons() {
       
       # Cool-Retro-Term
       #sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
+
+      cd /home/$USER/Amiga/hdf
+      
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip ./ClassicWB_UAE_v28.zip
+      else 
+      clear
+      toilet -F gay KickPi-OS
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      clear
+      toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip ./ClassicWB_OS39_v28.zip
+      else 
+      clear
+      toilet -F gay KickPi-OS
+      fi
+      
+ 
 }
 
      
@@ -526,7 +565,7 @@ KickPi-OS_Retropie() {
       echo " "
       echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
       
-      sleep 3s
+     
       
       
     else
@@ -583,11 +622,10 @@ case $CHOICE in
         1)
         
             #Poser
-            KickPi-OS_Desktop
-            Amibian
             KickPi-OS_Update
             KickPi-OS_Tools
-            #KickPi-OS_Addons
+            Amibian
+            KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
             #KickPi-OS_Retropie
@@ -595,31 +633,19 @@ case $CHOICE in
         
         2)
              
-            echo "KickPi-OS, Retropie"
+            
+            
             #Poser
-            Amibian
-            KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
-            KickPi-OS_Addons
+            Amibian
+            KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
+            KickPi-OS_Addons
             KickPi-OS_Retropie
             ;;
-        
-        #3)
-            #echo "KickPi-OS, Retropie, OlED & LED"
-            #Poser
-            #KickPi-OS_Desktop
-            #KickPi-OS_Update
-            #KickPi-OS_Tools
-            #KickPi-OS_Addons
-            #KickPi-OS_Amiberry
-            #Configure_Amiga
-            #KickPi-OS_Retropie
-               
-            #;;
-             
+                  
 
 esac
 
@@ -633,7 +659,7 @@ echo " "
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
-      #sudo rm -rf ~/KickPi-OS   Debug!
+      sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
@@ -643,7 +669,7 @@ echo " "
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
 
-whiptail --msgbox " Ready,... Okey, here we are ... Lets KickPi-OS (mini) :-)" 20 60 1
+whiptail --msgbox "  Puh,... ready now... okey, here we are ... lets see and start the KickPi-OS Desktop :-)" 20 60 1
 clear
 toilet -F gay KickPi-OS
 
