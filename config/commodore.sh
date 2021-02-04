@@ -5,7 +5,7 @@
 # Version     : 1.0.1 (05/Oct/20)
 # Compatible  : Raspberry Pi 4
 #
-
+./helper.sh
 clear
 check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 
