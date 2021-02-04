@@ -5,7 +5,7 @@
 # Version     : 1.0.1 (05/Oct/20)
 # Compatible  : Raspberry Pi 4
 #
-. ../helper.sh || . ./scripts/helper.sh || . ./helper.sh || wget -q 'https://github.com/jmcerrejon/PiKISS/raw/master/scripts/helper.sh'
+
 clear
 check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 
@@ -85,16 +85,7 @@ install() {
     end_message
 }
 
-echo "
-VICE 3.4 for Raspberry Pi
-=========================
 
- · More Info: https://vice-emu.sourceforge.io | https://www.c64-wiki.com/wiki/Main_Page
- · Optimized for Raspberry Pi 4 with the next parameters for better performante: SDL2 GUI, Disable Ethernet, Disable MIDI, Joystick support.
- · ROMs & 2 Games included: Old Tower (IMAGES/prg/ot64) & Santron (IMAGES/prg/santron.prg)
- · Install path: $INSTALL_DIR/vice
- · TIP: F12 = Menu.
-"
 
 
 install
