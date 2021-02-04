@@ -466,7 +466,10 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
-     
+     clear
+      toilet -F gay KickPi-OS full
+      echo " "
+      echo " "
      #Install PiKISS
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       cd PiKISS
@@ -474,7 +477,10 @@ KickPi-OS_Addons() {
       
       ./piKiss.sh
       
-      
+      clear
+      toilet -F gay KickPi-OS full
+      echo " "
+      echo " "
       #PiCommander
       cd
       sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
@@ -482,32 +488,30 @@ KickPi-OS_Addons() {
       cd CommanderPi
       ./install.sh
       
-      # Cool-Retro-Term
-      #sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
-
+     
       cd /home/$USER/Amiga/hdf
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
-      toilet -F gay KickPi-OS
+      toilet -F gay KickPi-OS full
       echo " "
       echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...     " 
+      echo "  Configure ClassicWB_UAE_v28 ...   " 
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
       else 
       clear
-      toilet -F gay KickPi-OS
+      toilet -F gay  KickPi-OS full
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       clear
-      toilet -F gay KickPi-OS
+      toilet -F gay  KickPi-OS full
       echo " "
       echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...     " 
+      echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
