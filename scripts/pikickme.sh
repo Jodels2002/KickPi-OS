@@ -1,24 +1,13 @@
 #!/bin/bash
 # Install KickPi-OS
-# B.Titze 2020
+# B.Titze 2021
 ## PWR-LED (green) 
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
-#https://archive.org/compress/Amiga_WHD_Games
-# https://github.com/billw2/rpi-clone "rpi-clone -f -p 256M sdb"
-# Todo: Em neut, AFor strukt, Rena pro  . Boot Co ...Spe,  Cat Boo, AWallWal, Ami Tur 
-
-#******************************************** #History ************* ****************************************
-#************************************************************************************************************
-
-# 11.01.2021 Amibian update & Settings Ok 
-# 11.01.2021 PiKiss OK -> todo CoolTerm, Certificates 
-# 18.01 Menu & Funktions
-# 25.01 Amiga XFCE4 Desktop, OLED, bugfix
-# 26.01 added Convert Raspberry Pi OS to KickPi-OS (32bit)
-# 26.01 added Convert Raspberry Pi OS 64 bit to KickPi-OS - 64bit
-# funktions and structure Test 32/64bit OK
+#https://archive.org/compress/Amiga_WHD_Games ;-) 
+#Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
+#Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
@@ -61,11 +50,6 @@ toilet -F gay KickPi-OS
     
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
-  
-
-Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
-Amiberry64=amiberry-v3.3-rpi4-64bit.zip
-
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.backup/
