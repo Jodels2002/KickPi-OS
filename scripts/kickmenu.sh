@@ -68,30 +68,36 @@ case $CHOICE in
         1)
         clear
         toilet -F gay Amiberry
-          
+        cd /$USER/amiberry
+         ./amiberry
+     
+ 
             ;;
         
         2)
             clear
             toilet -F gay KickPi-OS Desktop
-        
+            startx
+            
             ;;
         
         3)
             clear
             toilet -F gay Retropie
-               
+            emulationstation   
             ;;
             
                  
           c)
             clear
             toilet -F gay Configure
+            sudo raspi-config
             ;;
             
            s)
             clear
             toilet -F gay shutdown
+            shutdown
                
            
             ;;  
@@ -101,3 +107,4 @@ esac
 
 clear
 toilet -F gay KickPi-OS
+kickmenu
