@@ -178,7 +178,7 @@ KickPi-OS_Tools() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
- 
+  if [ $USER == "pi" ]; then
       clear
       toilet -F gay KickPi-OS 
    
@@ -233,7 +233,21 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       
 fi
        cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-       cp -R ~/KickPi-OS/data/.local/ /home/$USER/    
+       cp -R ~/KickPi-OS/data/.local/ /home/$USER/  
+       
+       else
+       
+       if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
+      cd /home/$USER/KickPi-OS
+      git clone --depth=1 https://github.com/x64k/amitk
+      sudo cp -R /home/$USER/KickPi-OS/amitk /usr/share/themes
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      sudo mv /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -rf /usr/share/themes/Default/xfwm4/
+      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+      
+fi      
 }
 
 
