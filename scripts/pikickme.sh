@@ -490,14 +490,14 @@ KickPi-OS_Addons() {
       echo " "
      
       #CommanderPi
-      cd
-      sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
-      git clone --depth=1 https://github.com/Jack477/CommanderPi
-      clear
-      toilet -F gay KickPi-OS              full
+      #cd
+      #sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
+      #git clone --depth=1 https://github.com/Jack477/CommanderPi
+      #clear
+      #toilet -F gay KickPi-OS              full
       
-      cd CommanderPi
-      ./install.sh
+      #cd CommanderPi
+      #./install.sh
       
      
       cd /home/$USER/Amiga/hdf
