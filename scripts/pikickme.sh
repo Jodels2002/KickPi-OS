@@ -546,8 +546,8 @@ KickPi-OS_Retropie() {
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd  
       cd RetroPie-Setup 
-      sudo __nodialog=1 ./retropie_packages.sh setup binaries_setup
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      sudo __nodialog=1 ./retropie_packages.sh setup binaries
+      
       clear
       toilet -F gay KickPi-OS
       sudo __nodialog=1 ./retropie_packages.sh setup amiberry
