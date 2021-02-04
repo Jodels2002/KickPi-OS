@@ -12,6 +12,7 @@ Compatible to:
 
 Software among others:
 XFCE4, Amiberry, PiKiss; Comander Pi, Retropie ...
+
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
 
 # Disclaimer
@@ -19,7 +20,8 @@ It is a side project of my Amiga 3000 mini to print yourself. But I think it's a
 The whole thing here is a hobby project. Use at your own risk ;-)
 I'm far from being good at scripting ;-) It works.
 
-But: if someone has suggestions for improvement, constructive criticism or whatever - bring them on. A warm welcome
+But: if someone has suggestions for improvement, constructive criticism or whatever - bring them on. 
+A warm welcome
 
 Greetings Bernd
 bernd.titze@me.com
