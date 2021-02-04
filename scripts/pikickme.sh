@@ -427,9 +427,9 @@ fi
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
                            
-               cd  /home/amibian/.pac/amibian/
-               unzip  /home/amibian/.pac/amibian/amibian.zip
-               cp -R /home/amibian/.pac/amibian/amibian* /home/
+               #cd  /home/amibian/.pac/amibian/
+               #unzip  /home/amibian/.pac/amibian/amibian.zip
+               #cp -R /home/amibian/.pac/amibian/amibian* /home/
                            
                else 
                clear
