@@ -55,8 +55,8 @@ amiberry.minimized_input=0
 ; *** Common / Paths
 ; 
 use_gui=yes
-kickstart_rom_file=/home/pi/Amiga/kickstarts/kick31.rom
-kickstart_rom_file_id=FC24AE0D,KS ROM v3.1 (A500,A600,A2000)
+kickstart_rom_file=
+kickstart_rom_file_id=
 kickstart_ext_rom_file=
 ide_mb_rom_file=:ENABLED
 pcmcia_mb_rom_file=:ENABLED
