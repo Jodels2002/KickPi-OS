@@ -5,6 +5,7 @@
 
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
+cd
 
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
