@@ -495,7 +495,7 @@ check_internet_available() {
         PINGOUTPUT=$(ping -c 1 8.8.8.8 >/dev/null && echo '...')
         if [ ! "$PINGOUTPUT" = '...' ]; then
             echo -e "\nInternet connection required. Causes:\n\n · Check your network.\n · Weak WiFi signal?.\n · Try no check internet connection parameter (-ni): cd ~/piKiss && ./piKiss.sh -ni\n"
-            read -p "Press [Enter] to exit..."
+            
             exit 1
         fi
     fi
@@ -566,7 +566,7 @@ EOF
 
 exit_message() {
     echo
-    read -p "Press [Enter] to go back to the menu..."
+   
     exit 1
 }
 
@@ -657,7 +657,7 @@ check_update_pikiss() {
         git pull origin master
         echo
         echo -e "PiKISS is up to date!. \n\nYou need to run the program again.\n"
-        read -p "Press [ENTER] to exit."
+       
         exit 1
     fi
 }
@@ -1089,10 +1089,10 @@ upgrade() {
 }
 
 make_install_compiled_app() {
-    read -p "Do you want to install it? (y/N) " response
-    if [[ $response =~ [Yy] ]]; then
+   
+ 
         sudo make install
-    fi
+   
 }
 
 install_backports() {
