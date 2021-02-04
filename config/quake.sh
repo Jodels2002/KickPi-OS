@@ -45,7 +45,7 @@ q1_runme() {
         echo -e "\nFile does not exist.\n· Something is wrong.\n· Try to install again."
         exit_message
     fi
-    read -p "Press [ENTER] to run the game..."
+   
     cd "$INSTALL_DIR"/quake && ./quake
     exit_message
 }
@@ -154,7 +154,7 @@ Quake for Raspberry Pi
  · Based on code at ${Q1_SOURCE_CODE_1_URL}.
  · Install path: $INSTALL_DIR/quake
 "
-    read -p "Press [Enter] to install the game..."
+ 
     echo -e "\n\nInstalling Quake, please wait...\n"
     install_packages_if_missing "${Q1_PACKAGES[@]}"
     mkdir -p "$INSTALL_DIR"
@@ -173,7 +173,7 @@ q2_runme() {
         echo -e "\nFile does not exist.\n· Something is wrong.\n· Try to install again."
         exit_message
     fi
-    read -p "Press [ENTER] to run the game..."
+   
     "$INSTALL_DIR"/yquake2/quake2
     exit_message
 }
