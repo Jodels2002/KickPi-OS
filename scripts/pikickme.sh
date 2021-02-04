@@ -477,7 +477,7 @@ KickPi-OS_Addons() {
       
       #PiCommander
       cd
-       sudo apt install -y python-pil python3-pil python-pil-doc 
+      sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
       git clone --depth=1 https://github.com/Jack477/CommanderPi
       cd CommanderPi
       ./install.sh
