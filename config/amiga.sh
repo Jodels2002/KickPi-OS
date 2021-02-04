@@ -25,7 +25,7 @@ runme() {
         echo -e "\nFile does not exist.\n· Something is wrong.\n· Try to install again."
         exit_message
     fi
-    read -p "Press [ENTER] to run..."
+ 
     cd "$INSTALL_DIR"/amiberry && ./amiberry
     exit_message
 }
@@ -121,7 +121,7 @@ install() {
     echo " · Install path: $INSTALL_DIR/amiberry"
     echo " · TIP: F12 = Menu."
     echo
-    read -p "Press [ENTER] to continue..."
+    
     install_packages_if_missing "${PACKAGES[@]}"
     download_and_extract "$AMIBERRY_BIN" "$INSTALL_DIR"/amiberry
     chmod +x "$INSTALL_DIR"/amiberry/amiberry
