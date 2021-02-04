@@ -12,7 +12,6 @@
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
 sudo apt-mark hold lxpanel
-#sudo apt-get -y update 
 sudo apt install -y toilet dialog mc git 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -R  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
@@ -196,7 +195,7 @@ KickPi-OS_Tools() {
       cd /home/$USER/KickPi-OS/
       cp -R ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
-      sudo unzip ~/KickPi-OS/.pac/.data.pac
+      unzip ~/KickPi-OS/.pac/.data.pac
 
       
       cp -R ~/KickPi-OS/data/.config/ /home/$USER/
@@ -448,18 +447,32 @@ KickPi-OS_Addons() {
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
-      
       ./piKiss.sh
+      cd ~/KickPi-OS/config/
+      ./amiga.sh
+      clear
+      toilet -F gay KickPi-OS       full
+      ./commodore.sh
+      clear
+      toilet -F gay KickPi-OS       full
+      ./eduke32.sh
+     clear
+      toilet -F gay KickPi-OS       full
+      ./retro-term.sh
+      
       
       clear
       toilet -F gay KickPi-OS       full
       echo " "
       echo " "
      
-      #PiCommander
+      #CommanderPi
       cd
       sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
       git clone --depth=1 https://github.com/Jack477/CommanderPi
+      clear
+      toilet -F gay KickPi-OS       full
+      
       cd CommanderPi
       ./install.sh
       
