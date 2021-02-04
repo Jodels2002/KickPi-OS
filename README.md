@@ -22,7 +22,7 @@ I'm far from being good at scripting ;-) It works.
 But: if someone has suggestions for improvement, constructive criticism or whatever - bring them on. A warm welcome
 
 Greetings Bernd
-jodels@gmx.de
+bernd.titze@me.com
 
 # Supported hardware:
 
