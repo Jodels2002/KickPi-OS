@@ -467,7 +467,7 @@ fi
 
 KickPi-OS_Addons() {
      clear
-      toilet -F gay KickPi-OS full
+      toilet -F gay KickPi-OS       full
       echo " "
       echo " "
      #Install PiKISS
@@ -478,9 +478,10 @@ KickPi-OS_Addons() {
       ./piKiss.sh
       
       clear
-      toilet -F gay KickPi-OS full
+      toilet -F gay KickPi-OS       full
       echo " "
       echo " "
+     
       #PiCommander
       cd
       sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
@@ -493,7 +494,7 @@ KickPi-OS_Addons() {
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
-      toilet -F gay KickPi-OS full
+      toilet -F gay KickPi-OS       full
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -503,12 +504,14 @@ KickPi-OS_Addons() {
       unzip ./ClassicWB_UAE_v28.zip
       else 
       clear
-      toilet -F gay  KickPi-OS full
+      toilet -F gay KickPi-OS       full
+      echo " "
+      echo " "
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       clear
-      toilet -F gay  KickPi-OS full
+      toilet -F gay KickPi-OS       full
       echo " "
       echo " "
       echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
