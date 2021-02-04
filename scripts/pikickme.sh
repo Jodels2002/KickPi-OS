@@ -117,6 +117,7 @@ CHOICE=$(dialog --clear \
 
 
 #}
+
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
@@ -136,8 +137,6 @@ KickPi-OS_Update() {
       sudo apt-get -y upgrade
 
 }
-
-
 
 #*********************************************  #Installing KickPi-OS_Tools*********************************
 #**********************************************************************************************************
@@ -176,8 +175,6 @@ KickPi-OS_Tools() {
       
 }
 
-
-
 #*********************************************  #Installing KickPi-OS Desktop*********************************
 #**********************************************************************************************************
  
@@ -186,8 +183,7 @@ KickPi-OS_Tools() {
       clear
       toilet -F gay KickPi-OS 
    
-
-     
+    
      # Fresh install XFCE4
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
@@ -242,7 +238,6 @@ fi
 }
 
 
-
 #***************************************** # Install Amiberry  *********************************************
 #****************************************************************************************************************
      
@@ -294,7 +289,6 @@ fi
     cp -r /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
 }
 
-  
 
 #***************************************** # Configure Amiga *********************************************
 #****************************************************************************************************************
@@ -388,11 +382,9 @@ fi
       else 
       clear
       toilet -F gay NOTE!
-
     
       fi
 
-      
       toilet -F gay KickPi-OS
       echo " "
       echo " "
@@ -435,7 +427,6 @@ fi
                cp -R /home/amibian/.pac/amibian/amibian* /home/amibian/
                permission
              
-       
                else 
                clear
                echo "Raspian OS, nothing to do here..."
@@ -564,9 +555,7 @@ KickPi-OS_Retropie() {
 
     
  fi      
-
-
-     
+  
 }
 
 
@@ -595,8 +584,7 @@ case $CHOICE in
         
         2)
              
-            
-            
+        
             #Poser
             KickPi-OS_Update
             KickPi-OS_Tools
@@ -611,9 +599,6 @@ case $CHOICE in
 
 esac
 
-
-clear
-toilet -F gay KickPi-OS
 
 echo " "
       echo " "
