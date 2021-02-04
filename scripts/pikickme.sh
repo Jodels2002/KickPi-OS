@@ -338,20 +338,6 @@ fi
       
       cd /home/$USER/Amiga/hdf
       
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      #clear
-      #toilet -F gay KickPi-OS
-      #echo " "
-      #echo " "
-      #echo "  Configure ClassicWB_UAE_v28 ...     " 
-      #echo " "
-      #echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      #unzip ./ClassicWB_UAE_v28.zip
-      #else 
-      #clear
-      #toilet -F gay KickPi-OS
-      #fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       clear
@@ -361,7 +347,7 @@ fi
       echo "  Configure ClassicWB_P96_v28 ...     " 
       echo " "
       echo " "
-    
+      
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
       else 
@@ -369,25 +355,15 @@ fi
       toilet -F gay KickPi-OS
       fi
       
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      #clear
-      #toilet -F gay KickPi-OS
-      #echo " "
-      #echo " "
-      #echo "  Configure ClassicWB_OS39_v28 ...     " 
-      #echo " "
-      #echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      #unzip ./ClassicWB_OS39_v28.zip
-      #else 
-      #clear
-      #toilet -F gay KickPi-OS
-      #fi
-      
-      cd /home/$USER/Amiga/hdf
+          
       if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
      
       else 
       clear
@@ -459,7 +435,7 @@ fi
                clear
           
                toilet -F gay Amibian
-               echo "
+               echo ""
                echo "Hello Amibian User,"
                echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
                echo "There is nothing to improve here. :-)"
@@ -479,11 +455,11 @@ fi
                permission
              
        
-    else 
-      clear
-      echo "Raspian OS, nothing to do here..."
+               else 
+               clear
+               echo "Raspian OS, nothing to do here..."
  
-fi    
+    fi    
      
    
      
@@ -629,7 +605,8 @@ case $CHOICE in
             KickPi-OS_Amiberry
             Configure_Amiga
             #KickPi-OS_Retropie
-            ;;
+            
+       ;;
         
         2)
              
@@ -644,7 +621,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            ;;
+       ;;
                   
 
 esac
@@ -674,4 +651,3 @@ clear
 toilet -F gay KickPi-OS
 
 startx
-
