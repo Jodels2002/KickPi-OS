@@ -19,13 +19,12 @@ MENU="Please select:"
 
 OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
-         3 "Start Retropie EmulationStation"
          c "Setup Raspie-Config"
-         3 "Shutdown ")
+         s "Shutdown ")
         
 
 CHOICE=$(dialog --clear \
-                --backtitle "$KickPi-OS" \
+                --backtitle "$BACKTITL" \
                 --title "$TITLE" \
                 --menu "$MENU" \
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
@@ -37,20 +36,23 @@ CHOICE=$(dialog --clear \
     else 
     #******************************************** #KickPi-OS 32bit Start Menu ***************************************
     #****************************************************************************************************************
-   HEIGHT=20
+
+HEIGHT=20
 WIDTH=70
 CHOICE_HEIGHT=4
-BACKTITLE="KickPi-OS 64 bit"
+BACKTITLE="KickPi-OS 32 bit"
 TITLE="Main Menu"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS light"
-         2 "Install KickPi-OS full, Retropie, ..."
-         3 "Convert to KickPi-OS, Retropie, OlED & LED ")
+OPTIONS=(1 "Start your Amiberry Amiga"
+         2 "Start your KickPi-OS Desktop"
+         3 "Start Retropie Emulationstation"
+         c "Setup Raspie-Config"
+         s "Shutdown ")
         
 
 CHOICE=$(dialog --clear \
-                --backtitle "$KickPi-OS" \
+                --backtitle "$KickPi-OS 32 bitS" \
                 --title "$TITLE" \
                 --menu "$MENU" \
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
