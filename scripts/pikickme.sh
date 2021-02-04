@@ -368,10 +368,13 @@ fi
       echo " "
       echo "The roms and workbench files are under copyrigt! "
       echo " "
+      echo " "
       echo "Use only if you have the original!  "
       echo " (Original Amiga, Amiga Forever,..."
       echo " "
       echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
+      echo " "
+      echo " "
       sleep 5s
       wget https://misapuntesde.com/res/Amiga_roms.zip
       mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
