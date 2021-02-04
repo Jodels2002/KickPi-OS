@@ -26,7 +26,7 @@ sudo apt-mark hold lxpanel
 #sudo apt-get -y update 
 sudo apt install -y toilet dialog mc git 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-
+cp -R  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  
