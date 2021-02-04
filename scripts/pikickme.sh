@@ -237,7 +237,7 @@ fi
        
        else
        
-       if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
+     
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -R /home/$USER/KickPi-OS/amitk /usr/share/themes
@@ -246,6 +246,7 @@ fi
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+       
       
 fi      
 }
