@@ -429,7 +429,7 @@ fi
                            
                cd  /home/amibian/.pac/amibian/
                unzip  /home/amibian/.pac/amibian/amibian.zip
-               cp -R /home/amibian/.pac/amibian/amibian* /home/amibian/
+               cp -R /home/amibian/.pac/amibian/amibian* /home/
                            
                else 
                clear
