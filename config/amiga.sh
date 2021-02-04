@@ -126,26 +126,10 @@ install() {
     download_and_extract "$AMIBERRY_BIN" "$INSTALL_DIR"/amiberry
     chmod +x "$INSTALL_DIR"/amiberry/amiberry
     post_install
+    
+    clear && install
 }
 
-menu() {
 
-    while true; do
-        dialog --clear \
-            --title "[ Amiberry Amiga emulator for Raspberry Pi ]" \
-            --menu "Select from the list:" 11 65 3 \
-            INSTALL "Amiberry binary (Recommended)" \
-            COMPILE "Compile Amiberry (latest). Time: ~22 minutes." \
-            Exit "Exit" 2>"${INPUT}"
-
-        menuitem=$(<"${INPUT}")
-
-        case $menuitem in
-        INSTALL) clear && install ;;
-        COMPILE) clear && compile ;;
-        Exit) exit ;;
-        esac
-    done
-}
 
 install
