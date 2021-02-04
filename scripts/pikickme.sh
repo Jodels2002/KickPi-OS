@@ -74,7 +74,7 @@ Amiberry64=amiberry-v3.3-rpi4-64bit.zip
       
 #***********************************************  #Are you runing Desktop?  ***********************************
 if  xset q &>/dev/null; then
-    echo "No X server at \$DISPLAY [$DISPLAY]" >&2
+    echo "Please dont´t this under Linux Desktop" >&2
     sleep 15s
     exit 1
 fi 
