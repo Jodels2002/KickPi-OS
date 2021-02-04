@@ -310,8 +310,7 @@ fi
     cp -r /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
 }
 
-
-     
+  
 
 #***************************************** # Configure Amiga *********************************************
 #****************************************************************************************************************
@@ -377,9 +376,7 @@ fi
       unzip ./ClassicWB_68K_v28.zip
       
       fi
-
-    
-      
+  
       cd /home/$USER/Amiga/hdf
       
       cd ~/Amiga
@@ -461,8 +458,7 @@ fi
  
     fi    
      
-   
-     
+  
 }
 
     
@@ -475,6 +471,9 @@ KickPi-OS_Addons() {
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
+      
+      ./piKiss.sh
+      
       
       #PiCommander
       cd
@@ -517,7 +516,6 @@ KickPi-OS_Addons() {
       clear
       toilet -F gay KickPi-OS
       fi
-      
  
 }
 
@@ -528,9 +526,7 @@ KickPi-OS_Addons() {
   
 KickPi-OS_Retropie() {
 #Install Retropie/Setup
-      
-    
-    
+
       
     if [ "$(getconf LONG_BIT)" == "64" ]; then
    
@@ -540,9 +536,7 @@ KickPi-OS_Retropie() {
       echo " "
       echo " "
       echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
-      
-     
-      
+
       
     else
      
@@ -569,7 +563,7 @@ KickPi-OS_Retropie() {
       sudo _clear
       toilet -F gay KickPi-OS
       
-      cd /home/pi/KickPi-OS/Retropie/
+      cd /home/$USER/KickPi-OS/Retropie/
       unzip /home/$USER/KickPi-OS/Retropie/roms.zip
       cp -R /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       
