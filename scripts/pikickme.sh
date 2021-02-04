@@ -291,8 +291,8 @@ fi
       cd /home/$USER/KickPi-OS/Amiga
       unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
       cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
-       cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
-       sudo chmod +x /home/$USER/amiberry/amiberry
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
+      sudo chmod +x /home/$USER/amiberry/amiberry
        
        
        
@@ -544,7 +544,7 @@ KickPi-OS_Retropie() {
       cd  
       cd RetroPie-Setup 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries_setup
-    
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       clear
       toilet -F gay KickPi-OS
       sudo __nodialog=1 ./retropie_packages.sh setup amiberry
@@ -580,7 +580,7 @@ case $CHOICE in
         
             #Poser
             KickPi-OS_Desktop
-            #Amibian
+            Amibian
             KickPi-OS_Update
             KickPi-OS_Tools
             #KickPi-OS_Addons
@@ -593,7 +593,7 @@ case $CHOICE in
              
             echo "KickPi-OS, Retropie"
             #Poser
-            #Amibian
+            Amibian
             KickPi-OS_Desktop
             KickPi-OS_Update
             KickPi-OS_Tools
