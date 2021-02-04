@@ -23,7 +23,7 @@ DATA_URL="http://hendricks266.duke4.net/files/3dduke13_data.7z"
 INPUT=/tmp/eduke32.$$
 
 runme() {
-    read -p "Press [ENTER] to run the game..."
+  
     cd "$INSTALL_DIR"/eduke32 && ./eduke32
     echo
     exit_message
@@ -112,16 +112,9 @@ install() {
     download_binaries
     generate_icon
     echo
-    read -p "Do you have data files set on the file res/magic-air-copy-pikiss.txt for Duke Nukem Atomic Edition (If not, a shareware version will be installed) (y/N)?: " response
-    if [[ $response =~ [Yy] ]]; then
-        DATA_URL=$(extract_path_from_file "$VAR_DATA_NAME")
-
-        if ! message_magic_air_copy "$DATA_URL"; then
-            echo -e "\nNow copy data directory into $INSTALL_DIR/eduke32."
-            end_message
-            return 0
-        fi
-    fi
+    
+    
+        DATA_URL=$(extract_path_from_file "$VAR_DATA_NAME"
 
     download_data_files
     end_message
@@ -146,4 +139,4 @@ menu() {
     done
 }
 
-menu
+
