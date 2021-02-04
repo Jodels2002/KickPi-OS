@@ -57,8 +57,8 @@ amiberry.minimized_input=0
 ; *** Common / Paths
 ; 
 use_gui=yes
-kickstart_rom_file=/home/pi/Amiga/kickstarts/Amiga_roms.zip/kick13.rom
-kickstart_rom_file_id=C4F0F55F,KS ROM v1.3 (A500,A1000,A2000)
+kickstart_rom_file=
+kickstart_rom_file_id=
 kickstart_ext_rom_file=
 ide_mb_rom_file=:ENABLED
 flash_file=
