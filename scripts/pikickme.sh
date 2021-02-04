@@ -219,8 +219,8 @@ KickPi-OS_Tools() {
       sudo unzip ~/KickPi-OS/.pac/.data.pac
 
       
-      cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
-      cp -R ~/KickPi-OS/.data/.local/ /home/$USER/
+      cp -R ~/KickPi-OS/data/.config/ /home/$USER/
+      cp -R ~/KickPi-OS/data/.local/ /home/$USER/
       sudo chmod -R 777 /home/$USER/KickPi-OSKickPi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
@@ -231,7 +231,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
       sudo cp -R /home/$USER/KickPi-OS/Amiga_Logos /usr/share/icons
-      sudo cp -R /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo cp -R /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
@@ -253,8 +253,8 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       clear
       
 fi
-       cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
-       cp -R ~/KickPi-OS/.data/.local/ /home/$USER/    
+       cp -R ~/KickPi-OS/data/.config/ /home/$USER/
+       cp -R ~/KickPi-OS/data/.local/ /home/$USER/    
 }
 
 
@@ -471,8 +471,8 @@ fi
                
                echo" Debug wait... Not finished here..! :-) "
                  sleep 15
-       #cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
-       #cp -R ~/KickPi-OS/.data/.local/ /home/$USER/
+       #cp -R ~/KickPi-OS/data/.config/ /home/$USER/
+       #cp -R ~/KickPi-OS/data/.local/ /home/$USER/
        
     else 
       clear
@@ -554,9 +554,13 @@ KickPi-OS_Retropie() {
       sudo _clear
       toilet -F gay KickPi-OS
       
-      cd /home/pi/KickPi-OS/Amiga
-    unzip /home/$USER/KickPi-OS/RetroPie/roms.zip
-    cp -r /home/$USER/KickPi-OS/RetroPie/* /home/$USER/RetroPie/
+      cd /home/pi/KickPi-OS/Retropie/
+      unzip /home/$USER/KickPi-OS/Retropie/roms.zip
+      cp -R /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+      
+      
+      unzip /home/$USER/KickPi-OS/Retropie/all.zip
+      sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
 
     
  fi      
