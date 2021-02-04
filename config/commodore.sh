@@ -19,9 +19,7 @@ runme() {
         echo -e "\nFile does not exist.\n· Something is wrong.\n· Try to install again."
         exit_message
     fi
-    read -p "Press [ENTER] to run Old Tower (Directional Keys = OPQA)..."
-    cd "$INSTALL_DIR"/vice && ./x64 -autostartprgmode 1 IMAGES/prg/ot64.prg
-    exit_message
+   
 }
 
 remove_files() {
@@ -97,6 +95,6 @@ VICE 3.4 for Raspberry Pi
  · Install path: $INSTALL_DIR/vice
  · TIP: F12 = Menu.
 "
-read -p "Press [ENTER] to continue..."
+
 
 install
