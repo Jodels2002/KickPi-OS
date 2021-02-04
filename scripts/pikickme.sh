@@ -408,11 +408,14 @@ fi
           
                toilet -F gay Amibian
                echo ""
+               echo ""
                echo "Hello Amibian User,"
+               echo ""
                echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
                echo "There is nothing to improve here. :-)"
+               echo ""
                echo "Only the look of the desktop is adjusted a little ..."
-               sleep 4s
+               sleep 1s
                echo "Backup Settings.... "
  
                mkdir /home/$USER/.backup/
