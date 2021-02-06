@@ -178,12 +178,7 @@ KickPi-OS_Tools() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
-  if [ $USER == "pi" ]; then
-      clear
-      toilet -F gay KickPi-OS 
-   
-    
-     # Fresh install XFCE4
+  
       sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
@@ -198,8 +193,6 @@ KickPi-OS_Tools() {
       unzip ~/KickPi-OS/.pac/.data.pac
 
       
-      cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-      cp -R ~/KickPi-OS/data/.local/ /home/$USER/
       sudo chmod -R 777 /home/$USER/KickPi-OSKickPi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
@@ -232,21 +225,52 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       clear
       
 fi
+  
+  
+     
+  
+  if [ $USER == "pi" ]; then
+     
+
+      # Settings XFCE4 Rasperry OS
+      
+   
        cp -R ~/KickPi-OS/data/.config/ /home/$USER/
        cp -R ~/KickPi-OS/data/.local/ /home/$USER/  
        
        else
-       
+       # Settings XFCE4 Amibian
+      clear
+          
+               toilet -F gay Amibian
+               echo ""
+               echo ""
+               echo "Hello Amibian User,"
+               echo ""
+               echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
+               echo "There is nothing to improve here. :-)"
+               echo ""
+               echo "Only the look of the desktop is adjusted a little ..."
+               echo ""
+               echo ""
+               sleep 1s
+               echo "Backup Settings.... "
      
-      cd /home/$USER/KickPi-OS
-      git clone --depth=1 https://github.com/x64k/amitk
-      sudo cp -R /home/$USER/KickPi-OS/amitk /usr/share/themes
-      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
-      sudo rm -rf /usr/share/themes/Default/xfwm4/
-      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-      sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
-       
+               #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+               sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+               mkdir /home/$USER/.backup/
+               sudo chmod -R 777 ~/.backup/
+               cp -R ~/.config/ ~/.backup/.config
+               cp -R ~/.local/ ~/.backup/.local
+               cp -R /usr/local/bin ~/.backup/usr
+                           
+               #cd  /home/amibian/.pac/amibian/
+               #unzip  /home/amibian/.pac/amibian/amibian.zip
+               #cp -R /home/amibian/.pac/amibian/amibian* /home/
+               #cp -R ~/KickPi-OS/data/.config/ /home/$USER/
+               #cp -R ~/KickPi-OS/data/.local/ /home/$USER/
+               cp -R ~/KickPi-OS/data/.config/ /home/$USER/
+               cp -R ~/KickPi-OS/data/.local/ /home/$USER/  
       
 fi      
 }
@@ -286,8 +310,6 @@ fi
       cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
       sudo chmod +x /home/$USER/amiberry/amiberry
-       
-       
        
     else
     
@@ -412,50 +434,6 @@ fi
       sudo chmod -R 777 /home/$USER/Amiga
     }    
    
-
-       
-#*********************************************  # Amibian  **********************************************
-#********************************************# Not testet! *******************************************************
-
- Amibian() {
-      
-     
-      if [ $USER == "amibian" ]; then
- 
-               clear
-          
-               toilet -F gay Amibian
-               echo ""
-               echo ""
-               echo "Hello Amibian User,"
-               echo ""
-               echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
-               echo "There is nothing to improve here. :-)"
-               echo ""
-               echo "Only the look of the desktop is adjusted a little ..."
-               echo ""
-               echo ""
-               sleep 1s
-               echo "Backup Settings.... "
- 
-               mkdir /home/$USER/.backup/
-               sudo chmod -R 777 ~/.backup/
-               cp -R ~/.config/ ~/.backup/.config
-               cp -R ~/.local/ ~/.backup/.local
-               cp -R /usr/local/bin ~/.backup/usr
-                           
-               #cd  /home/amibian/.pac/amibian/
-               #unzip  /home/amibian/.pac/amibian/amibian.zip
-               #cp -R /home/amibian/.pac/amibian/amibian* /home/
-                           
-               else 
-               clear
-               echo "Raspian OS, nothing to do here..."
- 
-    fi    
-     
-  
-}
 
     
 #****************************************   #KickPi-OS_Addons  ****************************************************
@@ -609,7 +587,6 @@ case $CHOICE in
             #Poser
             KickPi-OS_Update
             KickPi-OS_Tools
-            Amibian
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
@@ -623,7 +600,6 @@ case $CHOICE in
             #Poser
             KickPi-OS_Update
             KickPi-OS_Tools
-            Amibian
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
