@@ -259,20 +259,20 @@ fi
                echo "Backup Settings.... "
      
                #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-               sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+               sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
                
                sudo chmod -R 777 ~/.backup/
                cp -R ~/.config/ ~/.backup/.config
                cp -R ~/.local/ ~/.backup/.local
                cp -R /usr/local/bin ~/.backup/usr
-                           
-               #cd  /home/amibian/.pac/amibian/
-               #unzip  /home/amibian/.pac/amibian/amibian.zip
-               #cp -R /home/amibian/.pac/amibian/amibian* /home/
-               #cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-               #cp -R ~/KickPi-OS/data/.local/ /home/$USER/
-               cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-               cp -R ~/KickPi-OS/data/.local/ /home/$USER/  
+               #sudo rm -rf /home/$USER/.config
+               #sudo rm -rf /home/$USER/.icons
+               sudo rm -rf /usr/share/.icons/default
+               cd  /home/KickPi-OS/.pac/amibian/
+               unzip  /home/amibian/.pac/amibian/.config.zip
+               unzip  /home/amibian/.pac/amibian/.local.zip
+               cp -R /home/amibian/.pac/amibian/.config/ /home/$USER/
+               cp -R /home/amibian/.pac/amibian/.local/ /home/$USER/  
       
 fi      
 }
