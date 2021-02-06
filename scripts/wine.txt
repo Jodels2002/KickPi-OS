@@ -1,0 +1,8 @@
+wine msiexec /i ~/Downloads/AmigaForever2016Plus.msi
+
+After installation, you need to copy the Amiga Forever into place. These instructions assume that the FS-UAE base dir is Documents/FS-UAE, and that you have performed the Amiga Forever installation using the default Wine prefix:
+
+cd ~/Documents/FS-UAE
+mkdir AmigaForever
+cd AmigaForever
+cp -a ~/.wine/drive_c/users/Public/Documents/"Amiga Files" .
