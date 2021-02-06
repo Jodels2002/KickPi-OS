@@ -443,8 +443,9 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
-     clear
-      toilet -F gay KickPi-OS              full
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
       echo " "
       echo " "
      #Install PiKISS
@@ -455,18 +456,28 @@ KickPi-OS_Addons() {
       cd ~/KickPi-OS/config/
       ./amiga.sh
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
       ./commodore.sh
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
       ./eduke32.sh
-     clear
-      toilet -F gay KickPi-OS              full
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
       ./retro-term.sh
       
       
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
       echo " "
       echo " "
      
@@ -485,7 +496,8 @@ KickPi-OS_Addons() {
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -494,15 +506,17 @@ KickPi-OS_Addons() {
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
       else 
-      clear
-      toilet -F gay KickPi-OS              full
+      cclear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
       echo " "
       echo " "
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
       echo " "
       echo " "
       echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
@@ -512,7 +526,7 @@ KickPi-OS_Addons() {
       unzip ./ClassicWB_OS39_v28.zip
       else 
       clear
-      toilet -F gay KickPi-OS
+      
       fi
  
 }
