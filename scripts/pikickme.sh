@@ -10,11 +10,11 @@
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
-if  xset q &>/dev/null; then
-    echo "Please dont´t run this script under Linux Desktop" >&2
-    sleep 15s
-    exit 1
-fi 
+#if  xset q &>/dev/null; then
+#    echo "Please dont´t run this script under Linux Desktop" >&2
+#    sleep 15s
+#    exit 1
+#fi 
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
@@ -260,7 +260,7 @@ fi
      
                #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
                sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
-               mkdir /home/$USER/.backup/
+               
                sudo chmod -R 777 ~/.backup/
                cp -R ~/.config/ ~/.backup/.config
                cp -R ~/.local/ ~/.backup/.local
