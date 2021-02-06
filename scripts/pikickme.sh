@@ -85,37 +85,7 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
                 
    
-#*********************************************  #OLED & LED comming soon, maybe :)  *****************************
-#****************************************************************************************************************
 
-#Poser() {
-
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-
-#its ok but dissabled
-#cd /home/$USER/.KickPi-OS/OLED
-#sudo chmod -R 777 /home/$USER/.KickPi-OS/OLED
-
-
-# Test OLED
-#i2cdetect -y 1
-#echo " Should Say: "3C""
-#python Amiga.py
-
-#cd /home/$USER/.KickPi-OS/LED
-#python LED.py
-
-
-#}
 
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
@@ -345,6 +315,7 @@ fi
       echo " "
       
       cd ~
+      cp -R mv /home/$USER/KickPi-OS/Amiga/conf/amiberry.conf   /home/$USER/Amiga/conf/amiberry.conf
       cp -R /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       rm -rf ./Amiga.zip
@@ -363,22 +334,17 @@ fi
       
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip ./ClassicWB_P96_v28.zip
+      cp -R mv /home/$USER/KickPi-OS/Amiga/conf/ClassicWB-P96.uae   /home/$USER/Amiga/conf/ClassicWB-P96.uae
       else 
-      clear
-      toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  ClassicWB_P96_v28    " 
+      echo " "
+      echo " "
       fi
       
           
-      if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet -F gay KickPi-OS
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-     
-      else 
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet -F gay KickPi-OS
       echo " "
@@ -388,6 +354,14 @@ fi
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip ./ClassicWB_68K_v28.zip
+      cp -R mv /home/$USER/KickPi-OS/Amiga/conf/ClassicWB-68K.uae   /home/$USER/Amiga/conf/ClassicWB-68K.uae 
+      else 
+      echo " "
+      echo " "
+      echo "  ClassicWB_68K_v28 exist    " 
+      echo " "
+      echo " "
+      
       
       fi
   
@@ -419,17 +393,9 @@ fi
       unzip ./Amiga_roms.zip
       toilet -F gay KickPi-OS
       else 
-      clear
-      toilet -F gay NOTE!
+    
     
       fi
-
-      toilet -F gay KickPi-OS
-      echo " "
-      echo " "
-      
-      
-      mv /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
     }    
@@ -441,7 +407,7 @@ fi
 
 KickPi-OS_Addons() {
      clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       echo " "
       echo " "
      #Install PiKISS
@@ -452,18 +418,18 @@ KickPi-OS_Addons() {
       cd ~/KickPi-OS/config/
       ./amiga.sh
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       ./commodore.sh
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       ./eduke32.sh
      clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       ./retro-term.sh
       
       
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       echo " "
       echo " "
      
@@ -472,17 +438,17 @@ KickPi-OS_Addons() {
       #sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
       #git clone --depth=1 https://github.com/Jack477/CommanderPi
       #clear
-      #toilet -F gay KickPi-OS              full
+      #toilet -F gay KickPi-OS                full
       
       #cd CommanderPi
       #./install.sh
       
-     
+      #More Amiga preconfigure
       cd /home/$USER/Amiga/hdf
-      
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+     
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -490,16 +456,18 @@ KickPi-OS_Addons() {
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip ./ClassicWB_UAE_v28.zip
+      cp -R /home/$USER/KickPi-OS/Amiga/conf/ClassicWB_UAE_v28.uae   /home/$USER/Amiga/conf/ClassicWB_UAE_v28.uae 
       else 
-      clear
-      toilet -F gay KickPi-OS              full
+      echo " "
+      echo " "
+      echo "  ClassicWB_68K_v28 exist    " 
       echo " "
       echo " "
       fi
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
       clear
-      toilet -F gay KickPi-OS              full
+      toilet -F gay KickPi-OS                full
       echo " "
       echo " "
       echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
@@ -507,9 +475,13 @@ KickPi-OS_Addons() {
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip ./ClassicWB_OS39_v28.zip
+      cp -R /home/$USER/KickPi-OS/Amiga/conf/ClassicWB_OS39_v28.uae   /home/$USER/Amiga/conf/ClassicWB_OS39_v28.uae 
       else 
-      clear
-      toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  ClassicWB_OS39_v28 exist    " 
+      echo " "
+      echo " "
       fi
  
 }
@@ -570,7 +542,37 @@ KickPi-OS_Retropie() {
  fi      
   
 }
+#*********************************************  #OLED & LED comming soon, maybe :)  *****************************
+#****************************************************************************************************************
 
+#Poser() {
+
+#sudo apt install -y python-dev
+#sudo apt install -y python-smbus i2c-tools
+#sudo apt install -y python-pil
+#sudo apt install -y python-pip
+#sudo apt install -y python-setuptools 
+#sudo apt install -y python-dev
+#sudo apt install -y python-smbus i2c-tools
+#sudo apt install -y python-pil
+#sudo apt install -y python-pip
+#sudo apt install -y python-setuptools 
+
+#its ok but dissabled
+#cd /home/$USER/.KickPi-OS/OLED
+#sudo chmod -R 777 /home/$USER/.KickPi-OS/OLED
+
+
+# Test OLED
+#i2cdetect -y 1
+#echo " Should Say: "3C""
+#python Amiga.py
+
+#cd /home/$USER/.KickPi-OS/LED
+#python LED.py
+
+
+#}
 
 #**********************************************  #Finish setup  ***************************************
 #****************************************************************************************************************
