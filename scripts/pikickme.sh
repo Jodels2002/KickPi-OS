@@ -75,7 +75,7 @@ TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
 OPTIONS=(1 "Install KickPi-OS light"
-         2 "Install KickPi-OS full, Retropie, stuff ...")
+         2 "Install KickPi-OS full, Retropie, more stuff ...")
         
 
 CHOICE=$(dialog --clear \
@@ -449,6 +449,7 @@ KickPi-OS_Addons() {
       echo " "
       echo " "
      #Install PiKISS
+      cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       cd PiKISS
       sudo chmod -R 777 ./piKiss.sh
@@ -562,10 +563,12 @@ KickPi-OS_Retropie() {
       cd
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd  
+      
       cd RetroPie-Setup 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       
+
       clear
       toilet -F gay KickPi-OS
       sudo __nodialog=1 ./retropie_packages.sh setup amiberry
