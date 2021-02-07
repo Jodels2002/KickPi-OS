@@ -451,8 +451,9 @@ KickPi-OS_Addons() {
      #Install PiKISS
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
+      sudo chmod -R 777 /home/$USER/PiKISS
       cd PiKISS
-      sudo chmod -R 777 ./piKiss.sh
+      
       #./piKiss.sh
       cd ~/KickPi-OS/config/
       ./amiga.sh
