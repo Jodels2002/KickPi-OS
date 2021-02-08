@@ -21,7 +21,7 @@
 sudo apt-mark hold lxpanel
 sudo apt install -y toilet dialog mc git 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-cp -R  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  
@@ -190,7 +190,7 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 ~/.local
       sudo cp -R ~/KickPi-OS ~/.KickPi-OS
       cd /home/$USER/KickPi-OS/
-      cp -R ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+      cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
       sudo unzip ~/KickPi-OS/.pac/data.pac
 
@@ -216,12 +216,12 @@ fi
 if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
-      sudo cp -R /home/$USER/KickPi-OS/amitk /usr/share/themes
+      sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       sudo mv /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
-      sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-      sudo cp -R /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+      sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       else 
       clear
       
@@ -236,8 +236,8 @@ fi
       # Settings XFCE4 Rasperry OS
       
    
-       cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
-       cp -R ~/KickPi-OS/.data/.local/ /home/$USER/  
+       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+       cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/  
        
        else
        # Settings XFCE4 Amibian
@@ -261,17 +261,17 @@ fi
                sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
                
                sudo chmod -R 777 ~/.backup/
-               cp -R ~/.config/ ~/.backup/.config
-               cp -R ~/.local/ ~/.backup/.local
-               cp -R /usr/local/bin ~/.backup/usr
+               cp -rf ~/.config/ ~/.backup/.config
+               cp -rf ~/.local/ ~/.backup/.local
+               cp -rf /usr/local/bin ~/.backup/usr
                #sudo rm -rf /home/$USER/.config
                #sudo rm -rf /home/$USER/.icons
                sudo rm -rf /usr/share/.icons/default
                cd  /home/KickPi-OS/.pac/amibian/
                unzip  /home/amibian/.pac/amibian/.config.zip
                unzip  /home/amibian/.pac/amibian/.local.zip
-               cp -R /home/amibian/.pac/amibian/.config/ /home/$USER/
-               cp -R /home/amibian/.pac/amibian/.local/ /home/$USER/  
+               cp -rf /home/amibian/.pac/amibian/.config/ /home/$USER/
+               cp -rf /home/amibian/.pac/amibian/.local/ /home/$USER/  
       
 fi      
 }
@@ -300,8 +300,8 @@ fi
        echo " "
       cd /home/$USER/KickPi-OS/Amiga
       unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
-      cp -r /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
       sudo chmod +x /home/$USER/amiberry/amiberry
        
     else
@@ -310,12 +310,12 @@ fi
        
       cd /home/$USER/KickPi-OS/Amiga
       unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-      cp -r /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
     fi
     
     cd /home/$USER/KickPi-OS/Amiga
     unzip /home/$USER/KickPi-OS/Amiga/AROS.zip
-    cp -r /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
+    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
 }
 
 
@@ -332,7 +332,7 @@ fi
       clear
       toilet -F gay KickPi-OS
       cd ~
-      cp -R /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+      cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
       
       
@@ -407,7 +407,7 @@ fi
       echo " "
       sleep 5s
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      mv ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
+      mv -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip ./Amiga_roms.zip
       toilet -F gay KickPi-OS
@@ -422,7 +422,7 @@ fi
       echo " "
       
       
-      cp -R /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
+      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
     }    
@@ -571,7 +571,7 @@ KickPi-OS_Retropie() {
       
       cd /home/$USER/KickPi-OS/Retropie/
       unzip /home/$USER/KickPi-OS/Retropie/roms.zip
-      cp -R /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+      cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       
       
       unzip /home/$USER/KickPi-OS/Retropie/all.zip
@@ -625,7 +625,7 @@ echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
-      cp  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+      cp -rf /home/$USER/.backup/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
       #sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/amigafonts/
