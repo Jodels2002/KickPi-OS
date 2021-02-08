@@ -544,6 +544,22 @@ KickPi-OS_Addons() {
       clear
       
       fi
+      
+      if [ ! -f /home/pi/winetricks ]; then
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " Wine" 
+        cd 
+        sudo apt -y install wine winetricks playonlinux
+		wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+		chmod +x winetricks
+		#sh winetricks corefonts vcrun6 
+      else 
+      clear
+      
+      fi
+      
  
 }
 
