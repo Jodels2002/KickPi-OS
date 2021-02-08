@@ -208,7 +208,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo unzip -u /usr/share/icons/AMIGAOSLINUX.zip
       else 
       clear
 fi     
@@ -268,8 +268,8 @@ fi
                #sudo rm -rf /home/$USER/.icons
                sudo rm -rf /usr/share/.icons/default
                cd  /home/KickPi-OS/.pac/amibian/
-               unzip  /home/amibian/.pac/amibian/.config.zip
-               unzip  /home/amibian/.pac/amibian/.local.zip
+               unzip -u /home/amibian/.pac/amibian/.config.zip
+               unzip -u /home/amibian/.pac/amibian/.local.zip
                cp -rf /home/amibian/.pac/amibian/.config/ /home/$USER/
                cp -rf /home/amibian/.pac/amibian/.local/ /home/$USER/  
       
@@ -299,7 +299,7 @@ fi
        echo " "
        echo " "
       cd /home/$USER/KickPi-OS/Amiga
-      unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
+      unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
       cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
       cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
       sudo chmod +x /home/$USER/amiberry/amiberry
@@ -309,12 +309,12 @@ fi
        echo " ... here comes Amiberry 32 bit   :-)"
        
       cd /home/$USER/KickPi-OS/Amiga
-      unzip /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+      unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
       cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
     fi
     
     cd /home/$USER/KickPi-OS/Amiga
-    unzip /home/$USER/KickPi-OS/Amiga/AROS.zip
+    unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
     cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
 }
 
@@ -333,7 +333,7 @@ fi
       toilet -F gay KickPi-OS
       cd ~
       cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-      unzip ./Amiga.zip
+      unzip -u ./Amiga.zip
       
       
       else 
@@ -354,7 +354,7 @@ fi
       echo " "
       
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
-      unzip ./ClassicWB_P96_v28.zip
+      unzip -u ./ClassicWB_P96_v28.zip
       else 
       clear
       toilet -F gay KickPi-OS
@@ -379,7 +379,7 @@ fi
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip ./ClassicWB_68K_v28.zip
+      unzip -u ./ClassicWB_68K_v28.zip
       
       fi
   
@@ -407,9 +407,9 @@ fi
       echo " "
       sleep 5s
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      mv -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
+      cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
-      unzip ./Amiga_roms.zip
+      unzip -u ./Amiga_roms.zip
       toilet -F gay KickPi-OS
       else 
       clear
@@ -496,7 +496,7 @@ KickPi-OS_Addons() {
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip ./ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
       else 
       cclear
       toilet -F gay KickPi-OS 
@@ -515,7 +515,7 @@ KickPi-OS_Addons() {
       echo " "
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip ./ClassicWB_OS39_v28.zip
+      unzip -u ./ClassicWB_OS39_v28.zip
       else 
       clear
       
@@ -570,11 +570,11 @@ KickPi-OS_Retropie() {
       toilet -F gay KickPi-OS
       
       cd /home/$USER/KickPi-OS/Retropie/
-      unzip /home/$USER/KickPi-OS/Retropie/roms.zip
+      unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       
       
-      unzip /home/$USER/KickPi-OS/Retropie/all.zip
+      unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
 
     
