@@ -549,11 +549,34 @@ KickPi-OS_Retropie() {
       cd
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      cd /home/$USER/RetroPie-Setup/
       
+      
+. /home/pi/RetroPie-Setup/retropie_packages.sh
+. /home/pi/RetroPie-Setup/scriptmodules/system.sh
+. /home/pi/RetroPie-Setup/scriptmodules/helpers.sh
+. /home/pi/RetroPie-Setup/scriptmodules/packages.sh
+. /home/pi/RetroPie-Setup/scriptmodules/admin/setup.sh
+
+setup_env
+rp_registerAllModules
+
+function printMsgs() {
+    local type="$1"
+    shift
+    for msg in "$@"; do
+        [[ "$type" == "dialog" ]] && echo "$msg"
+        [[ "$type" == "console" ]] && echo "$msg"
+        [[ "$type" == "heading" ]] && echo -e "\n= = = = = = = = = = = = = = = = = = = = =\n$msg\n= = = = = = = = = = = = = = = = = = = = =\n"
+    done
+}
+
+binaries_setup
+
       cd RetroPie-Setup 
-      sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      
+      #sudo __nodialog=1 ./retropie_packages.sh binaries_setup
+      #sudo __nodialog=1 ./retropie_packages.sh setup basic_install binaries_setup
+      #sudo __nodialog=1 ./retropie_packages.sh binaries basic_install
 
       clear
       toilet -F gay KickPi-OS
