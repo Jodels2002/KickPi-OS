@@ -642,7 +642,7 @@ echo " "
       echo " "
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
-      cp -rf /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+      cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
       #sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/amigafonts/
@@ -654,7 +654,7 @@ echo " "
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
 
-whiptail --msgbox "  Puh,... ready now... okey, here we are ... lets see and start the KickPi-OS Desktop :-)" 20 60 1
+#whiptail --msgbox "  Puh,... ready now... okey, here we are ... lets see and start the KickPi-OS Desktop :-)" 20 60 1
 clear
 toilet -F gay KickPi-OS
 
