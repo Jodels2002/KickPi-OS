@@ -195,7 +195,7 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
-      
+      sudo rm -rf /home/$USER/.cache
       # Fresh install Amiga Desktop
     
 if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
