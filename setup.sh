@@ -35,7 +35,7 @@ echo "Good choise :-) "
           echo "AmigaForever found "
           echo "... just a second... "
           mkdir /home/$USER/Amiga
-          cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga
+          cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
 	    
       fi
 
