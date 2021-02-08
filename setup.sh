@@ -29,6 +29,16 @@ echo "Good choise :-) "
       echo "Everything is fine... :-)"
     
       fi
+      
+      if [[ ! -d "/media/pi/AMIGA/Shared/ ]]; then
+          clear
+          echo "AmigaForever found "
+          echo " "
+          mkdir /home/$USER/Amiga
+          cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga
+	    
+      fi
+
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
