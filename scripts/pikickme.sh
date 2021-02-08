@@ -552,7 +552,7 @@ KickPi-OS_Retropie() {
       
       cd RetroPie-Setup 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      #sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       
 
       clear
