@@ -551,7 +551,7 @@ KickPi-OS_Addons() {
       toilet -F gay full
       echo " Wine" 
         cd 
-        sudo apt -y install wine winetricks playonlinux
+        sudo apt -y install  playonlinux
 		wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 		chmod +x winetricks
 		#sh winetricks corefonts vcrun6 
@@ -660,7 +660,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            #KickPi-OS_Update
+            KickPi-OS_Update
        ;;
                   
 
@@ -673,7 +673,9 @@ echo " "
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
-      #sudo rm -rf ~/KickPi-OS
+      sudo rm -rf ~/.cache/
+      sudo rm -rf ~/.config/chromium/
+      sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
