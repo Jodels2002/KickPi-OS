@@ -20,6 +20,7 @@ MENU="Please select:"
 OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
          c "Setup Raspie-Config"
+         u "Update KickPi-OS"
          s "Shutdown ")
         
 
@@ -48,6 +49,7 @@ OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
          3 "Start Retropie Emulationstation"
          c "Setup Raspie-Config"
+         u "Update KickPi-OS"
          s "Shutdown ")
         
 
@@ -78,7 +80,8 @@ case $CHOICE in
         
         2)
             clear
-            toilet -F gay KickPi-OS Desktop
+            toilet -F gay KickPi-OS
+            toilet -F gay Desktop
             startx
             
             ;;
@@ -90,19 +93,24 @@ case $CHOICE in
             ;;
             
                  
-          c)
+         c)
             clear
             toilet -F gay Configure
             sudo raspi-config
             ;;
             
-           s)
+         s)
             clear
             toilet -F gay shutdown
             shutdown
-               
-           
-            ;;  
+             ;;  
+         u)
+            clear
+            toilet -F gay shutdown
+            cd /usr/local/bin/
+            ./kickup.sh
+             ;;  
+
 
 esac
 
