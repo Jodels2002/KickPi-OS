@@ -4,14 +4,17 @@
 
 KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
 
+
+
 Compatible to:
 
-- Amibian Recommended! - (Unofficial addon)
+
 - Raspberry Pi OS 32 bit
 - Raspberry Pi OS 64 bit
+- Amibian  - (Unofficial addon)
 
 Software among others:
-XFCE4, Amiberry, PiKiss; Comander Pi, Retropie ...
+XFCE4, Amiberry, PiKiss, Retropie ...
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
 
@@ -34,12 +37,13 @@ Please note that the 64 bit version also works, but not all functions are availa
 
 # Preparation:
 
-
-
 Install Raspberry Pi OS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
-
+Optional:
+- Format a USB stick
+- Call him AMIGA
+- Copy the "Shared" files from the AmigaForever installation
 
 # Installation:
 On the raspberry you open a terminal window and type following commands:
