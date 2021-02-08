@@ -660,7 +660,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            KickPi-OS_Update
+            #KickPi-OS_Update
        ;;
                   
 
