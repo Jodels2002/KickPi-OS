@@ -4,7 +4,9 @@
 
 
 #******************************************** #startup-sequence  :-) ************* ********************************************
+AmigaForever=/media/pi/AMIGA/Shared/
 #****************************************************************************************************************
+
 
 clear
 echo "Good choise :-) "
@@ -30,10 +32,12 @@ echo "Good choise :-) "
     
       fi
       
-      if [[ ! -d "/media/pi/AMIGA/Shared/" ]]; then
+      if [ ! -f "$AmigaForever" ]; then
           clear
           echo "AmigaForever found "
-          echo "... just a second... "
+          echo "... copy files will take 5-10 min... "
+	  echo " "
+          echo " "
           mkdir /home/$USER/Amiga
           cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
 	    
