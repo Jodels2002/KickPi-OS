@@ -203,10 +203,10 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       cd /usr/share/icons/
       
       sudo cp -rf /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
-      sudo unzip  /usr/share/icons/AMIGAOSLINUX.zip
+      sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-      sudo unzip -u /usr/share/icons/AMIGAOSLINUX.zip
+      
       else 
       clear
 fi     
