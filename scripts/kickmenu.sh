@@ -10,9 +10,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 #******************************************** #KickPi-OS 64 Start Menu ******************************************
 #****************************************************************************************************************
 
-HEIGHT=60
+HEIGHT=40
 WIDTH=70
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=5
 BACKTITLE="KickPi-OS 64 bit"
 TITLE="Main Menu"
 MENU="Please select:"
@@ -37,9 +37,9 @@ CHOICE=$(dialog --clear \
     #******************************************** #KickPi-OS 32bit Start Menu ***************************************
     #****************************************************************************************************************
 
-HEIGHT=60
+HEIGHT=40
 WIDTH=70
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=6
 BACKTITLE="KickPi-OS 32 bit"
 TITLE="Main Menu"
 MENU="Please select:"
@@ -70,7 +70,7 @@ case $CHOICE in
         1)
         clear
         toilet -F gay Amiberry
-        cd /$USER/Amiga
+        cd /home/$USER/Amiga
          ./amiberry
      
  
