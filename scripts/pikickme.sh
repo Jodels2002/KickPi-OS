@@ -24,16 +24,8 @@ sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
+     clear
      echo "Raspberry Pi OS 64 bit is running..."
-       
-    else  echo " "
-      echo ""
-fi    
-toilet -F gay KickPi-OS
-      echo " "
-      echo ""
-      
       echo " "
       echo "1>	Hi Guys,"
       echo " "
@@ -51,6 +43,33 @@ toilet -F gay KickPi-OS
       echo "	LOADWB ...  :-)"
       sleep 5s
       echo " "
+    else 
+      clear
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo ""
+      echo " "
+      echo "1>	Hi Guys,"
+      echo " "
+      echo "1>	welcome to the "KickPi-OS" installer! "
+      echo "1>CLI"
+      echo "1>CLI"
+      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
+      echo "1>CLI"
+      echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
+      echo "1>CLI: "
+      echo "1>                  Greetings your´s "
+      echo "1>Assign >NIL:      Bernd Titze"
+      echo " "
+      echo " " 
+      echo "	LOADWB ...  :-)"
+      sleep 5s
+      echo " "
+fi    
+      toilet -F gay KickPi-OS
+      echo " "
+      echo ""
+      
+      
       
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
