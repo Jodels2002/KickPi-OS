@@ -282,15 +282,7 @@ fi
      
      
  KickPi-OS_Amiberry() {
- 
- clear
-      toilet -F gay KickPi-OS
-      
-      echo " "
-      echo " "
-   
-      echo " "
-      echo " "  
+  
       cd ~
       mkdir /home/$USER/Amiga
  
@@ -335,20 +327,19 @@ fi
        
              
       cd ~/Amiga
+           
+      if [ ! -f /home/$USER/Amiga.zip ]; then
       clear
       toilet -F gay KickPi-OS
-      echo " "
-      echo "  ... lets configer ClassicWB" 
-      echo " "
-      echo " " 
-      echo "  ... downloading  ClassicWB"  
-      echo " "
-      echo " "
-      
       cd ~
       cp -R /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip ./Amiga.zip
-      rm -rf ./Amiga.zip
+      
+      
+      else 
+      clear
+      toilet -F gay KickPi-OS
+      fi
       
       cd /home/$USER/Amiga/hdf
       
@@ -431,7 +422,7 @@ fi
       echo " "
       
       
-      mv /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
+      cp -R /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
 
       sudo chmod -R 777 /home/$USER/Amiga
     }    
