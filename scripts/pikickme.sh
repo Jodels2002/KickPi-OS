@@ -192,10 +192,9 @@ KickPi-OS_Tools() {
       cd /home/$USER/KickPi-OS/
       cp -R ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
-      unzip ~/KickPi-OS/.pac/data.pac
+      sudo unzip ~/KickPi-OS/.pac/data.pac
 
-      
-      sudo chmod -R 777 /home/$USER/KickPi-OSKickPi-OS
+      sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
       
@@ -204,8 +203,8 @@ KickPi-OS_Tools() {
 if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
-      sudo cp -R /home/$USER/KickPi-OS/Amiga_Logos /usr/share/icons
-      sudo cp -R /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
+      
+      sudo cp -R /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
@@ -237,8 +236,8 @@ fi
       # Settings XFCE4 Rasperry OS
       
    
-       cp -R ~/KickPi-OS/data/.config/ /home/$USER/
-       cp -R ~/KickPi-OS/data/.local/ /home/$USER/  
+       cp -R ~/KickPi-OS/.data/.config/ /home/$USER/
+       cp -R ~/KickPi-OS/.data/.local/ /home/$USER/  
        
        else
        # Settings XFCE4 Amibian
