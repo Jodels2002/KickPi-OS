@@ -12,7 +12,7 @@ echo "Good choise :-) "
       
       sudo rm -rf ~/.KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      
+      sudo apt -y update
       
       if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
