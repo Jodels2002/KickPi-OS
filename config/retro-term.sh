@@ -7,7 +7,7 @@
 ./helper.sh
 clear
 
-PACKAGES=(qmlscene  qt5-default  qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel)
+
 PACKAGES_DEV=(qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel)
 GITHUB_PATH="https://github.com/Swordfish90/cool-retro-term.git"
 SHORTCUT_PATH="/usr/share/applications/cool-retro-term.desktop"
@@ -46,7 +46,7 @@ compile() {
 }
 
 install() {
-	sudo apt install -y "${PACKAGES[@]}"
+	sudo apt install -y "${PACKAGES_DEV[@]}"
 	mkdir -p "$HOME"/sc && cd "$_"
 	mkdir -p "$HOME/sc/cool-retro-term"
 	echo "Cloning and compiling repo..."
