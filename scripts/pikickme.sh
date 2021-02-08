@@ -53,7 +53,7 @@ toilet -F gay KickPi-OS
       echo "	LOADWB ...  :-)"
 
    sleep 8s
-    
+      
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
       sudo chmod -R 777 /usr/local/bin/
@@ -61,7 +61,7 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
       sudo chmod -R 777 /home/$USER/.backup/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      
+      sudo apt-get -y update
 
 
 #******************************************** #KickPi-OS mini  Menu ********************************************
