@@ -417,9 +417,6 @@ fi
     
       fi
 
-      toilet -F gay KickPi-OS
-      echo " "
-      echo " "
       
       
       cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
