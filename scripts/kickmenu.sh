@@ -109,4 +109,4 @@ esac
 
 clear
 toilet -F gay KickPi-OS
-kickmenu
+#kickmenu
