@@ -19,7 +19,7 @@ echo "Good choise :-) "
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
       cp  /home/$USER/.bashrc /home/$USER/.backup/.bashrc
-      cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+      cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
