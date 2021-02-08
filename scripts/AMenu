@@ -1,0 +1,83 @@
+#!/bin/bash
+# Install PiKickOS
+# B.Titze 2020
+INTERACTIVE=True
+ASK_TO_REBOOT=0
+BLACKLIST=/etc/modprobe.d/raspi-blacklist.conf
+CONFIG=/boot/config.txt
+
+do_amiga() {
+ 1
+}
+
+do_desktop() {
+2
+}
+do_retropie() {
+3
+}
+do_c64() {
+4
+}
+do_mc() {
+5
+}
+do_raspsettings() {
+6
+}
+retropie_settings()  {
+7
+}
+do_reboot() {
+8
+}
+do_shootdown() {
+9
+}
+do_about() {
+  whiptail --msgbox "\
+c B.Titze 2021.\
+" 20 70 1
+}
+
+do_exit() {
+
+exit 1
+
+}
+do_finish() {
+
+  exit 0
+}
+#
+# Interactive use loop
+#
+
+      FUN=$(whiptail --title "Amiga3000 mini" --backtitle "  " --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT \
+        "1 Start your Amiberry Amiga"\
+        "2 PickickOS "Starts your Linux Desktop" \
+        "3 Retropie" "Lets have fun with all the games" \
+        "4 C64" "Lets do some C64 (Vice)" \
+        "5 Midnight Commander" "Starts the Folder Manager" \
+        "6 Raspi-Settings" "Raspberry Configuration Tool" \
+        "7 Retropie-Setup" "Configure your Emulationstation" \
+        "8 Reboot" "Are zou in trouble - lets restart" \
+        "9 Shootdown" "You should realy use this!" \
+        "e exit" "Leave this menu" \
+        3>&1 1>&2 2>&3)
+ 
+        case "$FUN" in
+          1\ *) do_amiga_mini ;;
+          2\ *) do_desktop ;;
+          3\ *) do_retropie;;
+          4\ *) do_c64 ;;
+          5\ *) do_mc ;;
+          6\ *) do_raspsettings ;;
+          7\ *) retropie_settings ;;
+          8\ *) do_reboot ;;
+          9\ *) do_shootdown ;;
+          e\ *) do_exit ;;
+          a\ *) do_about ;;
+          *) whiptail --msgbox "Programmer error: unrecognized option" 20 60 1 ;;
+        esac || whiptail --msgbox "There was an error running option $FUN" 20 60 1
+     
