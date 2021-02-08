@@ -461,19 +461,8 @@ KickPi-OS_Addons() {
       
       #./piKiss.sh
       cd ~/KickPi-OS/config/
-      ./amiga.sh
-      clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay full
-      echo " "
-      echo " "
-      ./commodore.sh
-      clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay full
-      echo " "
-      echo " "
-      ./eduke32.sh
+      
+     
       clear
       toilet -F gay KickPi-OS 
       toilet -F gay full
@@ -571,13 +560,12 @@ KickPi-OS_Retropie() {
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/
 
-
+if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then
       cd RetroPie-Setup 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-     
-
-      clear
+      
+ clear
       toilet -F gay KickPi-OS
       sudo __nodialog=1 ./retropie_packages.sh setup amiberry
       clear
@@ -589,7 +577,12 @@ KickPi-OS_Retropie() {
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+            
+ fi
       
+     
+
+     
       
       unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
