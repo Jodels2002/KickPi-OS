@@ -30,10 +30,10 @@ echo "Good choise :-) "
     
       fi
       
-      if [[ ! -d "/media/pi/AMIGA/Shared/ ]]; then
+      if [[ ! -d "/media/pi/AMIGA/Shared/" ]]; then
           clear
           echo "AmigaForever found "
-          echo " "
+          echo "... just a second... "
           mkdir /home/$USER/Amiga
           cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga
 	    
