@@ -638,7 +638,7 @@ echo " "
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash
-      sudo rm -rf ~/KickPi-OS
+      #sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
