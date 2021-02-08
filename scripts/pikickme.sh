@@ -48,11 +48,9 @@ toilet -F gay KickPi-OS
       echo "1>Assign >NIL:      Bernd Titze"
       echo " "
       echo " " 
-      
-      echo " " 
       echo "	LOADWB ...  :-)"
-
-   sleep 8s
+      sleep 5s
+      echo " "
       
 sudo rm -rf /home/$USER/.local/share/Trash/*
   
