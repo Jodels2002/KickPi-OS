@@ -172,9 +172,9 @@ KickPi-OS_Tools() {
 
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      sudo apt install -y  geany geany-plugins-common geany-common zip gparted unzip xmlstarlet
-      sudo apt install -y imagemagick krita-l10n
+ 
+      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet
+      #sudo apt install -y imagemagick krita-l10n gparted
       
       
       clear
@@ -198,7 +198,8 @@ KickPi-OS_Tools() {
  
  KickPi-OS_Desktop() {
   
-      sudo apt purge -y lxde raspberrypi-ui-mods lxde-common lxde-core
+      sudo apt purge -y lxde  lxde-common lxde-core
+      #sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
       
@@ -334,6 +335,7 @@ fi
     unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
     mkdir /home/$USER/Amiga/Harddisk/AROS
     cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/AROS
+   
 }
 
 
@@ -379,7 +381,7 @@ fi
       fi
       
           
-      if [ ! -f "/home/$USER/Amiga/HDF/ClassicWB_68K_v28.zip" ]; then
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet -F gay KickPi-OS
       echo " "
@@ -400,6 +402,18 @@ fi
       unzip -u ./ClassicWB_68K_v28.zip
       
       fi
+      
+      if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
+      clear
+      toilet -F gay KickPi-OS
+      echo " "
+      echo " "
+      echo "  Configure AmigaForever workbench-311 ...     " 
+      echo " "
+      echo " "
+      
+      fi
+     
   
       cd /home/$USER/Amiga/hdf
       
@@ -409,7 +423,10 @@ fi
    
       echo " "
       echo " "
+      if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
       
+      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/   
+      else
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
       toilet -F gay NOTE!
@@ -435,6 +452,8 @@ fi
      
     
       fi
+      fi
+      
 
       
       
