@@ -332,7 +332,8 @@ fi
     
     cd /home/$USER/KickPi-OS/Amiga
     unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
-    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/
+    mkdir /home/$USER/Amiga/Harddisk/AROS
+    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/AROS
 }
 
 
