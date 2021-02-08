@@ -204,10 +204,10 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
       
-      sudo cp -R /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
-      sudo unzip /usr/share/icons/AMIGAOSLINUX.zip
+      sudo cp -rf /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip  /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
-      sudo mv /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       sudo unzip -u /usr/share/icons/AMIGAOSLINUX.zip
       else 
       clear
@@ -218,7 +218,7 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      sudo mv /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
