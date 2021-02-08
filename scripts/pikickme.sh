@@ -605,26 +605,25 @@ case $CHOICE in
         1)
         
             #Poser
-            KickPi-OS_Update
             KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
             #KickPi-OS_Retropie
+            KickPi-OS_Update
             
        ;;
         
         2)
-             
-        
+           
             #Poser
-            KickPi-OS_Update
             KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
+            KickPi-OS_Update
        ;;
                   
 
