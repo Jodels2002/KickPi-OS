@@ -133,7 +133,7 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-      sudo apt-get -y upgrade
+      sudo apt upgrade
 
 }
 
@@ -609,7 +609,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             #KickPi-OS_Retropie
-            KickPi-OS_Update
+            #KickPi-OS_Update
        ;;
                   
 
