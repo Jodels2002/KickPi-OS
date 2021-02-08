@@ -610,7 +610,7 @@ case $CHOICE in
             KickPi-OS_Amiberry
             Configure_Amiga
             KickPi-OS_Addons
-            KickPi-OS_Retropie
+            #KickPi-OS_Retropie
             KickPi-OS_Update
        ;;
                   
