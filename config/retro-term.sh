@@ -45,21 +45,7 @@ compile() {
     runme
 }
 
-install() {
-	sudo apt install -y "${PACKAGES_DEV[@]}"
-	mkdir -p "$HOME"/sc && cd "$_"
-	mkdir -p "$HOME/sc/cool-retro-term"
-	echo "Cloning and compiling repo..."
-    
-    if [[ ! -d "$HOME"/sc/cool-retro-term ]]; then
-	    git clone --recursive "$GITHUB_PATH" cool-retro-term
-    fi
-    cd "$HOME"/sc/cool-retro-term
-    
-    fix_icon
-  
-    runme
-}
 
 
-install
+
+compile
