@@ -155,7 +155,7 @@ KickPi-OS_Tools() {
 
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
       sudo apt install -y  geany geany-plugins-common geany-common zip gparted unzip xmlstarlet
       sudo apt install -y imagemagick krita-l10n
       
@@ -171,7 +171,7 @@ KickPi-OS_Tools() {
       echo " "
       cd /home/$USER
       git clone --depth=1 https://github.com/rewtnull/amigafonts
-      sudo cp -R /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
+      sudo cp -rf /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
   
       
 }
@@ -188,7 +188,7 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.config
       sudo chmod -R 777 ~/.local
-      sudo cp -R ~/KickPi-OS ~/.KickPi-OS
+      sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
       cd /home/$USER/KickPi-OS/
       cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
