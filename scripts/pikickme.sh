@@ -19,7 +19,7 @@ fi
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
 sudo apt-mark hold lxpanel
-sudo apt install -y toilet dialog mc git 
+sudo apt install -y toilet dialog  
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 clear
@@ -176,7 +176,7 @@ KickPi-OS_Tools() {
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
  
-      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet
+      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
       
       
       
