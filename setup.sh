@@ -15,6 +15,7 @@ echo "Good choise :-) "
       sudo rm -rf ~/.KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo apt -y update
+      whiptail --msgbox "  Puh,... ready now... okey, here we are ... lets see and start the KickPi-OS Desktop :-)" 20 60 1
       
       if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
@@ -31,6 +32,7 @@ echo "Good choise :-) "
       echo "Everything is fine... :-)"
     
       fi
+      
       
       if [ ! -f "$AmigaForever" ]; then
           clear
