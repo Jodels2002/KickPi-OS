@@ -336,8 +336,8 @@ fi
        echo " "
        sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
        
-       git clone https://github.com/midwan/amiberry/tree/dev
-       #git clone https://github.com/midwan/amiberry
+      
+       git clone https://github.com/midwan/amiberry
        cd amiberry
        make -j2 PLATFORM=pi64
        sudo chmod -R 777 /home/$USER/amiberry
