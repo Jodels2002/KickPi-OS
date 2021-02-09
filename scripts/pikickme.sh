@@ -503,7 +503,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet -F gay KickPi-OS 
-      toilet -F gay full
+      toilet -F gay full 64bit
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -514,7 +514,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       else 
       cclear
       toilet -F gay KickPi-OS 
-      toilet -F gay full
+      toilet -F gay full 64bit
       echo " "
       echo " "
       fi
@@ -522,7 +522,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       clear
       toilet -F gay KickPi-OS 
-      toilet -F gay full
+      toilet -F gay full 64bit
       echo " "
       echo " "
       echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
