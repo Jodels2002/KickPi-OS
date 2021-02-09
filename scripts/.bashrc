@@ -111,7 +111,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Amiga.uae ]; then
+      clear
+      toilet -F gay KickPi-OS
+      cd /home/$USER/KickPi-OS/Amiga/
+      ./amiberry -f /home/$USER/KickPi-OS/Amiga/conf/Amiga.uae
+      
+      fi
 clear
 toilet -F gay KickPi-OS 
 echo "****************************************************************" 
