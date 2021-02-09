@@ -336,22 +336,18 @@ fi
        toilet -F gay 64bit
        echo " "
        echo " "
-       #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-       sudo apt-get install -y libfreetype6-dev libgl1-mesa-dev libgles2-mesa-dev libdrm-dev libgbm-dev libudev-dev libasound2-dev liblzma-dev libjpeg-dev libtiff-dev libwebp-dev git build-essential
-      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
-      git clone https://github.com/midwan/amiberry
-      cd amiberry
-      make -j2 PLATFORM=rpi4
-      
-       make -j2 PLATFORM=pi64
+        echo " ... here comes Amiberry 32 bit   :-)"
+       
+      cd /home/$USER/KickPi-OS/Amiga
+      unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bi/* /home/$USER/Amiga
        sudo chmod -R 777 /home/$USER/amiberry
        
       
       
-      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry* /home/$USER/Amiga/
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga/
       
-      sudo chmod +x /home/$USER/amiberry/amiberry
+ 
        
     else
     
