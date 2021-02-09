@@ -175,10 +175,7 @@ KickPi-OS_Tools() {
 
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
- 
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
-      
-      
       
       clear
       toilet -F gay KickPi-OS
@@ -661,7 +658,7 @@ toilet -F gay KickPi-OS
 case $CHOICE in
         
         1)
-        #Poser
+            #Poser
             KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
@@ -671,7 +668,7 @@ case $CHOICE in
             #KickPi-OS_Update
        ;;
         2)
-        #Poser
+            #Poser
             KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
@@ -679,7 +676,7 @@ case $CHOICE in
             KickPi-OS_Addons
             KickPi-OS_Retropie
             KickPi-OS_Office 
-	    KickPi-OS_Update
+	    #KickPi-OS_Update
        ;;
         
         3)
@@ -689,9 +686,7 @@ case $CHOICE in
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
-            #KickPi-OS_Addons
-            #KickPi-OS_Retropie
-            #KickPi-OS_Update
+           
        ;;
                   
 
@@ -716,7 +711,6 @@ echo " "
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
 
-#whiptail --msgbox "  Puh,... ready now... okey, here we are ... lets see and start the KickPi-OS Desktop :-)" 20 60 1
 clear
 toilet -F gay KickPi-OS
 
