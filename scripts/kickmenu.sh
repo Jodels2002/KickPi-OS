@@ -102,7 +102,7 @@ case $CHOICE in
          s)
             clear
             toilet -F gay Shutdown
-            shutdown
+            sudo shutdown
              ;;  
          u)
             clear
