@@ -10,7 +10,7 @@ Compatible to:
 
 
 - Raspberry Pi OS 32 bit
-- Raspberry Pi OS 64 bit
+- Raspberry Pi OS 64 bit (Not all Tools ( Retropie,..)  work her, but your Amiga is faster)
 - Amibian  - (Unofficial addon)
 
 Software among others:
@@ -55,6 +55,10 @@ sudo chmod -R 777 KickPi-OS
 cd KickPi-OS
 
 ./setup.sh
+
+# Retropie:
+To use Retropie just copy your Bios and Rom files into the (Home) Retropie folder. 
+See also: https://retropie.org.uk/docs/First-Installation/
 
 
 # Used 3rd party tools:
