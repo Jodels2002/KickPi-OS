@@ -101,12 +101,12 @@ case $CHOICE in
             
          s)
             clear
-            toilet -F gay shutdown
+            toilet -F gay Shutdown
             shutdown
              ;;  
          u)
             clear
-            toilet -F gay shutdown
+            toilet -F gay Update
             cd /usr/local/bin/
             ./kickup.sh
              ;;  
