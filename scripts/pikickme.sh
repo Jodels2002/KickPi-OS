@@ -496,6 +496,47 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
+
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+ cd /home/$USER/Amiga/hdf
+      
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...   " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+      else 
+      cclear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
+      fi
+      
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay full
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip -u ./ClassicWB_OS39_v28.zip
+      else 
+      clear
+      
+      fi
+      
+ 
+else 
       clear
       toilet -F gay KickPi-OS 
       toilet -F gay full
@@ -588,7 +629,7 @@ KickPi-OS_Addons() {
       
       fi
       
- 
+ fi
 }
 
      
