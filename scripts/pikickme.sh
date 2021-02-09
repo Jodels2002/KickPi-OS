@@ -41,7 +41,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " " 
       echo "	LOADWB ...  :-)"
-      sleep 5s
+      sleep 3s
+      echo " "
       echo " "
     else 
       clear
@@ -62,7 +63,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " " 
       echo "	LOADWB ...  :-)"
-      sleep 5s
+      sleep 3s
+      echo " "
       echo " "
 fi    
       toilet -F gay KickPi-OS
@@ -91,8 +93,8 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS light"
-         2 "Install KickPi-OS full, Retropie, more stuff ...")
+OPTIONS=(1 "Install KickPi-OS full, Retropie, more stuff ..."
+         2 "Install KickPi-OS light")
         
 
 CHOICE=$(dialog --clear \
@@ -640,14 +642,15 @@ toilet -F gay KickPi-OS
 case $CHOICE in
         
         1)
-        
-            #Poser
+        #Poser
             KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
-            #KickPi-OS_Retropie
-            KickPi-OS_Update
+            KickPi-OS_Addons
+            KickPi-OS_Retropie
+            #KickPi-OS_Update
+       ;;
             
        ;;
         
@@ -658,8 +661,8 @@ case $CHOICE in
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
-            KickPi-OS_Addons
-            KickPi-OS_Retropie
+            #KickPi-OS_Addons
+            #KickPi-OS_Retropie
             #KickPi-OS_Update
        ;;
                   
