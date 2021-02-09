@@ -55,5 +55,6 @@ echo " "
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint get_ssh
 sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
