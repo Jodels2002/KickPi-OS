@@ -56,6 +56,10 @@ cd KickPi-OS
 
 ./setup.sh
 
+# Update
+
+To bring KickPi-OS up to date, just type "m" + return in the cammand line. Then use the point "u Update KickPi-OS"
+
 # Retropie:
 To use Retropie just copy your Bios and Rom files into the (Home) Retropie folder. 
 See also: https://retropie.org.uk/docs/First-Installation/
