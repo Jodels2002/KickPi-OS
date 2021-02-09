@@ -94,8 +94,8 @@ TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
 OPTIONS=(1 "Install KickPi-OS full  (recommended)           (ca. 50 min)"
-	 3 "Install KickPi-OS full + Office Suite           (ca. 70 min)"
-         2 "Install KickPi-OS light                         (ca. 30 min)")
+	 2 "Install KickPi-OS full + Office Suite           (ca. 70 min)"
+         3 "Install KickPi-OS light                         (ca. 30 min)")
         
 
 CHOICE=$(dialog --clear \
