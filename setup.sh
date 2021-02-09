@@ -43,7 +43,11 @@ echo " "
 	  echo " "
           echo " "
           mkdir /home/$USER/Amiga
+	  mkdir /home/$USER/Amiga/rom
+	  sudo chmod -R 777 /home/$USER/Amiga
+	  
           cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
+	  cp -R /media/pi/AMIGA/Shared/rom/* /home/$USER/Amiga/rom/
 	    
       fi
 
@@ -51,5 +55,5 @@ echo " "
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
-   
+sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
