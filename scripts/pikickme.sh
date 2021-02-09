@@ -155,7 +155,7 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-      sudo apt upgrade
+      sudo apt-y upgrade
 
 }
 
@@ -217,7 +217,7 @@ KickPi-OS_Office() {
  KickPi-OS_Desktop() {
   
       sudo apt purge -y lxde  lxde-common lxde-core
-      #sudo apt purge -y raspberrypi-ui-mods
+      sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
       
