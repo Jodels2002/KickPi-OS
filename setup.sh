@@ -10,6 +10,8 @@ AmigaForever=/media/pi/AMIGA/Shared/
 
 clear
 echo "Good choise :-) "
+echo " "
+echo " "
 
       
       sudo rm -rf ~/.KickPi-OS
