@@ -475,7 +475,7 @@ fi
 
       
       
-      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf  
+      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/  
 
       sudo chmod -R 777 /home/$USER/Amiga
     }    
