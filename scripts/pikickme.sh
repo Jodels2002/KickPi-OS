@@ -334,10 +334,16 @@ fi
        toilet -F gay 64bit
        echo " "
        echo " "
-      cd /home/$USER/KickPi-OS/Amiga
-      unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
-      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga
-      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga
+       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+       cd ~
+       git clone https://github.com/midwan/amiberry
+       cd amiberry
+       make -j2 PLATFORM=pi64
+       
+      
+      
+      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry* /home/$USER/Amiga/
+      
       sudo chmod +x /home/$USER/amiberry/amiberry
        
     else
