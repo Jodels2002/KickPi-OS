@@ -5,14 +5,18 @@
 KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
 The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
 
-Tested on:
+Software that is installed and pre-configured:
+
+Amiberry, ClassicWB, AmigaForever, PiKiss, Retropie ...
+* For licensing reasons, the Workbench files and Kickstart Rom files are not included!
+
+
+#Requirements:
 
 - Raspberry Pi OS 32 bit (recommended)
 - Raspberry Pi OS 64 bit (limited,no Retropie,..)
 - Amibian                (unofficial)
 
-Software among others:
-Amiberry, PiKiss, Retropie ...
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
 
