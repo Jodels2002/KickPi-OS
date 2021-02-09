@@ -9,9 +9,9 @@ KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a
 Compatible to:
 
 
-- Raspberry Pi OS 32 bit
-- Raspberry Pi OS 64 bit (Not all Tools ( Retropie,..)  work her, but your Amiga is faster)
-- Amibian  - (Unofficial addon)
+- Raspberry Pi OS 32 bit (recommended)
+- Raspberry Pi OS 64 bit (limited,no Retropie,..)
+- Amibian                (unofficial)
 
 Software among others:
 XFCE4, Amiberry, PiKiss, Retropie ...
