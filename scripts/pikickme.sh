@@ -32,7 +32,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "1>	welcome to the "KickPi-OS" installer! "
       echo "1>CLI"
       echo "1>CLI"
-      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
+      echo "1>	Please only use if you are legally in possession of an Amiga or the Kickstart Rom´s and Workbench files (AmigaForever)!  "
       echo "1>CLI"
       echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
       echo "1>CLI: "
