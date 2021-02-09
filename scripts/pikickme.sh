@@ -9,7 +9,7 @@
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
-***********************************************  #Are you runing Desktop?  ***********************************
+#***********************************************  #Are you runing Desktop?  ***********************************
 if  xset q &>/dev/null; then
     echo "Please dont´t run this script under Linux Desktop" >&2
     sleep 15s
