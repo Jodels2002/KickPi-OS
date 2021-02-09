@@ -93,8 +93,9 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS full, Retropie, more stuff ..."
-         2 "Install KickPi-OS light")
+OPTIONS=(1 "Install KickPi-OS full  (recommended)           (ca. 50 min)"
+	 3 "Install KickPi-OS full + Office Suite           (ca. 70 min)"
+         2 "Install KickPi-OS light                         (ca. 30 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -176,7 +177,7 @@ KickPi-OS_Tools() {
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
  
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet
-      #sudo apt install -y imagemagick krita-l10n gparted
+      
       
       
       clear
@@ -195,6 +196,24 @@ KickPi-OS_Tools() {
       
 }
 
+#*********************************************  #Office  **********************************************
+#****************************************************************************************************************
+
+KickPi-OS_Office() {
+
+      clear
+      toilet -F gay KickPi-OS
+
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      sudo apt install -y imagemagick krita-l10n gparted synaptic
+      sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+
+}
+
+
 #*********************************************  #Installing KickPi-OS Desktop*********************************
 #**********************************************************************************************************
  
@@ -203,7 +222,7 @@ KickPi-OS_Tools() {
       sudo apt purge -y lxde  lxde-common lxde-core
       #sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-      #sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      
       
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.config
@@ -651,10 +670,19 @@ case $CHOICE in
             KickPi-OS_Retropie
             #KickPi-OS_Update
        ;;
-            
+        2)
+        #Poser
+            KickPi-OS_Tools
+            KickPi-OS_Desktop
+            KickPi-OS_Amiberry
+            Configure_Amiga
+            KickPi-OS_Addons
+            KickPi-OS_Retropie
+            KickPi-OS_Office 
+	    KickPi-OS_Update
        ;;
         
-        2)
+        3)
            
             #Poser
             KickPi-OS_Tools
