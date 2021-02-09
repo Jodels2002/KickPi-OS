@@ -300,9 +300,11 @@ fi
                cp -rf ~/.config/ ~/.backup/.config
                cp -rf ~/.local/ ~/.backup/.local
                cp -rf /usr/local/bin ~/.backup/usr
+	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+               cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
                #sudo rm -rf /home/$USER/.config
                #sudo rm -rf /home/$USER/.icons
-               sudo rm -rf /usr/share/.icons/default
+               #sudo rm -rf /usr/share/.icons/default
                cd  /home/KickPi-OS/.pac/amibian/
                unzip -u /home/amibian/.pac/amibian/.config.zip
                unzip -u /home/amibian/.pac/amibian/.local.zip
