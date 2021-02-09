@@ -44,6 +44,7 @@ Optional:
 - Format a USB stick
 - Call him AMIGA
 - Copy the "Shared" files from the AmigaForever installation
+-> "AMIGA/Shared/Copy here are your AmigaForever files"
 
 # Installation:
 On the raspberry you open a terminal window and type following commands:
