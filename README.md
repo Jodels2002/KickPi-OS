@@ -3,8 +3,7 @@
 
 
 KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
-
-
+The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
 
 Compatible to:
 
