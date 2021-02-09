@@ -374,6 +374,8 @@ fi
        
              
       cd ~/Amiga
+      mkdir /home/$USER/Amiga/conf/ 
+      
            
       if [ ! -f /home/$USER/Amiga.zip ]; then
       clear
