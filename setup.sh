@@ -4,13 +4,9 @@
 
 
 #******************************************** #startup-sequence  :-) ************* ********************************************
-Pi=/media/pi/AMIGA/Shared
-Amibian=/media/AMIGA/Shared  
-#****************************************************************************************************************
-
 
 clear
-echo "Good choise :-) "
+echo "Welcome to KickPi-OS"
 echo " "
 echo " "
 
@@ -34,24 +30,24 @@ if    [ ! -d "/home/$USER/Amiga" ]; then
 	  mkdir /home/$USER/Amiga  
 fi
 
-if    [ ! -d "$Pi" ]; then
+if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
           
 	  clear
           echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
-	  cp -rf $Pi/* ~/Amiga
+	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga
 	  else
 	  clear
           
 fi
-if    [ ! -d "$Amibian" ]; then
+if    [ ! -d "/media/AMIGA/Shared" ]; then
           
 	  clear
           echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
-	  cp -rf $Amibian/* ~/Amiga
+	  cp -rf /media/AMIGA/Shared/* ~/Amiga
 	  else
 	  clear
           
