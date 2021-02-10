@@ -25,7 +25,6 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
 
 if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
           mkdir /home/$USER/Amiga 
-	
 	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
 	  sleep 3s
           fi
