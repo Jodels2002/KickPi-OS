@@ -475,7 +475,8 @@ fi
       cd ~/Amiga/kickstarts/
       unzip -u ./Amiga_roms.zip
       rm ./Amiga_roms.zip
-  fi
+      fi
+   fi
       
 
       
