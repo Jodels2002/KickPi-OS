@@ -465,7 +465,7 @@ fi
       cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip -u ./Amiga_roms.zip
-      toilet -F gay KickPi-OS
+     
       else 
       clear
      
