@@ -28,13 +28,13 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 	else
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
-	  echo "... copy files to will take 2-5 min "
+	  echo "... copy files will take 2-5 min "
           mkdir /home/$USER/Amiga 
 	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
 	  
           fi
 
-if    [ ! -d "/media/usb0/Shared/ " ]; then
+if    [ ! -d "/media/usb0/Shared/" ]; then
           clear
 	else
 	  clear
@@ -50,4 +50,4 @@ sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo chmod -R 777 /home/$USER/Amiga   
-#sudo reboot
+sudo reboot
