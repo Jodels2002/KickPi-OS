@@ -47,10 +47,12 @@ MENU="Please select:"
 
 OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
-         3 "Start Retropie Emulationstation"
+         e "Start your Retropie"
+         r "Setup Retropie"
          c "Setup Raspie-Config"
          u "Update KickPi-OS"
          s "Shutdown ")
+        
         
 
 CHOICE=$(dialog --clear \
@@ -92,6 +94,18 @@ case $CHOICE in
             emulationstation   
             ;;
             
+         e)
+            clear
+            toilet -F gay Retropie
+            emulationstation
+            ;;
+            
+          r)
+            clear
+            toilet -F gay Retropie Setup
+            cd Retropie-Setup
+            sudo ./retropie-setup.sh
+            ;; 
                  
          c)
             clear
@@ -102,7 +116,7 @@ case $CHOICE in
          s)
             clear
             toilet -F gay Shutdown
-            sudo shutdown -P
+            shutdown -P
              ;;  
          u)
             clear
