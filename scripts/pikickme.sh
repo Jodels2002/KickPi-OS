@@ -344,17 +344,12 @@ fi
     
        echo " ... here comes Amiberry 32 bit   :-)"
       
-       if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/" ]; then
-	  clear
-	  echo" Amiberry already installed...."
-	  
-	  
-	else
+   
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
 	  
-          fi
+       
        
       
     fi
