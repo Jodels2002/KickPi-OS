@@ -169,7 +169,7 @@ KickPi-OS_Tools() {
       toilet -F gay KickPi-OS
       
       #Some little Amiga stuff....
-      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms
+      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
       toilet -F gay KickPi-OS
       echo " "
@@ -296,8 +296,8 @@ fi
                cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
-                #cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
-                #cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
+                cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
+                cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
       
 fi      
 }
@@ -342,16 +342,16 @@ fi
     else
     
        echo " ... here comes Amiberry 32 bit   :-)"
-       Amiberry=/home/$USER/Amiga/
+      
        if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/" ]; then
 	  clear
 	  echo" Amiberry already installed...."
-	  Amiberry=/home/amibian/Amiga/Emulators/amiberry/
+	  
 	  
 	else
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-          cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* $Amiberry
+          cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
 	  
           fi
        
@@ -361,7 +361,7 @@ fi
     cd /home/$USER/KickPi-OS/Amiga
     unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
     mkdir /home/$USER/Amiga/Harddisk/AROS
-    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* $Amiberry/Harddisk/AROS
+    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/AROS
    
 }
 
@@ -488,8 +488,19 @@ fi
 
       
       
-     cp -rf /home/$USER/KickPi-OS/Amiga/conf/* $Amiberry/conf/  
+     cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+     
 
+      if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
+	  clear
+	else
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
+          cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Documents/FS-UAE/Configurations/
+	  
+          fi
+	  
+      
       sudo chmod -R 777 /home/$USER/Amiga
     }    
    
