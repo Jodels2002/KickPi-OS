@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assign >NIL:  Install KickPi-OS - not for use!!!
+# Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
 
 
@@ -13,13 +13,11 @@ echo "Good choise :-) "
 echo " "
 echo " "
 
-      
-      sudo rm -rf ~/.KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo apt -y update
       whiptail --msgbox "Optional:                                                Now insert your * AMIGA * USB stick with the * Shared * folder into the Raspberry" 20 50 1
       
-      if [ ! -f /home/$USER/.backup/.bashrc ]; then
+if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
@@ -28,28 +26,22 @@ echo " "
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
-      
-      else
-      
-      echo "Everything is fine... :-)"
-    
-      fi
+        
+fi
       
       
-      if [ ! -f "$AmigaForever" ]; then
-          clear
-          echo "AmigaForever found "
+if    [ ! -d "$AmigaForever" ]; then
+        clear
+          echo "AmigaForever files found "
+	  echo " "
+	  echo " "
           echo "... copy files will take 2-5 min... "
 	  echo " "
           echo " "
           mkdir /home/$USER/Amiga
-	  mkdir /home/$USER/Amiga/rom
-	  sudo chmod -R 777 /home/$USER/Amiga
-	  
-          cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
-	  cp -R /media/pi/AMIGA/Shared/rom/* /home/$USER/Amiga/rom/
-	    
-      fi
+	  cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
+	  	    
+fi
 
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
