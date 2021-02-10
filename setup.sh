@@ -12,7 +12,7 @@ echo " "
 
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo apt -y update
-      whiptail --msgbox "Optional: \n                                               Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 20 50 1
+      whiptail --msgbox "Optional: \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 20 40 1
       
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
@@ -41,13 +41,13 @@ if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
 	  clear
           
 fi
-if    [ ! -d "/media/AMIGA/Shared" ]; then
+if    [ ! -d "/media/usb0/Shared" ]; then
           
 	  clear
           echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
-	  cp -rf /media/AMIGA/Shared/* ~/Amiga
+	  cp -rf /media/usb0/Shared/* ~/Amiga
 	  else
 	  clear
           
