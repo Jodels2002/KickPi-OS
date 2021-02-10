@@ -1,8 +1,6 @@
 #!/bin/bash
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
-
-
 #******************************************** #startup-sequence  :-) ************* ********************************************
 
 clear
