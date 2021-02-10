@@ -37,7 +37,7 @@ fi
 if    [ ! -d "$Pi" ]; then
           
 	  clear
-          echo "***  AmigaForever files found ***"
+          echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
 	  cp -rf $Pi/* ~/Amiga
@@ -48,7 +48,7 @@ fi
 if    [ ! -d "$Amibian" ]; then
           
 	  clear
-          echo "***  AmigaForever files found ***"
+          echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
 	  cp -rf $Amibian/* ~/Amiga
