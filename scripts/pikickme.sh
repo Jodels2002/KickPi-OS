@@ -582,7 +582,7 @@ else
       wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
       rm ./vice-3.4-bin-rpi.tar.gz
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/
+     
     
     #Install PiKISS
       cd
@@ -697,7 +697,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
-
+      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/
     
  fi      
   
