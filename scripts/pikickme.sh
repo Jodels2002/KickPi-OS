@@ -213,6 +213,7 @@ KickPi-OS_Office() {
       sudo chmod -R 777 /home/$USER/.config
       sudo chmod -R 777 ~/.local
       sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
+      sudo rm -rf /home/$USER/.cache
       cd /home/$USER/KickPi-OS/
       cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
@@ -290,9 +291,9 @@ fi
                cp -rf /usr/local/bin ~/.backup/usr
 	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
                cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
-               #sudo rm -rf /home/$USER/.config
-               #sudo rm -rf /home/$USER/.icons
-               #sudo rm -rf /usr/share/.icons/default
+               sudo rm -rf /home/$USER/.config
+               
+               
                cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
