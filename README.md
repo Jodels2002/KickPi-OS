@@ -43,10 +43,9 @@ Install Raspberry Pi OS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
 Optional:
-- Format a USB stick
-- Call him AMIGA
-- Copy the "Shared" files from the AmigaForever installation
--> "AMIGA/Shared/Copy here are your AmigaForever files"
+- Format a USB stick ( FAT32, Volume Label "AMIGA" )
+- Copy the "Shared" folder from the AmigaForever installation
+-> "AMIGA/Shared/*here are your AmigaForever files*"
 
 # Installation:
 On the raspberry you open a terminal window and type following commands:
