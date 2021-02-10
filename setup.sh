@@ -4,7 +4,8 @@
 
 
 #******************************************** #startup-sequence  :-) ************* ********************************************
-AmigaForever=/media/pi/AMIGA/Shared/
+Pi=/media/pi/AMIGA/Shared/
+Amibian=/media/AMIGA/Shared/  
 #****************************************************************************************************************
 
 
@@ -28,27 +29,32 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo " "
         
 fi
-      
-      
-if    [ ! -d "$AmigaForever" ]; then
+
+if    [ ! -d "/home/$USER/Amiga" ]; then
+	  mkdir /home/$USER/Amiga  
+fi
+
+if    [ ! -d "$Pi" ]; then
           
-	  if    [ ! -d "/home/$USER/Amiga" ]; then
-	  mkdir /home/$USER/Amiga
-	  else
-	  clear
-          echo "*** Amiga folder found ***"
-	  fi
 	  clear
           echo "***  AmigaForever files found ***"
 	  echo " "
-	  echo " "
-          echo "... copy files will take 2-5 min "
-	  echo " "
-          echo " "
-	  sudo cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
+	  echo "... copy files will take 2-5 min "
+	  cp -rf $Pi/* ~/Amiga
 	  else
 	  clear
-          echo "*** No AmigaForever files found ***"
+          
+fi
+if    [ ! -d "$Amibian" ]; then
+          
+	  clear
+          echo "***  AmigaForever files found ***"
+	  echo " "
+	  echo "... copy files will take 2-5 min "
+	  cp -rf $Amibian/* ~/Amiga
+	  else
+	  clear
+          
 fi
 sleep 2s
 
