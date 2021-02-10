@@ -342,16 +342,26 @@ fi
     else
     
        echo " ... here comes Amiberry 32 bit   :-)"
+       Amiberry=/home/$USER/Amiga/
+       if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/" ]; then
+	  clear
+	  echo" Amiberry already installed...."
+	  Amiberry=/home/amibian/Amiga/Emulators/amiberry/
+	  
+	else
+	  cd /home/$USER/KickPi-OS/Amiga
+      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+          cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* $Amiberry
+	  
+          fi
        
-      cd /home/$USER/KickPi-OS/Amiga
-      unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga
+      
     fi
     
     cd /home/$USER/KickPi-OS/Amiga
     unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
     mkdir /home/$USER/Amiga/Harddisk/AROS
-    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/AROS
+    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* $Amiberry/Harddisk/AROS
    
 }
 
@@ -373,6 +383,7 @@ fi
       cd ~
       cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
+      rm ./Amiga.zip
       
       
       else 
@@ -419,7 +430,7 @@ fi
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
-      
+    
       fi
       
       if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
@@ -444,7 +455,7 @@ fi
       echo " "
       if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
       
-      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/   
+       
       else
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
@@ -465,6 +476,7 @@ fi
       cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip -u ./Amiga_roms.zip
+      rm ./Amiga_roms.zip
      
       else 
       clear
@@ -476,7 +488,7 @@ fi
 
       
       
-      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/  
+     cp -rf /home/$USER/KickPi-OS/Amiga/conf/* $Amiberry/conf/  
 
       sudo chmod -R 777 /home/$USER/Amiga
     }    
