@@ -1,4 +1,4 @@
 clear
 toilet -F gay Retropie Setup
-cd /home/$USER/Retropie-Setup
+cd /home/$USER/RetroPie-Setup/
 sudo ./retropie_setup.sh
