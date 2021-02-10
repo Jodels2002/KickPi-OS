@@ -561,14 +561,7 @@ else
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay full
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
-      echo " "
-      echo " "
+      
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
       else 
@@ -580,14 +573,18 @@ else
       toilet -F gay full
       echo " "
       echo " "
+      echo "Commodore Vice" 
+      echo " "
+      echo " "
       cd
       mkdir $HOME/games
       cd $HOME/games
       wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
       rm ./vice-3.4-bin-rpi.tar.gz
-      
-     #Install PiKISS
+      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/
+    
+    #Install PiKISS
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       sudo chmod -R 777 /home/$USER/PiKISS
