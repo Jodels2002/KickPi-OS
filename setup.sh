@@ -23,9 +23,7 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
-        
-fi
-
+      fi
 
 if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
           mkdir /home/$USER/Amiga 
@@ -34,8 +32,8 @@ if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
 	  echo "... copy files will take 2-5 min "
 	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
 	  sleep 3s
-         
-fi
+          fi
+
 if    [ ! -d "/media/usb0/Shared" ]; then
           
           echo "***  Amiga Forever files found ***"
@@ -43,11 +41,8 @@ if    [ ! -d "/media/usb0/Shared" ]; then
 	  echo "... copy files to Amibian will take 2-5 min "
 	  cp -rf /media/usb0/Shared/* ~/Amiga  
 	  sleep 3s
-          
-fi
+          fi
 	
-
-
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
