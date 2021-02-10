@@ -32,27 +32,23 @@ fi
 
 if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
           
-	  clear
+	 src=/media/pi/AMIGA/Shared
+         
+  else
+	if    [ ! -d "/media/usb0/Shared" ]; then
+          
+          src=/media/usb0/Shared
+          
+        fi
+	
           echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
-	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga
-	  else
-	  clear
-          
+	  cp -rf $src/* ~/Amiga  
+	  sleep 3s
 fi
-if    [ ! -d "/media/usb0/Shared" ]; then
-          
-	  clear
-          echo "***  Amiga Forever files found ***"
-	  echo " "
-	  echo "... copy files will take 2-5 min "
-	  cp -rf /media/usb0/Shared/* ~/Amiga
-	  else
-	  clear
-          
-fi
-sleep 2s
+
+
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
