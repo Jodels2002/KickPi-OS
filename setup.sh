@@ -31,18 +31,26 @@ fi
       
       
 if    [ ! -d "$AmigaForever" ]; then
-          clear
+          
+	  if    [ ! -d "/home/$USER/Amiga" ]; then
+	  mkdir /home/$USER/Amiga
+	  else
+	  clear
+          echo "*** Amiga folder found ***"
+	  fi
+	  clear
           echo "***  AmigaForever files found ***"
 	  echo " "
 	  echo " "
           echo "... copy files will take 2-5 min "
 	  echo " "
           echo " "
-          mkdir /home/$USER/Amiga
-	  cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
-	  	    
+	  sudo cp -rf /media/pi/AMIGA/Shared/* /home/$USER/Amiga/
+	  else
+	  clear
+          echo "*** No AmigaForever files found ***"
 fi
-
+sleep 2s
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
