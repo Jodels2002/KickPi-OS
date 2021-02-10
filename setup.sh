@@ -25,9 +25,7 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
 
 if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
           mkdir /home/$USER/Amiga 
-	  echo "***  Amiga Forever files found ***"
-	  echo " "
-	  echo "... copy files will take 2-5 min "
+	
 	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
 	  sleep 3s
           fi
