@@ -7,7 +7,7 @@ The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
 
 Software that is installed and pre-configured:
 
-Amiberry, ClassicWB, AmigaForever, PiKiss, Retropie ...
+Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
 * For licensing reasons, the Workbench files and Kickstart Rom files are not included!
 
 
@@ -42,9 +42,9 @@ Please note that the 64 bit version also works, but not all functions are availa
 Install Raspberry Pi OS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
-Optional:
+Optional for Amiga Forever owners:
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
-- Copy the "Shared" folder from the AmigaForever installation
+- Copy the "Shared" folder from the Amiga Forever installation
 -> "AMIGA/Shared/*here are your AmigaForever files*"
 
 # Installation:
