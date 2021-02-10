@@ -580,6 +580,13 @@ else
       toilet -F gay full
       echo " "
       echo " "
+      cd
+      mkdir $HOME/games
+      cd $HOME/games
+      wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
+      tar xzf  ./vice-3.4-bin-rpi.tar.gz
+      rm ./vice-3.4-bin-rpi.tar.gz
+      
      #Install PiKISS
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
