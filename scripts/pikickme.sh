@@ -593,7 +593,7 @@ else
       echo " "
       echo " "
      
-      #CommanderPi
+      #CommanderPi  Is out...User interaktiviti needed... 
       #cd
       #sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
       #git clone --depth=1 https://github.com/Jack477/CommanderPi
@@ -605,21 +605,21 @@ else
       
      
       
+     # Is out...takes too long time... 
+     #if [ ! -f /home/pi/winetricks ]; then
+      #  clear
+      #  toilet -F gay KickPi-OS 
+      #  toilet -F gay full
+      #  echo " Wine" 
+      #  cd 
+      #  sudo apt -y install  playonlinux
+      #  wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+      #	 chmod +x winetricks
+      #	 sh winetricks corefonts vcrun6 
+      #  else 
+      #  clear
       
-      if [ ! -f /home/pi/winetricks ]; then
-      clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay full
-      echo " Wine" 
-        cd 
-        sudo apt -y install  playonlinux
-		wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-		chmod +x winetricks
-		#sh winetricks corefonts vcrun6 
-      else 
-      clear
-      
-      fi
+      #  fi
       
  fi
 }
