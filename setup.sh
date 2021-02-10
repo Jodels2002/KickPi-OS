@@ -17,7 +17,7 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       mkdir /home/$USER/.backup/
       sudo chmod -R 777 ~/.backup/
       cp  /home/$USER/.bashrc /home/$USER/.backup/.bashrc
-      cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+      
       sudo chmod -R 777 ~/.bashrc
       echo " "
       echo " "
@@ -46,6 +46,7 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
           fi
 	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
