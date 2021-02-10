@@ -31,11 +31,11 @@ fi
       
       
 if    [ ! -d "$AmigaForever" ]; then
-        clear
-          echo "AmigaForever files found "
+          clear
+          echo "***  AmigaForever files found ***"
 	  echo " "
 	  echo " "
-          echo "... copy files will take 2-5 min... "
+          echo "... copy files will take 2-5 min "
 	  echo " "
           echo " "
           mkdir /home/$USER/Amiga
@@ -49,4 +49,4 @@ sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo chmod -R 777 /home/$USER/Amiga   
-sudo reboot
+#sudo reboot
