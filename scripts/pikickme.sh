@@ -677,13 +677,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       fi
  clear
-      toilet -F gay KickPi-OS
-      sudo __nodialog=1 ./retropie_packages.sh setup amiberry
-      clear
-      toilet -F gay KickPi-OS
-      sudo __nodialog=1 ./retropie_packages.sh setup vice
-      sudo _clear
-      toilet -F gay KickPi-OS
+      git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
