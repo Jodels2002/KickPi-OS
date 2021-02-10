@@ -293,11 +293,11 @@ fi
                #sudo rm -rf /home/$USER/.config
                #sudo rm -rf /home/$USER/.icons
                #sudo rm -rf /usr/share/.icons/default
-               cd  /home/KickPi-OS/.pac/amibian/
-               unzip -u /home/amibian/.pac/amibian/.config.zip
-               unzip -u /home/amibian/.pac/amibian/.local.zip
-               cp -rf /home/amibian/.pac/amibian/.config/ /home/$USER/
-               cp -rf /home/amibian/.pac/amibian/.local/ /home/$USER/  
+               cd  /home/amibian/KickPi-OS/.pac/amibian/
+                unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
+                unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
+                #cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
+                #cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
       
 fi      
 }
