@@ -292,7 +292,7 @@ fi
 	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
                cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
                sudo rm -rf /home/$USER/.config
-               
+               sudo apt-get -y upgrade
                
                cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
