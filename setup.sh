@@ -26,28 +26,26 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
         
 fi
 
-if    [ ! -d "/home/$USER/Amiga" ]; then
-	  mkdir /home/$USER/Amiga  
-fi
 
 if    [ ! -d "/media/pi/AMIGA/Shared" ]; then
-          
-	 src=/media/pi/AMIGA/Shared
-         
-  else
-	if    [ ! -d "/media/usb0/Shared" ]; then
-          
-          src=/media/usb0/Shared
-          
-        fi
-	
-          echo "***  Amiga Forever files found ***"
+          mkdir /home/$USER/Amiga 
+	  echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
-	  cp -rf $src/* ~/Amiga  
+	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
 	  sleep 3s
+         
 fi
-
+if    [ ! -d "/media/usb0/Shared" ]; then
+          
+          echo "***  Amiga Forever files found ***"
+	  echo " "
+	  echo "... copy files to Amibian will take 2-5 min "
+	  cp -rf /media/usb0/Shared/* ~/Amiga  
+	  sleep 3s
+          
+fi
+	
 
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
