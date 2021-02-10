@@ -122,11 +122,12 @@ clear
 toilet -F gay KickPi-OS 
 echo "****************************************************************" 
 echo " "
-echo " "
-echo " ( a ) Amiberry" 
-echo " ( d ) Amiga Desktop" 
-echo " ( e ) Emulationstation" 
-echo " ( m ) Kick-OS Menu" 
+echo " ( a ) Start Amiga                 (Amiberry)" 
+echo " ( d ) KickPi Desktop                        " 
+echo " ( e ) Emulationstation             (RetroPi)" 
+echo " ( r ) Emulationstation Setup                "
+echo " ( u ) KickPi-OS Update                      " 
+echo " ( m ) Kick-OS Menu                          " 
 echo " "
   
 
