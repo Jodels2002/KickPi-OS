@@ -644,7 +644,7 @@ KickPi-OS_Retropie() {
 
       
     else
-     
+if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then     
     echo " "
       clear
       toilet -F gay KickPi-OS 
@@ -655,10 +655,7 @@ KickPi-OS_Retropie() {
       cd
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd /home/$USER/RetroPie-Setup/
-
-if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then
-      cd RetroPie-Setup 
+      cd /home/$USER/RetroPie-Setup/ 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
       # Amibian dosen´t install "Binary" !?!
       if [ $USER == "pi" ]; then
