@@ -7,13 +7,8 @@
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
-#https://archive.org/compress/Amiga_WHD_Games ;-) 
-#Todo
-#https://archive.org/compress/2020_01_06_fbn/formats=ZIP&file=/2020_01_06_fbn.zip
-#https://archive.org/compress/MAME2003_Reference_Set_MAME0.78_ROMs_CHDs_Samples/formats=ZIP&file=/MAME2003_Reference_Set_MAME0.78_ROMs_CHDs_Samples.zip
-#https://archive.org/download/archive_20190819/Romset.zip
-#https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
-#************************************************  #Amiberrry   ************************************************
+
+#************************************************  #Amiberry Version   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
