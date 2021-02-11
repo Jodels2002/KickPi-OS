@@ -690,9 +690,44 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/   
+      
+      if [ ! -f /home/$USER/RetroPie/Romset.zip ]; then
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay Retropie Romset
+      echo " "
+      echo " "
+      echo "  Configure Retropie Romset from Archiv.org " 
+      echo " "
+      echo " "
+      cd /home/$USER/RetroPie/roms
       wget https://archive.org/download/archive_20190819/Romset.zip
+      unzip -u /home/$USER/KickPi-OS/Retropie/Romset.zip
+      #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
+      else 
+      clear
+      
+      fi
+      
+      if [ ! -f /home/$USER/RetroPie/extract_to_sytem_folder.zip ]; then
+      clear
+      toilet -F gay KickPi-OS 
+      toilet -F gay Retropie Romset
+      echo " "
+      echo " "
+      echo "  Add Retropie Bios Files from Archiv.org " 
+      echo " "
+      echo " "
+      cd /home/$USER/RetroPie/bios
       wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
- fi
+      unzip -u /home/$USER/KickPi-OS/Retropie/extract_to_sytem_folder.zip
+      #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
+      fi
+      else 
+      clear
+      
+      fi
+      
       
     
  fi      
