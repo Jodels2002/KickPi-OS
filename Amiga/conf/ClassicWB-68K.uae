@@ -55,7 +55,7 @@ amiberry.minimized_input=0
 ; *** Common / Paths
 ; 
 use_gui=yes
-kickstart_rom_file=/home/pi/Amiga/rom/amiga-os-130.rom
+kickstart_rom_file=~/Amiga/rom/amiga-os-130.rom
 kickstart_rom_file_id=C4F0F55F,KS ROM v1.3 (A500,A1000,A2000)
 kickstart_ext_rom_file=
 ide_mb_rom_file=:ENABLED
@@ -79,10 +79,10 @@ floppy_speed=0
 ; 
 ; *** Hard Drives
 ; 
-hardfile2=rw,DH0:/home/pi/Amiga/hdf/workbench-135.hdf,0,0,0,512,0,,uae0
-uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/workbench-135.hdf,0,0,0,512,0,,uae0
-filesystem2=rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
-uaehf1=dir,rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
+hardfile2=rw,DH0:~/Amiga/hdf/workbench-135.hdf,0,0,0,512,0,,uae0
+uaehf0=hdf,rw,DH0:~/Amiga/hdf/workbench-135.hdf,0,0,0,512,0,,uae0
+filesystem2=rw,DH2:Work:~/Amiga/Harddisk/Work/,0
+uaehf1=dir,rw,DH2:Work:~/Amiga/Harddisk/Work/,0
 scsi=false
 ; 
 ; *** CD / CD32
