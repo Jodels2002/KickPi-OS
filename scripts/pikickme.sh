@@ -292,7 +292,7 @@ fi
 	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
                cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
                sudo rm -rf /home/$USER/.config
-               sudo apt-get -y upgrade
+               
                
                cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
@@ -673,25 +673,21 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       cd /home/$USER/RetroPie-Setup/ 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
       # Amibian dosen´t install "Binary" !?!
-      if [ $USER == "pi" ]; then
+      #if [ $USER == "pi" ]; then
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      fi
- clear
+      #fi
+      clear
+      toilet -F gay KickPi-OS
       git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-            
- fi
-      
-     
-
-     
-      
       unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/
+      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
+ fi
+      
     
  fi      
   
@@ -716,7 +712,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            #KickPi-OS_Update
+            KickPi-OS_Update
        ;;
         2)
             #Poser
@@ -727,7 +723,7 @@ case $CHOICE in
             KickPi-OS_Addons
             KickPi-OS_Retropie
             KickPi-OS_Office 
-	    #KickPi-OS_Update
+	    KickPi-OS_Update
        ;;
         
         3)
@@ -737,6 +733,7 @@ case $CHOICE in
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
+	    KickPi-OS_Update
            
        ;;
                   
@@ -749,7 +746,7 @@ echo " "
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-      sudo rm -rf ~/.local/share/Trash
+      sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.config/chromium/
       sudo rm -rf ~/KickPi-OS
