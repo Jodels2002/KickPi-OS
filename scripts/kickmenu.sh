@@ -104,7 +104,7 @@ case $CHOICE in
             clear
             toilet -F gay Retropi content
             cd /usr/local/bin/
-            ./kickup.sh
+            ./retro_up.sh
             ;;
             
           r)
