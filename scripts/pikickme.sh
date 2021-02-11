@@ -269,8 +269,7 @@ fi
        
        else
        # Settings XFCE4 Amibian
-      clear
-          
+               clear
                toilet -F gay Amibian
                echo ""
                echo ""
@@ -280,8 +279,8 @@ fi
                echo "There is nothing to improve here. :-)"
                echo ""
                echo "Only the look of the desktop is adjusted a little ..."
-               echo ""
-               echo ""
+               echo ".. and in addition we add things like Retropie, PiKiss, ... :-)"
+	       echo ""
                sleep 1s
                echo "Backup Settings.... "
      
