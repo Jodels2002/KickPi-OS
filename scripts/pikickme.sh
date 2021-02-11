@@ -671,10 +671,10 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/ 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      # Amibian dosen´t install "Binary" !?!
-      #if [ $USER == "pi" ]; then
+      Amibian dosen´t install "Binary" !?!
+      if [ $USER == "pi" ]; then
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      #fi
+      fi
       clear
       toilet -F gay KickPi-OS
       git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
