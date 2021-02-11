@@ -702,7 +702,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       echo " "
       cd /home/$USER/RetroPie/roms
       wget https://archive.org/download/archive_20190819/Romset.zip
-      unzip -u /home/$USER/KickPi-OS/Retropie/Romset.zip
+      unzip -u /home/$USER/RetroPie/roms/Romset.zip
       #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
       else 
       clear
@@ -717,9 +717,9 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       echo "  Add Retropie Bios Files from Archiv.org " 
       echo " "
       echo " "
-      cd /home/$USER/RetroPie/bios
+      cd /home/$USER/RetroPie/BIOS/
       wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
-      unzip -u /home/$USER/KickPi-OS/Retropie/extract_to_sytem_folder.zip
+      unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
       #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
       fi
       else 
