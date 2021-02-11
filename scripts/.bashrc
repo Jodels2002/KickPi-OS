@@ -119,15 +119,17 @@ if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Amiga.uae ]; then
       
       fi
 clear
-toilet -F gay KickPi-OS 
-echo "****************************************************************" 
-echo " "
-echo " ( a ) Start Amiga                 (Amiberry)" 
-echo " ( d ) KickPi Desktop                        " 
-echo " ( e ) Emulationstation             (RetroPi)" 
-echo " ( r ) Emulationstation Setup                "
-echo " ( u ) KickPi-OS Update                      " 
-echo " ( m ) Kick-OS Menu                          " 
-echo " "
+toilet "KickPi-OS" --metal
+echo "KickPI-OS ROM Operating System and Libraris" 
+echo "Copyrigt r 2020-2021 KickPi-OS "
+echo "All Rights Reserved. "
+echo "Type'd; to boot into Kick-OS Workbench"
+echo "1.>  ( a ) Start Amiga                 (Amiberry)" 
+echo "1.>  ( d ) KickPi Desktop                        " 
+echo "1.>  ( e ) Emulationstation             (RetroPi)" 
+echo "1.>  ( r ) Emulationstation Setup                "
+echo "1.>  ( u ) KickPi-OS Update                      " 
+echo "1.>  ( m ) Kick-OS Menu                          " 
+echo "1.>  "
   
 
