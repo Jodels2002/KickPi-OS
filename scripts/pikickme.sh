@@ -293,12 +293,12 @@ fi
                sudo rm -rf /home/$USER/.config
                
                
-               cd  /home/amibian/KickPi-OS/.pac/amibian/
+                cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
-      
+                sudo rm -rf  /home/amibian/.config/autostart/
 fi      
 }
 
