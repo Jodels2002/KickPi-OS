@@ -7,7 +7,7 @@
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
-#https://archive.org/compress/Amiga_WHD_Games ;-) 
+#https://archive.org/compress/Amiga_WHD_Games ;-) https://archive.org/download/archive_20190819/Romset.zip
 #************************************************  #Amiberrry   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
@@ -685,7 +685,9 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
+      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/   
+      wget https://archive.org/download/archive_20190819/Romset.zip
+      wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
  fi
       
     
