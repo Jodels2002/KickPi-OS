@@ -1,0 +1,14 @@
+    Type a number and press enter.
+    To show this menu again, type menu and press enter.
+
+    1.  Amiga - the selected Amiga emulator is Amiberry Master
+    2.  Amibian Desktop
+    3.  C64
+    4.  Zx Spectrum
+    5.  File manager (Midnight Commander)
+    6.  System Settings
+    7.  Help
+    8.  REBOOT
+    9.  SHUTDOWN SAFELY
+    m.  KickPi-OS Menu
+ _________________________________________________________________
