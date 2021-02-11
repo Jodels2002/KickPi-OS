@@ -17,3 +17,14 @@ wget https://archive.org/compress/2020_01_06_fbn/formats=ZIP&file=/2020_01_06_fb
 wget https://archive.org/compress/MAME2003_Reference_Set_MAME0.78_ROMs_CHDs_Samples/formats=ZIP&file=/MAME2003_Reference_Set_MAME0.78_ROMs_CHDs_Samples.zip
 wget https://archive.org/compress/Amiga_WHD_Games
 weget https://archive.org/compress/commodore-64-romset-us/formats=ZIP&file=/commodore-64-romset-us.zip
+
+
+dialog --title "Download Amiga content? " \
+--backtitle "Amiga_WHD_Games from Archiv.org" \
+--yesno "Are you sure you want to permanently delete \"/tmp/foo.txt\"?" 7 60
+response=$?
+case $response in
+   0) echo "File deleted.";;
+   1) echo "File not deleted.";;
+   255) echo "[ESC] key pressed.";;
+esac
