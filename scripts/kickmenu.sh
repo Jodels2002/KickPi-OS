@@ -12,7 +12,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 
 HEIGHT=40
 WIDTH=70
-CHOICE_HEIGHT=5
+CHOICE_HEIGHT=8
 BACKTITLE="KickPi-OS 64 bit"
 TITLE="Main Menu"
 MENU="Please select:"
@@ -40,15 +40,16 @@ CHOICE=$(dialog --clear \
 
 HEIGHT=40
 WIDTH=70
-CHOICE_HEIGHT=6
+CHOICE_HEIGHT=8
 BACKTITLE="KickPi-OS 32 bit"
 TITLE="Main Menu"
 MENU="Please select:"
 
 OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
-         e "Start your Retropie"
+         e "Start your RetroPi"
          r "Setup Retropie"
+         l "Load more RetroPi
          c "Setup Raspie-Config"
          u "Update KickPi-OS"
          s "Shutdown ")
@@ -99,6 +100,12 @@ case $CHOICE in
             toilet -F gay Retropie
             emulationstation
             ;;
+         l)
+            clear
+            toilet -F gay Retropi content
+            cd /usr/local/bin/
+            ./kickup.sh
+            ;;
             
           r)
             clear
@@ -131,4 +138,5 @@ esac
 
 clear
 toilet -F gay KickPi-OS
-#kickmenu
+cd /usr/local/bin/
+./kickup.sh
