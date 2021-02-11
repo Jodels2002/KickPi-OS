@@ -13,8 +13,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 HEIGHT=40
 WIDTH=70
 CHOICE_HEIGHT=8
-BACKTITLE="KickPi-OS 64 bit"
-TITLE="Main Menu"
+BACKTITLE="Main"
+TITLE="KickPi-OS 64 bit"
 MENU="Please select:"
 
 OPTIONS=(1 "Start your Amiberry Amiga"
@@ -41,15 +41,15 @@ CHOICE=$(dialog --clear \
 HEIGHT=40
 WIDTH=70
 CHOICE_HEIGHT=8
-BACKTITLE="KickPi-OS 32 bit"
-TITLE="Main Menu"
+BACKTITLE="Main"
+TITLE="KickPi-OS 32 bit"
 MENU="Please select:"
 
 OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
          e "Start your RetroPi"
          r "Setup Retropie"
-         l "Load more RetroPi
+         l "Load more RetroPi"
          c "Setup Raspie-Config"
          u "Update KickPi-OS"
          s "Shutdown ")
