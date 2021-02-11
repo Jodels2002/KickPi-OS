@@ -576,12 +576,18 @@ else
       echo " "
       echo " "
       cd
+      if [ ! -f /home/$USER/games/vice-3.4-bin-rpi.tar.gz ]; then
+      
       mkdir $HOME/games
       cd $HOME/games
       wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
-      rm ./vice-3.4-bin-rpi.tar.gz
+      #rm ./vice-3.4-bin-rpi.tar.gz
      
+      else 
+      clear
+            fi
+      
     
     #Install PiKISS
       cd
@@ -688,8 +694,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       if [ ! -f /home/$USER/RetroPie/Romset.zip ]; then
       clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay Retropie Romset
+      toilet -F gay Retropie
       echo " "
       echo " "
       echo "  Configure Retropie Romset from Archiv.org " 
@@ -706,8 +711,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       if [ ! -f /home/$USER/RetroPie/extract_to_sytem_folder.zip ]; then
       clear
-      toilet -F gay KickPi-OS 
-      toilet -F gay Retropie Romset
+      toilet -F gay Retropie 
       echo " "
       echo " "
       echo "  Add Retropie Bios Files from Archiv.org " 
