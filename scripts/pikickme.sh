@@ -144,7 +144,7 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-      sudo apt-y upgrade
+      sudo apt-get -y upgrade
 
 }
 
@@ -306,7 +306,11 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
 fi 
+# PIServer, Pimiga....
 if [ ! -d $HOME/Desktop ]; then
+# PIServer,DietPi, Pimiga.... as Host Distri 
+
+sudo apt install -y chromium-browser usbmount gparted synaptic
 
         mkdir $HOME/Desktop
         mkdir $HOME/Downloads
@@ -318,7 +322,7 @@ if [ ! -d $HOME/Desktop ]; then
         mkdir $HOME/Videos
       else 
         clear
-        mkdir $HOME/Desktop
+       
 fi
 
 }
