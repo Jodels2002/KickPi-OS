@@ -306,24 +306,7 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
 fi 
-# PIServer, Pimiga....
-if [ ! -d $HOME/Desktop ]; then
-# PIServer,DietPi, Pimiga.... as Host Distri 
 
-sudo apt install -y chromium-browser usbmount gparted synaptic
-
-        mkdir $HOME/Desktop
-        mkdir $HOME/Downloads
-        mkdir $HOME/Templates
-        mkdir $HOME/Public
-        mkdir $HOME/Documents
-        mkdir $HOME/Music
-        mkdir $HOME/Pictures
-        mkdir $HOME/Videos
-      else 
-        clear
-       
-fi
 
 }
 
