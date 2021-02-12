@@ -692,7 +692,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/   
       
-      if [ ! -f /home/$USER/RetroPie/Romset.zip ]; then
+      if [ ! -f /home/$USER/RetroPie/roms/Romset.zip ]; then
       clear
       toilet -F gay Retropie
       echo " "
@@ -709,7 +709,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       fi
       
-      if [ ! -f /home/$USER/RetroPie/extract_to_sytem_folder.zip ]; then
+      if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
       clear
       toilet -F gay Retropie 
       echo " "
