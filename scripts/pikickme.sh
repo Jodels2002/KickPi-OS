@@ -357,10 +357,7 @@ fi
       
     fi
     
-    cd /home/$USER/KickPi-OS/Amiga
-    unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
-    mkdir /home/$USER/Amiga/Harddisk/AROS
-    cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/Harddisk/AROS
+    
    
 }
 
@@ -442,7 +439,11 @@ fi
       echo " "
       
       fi
-     
+      if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
+      cd /home/$USER/KickPi-OS/Amiga
+      unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
+      mkdir /home/$USER/Amiga/dir/AROS/
+     cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
   
       cd /home/$USER/Amiga/hdf
       
@@ -730,7 +731,12 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       clear
       
       fi
+      
+      sudo mkdir /opt/retropie/emulators/amiberry/
+      sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /opt/retropie/emulators/amiberry/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      
+      
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       sudo chmod -R 777 /opt/retropie/
