@@ -731,6 +731,10 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       fi
       
+      sudo chmod -R 777 /home/$USER/RetroPie/
+      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      sudo chmod -R 777 /opt/retropie/
+      sudo chmod -R 777 /etc/emulationstation/
       
     
  fi      
