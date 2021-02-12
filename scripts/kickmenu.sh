@@ -49,7 +49,7 @@ OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
          e "Start your RetroPi"
          r "Setup Retropie"
-         l "Load more RetroPi"
+         l "Load more stuff"
          c "Setup Raspie-Config"
          u "Update KickPi-OS"
          s "Shutdown ")
@@ -83,33 +83,28 @@ case $CHOICE in
         
         2)
             clear
-            toilet -F gay KickPi-OS
-            toilet -F gay Desktop
+            toilet "KickPi-OS" --metal
+            
             startx
             
             ;;
         
-        3)
-            clear
-            toilet -F gay Retropie
-            emulationstation   
-            ;;
-            
+                   
          e)
             clear
-            toilet -F gay Retropie
+            toilet "Retropie" --metal
             emulationstation
             ;;
-         l)
+         c)
             clear
-            toilet -F gay Retropi content
+            toilet "KickPi-OS" --metal
             cd /usr/local/bin/
             ./retro_up.sh
             ;;
             
           r)
             clear
-            toilet -F gay Retropie Setup
+            toilet "KickPi-OS" --metal
             cd Retropie-Setup
             sudo ./retropie-setup.sh
             ;; 
@@ -127,7 +122,7 @@ case $CHOICE in
              ;;  
          u)
             clear
-            toilet -F gay Update
+            toilet "Update" --metal
             cd /usr/local/bin/
             ./kickup.sh
              ;;  
@@ -137,6 +132,6 @@ esac
 
 
 clear
-toilet -F gay KickPi-OS
+toilet "KickPi-OS" --metal
 cd /usr/local/bin/
-./kickup.sh
+
