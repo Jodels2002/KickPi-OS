@@ -731,12 +731,23 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       clear
       
       fi
-      
+      #-----Config Amiberry for Retropie
       sudo mkdir /opt/retropie/emulators/amiberry/
+      sudo mkdir /opt/retropie/configs/amiga/
       sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /opt/retropie/emulators/amiberry/
+      sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /opt/retropie/emulators/amiberry/
+      sudo cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /opt/retropie/emulators/amiberry/conf
+      sudo cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /opt/retropie/configs/amiga/
+      
+      sudo cp -rf /opt/retropie/emulators/amiberry/* /opt/retropie/emulators/amiberry/
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/emulators.cfg /opt/retropie/configs/amiga/
+      
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+      
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       
-      
+  
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       sudo chmod -R 777 /opt/retropie/
