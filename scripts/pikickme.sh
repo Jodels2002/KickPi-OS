@@ -8,6 +8,7 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 
+
 #************************************************  #Amiberry Version   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
@@ -304,7 +305,22 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-fi      
+fi 
+if [ ! -d $HOME/Desktop ]; then
+
+        mkdir $HOME/Desktop
+        mkdir $HOME/Downloads
+        mkdir $HOME/Templates
+        mkdir $HOME/Public
+        mkdir $HOME/Documents
+        mkdir $HOME/Music
+        mkdir $HOME/Pictures
+        mkdir $HOME/Videos
+      else 
+        clear
+        mkdir $HOME/Desktop
+fi
+
 }
 
 
