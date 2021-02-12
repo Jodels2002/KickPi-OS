@@ -298,6 +298,12 @@ fi
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
+		cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/ /home/$USER/  
+		mkdir /home/amibian/Amiga/conf/
+		/home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/conf/
+		/home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
+		/home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
+		
                 sudo rm -rf  /home/amibian/.config/autostart/
 fi      
 }
