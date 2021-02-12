@@ -9,10 +9,10 @@ amiberry.vertical_offset=0
 config_all_path=
 config_host_path=
 config_hardware_path=
-amiberry.rom_path=/opt/retropie/emulators/amiberry/kickstarts/
-amiberry.floppy_path=/opt/retropie/emulators/amiberry/disks/
-amiberry.hardfile_path=/opt/retropie/emulators/amiberry/
-amiberry.cd_path=/opt/retropie/emulators/amiberry/cd32/
+amiberry.rom_path=./
+amiberry.floppy_path=./
+amiberry.hardfile_path=./
+amiberry.cd_path=./
 ; 
 ; *** Controller/Input Configuration
 ; 
