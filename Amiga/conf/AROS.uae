@@ -55,8 +55,8 @@ amiberry.minimized_input=0
 ; *** Common / Paths
 ; 
 use_gui=yes
-kickstart_rom_file=/home/pi/Amiga/Harddisk/AROS/boot/amiga/aros-rom.bin
-kickstart_ext_rom_file=/home/pi/Amiga/Harddisk/AROS/boot/amiga/aros-ext.bin
+kickstart_rom_file=/home/pi/Amiga/dir/AROS/boot/amiga/aros-rom.bin
+kickstart_ext_rom_file=/home/pi/Amiga/dir/AROS/boot/amiga/aros-ext.bin
 ide_mb_rom_file=:ENABLED
 pcmcia_mb_rom_file=:ENABLED
 flash_file=
@@ -78,10 +78,10 @@ floppy_speed=0
 ; 
 ; *** Hard Drives
 ; 
-filesystem2=rw,DH0:AROS:/home/pi/Amiga/Harddisk/AROS/,0
-uaehf0=dir,rw,DH0:AROS:/home/pi/Amiga/Harddisk/AROS/,0
-filesystem2=rw,DH1:Work:/home/pi/Amiga/Harddisk/Work/,0
-uaehf1=dir,rw,DH1:Work:/home/pi/Amiga/Harddisk/Work/,0
+filesystem2=rw,DH0:AROS:/home/pi/Amiga/dir/AROS/,0
+uaehf0=dir,rw,DH0:AROS:/home/pi/Amiga/dir/AROS/,0
+filesystem2=rw,DH1:Software:/home/pi/Amiga/dir/Work/Software/,0
+uaehf1=dir,rw,DH1:Software:/home/pi/Amiga/dir/Work/Software/,0
 scsi=false
 ; 
 ; *** CD / CD32
