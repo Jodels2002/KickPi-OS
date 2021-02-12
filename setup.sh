@@ -11,7 +11,26 @@ echo " "
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo apt -y update
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
-      
+
+if [ ! -d $HOME/Desktop ]; then
+     # PIServer,DietPi, Pimiga.... as Host Distri 
+
+      sudo apt install -y git chromium-browser usbmount gparted synaptic
+    
+     cd
+      git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
+      sudo chmod -R 777 raspi-config
+      sudo cp -rf $HOME/raspi-config/* /usr/bin/
+      rm raspi-config
+
+        mkdir $HOME/Desktop
+        mkdir $HOME/Downloads
+        mkdir $HOME/Documents
+        mkdir $HOME/Music
+        mkdir $HOME/Pictures
+        mkdir $HOME/Videos
+       
+fi      
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
       mkdir /home/$USER/.backup/
