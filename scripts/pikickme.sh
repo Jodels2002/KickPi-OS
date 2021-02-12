@@ -687,7 +687,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       fi
       clear
       toilet "KickPi-OS" --metal
-      git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
+      sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
