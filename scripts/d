@@ -1,4 +1,4 @@
             clear
-            toilet -F gay KickPi-OS
-            toilet -F gay Desktop
+            toilet "KickPi-OS" --metal
+            toilet "Desktop" --metal
             startx
