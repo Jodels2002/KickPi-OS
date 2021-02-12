@@ -21,7 +21,7 @@ fi
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
-sudo apt-mark hold lxpanel
+#sudo apt-mark hold lxpanel
 sudo apt install -y toilet dialog  
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
