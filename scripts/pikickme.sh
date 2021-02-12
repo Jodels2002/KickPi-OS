@@ -681,19 +681,19 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/ 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      Amibian dosen´t install "Binary" !?!
-      if [ $USER == "pi" ]; then
+      #Amibian dosen´t install "Binary" !?!
+      #if [ $USER == "pi" ]; then
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      fi
+      #fi
       clear
       toilet "KickPi-OS" --metal
       sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       cd /home/$USER/KickPi-OS/Retropie/
-      unzip -u /home/$USER/KickPi-OS/Retropie/roms.zip
-      cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
-      sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
+      unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
+      cp -rf /home/$USER/KickPi-OS/Retropie/data/* /home/$USER/RetroPie/roms
+      #unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
+      #sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       if [ ! -f /home/$USER/RetroPie/roms/Romset.zip ]; then
