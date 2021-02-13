@@ -738,6 +738,8 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
+      
       
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
