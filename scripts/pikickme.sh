@@ -620,7 +620,7 @@ else
      
       clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full
+      toilet "full" --metal
       echo " "
       echo " "
       ./retro-term.sh
@@ -632,33 +632,7 @@ else
       echo " "
       echo " "
      
-      #CommanderPi  Is out...User interaktiviti needed... 
-      #cd
-      #sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
-      #git clone --depth=1 https://github.com/Jack477/CommanderPi
-      #clear
-      #toilet "KickPi-OS" --metal             full
       
-      #cd CommanderPi
-      #./install.sh
-      
-     
-      
-     # Is out...takes too long time... 
-     #if [ ! -f /home/pi/winetricks ]; then
-      #  clear
-      #  toilet "KickPi-OS" --metal
-      #  toilet -F gay full
-      #  echo " Wine" 
-      #  cd 
-      #  sudo apt -y install  playonlinux
-      #  wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-      #	 chmod +x winetricks
-      #	 sh winetricks corefonts vcrun6 
-      #  else 
-      #  clear
-      
-      #  fi
       
  fi
 }
