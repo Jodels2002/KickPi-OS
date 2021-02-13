@@ -31,7 +31,8 @@ A warm welcome
 Greetings Bernd
 bernd.titze@me.com
 
-# I like to have a coffee so be so kind and buy me one :-)   paypal.me/BerndTitze68
+# I like to have a coffee so be so kind and buy me one :-)   
+paypal.me/BerndTitze68
 
 # Supported hardware:
 
