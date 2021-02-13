@@ -476,7 +476,6 @@ fi
    
       echo " "
       echo " "
-  if  [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
       if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
       clear
       toilet -F gay NOTE!
@@ -498,8 +497,7 @@ fi
       unzip -u ./Amiga_roms.zip
       rm ./Amiga_roms.zip
       fi
-   fi
-      
+        
 
       
       
