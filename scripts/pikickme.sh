@@ -530,7 +530,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full 64bit
+      toilet "full 64bit" --metal
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -539,17 +539,14 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       else 
-      cclear
-      toilet "KickPi-OS" --metal
-      toilet -F gay full 64bit
-      echo " "
-      echo " "
+      clear
+      
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full 64bit
+      toilet "full 64bit" --metal
       echo " "
       echo " "
       echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
@@ -569,7 +566,7 @@ else
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full
+      toilet "full" --metal
       echo " "
       echo " "
       echo "  Configure ClassicWB_UAE_v28 ...   " 
@@ -578,11 +575,8 @@ else
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       else 
-      cclear
-      toilet "KickPi-OS" --metal
-      toilet -F gay full
-      echo " "
-      echo " "
+      clear
+      
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
@@ -592,10 +586,9 @@ else
       else 
       clear
       
-      fi
-      clear
+     clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full
+      toilet "full" --metal
       echo " "
       echo " "
       echo "Commodore Vice" 
@@ -635,7 +628,7 @@ else
       
       clear
       toilet "KickPi-OS" --metal
-      toilet -F gay full
+      toilet "full" --metal
       echo " "
       echo " "
      
