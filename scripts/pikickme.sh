@@ -819,5 +819,5 @@ echo " "
 
 clear
 toilet "KickPi-OS" --metal
-
+sudo raspi-config nonint do_boot_behaviour B4
 startx
