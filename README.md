@@ -45,6 +45,10 @@ Please note that the 64 bit version also works, but not all functions are availa
 Install Raspberry Pi OS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
+(Recommended)
+https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-01-12/2021-01-11-raspios-buster-armhf.zip
+
+
 Optional for Amiga Forever owners:
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
 - Copy the "Shared" folder from the Amiga Forever installation
