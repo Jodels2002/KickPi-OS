@@ -34,6 +34,9 @@ bernd.titze@me.com
 # Supported hardware:
 
 Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
+But it sould be 
+
+# But I definitely recommend a Raspberry 4 or Pi400
 
 Please note that the 64 bit version also works, but not all functions are available here.
 
