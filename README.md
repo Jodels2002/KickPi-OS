@@ -32,7 +32,8 @@ Greetings Bernd
 bernd.titze@me.com
 
 # I like to have a coffee so be so kind and buy me one :-)   
-paypal.me/BerndTitze68
+
+https://paypal.me/BerndTitze68?locale.x=de_DE
 
 # Supported hardware:
 
