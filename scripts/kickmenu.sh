@@ -49,7 +49,6 @@ OPTIONS=(1 "Start your Amiberry Amiga"
          2 "Start your KickPi-OS Desktop"
          e "Start your RetroPi"
          r "Setup Retropie"
-         l "Load more stuff"
          c "Setup Raspie-Config"
          u "Update KickPi-OS"
          s "Shutdown ")
@@ -98,8 +97,7 @@ case $CHOICE in
          c)
             clear
             toilet "KickPi-OS" --metal
-            cd /usr/local/bin/
-            ./retro_up.sh
+           sudo raspi-config
             ;;
             
           r)
