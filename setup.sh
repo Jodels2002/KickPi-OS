@@ -12,8 +12,6 @@ echo " "
       sudo apt -y update
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 
-
-
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
       mkdir /home/$USER/.backup/
