@@ -23,9 +23,10 @@ fi
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
 sudo apt-mark hold lxpanel
-sudo apt install -y toilet dialog  
+ 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+sudo apt-get install -y toilet dialog 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
@@ -69,9 +70,7 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
       sudo chmod -R 777 /home/$USER/.backup/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      sudo apt-get -y update
-
-
+     
 #******************************************** #KickPi-OS mini  Menu ********************************************
 #****************************************************************************************************************
 
