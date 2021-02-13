@@ -283,7 +283,7 @@ fi
    
        cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
        cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/  
-       sudo raspi-config nonint do_boot_behaviour B4
+       #sudo raspi-config nonint do_boot_behaviour B4
        else
        # Settings XFCE4 Amibian
                clear
@@ -692,22 +692,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       #sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
-      if [ ! -f /home/$USER/RetroPie/roms/Romset.zip ]; then
-      clear
-      toilet -F gay Retropie
-      echo " "
-      echo " "
-      echo "  Configure Retropie Romset from Archiv.org " 
-      echo " "
-      echo " "
-      cd /home/$USER/RetroPie/roms
-      wget https://archive.org/download/archive_20190819/Romset.zip
-      unzip -u /home/$USER/RetroPie/roms/Romset.zip
       
-      else 
-      clear
-      
-      fi
       
       if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
       clear
