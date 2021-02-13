@@ -580,12 +580,19 @@ else
       fi
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
+      echo " "
+      echo " "
+      echo "  ClassicWB_OS39_v28 ...   " 
+      echo " "
+      echo " "
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
       else 
       clear
-      
+      fi
      clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
