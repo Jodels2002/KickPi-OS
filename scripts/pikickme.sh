@@ -283,7 +283,7 @@ fi
    
        cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
        cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/  
-       
+       sudo raspi-config nonint do_boot_behaviour B4
        else
        # Settings XFCE4 Amibian
                clear
@@ -819,5 +819,5 @@ echo " "
 
 clear
 toilet "KickPi-OS" --metal
-sudo raspi-config nonint do_boot_behaviour B4
+
 startx
