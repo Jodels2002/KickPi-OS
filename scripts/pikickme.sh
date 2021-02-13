@@ -205,6 +205,25 @@ KickPi-OS_Office() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
+ 
+ if [ ! -d $HOME/Desktop ]; then
+     # DietPi, Pimiga.... as Host Distri not ready 
+
+      sudo apt install -y git chromium-browser usbmount gparted synaptic
+    
+     cd
+      git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
+      sudo chmod -R 777 raspi-config
+      sudo cp -rf $HOME/raspi-config/* /usr/bin/
+      rm raspi-config
+
+        mkdir $HOME/Desktop
+        mkdir $HOME/Downloads
+        mkdir $HOME/Documents
+        mkdir $HOME/Music
+        mkdir $HOME/Pictures
+        mkdir $HOME/Videos
+    fi      
   
       sudo apt purge -y lxde  lxde-common lxde-core
       sudo apt purge -y raspberrypi-ui-mods
