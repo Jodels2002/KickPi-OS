@@ -45,8 +45,7 @@ BACKTITLE="Main"
 TITLE="KickPi-OS 32 bit"
 MENU="Please select:"
 
-OPTIONS=(1 "Start your Amiberry Amiga"
-         2 "Start your KickPi-OS Desktop"
+OPTIONS=(d "Start your KickPi-OS Desktop"
          e "Start your RetroPi"
          r "Setup Retropie"
          c "Setup Raspie-Config"
@@ -71,16 +70,16 @@ toilet -F gay KickPi-OS
 
 case $CHOICE in
         
-        1)
-        clear
-        toilet -F gay Amiberry
-        cd /home/$USER/Amiga
-         ./amiberry
+        #1)
+        #clear
+        #toilet -F gay Amiberry
+        #cd /home/$USER/Amiga
+        # ./amiberry
      
  
-            ;;
+        #    ;;
         
-        2)
+        d)
             clear
             toilet "KickPi-OS" --metal
             
