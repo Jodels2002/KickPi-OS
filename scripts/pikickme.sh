@@ -614,8 +614,13 @@ else
       clear
             fi
       
-    if [ ! -d /home/$USER/PiKiSS ]; then
       
+          
+    if [ ! -d "/home/$USER/PiKiSS" ]; then
+      clear
+      
+     
+      else 
       #Install PiKISS
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
@@ -632,9 +637,7 @@ else
       echo " "
       echo " "
       ./retro-term.sh
-     
-      else 
-      clear
+      
             fi
     
       
