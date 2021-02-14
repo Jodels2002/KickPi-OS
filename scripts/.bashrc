@@ -123,7 +123,7 @@ toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraris" 
 echo "Copyrigt r 2020-2021 KickPi-OS "
 echo "All Rights Reserved. "
-echo "
+echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 echo "1.>  "
 echo "1.>  "
