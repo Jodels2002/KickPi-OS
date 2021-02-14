@@ -687,9 +687,11 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       
       cd /home/$USER/KickPi-OS/Retropie/
       sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
+      sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      #unzip -u /home/$USER/KickPi-OS/Retropie/all.zip
-      #sudo cp -R /home/$USER/KickPi-OS/Retropie/all/* /opt/retropie/configs/
+      mv /home/$USER/KickPi-OS/Retropie/roms/amiga/Amiga/ /home/$USER/RetroPie/BIOS/
+      sudo mv /home/$USER/KickPi-OS/Retropie/roms/amiga/Amiga/ /home/$USER/RetroPie/BIOS/
+   
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       
