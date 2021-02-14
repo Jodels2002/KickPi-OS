@@ -102,7 +102,7 @@ case $CHOICE in
           r)
             clear
             toilet "KickPi-OS" --metal
-            cd Retropie-Setup
+            cd RetroPie-Setup
             sudo ./retropie-setup.sh
             ;; 
                  
