@@ -614,8 +614,9 @@ else
       clear
             fi
       
-    
-    #Install PiKISS
+    if [ ! -d /home/$USER/PiKiSS ]; then
+      
+      #Install PiKISS
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       sudo chmod -R 777 /home/$USER/PiKISS
@@ -631,6 +632,11 @@ else
       echo " "
       echo " "
       ./retro-term.sh
+     
+      else 
+      clear
+            fi
+    
       
       
       clear
