@@ -628,7 +628,7 @@ else
       cd PiKISS
       
       #./piKiss.sh
-      cd ~/KickPi-OS/config/
+      
       
      
       clear
@@ -636,6 +636,7 @@ else
       toilet "full" --metal
       echo " "
       echo " "
+      cd /home/$USER/KickPi-OS/config/
       ./retro-term.sh
       
             fi
