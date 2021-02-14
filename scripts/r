@@ -1,4 +1,4 @@
 clear
-toilet -F gay Retropie Setup
+toilet "KickPi-OS" --metal
 cd /home/$USER/RetroPie-Setup/
 sudo ./retropie_setup.sh
