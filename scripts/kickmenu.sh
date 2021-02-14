@@ -100,10 +100,9 @@ case $CHOICE in
             ;;
             
           r)
-            clear
-            toilet "KickPi-OS" --metal
-            cd RetroPie-Setup
-            sudo ./retropie-setup.sh
+            
+           d /usr/local/bin/
+            ./r.sh
             ;; 
                  
          c)
