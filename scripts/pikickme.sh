@@ -618,10 +618,15 @@ else
           
     if [ ! -d "/home/$USER/PiKiSS" ]; then
       clear
-      
-     
+      echo " wrong"
+      sleep 3s
       else 
       #Install PiKISS
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
+      echo "Here comes PiKiss and Cool Retro Term" 
+      echo " "
       cd
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       sudo chmod -R 777 /home/$USER/PiKISS
