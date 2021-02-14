@@ -626,11 +626,7 @@ else
       git clone --depth=1 https://github.com/jmcerrejon/PiKISS
       sudo chmod -R 777 /home/$USER/PiKISS
       cd PiKISS
-      
-      #./piKiss.sh
-      
-      
-     
+   
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
@@ -639,7 +635,7 @@ else
       cd /home/$USER/KickPi-OS/config/
       ./retro-term.sh
       
-            fi
+       fi
     
       
       
