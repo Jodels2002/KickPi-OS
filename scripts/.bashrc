@@ -130,7 +130,7 @@ echo "1.>  "
 echo "1.>  ( d ) KickPi Desktop                          " 
 echo "1.>  ( e ) Emulationstation               (RetroPi)" 
 echo "1.>  ( r ) Emulationstation Setup                  "
-echo "1.>  ( u ) KickPi-OS Update    not in Desktop Mode)"                  " 
+echo "1.>  ( u ) KickPi-OS Update    not in Desktop Mode)"
 echo "1.>  ( m ) Kick-OS Menu                            " 
 echo "1.>  "
   
