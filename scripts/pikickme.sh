@@ -612,16 +612,11 @@ else
      
       else 
       clear
-            fi
+      fi
       
       
-          
-    if [ ! -d "/home/$USER/PiKiSS" ]; then
-      clear
-      echo " wrong"
-      sleep 3s
-      else 
-      #Install PiKISS
+      #Install PiKISS    
+      if [ ! -d "/home/$USER/PiKiSS" ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
@@ -639,6 +634,10 @@ else
       echo " "
       cd /home/$USER/KickPi-OS/config/
       ./retro-term.sh
+      else 
+      
+      clear
+      
       
        fi
     
