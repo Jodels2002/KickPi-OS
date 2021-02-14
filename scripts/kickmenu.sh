@@ -96,12 +96,13 @@ case $CHOICE in
          c)
             clear
             toilet "KickPi-OS" --metal
-           sudo raspi-config
+            sudo raspi-config
             ;;
             
           r)
-            
-           d /usr/local/bin/
+            clear
+            toilet "KickPi-OS" --metal
+            cd /usr/local/bin/
             ./r.sh
             ;; 
                  
@@ -115,13 +116,13 @@ case $CHOICE in
             clear
             toilet -F gay Shutdown
             shutdown -P
-             ;;  
+            ;;  
          u)
             clear
             toilet "Update" --metal
             cd /usr/local/bin/
             ./kickup.sh
-             ;;  
+            ;;  
 
 
 esac
