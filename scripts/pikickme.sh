@@ -144,6 +144,24 @@ KickPi-OS_Update() {
       echo " "
       echo " "
       sudo apt-get -y upgrade
+      
+      # Update allways Routine
+      if [ ! -d /$User/pi/.KickPi-OS/ ]; then
+      
+      clear
+      
+      echo "True "
+      sleep 3s
+      
+      
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip -u ./ClassicWB_P96_v28.zip
+      else 
+      clear
+      
+      echo "False"
+       sleep 3s
+      fi
 
 }
 
@@ -191,7 +209,7 @@ KickPi-OS_Office() {
 
       echo " "
       echo " "
-      echo "            Time to update:)              "
+      echo "            Office Tools:)              "
       echo " "
       sudo apt install -y imagemagick krita-l10n gparted synaptic
       sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
