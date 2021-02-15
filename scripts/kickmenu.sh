@@ -102,8 +102,7 @@ case $CHOICE in
           r)
             clear
             toilet "KickPi-OS" --metal
-            cd /usr/local/bin/
-            ./r.sh
+            r
             ;; 
                  
          c)
