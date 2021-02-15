@@ -384,18 +384,19 @@ fi
     else
     
      
-       if [ ! -f /home/$USER/Amiga/amiberry]; then
+       if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
        
-        echo " ... here comes Amiberry 32 bit   :-)"
+        
          clear
-          
+          echo " ... Amiberry found   :-)"
+	  echo " ... Amiberry found   :-)"
       else 
         echo " ... here comes Amiberry 32 bit  false"
           clear
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
-	 
+	 echo " ... Amiberry installed   :-)"
       fi
 
       
