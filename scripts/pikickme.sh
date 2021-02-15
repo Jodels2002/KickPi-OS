@@ -356,10 +356,7 @@ fi
  
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-       echo " "
-       echo " "
-       echo "  ... here comes Amiberry 64 bit :-) "
-       
+           
        
        clear
        toilet "KickPi-OS" --metal
@@ -388,7 +385,7 @@ fi
          clear
 	  echo "  ... here comes Amiberry 32 bit :-) "
           cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+      	  sudo unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
       
 
