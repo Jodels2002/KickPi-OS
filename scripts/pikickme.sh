@@ -224,7 +224,7 @@ KickPi-OS_Office() {
         mkdir $HOME/Videos
     fi      
   
-      sudo apt purge -y lxde  lxde-common lxde-core
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
