@@ -623,7 +623,7 @@ else
       
       
       #Install PiKISS    
-      if [ ! -d "/home/$USER/PiKiSS" ]; then
+      if [ ! -d "/home/$USER/PiKISS/" ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
