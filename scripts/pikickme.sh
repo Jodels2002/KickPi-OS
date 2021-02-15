@@ -260,7 +260,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       clear
 fi     
 
-if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
+if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
       sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
@@ -701,8 +701,8 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
       sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      mv /home/$USER/KickPi-OS/Retropie/roms/amiga/Amiga/ /home/$USER/RetroPie/BIOS/
-      sudo mv /home/$USER/KickPi-OS/Retropie/roms/amiga/Amiga/ /home/$USER/RetroPie/BIOS/
+      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
+     
    
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
@@ -803,7 +803,7 @@ echo " "
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.config/chromium/
       sudo rm -rf ~/KickPi-OS
-      sudo rm -rf ~/amigafonts/
+      #sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
