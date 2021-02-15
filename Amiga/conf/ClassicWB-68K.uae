@@ -1,4 +1,4 @@
-config_description=Amiga 4000 / P96
+config_description=Amiga 600
 config_hardware=true
 config_host=true
 config_version=4.4.0
@@ -79,8 +79,8 @@ floppy_speed=400
 ; 
 ; *** Hard Drives
 ; 
-hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
-uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
+hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_68K_v28/System.hdf,32,1,2,512,0,,uae0
+uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_68K_v28/System.hdf,32,1,2,512,0,,uae0
 filesystem2=rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 uaehf1=dir,rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 filesystem2=rw,DH1:Software:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/,0
@@ -129,7 +129,7 @@ gfx_api_options=hardware
 cpu_speed=max
 cpu_throttle=0.0
 cpu_type=68020/68881
-cpu_model=68030
+cpu_model=68020
 fpu_model=68881
 cpu_compatible=false
 cpu_24bit_addressing=false
@@ -172,13 +172,17 @@ rtg_modes=0x112
 immediate_blits=true
 fast_copper=true
 ntsc=false
-chipset=aga
+chipset=ecs
 chipset_refreshrate=49.920410
 collision_level=playfields
-chipset_compatible=A1200
-rtc=MSM6242B
+chipset_compatible=A600
+rtc=none
 ksmirror_a8=true
 pcmcia=true
+resetwarning=false
+cia_todbug=true
+ciaa_type=391078-01
+ciab_type=391078-01
 ide=a600/a1200
 ; 
 ; *** Sound Options

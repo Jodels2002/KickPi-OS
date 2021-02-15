@@ -55,8 +55,8 @@ amiberry.minimized_input=0
 ; *** Common / Paths
 ; 
 use_gui=yes
-kickstart_rom_file=/home/pi/RetroPie/BIOS/amiga/kick31.rom
-kickstart_rom_file_id=1483A091,KS ROM v3.1 (A1200)
+kickstart_rom_file=/home/pi/Amiga/rom/amiga-os-310-a4000.rom
+kickstart_rom_file_id=D6BAE334,KS ROM v3.1 (A4000)
 kickstart_ext_rom_file=
 ide_mb_rom_file=:ENABLED
 pcmcia_mb_rom_file=:ENABLED
@@ -68,19 +68,19 @@ kickshifter=true
 ; *** Floppy Drives
 ; 
 floppy_volume=33
-floppy0=
+floppy0=/home/pi/Amiga/adf/amiga-os-310-workbench.adf
 floppy0type=-1
 floppy1=
 floppy1type=-1
 floppy2=
 floppy3=
 nr_floppies=0
-floppy_speed=400
+floppy_speed=0
 ; 
 ; *** Hard Drives
 ; 
-hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
-uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
+hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/System_ADVSP.hdf,32,1,2,512,0,,uae0
+uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/System_ADVSP.hdf,32,1,2,512,0,,uae0
 filesystem2=rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 uaehf1=dir,rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 filesystem2=rw,DH1:Software:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/,0

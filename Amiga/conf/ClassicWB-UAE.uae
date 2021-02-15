@@ -79,8 +79,8 @@ floppy_speed=400
 ; 
 ; *** Hard Drives
 ; 
-hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
-uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_OS39_v28/System.hdf,32,1,2,512,0,,uae0
+hardfile2=rw,DH0:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/System_P96.hdf,32,1,2,512,0,,uae0
+uaehf0=hdf,rw,DH0:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/System_P96.hdf,32,1,2,512,0,,uae0
 filesystem2=rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 uaehf1=dir,rw,DH2:Work:/home/pi/Amiga/Harddisk/Work/,0
 filesystem2=rw,DH1:Software:/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/,0
