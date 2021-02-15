@@ -169,7 +169,7 @@ KickPi-OS_Tools() {
       toilet "KickPi-OS" --metal
       
       #Some little Amiga stuff....
-      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
+      sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
       toilet "KickPi-OS" --metal
       echo " "
@@ -206,6 +206,7 @@ KickPi-OS_Office() {
  
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       sudo apt purge -y raspberrypi-ui-mods
+      
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
  
