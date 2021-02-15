@@ -205,6 +205,11 @@ KickPi-OS_Office() {
  
  KickPi-OS_Desktop() {
  
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      
+ 
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
 
@@ -224,9 +229,6 @@ KickPi-OS_Office() {
         mkdir $HOME/Videos
     fi      
   
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
       
       sudo chmod -R 777 /home/$USER/KickPi-OS
@@ -757,8 +759,8 @@ case $CHOICE in
         
         1)
             #Poser
+	    KickPi-OS_Desktop
             KickPi-OS_Tools
-            KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
             KickPi-OS_Addons
@@ -767,8 +769,8 @@ case $CHOICE in
        ;;
         2)
             #Poser
+	    KickPi-OS_Desktop
             KickPi-OS_Tools
-            KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
             KickPi-OS_Addons
