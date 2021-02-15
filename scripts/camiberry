@@ -1,0 +1,15 @@
+cd
+
+wget https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.zip
+unzip  SDL2_ttf-2.0.14.zip
+cd SDL2_ttf-2.0.14
+
+./configure && make -j $(nproc) &&
+sudo make install
+
+sudo ldconfig -v
+
+cd ~
+  git clone https://github.com/midwan/amiberry
+  cd amiberry
+   make -j2 PLATFORM=rpi4
