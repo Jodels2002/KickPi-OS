@@ -56,10 +56,10 @@ https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-01-12/
 Optional for Amiga Forever owners:
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
 - Copy the "Shared" folder from the Amiga Forever installation
--> "AMIGA/Shared/*here are your AmigaForever files*"
+-> "AMIGA/Shared/*here are your Amiga Forever files*"
 
 # Installation:
-On the raspberry you open a terminal window and type following commands:
+On the Raspberry you open a terminal window and type following commands:
 
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
@@ -92,6 +92,8 @@ https://github.com/jmcerrejon/PiKISS
 
 
 Source of Game:
+
+Internet Archive Archive.org
 
 https://amigaland.de/1318-2
 
