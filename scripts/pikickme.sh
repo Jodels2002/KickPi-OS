@@ -371,23 +371,18 @@ fi
     
        echo " ... here comes Amiberry 32 bit   :-)"
        if [ ! -f /home/$USER/Amiga/amiberry]; then
+         clear
+      
+      else 
+      
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
-      else 
-      clear
-       echo " wrong"
-      sleep 4s
       fi
-   
-	  
-	  
-       
-   
+
       
     fi
-    
-    
+
    
 }
 
