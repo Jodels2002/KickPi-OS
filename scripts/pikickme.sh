@@ -147,20 +147,16 @@ KickPi-OS_Update() {
       
       # Update allways Routine
       if [ ! -d /$User/pi/.KickPi-OS/ ]; then
-      
+#
       clear
+      # Update is running
+      rm /home/$USER/Amiga/conf/retroarch.cfg
       
-      echo "True "
-      sleep 3s
-      
-      
-      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
-      unzip -u ./ClassicWB_P96_v28.zip
       else 
       clear
+      # First installation
       
-      echo "False"
-       sleep 3s
+      
       fi
 
 }
