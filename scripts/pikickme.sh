@@ -376,7 +376,8 @@ fi
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
       else 
       clear
-      
+       echo " wrong"
+      sleep 4s
       fi
    
 	  
