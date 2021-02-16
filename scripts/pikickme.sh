@@ -720,6 +720,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo "  ... here comes Retropie :-)     "   
       echo " "
       echo " "
+      sudo rm /etc/emulationstation/
+      sudo rm/opt/retropie/
       cd
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
