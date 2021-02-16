@@ -5,9 +5,10 @@
 
 cd ~
 
-wget https://www.libsdl.org/release/SDL2-2.0.14.zip
-unzip  SDL2-2.0.14.zip
-cd SDL2-2.0.14
+#wget https://www.libsdl.org/release/SDL2-2.0.14.zip
+wget https://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-2.0.11.zip
+unzip  SDL_ttf-2.0.11.zip
+cd SDL_ttf-2.0.11
 ./configure && make -j $(nproc) &&
 sudo make install
 
