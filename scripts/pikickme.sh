@@ -179,26 +179,7 @@ KickPi-OS_Tools() {
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
       
-      # Update allways Routine
-      if [ ! -f /home/$USER/KickPi-OS/.pac/.worker/.worker.zip ]; then
-      # First installation
-      clear
-      cd /home/$USER/KickPi-OS/.pac/
-      unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
-      sudo chmod -R 777 /home/$USER/.worker/
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/KickPi-OS/.pac/.worker/
-      echo "true "
-      sleep 4
-      
-      else 
-      clear
-      # Configured
-      echo "false "
-      sleep 4
-      
-      fi
-      
+            
       clear
       toilet "KickPi-OS" --metal
       
@@ -212,6 +193,25 @@ KickPi-OS_Tools() {
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -rf /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
   
+      # Preconfigure Worker
+      if [ ! -f /home/$USER/KickPi-OS/.pac/.worker/.worker.zip ]; then
+      # First installation
+      clear
+      cd /home/$USER/KickPi-OS/.pac/
+      unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
+      sudo chmod -R 777 /home/$USER/.worker/
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/.worker/
+      echo "true "
+      sleep 4
+      
+      else 
+      clear
+      # Configured
+      echo "false "
+      sleep 4
+      
+      fi
       
 }
 
