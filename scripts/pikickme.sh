@@ -203,13 +203,13 @@ KickPi-OS_Tools() {
       sudo chmod -R 777 /home/$USER/.worker/
       cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/.worker/
       echo "true "
-      sleep 4
+      
       
       else 
       clear
       # Configured
       echo "false "
-      sleep 4
+      
       
       fi
       
@@ -291,7 +291,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
       else 
-      clear
+      echo " "
 fi     
 
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
@@ -472,12 +472,6 @@ fi
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
       else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
       echo " "
    
     
@@ -571,7 +565,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       else 
-      clear
+      echo " "
       
       fi
       
@@ -587,7 +581,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
       else 
-      clear
+      echo " "
       
       fi
       
@@ -607,7 +601,7 @@ else
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       else 
-      clear
+      echo " "
       
       fi
       
@@ -643,7 +637,7 @@ else
       #rm ./vice-3.4-bin-rpi.tar.gz
      
       else 
-      clear
+      echo " "
       fi
       
       
@@ -668,7 +662,7 @@ else
       ./retro-term.sh
       else 
       
-      clear
+      echo " "
       
       
        fi
@@ -752,7 +746,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
       fi
       else 
-      clear
+      echo " "
       
       fi
       #-----Config Amiberry for Retropie
