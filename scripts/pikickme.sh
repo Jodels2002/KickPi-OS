@@ -7,7 +7,11 @@
 #dtoverlay = pwr-led, gpio = 17
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
+#************************************************  #History   ************************************************
+#16.02 add TwisertOS, Bugfix Update optimiced, Bugfix 64 bit, Worker preconfigured
+#Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
+#***********************************************  #Are you runing Desktop?  ***********************************
 
 #************************************************  #Amiberry Version   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
