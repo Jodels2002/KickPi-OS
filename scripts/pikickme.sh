@@ -776,7 +776,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
-      
+      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
+      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
       sudo chmod -R 777 /home/$USER/.KickPi-OS/
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
