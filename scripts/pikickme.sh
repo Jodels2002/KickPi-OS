@@ -185,9 +185,9 @@ KickPi-OS_Tools() {
       clear
       cd /home/$USER/KickPi-OS/.pac/
       unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker/.worker.zip /home/$USER/
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker/.worker.zip /home/$USER/KickPi-OS/.pac/.worker/
       echo "true "
       sleep 4
       
@@ -765,7 +765,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
       
-      
+      sudo chmod -R 777 /home/$USER/.KickPi-OS/
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       sudo chmod -R 777 /opt/retropie/
