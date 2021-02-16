@@ -8,7 +8,7 @@
 # HDD LED (orange)
 #dtoverlay = act-led, gpio = 27
 #************************************************  #History   ************************************************
-#16.02 add TwisertOS, Bugfix Update optimiced, Bugfix 64 bit, Worker preconfigured
+#16.02 add TwisertOS, Bugfix Update optimiced, RetroPie Bugfix (Autoconfig Amiberry)  Bugfix 64 bit, Worker preconfigured / OK
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
@@ -776,13 +776,12 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
       clear
-      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
-      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
       
       else 
       clear
       # Configured
-      
+      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
+      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
       fi
       
       sudo chmod -R 777 /home/$USER/.KickPi-OS/
