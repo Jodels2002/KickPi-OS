@@ -16,4 +16,4 @@ sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1
 cd ~
   git clone https://github.com/midwan/amiberry
   cd amiberry
-   make -j2 PLATFORM=rpi4
+   make -j2 PLATFORM=pi64
