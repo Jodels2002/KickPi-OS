@@ -181,18 +181,21 @@ KickPi-OS_Tools() {
       
       # Update allways Routine
       if [ ! -f /home/$USER/KickPi-OS/.pac/.worker/.worker.zip ]; then
-#
+      # First installation
       clear
       cd /home/$USER/KickPi-OS/.pac/
       unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
       cp -rf /home/$USER/KickPi-OS/.pac/.worker/.worker.zip /home/$USER/
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
+      echo "true "
+      sleep 4
       
       else 
       clear
-      # First installation
-      
+      # Configured
+      echo "false "
+      sleep 4
       
       fi
       
