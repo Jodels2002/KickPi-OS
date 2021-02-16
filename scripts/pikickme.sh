@@ -206,14 +206,10 @@ KickPi-OS_Tools() {
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
       cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/.worker/
-      echo "true "
-      
-      
+
       else 
       clear
       # Configured
-      echo "false "
-      
       
       fi
       
@@ -776,11 +772,23 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
+      
+      if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
+      # First deinstall
+      clear
       sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
       sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
+      
+      else 
+      clear
+      # Configured
+      
+      fi
+      
       sudo chmod -R 777 /home/$USER/.KickPi-OS/
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      sudo chmod -R 777 /home/pi/.emulationstation/
       sudo chmod -R 777 /opt/retropie/
       sudo chmod -R 777 /etc/emulationstation/
       
