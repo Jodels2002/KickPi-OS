@@ -32,8 +32,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       echo "Raspberry Pi OS 64 bit is running..."
       echo ""
-      toilet "KickPi-OS 64 bit" --metal
-      
+      toilet "KickPi-OS" --metal
+      toilet "64 bit" --metal
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
@@ -178,6 +178,22 @@ KickPi-OS_Tools() {
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
+      
+      # Update allways Routine
+      if [ ! -f /home/$USER/KickPi-OS/.pac/.worker/.worker.zip ]; then
+#
+      clear
+      cd /home/$USER/KickPi-OS/.pac/
+      unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker/.worker.zip /home/$USER/
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
+      
+      else 
+      clear
+      # First installation
+      
+      
+      fi
       
       clear
       toilet "KickPi-OS" --metal
