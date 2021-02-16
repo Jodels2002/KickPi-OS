@@ -402,13 +402,25 @@ fi
     
      
       
-         clear
+         
+      
+       # Amiberry first install
+      if [ ! -f /home/$USER/Amiga/amiberry ]; then
+      # First installation
+     
+      clear
 	  echo "  ... here comes Amiberry 32 bit :-) "
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
+         
       
-
+      else 
+         clear
+         # Configured
+       
+   
+      fi
       
     fi
 
@@ -700,7 +712,7 @@ KickPi-OS_Retropie() {
 
       
     else
-if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then     
+if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
     echo " "
       clear
       toilet "KickPi-OS" --metal
