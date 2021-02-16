@@ -194,7 +194,7 @@ KickPi-OS_Tools() {
       sudo cp -rf /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
   
       # Preconfigure Worker
-      if [ ! -f /home/$USER/KickPi-OS/.pac/.worker/.worker.zip ]; then
+      if [ ! -f /home/$USER/.worker/.worker.zip ]; then
       # First installation
       clear
       cd /home/$USER/KickPi-OS/.pac/
