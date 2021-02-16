@@ -187,7 +187,7 @@ KickPi-OS_Tools() {
       unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker/.worker.zip /home/$USER/KickPi-OS/.pac/.worker/
+      cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/KickPi-OS/.pac/.worker/
       echo "true "
       sleep 4
       
