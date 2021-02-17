@@ -27,11 +27,11 @@ fi
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
-sudo apt-mark hold lxpanel
+#sudo apt-mark hold lxpanel
  
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
-sudo apt-get install -y toilet dialog 
+
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
