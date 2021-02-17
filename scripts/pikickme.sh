@@ -63,7 +63,7 @@ fi
       echo " "
       echo " " 
       echo "	LOADWB ...  :-)"
-      sleep 3s
+      sleep 4s
       echo " "
       echo " "     
       
