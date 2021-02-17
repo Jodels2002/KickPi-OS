@@ -488,7 +488,7 @@ fi
       echo " "
    
     
-      #fi
+      fi
       
       #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
       #clear
