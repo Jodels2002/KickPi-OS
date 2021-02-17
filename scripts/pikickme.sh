@@ -298,8 +298,13 @@ fi
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
+      clear
+      toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
+      
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      clear
+      toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
@@ -316,7 +321,8 @@ fi
      
 
       # Settings XFCE4 Rasperry OS
-      
+       clear
+       toilet "KickPi-OS" --metal
    
        cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
        cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/  
@@ -346,13 +352,19 @@ fi
                cp -rf ~/.local/ ~/.backup/.local
                cp -rf /usr/local/bin ~/.backup/usr
 	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+	       clear
+               toilet "KickPi-OS" --metal
                cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
                sudo rm -rf /home/$USER/.config
                
                
                 cd  /home/amibian/KickPi-OS/.pac/amibian/
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
+		clear
+      		toilet "KickPi-OS" --metal
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
+		clear
+                toilet "KickPi-OS" --metal
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
                 sudo rm -rf  /home/amibian/.config/autostart/
