@@ -734,6 +734,16 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       
       sudo cp -rf /home/$USER/Amiga/kickstarts/* /home/$USER/RetroPie/BIOS/
       
+      cd /home/$USER/KickPi-OS/Retropie/
+      unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
+      
+      cd /home/$USER/KickPi-OS/Retropie/
+      unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
+      
+   
+      
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
