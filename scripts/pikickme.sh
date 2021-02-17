@@ -487,18 +487,18 @@ fi
       echo " "
    
     
-      fi
+      #fi
       
-      if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "  Configure AmigaForever workbench-311 ...     " 
-      echo " "
-      echo " "
+      #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
+      #clear
+      #toilet "KickPi-OS" --metal
+      #echo " "
+      #echo " "
+      #echo "  Configure AmigaForever workbench-311 ...     " 
+      #echo " "
+      #echo " "
       
-      fi
+     # fi
   
   if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
       cd /home/$USER/KickPi-OS/Amiga
@@ -528,12 +528,14 @@ fi
       echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
       echo " "
       echo " "
-      sleep 5s
+      sleep 6s
       wget https://misapuntesde.com/res/Amiga_roms.zip
       cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
       cd ~/Amiga/kickstarts/
       unzip -u ./Amiga_roms.zip
       rm ./Amiga_roms.zip
+      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
+      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
       fi
         
 
@@ -772,7 +774,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/KickPi-OS/config/KickPi-OS.mp4  /home/$USER/RetroPie/splashscreens/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
-      
+      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
       clear
