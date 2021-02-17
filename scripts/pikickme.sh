@@ -719,11 +719,12 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       toilet "KickPi-OS" --metal
       #sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      
       cd  /home/$USER/RetroPie/
       git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
       mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
+      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
+      rm -r /home/$USER/RetroPie/RetroPieBIOS/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       clear
