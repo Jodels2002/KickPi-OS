@@ -7,7 +7,7 @@
 
 
       
-if [ ! -f /home/$USER/RetroPie/roms/Amiga_WHD_Games ]; then
+if [ ! -d /home/$USER/RetroPie/roms/Amiga_WHD_Games ]; then
       clear
       toilet -F gay Retropie
       echo " "
@@ -36,7 +36,7 @@ CommanderPi  Is out...User interaktiviti needed...
      
       
      Is out...takes too long time... 
-     if [ ! -f /home/pi/winetricks ]; then
+     if [ ! -d /home/pi/winetricks ]; then
         clear
        toilet "KickPi-OS" --metal
         toilet -F gay full
