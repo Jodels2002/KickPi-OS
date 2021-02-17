@@ -703,6 +703,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       
       cd /home/$USER/KickPi-OS/Retropie/
       sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
+      clear
+      toilet "KickPi-OS" --metal
       sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
@@ -710,7 +712,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
    
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
-      
+      clear
+      toilet "KickPi-OS" --metal
       
       if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
       clear
@@ -723,7 +726,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       cd /home/$USER/RetroPie/BIOS/
       wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
       unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
-      #rm /home/$USER/KickPi-OS/Retropie/Romset.zip
+      clear
+      toilet "KickPi-OS" --metal
       fi
       else 
       echo " "
@@ -733,16 +737,30 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
   
       
       sudo cp -rf /home/$USER/Amiga/kickstarts/* /home/$USER/RetroPie/BIOS/
-      
+      clear
+      toilet "KickPi-OS" --metal
+      toilet -F gay Amiberry
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
-      
+      clear
+      toilet "KickPi-OS" --metal
+      toilet -F gay Amiberry
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
-      
-   
+      clear
+      toilet "KickPi-OS" --metal
+      toilet -F gay C64
+      cd /home/$USER/KickPi-OS/Retropie/
+      unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
+      clear
+      toilet "KickPi-OS" --metal
+      toilet -F gay C64
+      cd /home/$USER/KickPi-OS/Retropie/
+      unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
       
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
