@@ -47,7 +47,7 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
-cp  /home/$USER/KickPi-OS/config/bashrc /home/$USER/.bashrc
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
