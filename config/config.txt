@@ -7,7 +7,7 @@
 
 # uncomment this if your display has a black border of unused pixels visible
 # and your display can output without overscan
-#disable_overscan=1
+disable_overscan=1
 
 # uncomment the following to adjust overscan. Use positive numbers if console
 # goes off screen, and negative if there is too much border
@@ -63,3 +63,10 @@ max_framebuffers=2
 
 [all]
 #dtoverlay=vc4-fkms-v3d
+
+arm_freq=2000
+gpu_freq=750
+over_voltage=6
+disable_splash=1
+gpu_mem=256
+
