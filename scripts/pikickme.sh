@@ -717,36 +717,37 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
       clear
       toilet "KickPi-OS" --metal
-      sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
+      #sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
-      
+      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
+      rm -r /home/$USER/RetroPie/RetroPieBIOS/
       cd  /home/$USER/RetroPie/
       git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-   
+      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       clear
       toilet "KickPi-OS" --metal
       
-      if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
-      clear
-      toilet -F gay Retropie 
-      echo " "
-      echo " "
-      echo "  Add Retropie Bios Files from Archiv.org " 
-      echo " "
-      echo " "
-      cd /home/$USER/RetroPie/BIOS/
-      wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
-      unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
-      clear
-      toilet "KickPi-OS" --metal
-      fi
-      else 
-      echo " "
+      #if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
+      #clear
+      #toilet -F gay Retropie 
+      #echo " "
+      #echo " "
+      #echo "  Add Retropie Bios Files from Archiv.org " 
+      #echo " "
+      #echo " "
+      #cd /home/$USER/RetroPie/BIOS/
+      #wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
+      #unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
+      #clear
+      #toilet "KickPi-OS" --metal
+      #fi
+      #else 
+      #echo " "
       
-      fi
+      #fi
+      
       #-----Config Amiberry for Retropie
   
       
