@@ -10,6 +10,7 @@ echo " "
 
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo apt -y update
+      sudo apt-get install -y toilet dialog 
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
