@@ -2,7 +2,9 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
+wget -q --spider http://google.com
 
+if [ $? -eq 0 ]; then
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
 cd
@@ -13,3 +15,6 @@ sudo chmod -R 777 KickPi-OS
 
 /home/$USER/KickPi-OS/scripts/pikickme.sh
 
+else
+    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
+fi
