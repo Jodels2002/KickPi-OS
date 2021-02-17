@@ -111,11 +111,11 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Amiga.uae ]; then
+if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Kick.uae ]; then
       clear
       toilet -F gay KickPi-OS
       cd /home/$USER/KickPi-OS/Amiga/
-      ./amiberry -f /home/$USER/KickPi-OS/Amiga/conf/Amiga.uae
+      ./amiberry -f /home/$USER/KickPi-OS/Amiga/conf/Kick.uae
       
       fi
 clear
@@ -134,5 +134,5 @@ echo "1.>  ( r ) Emulationstation Setup                  "
 echo "1.>  ( u ) KickPi-OS Update    not in Desktop Mode)"
 echo "1.>  ( m ) Kick-OS Menu                            " 
 echo "1.>  ( c ) Raspi-Config                            "
-#echo "1.>  ( s ) Shutdown                                "  
+echo "1.>  ( s ) Shutdown                                "  
 echo ""
