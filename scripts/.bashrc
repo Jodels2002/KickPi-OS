@@ -121,8 +121,8 @@ if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Amiga.uae ]; then
 clear
 toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraris" 
-echo "Copyrigt r 2020-2021 KickPi-OS "
-echo "All Rights Reserved. "
+echo "Version V1.1 2020-2021 KickPi-OS "
+echo "No Rights Reserved.  "
 echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 echo "1.>  "
