@@ -1,20 +1,12 @@
-m    m   "           #      mmmmm    "            mmmm   mmmm 
- #  m"  mmm     mmm   #   m  #   "# mmm           m"  "m #"   "
- #m#      #    #"  "  # m"   #mmm#"   #           #    # "#mmm 
- #  #m    #    #      #"#    #        #     """   #    #     "#
- #   "m mm#mm  "#mm"  #  "m  #      mm#mm          #mm#  "mmm#"
-                                                               
-                                                               
 KickPI-OS ROM Operating System and Libraris
-Copyrigt r 2020-2021 KickPi-OS 
-All Rights Reserved. 
+Version V1.1 2020-2021 KickPi-OS 
+No Rights Reserved.  
 
-Type 'd' to boot into Kick-OS Workbench
-1.>  
- 
- ( d ) KickPi Desktop                          
- ( e ) Emulationstation               (RetroPi)
- ( r ) Emulationstation Setup                  
- ( u ) KickPi-OS Update    not in Desktop Mode)
- ( m ) Kick-OS Menu   
- ( c ) Raspi-Config                   
+
+( d ) KickPi Desktop                          
+( e ) Emulationstation               (RetroPi)
+( r ) Emulationstation Setup                  
+( u ) KickPi-OS Update    not in Desktop Mode)
+( m ) Kick-OS Menu                            
+( c ) Raspi-Config                            
+( s ) Shutdown                                
