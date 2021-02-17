@@ -15,7 +15,7 @@ Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
 
 - Raspberry Pi OS 32 bit (recommended)
 - Raspberry Pi OS 64 bit (limited,no Retropie,..)
-- Amibian                (unofficial)
+
 
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
