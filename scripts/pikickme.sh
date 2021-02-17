@@ -240,8 +240,8 @@ KickPi-OS_Office() {
  KickPi-OS_Desktop() {
  
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods
-      
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
  
