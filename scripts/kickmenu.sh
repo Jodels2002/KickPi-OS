@@ -113,8 +113,7 @@ case $CHOICE in
             
          s)
             clear
-            toilet -F gay Shutdown
-            shutdown -P
+            s
             ;;  
          u)
             clear
