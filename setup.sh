@@ -46,8 +46,9 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
           fi
 	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
+sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+cp  /home/pi/RetroPie/BIOS/KickPi-OS/config/ /home/$USER/.bashrc
+
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo chmod -R 777 /home/$USER/Amiga   
