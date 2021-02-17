@@ -133,5 +133,5 @@ echo "1.>  ( r ) Emulationstation Setup                  "
 echo "1.>  ( u ) KickPi-OS Update    not in Desktop Mode)"
 echo "1.>  ( m ) Kick-OS Menu                            " 
 echo "1.>  ( c ) Raspi-Config                            "
-echo "1.>  ( s ) Shutdown                                "  
+#echo "1.>  ( s ) Shutdown                                "  
 
