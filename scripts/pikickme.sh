@@ -743,10 +743,10 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       #clear
       #toilet "KickPi-OS" --metal
       #fi
-      #else 
-      #echo " "
+      else 
+      echo " "
       
-      #fi
+      fi
       
       #-----Config Amiberry for Retropie
   
