@@ -815,7 +815,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            KickPi-OS_Update
+            #KickPi-OS_Update
        ;;
         2)
             #Poser
@@ -826,7 +826,7 @@ case $CHOICE in
             KickPi-OS_Addons
             KickPi-OS_Retropie
             KickPi-OS_Office 
-	    KickPi-OS_Update
+	    #KickPi-OS_Update
        ;;
         
         3)
@@ -836,7 +836,7 @@ case $CHOICE in
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
-	    KickPi-OS_Update
+	    #KickPi-OS_Update
            
        ;;
                   
