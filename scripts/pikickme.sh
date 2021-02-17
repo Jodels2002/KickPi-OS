@@ -721,7 +721,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
       
-      cd  /home/$USER/RetroPie/BIOS/
+      cd  /home/$USER/RetroPie/
       git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
    
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
