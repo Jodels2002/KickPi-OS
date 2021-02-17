@@ -722,7 +722,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
       
       cd  /home/$USER/RetroPie/BIOS/
-      git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS/tree/master/BIOS
+      git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
    
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
