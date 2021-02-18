@@ -30,3 +30,22 @@ sudo apt install snapd
 Install PhotoGIMP
 sudo snap install photogimp
 
+sudo apt install -y games-finest gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl
+sudo apt install -y gnome-twitch-player-backend-mpv-opengl gnome-video-arcade gnome-video-effects handbrake kaffeine libavcodec-extra58
+sudo apt install -y pcsxr qmmp quicktime-utils radio videocut xserver-xorg-video-all youtube-dl minitube transmission
+
+
+#Multimedia
+
+sudo apt install -y  gnome-video-effects handbrake kaffeine libavcodec-extra58 kdenlive
+sudo apt install -y  gnome-video-effects handbrake kaffeine qmmp quicktime-utils radio videocut xserver-xorg-video-all youtube-dl minitube transmission
+
+openshot kdenlive
+
+
+#Games
+sudo apt install -y pcsxr games-finest gnome-video-arcade
+
+#Internet
+sudo apt install -y  gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl gnome-twitch-player-backend-mpv-opengl
+
