@@ -3,7 +3,11 @@
 # Install KickPi-OS
 # B.Titze 2021
 #***********************************************  #Some Info for the future  ***********************************
-# not ready....
+# not ready...sudo apt install -y.
+# sudo apt install -y kdenlive kdenlive-data openshot libopenshot-audio6 libopenshot16 openshot-doc aseprite brasero chromium-codecs-ffmpeg
+# sudo apt install -y games-finest gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl
+# gnome-twitch-player-backend-mpv-opengl gnome-video-arcade gnome-video-effects handbrake kaffeine libavcodec-extra58
+# pcsxr qmmp quicktime-utils radio videocut xserver-xorg-video-all youtube-dl minitube transmission
 if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
