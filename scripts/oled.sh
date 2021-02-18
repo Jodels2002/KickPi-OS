@@ -24,6 +24,7 @@ sudo apt install -y python-pip
 sudo apt install -y python-setuptools 
 
 sudo chmod -R 777 /home/$USER/.KickPi-OS/OLED
+/home/$USER/.KickPi-OS/OLED
 # Test OLED
 #i2cdetect -y 1
 #echo " Should Say: "3C""
