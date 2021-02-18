@@ -229,8 +229,8 @@ KickPi-OS_Office() {
       echo "            Office Tools:)              "
       echo " "
       
-      sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
-
+      sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome 
+      #sudo apt install -y default-jdk tooo long install time
 }
 
 #*********************************************  #Video & Graphic  **********************************************
@@ -254,9 +254,32 @@ KickPi-OS_Video() {
       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Video&Graphic
+      sudo apt install -y gimp inkscape
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Video&Graphic
       sudo apt install -y xserver-xorg-video-all youtube-dl minitube transmission
 }
 
+#*********************************************  #Internet  **********************************************
+#****************************************************************************************************************
+
+KickPi-OS_Internet() {
+
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Internet
+
+      echo " "
+      echo " "
+      echo "            Internet:)              "
+      echo " "
+      sudo apt install -y gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl gnome-twitch-player-backend-mpv-opengl 
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Internet
+      sudo apt install -y youtube-dl minitube transmission radio thunderbird 
+}
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
 
