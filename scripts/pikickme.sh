@@ -765,7 +765,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
       mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
       mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       clear
@@ -905,6 +905,10 @@ echo " "
       sudo rm -rf ~/.config/chromium/
       sudo rm -rf ~/KickPi-OS
       #sudo rm -rf ~/amigafonts/
+      
+      #sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
+      #rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
