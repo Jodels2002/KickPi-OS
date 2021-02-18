@@ -5,6 +5,8 @@
 #***********************************************  #install OLED Display  ***********************************
 # https://www.raspberrypi-spy.co.uk/2018/04/i2c-oled-display-module-with-raspberry-pi/
 
+# Service Einrichten! https://www.thomaschristlieb.de/ein-python-script-mit-systemd-als-daemon-systemd-tut-garnicht-weh/
+
 sudo raspi-config nonint do_i2c %d
 
 #cd ~
