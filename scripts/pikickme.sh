@@ -229,8 +229,8 @@ KickPi-OS_Office() {
       echo "            Office Tools:)              "
       echo " "
       
-      sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome 
-      #sudo apt install -y default-jdk tooo long install time
+      sudo apt install -y libreoffice libreoffice-gtk3  
+      #sudo apt install -y default-jdk tooo long install time libreoffice-gnome
 }
 
 #*********************************************  #Video & Graphic  **********************************************
