@@ -182,7 +182,7 @@ KickPi-OS_Tools() {
 
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
+      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc chromium-codecs-ffmpeg
       
             
       clear
@@ -228,11 +228,52 @@ KickPi-OS_Office() {
       echo " "
       echo "            Office Tools:)              "
       echo " "
-      sudo apt install -y imagemagick krita-l10n gparted synaptic
+      
       sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
 
 }
 
+#*********************************************  #Video & Graphic  **********************************************
+#****************************************************************************************************************
+
+KickPi-OS_Video() {
+
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Video&Graphic
+
+      echo " "
+      echo " "
+      echo "            Video & Graphics:)              "
+      echo " "
+      sudo apt install -y imagemagick krita-l10n kdenlive kdenlive-data openshot gimp
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Video&Graphic
+      sudo apt install -y gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Video&Graphic
+      sudo apt install -y xserver-xorg-video-all youtube-dl minitube transmission
+}
+
+#*********************************************  #Games  **********************************************
+#****************************************************************************************************************
+
+KickPi-OS_Games() {
+
+      clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay Games
+
+      echo " "
+      echo " "
+      echo "            Games :)              "
+      echo " "
+      sudo apt install -y games-finest
+     
+
+}
 
 #*********************************************  #Installing KickPi-OS Desktop*********************************
 #**********************************************************************************************************
@@ -248,7 +289,7 @@ KickPi-OS_Office() {
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
 
-      sudo apt install -y git chromium-browser usbmount gparted synaptic
+      sudo apt install -y git chromium-browser usbmount gparted
     
      cd
       git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
