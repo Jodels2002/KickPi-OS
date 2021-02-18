@@ -21,3 +21,12 @@ cd SDL2_ttf-2.0.14
 sudo make install
 
 sudo ldconfig -v
+
+
+On a Raspberry Pi running the latest version of Raspbian snap can be installed directly from the command line:
+
+
+sudo apt install snapd
+Install PhotoGIMP
+sudo snap install photogimp
+
