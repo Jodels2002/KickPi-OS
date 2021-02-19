@@ -246,19 +246,21 @@ KickPi-OS_Video() {
       echo " "
       echo "            Video & Graphics:)              "
       echo " "
-      sudo apt install -y imagemagick krita-l10n kdenlive kdenlive-data openshot gimp
+           
       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Video&Graphic
-      sudo apt install -y gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl
-      clear
+       sudo apt install -y gimp inkscape
+       clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay PhotoGimp
+       echo " "
+       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o ~/Downloads/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip && unzip ~/Downloads/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip -d ~/Downloads && sudo cp -R ~/Downloads/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/ ~/.config
+       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Video&Graphic
-      sudo apt install -y gimp inkscape
-      clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay Video&Graphic
-      sudo apt install -y xserver-xorg-video-all youtube-dl minitube transmission
+      
+      sudo apt install -y imagemagick krita-l10n kdenlive kdenlive-data gimp
 }
 
 #*********************************************  #Internet  **********************************************
@@ -273,8 +275,7 @@ KickPi-OS_Internet() {
       echo " "
       echo " "
       echo "            Internet:)              "
-      echo " "
-      sudo apt install -y gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl gnome-twitch-player-backend-mpv-opengl 
+     
       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Internet
@@ -293,7 +294,7 @@ KickPi-OS_Games() {
       echo " "
       echo "            Games :)              "
       echo " "
-      sudo apt install -y games-finest
+      # sudo apt install -y games-finest much to long
      
 
 }
