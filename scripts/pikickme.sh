@@ -206,7 +206,7 @@ KickPi-OS_Tools() {
       unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker.zip /home/$USER/.worker/
+      
 
       else 
       clear
@@ -229,8 +229,8 @@ KickPi-OS_Office() {
       echo "            Office Tools:)              "
       echo " "
       
-      sudo apt install -y libreoffice libreoffice-gtk3  
-      #sudo apt install -y default-jdk tooo long install time libreoffice-gnome
+      sudo apt install -y libreoffice thunderbird  
+      #sudo apt install -y default-jdk tooo long install time libreoffice-gnome libreoffice-gtk3 
 }
 
 #*********************************************  #Video & Graphic  **********************************************
