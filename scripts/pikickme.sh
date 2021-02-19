@@ -229,7 +229,7 @@ KickPi-OS_Office() {
       echo "            Office Tools:)              "
       echo " "
       
-      sudo apt install -y libreoffice thunderbird  
+      sudo apt install -y libreoffice   
       #sudo apt install -y default-jdk tooo long install time libreoffice-gnome libreoffice-gtk3 
 }
 
