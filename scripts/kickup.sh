@@ -5,6 +5,7 @@
 wget -q --spider http://google.com
 
 if [ $? -eq 0 ]; then
+sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
