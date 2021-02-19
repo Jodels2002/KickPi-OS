@@ -45,7 +45,7 @@ openshot kdenlive
 
 #Games
 sudo apt install -y pcsxr games-finest gnome-video-arcade
-
+ftp://grandis.nu/Retroplay%20WHDLoad%20Packs/Commodore_Amiga_-_WHDLoad_-_Games/
 #Internet
 sudo apt install -y  gnome-twitch gnome-twitch-player-backend-gstreamer-clutter gnome-twitch-player-backend-gstreamer-cairo gnome-twitch-player-backend-gstreamer-opengl gnome-twitch-player-backend-mpv-opengl youtube-dl minitube transmission radio
 
