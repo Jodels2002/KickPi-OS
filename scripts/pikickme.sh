@@ -86,9 +86,9 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS full  (recommended)           (ca. 50 min)"
-	 2 "Install KickPi-OS full + Office Suite           (ca. 70 min)"
-         3 "Install KickPi-OS light                         (ca. 30 min)")
+OPTIONS=(1 "Install KickPi-OS       (recommended)            (ca. 50 min)"
+	 2 "Install KickPi-OS full + Office Suite +  more    (ca. 60 min)"
+         3 "Install KickPi-OS light                          (ca. 30 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -240,27 +240,40 @@ KickPi-OS_Video() {
 
       clear
        toilet "KickPi-OS" --metal
-       toilet -F gay Video&Graphic
 
       echo " "
       echo " "
       echo "            Video & Graphics:)              "
       echo " "
            
+if [ ! -d /home/$USER/.config/GIMP/ ]; then
+#
       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay Video&Graphic
-       sudo apt install -y gimp inkscape
+      # Update is running
+      sudo apt install -y gimp 
        clear
        toilet "KickPi-OS" --metal
        toilet -F gay PhotoGimp
-       echo " "
-       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o ~/Downloads/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip && unzip ~/Downloads/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip -d ~/Downloads && sudo cp -R ~/Downloads/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/ ~/.config
+       
+       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
+       sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
+       echo " PhotoGimp by Diolinux installed..."
+      
+      sleep 3s
+      else 
+      clear
+      echo " Gimp is already installed..."
+      
+      sleep 3s
+          
+      fi     
+       
+       
        clear
        toilet "KickPi-OS" --metal
        toilet -F gay Video&Graphic
       
-      sudo apt install -y imagemagick krita-l10n kdenlive kdenlive-data gimp
+      #sudo apt install -y  kdenlive kdenlive-data inkscape
 }
 
 #*********************************************  #Internet  **********************************************
@@ -900,7 +913,8 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
-            KickPi-OS_Office 
+            KickPi-OS_Office
+	    KickPi-OS_Video
 	    #KickPi-OS_Update
        ;;
         
