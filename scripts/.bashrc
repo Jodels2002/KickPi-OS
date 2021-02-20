@@ -16,20 +16,22 @@ if [ ! -f /home/$USER/Amiga/conf/default.uae ]; then
       
       sudo cp -rf /opt/retropie/supplementary/splashscreen/ /home/$USER/.backup/
       sudo cp -rf /home/$USER/KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
+      sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
+      #sudo shutdown -h now
+      echo " configured"
       
+      sleep 3s
 clear
       else 
       clear
       echo " wrong"
       
-      sleep 2s
+      sleep 3s
           
       fi     
       
       clear
-      toilet -F gay KickPi-OS
-      cd /home/$USER/KickPi-OS/Amiga/
-      ./amiberry -f /home/$USER/KickPi-OS/Amiga/conf/Kick.uae
+      
       
 fi
 clear
