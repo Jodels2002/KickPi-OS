@@ -4,6 +4,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       toilet "KickPi-OS" --metal
       clear
       toilet "KickPi-OS" --metal
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/splashscreen.list
         cd /home/$USER/Amiga
        ./amiberry
          p
