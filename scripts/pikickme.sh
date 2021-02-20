@@ -271,7 +271,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
        
        clear
        toilet "KickPi-OS" --metal
-       toilet -F gay Video&Graphic
+       
       
       #sudo apt install -y  kdenlive kdenlive-data inkscape
 }
@@ -832,6 +832,9 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       
       sudo cp -rf /home/$USER/Amiga/kickstarts/* /home/$USER/RetroPie/BIOS/
       clear
+      
+      if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
+#
       toilet "KickPi-OS" --metal
       toilet -F gay Amiberry
       cd /home/$USER/KickPi-OS/Retropie/
@@ -843,7 +846,18 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
+      
+clear
+      else 
       clear
+      echo " Amiberry is already installed..."
+      
+      sleep 3s
+          
+      fi     
+     
+if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
+#
       toilet "KickPi-OS" --metal
       toilet -F gay C64
       cd /home/$USER/KickPi-OS/Retropie/
@@ -855,6 +869,16 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       cd /home/$USER/KickPi-OS/Retropie/
       unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
+
+clear
+      else 
+      clear
+      echo " Amiberry is already installed..."
+      
+      sleep 3s
+          
+      fi     
+             
       
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
