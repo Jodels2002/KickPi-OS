@@ -2,6 +2,12 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
       clear
       toilet "KickPi-OS" --metal
+      clear
+      toilet "KickPi-OS" --metal
+        cd /home/$USER/Amiga
+       ./amiberry
+         p
+      
     else
       toilet "KickPi-OS" --metal
       echo " "
@@ -23,8 +29,4 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       echo " "  
 
 fi
-        clear
-      toilet "KickPi-OS" --metal
-        cd /home/$USER/Amiga
-         ./amiberry
-         p
+      
