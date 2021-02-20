@@ -60,3 +60,9 @@ dtparam=audio=on
 dtoverlay=vc4-fkms-v3d
 max_framebuffers=2
 arm_64bit=1
+
+arm_freq=2000
+gpu_freq=750
+over_voltage=6
+disable_splash=1
+gpu_mem=256
