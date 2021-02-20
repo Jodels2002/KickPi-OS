@@ -4,7 +4,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       clear
       toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/.backup/asplashscreen.sh /opt/retropie/supplementary/splashscreen/
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/splashscreen.list
+      sudo cp -rf /home/$USER/.KickPi-OS/Retropie/splashscreen.list  /etc/splashscreen.list
         cd /home/$USER/Amiga
        ./amiberry
          p
@@ -19,11 +19,11 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       echo " "
       
       sudo cp -rf /opt/retropie/supplementary/splashscreen/ /home/$USER/.backup/
-      sudo cp -rf /home/$USER/KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
+      sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
       sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
       sudo chmod -R 777 /home/$USER/.backup/splashscreen/
-      cp -rf /home/$USER/KickPi-OS/config/Boot.mp4  /home/$USER/RetroPie/splashscreens/
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
+      cp -rf /home/$USER/.KickPi-OS/config/Boot.mp4  /home/$USER/RetroPie/splashscreens/
+      sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
       sudo reboot -h now
       echo " "
       echo " "
