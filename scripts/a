@@ -11,7 +11,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
     else
       toilet "KickPi-OS" --metal
       echo " "
-      echo "  Default config for Amiberry found...  "
+      echo "Default config for Amiberry found...  "
       echo "      " 
       echo " "
       echo " "
