@@ -12,7 +12,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       toilet "KickPi-OS" --metal
       echo " "
       echo "  Default config for Amiberry found...  "
-      echo "  Configure Amiberry quickstart ...     " 
+      echo "      " 
       echo " "
       echo " "
       
@@ -21,10 +21,10 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
       sudo chmod -R 777 /home/$USER/.backup/splashscreen/ 
       sudo reboot -h now
-      echo " configured"
+      echo " "
       echo " "
       echo "System reboots to Amiga"  
-      sleep 5s
+      sleep 2s
       echo " "
       echo " "  
 
