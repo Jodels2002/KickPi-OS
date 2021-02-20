@@ -51,6 +51,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo ""
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
+      sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
       sleep 4s
     else 
       clear
