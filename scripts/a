@@ -19,7 +19,9 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       sudo cp -rf /opt/retropie/supplementary/splashscreen/ /home/$USER/.backup/
       sudo cp -rf /home/$USER/KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
       sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
-      sudo chmod -R 777 /home/$USER/.backup/splashscreen/ 
+      sudo chmod -R 777 /home/$USER/.backup/splashscreen/
+      cp -rf /home/$USER/KickPi-OS/config/Boot.mp4  /home/$USER/RetroPie/splashscreens/
+      sudo cp -rf /home/$USER/KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
       sudo reboot -h now
       echo " "
       echo " "
