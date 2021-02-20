@@ -51,14 +51,14 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo ""
       
       sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
-      sleep 4s
+      sleep 3s
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
       
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
-      sleep 4s
+      sleep 3s
 fi    	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
