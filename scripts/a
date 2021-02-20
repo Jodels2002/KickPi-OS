@@ -1,7 +1,6 @@
 if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
-      clear
-      toilet "KickPi-OS" --metal
+     
       clear
       toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/.backup/asplashscreen.sh /opt/retropie/supplementary/splashscreen/
@@ -11,6 +10,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
          p
       
     else
+      clear
       toilet "KickPi-OS" --metal
       echo " "
       echo "Default config for Amiberry found...  "
