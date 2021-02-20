@@ -45,9 +45,21 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	  cp -rf /media/usb0/Shared/* ~/Amiga  
 	  
           fi
-	
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+      clear
+      echo "Raspberry Pi OS 64 bit is running..."
+      echo ""
+      toilet "KickPi-OS" --metal
+      toilet "64 bit" --metal
+    else 
+      clear
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo ""
+      toilet "KickPi-OS" --metal
+      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+fi    	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo raspi-config nonint do_boot_behaviour B2
