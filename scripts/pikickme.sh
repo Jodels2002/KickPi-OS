@@ -852,7 +852,7 @@ clear
       clear
       echo " Amiberry is already installed..."
       
-      sleep 3s
+      sleep 2s
           
       fi     
      
@@ -873,9 +873,9 @@ if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
 clear
       else 
       clear
-      echo " Amiberry is already installed..."
+      echo " C64 (lr-vice) is already installed..."
       
-      sleep 3s
+      sleep 2s
           
       fi     
              
