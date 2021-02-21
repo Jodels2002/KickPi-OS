@@ -328,7 +328,7 @@ KickPi-OS_Games() {
       # First installation
       clear
       mkdir $HOME/.backup/profile.d
-      cp -rf /etc/profile.d/* ~/.backup/profile.d/
+      sudo mv /etc/profile.d/* ~/.backup/profile.d/
       sudo mv  /etc/rc.local ~/.backup/
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
