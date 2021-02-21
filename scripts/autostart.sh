@@ -145,20 +145,20 @@ function remove_autostart() {
                     editFile "/home/$USER/.KickPi-OS/autostart/autostart.sh"
                     ;;
                 CL)
-                    disable_autostart B1
+                    sudo raspi-config nonint do_boot_behaviour B1
                     printMsgs "dialog" "Booting to text console (require login)."
                     ;;
                 CA)
-                    disable_autostart B2
+                    sudo raspi-config nonint do_boot_behaviour B2
                     printMsgs "dialog" "Booting to text console (auto login as $user)."
                     ;;
                 DL)
-                    disable_autostart B3
-                    printMsgs "dialog" "Booting to desktop (require login)."
+                    sudo raspi-config nonint do_boot_behaviour B3
+                    printMsgs "dialog" "Booting to KickPi-OS (require login)."
                     ;;
                 DA)
-                    disable_autostart B4
-                    printMsgs "dialog" "Booting to desktop (auto login as $user)."
+                    sudo raspi-config nonint do_boot_behaviour B4
+                    printMsgs "dialog" "Booting to KickPi-OS(auto login as $user)."
                     ;;
             esac
         else
