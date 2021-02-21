@@ -213,6 +213,7 @@ KickPi-OS_Tools() {
       # Configured
       
       fi
+          
       
 }
 
@@ -321,7 +322,26 @@ KickPi-OS_Games() {
       sudo apt purge -y raspberrypi-ui-mods 
       sudo apt purge -y cups cups-client cups-common cups-server-common
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+  
+  # Preconfigure Silent Boot
+      if [ ! -f ~/.backup/rc.local ]; then
+      # First installation
+      clear
+      mkdir $HOME/.backup/profile.d
+      cp -rf /etc/profile.d/* ~/.backup/profile.d
+      cp -rf /etc/rc.local ~/.backup/
+      cp -rf ~/KickPi-OS/config/rc.local /etc/
+      sudo chmod -R 777 /etc/rc.local
+      sudo systemctl mask plymouth-start.service
+      sudo systemctl mask syslog.service
+      sudo systemctl mask cups.service
+      sudo systemctl mask cups-browsed.service
       
+      else 
+      clear
+      # Configured
+      
+      fi    
  
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
