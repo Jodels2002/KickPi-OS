@@ -516,7 +516,7 @@ fi
          
       
        # Amiberry first install
-      if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
+      #if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
       # First installation
      
       clear
@@ -526,12 +526,12 @@ fi
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
          
       
-      else 
+      #else 
          clear
          # Configured
        
    
-      fi
+      #fi
       
     fi
 
