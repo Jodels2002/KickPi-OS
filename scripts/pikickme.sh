@@ -293,7 +293,7 @@ KickPi-OS_Internet() {
       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Internet
-      sudo apt install -y youtube-dl minitube transmission radio thunderbird 
+      sudo apt install -y youtube-dl minitube transmission 
 }
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
@@ -516,7 +516,7 @@ fi
          
       
        # Amiberry first install
-      if [ ! -f /home/$USER/Amiga/amiberry ]; then
+      if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
       # First installation
      
       clear
