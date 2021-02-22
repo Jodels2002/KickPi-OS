@@ -346,7 +346,7 @@ else
       clear
       # Configured
       
-      fi    
+          
  
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
