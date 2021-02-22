@@ -318,7 +318,13 @@ KickPi-OS_Games() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
- 
+ if  xset q &>/dev/null; then
+            echo "Please dont´t run this script under Linux Desktop" >&2
+    	    sleep 5s
+    	     
+	else 
+	  
+	
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       sudo apt purge -y raspberrypi-ui-mods 
       sudo apt purge -y cups cups-client cups-common cups-server-common
@@ -472,8 +478,8 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-fi 
-
+      fi 
+fi
 
 }
 
@@ -916,13 +922,7 @@ case $CHOICE in
         
         1)
             #Poser
-	if  xset q &>/dev/null; then
-            echo "Please dont´t run this script under Linux Desktop" >&2
-    	    sleep 5s
-    	     exit 1
-	else 
 	    KickPi-OS_Desktop
-	fi
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
