@@ -341,7 +341,7 @@ KickPi-OS_Games() {
       else 
       clear
       # Configured
-      
+  fi    
           
  
  if [ ! -d $HOME/Desktop ]; then
