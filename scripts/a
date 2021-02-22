@@ -24,7 +24,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       
       sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
       sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
-      
+      sudo raspi-config nonint do_boot_behaviour B2
       sudo rm /etc/splashscreen.list
       
       sudo touch "/etc/splashscreen.list"
