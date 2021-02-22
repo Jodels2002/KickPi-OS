@@ -981,5 +981,10 @@ echo " "
 
 clear
 toilet "KickPi-OS" --metal
-
+if  xset q &>/dev/null; then
+            echo "Please dont´t run this script under Linux Desktop" >&2
+    	    sleep 5s
+    	     
+	else 
 startx
+fi
