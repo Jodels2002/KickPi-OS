@@ -664,35 +664,35 @@ fi
 
 KickPi-OS_Addons() {
 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
- cd /home/$USER/Amiga/hdf
+#if [ "$(getconf LONG_BIT)" == "64" ]; then
+ #cd /home/$USER/Amiga/hdf
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      clear
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      #clear
      
-      else 
-      echo " "
+      #else 
+      #echo " "
       
-      fi
+      #fi
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip -u ./ClassicWB_OS39_v28.zip
-      else 
-      echo " "
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      #clear
+      #toilet "KickPi-OS" --metal
+      #toilet "full 64bit" --metal
+      #echo " "
+      #echo " "
+      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
+      #echo " "
+      #echo " "
+      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      #unzip -u ./ClassicWB_OS39_v28.zip
+      #else 
+      #echo " "
       
-      fi
+      #fi
       
  
-else 
+#else 
       cd /home/$USER/Amiga/hdf
       
       
@@ -754,7 +754,7 @@ else
      
       
       
- fi
+ #fi
 }
 
      
@@ -766,17 +766,7 @@ KickPi-OS_Retropie() {
 #Install Retropie/Setup
 
       
-    if [ "$(getconf LONG_BIT)" == "64" ]; then
-   
-      clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay 64bit
-      echo " "
-      echo " "
-      echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
-
-      
-    else
+    
 if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
     echo " "
       clear
@@ -909,7 +899,7 @@ clear
       sudo chmod -R 777 /etc/emulationstation/
       
     
- fi      
+      
   
 }
 
