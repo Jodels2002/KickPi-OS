@@ -794,34 +794,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       clear
       toilet "KickPi-OS" --metal
       #sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
-      cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      
-      cd  /home/$USER/RetroPie/
-      git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
-      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
-      rm -r /home/$USER/RetroPie/RetroPieBIOS/
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      
-      clear
-      toilet "KickPi-OS" --metal
-      
-      else 
-      echo " "
-      
-      fi
-      
-      
-      
-    
-      
-      
-      
-      #-----Config Amiberry for Retropie
-  
-      if [ ! -f /home/pi/RetroPie/BIOS/kick34005.A500 ]; then
-      clear
+      #cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       toilet -F gay NOTE!
       echo " "
       echo " "
@@ -831,17 +804,28 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo "Use only if you have the original!  "
       echo "(Original Amiga, Amiga Forever,...)"
       echo " "
-      echo "Structure in the "Amiga" folder is adapted to Amiga Forever."
-      echo " "
-      echo " "
-      sleep 5s
-       
+      cd  /home/$USER/RetroPie/
+      git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
+      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
+      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
+      sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
+      rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
       cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
       cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
-      fi
-      
       clear
+      toilet "KickPi-OS" --metal
+      
+      else 
+      echo " "
+      
+      fi
+
+      
+      #-----Config Amiberry for Retropie
+  
+      
       
       if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
 #
@@ -860,9 +844,9 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
 clear
       else 
       clear
-      echo " Amiberry is already installed..."
+      echo " Amiberry already installed..."
       
-      sleep 2s
+     
           
       fi     
      
@@ -883,9 +867,9 @@ if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
 clear
       else 
       clear
-      echo " C64 (lr-vice) is already installed..."
+      echo " C64 (lr-vice) already installed..."
       
-      sleep 2s
+     
           
       fi     
              
