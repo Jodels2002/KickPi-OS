@@ -17,6 +17,7 @@ fi
 if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
      clear
+     toilet "KickPi-OS" --metal
        
     else
     
