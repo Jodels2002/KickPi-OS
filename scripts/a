@@ -7,7 +7,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list /etc/splashscreen.list
       cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
         
-       #omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
+       omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
       cd /home/$USER/Amiga/
        ./amiberry
        
@@ -37,12 +37,10 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       
       echo " "
       echo " "
-      echo "System reboots next time to Amiga"  
-      sleep 5s
+      echo "System reboots next time to Amiga" 
       echo " "
-      echo " "  
-      #omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
-      cd /home/$USER/Amiga/
-      ./amiberry
+      echo "Rebooting now..."
+      sleep 7s
+      reboot
 fi
 cd     
