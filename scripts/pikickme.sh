@@ -21,11 +21,11 @@
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 #***********************************************  #Are you runing Desktop?  ***********************************
-if  xset q &>/dev/null; then
-    echo "Please dont´t run this script under Linux Desktop" >&2
-    sleep 15s
-    exit 1
-fi 
+#if  xset q &>/dev/null; then
+   # echo "Please dont´t run this script under Linux Desktop" >&2
+   # sleep 15s
+   # exit 1
+#fi 
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
@@ -316,7 +316,11 @@ KickPi-OS_Games() {
 
 #*********************************************  #Installing KickPi-OS Desktop*********************************
 #**********************************************************************************************************
- 
+ if  xset q &>/dev/null; then
+    echo "Please dont´t run this script under Linux Desktop" >&2
+    sleep 15s
+    exit 1
+else 
  KickPi-OS_Desktop() {
  
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
@@ -474,7 +478,7 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
 fi 
 
-
+fi
 }
 
 
