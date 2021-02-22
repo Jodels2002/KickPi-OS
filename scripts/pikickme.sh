@@ -18,7 +18,8 @@
 #************************************************  #Amiberry Version   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
-
+sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 #***********************************************  #Are you runing Desktop?  ***********************************
 if  xset q &>/dev/null; then
     echo "Please dont´t run this script under Linux Desktop" >&2
@@ -30,8 +31,7 @@ fi
 #*************************************************************************************************************
 #sudo apt-mark hold lxpanel
  
-sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
