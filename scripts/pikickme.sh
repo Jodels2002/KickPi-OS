@@ -318,11 +318,16 @@ KickPi-OS_Games() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
- if  xset q &>/dev/null; then
-            echo "Please dont´t run this script under Linux Desktop" >&2
-    	    sleep 5s
-    	     
-	else 
+ #if  xset q &>/dev/null; then
+          
+    	    clear
+		toilet "KickPi-OS" --metal
+		echo "KickPI-OS ROM Operating System and Libraris" 
+		echo "Version V1.1 2020-2021 KickPi-OS "
+		echo "No Rights Reserved.  "
+		echo ""
+
+	#else 
 	  
 	
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
@@ -479,7 +484,7 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
       fi 
-fi
+#fi
 
 }
 
@@ -982,8 +987,25 @@ echo " "
 clear
 toilet "KickPi-OS" --metal
 if  xset q &>/dev/null; then
-            echo "Please dont´t run this script under Linux Desktop" >&2
-    	    sleep 5s
+            clear
+toilet "KickPi-OS" --metal
+echo "KickPI-OS ROM Operating System and Libraris" 
+echo "Version V1.1 2020-2021 KickPi-OS "
+echo "No Rights Reserved.  "
+echo ""
+echo "Type 'd' to boot into Kick-OS Workbench"
+echo ""
+echo "1.>  "
+echo "1.>  ( a ) Amiga                  (boot to Amiberry)" 
+echo "1.>  ( d ) KickPi Desktop                          " 
+echo "1.>  ( e ) Emulationstation              (RetroPie)" 
+echo "1.>  ( r ) Emulationstation Setup                  "
+echo "1.>  ( u ) KickPi-OS Update                        "
+echo "1.>  ( m ) Kick-OS Menu                            " 
+echo "1.>  ( c ) Raspi-Config                            "
+echo "1.>  ( s ) Shutdown                                "  
+echo ""
+
     	     
 	else 
 startx
