@@ -11,9 +11,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
 cd
 #sudo apt -y upgrade
-git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
-sudo chmod -R 777 KickPi-OS
 if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
      clear
@@ -41,8 +39,12 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       echo "/home/$USER/.KickPi-OS/config/splash/Boot.mp4 #KickPi" >>"/etc/splashscreen.list"
           
     
-fi
-/home/$USER/KickPi-OS/scripts/pikickme.sh
+      fi
+      
+      cd
+      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
+      sudo chmod -R 777 KickPi-OS
+      /home/$USER/KickPi-OS/scripts/pikickme.sh
 
 else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
