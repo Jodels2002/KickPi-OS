@@ -535,7 +535,7 @@ fi
       #fi
       
     fi
-
+fi
    
 }
 
@@ -916,20 +916,20 @@ case $CHOICE in
         
         1)
             #Poser
-	    if  xset q &>/dev/null; then
-    		echo "Please dont´t run this script under Linux Desktop" >&2
-    		sleep 5s
-    		exit 1
-		else 
+	if  xset q &>/dev/null; then
+            echo "Please dont´t run this script under Linux Desktop" >&2
+    	    sleep 5s
+    	     exit 1
+	else 
 	    KickPi-OS_Desktop
-	    fi
+	fi
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
             KickPi-OS_Addons
             KickPi-OS_Retropie
             #KickPi-OS_Update
-       ;;
+            ;;
         2)
             #Poser
 	    KickPi-OS_Desktop
@@ -941,7 +941,7 @@ case $CHOICE in
             KickPi-OS_Office
 	    KickPi-OS_Video
 	    #KickPi-OS_Update
-       ;;
+            ;;
         
         3)
            
@@ -952,7 +952,7 @@ case $CHOICE in
             Configure_Amiga
 	    #KickPi-OS_Update
            
-       ;;
+            ;;
                   
 
 esac
