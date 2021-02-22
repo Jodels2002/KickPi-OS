@@ -159,7 +159,7 @@ KickPi-OS_Update() {
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       else 
-      clear
+      echo " "
       # First installation
       
       
@@ -210,7 +210,7 @@ KickPi-OS_Tools() {
       
 
       else 
-      clear
+      echo " Tools up to date :) "
       # Configured
       
       fi
@@ -263,7 +263,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       
       sleep 3s
       else 
-      clear
+      
       echo " Gimp is already installed..."
       
       sleep 3s
@@ -350,7 +350,7 @@ KickPi-OS_Games() {
       sudo systemctl mask cups-browsed.service
       
       else 
-      clear
+      echo " System optimized :) "
       # Configured
   fi    
           
@@ -420,7 +420,7 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       else 
-      clear
+      echo " "
       
 fi
   
@@ -531,7 +531,7 @@ fi
       #if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
       # First installation
      
-      clear
+      
 	  echo "  ... here comes Amiberry 32 bit :-) "
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
@@ -572,8 +572,7 @@ fi
       
       
       else 
-      clear
-      toilet "KickPi-OS" --metal
+      echo " "
       fi
       
       cd /home/$USER/Amiga/hdf
@@ -855,7 +854,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       
 clear
       else 
-      clear
+      
       echo " Amiberry already installed..."
       
      
@@ -878,7 +877,7 @@ if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
 
 clear
       else 
-      clear
+     
       echo " C64 (lr-vice) already installed..."
       
      
@@ -893,7 +892,7 @@ clear
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
-      clear
+      echo " "
       
       else 
       clear
