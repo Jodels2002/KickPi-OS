@@ -336,7 +336,7 @@ KickPi-OS_Games() {
       sudo systemctl mask syslog.service
       sudo systemctl mask cups.service
       sudo systemctl mask cups-browsed.service
-      
+      sudo raspi-config nonint do_boot_behaviour B4
       else 
       clear
       # Configured
