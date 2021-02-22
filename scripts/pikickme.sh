@@ -19,11 +19,11 @@
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
-#if  xset q &>/dev/null; then
-   # echo "Please dont´t run this script under Linux Desktop" >&2
-    #sleep 15s
-   # exit 1
-#fi 
+if  xset q &>/dev/null; then
+    echo "Please dont´t run this script under Linux Desktop" >&2
+    sleep 15s
+    exit 1
+fi 
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
@@ -336,7 +336,7 @@ KickPi-OS_Games() {
       sudo systemctl mask syslog.service
       sudo systemctl mask cups.service
       sudo systemctl mask cups-browsed.service
-      sudo raspi-config nonint do_boot_behaviour B4
+      
       else 
       clear
       # Configured
