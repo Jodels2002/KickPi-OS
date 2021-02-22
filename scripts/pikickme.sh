@@ -625,29 +625,7 @@ fi
    
       echo " "
       echo " "
-      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
-      clear
-      toilet -F gay NOTE!
-      echo " "
-      echo " "
-      echo "The roms and workbench files are under copyrigt! "
-      echo " "
-      echo " "
-      echo "Use only if you have the original!  "
-      echo " (Original Amiga, Amiga Forever,..."
-      echo " "
-      echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
-      echo " "
-      echo " "
-      sleep 6s
-      wget https://misapuntesde.com/res/Amiga_roms.zip
-      cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
-      cd ~/Amiga/kickstarts/
-      unzip -u ./Amiga_roms.zip
-      rm ./Amiga_roms.zip
-      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
-      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
-      fi
+      
         
 
       
@@ -829,29 +807,40 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       clear
       toilet "KickPi-OS" --metal
       
-      #if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
-      #clear
-      #toilet -F gay Retropie 
-      #echo " "
-      #echo " "
-      #echo "  Add Retropie Bios Files from Archiv.org " 
-      #echo " "
-      #echo " "
-      #cd /home/$USER/RetroPie/BIOS/
-      #wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
-      #unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
-      #clear
-      #toilet "KickPi-OS" --metal
-      #fi
       else 
       echo " "
       
       fi
       
+      
+      
+    
+      
+      
+      
       #-----Config Amiberry for Retropie
   
+      if [ ! -f /home/pi/RetroPie/BIOS/kick34005.A500 ]; then
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo " "
+      echo " "
+      echo "Use only if you have the original!  "
+      echo "(Original Amiga, Amiga Forever,...)"
+      echo " "
+      echo "Structure in the "Amiga" folder is adapted to Amiga Forever."
+      echo " "
+      echo " "
+      sleep 5s
+       
+      cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
+      cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
+      cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
+      fi
       
-      sudo cp -rf /home/$USER/Amiga/kickstarts/* /home/$USER/RetroPie/BIOS/
       clear
       
       if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
