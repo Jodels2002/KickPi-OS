@@ -110,7 +110,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+cd
 clear
 toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraris" 
@@ -129,3 +129,4 @@ echo "1.>  ( m ) Kick-OS Menu                            "
 echo "1.>  ( c ) Raspi-Config                            "
 echo "1.>  ( s ) Shutdown                                "  
 echo ""
+
