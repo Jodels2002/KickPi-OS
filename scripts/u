@@ -9,8 +9,10 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
-cd
-#sudo apt -y upgrade
+else
+    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
+fi
+
 
 if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
@@ -22,28 +24,13 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       toilet "KickPi-OS" --metal
       echo " "
       echo "Default config for Amiberry found...  "
-      echo " " 
-      echo " "
-      echo "System reboots next time to Amiga"  
-      sleep 5s
       
-      sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
-      sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
-      sudo raspi-config nonint do_boot_behaviour B2
-      sudo rm /etc/splashscreen.list
-      
-      sudo touch "/etc/splashscreen.list"
-      sudo chmod -R 777 /etc/splashscreen.list
-      sudo sed -i '/#KickPi/d' "/etc/splashscreen.list"
-      sudo sed -i '$a\' "/etc/splashscreen.list"
-      echo "/home/$USER/.KickPi-OS/config/splash/Boot.mp4 #KickPi" >>"/etc/splashscreen.list"
 fi
-      
+      cd
+      #sudo apt -y upgrade
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
       /home/$USER/KickPi-OS/scripts/pikickme.sh
-else
-    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
-fi
+
 
