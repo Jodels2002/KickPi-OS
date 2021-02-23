@@ -88,9 +88,9 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS       (recommended)            (ca. 50 min)"
-	 2 "Install KickPi-OS full + Office Suite +  more    (ca. 60 min)"
-         3 "Install KickPi-OS light                          (ca. 30 min)")
+OPTIONS=(1 "Install KickPi-OS       (recommended)            (ca. 20 min)"
+	 2 "Install KickPi-OS full + Office Suite +  more    (ca. 30 min)"
+         3 "Install KickPi-OS light                          (ca. 10 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -341,8 +341,8 @@ KickPi-OS_Games() {
       # First installation
       clear
       mkdir $HOME/.backup/profile.d
-      sudo mv /etc/profile.d/* ~/.backup/profile.d/
       sudo mv  /etc/rc.local ~/.backup/
+      sudo rm -rf ~/.config/chromium/
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
       sudo systemctl mask plymouth-start.service
