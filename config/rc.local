@@ -13,5 +13,5 @@
 
 # Print the IP address
 
-dmesg --console-off
+sudo dmesg --console-off
 exit 0
