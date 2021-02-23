@@ -509,8 +509,8 @@ fi
         echo " ... here comes Amiberry 64 bit   :-)"
        
       cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga
+		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit.zip 
+		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit/* /home/$USER/Amiga
 		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga/
 		sudo chmod -R 777 /home/$USER/amiberry
        
