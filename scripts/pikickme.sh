@@ -972,7 +972,8 @@ echo " "
 clear
 toilet "KickPi-OS" --metal
 if  xset q &>/dev/null; then
-            clear
+cd
+clear
 toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraris" 
 echo "Version V1.1 2020-2021 KickPi-OS "
@@ -981,17 +982,15 @@ echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 echo ""
 echo "1.>  "
-echo "1.>  ( a ) Amiga                  (boot to Amiberry)" 
+echo "1.>  ( a ) Boot to Amiberry if default config exist" 
 echo "1.>  ( d ) KickPi Desktop                          " 
 echo "1.>  ( e ) Emulationstation              (RetroPie)" 
 echo "1.>  ( r ) Emulationstation Setup                  "
 echo "1.>  ( u ) KickPi-OS Update                        "
-echo "1.>  ( m ) Kick-OS Menu                            " 
+echo "1.>  ( m ) Boot select                             " 
 echo "1.>  ( c ) Raspi-Config                            "
 echo "1.>  ( s ) Shutdown                                "  
 echo ""
-
-    	     
 	else 
 startx
 fi
