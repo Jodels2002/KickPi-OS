@@ -11,6 +11,7 @@
 #16.02 add TwisertOS, Bugfix Update optimiced, RetroPie Bugfix (Autoconfig Amiberry)  Bugfix 64 bit, Worker preconfigured / OK
 #16.02 Bugfix Reboot, Speedup
 #20.02 Photogimp, Autoboot to Amiberry
+#20.02 Bootmenu, Speedup Boot time
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
