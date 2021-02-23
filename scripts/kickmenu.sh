@@ -93,20 +93,10 @@ case $CHOICE in
             toilet "Retropie" --metal
             list="/etc/splashscreen.list"
             clear
-             sudo cp -rf /opt/retropie/supplementary/splashscreen/asplashscreen.sh /home/$USER/.backup
-             sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
-             sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
-             sudo raspi-config nonint do_boot_behaviour B2
-             sudo rm /etc/splashscreen.list
+             
       
-             sudo touch "/etc/splashscreen.list"
-             sudo chmod -R 777 /etc/splashscreen.list
-             sudo sed -i '/#KickPi/d' "/etc/splashscreen.list"
-             sudo sed -i '$a\' "/etc/splashscreen.list"
-             echo "/home/$USER/.KickPi-OS/config/splash/Boot.mp4 #KickPi" >>"/etc/splashscreen.list"
-          
-             sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
-      
+              sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /ect/rc.local
+               
              echo " "
              echo " "
              echo "System reboots next time to Amiga" 
