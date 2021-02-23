@@ -13,8 +13,8 @@ Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
 
 #Requirements:
 
-- Raspberry Pi OS 32 bit (recommended)
-- Raspberry Pi OS 64 bit (limited,no Retropie,..)
+- Raspberry Pi OS 32 bit 
+
 
 
 
@@ -42,7 +42,7 @@ But it sould be
 
 # But I definitely recommend a Raspberry 4 or Pi400
 
-Please note that the 64 bit version also works, but not all functions are available here.
+Please note that the 64 bit version also works, but ... in prgogress... .
 
 # Preparation:
 
