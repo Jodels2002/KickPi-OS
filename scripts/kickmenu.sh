@@ -93,6 +93,7 @@ case $CHOICE in
             toilet "Retropie" --metal
             list="/etc/splashscreen.list"
             clear
+             sudo cp -rf /opt/retropie/supplementary/splashscreen/asplashscreen.sh /home/$USER/.backup
              sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
              sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
              sudo raspi-config nonint do_boot_behaviour B2
@@ -120,6 +121,7 @@ case $CHOICE in
             #console
             clear
             toilet "KickPi-OS" --metal
+            sudo cp -rf /home/$USER/.backup/asplashscreen.sh /opt/retropie/supplementary/splashscreen/asplashscreen.sh 
             sudo raspi-config nonint do_boot_behaviour B2
             echo " "
             echo " "
