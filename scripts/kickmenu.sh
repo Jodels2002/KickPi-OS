@@ -10,7 +10,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 #******************************************** #KickPi-OS 64 Start Menu ******************************************
 #****************************************************************************************************************
 
-HEIGHT=40
+HEIGHT=35
 WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
@@ -38,7 +38,7 @@ CHOICE=$(dialog --clear \
     #******************************************** #KickPi-OS 32bit Start Menu ***************************************
     #****************************************************************************************************************
 
-HEIGHT=40
+HEIGHT=35
 WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
@@ -101,7 +101,7 @@ case $CHOICE in
              sudo raspi-config nonint do_boot_behaviour B2
              echo " "
              echo " "
-             echo "System reboots next time to Amiga" 
+             echo "System reboots to Amiga" 
              echo " "
              echo "Rebooting now..."
              sleep 7s
