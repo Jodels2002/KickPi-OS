@@ -28,7 +28,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       
 fi
       cd
-      #sudo apt -y upgrade
+      sudo apt -y upgrade
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
