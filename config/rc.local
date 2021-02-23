@@ -12,7 +12,7 @@
 # By default this script does nothing.
 
 # Print the IP address
-console=tty3 
+ 
 sudo dmesg --console-off
 
 exit 0
