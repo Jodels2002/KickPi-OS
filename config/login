@@ -2,11 +2,7 @@
 # The PAM configuration file for the Shadow `login' service
 #
 
-# Enforce a minimal delay in case of failure (in microseconds).
-# (Replaces the `FAIL_DELAY' setting from login.defs)
-# Note that other modules may require another minimal delay. (for example,
-# to disable any delay, you should add the nodelay option to pam_unix)
-auth       optional   pam_faildelay.so  delay=3000000
+
 
 # Outputs an issue file prior to each login prompt (Replaces the
 # ISSUE_FILE option from login.defs). Uncomment for use
@@ -69,7 +65,7 @@ session       required   pam_env.so readenv=1 envfile=/etc/default/locale
 # based on things like time of day, tty, service, and user.
 # Please edit /etc/security/group.conf to fit your needs
 # (Replaces the `CONSOLE_GROUPS' option in login.defs)
-auth       optional   pam_group.so
+#auth       optional   pam_group.so
 
 # Uncomment and edit /etc/security/time.conf if you need to set
 # time restraint on logins.
