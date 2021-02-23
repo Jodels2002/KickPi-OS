@@ -12,6 +12,8 @@
 # By default this script does nothing.
 
 # Print the IP address
-
+console=tty3 
+quiet splash loglevel=0 logo.nologo vt.global_cursor_default=0
 sudo dmesg --console-off
+touch ~/.hushlogin
 exit 0
