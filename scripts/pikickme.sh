@@ -765,7 +765,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo " "
       sudo rm /etc/emulationstation/
       sudo rm/opt/retropie/
-      
+      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       mkdir /home/$USER/RetroPie/
       mkdir /home/$USER/RetroPie/BIOS/
       mkdir /home/$USER/RetroPie/splashscreens/
@@ -875,7 +875,7 @@ clear
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
-      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
       echo " "
