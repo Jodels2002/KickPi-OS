@@ -607,7 +607,25 @@ fi
       unzip -u ./ClassicWB_68K_v28.zip
       else 
       echo " "
-   
+         
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      #clear
+      #toilet "KickPi-OS" --metal
+      #toilet "full 64bit" --metal
+      #echo " "
+      #echo " "
+      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
+      #echo " "
+      #echo " "
+      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      #unzip -u ./ClassicWB_OS39_v28.zip
+      #else 
+      #echo " "
+      
+      #fi
+      
+ 
+#else 
     
       fi
       
@@ -664,44 +682,16 @@ fi
 
 KickPi-OS_Addons() {
 
-#if [ "$(getconf LONG_BIT)" == "64" ]; then
- #cd /home/$USER/Amiga/hdf
-      
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      #clear
-     
-      #else 
-      #echo " "
-      
-      #fi
-      
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      #clear
-      #toilet "KickPi-OS" --metal
-      #toilet "full 64bit" --metal
-      #echo " "
-      #echo " "
-      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
-      #echo " "
-      #echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      #unzip -u ./ClassicWB_OS39_v28.zip
-      #else 
-      #echo " "
-      
-      #fi
-      
+if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-#else 
-      cd /home/$USER/Amiga/hdf
-      
-      
-     clear
+     echo "Vice64 todo"
+      else 
+      clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
       echo " "
       echo " "
-      echo "Commodore Vice" 
+      echo "Commodore Vice 32bit" 
       echo " "
       echo " "
       cd
@@ -713,9 +703,15 @@ KickPi-OS_Addons() {
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
       #rm ./vice-3.4-bin-rpi.tar.gz
      
-      else 
-      echo " "
+      
       fi
+      
+ fi
+
+      cd /home/$USER/Amiga/hdf
+      
+      
+     
       
       
       #Install PiKISS    
@@ -828,8 +824,8 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
   
       
       
-      if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
-#
+if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
+
       toilet "KickPi-OS" --metal
       toilet -F gay Amiberry
       cd /home/$USER/KickPi-OS/Retropie/
@@ -842,14 +838,17 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
       sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
       
-clear
+      if [ "$(getconf LONG_BIT)" == "64" ]; then
+          sudo cp -rf /home/$USER/Amiga/amiberry /opt/retropie/emulators/amiberry/
+          echo "Amiberry 64 bit for RetroPie"
+      fi
+      
       else 
       
       echo " Amiberry already installed..."
       
      
-          
-      fi     
+ fi     
      
 if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
 #
