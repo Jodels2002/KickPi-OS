@@ -91,7 +91,7 @@ case $CHOICE in
          a)
             clear
             toilet "Amiberry" --metal
-             sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /etc/profile.d/kick.sh
+             sudo cp -rf /home/$USER/.KickPi-OS/config/kick.sh /etc/profile.d/kick.sh
              sudo chmod -R 777 /etc/profile.d/kick.sh
              sudo raspi-config nonint do_boot_behaviour B2
              echo " "
