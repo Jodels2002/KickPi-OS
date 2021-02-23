@@ -82,8 +82,8 @@ case $CHOICE in
           # KickPi-OS Desktop
             clear
             toilet "KickPi-OS" --metal
-            sudo cp -rf /home/$USER/.KickPi-OS/config/rc.local /ect/rc.local
-            sudo chmod -R 777 /ect/rc.local
+            sudo cp -rf /home/$USER/.KickPi-OS/config/rc.local /etc/rc.local
+            sudo chmod -R 777 /etc/rc.local
             sudo raspi-config nonint do_boot_behaviour B4
             
             ;;
@@ -96,8 +96,8 @@ case $CHOICE in
             clear
              
       
-             sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /ect/rc.local
-             sudo chmod -R 777 /ect/rc.local
+             sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /etc/rc.local
+             sudo chmod -R 777 /etc/rc.local
              sudo raspi-config nonint do_boot_behaviour B2
              echo " "
              echo " "
@@ -113,8 +113,8 @@ case $CHOICE in
             #console
             clear
             toilet "KickPi-OS" --metal
-            sudo cp -rf /home/$USER/.KickPi-OS/config/rc.local /ect/rc.local 
-            sudo chmod -R 777 /ect/rc.local
+            sudo cp -rf /home/$USER/.KickPi-OS/config/rc.local /etc/rc.local 
+            sudo chmod -R 777 /etc/rc.local
             sudo raspi-config nonint do_boot_behaviour B2
             echo " "
             echo " "
