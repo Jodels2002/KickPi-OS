@@ -1,7 +1,8 @@
 #!/bin/sh -e
 echo " Starte Amiberry"
-sleep 3s
+
 omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
-/home/$USER/Amiga/amiberry
+cd /home/$USER/Amiga/
+       ./amiberry
   
 
