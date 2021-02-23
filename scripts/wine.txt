@@ -1,3 +1,5 @@
+https://raspberrypi.stackexchange.com/questions/59310/remove-boot-messages-all-text-in-jessie
+
 wine msiexec /i ~/Downloads/AmigaForever2016Plus.msi
 
 After installation, you need to copy the Amiga Forever into place. These instructions assume that the FS-UAE base dir is Documents/FS-UAE, and that you have performed the Amiga Forever installation using the default Wine prefix:
