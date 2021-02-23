@@ -959,6 +959,7 @@ echo " "
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.config/chromium/
       sudo rm -rf ~/KickPi-OS
+      touch ~/.hushlogin
       #sudo rm -rf ~/amigafonts/
       
       
