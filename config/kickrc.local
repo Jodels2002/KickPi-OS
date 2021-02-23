@@ -13,8 +13,10 @@
 
 # Print the IP address
 
-dmesg --console-off
-omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
-      cd /home/$USER/Amiga/
-       ./amiberry
+sudo dmesg --console-off
+
+sleep 30s
+sudo omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
+    sudo    cd /home/$USER/Amiga/amiberry
+  
 exit 0
