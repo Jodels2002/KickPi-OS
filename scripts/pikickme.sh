@@ -777,7 +777,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/ 
-      sudo __nodialog=1 ./retropie_packages.sh setup binaries
+      #sudo __nodialog=1 ./retropie_packages.sh setup binaries
       #Amibian dosen´t install "Binary" !?!
       #if [ $USER == "pi" ]; then
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
