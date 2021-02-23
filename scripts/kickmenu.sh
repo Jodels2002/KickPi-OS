@@ -82,7 +82,8 @@ case $CHOICE in
           # KickPi-OS Desktop
             clear
             toilet "KickPi-OS" --metal
-            
+            sudo cp -rf /ect/rc.local /home/$USER/.KickPi-OS/config/kickrc.local 
+            sudo chmod -R 777 /ect/rc.local
             sudo raspi-config nonint do_boot_behaviour B4
             
             ;;
@@ -96,7 +97,7 @@ case $CHOICE in
              
       
               sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /ect/rc.local
-               
+              sudo chmod -R 777 /ect/rc.local
              echo " "
              echo " "
              echo "System reboots next time to Amiga" 
@@ -111,7 +112,8 @@ case $CHOICE in
             #console
             clear
             toilet "KickPi-OS" --metal
-            sudo cp -rf /home/$USER/.backup/asplashscreen.sh /opt/retropie/supplementary/splashscreen/asplashscreen.sh 
+            sudo cp -rf /ect/rc.local /home/$USER/.KickPi-OS/config/kickrc.local 
+            sudo chmod -R 777 /ect/rc.local
             sudo raspi-config nonint do_boot_behaviour B2
             echo " "
             echo " "
