@@ -3,44 +3,23 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
      
       clear
       toilet "KickPi-OS" --metal
-      sudo cp -rf  /opt/retropie/supplementary/splashscreen/asplashscreen.sh /home/$USER/.backup/asplashscreen.sh
-      sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list /etc/splashscreen.list
-      cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
-        
+           
        omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
       cd /home/$USER/Amiga/
        ./amiberry
        
     else
-      list="/etc/splashscreen.list"
       clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo "Default config for Amiberry found...  "
-      echo "      " 
-      echo " "
-      echo " "
-      
-      
-      sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
-      sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
-      sudo raspi-config nonint do_boot_behaviour B2
-      sudo rm /etc/splashscreen.list
-      
-      sudo touch "/etc/splashscreen.list"
-      sudo chmod -R 777 /etc/splashscreen.list
-      sudo sed -i '/#KickPi/d' "/etc/splashscreen.list"
-      sudo sed -i '$a\' "/etc/splashscreen.list"
-      echo "/home/$USER/.KickPi-OS/config/splash/Boot.mp4 #KickPi" >>"/etc/splashscreen.list"
-          
-      #sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
-      
-      echo " "
-      echo " "
-      echo "System reboots next time to Amiga" 
-      echo " "
-      echo "Rebooting now..."
-      sleep 7s
-      reboot
+            toilet "Amiberry" --metal
+             sudo cp -rf /home/$USER/.KickPi-OS/config/kickrc.local /etc/profile.d/kick.sh
+             sudo chmod -R 777 /etc/profile.d/kick.sh
+             sudo raspi-config nonint do_boot_behaviour B2
+             echo " "
+             echo " "
+             echo "System reboots to Amiga" 
+             echo " "
+             echo "Rebooting now..."
+             sleep 7s
+             reboot
 fi
 cd     
