@@ -183,8 +183,8 @@ KickPi-OS_Tools() {
 
           
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc chromium-codecs-ffmpeg mc
-      
+      sudo apt install -y geany geany-plugins-common geany-common zip  unzip xmlstarlet mc chromium-codecs-ffmpeg
+      sudo apt install -y mc zip
             
       clear
       toilet "KickPi-OS" --metal
@@ -512,20 +512,12 @@ fi
 		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit.zip 
 		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit/* /home/$USER/Amiga
 		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga/
-		sudo chmod -R 777 /home/$USER/amiberry
-       
-       
-      
-      
-      cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /home/$USER/Amiga/
+		sudo chmod -R 777 /home/$USER/Amiga/
       
  
-       
     else
     
-     
-      
-         
+
       
        # Amiberry first install
       #if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
@@ -773,6 +765,12 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo " "
       sudo rm /etc/emulationstation/
       sudo rm/opt/retropie/
+      
+      mkdir /home/$USER/RetroPie/
+      mkdir /home/$USER/RetroPie/BIOS/
+      mkdir /home/$USER/RetroPie/splashscreens/
+      mkdir /home/$USER/RetroPie/roms
+      
       cd
       git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
@@ -803,7 +801,6 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo " "
       cd  /home/$USER/RetroPie/
       git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-      mv /home/$USER/RetroPie/roms/amiga/amiga/ /home/$USER/RetroPie/BIOS/
       mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
       sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
       rm -r /home/$USER/RetroPie/RetroPieBIOS/
