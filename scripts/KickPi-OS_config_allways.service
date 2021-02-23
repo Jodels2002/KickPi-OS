@@ -1,7 +1,7 @@
 [Unit]
 Description=KickPi-OS_config_allways
-Wants=network-online.target
-After=network-online.target nss-lookup.target
+After=console-setup.service
+Wants=console-setup.service
 
 [Service]
 Type=exec
