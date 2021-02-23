@@ -2,6 +2,7 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
+sudo apt -y --fix-broken install
 wget -q --spider http://google.com
 
 if [ $? -eq 0 ]; then
