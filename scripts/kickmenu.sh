@@ -15,13 +15,13 @@ WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
 TITLE="KickPi-OS 64 bit"
-MENU="Please select:"
+MENU="Boot select:"
 
-OPTIONS=(1 "Start your Amiberry Amiga"
-         2 "Start your KickPi-OS Desktop"
-         c "Setup Raspie-Config"
-         u "Update KickPi-OS"
-         s "Shutdown ")
+OPTIONS=(d "Boot to KickPi-OS Desktop"
+         a "Boot to Amiga  (Amiberry)"
+         c "Boot to Console          "
+         u "Update KickPi-OS         "
+         s "Shutdown                 ")
         
 
 CHOICE=$(dialog --clear \
@@ -43,14 +43,13 @@ WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
 TITLE="KickPi-OS 32 bit"
-MENU="Please select:"
+MENU="Boot select:"
 
-OPTIONS=(d "Start your KickPi-OS Desktop"
-         e "Start your RetroPi"
-         r "Setup Retropie"
-         c "Setup Raspie-Config"
-         u "Update KickPi-OS"
-         s "Shutdown ")
+OPTIONS=(d "Boot to KickPi-OS Desktop"
+         a "Boot to Amiga  (Amiberry)"
+         c "Boot to Console          "
+         u "Update KickPi-OS         "
+         s "Shutdown                 ")
         
         
 
@@ -80,46 +79,64 @@ case $CHOICE in
         #    ;;
         
         d)
+          # KickPi-OS Desktop
             clear
             toilet "KickPi-OS" --metal
             
-            startx
+            sudo raspi-config nonint do_boot_behaviour B4
             
             ;;
         
                    
-         e)
+         a)
             clear
             toilet "Retropie" --metal
-            emulationstation
-            ;;
-         c)
+            list="/etc/splashscreen.list"
             clear
-            toilet "KickPi-OS" --metal
-            sudo raspi-config
+             sudo cp -rf /home/$USER/.KickPi-OS/config/asplashscreen.sh /opt/retropie/supplementary/splashscreen/ 
+             sudo chmod -R 777 /opt/retropie/supplementary/splashscreen/ 
+             sudo raspi-config nonint do_boot_behaviour B2
+             sudo rm /etc/splashscreen.list
+      
+             sudo touch "/etc/splashscreen.list"
+             sudo chmod -R 777 /etc/splashscreen.list
+             sudo sed -i '/#KickPi/d' "/etc/splashscreen.list"
+             sudo sed -i '$a\' "/etc/splashscreen.list"
+             echo "/home/$USER/.KickPi-OS/config/splash/Boot.mp4 #KickPi" >>"/etc/splashscreen.list"
+          
+             sudo cp -rf /home/$USER/.KickPi-OS/Retropie/bsplashscreen.list  /etc/splashscreen.list
+      
+             echo " "
+             echo " "
+             echo "System reboots next time to Amiga" 
+             echo " "
+             echo "Rebooting now..."
+             sleep 7s
+             reboot
             ;;
+         
             
-          r)
+          c)
+            #console
             clear
             toilet "KickPi-OS" --metal
-            r
+            sudo raspi-config nonint do_boot_behaviour B2
+            echo " "
+            echo " "
+            echo "System reboots next time to command line" 
+            echo " "
             ;; 
                  
-         c)
-            clear
-            toilet -F gay Configure
-            sudo raspi-config
-            ;;
-            
+        
          s)
+            #shutdown
             clear
             s
             ;;  
          u)
+            #update
             clear
-            toilet "Update" --metal
-            cd /usr/local/bin/
-            ./kickup.sh
+            u
             ;;  
 
 
