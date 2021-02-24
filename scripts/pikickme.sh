@@ -688,6 +688,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       cd
+      
       if [ ! -f /home/$USER/games/vice-3.4-bin-rpi.tar.gz ]; then
       
       mkdir $HOME/games
@@ -695,18 +696,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
       #rm ./vice-3.4-bin-rpi.tar.gz
-     
-      
-      fi
-      
- fi
-
-      cd /home/$USER/Amiga/hdf
-      
-      
-     
-      
-      
+     fi
       #Install PiKISS    
       if [ ! -d "/home/$USER/PiKISS/" ]; then
       clear
@@ -729,21 +719,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       else 
       
       echo " "
-      
-      
-       fi
-    
-      
-      
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-     
-      
-      
- #fi
+     fi
+ 
+ fi
+
 }
 
      
