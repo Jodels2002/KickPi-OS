@@ -741,10 +741,11 @@ KickPi-OS_Retropie() {
      echo "RetroPie64 todo"
      sudo rm -r /var/cache/apt/archives/
      sudo rm -r /usr/include/KHR/
+     cd
+      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       else 
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-fi
-
 
 if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
     echo " "
@@ -778,6 +779,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       toilet "KickPi-OS" --metal
       sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+      #-----Config Amiberry for Retropie
       toilet -F gay NOTE!
       echo " "
       echo " "
@@ -799,13 +801,19 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       clear
       toilet "KickPi-OS" --metal
       
+
+
+fi
+
+
+
       else 
       echo " "
       
       fi
 
       
-      #-----Config Amiberry for Retropie
+   
   
       
       
