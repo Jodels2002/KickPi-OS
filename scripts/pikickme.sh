@@ -269,7 +269,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       
       echo " Gimp is already installed..."
       
-      sleep 3s
+     
           
       fi     
        
