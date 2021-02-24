@@ -185,7 +185,7 @@ KickPi-OS_Tools() {
       echo " "
 
           
-     
+      sudo apt install -y mc zip unzip 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
        
        
