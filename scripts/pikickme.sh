@@ -183,7 +183,7 @@ KickPi-OS_Tools() {
       echo " "
 
           
-      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+     
       sudo apt install -y geany geany-plugins-common geany-common zip  unzip xmlstarlet mc chromium-codecs-ffmpeg
       sudo apt install -y mc zip omxplayer
             
@@ -523,9 +523,12 @@ fi
        # Amiberry first install
       #if [ ! -f "/home/$USER/Amiga/amiberry" ]; then
       # First installation
-     
+       clear
+       toilet "Amiberry" --metal
+       toilet -F gay 32bit
       
 	  echo "  ... here comes Amiberry 32 bit :-) "
+	  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
