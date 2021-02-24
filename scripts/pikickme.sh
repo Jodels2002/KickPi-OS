@@ -754,8 +754,16 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 KickPi-OS_Retropie() {
 #Install Retropie/Setup
 
-      
-    
+    if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     echo "RetroPie64 todo"
+     sudo rm -r /var/cache/apt/archives/
+     sudo rm -r /usr/include/KHR/
+      else 
+      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+fi
+
+
 if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
     echo " "
       clear
@@ -766,7 +774,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       echo " "
       sudo rm /etc/emulationstation/
       sudo rm/opt/retropie/
-      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      
       mkdir /home/$USER/RetroPie/
       mkdir /home/$USER/RetroPie/BIOS/
       mkdir /home/$USER/RetroPie/splashscreens/
@@ -777,10 +785,7 @@ if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/ 
       #sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      #Amibian dosen´t install "Binary" !?!
-      #if [ $USER == "pi" ]; then
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      #fi
       clear
       toilet "KickPi-OS" --metal
       sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
