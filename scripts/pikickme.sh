@@ -184,9 +184,9 @@ KickPi-OS_Tools() {
 
           
      
-      sudo apt install -y geany geany-plugins-common geany-common zip  unzip xmlstarlet mc chromium-codecs-ffmpeg
-      sudo apt install -y mc zip omxplayer
-            
+      sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
+      sudo apt install -y mc zip unzip  
+      sudo apt install -y omxplayer chromium-codecs-ffmpeg    
       clear
       toilet "KickPi-OS" --metal
       
