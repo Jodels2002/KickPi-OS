@@ -732,143 +732,123 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
   
 KickPi-OS_Retropie() {
-#Install Retropie/Setup
 
-    if [ "$(getconf LONG_BIT)" == "64" ]; then
+ #Install Retropie/Setup Preinstall
+ if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
      sudo rm -r /var/cache/apt/archives/
      sudo rm -r /usr/include/KHR/
      cd
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      else 
+     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+  else 
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 
-if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
-    echo " "
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo "  ... here comes Retropie :-)     "   
-      echo " "
-      echo " "
-      sudo rm /etc/emulationstation/
-      sudo rm/opt/retropie/
+      	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
+      	echo " "
+      	clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo "  ... here comes Retropie :-)     "   
+      	echo " "
+      	echo " "
+      	sudo rm /etc/emulationstation/
+      	sudo rm/opt/retropie/
       
-      mkdir /home/$USER/RetroPie/
-      mkdir /home/$USER/RetroPie/BIOS/
-      mkdir /home/$USER/RetroPie/splashscreens/
-      mkdir /home/$USER/RetroPie/roms
+      	mkdir /home/$USER/RetroPie/
+      	mkdir /home/$USER/RetroPie/BIOS/
+      	mkdir /home/$USER/RetroPie/splashscreens/
+      	mkdir /home/$USER/RetroPie/roms
       
-      cd
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd /home/$USER/RetroPie-Setup/ 
-      #sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      clear
-      toilet "KickPi-OS" --metal
-      sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
+      	cd
+      	git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+      	sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+      	cd /home/$USER/RetroPie-Setup/ 
+      	sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+      	clear
+      	toilet "KickPi-OS" --metal
+      	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
-      cd /home/$USER/KickPi-OS/Retropie/
-      sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
-      clear
-      toilet "KickPi-OS" --metal
-      sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
-      cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      #-----Config Amiberry for Retropie
-      toilet -F gay NOTE!
-      echo " "
-      echo " "
-      echo "The roms and workbench files are under copyrigt! "
-      echo " "
-      echo " "
-      echo "Use only if you have the original!  "
-      echo "(Original Amiga, Amiga Forever,...)"
-      echo " "
-      cd  /home/$USER/RetroPie/
-      git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-      mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
-      rm -r /home/$USER/RetroPie/RetroPieBIOS/
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
-      cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
-      cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
-      clear
-      toilet "KickPi-OS" --metal
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
+      	clear
+      	toilet "KickPi-OS" --metal
+      	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
+      	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+      	#-----Config Amiberry for Retropie
+      	toilet -F gay NOTE!
+      	echo " "
+      	echo " "
+      	echo "The roms and workbench files are under copyrigt! "
+      	echo " "
+      	echo " "
+      	echo "Use only if you have the original!  "
+      	echo "(Original Amiga, Amiga Forever,...)"
+      	echo " "
+      	cd  /home/$USER/RetroPie/
+      	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
+      	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
+      	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
+      	rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
+      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
+      	clear
+      	toilet "KickPi-OS" --metal
+      	fi
       
-
-
-fi
-
-
-
-      else 
-      echo " "
+      	if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay Amiberry
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
+      	clear
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay Amiberry
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
       
-      fi
-
+      	else 
+      	echo " Amiberry already installed..."
+      	fi
       
+      	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay C64
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
+      	clear
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay C64
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
+      	else 
+      	echo " C64 (lr-vice) already installed..."
+      	fi     
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+      	cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
+fi     
    
   
-      
-      
-if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
-
-      toilet "KickPi-OS" --metal
-      toilet -F gay Amiberry
-      cd /home/$USER/KickPi-OS/Retropie/
-      unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
-      clear
-      toilet "KickPi-OS" --metal
-      toilet -F gay Amiberry
-      cd /home/$USER/KickPi-OS/Retropie/
-      unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
       
       if [ "$(getconf LONG_BIT)" == "64" ]; then
           sudo cp -rf /home/$USER/Amiga/amiberry /opt/retropie/emulators/amiberry/
           echo "Amiberry 64 bit for RetroPie"
-      fi
       
       else 
-      
-      echo " Amiberry already installed..."
-      
-     
- fi     
-     
-if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
-#
-      toilet "KickPi-OS" --metal
-      toilet -F gay C64
-      cd /home/$USER/KickPi-OS/Retropie/
-      unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
       clear
-      toilet "KickPi-OS" --metal
-      toilet -F gay C64
-      cd /home/$USER/KickPi-OS/Retropie/
-      unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
-
-clear
-      else 
-     
-      echo " C64 (lr-vice) already installed..."
-      
-     
-          
+      # Configure RetroPi32Bit
+       
       fi     
-             
-      
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
-      cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
-      sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
+     
       
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
