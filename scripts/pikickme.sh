@@ -187,7 +187,7 @@ KickPi-OS_Tools() {
           
      
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
-      sudo apt install -y mc zip unzip  
+       
        
       clear
       toilet "KickPi-OS" --metal
