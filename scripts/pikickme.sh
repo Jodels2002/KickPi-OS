@@ -509,12 +509,17 @@ fi
        echo " "
        echo " ... here comes Amiberry 64 bit   :-)"
        
+       cd /home/$USER/KickPi-OS/Amiga
+      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip
+	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga/
+          sudo chmod -R 777 /home/$USER/Amiga/
+ 
        
-       
-       cd ~
+      
        
        
        if [ ! -f /home/$USER/Amiga/amiberry ]; then
+       cd ~
        #sudo apt-get -y upgrade
        #sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
        sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -535,12 +540,7 @@ fi
        
     
        
-          #cd /home/$USER/KickPi-OS/Amiga
-      	  #unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit.zip 
-	  #sleep 1s
-          #cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-64bit/* /home/$USER/Amiga/
-          #sudo chmod -R 777 /home/$USER/Amiga/
- 
+          
     else
        clear
        toilet "Amiberry" --metal
@@ -550,8 +550,7 @@ fi
 	  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-	  sleep 1s
-          cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
+	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
          
     fi
 
