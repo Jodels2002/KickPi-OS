@@ -530,13 +530,14 @@ fi
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
           cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
-         
+         echo " install"
+	 sleep 15s
       
       #else 
          clear
          # Configured
-       
-   
+       echo " Configured"
+       sleep 15s
       #fi
       
     fi
@@ -932,7 +933,7 @@ echo " "
       sudo cp  /home/$USER/KickPi-OS/config/login /etc/pam.d/
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
-      sudo rm -rf ~/.config/chromium/
+      
       sudo rm -rf ~/KickPi-OS
       touch ~/.hushlogin
       #sudo rm -rf ~/amigafonts/
