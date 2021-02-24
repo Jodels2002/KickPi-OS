@@ -508,17 +508,21 @@ fi
        echo " "
        echo " "
        echo " ... here comes Amiberry 64 bit   :-)"
-       #sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-       #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay 64bit
-       echo " "
-       echo "Compiling Pi64-dispmanx version "
+       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+       
+       
        cd ~
        
        
-       if [ ! -f /home/$USER/amiberry/amiberry ]; then
+       if [ ! -f /home/$USER/Amiga/amiberry ]; then
+       sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+       clear
+       toilet "Amiberry" --metal
+       toilet -F gay 64bit
+       Amiberry
+       echo "Compiling Pi64-dispmanx version "
+       echo " "
+       echo " "
        git clone -b dev https://github.com/midwan/amiberry
        cd amiberry
        make -j2 PLATFORM=pi64-dispmanx
