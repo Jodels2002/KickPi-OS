@@ -41,6 +41,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo ""
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
+      echo ""
+      sudo apt-get -y upgrade
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
