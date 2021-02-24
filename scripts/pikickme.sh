@@ -730,8 +730,6 @@ KickPi-OS_Retropie() {
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
-     sudo rm -r /var/cache/apt/archives/
-     sudo rm -r /usr/include/KHR/
      cd
      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
