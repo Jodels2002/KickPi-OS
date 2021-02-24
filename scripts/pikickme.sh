@@ -901,8 +901,9 @@ case $CHOICE in
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
-            KickPi-OS_Addons
             KickPi-OS_Retropie
+	    KickPi-OS_Addons
+	    KickPi-OS_Video
             #KickPi-OS_Update
             ;;
         2)
@@ -911,8 +912,8 @@ case $CHOICE in
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
-            KickPi-OS_Addons
             KickPi-OS_Retropie
+	    KickPi-OS_Addons
             KickPi-OS_Office
 	    KickPi-OS_Video
 	    #KickPi-OS_Update
