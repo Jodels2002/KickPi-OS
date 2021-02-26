@@ -13,7 +13,10 @@
 #20.02 Photogimp, Autoboot to Amiberry
 #20.02 Bootmenu, Speedup Boot time  ->
 # sudo update-rc.d motd remove
+# consoleblank=0  /boot/cmdline.txt
 # ExecStart=-/sbin/agetty --skip-login --noclear --noissue --login-options "-f pi" %I $TERM
+# quiet splash plymouth.ignore-serial-consoles
+# consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
