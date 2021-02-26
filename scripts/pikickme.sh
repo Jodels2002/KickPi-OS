@@ -11,7 +11,7 @@
 #16.02 add TwisertOS, Bugfix Update optimiced, RetroPie Bugfix (Autoconfig Amiberry)  Bugfix 64 bit, Worker preconfigured / OK
 #16.02 Bugfix Reboot, Speedup
 #20.02 Photogimp, Autoboot to Amiberry
-#20.02 Bootmenu, Speedup Boot time
+#20.02 Bootmenu, Speedup Boot time  ->sudo update-rc.d motd remove
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 
 #***********************************************  #Are you runing Desktop?  ***********************************
@@ -336,8 +336,9 @@ KickPi-OS_Games() {
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       sudo apt purge -y raspberrypi-ui-mods 
       sudo apt purge -y cups cups-client cups-common cups-server-common
+      sudo update-rc.d motd remove
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
-  
+      
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
       # First installation
