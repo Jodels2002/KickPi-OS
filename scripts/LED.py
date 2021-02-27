@@ -30,37 +30,37 @@ GPIO.setwarnings(False)
 
 # Status LED
 GPIO.setup(14,GPIO.OUT)
-print ("LED Orange Front on")
+#print ("LED Orange Front on")
 GPIO.output(14,GPIO.HIGH)
 
 GPIO.setup(15,GPIO.LOW)
-print ("LED Orange Front on")
+#print ("LED Orange Front on")
 GPIO.output(15,GPIO.HIGH)
 
 
 # Power LED Blue
 GPIO.setup(11,GPIO.OUT)
-print ("LED Blue on")
+#print ("LED Blue on")
 GPIO.output(11,GPIO.HIGH)
 
 GPIO.setup(5,GPIO.OUT)
-print ("LED Blue on")
+#print ("LED Blue on")
 GPIO.output(5,GPIO.HIGH)
 
 GPIO.setup(13,GPIO.OUT)
-print ("LED Yellow on")
+#print ("LED Yellow on")
 GPIO.output(13,GPIO.HIGH)
 
 GPIO.setup(6,GPIO.OUT)
-print ("LED Green on")
+#print ("LED Green on")
 GPIO.output(6,GPIO.HIGH)
 
 GPIO.setup(19,GPIO.OUT)
-print ("LED Orange on")
+#print ("LED Orange on")
 GPIO.output(19,GPIO.HIGH)
 
 GPIO.setup(26,GPIO.OUT)
-print ("LED Red on")
+#print ("LED Red on")
 GPIO.output(26,GPIO.HIGH)
 
 
