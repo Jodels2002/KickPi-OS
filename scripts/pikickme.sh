@@ -143,6 +143,28 @@ CHOICE=$(dialog --clear \
 
 #}
 
+#**********************************************  #Install 64 bit pre      ***************************************
+#****************************************************************************************************************
+  
+  
+KickPi-OS_64bit_pre() {
+
+ #Install Retropie/Setup Preinstall
+ if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     echo "RetroPie64 todo"
+     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+     sudo apt purge -y raspberrypi-ui-mods 
+     sudo apt purge -y cups cups-client cups-common cups-server-common
+     sudo apt-get -y purge libraspberrypi-dev 
+     sudo apt-get -y update
+     sudo apt-get -y upgrade
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     
+  fi
+
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
@@ -747,27 +769,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 
 }
 
-#**********************************************  #Install 64 bit pre Retropie/Setup  ***************************************
-#****************************************************************************************************************
-  
-  
-KickPi-OS_64bit_pre() {
 
- #Install Retropie/Setup Preinstall
- if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     echo "RetroPie64 todo"
-     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-     sudo apt purge -y raspberrypi-ui-mods 
-     sudo apt purge -y cups cups-client cups-common cups-server-common
-     sudo apt-get -y purge libraspberrypi-dev 
-     sudo apt-get -y update
-     sudo apt-get -y upgrade
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-     
-  fi
 #**********************************************  #Install Retropie/Setup  ***************************************
 #****************************************************************************************************************
   
