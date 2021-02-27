@@ -751,7 +751,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 #****************************************************************************************************************
   
   
-KickPi-OS_Retropie_pre() {
+KickPi-OS_64bit_pre() {
 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -763,14 +763,10 @@ KickPi-OS_Retropie_pre() {
      sudo apt-get -y purge libraspberrypi-dev 
      sudo apt-get -y update
      sudo apt-get -y upgrade
-     sudo apt-get -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-     libxml2-dev
-     cd
-     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-     cd /home/$USER/RetroPie-Setup/ 
-     sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     
   fi
 #**********************************************  #Install Retropie/Setup  ***************************************
 #****************************************************************************************************************
@@ -782,11 +778,18 @@ KickPi-OS_Retropie() {
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
+     cd
+     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+     cd /home/$USER/RetroPie-Setup/ 
+     sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+     
+     
      if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
       	toilet "KickPi-OS" --metal
       	toilet -F gay Amiberry
       	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry64.zip
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
       	clear
       	toilet "KickPi-OS" --metal
@@ -966,6 +969,7 @@ case $CHOICE in
         
         1)
             #Poser
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
@@ -977,6 +981,7 @@ case $CHOICE in
             ;;
         2)
             #Poser
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
@@ -991,12 +996,12 @@ case $CHOICE in
         3)
            
             #Poser
-	    KickPi-OS_Retropie_pre
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
-	    KickPi-OS_Retropie
+	    #KickPi-OS_Retropie
 	    #KickPi-OS_Update
            
             ;;
