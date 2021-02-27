@@ -66,5 +66,6 @@ cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
+sudo raspi-config nonint get_i2c
 sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
