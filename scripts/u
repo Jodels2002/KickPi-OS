@@ -2,13 +2,19 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
+LED
+sleep 1s
+LED_off
 sudo apt -y --fix-broken install
 wget -q --spider http://google.com
 
 if [ $? -eq 0 ]; then
 sudo apt -y --fix-broken install
+LED_front
 sudo apt-get -y update
+LED_off
 sudo apt-get -y upgrade
+LED_body
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
 else
@@ -34,6 +40,7 @@ fi
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
+      LED
       /home/$USER/KickPi-OS/scripts/pikickme.sh
 
 
