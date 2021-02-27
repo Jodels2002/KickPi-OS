@@ -823,7 +823,7 @@ KickPi-OS_Retropie() {
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
       	cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
-fi     
+          
    
      
   else 
