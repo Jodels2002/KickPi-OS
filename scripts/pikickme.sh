@@ -49,7 +49,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
       echo ""
-      
+      sudo update-rc.d motd remove
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
