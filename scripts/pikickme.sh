@@ -933,8 +933,8 @@ case $CHOICE in
             #Poser
             KickPi-OS_Tools
             KickPi-OS_Desktop
-            KickPi-OS_Amiberry
-            Configure_Amiga
+            #KickPi-OS_Amiberry
+            #Configure_Amiga
 	    #KickPi-OS_Update
            
             ;;
