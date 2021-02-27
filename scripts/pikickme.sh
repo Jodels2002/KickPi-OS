@@ -757,6 +757,9 @@ KickPi-OS_Retropie_pre() {
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
+     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+     sudo apt purge -y raspberrypi-ui-mods 
+     sudo apt purge -y cups cups-client cups-common cups-server-common
      sudo apt-get -y purge libraspberrypi-dev 
      sudo apt-get -y update
      sudo apt-get -y upgrade
