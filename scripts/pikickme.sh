@@ -747,12 +747,11 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 
 }
 
-     
-#**********************************************  #Install Retropie/Setup  ***************************************
+#**********************************************  #Install 64 bit pre Retropie/Setup  ***************************************
 #****************************************************************************************************************
   
   
-KickPi-OS_Retropie() {
+KickPi-OS_Retropie_pre() {
 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -763,6 +762,56 @@ KickPi-OS_Retropie() {
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
      cd /home/$USER/RetroPie-Setup/ 
      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+  fi
+#**********************************************  #Install Retropie/Setup  ***************************************
+#****************************************************************************************************************
+  
+  
+KickPi-OS_Retropie() {
+
+ #Install Retropie/Setup Preinstall
+ if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+     echo "RetroPie64 todo"
+     if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay Amiberry
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
+      	clear
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay Amiberry
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiga_64.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
+      
+      	else 
+      	echo " Amiberry 64bit already installed..."
+      	fi
+      
+      	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay C64
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
+      	clear
+      	toilet "KickPi-OS" --metal
+      	toilet -F gay C64
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/c64_64.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
+      	else 
+      	echo " C64 64bit (lr-vice) already installed..."
+      	fi     
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+      	cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
+fi     
+   
+     
   else 
   
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -933,11 +982,12 @@ case $CHOICE in
         3)
            
             #Poser
-	    KickPi-OS_Retropie
-            KickPi-OS_Tools
+	    KickPi-OS_Retropie_pre
+	    KickPi-OS_Tools
             KickPi-OS_Desktop
             KickPi-OS_Amiberry
             Configure_Amiga
+	    KickPi-OS_Retropie
 	    #KickPi-OS_Update
            
             ;;
