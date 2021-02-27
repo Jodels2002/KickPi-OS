@@ -757,8 +757,11 @@ KickPi-OS_Retropie_pre() {
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
-     sudo apt install -y libegl-dev
-     sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     sudo apt-get -y update
+     sudo apt-get -y upgrade
+     sudo apt-get -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
+     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     libxml2-dev
      cd
      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
