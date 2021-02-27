@@ -216,6 +216,9 @@ KickPi-OS_Tools() {
           
       sudo apt install -y mc zip unzip 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
+      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
+      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+   
        
        
       clear
@@ -577,14 +580,13 @@ fi
        toilet -F gay 32bit
       
 	  echo "  ... here comes Amiberry 32 bit :-) "
-	  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
+	  
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
          
     fi
 
-   
 }
 
 
@@ -793,7 +795,7 @@ KickPi-OS_Retropie() {
      
   else 
   
-      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      
       sudo apt install -y omxplayer chromium-codecs-ffmpeg   
       	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
       	echo " "
