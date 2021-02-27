@@ -757,6 +757,7 @@ KickPi-OS_Retropie_pre() {
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
      echo "RetroPie64 todo"
+     sudo apt-get -y purge libraspberrypi-dev 
      sudo apt-get -y update
      sudo apt-get -y upgrade
      sudo apt-get -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
