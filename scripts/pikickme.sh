@@ -761,6 +761,8 @@ KickPi-OS_Retropie() {
      cd
      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+     cd /home/$USER/RetroPie-Setup/ 
+     sudo __nodialog=1 ./retropie_packages.sh setup basic_install
   else 
   
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -931,10 +933,11 @@ case $CHOICE in
         3)
            
             #Poser
+	    KickPi-OS_Retropie
             KickPi-OS_Tools
             KickPi-OS_Desktop
-            #KickPi-OS_Amiberry
-            #Configure_Amiga
+            KickPi-OS_Amiberry
+            Configure_Amiga
 	    #KickPi-OS_Update
            
             ;;
