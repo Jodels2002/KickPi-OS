@@ -160,8 +160,8 @@ KickPi-OS_64bit_pre() {
      sudo apt-get -y update
      sudo apt-get -y upgrade
      sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libraspberrypi-dev 
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
-     sudo apt-get install -y -o Dpkg::Options::="--force-overwrite" libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
+     sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
      
   fi
 }
