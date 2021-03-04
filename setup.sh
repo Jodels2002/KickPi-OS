@@ -62,7 +62,7 @@ sudo chmod -R 777 /home/$USER/Amiga
 sudo reboot
 
 fi
-
+REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
 if [ "$REVCODE" = "a22082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
