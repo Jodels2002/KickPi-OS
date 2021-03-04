@@ -63,7 +63,7 @@ sudo reboot
 
 fi
 if [ "$REVCODE" = "a020d3" ]; then
-    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
 	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
