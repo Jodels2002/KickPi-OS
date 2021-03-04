@@ -916,7 +916,7 @@ fi
       sudo chmod -R 777 /home/$USER/.KickPi-OS/
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      sudo chmod -R 777 /home/pi/.emulationstation/
+      sudo chmod -R 777 /home/$USER/.emulationstation/
       sudo chmod -R 777 /opt/retropie/
       sudo chmod -R 777 /etc/emulationstation/
       
