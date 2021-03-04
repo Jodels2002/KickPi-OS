@@ -57,7 +57,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
       
-      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+      #sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sleep 3s
 fi    	
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
@@ -66,6 +66,6 @@ cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
-sudo raspi-config nonint get_i2c
+#sudo raspi-config nonint get_i2c
 sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
