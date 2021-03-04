@@ -54,7 +54,7 @@ if [ "$REVCODE" = "a02082" ]; then
 	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
         sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-
+sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
@@ -68,7 +68,7 @@ if [ "$REVCODE" = "a020d3" ]; then
 	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
         sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-
+sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
@@ -82,7 +82,7 @@ if [ "$REVCODE" = "a22082" ]; then
 	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
         sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-
+sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
