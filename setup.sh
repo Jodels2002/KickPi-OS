@@ -62,7 +62,20 @@ sudo chmod -R 777 /home/$USER/Amiga
 sudo reboot
 
 fi
+if [ "$REVCODE" = "a020d3" ]; then
+    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+	echo "$PIMODEL ($REVCODE)"
+	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
+sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint get_ssh
+#sudo raspi-config nonint get_i2c
+sudo chmod -R 777 /home/$USER/Amiga   
+sudo reboot
+
+fi
 if [ "$REVCODE" = "a22082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
