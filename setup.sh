@@ -45,6 +45,39 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	  cp -rf /media/usb0/Shared/* ~/Amiga  
 	  
           fi
+	 
+	 REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+
+if [ "$REVCODE" = "a02082" ]; then
+    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+	echo "$PIMODEL ($REVCODE)"
+	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
+sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint get_ssh
+#sudo raspi-config nonint get_i2c
+sudo chmod -R 777 /home/$USER/Amiga   
+sudo reboot
+
+fi
+
+if [ "$REVCODE" = "a22082" ]; then
+    PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
+	echo "$PIMODEL ($REVCODE)"
+	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
+sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint get_ssh
+#sudo raspi-config nonint get_i2c
+sudo chmod -R 777 /home/$USER/Amiga   
+sudo reboot
+
+fi
+	 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       echo "Raspberry Pi OS 64 bit is running..."
