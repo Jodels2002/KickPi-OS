@@ -395,7 +395,9 @@ KickPi-OS_Games() {
      # DietPi, Pimiga.... as Host Distri not ready 
 
       sudo apt install -y git chromium-browser usbmount gparted
-    
+          cd /home/$USER/KickPi-OS/Amiga
+      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
+	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
      cd
       git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
       sudo chmod -R 777 raspi-config
