@@ -547,6 +547,7 @@ fi
        cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga/
+	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
           sudo chmod -R 777 /home/$USER/Amiga/
  
        
@@ -568,7 +569,7 @@ fi
        git clone -b dev https://github.com/midwan/amiberry
        cd amiberry
        make -j2 PLATFORM=pi64-dispmanx
-      cp -rf /home/$USER/amiberry/  /home/$USER/Amiga/      
+      cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/      
       else 
       echo " "
       fi
