@@ -533,6 +533,9 @@ fi
      
  KickPi-OS_Amiberry() {
   
+  
+  mkdir /home/$USER/Amiga/
+  mkdir /home/$USER/Amiga/conf/ 
       
  
  if [ "$(getconf LONG_BIT)" == "64" ]; then
