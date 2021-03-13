@@ -569,7 +569,7 @@ fi
        echo " "
        git clone -b dev https://github.com/midwan/amiberry
        cd amiberry
-       make -j2 PLATFORM=pi64-dispmanx
+       make -j2 PLATFORM=pi64
       cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/      
       else 
       echo " "
