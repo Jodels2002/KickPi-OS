@@ -71,7 +71,7 @@ cd KickPi-OS
 
 # Update
 
-To bring KickPi-OS up to date, just type "u" + return in the cammand line. 
+To bring KickPi-OS up to date, just type "u" + return in the command line. 
 
 # RetroPie:
 To use Retropie just copy your Bios and Rom files into the (Home) Retropie folder. 
