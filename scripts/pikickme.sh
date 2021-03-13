@@ -548,6 +548,7 @@ fi
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga/
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
  
        
