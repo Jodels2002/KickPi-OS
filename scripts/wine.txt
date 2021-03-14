@@ -16,7 +16,8 @@ sudo apt-get - y install gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-
 cd
 git clone -b dev https://github.com/midwan/amiberry
 cd amiberry
- make -j2 pi64-dispmanx
+make -j2 PLATFORM=pi64
+make -j2 PLATFORM=pi64-dispmanx
 
 wget https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.zip
 unzip  SDL2_ttf-2.0.14.zip
