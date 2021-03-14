@@ -796,8 +796,44 @@ KickPi-OS_Retropie() {
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
      cd /home/$USER/RetroPie-Setup/ 
      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
+     
+     sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
+      
+      	cd /home/$USER/KickPi-OS/Retropie/
+      	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
+      	clear
+      	toilet "KickPi-OS" --metal
+      	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
+      	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
+      	#-----Config Amiberry for Retropie
+      	toilet -F gay NOTE!
+      	echo " "
+      	echo " "
+      	echo "The roms and workbench files are under copyrigt! "
+      	echo " "
+      	echo " "
+      	echo "Use only if you have the original!  "
+      	echo "(Original Amiga, Amiga Forever,...)"
+      	echo " "
+      	cd  /home/$USER/RetroPie/
+      	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
+      	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
+      	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
+      	rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
+      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
+      	clear
+      	toilet "KickPi-OS" --metal
      else
-     echo echo "RetroPie64 always installed"
+     clear
+     toilet "KickPi-OS" --metal
+     echo " "
+     echo " "
+     echo "RetroPie64 always installed"
+     echo " "
+     echo " "
      fi
      
           
