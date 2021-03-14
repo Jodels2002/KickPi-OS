@@ -548,8 +548,8 @@ fi
        echo " ... here comes Amiberry 64 bit   :-)"
        
        cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit.zip
-	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-64bit/* /home/$USER/Amiga/
+      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
+	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
@@ -567,7 +567,7 @@ fi
        toilet "Amiberry" --metal
        toilet -F gay 64bit
        Amiberry
-       echo "Compiling Pi64-dispmanx version "
+       echo "Compiling Pi64 version "
        echo " "
        echo " "
        git clone -b dev https://github.com/midwan/amiberry
