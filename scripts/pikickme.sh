@@ -553,7 +553,11 @@ fi
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
- 
+	  
+        sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
+	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
+	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
+	
        
       
        
