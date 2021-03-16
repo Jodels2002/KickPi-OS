@@ -852,8 +852,10 @@ KickPi-OS_Retropie() {
        make -j4
        mkdir $HOME/games
        cd $HOME/games
-       #sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
-sudo make install
+       sudo cp -rf /usr/local/share/vice/ $HOME/games
+       sudo cp -rf /usr/local/bin/x* $HOME/games/vice/
+       sudo cp -rf /usr/local/bin/x64sc $HOME/games/vice/x64
+       
      else
      clear
      toilet "KickPi-OS" --metal
