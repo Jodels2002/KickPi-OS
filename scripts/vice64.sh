@@ -10,7 +10,7 @@ cd trunk/vice
 
 ./autogen.sh
 
-./configure --disable-pdf-docs
+./configure --disable-pdf-docs --without-pulse
 
 make -j4
 
