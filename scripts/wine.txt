@@ -26,6 +26,15 @@ cd SDL2_ttf-2.0.14
 ./configure && make -j $(nproc) &&
 sudo make install
 
+
+# Vice64 bit
+sudo apt install -y build-essential  libvte-dev libasound2-dev libgtk2.0-dev libgnome2-dev byacc flex
+https://sourceforge.net/projects/vice-emu/files/releases/vice-3.5.tar.gz/download
+
+./configure --enable-gnomeui
+make
+sudo make install
+
 sudo ldconfig -v
 
 #TMP
