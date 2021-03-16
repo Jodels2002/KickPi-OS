@@ -825,7 +825,20 @@ KickPi-OS_Retropie() {
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
       	clear
-      	toilet "KickPi-OS" --metal
+      	toilet "RetroPie" --metal
+      	toilet -F gay Amiberry
+	sudo mkdir /opt/retropie/emulators/amiberry
+	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
+	cd /home/$USER/KickPi-OS/Retropie/
+      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
+      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
+	sudo cp -rf /home/$USER/Amiga/amiberry /opt/retropie/emulators/amiberry/
+	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
+	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
+	sudo chmod -R 777 /opt/retropie/configs/amiga
+	
      else
      clear
      toilet "KickPi-OS" --metal
