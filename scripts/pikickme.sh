@@ -834,7 +834,7 @@ KickPi-OS_Retropie() {
 	cd /home/$USER/KickPi-OS/Retropie/
       	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
-	sudo cp -rf /home/$USER/Amiga/amiberry /opt/retropie/emulators/amiberry/
+	sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
