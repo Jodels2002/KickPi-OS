@@ -554,13 +554,7 @@ fi
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
 	  
-        sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
-	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
-	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
-	
-       
-      
-       
+              
        
        if [ ! -f /home/$USER/Amiga/amiberry ]; then
        cd ~
@@ -957,9 +951,12 @@ fi
   
       
       if [ "$(getconf LONG_BIT)" == "64" ]; then
-          sudo cp -rf /home/$USER/Amiga/amiberry /opt/retropie/emulators/amiberry/
+          clear
+      	  toilet "KickPi-OS" --metal
           echo "Amiberry 64 bit for RetroPie"
-      
+          sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
+	  sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
+	  sudo chmod -R 777 /opt/retropie/emulators/amiberry/
       else 
       clear
       # Configure RetroPi32Bit
