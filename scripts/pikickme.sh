@@ -737,8 +737,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      	echo " "
      	echo "Vice64"
      
-
-	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
+     # First installation
+      clear
+      cd /home/$USER/KickPi-OS/.pac/
+      #unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
+      #cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
+      #sudo chmod -R 777 /home/$USER/.worker/
+	#sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
       
        cd
        # mkdir -p src
