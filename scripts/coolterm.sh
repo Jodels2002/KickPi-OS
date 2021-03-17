@@ -12,3 +12,5 @@ qmake
 make -j8 
 
 cp -rf qmltermwidget/src/qmldir qmltermwidget/lib/kb-layouts qmltermwidget/lib/color-schemes qmltermwidget/src/QMLTermScrollbar.qml qmltermwidget/QMLTermWidget
+sudo cp -rf /home/$USER/cool-retro-term/cool-retro-term /usr/local/bin/
+sudo cp -rf /home/$USER/cool-retro-term/cool-retro-term.desktop /usr/share/applications/
