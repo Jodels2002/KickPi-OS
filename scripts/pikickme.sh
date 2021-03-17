@@ -219,13 +219,13 @@ KickPi-OS_Tools() {
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      if [ ! -d /$User/pi-apps/]; then
+      #if [ ! -d /$User/pi-apps/]; then
       cd
       wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-      else
+     # else
       clear
       toilet "KickPi-OS" --metal
-      fi
+      #fi
       #Some little Amiga stuff....
       sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
@@ -729,8 +729,38 @@ fi
 KickPi-OS_Addons() {
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     echo "Vice64 todo"
+     	
+	#if [ ! -d /$User/src/]; then
+	clear
+     	toilet "KickPi-OS" --metal
+     	echo " "
+     	echo " "
+     	echo "Vice64"
+     
+
+	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
+      
+       cd
+       mkdir -p src
+       cd src
+       svn checkout https://svn.code.sf.net/p/vice-emu/code/trunk trunk
+       cd trunk/vice
+       ./autogen.sh
+       ./configure --disable-pdf-docs --without-pulse
+       make -j4
+       mkdir $HOME/games
+       cd $HOME/games
+       sudo cp -rf /usr/local/share/vice/ $HOME/games
+       sudo cp -rf /usr/local/bin/x* $HOME/games/vice/
+       sudo cp -rf /usr/local/bin/x64sc $HOME/games/vice/x64
+       #else
+       clear
+     toilet "KickPi-OS" --metal
+     echo " "
+     echo " "
+     echo "Vice64 always installed"
+     #fi
+          
       else 
       clear
       toilet "KickPi-OS" --metal
@@ -841,30 +871,7 @@ KickPi-OS_Retropie() {
 	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
 	sudo chmod -R 777 /opt/retropie/configs/amiga
 	
-	# C64
-	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
-       if [ ! -d /$User/src/]; then
-       cd
-       mkdir -p src
-       cd src
-       svn checkout https://svn.code.sf.net/p/vice-emu/code/trunk trunk
-       cd trunk/vice
-       ./autogen.sh
-       ./configure --disable-pdf-docs --without-pulse
-       make -j4
-       mkdir $HOME/games
-       cd $HOME/games
-       sudo cp -rf /usr/local/share/vice/ $HOME/games
-       sudo cp -rf /usr/local/bin/x* $HOME/games/vice/
-       sudo cp -rf /usr/local/bin/x64sc $HOME/games/vice/x64
-       else
-       clear
-     toilet "KickPi-OS" --metal
-     echo " "
-     echo " "
-     echo "Vice64 always installed"
-     fi
-     
+	
      else
      
      clear
