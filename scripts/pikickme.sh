@@ -524,8 +524,23 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
       fi 
-#fi
-
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+       clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay 64bit
+       echo " "
+       echo " "
+       if [ ! -f /home/$USER/.config/xfce4/panel/panel.zip ]; then
+       
+       cd /home/$USER/KickPi-OS/config/
+      	  unzip -u /home/$USER/KickPi-OS/config/panel.zip
+	  cp -rf /home/$USER/KickPi-OS/config/panel/* /home/$USER/.config/xfce4/panel/
+	  cp -rf /home/$USER/KickPi-OS/config/panel.zip /home/$USER/.config/xfce4/panel/
+	 
+          sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
+	  fi
+fi
 }
 
 
