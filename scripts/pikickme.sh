@@ -737,34 +737,34 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      	echo " "
      	echo " "
      	
-     cd /home/$USER/KickPi-OS/.pac/
-      unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
-      unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
-      sudo mkdir /home/$USER/games
-      sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
-      sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
+     	cd /home/$USER/KickPi-OS/.pac/
+      	unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
+      	unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
+      	sudo mkdir /home/$USER/games
+      	sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
+      	sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
    
-      sudo chmod -R 777 /home/$USER/games/vice/
+      	sudo chmod -R 777 /home/$USER/games/vice/
 
        else
-       clear
-     toilet "KickPi-OS" --metal
-     echo " "
-     echo " "
-     echo "Vice64 always installed"
-    sleep 4s
+       	clear
+     	toilet "KickPi-OS" --metal
+     	echo " "
+     	echo " "
+     	echo "Vice64 always installed"
+   
      fi
           
       else 
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      echo "Commodore Vice 32bit" 
-      echo " "
-      echo " "
-      cd
+      	clear
+      	toilet "KickPi-OS" --metal
+      	toilet "full" --metal
+      	echo " "
+      	echo " "
+      	echo "Commodore Vice 32bit" 
+      	echo " "
+      	echo " "
+      	cd
       
       if [ ! -f /home/$USER/games/vice-3.4-bin-rpi.tar.gz ]; then
       
