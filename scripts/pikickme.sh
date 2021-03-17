@@ -730,7 +730,7 @@ KickPi-OS_Addons() {
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
-	if [ ! -f /home/$USER/games/vice/x64]; then
+	if [ ! -d /home/$USER/games/vice/ ]; then
 	clear
      	toilet "KickPi-OS" --metal
 	echo "Vice64"
