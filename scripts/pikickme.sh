@@ -737,13 +737,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      	echo " "
      	echo " "
      	
-     
-     # First installation
-      clear
-      cd /home/$USER/KickPi-OS/.pac/
+     cd /home/$USER/KickPi-OS/.pac/
       unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
       unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
-      mkdir $HOME/games
+      sudo mkdir /home/$USER/games
       sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
       sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
    
@@ -755,7 +752,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      echo " "
      echo " "
      echo "Vice64 always installed"
-    
+    sleep 4s
      fi
           
       else 
