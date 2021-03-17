@@ -733,9 +733,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	if [ ! -f /home/$USER/games/vice/x64]; then
 	clear
      	toilet "KickPi-OS" --metal
+	echo "Vice64"
      	echo " "
      	echo " "
-     	echo "Vice64"
+     	
      
      # First installation
       clear
@@ -754,7 +755,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      echo " "
      echo " "
      echo "Vice64 always installed"
-     sleep 4s
+    
      fi
           
       else 
