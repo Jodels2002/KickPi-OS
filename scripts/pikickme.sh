@@ -730,7 +730,7 @@ KickPi-OS_Addons() {
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
-	#if [ ! -d /$User/src/]; then
+	if [ ! -f /home/$USER/games/vice/x64]; then
 	clear
      	toilet "KickPi-OS" --metal
      	echo " "
@@ -753,13 +753,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo cp -rf /usr/local/share/vice/ $HOME/games
        sudo cp -rf /usr/local/bin/x* $HOME/games/vice/
        sudo cp -rf /usr/local/bin/x64sc $HOME/games/vice/x64
-       #else
+       else
        clear
      toilet "KickPi-OS" --metal
      echo " "
      echo " "
      echo "Vice64 always installed"
-     #fi
+     fi
           
       else 
       clear
