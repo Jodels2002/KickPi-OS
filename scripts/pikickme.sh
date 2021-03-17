@@ -740,30 +740,21 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      # First installation
       clear
       cd /home/$USER/KickPi-OS/.pac/
-      #unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
-      #cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
-      #sudo chmod -R 777 /home/$USER/.worker/
-	#sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
-      
-       cd
-       # mkdir -p src
-       # cd src
-       # svn checkout https://svn.code.sf.net/p/vice-emu/code/trunk trunk
-       # cd trunk/vice
-       # ./autogen.sh
-       # ./configure --disable-pdf-docs --without-pulse
-       # make -j4
-       # mkdir $HOME/games
-       # cd $HOME/games
-       # sudo cp -rf /usr/local/share/vice/ $HOME/games
-       # sudo cp -rf /usr/local/bin/x* $HOME/games/vice/
-       # sudo cp -rf /usr/local/bin/x64sc $HOME/games/vice/x64
+      unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
+      unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
+      mkdir $HOME/games
+      sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
+      sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
+   
+      sudo chmod -R 777 /home/$USER/games/vice/
+
        else
        clear
      toilet "KickPi-OS" --metal
      echo " "
      echo " "
      echo "Vice64 always installed"
+     sleep 4s
      fi
           
       else 
