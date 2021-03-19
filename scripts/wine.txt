@@ -48,6 +48,10 @@ after the reboot you will run the removal up top.
 #aplay /usr/share/sounds/alsa/Noise.wav
 sudo /etc/init.d/alsa-utils reset
 
+sudo apt-get install pi-bluetooth
+sudo apt-get install bluez bluez-firmware
+sudo usermod -G bluetooth -a pi
+
 #TMP
    sudo   cat >/boot/config.txt <<_EOF_
 # Enable DRM VC4 V3D driver			#Kick
