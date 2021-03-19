@@ -41,6 +41,12 @@ make
 sudo make install
 
 sudo ldconfig -v
+alsa
+sudo apt-get remove pulseaudio
+sudo apt-get install pulseaudio
+after the reboot you will run the removal up top.
+#aplay /usr/share/sounds/alsa/Noise.wav
+sudo /etc/init.d/alsa-utils reset
 
 #TMP
    sudo   cat >/boot/config.txt <<_EOF_
