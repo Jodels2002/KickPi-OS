@@ -163,7 +163,14 @@ KickPi-OS_64bit_pre() {
      sudo apt-get install -y libraspberrypi-dev 
      sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
      sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-     
+     	
+	sudo apt-get -y remove pulseaudio
+	sudo apt-get -y install pulseaudio
+	sudo /etc/init.d/alsa-utils reset
+	sudo apt-get -y install pi-bluetooth
+	sudo apt-get -y install bluez bluez-firmware
+	sudo usermod -G bluetooth -a pi
+
   fi
 }
 #*********************************************  #Time to update:)  **********************************************
