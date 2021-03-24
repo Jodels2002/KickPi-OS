@@ -38,11 +38,10 @@ compile() {
 	    git clone --recursive "$GITHUB_PATH" cool-retro-term
     fi
     cd "$HOME"/sc/cool-retro-term
-    #qmake && make -j"$(nproc)" OPTOPT="-march=armv8-a+crc -mtune=cortex-a53"
-    #sudo make install
-    #fix_icon
-    make 
-    make -j8 
+    qmake && make -j"$(nproc)" OPTOPT="-march=armv8-a+crc -mtune=cortex-a53"
+    sudo make install
+    fix_icon
+   
     #runme
 }
 
