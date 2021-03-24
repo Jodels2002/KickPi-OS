@@ -56,7 +56,7 @@ if [ ! -d /home/$USER/RetroPie/roms/Amiga_WHD_Games ]; then
       clear
       
       fi
-CommanderPi  Is out...User interaktiviti needed... 
+      #CommanderPi  Is out...User interaktiviti needed... 
       cd
       sudo apt install -y python-pil python3-pil python3-pil.imagetk-dbg python-pil-doc 
       git clone --depth=1 https://github.com/Jack477/CommanderPi
@@ -68,7 +68,7 @@ CommanderPi  Is out...User interaktiviti needed...
       
      
       
-     Is out...takes too long time... 
+    # Is out...takes too long time... 
      if [ ! -d /home/pi/winetricks ]; then
         clear
        toilet "KickPi-OS" --metal
