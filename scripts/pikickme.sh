@@ -821,7 +821,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       echo " "
      fi
- 
+     
  fi
 
 }
