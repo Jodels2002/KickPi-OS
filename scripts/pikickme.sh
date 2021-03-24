@@ -540,12 +540,12 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        echo " "
        if [ ! -f /home/$USER/.config/xfce4/panel/panel.zip ]; then
        
-          sudo rm /home/$USER/.config/xfce4/panel/
-	  mkdir /home/$USER/.config/xfce4/panel/
-          cd /home/$USER/KickPi-OS/config/
-      	  unzip -u /home/$USER/KickPi-OS/config/panel.zip
-	  cp -rf /home/$USER/KickPi-OS/config/panel/* /home/$USER/.config/xfce4/panel/
-	  cp -rf /home/$USER/KickPi-OS/config/panel.zip /home/$USER/.config/xfce4/panel/
+          #sudo rm /home/$USER/.config/xfce4/panel/
+	  #mkdir /home/$USER/.config/xfce4/panel/
+          #cd /home/$USER/KickPi-OS/config/
+      	  #unzip -u /home/$USER/KickPi-OS/config/panel.zip
+	  #cp -rf /home/$USER/KickPi-OS/config/panel/* /home/$USER/.config/xfce4/panel/
+	  #cp -rf /home/$USER/KickPi-OS/config/panel.zip /home/$USER/.config/xfce4/panel/
 	 
           sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
 	  fi
