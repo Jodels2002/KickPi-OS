@@ -7,7 +7,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
       
-      sudo apt-get -y install gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+     
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
@@ -18,7 +18,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
       toilet "KickPi-OS" --metal
-      sudo apt-get -y install gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+       REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
 if [ "$REVCODE" = "a02082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
