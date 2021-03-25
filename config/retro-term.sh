@@ -45,7 +45,33 @@ compile() {
     #runme
 }
 
+compile64() {
+	sudo apt install -y "${PACKAGES_DEV[@]}"
+	mkdir -p "$HOME"/sc && cd "$_"
+	echo "Cloning and compiling repo..."
+    if [[ ! -d "$HOME"/sc/cool-retro-term ]]; then
+	    git clone --recursive "$GITHUB_PATH" cool-retro-term
+    fi
+    cd "$HOME"/sc/cool-retro-term
+        qmake 
+	make -j8 
+        sudo chmod -R 777 /home/$USER/sc/ 
+    fix_icon
+   
+    #runme
+}
+
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+      clear
+      echo "Raspberry Pi OS 64 bit is running..."
+      echo ""
+      compile64
+    else 
+      clear
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo ""
+      toilet "KickPi-OS" --metal
+      compile
+fi
 
 
-
-compile
