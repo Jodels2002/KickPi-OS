@@ -55,5 +55,5 @@ fi
       make -j2 PLATFORM=rpi4
 fi  
 sudo chmod -R 777 /home/$USER/amiberry
-cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/ 
+cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
 
