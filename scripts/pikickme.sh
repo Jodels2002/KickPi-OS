@@ -572,14 +572,24 @@ fi
        echo " "
        echo " "
        echo " ... here comes Amiberry 64 bit   :-)"
-       
-       cd /home/$USER/KickPi-OS/Amiga
+       if [ ! -d /home/$USER/amiberry/ ]; then
+      
+      echo "Amiberry is updatet" 
+     
+      else 
+      
+          echo "  ... here comes Amiberry 32 bit :-) "
+	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
 	  
+          
+      
+       fi  
+       
               
        
        if [ ! -f /home/$USER/Amiga/amiberry ]; then
@@ -609,12 +619,21 @@ fi
        clear
        toilet "Amiberry" --metal
        toilet -F gay 32bit
+       
+      if [ ! -d /home/$USER/amiberry/ ]; then
       
-	  echo "  ... here comes Amiberry 32 bit :-) "
+      echo "Amiberry is updatet" 
+     
+      else 
+      
+          echo "  ... here comes Amiberry 32 bit :-) "
 	  
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit.zip 
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
+      
+       fi  
+	 
          
     fi
 
