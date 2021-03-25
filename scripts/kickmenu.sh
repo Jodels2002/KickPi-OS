@@ -49,6 +49,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"
          c "Boot to Console          "
          u "Update KickPi-OS         "
+         n "Update Amiberry         "
          s "Shutdown                 ")
         
         
@@ -127,8 +128,12 @@ case $CHOICE in
             clear
             u
             ;;  
-
-
+          n)
+            #update
+            clear
+            amiberryup.sh
+            ;;  
+            
 esac
 
 
