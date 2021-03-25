@@ -1,5 +1,7 @@
 
 sudo apt-get -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+sudo rm -rf /home/$USER/amiberry/
+
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       echo "Raspberry Pi OS 64 bit is running..."
