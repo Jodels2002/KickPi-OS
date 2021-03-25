@@ -18,7 +18,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
       toilet "KickPi-OS" --metal
-       REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+      REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+      
 if [ "$REVCODE" = "a02082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
