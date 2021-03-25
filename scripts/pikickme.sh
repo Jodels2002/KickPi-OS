@@ -778,34 +778,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      	echo "Vice64 always installed"
    
        fi
-       if [ ! -d /home/$USER/sc/ ]; then
       
-      mkdir /home/$USER/sc/ 
-      clear
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
-      toilet "KickPi-OS" --metal
-      toilet "64 bit" --metal
-      sudo apt install -y build-essential qmlscene qt5-qmake qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel
-	cd /home/$USER/sc/ 
-	sudo chmod -R 777 /home/$USER/sc/ 
-
-	git clone --recursive https://github.com/Swordfish90/cool-retro-term 
-
-	# Compile
-	cd cool-retro-term 
-	qmake 
-	make -j8 
-        sudo chmod -R 777 /home/$USER/sc/ 
-	cp -rf qmltermwidget/src/qmldir qmltermwidget/lib/kb-layouts qmltermwidget/lib/color-schemes qmltermwidget/src/QMLTermScrollbar.qml qmltermwidget/QMLTermWidget
-	sudo cp -rf /home/$USER/sc/cool-retro-term/cool-retro-term /usr/local/bin/
-	sudo cp -rf /home/$USER/sc/cool-retro-term/cool-retro-term.desktop /usr/share/applications/
-      else 
-      
-      echo ""
-      
-      
-      fi    
       else 
       	clear
       	toilet "KickPi-OS" --metal
@@ -837,20 +810,29 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo chmod -R 777 /home/$USER/PiKISS
       cd PiKISS
    
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      cd /home/$USER/KickPi-OS/config/
-      ./retro-term.sh
+      
       else 
       
       echo " "
      fi
      
  fi
-
+ if [ ! -d /home/$USER/sc/cool-retro-term/ ]; then
+      
+      mkdir /home/$USER/sc/
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
+      echo "Here comes Cool Retro Term" 
+      echo " "
+      cd /home/$USER/KickPi-OS/config/
+      ./retro-term.sh
+      else 
+      
+     echo "Cool Retro Term is always installed"
+      
+      
+      fi  
 }
 
 
