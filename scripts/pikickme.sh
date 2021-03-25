@@ -12,7 +12,7 @@
 #16.02 Bugfix Reboot, Speedup
 #20.02 Photogimp, Autoboot to Amiberry
 #20.02 Bootmenu, Speedup Boot time  ->
-# 64 bitRetropie Amiberry, pi-apps, Vice64
+# 64 bitRetropie Amiberry, pi-apps, Vice64, Amiberry V4 RC1, Menu Amiberry updater
 # sudo update-rc.d motd remove
 # consoleblank=0  /boot/cmdline.txt
 # ExecStart=-/sbin/agetty --skip-login --noclear --noissue --login-options "-f pi" %I $TERM
