@@ -28,7 +28,7 @@ if [ "$REVCODE" = "a02082" ]; then
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
-      make -j2 PLATFORM=rpi3
+     make -j2 PLATFORM=rpi3-sdl2
 
 fi
 if [ "$REVCODE" = "a020d3" ]; then
@@ -37,7 +37,7 @@ if [ "$REVCODE" = "a020d3" ]; then
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
-      make -j2 PLATFORM=rpi3
+      make -j2 PLATFORM=rpi3-sdl2
 
 
 fi
@@ -47,7 +47,7 @@ if [ "$REVCODE" = "a22082" ]; then
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
-      make -j2 PLATFORM=rpi3
+      make -j2 PLATFORM=rpi3-sdl2
 fi
       cd
       git clone -b dev https://github.com/midwan/amiberry
