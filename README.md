@@ -38,7 +38,7 @@ https://paypal.me/BerndTitze68?locale.x=de_DE
 # Supported hardware:
 
 Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
-But it sould be 
+
 
 # But I definitely recommend a Raspberry 4 or Pi400
 
