@@ -13,7 +13,7 @@ Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
 
 #Requirements:
 
-- Raspberry Pi OS 32 bit 
+- Raspberry Pi OS 32 bit / 64 bit
 
 
 
