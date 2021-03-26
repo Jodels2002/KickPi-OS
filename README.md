@@ -16,8 +16,6 @@ Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
 - Raspberry Pi OS 32 bit / 64 bit
 
 
-
-
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
 
 # Disclaimer
@@ -46,7 +44,7 @@ Please note that the 64 bit version also works, but ... in prgogress... .
 
 # Preparation:
 
-Install Raspberry Pi OS using Raspberry Pi Imager
+Installed Raspberry Pi OS 32/64 bit or TwisterOS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
 (Recommended)
