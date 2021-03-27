@@ -15,13 +15,13 @@ sudo cmake ..
 sudo make
 
 sudo make install
-**************************************************************
-nano ~./config/dolphin-emu/GFX.ini 
+#**************************************************************
+#nano ~./config/dolphin-emu/GFX.ini 
 
-Find this -> [Settings]
+#Find this -> [Settings]
 
-Under it type this
-PreferGLES = True
+#Under it type this
+#PreferGLES = True
 
-hit CTRL + X
-hit Enter
+#hit CTRL + X
+#hit Enter
