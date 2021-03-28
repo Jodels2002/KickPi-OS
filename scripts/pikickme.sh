@@ -623,7 +623,7 @@ fi
       if [ ! -d /home/$USER/amiberry/ ]; then
       
       echo "Amiberry is updatet" 
-     
+     sleep 5s
       else 
       
           echo "  ... here comes Amiberry 32 bit :-) "
