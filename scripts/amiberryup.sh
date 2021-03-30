@@ -4,7 +4,7 @@ sudo rm -rf /home/$USER/amiberry/
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
-      echo "Raspberry Pi OS 64 bit is running..."
+      echo "Raspberry Pi 4 OS 64 bit SDL-Dispmanx"
       echo ""
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
@@ -25,6 +25,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 if [ "$REVCODE" = "a02082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
+	echo ""
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
@@ -33,6 +34,7 @@ if [ "$REVCODE" = "a02082" ]; then
 fi
 if [ "$REVCODE" = "a020d3" ]; then
     PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+        echo ""
 	echo "$PIMODEL ($REVCODE)"
       cd
       git clone -b dev https://github.com/midwan/amiberry
@@ -44,11 +46,14 @@ fi
 if [ "$REVCODE" = "a22082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
+	echo ""
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
       make -j2 PLATFORM=rpi3
 fi
+      echo ""
+      echo "Raspberry Pi 4 SDL"
       cd
       git clone -b dev https://github.com/midwan/amiberry
       cd amiberry
