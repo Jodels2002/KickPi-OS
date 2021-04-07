@@ -23,42 +23,42 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       toilet "KickPi-OS" --metal
       REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
       
-if [ "$REVCODE" = "a02082" ]; then
-    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
-	echo "$PIMODEL ($REVCODE)"
-	echo ""
-      cd
-      git clone -b dev https://github.com/midwan/amiberry
-      cd amiberry
-     make -j2 PLATFORM=rpi3
+	if [ "$REVCODE" = "a02082" ]; then
+    	PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+		echo "$PIMODEL ($REVCODE)"
+		echo ""
+      		cd
+      		git clone -b dev https://github.com/midwan/amiberry
+      		cd amiberry
+     		make -j2 PLATFORM=rpi3
 
-fi
-if [ "$REVCODE" = "a020d3" ]; then
-    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
-        echo ""
-	echo "$PIMODEL ($REVCODE)"
-      cd
-      git clone -b dev https://github.com/midwan/amiberry
-      cd amiberry
-      make -j2 PLATFORM=rpi3
+	fi
+	if [ "$REVCODE" = "a020d3" ]; then
+	    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+		echo ""
+		echo "$PIMODEL ($REVCODE)"
+	      cd
+	      git clone -b dev https://github.com/midwan/amiberry
+	      cd amiberry
+	      make -j2 PLATFORM=rpi3
 
 
-fi
-if [ "$REVCODE" = "a22082" ]; then
-    PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
-	echo "$PIMODEL ($REVCODE)"
-	echo ""
-      cd
-      git clone -b dev https://github.com/midwan/amiberry
-      cd amiberry
-      make -j2 PLATFORM=rpi3
-fi
-      echo ""
-      echo "Raspberry Pi 4 SDL"
-      cd
-      git clone -b dev https://github.com/midwan/amiberry
-      cd amiberry
-      make -j2 PLATFORM=rpi4
+	fi
+	if [ "$REVCODE" = "a22082" ]; then
+	    PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
+		echo "$PIMODEL ($REVCODE)"
+		echo ""
+	      cd
+	      git clone -b dev https://github.com/midwan/amiberry
+	      cd amiberry
+	      make -j2 PLATFORM=rpi3
+	fi
+	      echo ""
+	      echo "Raspberry Pi 4 SDL"
+	      cd
+	      git clone -b dev https://github.com/midwan/amiberry
+	      cd amiberry
+	      make -j2 PLATFORM=rpi4
 fi  
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
