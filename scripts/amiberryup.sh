@@ -1,4 +1,4 @@
-
+# Test Makefile 48  CPUFLAGS = -mcpu=cortex-a72 -mfpu=neon-fp-armv8-mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits -mtune=cortex-a72
 sudo apt-get -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
 sudo rm -rf /home/$USER/amiberry/
 
