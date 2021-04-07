@@ -4,10 +4,11 @@ sudo rm -rf /home/$USER/amiberry/
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
+      toilet "KickPi-OS" --metal
+      echo ""
       echo "Raspberry Pi 4 OS 64 bit SDL-Dispmanx"
       echo ""
-      toilet "KickPi-OS" --metal
-      toilet "64 bit" --metal
+      
       
      
       cd
