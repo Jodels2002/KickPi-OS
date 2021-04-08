@@ -50,7 +50,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	      echo ""
 	      echo "Raspberry Pi 4 SDL"
 	     
-	      make -j2 PLATFORM=rpi4
+	      #make -j2 PLATFORM=rpi4
 fi  
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
