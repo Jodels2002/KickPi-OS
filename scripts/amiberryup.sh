@@ -48,9 +48,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	      make -j2 PLATFORM=rpi3
 	fi
 	      echo ""
-	      echo "Raspberry Pi 4 SDL"
+	      echo "Raspberry Pi 4 SDL 32bit"
 	     
-	      #make -j2 PLATFORM=rpi4
+	      make -j2 PLATFORM=rpi4
 fi  
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
