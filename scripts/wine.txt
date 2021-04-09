@@ -68,3 +68,25 @@ disable_splash=1                    #Kick
 gpu_mem=256                         #Kick
 
 _EOF_
+
+NeXTStep
+apt install zlib1g zlib1g-dev libsdl2-2.0-0 libsdl2-dev libpng16-16 libpng-dev libpcap0.8 libpcap0.8-dev
+apt install g++ cmake subversion 
+
+cd 
+
+v1.8:
+svn checkout svn://svn.code.sf.net/p/previous/code/branches/branch_realtime previous-code
+
+v2.2?:
+svn checkout https://svn.code.sf.net/p/previous/code/trunk previous-code
+
+
+cd previous-code
+./configure
+make
+
+Run the program
+cd src
+./Previous
+
