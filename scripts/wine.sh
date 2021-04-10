@@ -11,4 +11,6 @@ sudo apt -y install \
       libwine:i386 \
       fonts-wine
       
+      wine msiexec /i ~/Desktop/AmigaForever.msi
+      
 sudo apt -y install coreutils dialog memtest86+ mkisofs genisoimage findutils grub-pc xorriso syslinux os-prober bash passwd sed squashfs-tools live-boot live-config live-config-sysvinit live-boot-initramfs-tools rsync mount laptop-detect util-linux, hwdata
