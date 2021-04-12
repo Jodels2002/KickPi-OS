@@ -1,4 +1,5 @@
 https://github.com/kritzikratzi/Oscilloscope
+https://github.com/guysoft/CustomPiOS
 
 https://raspberrypi.stackexchange.com/questions/59310/remove-boot-messages-all-text-in-jessie
 
