@@ -1,3 +1,8 @@
+Aros Replace
+https://en.wikibooks.org/wiki/Aros/Platforms/68k_support#Emu68_(68k_on_ARM_hardware)
+
+
+
 https://github.com/kritzikratzi/Oscilloscope
 https://github.com/guysoft/CustomPiOS
 
