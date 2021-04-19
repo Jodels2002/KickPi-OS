@@ -3,8 +3,7 @@ wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 
 sudo dpkg --add-architecture i386 && sudo apt update
-sudo apt -y install \
-      wine \
+sudo apt -y install wine
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
       libwine \
