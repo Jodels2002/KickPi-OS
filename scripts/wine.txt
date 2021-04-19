@@ -1,6 +1,8 @@
 Aros Replace
 https://en.wikibooks.org/wiki/Aros/Platforms/68k_support#Emu68_(68k_on_ARM_hardware)
 
+Compile: 
+https://lallafa.de/blog/2013/06/building-aros-hosted-for-raspbian/
 
 
 https://github.com/kritzikratzi/Oscilloscope
