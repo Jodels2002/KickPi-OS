@@ -4,6 +4,7 @@ sudo apt-key add winehq.key
 
 # sudo dpkg --add-architecture i386 && sudo apt update
 sudo apt -y install wine
+sudo apt -y q4wine winbind winetricks playonlinux wine-binfmt dosbox exe-thumbnailer
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
       libwine \
