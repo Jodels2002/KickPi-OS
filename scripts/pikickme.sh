@@ -99,8 +99,8 @@ TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
 OPTIONS=(1 "Install KickPi-OS       (recommended)            (ca. 20 min)"
-	 2 "Install KickPi-OS full + Office Suite +  more    (ca. 30 min)"
-         3 "Install KickPi-OS light                          (ca. 10 min)")
+	 2 "Install KickPi-OS       + with RetroPie   	     (ca. 30 min)"
+         3 "Install KickPi-OS       all                      (ca. 50 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -160,9 +160,9 @@ KickPi-OS_64bit_pre() {
      sudo apt-get -y purge libraspberrypi-dev 
      sudo apt-get -y update
      sudo apt-get -y upgrade
-     sudo apt-get install -y libraspberrypi-dev 
-     sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
-     sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+     #sudo apt-get install -y libraspberrypi-dev 
+     #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
+     #sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
      	
 	sudo apt-get -y remove pulseaudio
 	sudo apt-get -y install pulseaudio
@@ -226,6 +226,7 @@ KickPi-OS_Tools() {
       sudo apt install -y rpi-imager
       sudo apt install -y snapd
       sudo snap install -y p7zip-desktop p7zip-full
+      sudo apt install -y git usbmount gparted
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -341,7 +342,8 @@ KickPi-OS_Internet() {
       clear
        toilet "KickPi-OS" --metal
        toilet -F gay Internet
-      sudo apt install -y youtube-dl minitube transmission 
+       
+       sudo apt install -y youtube-dl minitube transmission chromium-browser
 }
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
@@ -370,7 +372,7 @@ KickPi-OS_Games() {
     	    clear
 		toilet "KickPi-OS" --metal
 		echo "KickPI-OS ROM Operating System and Libraris" 
-		echo "Version V1.1 2020-2021 KickPi-OS "
+		echo "Version V1.5 2020-2021 KickPi-OS "
 		echo "No Rights Reserved.  "
 		echo ""
 
@@ -406,7 +408,7 @@ KickPi-OS_Games() {
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
 
-      sudo apt install -y git chromium-browser usbmount gparted
+      
           cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
@@ -548,7 +550,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
           cd /home/$USER/KickPi-OS/config/pac/
       	  unzip -u /home/$USER/KickPi-OS/config/panel64.zip
 	  cp -rf /home/$USER/KickPi-OS/config/panel/* /home/$USER/.config/xfce4/panel/
-	  #cp -rf /home/$USER/KickPi-OS/config/panel.zip /home/$USER/.config/xfce4/panel/
+	
 	 
           sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
 	  fi
@@ -581,7 +583,7 @@ fi
      
       else 
       
-          echo "  ... here comes Amiberry 32 bit :-) "
+          echo "  ... here comes Amiberry 64 bit :-) "
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
@@ -594,30 +596,7 @@ fi
        fi  
        
               
-       
-       if [ ! -f /home/$USER/Amiga/amiberry ]; then
-       cd ~
-       #sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
       
-     
-       clear
-       toilet "Amiberry" --metal
-       toilet -F gay 64bit
-       Amiberry
-       echo "Compiling Pi64 version "
-       echo " "
-       echo " "
-       git clone -b dev https://github.com/midwan/amiberry
-       cd amiberry
-       make -j2 PLATFORM=pi64
-      cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/      
-      else 
-      echo " "
-      fi
-       
-    
-       
-          
     else
        clear
        toilet "Amiberry" --metal
@@ -1088,11 +1067,12 @@ case $CHOICE in
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
+	    KickPi-OS_Internet
             KickPi-OS_Amiberry
             Configure_Amiga
-            KickPi-OS_Retropie
+            #KickPi-OS_Retropie
 	    KickPi-OS_Addons
-	    KickPi-OS_Video
+	    #KickPi-OS_Video
             #KickPi-OS_Update
             ;;
         2)
@@ -1104,6 +1084,7 @@ case $CHOICE in
             Configure_Amiga
             KickPi-OS_Retropie
 	    KickPi-OS_Addons
+	    KickPi-OS_Internet
             KickPi-OS_Office
 	    KickPi-OS_Video
 	    #KickPi-OS_Update
@@ -1113,13 +1094,18 @@ case $CHOICE in
            
             #Poser
 	    KickPi-OS_64bit_pre
-	    KickPi-OS_Tools
-            KickPi-OS_Desktop
+	    KickPi-OS_Desktop
+            KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
-	    #KickPi-OS_Retropie
-	    #KickPi-OS_Update
-           
+            KickPi-OS_Retropie
+	    KickPi-OS_Addons
+            KickPi-OS_Office
+	    KickPi-OS_Video
+	    KickPi-OS_Update
+            KickPi-OS_Games
+            KickPi-OS_Internet
+            
             ;;
                   
 
@@ -1156,8 +1142,8 @@ if  xset q &>/dev/null; then
 cd
 clear
 toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraris" 
-echo "Version V1.4 2020-2021 KickPi-OS "
+echo "KickPI-OS ROM Operating System and Libraries" 
+echo "Version V1.5 2020-2021 KickPi-OS "
 echo "No Rights Reserved.  "
 echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
