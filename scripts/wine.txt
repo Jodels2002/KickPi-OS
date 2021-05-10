@@ -1,16 +1,14 @@
 Aros Replace
 https://en.wikibooks.org/wiki/Aros/Platforms/68k_support#Emu68_(68k_on_ARM_hardware)
 
-Compile: 
-https://lallafa.de/blog/2013/06/building-aros-hosted-for-raspbian/
 
 
-https://github.com/kritzikratzi/Oscilloscope
-https://github.com/guysoft/CustomPiOS
-
-https://raspberrypi.stackexchange.com/questions/59310/remove-boot-messages-all-text-in-jessie
-
-wine msiexec /i ~/Downloads/AmigaForever2016Plus.msi
+if ! grep -q 'init-poky' /etc/fstab ; then
+   sudo mkdir /media/RAM
+   sudo chmod -R 777 /etc/fstab
+   sudo  echo '# init-poky' >> /etc/fstab
+   echo 'tmpfs /media/RAM tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
+fi
 
 After installation, you need to copy the Amiga Forever into place. These instructions assume that the FS-UAE base dir is Documents/FS-UAE, and that you have performed the Amiga Forever installation using the default Wine prefix:
 
@@ -37,30 +35,6 @@ cd SDL2_ttf-2.0.14
 sudo make install
 
 
-# Vice64 bit
-cd
-sudo apt install -y build-essential  libvte-dev libasound2-dev libgtk2.0-dev  byacc flex texinfo
-sudo apt-get install byacc
-sudo apt-get install flex
-sudo apt-get install texinfo
-
-wget https://sourceforge.net/projects/vice-emu/files/releases/vice-3.5.tar.gz/download
-tar xzf  ./vice-3.5.tar.gz
-./configure --enable-sdlui --without-pulse –without-resid --enable-arch=no
-make
-sudo make install
-
-sudo ldconfig -v
-alsa
-sudo apt-get remove pulseaudio
-sudo apt-get install pulseaudio
-after the reboot you will run the removal up top.
-#aplay /usr/share/sounds/alsa/Noise.wav
-sudo /etc/init.d/alsa-utils reset
-
-sudo apt-get install pi-bluetooth
-sudo apt-get install bluez bluez-firmware
-sudo usermod -G bluetooth -a pi
 
 #TMP
    sudo   cat >/boot/config.txt <<_EOF_
