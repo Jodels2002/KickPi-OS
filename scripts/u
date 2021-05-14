@@ -41,7 +41,8 @@ fi
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
-      /home/$USER/KickPi-OS/scripts/pikickme.sh
       LED_off
+      /home/$USER/KickPi-OS/scripts/pikickme.sh
+      
 
 
