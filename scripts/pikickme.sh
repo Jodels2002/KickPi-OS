@@ -241,12 +241,12 @@ KickPi-OS_Tools() {
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      if [ ! -d /home/$USER/pi-apps/]; then
+      #if [ ! -d /home/$USER/pi-apps/]; then
       cd
       wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-      else
+      #else
       clear
-      fi
+      #fi
       toilet "KickPi-OS" --metal
       #fi
       #Some little Amiga stuff....
@@ -592,7 +592,13 @@ fi
        if [ ! -f /home/$USER/Amiga/amiberry ]; then
       
       echo "Amiberry is updatet" 
-     
+     echo "  ... here comes Amiberry 64 bit :-) "
+	  cd /home/$USER/KickPi-OS/Amiga
+      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
+	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
+	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+          sudo chmod -R 777 /home/$USER/Amiga/
       else 
       
           echo "  ... here comes Amiberry 64 bit :-) "
