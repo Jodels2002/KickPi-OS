@@ -403,7 +403,7 @@ KickPi-OS_Games() {
       clear
       mkdir $HOME/.backup/profile.d
       sudo mv  /etc/rc.local ~/.backup/
-      sudo rm -rf ~/.config/chromium/
+      
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
       sudo systemctl mask plymouth-start.service
@@ -421,9 +421,6 @@ KickPi-OS_Games() {
      # DietPi, Pimiga.... as Host Distri not ready 
 
       
-          cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
      cd
       git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
       sudo chmod -R 777 raspi-config
@@ -448,7 +445,19 @@ KickPi-OS_Games() {
       cd /home/$USER/KickPi-OS/
       cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
-      sudo unzip ~/KickPi-OS/.pac/.data.pac
+       if [ "$(getconf LONG_BIT)" == "64" ]; then
+       
+           sudo unzip ~/KickPi-OS/.pac/.data64.pac
+	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+           cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
+          
+          sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
+	  
+	  else
+	   sudo unzip ~/KickPi-OS/.pac/.data.pac
+	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+           cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
+	  fi
 
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.local
@@ -498,8 +507,7 @@ fi
        clear
        toilet "KickPi-OS" --metal
    
-       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
-       cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/  
+       
        #sudo raspi-config nonint do_boot_behaviour B4
        else
        # Settings XFCE4 Amibian
@@ -520,7 +528,15 @@ fi
      
                #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
                sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
-               
+               if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 
+       clear
+       toilet "KickPi-OS" --metal
+       toilet -F gay 64bit
+       echo " "
+       echo " "
+       
+     
                sudo chmod -R 777 ~/.backup/
                cp -rf ~/.config/ ~/.backup/.config
                cp -rf ~/.local/ ~/.backup/.local
@@ -548,24 +564,7 @@ fi
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
                 cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
       fi 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay 64bit
-       echo " "
-       echo " "
-       if [ ! -f /home/$USER/.config/xfce4/panel/panel64.zip ]; then
-       
-          sudo rm /home/$USER/.config/xfce4/panel/
-	  mkdir /home/$USER/.config/xfce4/panel/
-          cd /home/$USER/KickPi-OS/config/pac/
-      	  unzip -u /home/$USER/KickPi-OS/config/panel64.zip
-	  cp -rf /home/$USER/KickPi-OS/config/panel/* /home/$USER/.config/xfce4/panel/
-	
-	 
-          sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
-	  fi
+
 fi
 }
 
