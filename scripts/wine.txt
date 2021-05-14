@@ -1,6 +1,10 @@
 Aros Replace
 https://en.wikibooks.org/wiki/Aros/Platforms/68k_support#Emu68_(68k_on_ARM_hardware)
 
+Raspbian Images für den Raspberry zu erzeugen ist ja keine große Sache; auf dem Mac geht das zb mit
+
+$> sudo dd bs=1m if=image.img of=/dev/rdisk<DISKNO>
+Wobei man die DISKNO vorher mit diskutil ermittelt.
 
 
 if ! grep -q 'init-poky' /etc/fstab ; then
