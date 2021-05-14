@@ -1082,6 +1082,7 @@ case $CHOICE in
         
         1)
             #Poser
+	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
@@ -1091,10 +1092,10 @@ case $CHOICE in
             #KickPi-OS_Retropie
 	    KickPi-OS_Addons
 	    #KickPi-OS_Video
-            #KickPi-OS_Update
+            KickPi-OS_Update
             ;;
         2)
-            #Poser
+            KickPi-OS_Update
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
@@ -1105,7 +1106,7 @@ case $CHOICE in
 	    KickPi-OS_Internet
             KickPi-OS_Office
 	    KickPi-OS_Video
-	    #KickPi-OS_Update
+	    KickPi-OS_Update
             ;;
         
         3)
