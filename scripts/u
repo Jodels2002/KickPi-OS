@@ -17,6 +17,7 @@ sudo apt-get -y upgrade
 LED_body
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
+
 else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
 fi
@@ -41,5 +42,6 @@ fi
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
       /home/$USER/KickPi-OS/scripts/pikickme.sh
+      LED_off
 
 
