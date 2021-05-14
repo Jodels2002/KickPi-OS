@@ -588,7 +588,7 @@ fi
        echo " "
        echo " "
        echo " ... here comes Amiberry 64 bit   :-)"
-       if [ ! -d /home/$USER/amiberry/ ]; then
+       if [ ! -f /home/$USER/Amiga/amiberry ]; then
       
       echo "Amiberry is updatet" 
      
