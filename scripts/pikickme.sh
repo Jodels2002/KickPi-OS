@@ -368,7 +368,7 @@ KickPi-OS_Games() {
  
  KickPi-OS_Desktop() {
  #if  xset q &>/dev/null; then
-          
+ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
     	    clear
 		toilet "KickPi-OS" --metal
 		echo "KickPI-OS ROM Operating System and Libraris" 
