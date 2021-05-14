@@ -13,16 +13,7 @@ echo " "
       sudo apt-get install -y toilet dialog mc zip unzip
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 
-if [ ! -f /home/$USER/.backup/.bashrc ]; then
-      echo "Backup Settings...."
-      mkdir /home/$USER/.backup/
-      sudo chmod -R 777 ~/.backup/
-      cp  /home/$USER/.bashrc /home/$USER/.backup/.bashrc
-      
-      sudo chmod -R 777 ~/.bashrc
-      echo " "
-      echo " "
-      fi
+
 
 if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 	  clear
