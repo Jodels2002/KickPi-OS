@@ -84,7 +84,6 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
   
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
-      sudo chmod -R 777 /home/$USER/.backup/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
      
@@ -1131,7 +1130,6 @@ echo " "
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
-      sudo chmod -R 777 /home/$USER/.backup/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
