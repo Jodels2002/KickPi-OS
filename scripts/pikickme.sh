@@ -244,8 +244,9 @@ KickPi-OS_Tools() {
       if [ ! -d /home/$USER/pi-apps/]; then
       cd
       wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-     # else
+      else
       clear
+      fi
       toilet "KickPi-OS" --metal
       #fi
       #Some little Amiga stuff....
