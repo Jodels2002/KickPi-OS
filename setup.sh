@@ -96,7 +96,21 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sleep 3s
-fi    	
+fi  
+
+if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
+   sudo rm -rf /home/pi/tmp
+   sudo mkdir /home/pi/tmp
+   sudo chmod -R 777 /home/pi/tmp
+   sudo chmod -R 777 /etc/fstab
+   sudo  echo '# Amiga RAM Drive' >> /etc/fstab
+   echo 'tmpfs /home/pi/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
+   else
+   clear
+   echo "Amiga RAM Disk always installed..." 
+fi   
+sudo mount -a
+
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
