@@ -109,7 +109,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk
 cd
 clear
 toilet "KickPi-OS" --metal
