@@ -1,9 +1,13 @@
+#!/bin/bash
+#***********************************************  #KickOS install script  ***********************************
+# Install KickOS
+# B.Titze 2021
+#***********************************************  Amitools instll ***********************************
 sudo python3 -m pip install -U pip
 sudo python3 -m pip install -U setuptools
 
 sudo pip install amitools
-#sudo pip3 install -U  git+https://github.com/cnvogelg/amitools.git
-#xdftool mydisk.hdf unpack
+
 if [ ! -d /home/pi/Amiga/dir/WB ]; then
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/WB
@@ -60,6 +64,56 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo " "
       
       fi
+       if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      #wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip -u ./ClassicWB_68K_v28.zip
+    else 
+      echo " "
+    fi 
+      
+      
+      
+    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      toilet "full 64bit" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...   " 
+      echo " "
+      echo " "
+      cd "/home/$USER/Amiga/hdf/"
+      #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+    else 
+      clear
+      
+    fi
+      
+    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      toilet "full 64bit" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
+      echo " "
+      echo " "
+      cd "/home/$USER/Amiga/hdf/"
+      
+      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip -u ./ClassicWB_OS39_v28.zip
+    else 
+      clear
+      
+    fi
       
       
       #cd /home/pi/Amiga/adf/
@@ -67,3 +121,6 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       #cp -rf /home/pi/tmp/Workbench3.0/ /home/pi/tmp/DH0/
       #cp -rf /home/pi/tmp/System/* /home/pi/tmp/DH0/
       #cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
+      
+      
+      
