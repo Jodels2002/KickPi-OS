@@ -1,0 +1,22 @@
+;ClassicWB CLIboot-Sequence
+;--------------------------
+;GAAE 68K LITE FULL ADV ADVSP P96 UAE
+
+C:SetPatch QUIET
+C:Version >NIL:
+C:MakeDir RAM:T RAM:Clipboards RAM:ENV RAM:ENV/Sys
+
+C:Assign >NIL: ENV: RAM:ENV
+C:Assign >NIL: T: RAM:T
+C:Assign >NIL: CLIPS: RAM:Clipboards
+
+C:Mount KCON: from DEVS:KingCON-mountlist
+C:Mount KRAW: from DEVS:KingCON-mountlist
+
+Stack 8192
+Prompt "%N.%S> "
+Alias Clear "Echo *"*E[0;0H*E[J*" "
+Alias XCopy "Copy CLONE "
+SYS:
+
+NewCLI KCON:/22//150/CLI-Prompt S:CLI-Startup

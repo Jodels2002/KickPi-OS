@@ -1,0 +1,97 @@
+;ClassicWB Locale 3.1 Install
+
+LAB START
+
+cls
+
+echo ""
+echo "Please Insert Locale 3.1 disk into DF0:"
+echo ""
+ASK "Press Return to Continue."
+
+IF NOT EXISTS DF0:Countries/great_britain.country
+  SKIP FAIL
+ENDIF
+
+IF "`SYS:c/which DF0:`" EQ "Locale:"
+  echo ""
+  echo ""
+  echo "Disk appears to be Locale release."
+  SKIP PASS
+ELSE
+  SKIP FAIL
+ENDIF
+
+LAB FAIL
+
+echo ""
+echo ""
+echo "This is not a valid Locale disk"
+echo ""
+echo "...installation cannot continue."
+echo ""
+ASK "Press return to try again."
+SKIP START BACK
+
+LAB PASS
+
+echo ""
+echo "Valid Locale disk found!"
+wait 4
+
+cls
+
+echo ""
+echo "Installing ClassicWB..."
+
+
+cd DF0:Catalogs
+copy >NIL: DF0:Catalogs SYS:Storage/Locale/Catalogs ALL CLONE
+
+cd DF0:Countries
+;australia.country
+;belgie.country
+;belgique.country
+;canada.country
+;canada_français.country
+;danmark.country
+;deutschland.country
+;españa.country
+;france.country
+;great_britain.country
+;italia.country
+;nederland.country
+;norge.country
+;portugal.country
+;schweiz.country
+;suisse.country
+;sverige.country
+;svizzera.country
+;united_kingdom.country
+;united_states.country
+;österreich.country
+;new_zealand.country
+copy >NIL: DF0:Countries SYS:Locale/Countries ALL CLONE
+
+cd DF0:Help
+copy >NIL: DF0:Help SYS:Storage/Locale/Help ALL CLONE
+
+cd DF0:Languages
+;dansk.language
+;deutsch.language
+;español.language
+;français.language
+;italiano.language
+;nederlands.language
+;norsk.language
+;português.language
+;svenska.language
+copy >NIL: DF0:Languages SYS:Locale/Languages ALL CLONE
+
+;SPECIAL CIRCUMSTANCES
+
+cd DF0:Catalogs
+copy >NIL: english SYS:Locale/Catalogs/english ALL CLONE
+
+cd DF0:Help
+copy >NIL: english SYS:Locale/Help/english ALL CLONE

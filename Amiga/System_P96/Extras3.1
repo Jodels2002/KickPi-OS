@@ -1,0 +1,103 @@
+;ClassicWB Extras 3.1 Install UAE
+
+LAB START
+
+cls
+
+echo ""
+echo "Please Insert Extras 3.1 disk into DF0:"
+echo ""
+ASK "Press Return to Continue."
+
+IF NOT EXISTS DF0:System/Intellifont
+  SKIP FAIL
+ENDIF
+
+IF "`SYS:c/which DF0:`" EQ "Extras3.1:"
+  echo ""
+  echo ""
+  echo "Disk appears to be Extras 3.1 release."
+  SKIP PASS
+ELSE
+  SKIP FAIL
+ENDIF
+
+LAB FAIL
+
+echo ""
+echo ""
+echo "This is not a valid Extras disk"
+echo ""
+echo "...installation cannot continue."
+echo ""
+ASK "Press return to try again."
+SKIP START BACK
+
+LAB PASS
+
+echo ""
+echo "Valid Extras disk found!"
+wait 4
+
+cls
+
+echo ""
+echo "Installing ClassicWB..."
+
+
+cd DF0:L
+;aux-handler
+copy CDFileSystem SYS:L CLONE
+copy CrossDOSFileSystem SYS:L CLONE
+;port-handler
+;queue-handler
+
+cd DF0:L/FileSystem_Trans
+copy DANSK.crossdos SYS:L/FileSystem_Trans CLONE
+copy INTL.crossdos SYS:L/FileSystem_Trans CLONE
+copy MAC.crossdos SYS:L/FileSystem_Trans CLONE
+
+cd DF0:Prefs
+;copy Font SYS:Prefs CLONE
+;copy IControl SYS:Prefs CLONE
+;copy Input SYS:Prefs CLONE
+copy Locale SYS:Prefs CLONE
+copy Overscan SYS:Prefs CLONE
+copy Palette SYS:Prefs CLONE
+copy Pointer SYS:Prefs CLONE
+copy Printer SYS:Prefs CLONE
+copy PrinterGfx SYS:Prefs CLONE
+copy PrinterPS SYS:Prefs CLONE
+;copy ScreenMode SYS:Prefs CLONE
+;copy Serial SYS:Prefs CLONE
+copy Sound SYS:Prefs CLONE
+;copy Time SYS:Prefs CLONE
+copy WBPattern SYS:Prefs CLONE
+
+cd DF0:System
+copy Intellifont SYS:System CLONE
+
+cd DF0:Tools
+copy Calculator SYS:Tools CLONE
+copy CMD SYS:Tools CLONE
+copy GraphicDump SYS:Tools CLONE
+copy IconEdit SYS:Tools CLONE
+copy InitPrinter SYS:Tools CLONE
+copy KeyShow SYS:Tools CLONE
+copy Lacer SYS:Tools CLONE
+copy MEmacs SYS:Tools CLONE
+copy PrepCard SYS:Tools CLONE
+copy PrintFiles SYS:Tools CLONE
+copy ShowConfig SYS:Tools CLONE
+
+cd DF0:Tools/Commodities
+copy AutoPoint SYS:Tools/Commodities CLONE
+copy Blanker SYS:Tools/Commodities CLONE
+copy ClickToFront SYS:Tools/Commodities CLONE
+copy CrossDOS SYS:Tools/Commodities CLONE
+copy Exchange SYS:Tools/Commodities CLONE
+copy FKey SYS:Tools/Commodities CLONE
+copy MouseBlanker SYS:Tools/Commodities CLONE
+copy NoCapsLock SYS:Tools/Commodities CLONE
+
+;SPECIAL CIRCUMSTANCES

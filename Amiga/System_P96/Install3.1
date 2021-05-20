@@ -1,0 +1,125 @@
+;ClassicWB Install 3.1 Install
+
+LAB START
+
+cls
+
+echo ""
+echo "Please Insert Install 3.1 disk into DF0:"
+echo ""
+ASK "Press Return to Continue."
+
+IF NOT EXISTS DF0:HDTools/BRU
+  SKIP FAIL
+ENDIF
+
+IF "`SYS:c/which DF0:`" EQ "Install3.1:"
+  echo ""
+  echo ""
+  echo "Disk appears to be Install 3.1 release."
+  SKIP PASS
+ELSE
+  SKIP FAIL
+ENDIF
+
+LAB FAIL
+
+echo ""
+echo ""
+echo "This is not a valid Install disk"
+echo ""
+echo "...installation cannot continue."
+echo ""
+ASK "Press return to try again."
+SKIP START BACK
+
+LAB PASS
+
+echo ""
+echo "Valid Install disk found!"
+wait 4
+
+cls
+
+echo ""
+echo "Installing ClassicWB..."
+
+
+cd DF0:
+;Installer
+
+cd DF0:C
+;AntiClick
+;AddBuffers
+;Assign
+;BindDrivers
+;Check2090
+;Copy
+;Delete
+;Execute
+;ExtractKickstart
+;FindResident
+;GuessBootDev
+;IconPos
+;List
+;LoadWB
+;MakeDir
+;Prod_Prep
+;Reboot
+;SetPatch
+;UpdateWBFiles
+;Version
+;Wait
+
+cd DF0:Devs
+;system-configuration
+
+cd DF0:Expansion
+;HDDisk
+
+cd DF0:HDSetup
+;HDSetup
+
+cd DF0:HDSetup/PrepScripts
+;A3000Partitions
+;ReselectOff
+;ReselectOn
+;StandardPartitions
+
+cd DF0:HDTools
+copy BRU SYS:Tools CLONE
+copy HDBackup SYS:Tools CLONE
+copy HDBackup.help SYS:Tools CLONE
+copy HDToolBox SYS:Tools CLONE
+
+cd DF0:HDTools/S
+copy BRUtab SYS:S CLONE
+copy HDBackup.config SYS:S CLONE
+
+cd DF0:Install
+;Install
+
+cd DF0:L
+copy FastFileSystem SYS:L CLONE
+
+cd DF0:Libs
+copy 68040.library SYS:Libs CLONE
+;iffparse.library
+;locale.library
+;version.library
+
+cd DF0:System
+;Format
+
+cd DF0:Update
+;aux-handler
+;oldser.device
+;port-handler
+;serial.device
+;Startup-2090A
+;Startup-2090SCSI
+;Startup-2090ST506
+;Startup-HardDrive
+;Startup-MapROM
+
+;SPECIAL CIRCUMSTANCES

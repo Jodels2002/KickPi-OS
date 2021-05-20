@@ -1,0 +1,71 @@
+;ClassicWB Maxmem-Sequence
+;-------------------------
+;GAAE 68K LITE FULL ADV ADVSP P96 OS35
+
+LAB Start
+C:Requestchoice >ENV:Choice "Maxmem-Sequence""Choose:""RADboot""AGLaunch""AGLaunch NoMouse""Reboot""Prompt"
+
+IF $Choice EQ "1"
+  Skip RADboot
+ENDIF
+IF $Choice EQ "2"
+  Skip AGLaunch
+ENDIF
+IF $Choice EQ "3"
+  Skip AGLaunch-NM
+ENDIF
+IF $Choice EQ "4"
+  Skip Reboot
+ENDIF
+IF $Choice EQ "0"
+  Skip Prompt
+ENDIF
+
+LAB RADboot
+C:Delete >NIL: ENV:Choice
+C:Execute S:RADboot/RADboot
+EndCLI >NIL:
+
+LAB AGLaunch
+C:Delete >NIL: ENV:Choice
+C:Execute SYS:System/AGLaunch/S/AGLaunch-Startup
+Echo ""
+Echo " Use WBRun to start programs with icons"
+Echo ""
+Echo " Type Reboot to restart your Amiga"
+Echo ""
+
+Prompt "%N.%S> "
+SYS:
+
+Quit
+
+LAB AGLaunch-NM
+C:Delete >NIL: ENV:Choice
+C:Execute SYS:System/AGLaunch/S/AGLaunch-StartupNM
+Echo ""
+Echo " Use WBRun to start programs with icons"
+Echo ""
+Echo " Type Reboot to restart your Amiga"
+Echo ""
+
+Prompt "%N.%S> "
+SYS:
+
+Quit
+
+LAB Reboot
+C:Reboot
+
+LAB Prompt
+C:Delete >NIL: ENV:Choice
+Echo ""
+Echo " Use WBRun to start programs with icons"
+Echo ""
+Echo " Type Reboot to restart your Amiga"
+Echo ""
+
+Prompt "%N.%S> "
+SYS:
+
+Quit

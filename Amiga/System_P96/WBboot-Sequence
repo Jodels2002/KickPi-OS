@@ -1,0 +1,111 @@
+;ClassicWB WBboot-Sequence
+;-------------------------
+;UAE-P96
+
+C:SetPatch QUIET
+C:Version >NIL:
+C:MakeDir RAM:T RAM:Clipboards RAM:ENV RAM:ENV/Sys
+
+IF EXISTS SYS:WBstartupD
+  C:Rename >NIL: SYS:WBStartup SYS:WBStartupM
+  C:Rename >NIL: SYS:WBStartupD SYS:WBStartup
+EndIF
+
+IF EXISTS SYS:WBStartup
+  C:Rename >NIL: SYS:WBStartup SYS:WBStartupD
+  C:Rename >NIL: SYS:WBstartupM SYS:WBStartup
+EndIF
+
+Resident >NIL: C:Assign PURE
+Resident >NIL: C:Execute PURE
+
+Assign >NIL: ENVARC: S:Env-Archive
+C:Copy >NIL: ENVARC: RAM:ENV ALL NOREQ
+Assign >NIL: ENV: RAM:ENV
+
+Assign >NIL: T: RAM:T
+Assign >NIL: CLIPS: RAM:Clipboards
+Assign >NIL: REXX: S:
+Assign >NIL: PRINTERS: DEVS:Printers
+Assign >NIL: KEYMAPS: DEVS:Keymaps
+Assign >NIL: LOCALE: SYS:Locale
+Assign >NIL: LIBS: SYS:Classes ADD
+Assign >NIL: HELP: LOCALE:Help DEFER
+
+IF NOT EXISTS SYS:Fonts
+  Assign FONTS:
+EndIF
+
+BindDrivers
+C:Mount >NIL: DEVS:DOSDrivers/~(#?.info)
+
+IF EXISTS DEVS:Monitors
+  IF EXISTS DEVS:Monitors/VGAOnly
+    DEVS:Monitors/VGAOnly
+  EndIF
+
+  C:List >NIL: DEVS:Monitors/~(#?.info|VGAOnly) TO T:M LFORMAT "DEVS:Monitors/%s"
+  Execute T:M
+  C:Delete >NIL: T:M
+EndIF
+
+SetEnv Workbench $Workbench
+SetEnv Kickstart $Kickstart
+UnSet Workbench
+UnSet Kickstart
+
+C:AddDataTypes REFRESH QUIET
+C:IPrefs
+C:ConClip
+
+Path >NIL: RAM: C: SYS:Utilities SYS:Rexxc SYS:System S: SYS:Prefs SYS:WBStartup SYS:Tools SYS:Tools/Commodities
+
+;Start of S/User-Startup Replacement
+
+Execute S:Assign-Startup
+
+Assign >NIL: Scalos: SYS:System/Scalos
+Assign >NIL: Picasso96: SYS:System/Picasso96
+
+Assign >NIL: LAUNCH: DH1:Files
+Assign >NIL: JPEGTMP: SYS:T
+Assign >NIL: AWEB_APL: A-Programs:AWeb_APL
+
+;BEGIN MUI
+IF EXISTS SYS:System/MUI
+   Assign >NIL: MUI: SYS:System/MUI
+   IF EXISTS MUI:Libs
+      Assign >NIL: ADD LIBS: MUI:Libs
+   EndIF
+   IF EXISTS MUI:Locale
+      Assign >NIL: ADD LOCALE: MUI:Locale
+   EndIF
+   C:Version >NIL: exec.library 39
+   IF NOT WARN
+      IF EXISTS MUI:Docs
+         IF EXISTS HELP:dummy
+         EndIF
+         Assign >NIL: ADD HELP: MUI:Docs
+      EndIF
+   EndIF
+EndIF
+;END MUI
+
+Run <>NIL: C:NewIcons
+
+C:Mount KCON: from DEVS:KingCON-mountlist
+C:Mount KRAW: from DEVS:KingCON-mountlist
+
+SYS:System/Rexxmast >NIL:
+
+Run >NIL: C:XpkMasterPrefs
+
+C:CAPrefs >NIL:
+
+;End of S/User-Startup Replacement
+
+Resident Execute REMOVE
+Resident Assign REMOVE
+
+C:LoadWB.orig
+EndCLI >NIL:

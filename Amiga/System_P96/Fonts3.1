@@ -1,0 +1,53 @@
+;ClassicWB Fonts 3.1 Install
+
+LAB START
+
+cls
+
+echo ""
+echo "Please Insert Fonts 3.1 disk into DF0:"
+echo ""
+ASK "Press Return to Continue."
+
+IF NOT EXISTS DF0:topaz/11
+  SKIP FAIL
+ENDIF
+
+IF "`SYS:c/which DF0:`" EQ "Fonts:"
+  echo ""
+  echo ""
+  echo "Disk appears to be Fonts release."
+  SKIP PASS
+ELSE
+  SKIP FAIL
+ENDIF
+
+LAB FAIL
+
+echo ""
+echo ""
+echo "This is not a valid Fonts disk"
+echo ""
+echo "...installation cannot continue."
+echo ""
+ASK "Press return to try again."
+SKIP START BACK
+
+LAB PASS
+
+echo ""
+echo "Valid Fonts disk found!"
+wait 4
+
+cls
+
+echo ""
+echo "Installing ClassicWB..."
+
+
+cd DF0:
+copy >NIL: DF0: SYS:Fonts ALL CLONE
+
+;SPECIAL CIRCUMSTANCES
+
+delete >NIL: SYS:Fonts/Disk.info

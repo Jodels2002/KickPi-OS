@@ -1,0 +1,11 @@
+;ClassicWB Bootmenu-Sequence
+;---------------------------
+;GAAE 68K LITE FULL ADV ADVSP P96 UAE
+
+C:Assign >NIL: ENV: RAM:
+
+C:WBRun SYS:System/BMenu/Menus/BootMenu
+
+C:Assign >NIL: ENV: DISMOUNT
+
+EndCLI >NIL:

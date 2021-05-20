@@ -1,0 +1,9 @@
+;ClassicWB Shell-Startup
+;-----------------------
+;68K LITE FULL ADV ADVSP P96 OS39 UAE
+
+Stack 8192
+Prompt "%N.%S> "
+Alias Clear "Echo *"*E[0;0H*E[J*" "
+Alias XCopy "Copy CLONE "
+Alias Bloodwych Echo "Is the Daddy!"
