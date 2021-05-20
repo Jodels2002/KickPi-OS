@@ -25,7 +25,7 @@ if [ ! -d /home/pi/Amiga/dir/WB ]; then
       #cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
 
 cd /home/$USER/Amiga/hdf/
-git clone --depth=1 https://github.com/henrikstengaard/amiga-workbench-setup.git
+#git clone --depth=1 https://github.com/henrikstengaard/amiga-workbench-setup.git
 
 
 if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
