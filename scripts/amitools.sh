@@ -19,15 +19,38 @@ if [ ! -d /home/pi/Amiga/dir/WB ]; then
       xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/dir/WB
       xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/dir/WB
      fi 
+      mkdir /home/pi/tmp/DH0/
+      mkdir /home/pi/Amiga/Install
       
-      #cp -rf /home/pi/tmp/Workbench3.0/ /home/pi/tmp/DH0/
-      #cp -rf /home/pi/tmp/System/* /home/pi/tmp/DH0/
-      #cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
 
-cd /home/$USER/Amiga/hdf/
+
 #git clone --depth=1 https://github.com/henrikstengaard/amiga-workbench-setup.git
 
-
+if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      cd /home/pi/Amiga/Install
+      
+      unzip -u ./ClassicWB_68K_v28.zip
+      
+      mkdir /home/pi/Amiga/hdf/ClassicWB_68K_v28/
+      mkdir /home/pi/tmp/Workbench/
+      cp -rf /home/pi/Amiga/dir/Workbench31/* /home/pi/tmp/Workbench/
+      cp -rf /home/pi/Amiga/Install/ClassicWB_68K_v28/System.hdf /home/pi/Amiga/hdf/ClassicWB_68K_v28/
+      cd /home/pi/Amiga/hdf/ClassicWB_68K_v28/
+      xdftool System.hdf unpack /home/pi/tmp/
+      cp -rf /home/pi/tmp/System/* /home/pi/tmp/DH0/
+      cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
+      
+      
+    else 
+      echo " "
+    fi 
 if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
@@ -37,13 +60,15 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo "  Configure ClassicWB_UAE_v28 ...   " 
       echo " "
       echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      w#get http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       cp -rf "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       cd "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/"
       echo " "
       echo " "
       echo "  Configure System_P96 ...   " 
+      
+      
       mkdir /home/pi/Amiga/dir/System_P96
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
      
@@ -64,19 +89,7 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo " "
       
       fi
-       if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip -u ./ClassicWB_68K_v28.zip
-    else 
-      echo " "
-    fi 
+       
       
       
       
