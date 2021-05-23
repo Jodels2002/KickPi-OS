@@ -45,7 +45,6 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       echo " "
       echo " "
       echo "  Configure System_P96 ...   " 
-      mv  "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       mkdir /home/pi/Amiga/dir/System_P96
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
