@@ -8,6 +8,9 @@ sudo python3 -m pip install -U setuptools
 
 sudo pip install amitools
 
+
+
+
 if [ ! -d /home/pi/Amiga/dir/WB ]; then
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/WB
@@ -23,8 +26,45 @@ if [ ! -d /home/pi/Amiga/dir/WB ]; then
       mkdir /home/pi/Amiga/Install
       
 
+if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...   " 
+      echo " "
+      echo " " 
+      cd /home/pi/Amiga/Install
+      
+      
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+      mv -rf "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      cd "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/"
+      echo " "
+      echo " "
+      echo "  Configure System_P96 ...   " 
+      mv  "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      mkdir /home/pi/Amiga/dir/System_P96
+      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
+     
+          
+      echo " "
+      echo " "
+      echo "  Configure System_ADVSP ...   " 
+      mkdir /home/pi/Amiga/dir/System_ADVSP
+      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
+      rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+     
+      
+      
+      else 
+      echo " "
+      
+      fi
 
-#git clone --depth=1 https://github.com/henrikstengaard/amiga-workbench-setup.git
 
 if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
@@ -35,7 +75,7 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       echo " "
       echo " "
       cd /home/pi/Amiga/Install
-      
+      #get http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
       
       mkdir /home/pi/Amiga/hdf/ClassicWB_68K_v28/
@@ -51,46 +91,7 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
     else 
       echo " "
     fi 
-if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...   " 
-      echo " "
-      echo " "
-      w#get http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-      cp -rf "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
-      cd "/home/pi/Amiga/hdf/ClassicWB_UAE_v28/Hard Disk/"
-      echo " "
-      echo " "
-      echo "  Configure System_P96 ...   " 
-      
-      
-      mkdir /home/pi/Amiga/dir/System_P96
-      xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-     
-      cp -rf /home/pi/.KickOS/Amiga/Install.zip /home/pi/tmp/
-      cd /home/pi/tmp/
-      unzip -u ./Install.zip
-      cp -rf /home/pi/tmp/Workbench3.1/* /home/pi/Amiga/dir/System_P96/System/
-      
-      
-      echo " "
-      echo " "
-      echo "  Configure System_ADVSP ...   " 
-      mkdir /home/pi/Amiga/dir/System_ADVSP
-      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
-      
-      
-      else 
-      echo " "
-      
-      fi
-       
-      
+
       
       
     if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
