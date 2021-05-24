@@ -1,0 +1,9 @@
+;ClassicWB Assign-Startup
+;------------------------
+;UAE
+
+Assign >NIL: A-Demos: DH1:Demos
+Assign >NIL: A-Games: DH1:Games
+Assign >NIL: A-MyFiles: DH1:MyFiles
+Assign >NIL: A-Programs: SYS:Programs
+Assign >NIL: A-Temp: DH1:Temp
