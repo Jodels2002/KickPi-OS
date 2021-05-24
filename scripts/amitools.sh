@@ -57,6 +57,8 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/System/T/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
+      
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/* /home/pi/Amiga/dir/System_P96/System/Temp/
           
       echo " "
       echo " "
@@ -65,9 +67,9 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
-      cp -rf /home/pi/.KickPi-OS/Amiga/System_P96/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/System_P96/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/* /home/pi/Amiga/dir/System_ADVSP/System/Temp/
       
       else 
       echo " "
