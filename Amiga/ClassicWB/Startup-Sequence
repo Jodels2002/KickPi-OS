@@ -35,19 +35,15 @@ resident SYS:T/Workbench31/C/Wait PURE
 
 
   echo ""
-  echo "Valid Workbench disk found!"
-  wait 4
+  echo "KickPi-OS ClassicWB installer..."
+  wait 3
+
+
 
   cls
 
   echo ""
-  echo "Installing ClassicWB..."
-  
-
-  cls
-
-  echo ""
-  echo "Activating system using Workbench disks, please wait..."
+  echo "Activating system, please wait..."
   
 
   execute SYS:S/Activate
@@ -79,7 +75,7 @@ resident SYS:T/Workbench31/C/Wait PURE
   delete >NIL: SYS:S/Storage3.1
 ENDIF
 
-wait 4
+
 SKIP OPTIONS
 
 LAB PASS
@@ -92,21 +88,13 @@ resident SYS:T/Workbench31/C/Delete PURE
 resident SYS:T/Workbench31/C/Execute PURE
 resident SYS:T/Workbench31/C/Wait PURE
 
-echo ""
-echo "Valid Workbench disk found!"
-wait 4
+
 
 cls
 
 echo ""
-echo "Installing ClassicWB..."
-wait 4
-
-cls
-
-echo ""
-echo "Activating system using Workbench disk, please wait..."
-wait 4
+echo "Activating system, please wait..."
+wait 2
 
 execute SYS:S/Activate
 cd SYS:
@@ -324,10 +312,7 @@ ENDIF
 LAB ENABLE
 
   cls
-  echo ""
-  echo "Installing..."
-  echo ""
-  wait 4
+ 
   unzip >NIL: -o SYS:Temp/oldicons.zip -d SYS:
   echo ""
   echo "OldIcon support installed."
@@ -389,10 +374,7 @@ ENDIF
 LAB ENABLE
 
   cls
-  echo ""
-  echo "Installing..."
-  echo ""
-  wait 4
+
   execute >NIL: SYS:Temp/Copper_enable
   echo ""
   echo "Copper support installed."
@@ -464,10 +446,10 @@ IF EXISTS SYS:Temp.info
   wait 2
 EndIF
 
-wait 2
+
 cls
 
-echo ""
+echo "KickPi-OS ClassicWB"
 echo "Installation Complete!"
 echo ""
 echo "Check the website documentation for details of the"
@@ -482,5 +464,5 @@ echo "Also check out the Settings->Components menu to access"
 echo "more options like ENV Handler, BlazeWPC, IconBeFast,"
 echo "TinyMeter, TagLiFE, PatchRAM and StickyRMB."
 echo ""
-ask "Please remove the Workbench disk and reboot."
+ask "Please Press F12 and Reset."
 SKIP FINISH BACK
