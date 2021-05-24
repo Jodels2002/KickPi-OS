@@ -1,0 +1,486 @@
+;Install ClassicWB
+;-----------------
+;UAE
+
+
+
+
+resident SYS:C/cls PURE
+
+cls
+
+cls
+
+LAB START
+
+cls
+
+
+
+
+
+
+
+
+
+LAB INSTALL
+
+stack 16384
+failat 21
+SYS:T/Workbench31/C/AddBuffers >NIL: SYS:T/Workbench31/ 200
+resident SYS:T/Workbench31/C/Copy PURE
+resident SYS:T/Workbench31/C/Delete PURE
+resident SYS:T/Workbench31/C/Execute PURE
+resident SYS:T/Workbench31/C/Wait PURE
+
+
+  echo ""
+  echo "Valid Workbench disk found!"
+  wait 4
+
+  cls
+
+  echo ""
+  echo "Installing ClassicWB..."
+  
+
+  cls
+
+  echo ""
+  echo "Activating system using Workbench disks, please wait..."
+  
+
+  execute SYS:S/Activate
+  cd SYS:
+  delete >NIL: SYS:S/Activate
+
+  IF EXISTS SYS:C/LoadWB.temp
+    copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB.orig CLONE
+  ELSE
+    copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB CLONE
+  ENDIF
+
+  copy SYS:T/Science SYS:S CLONE
+  delete >NIL: SYS:T/Science
+  delete >NIL: SYS:S/startup-sequence
+  rename SYS:S/Science SYS:S/Startup-Sequence
+
+  IF EXISTS SYS:C/LoadWB.temp
+    rename SYS:C/LoadWB.temp SYS:C/LoadWB
+  ENDIF
+
+ 
+  
+  delete >NIL: SYS:S/Workbench3.1
+  delete >NIL: SYS:S/Extras3.1
+  delete >NIL: SYS:S/Fonts3.1
+  delete >NIL: SYS:S/Install3.1
+  delete >NIL: SYS:S/Locale3.1
+  delete >NIL: SYS:S/Storage3.1
+ENDIF
+
+wait 4
+SKIP OPTIONS
+
+LAB PASS
+
+stack 16384
+failat 21
+SYS:T/Workbench31/C/AddBuffers >NIL: SYS:T/Workbench31/ 200
+resident SYS:T/Workbench31/C/Copy PURE
+resident SYS:T/Workbench31/C/Delete PURE
+resident SYS:T/Workbench31/C/Execute PURE
+resident SYS:T/Workbench31/C/Wait PURE
+
+echo ""
+echo "Valid Workbench disk found!"
+wait 4
+
+cls
+
+echo ""
+echo "Installing ClassicWB..."
+wait 4
+
+cls
+
+echo ""
+echo "Activating system using Workbench disk, please wait..."
+wait 4
+
+execute SYS:S/Activate
+cd SYS:
+delete >NIL: SYS:S/Activate
+
+IF EXISTS SYS:C/LoadWB.temp
+  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB.orig CLONE
+ELSE
+  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB CLONE
+ENDIF
+
+copy SYS:T/Science SYS:S CLONE
+delete >NIL: SYS:T/Science
+delete >NIL: SYS:S/startup-sequence
+rename SYS:S/Science SYS:S/Startup-Sequence
+
+IF EXISTS SYS:C/LoadWB.temp
+  rename SYS:C/LoadWB.temp SYS:C/LoadWB
+ENDIF
+
+delete >NIL: SYS:S/Workbench3.1
+delete >NIL: SYS:S/Extras3.1
+delete >NIL: SYS:S/Install3.1
+delete >NIL: SYS:S/Storage3.1
+delete >NIL: SYS:S/Locale3.1
+
+IF EXISTS SYS:T/z
+  delete >NIL: SYS:T/z
+EndIF
+IF EXISTS SYS:T/zz
+  delete >NIL: SYS:T/zz
+EndIF
+
+IF EXISTS SYS:System/FBlit/FBlit
+  copy DH1:MyFiles/Install/A1200ADVSP/Icons/Startup-Sequence30 DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/S/Startup-Sequence CLONE
+ELSE
+  copy DH1:MyFiles/Install/A4000P96/Icons/Startup-Sequence30 DH1:MyFiles/Install/A4000P96/Icons/Enable/S/Startup-Sequence CLONE
+EndIF
+
+wait 4
+
+LAB OPTIONS
+
+  cd SYS:
+  C:MakeDir RAM:T RAM:Clipboards RAM:ENV RAM:ENV/Sys
+  copy >NIL: ENVARC: RAM:ENV ALL NOREQ
+  C:Assign >NIL: ENV: RAM:ENV
+
+LAB PALETTE
+
+IF EXISTS SYS:Temp/hicolour.zip
+  wait 4
+  unzip >NIL: -o SYS:Temp/hicolour.zip -d SYS:
+  delete >NIL: SYS:Temp/palette.zip
+  delete >NIL: SYS:Temp/hicolour.zip
+  SETENV default 3
+ELSE
+  SKIP THEME
+EndIF
+
+LAB THEME
+
+IF EXISTS SYS:Temp/retro.zip
+  cls
+  echo ""
+  echo ""
+  echo ""
+  echo ""
+  echo ""
+  echo ""
+  echo "Choose Theme:"
+  echo "-------------"
+  echo ""
+  echo "None/Original Theme"
+  echo "-------------------"
+  echo "- Default Workbench appearance"
+  echo "- No wallpaper"
+  echo "- Copper effect applied to backdrop"
+  echo "- Same as shown on main Webpage - abime.classicwb.net"
+  echo ""
+  echo "Retro and Re-Gen Theme"
+  echo "----------------------"
+  echo "- Customized appearance"
+  echo "- Wallpaper included"
+  echo "- Borderless Icons"
+  echo "- Copper effect applied to windows and applications"
+ELSE
+  SKIP OLDICONS
+EndIF
+
+C:Requestchoice >ENV:Choice "Choose Theme""Choose:""None""Retro""Re-Gen"
+
+IF $Choice EQ "1"
+  SKIP NONE
+ENDIF
+IF $Choice EQ "2"
+  SKIP RETRO
+ENDIF
+IF $Choice EQ "0"
+  SKIP REGEN
+ENDIF
+
+LAB NONE
+
+  delete >NIL: SYS:Temp/retro.zip
+  delete >NIL: SYS:Temp/regen.zip
+  delete >NIL: SYS:Temp/default.zip
+  delete >NIL: SYS:Temp/defaultregen.zip
+  delete >NIL: SYS:Temp/defaultretro.zip
+  delete >NIL: SYS:Temp/optimized.zip
+  SKIP OLDICONS
+
+LAB RETRO
+
+  cls
+  echo ""
+  echo "Installing..."
+  echo ""
+  wait 4
+  unzip >NIL: -o SYS:Temp/retro.zip -d SYS:
+  echo ""
+  echo "Retro Theme installed."
+  echo ""
+  IF $default EQ 1
+    unzip >NIL: -o SYS:Temp/default.zip -d SYS:
+  EndIF
+  IF $default EQ 2
+    unzip >NIL: -o SYS:Temp/optimized.zip -d SYS:
+  EndIF
+  IF $default EQ 3
+    unzip >NIL: -o SYS:Temp/defaultretro.zip -d SYS:
+  EndIF
+  delete >NIL: SYS:Temp/retro.zip
+  delete >NIL: SYS:Temp/regen.zip
+  delete >NIL: SYS:Temp/default.zip
+  delete >NIL: SYS:Temp/defaultregen.zip
+  delete >NIL: SYS:Temp/defaultretro.zip
+  delete >NIL: SYS:Temp/optimized.zip
+  delete >NIL: SYS:Temp/oldicons.zip
+
+IF EXISTS SYS:System/FBlit/FBlit 
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE
+ELSE
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A4000P96/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE 
+EndIF
+
+  ask "Press RETURN to continue."
+  SKIP OLDICONS
+
+LAB REGEN
+
+  cls
+  echo ""
+  echo "Installing..."
+  echo ""
+  wait 4
+  unzip >NIL: -o SYS:Temp/regen.zip -d SYS:
+  echo ""
+  echo "Re-Gen Theme installed."
+  echo "" 
+  IF $default EQ 1
+    unzip >NIL: -o SYS:Temp/default.zip -d SYS:
+  EndIF
+  IF $default EQ 2
+    unzip >NIL: -o SYS:Temp/optimized.zip -d SYS:
+  EndIF
+  IF $default EQ 3
+    unzip >NIL: -o SYS:Temp/defaultregen.zip -d SYS:
+  EndIF
+  delete >NIL: SYS:Temp/retro.zip
+  delete >NIL: SYS:Temp/regen.zip
+  delete >NIL: SYS:Temp/default.zip
+  delete >NIL: SYS:Temp/defaultregen.zip
+  delete >NIL: SYS:Temp/defaultretro.zip
+  delete >NIL: SYS:Temp/optimized.zip
+  delete >NIL: SYS:Temp/oldicons.zip
+
+IF EXISTS SYS:System/FBlit/FBlit 
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE
+ELSE
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A4000P96/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE 
+EndIF  
+  
+  ask "Press RETURN to continue."
+
+LAB OLDICONS
+
+IF EXISTS SYS:Temp/oldicons.zip
+  cls
+  echo ""
+  echo "Old Look Icons:"
+  echo "---------------"
+  echo ""
+  echo "If you prefer the look of borderless icons, like those"
+  echo "found in Workbench 1.3, then this allows the old look"
+  echo "to return to Workbench 3."
+  echo ""
+  echo "This option can be enabled/disabled at anytime via the"
+  echo "Settings->Scalos Prefs menu, adding values to Icon Border."
+  echo ""
+  ask "Press RETURN to choose."
+ELSE
+  SKIP COPPER
+EndIF
+
+C:Requestchoice >ENV:Choice "OldIcons""Choose:""Enable""Disable"
+
+IF $Choice EQ "1"
+  SKIP ENABLE
+ENDIF
+IF $Choice EQ "0"
+  SKIP DISABLE
+ENDIF
+
+LAB ENABLE
+
+  cls
+  echo ""
+  echo "Installing..."
+  echo ""
+  wait 4
+  unzip >NIL: -o SYS:Temp/oldicons.zip -d SYS:
+  echo ""
+  echo "OldIcon support installed."
+  echo ""
+  delete >NIL: SYS:Temp/oldicons.zip
+
+IF EXISTS SYS:System/FBlit/FBlit 
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE
+ELSE
+  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A4000P96/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE 
+EndIF
+
+  ask "Press RETURN to continue."
+  SKIP COPPER
+
+LAB DISABLE
+
+  delete >NIL: SYS:Temp/oldicons.zip
+  wait 2
+
+LAB COPPER
+
+IF EXISTS SYS:C/Copper_enable
+  cls
+  echo ""
+  echo "AGA Copper backgrounds"
+  echo "----------------------"
+  echo ""
+  echo "AGA users are treated with the ability to run a high"
+  echo "colour Copper background."
+  echo ""
+  echo "If you chose the ClassicWB default Theme, it will be"
+  echo "used as the background wallpaper."
+  echo ""
+  echo "Users who selected the custom Themes with wallpaper"
+  echo "will have the Copper effect applied to the background"
+  echo "of windows and applications."
+  echo ""
+  echo "This can be Enabled or Disabled at anytime from the"
+  echo "Settings and Tools menus. The effect can be locked to"
+  echo "any one colour using preferences."
+  echo ""
+  echo "ECS users need to disable this option."
+  echo ""
+  ask "Press RETURN to choose."
+ELSE
+  SKIP END
+EndIF
+
+C:Requestchoice >ENV:Choice "Copper Background""Choose:""Enable""Disable"
+
+IF $Choice EQ "1"
+  SKIP ENABLE
+ENDIF
+IF $Choice EQ "0"
+  SKIP DISABLE
+ENDIF
+
+LAB ENABLE
+
+  cls
+  echo ""
+  echo "Installing..."
+  echo ""
+  wait 4
+  execute >NIL: SYS:Temp/Copper_enable
+  echo ""
+  echo "Copper support installed."
+  echo ""
+  delete >NIL: SYS:Temp/Copper_enable
+  ask "Press RETURN to continue."
+  SKIP END
+
+LAB DISABLE
+
+  delete >NIL: SYS:Temp/Copper_enable
+  wait 2
+
+LAB END
+
+  cls
+  echo ""
+  echo "Optimising ClassicWB this will take a few minutes..."
+
+  resident C:Protect PURE
+  resident C:Filenote PURE
+  
+  protect DH1:#? +RWED ALL QUIET
+  protect DH1:#? -HA ALL QUIET
+  list >RAM:attrib DH1: ALL p=#?.info LFORMAT="Protect *"%p%n*" -ES ALL QUIET"
+  execute RAM:attrib
+  delete RAM:attrib ALL QUIET
+  filenote DH0:#? ALL QUIET
+  protect FONTS:#? +RWED ALL QUIET
+  SYS:System/FixFonts
+
+  protect DH1:MyFiles/Install/A1200ADVSP/SFS/Install_SFS_Support +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/SFS/Remove_SFS_Support +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Startup-Sequence30 +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/S/Startup-Sequence +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install_Icons +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install_Icons_Support +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove_Icons +S QUIET
+  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove_Icons_Support +S QUIET
+
+  protect DH1:MyFiles/Install/A4000P96/SFS/Install_SFS_Support +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/SFS/Remove_SFS_Support +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Startup-Sequence30 +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Enable/S/Startup-Sequence +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Install +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Install_Icons +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Install_Icons_Support +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Remove +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Remove_Icons +S QUIET
+  protect DH1:MyFiles/Install/A4000P96/Icons/Remove_Icons_Support +S QUIET
+
+LAB IGAME
+
+IF EXISTS SYS:Temp/igame.zip
+  unzip >NIL: -o SYS:Temp/igame.zip -d DH1:Games
+  delete >NIL: SYS:Temp/igame.zip
+  SKIP FINISH
+ELSE
+  SKIP FINISH
+EndIF
+
+LAB FINISH
+
+IF EXISTS SYS:Temp.info
+  delete >NIL: SYS:Temp ALL
+  delete >NIL: SYS:Temp.info
+  wait 2
+EndIF
+
+wait 2
+cls
+
+echo ""
+echo "Installation Complete!"
+echo ""
+echo "Check the website documentation for details of the"
+echo "multiboot and multi-partition features, large HD >4GB"
+echo "support and how to add WHDLoad games."
+echo ""
+echo "The MyFiles/Install drawer contains many useful addons"
+echo "including PeterKs PNG OS35+ Icon Support, SFS, Network"
+echo "CDROM drivers and more."
+echo ""
+echo "Also check out the Settings->Components menu to access"
+echo "more options like ENV Handler, BlazeWPC, IconBeFast,"
+echo "TinyMeter, TagLiFE, PatchRAM and StickyRMB."
+echo ""
+ask "Please remove the Workbench disk and reboot."
+SKIP FINISH BACK
