@@ -55,6 +55,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       
@@ -68,6 +69,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/System/T/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       
       cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
@@ -92,16 +94,9 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       echo " "
       cd /home/pi/Amiga/Install
       #get http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip -u ./ClassicWB_68K_v28.zip
+      #unzip -u ./ClassicWB_68K_v28.zip
       
-      mkdir /home/pi/Amiga/hdf/ClassicWB_68K_v28/
-      mkdir /home/pi/tmp/Workbench/
-      cp -rf /home/pi/Amiga/dir/Workbench31/* /home/pi/tmp/Workbench/
-      cp -rf /home/pi/Amiga/Install/ClassicWB_68K_v28/System.hdf /home/pi/Amiga/hdf/ClassicWB_68K_v28/
-      cd /home/pi/Amiga/hdf/ClassicWB_68K_v28/
-      xdftool System.hdf unpack /home/pi/tmp/
-      cp -rf /home/pi/tmp/System/* /home/pi/tmp/DH0/
-      cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
+ 
       
       
     else 
@@ -110,47 +105,16 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
 
       
       
-    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...   " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Amiga/hdf/"
-      #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
+
+      
+
     else 
       clear
       
     fi
+       sudo chmod -R 777 /home/$USER/Amiga
       
-    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Amiga/hdf/"
-      
-      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip -u ./ClassicWB_OS39_v28.zip
-    else 
-      clear
-      
-    fi
-      
-      
-      #cd /home/pi/Amiga/adf/
-      #xdftool amiga-os-300-workbench.adf unpack /home/pi/tmp/
-      #cp -rf /home/pi/tmp/Workbench3.0/ /home/pi/tmp/DH0/
-      #cp -rf /home/pi/tmp/System/* /home/pi/tmp/DH0/
-      #cp -rf /home/pi/tmp/System/T/Science /home/pi/tmp/DH0/S/Startup-Sequence
+
       
       
       
