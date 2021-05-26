@@ -1,12 +1,12 @@
 ;ClassicWB Assign-Startup
 ;------------------------
-;UAE
 
-Assign >NIL: A-Demos: Games:WHD/D/
-Assign >NIL: A-Games: Games:WHD/G/
-Assign >NIL: Software: SYS:Software/
+
+Assign >NIL: A-Demos: Games:WHD/D
+Assign >NIL: A-Games: Games:WHD/G
+Assign >NIL: Software: SYS:Software
 Assign >NIL: A-MyFiles:  SYS:Software/MyFiles
-Assign >NIL: A-Programs: SYS:Programs:
+Assign >NIL: A-Programs: SYS:Programs
 Assign >NIL: A-Temp: RAM:
 
 
