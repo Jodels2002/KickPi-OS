@@ -13,10 +13,10 @@ Assign >NIL: A-Temp: DH1:Temp
 
 ;ArcadeGameSelector
 ASSIGN >NIL: EXISTS Games:
-  IF EXISTS Work:AGS2
-    Assign AGS: Work:AGS2
-    Assign WHD: Work:WHD
-    Assign WHDSaves: Saves:WHDSaves
+  IF EXISTS Games:AGS2
+    Assign AGS: Games:AGS2
+    Assign WHD: Games:WHD
+    Assign WHDSaves: Games:WHDSaves
     EndIF
     ;C:BBlank
     ;AGS:AGS2
@@ -29,12 +29,12 @@ ASSIGN >NIL: EXISTS Games:
 
 
 
-Assign APPS: work:Apps
-Assign ST-00: APPS:ProTracker2
-Assign Blitz2: APPS:Blitz
-Assign blitzlibs: Blitz2:blitzlibs
-Assign DPaintV: APPS:DPaintV
-Assign C4D: APPS:Cinema4D
-Assign TEX: C4D:Textures
+;Assign APPS: work:Apps
+;Assign ST-00: APPS:ProTracker2
+;Assign Blitz2: APPS:Blitz
+;Assign blitzlibs: Blitz2:blitzlibs
+;Assign DPaintV: APPS:DPaintV
+;Assign C4D: APPS:Cinema4D
+;Assign TEX: C4D:Textures
 
 ;Finalize
