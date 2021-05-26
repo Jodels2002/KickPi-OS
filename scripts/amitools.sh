@@ -43,6 +43,13 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       unzip -u ./ClassicWB_UAE_v28.zip
       mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
+        else 
+      echo " "
+      
+      fi
+      
+      rm -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/
+      rm -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/
       
       
       echo " "
@@ -78,11 +85,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       #rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
       
-      else 
-      echo " "
-      
-      fi
-
+ 
 
 if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
