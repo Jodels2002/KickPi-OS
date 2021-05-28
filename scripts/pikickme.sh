@@ -274,7 +274,7 @@ KickPi-OS_Tools() {
       # Configured
       
       fi
-          
+        
       
 }
 
@@ -850,7 +850,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       else 
       
      echo "Cool Retro Term is always installed"
-      
+      sudo python3 -m pip install -U pip
+      sudo python3 -m pip install -U setuptools
+
+      sudo pip install amitools  
       
       fi  
 }
