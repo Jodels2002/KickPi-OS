@@ -3,10 +3,7 @@
 # Install KickOS
 # B.Titze 2021
 #***********************************************  Amitools instll ***********************************
-sudo python3 -m pip install -U pip
-sudo python3 -m pip install -U setuptools
 
-sudo pip install amitools
 
 
 
