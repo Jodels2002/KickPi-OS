@@ -1,8 +1,5 @@
 ;Install ClassicWB
 ;-----------------
-;UAE
-
-
 
 
 resident SYS:C/cls PURE
@@ -10,43 +7,9 @@ resident SYS:C/cls PURE
 cls
 
 
-
-LAB INSTALL
-
-stack 16384
-failat 21
-SYS:T/Workbench31/C/AddBuffers >NIL: SYS:T/Workbench31/ 200
-resident SYS:T/Workbench31/C/Copy PURE
-resident SYS:T/Workbench31/C/Delete PURE
-resident SYS:T/Workbench31/C/Execute PURE
-resident SYS:T/Workbench31/C/Wait PURE
-
-
   echo ""
   echo "KickPi-OS ClassicWB installer..."
-  wait 3
 
-
-
-  cls
-
-  echo ""
-  echo "Activating system, please wait..."
-  
-
-  execute SYS:S/Activate
-  cd SYS:
-  delete >NIL: SYS:S/Activate
-
-  
-
- 
-
-
-
-
-
-LAB PASS
 
 stack 16384
 failat 21
@@ -55,7 +18,6 @@ resident SYS:T/Workbench31/C/Copy PURE
 resident SYS:T/Workbench31/C/Delete PURE
 resident SYS:T/Workbench31/C/Execute PURE
 resident SYS:T/Workbench31/C/Wait PURE
-
 
 
 cls
@@ -68,34 +30,18 @@ execute SYS:S/Activate
 cd SYS:
 delete >NIL: SYS:S/Activate
 
-IF EXISTS SYS:C/LoadWB.temp
-  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB.orig CLONE
-ELSE
-  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB CLONE
-ENDIF
+
 
 copy SYS:T/Science SYS:S CLONE
 delete >NIL: SYS:T/Science
 delete >NIL: SYS:S/startup-sequence
 rename SYS:S/Science SYS:S/Startup-Sequence
 
-IF EXISTS SYS:C/LoadWB.temp
+
   rename SYS:C/LoadWB.temp SYS:C/LoadWB
-ENDIF
-
-delete >NIL: SYS:S/Workbench3.1
-delete >NIL: SYS:S/Extras3.1
-delete >NIL: SYS:S/Install3.1
-delete >NIL: SYS:S/Storage3.1
-delete >NIL: SYS:S/Locale3.1
 
 
 
-IF EXISTS SYS:System/FBlit/FBlit
-  copy DH1:MyFiles/Install/A1200ADVSP/Icons/Startup-Sequence30 DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/S/Startup-Sequence CLONE
-ELSE
-  copy DH1:MyFiles/Install/A4000P96/Icons/Startup-Sequence30 DH1:MyFiles/Install/A4000P96/Icons/Enable/S/Startup-Sequence CLONE
-EndIF
 
 
 
@@ -112,8 +58,6 @@ EndIF
   unzip >NIL: -o SYS:Temp/hicolour.zip -d SYS:
   delete >NIL: SYS:Temp/palette.zip
   delete >NIL: SYS:Temp/hicolour.zip
-  SETENV default 3
-
 
 
 
@@ -128,44 +72,13 @@ EndIF
   echo "Re-Gen Theme installed."
   echo "" 
 
-  delete >NIL: SYS:Temp/retro.zip
-  delete >NIL: SYS:Temp/regen.zip
-  delete >NIL: SYS:Temp/default.zip
-  delete >NIL: SYS:Temp/defaultregen.zip
-  delete >NIL: SYS:Temp/defaultretro.zip
-  delete >NIL: SYS:Temp/optimized.zip
-  delete >NIL: SYS:Temp/oldicons.zip
-
-IF EXISTS SYS:System/FBlit/FBlit 
-  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE
-ELSE
-  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A4000P96/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE 
-EndIF  
-  
-
-
 
 
   cls
  
 
 
-IF EXISTS SYS:System/FBlit/FBlit 
-  copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE
-ELSE
   copy SYS:Prefs/Env-Archive/Scalos/Scalos.prefs DH1:MyFiles/Install/A4000P96/Icons/Enable/Prefs/Env-Archive/Scalos/Scalos.prefs CLONE 
-EndIF
-
-
-
-
-
-  delete >NIL: SYS:Temp/oldicons.zip
-
-
-
-
-
 
 
 
@@ -192,14 +105,24 @@ EndIF
 
   SYS:System/FixFonts
 
+delete >NIL: SYS:S/Workbench3.1
+delete >NIL: SYS:S/Extras3.1
+delete >NIL: SYS:S/Install3.1
+delete >NIL: SYS:S/Storage3.1
+delete >NIL: SYS:S/Locale3.1
 
-
+  delete >NIL: SYS:Temp/retro.zip
+  delete >NIL: SYS:Temp/regen.zip
+  delete >NIL: SYS:Temp/default.zip
+  delete >NIL: SYS:Temp/defaultregen.zip
+  delete >NIL: SYS:Temp/defaultretro.zip
+  delete >NIL: SYS:Temp/optimized.zip
+  delete >NIL: SYS:Temp/oldicons.zip 
 
 
   delete >NIL: SYS:Temp ALL
 
   
-
 
 
 cls
