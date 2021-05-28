@@ -100,15 +100,14 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       #get http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       #unzip -u ./ClassicWB_68K_v28.zip
       
- 
-      
+
       
     else 
       echo " "
     fi 
 
       
-      
+ echo "Ready to fire up Amiga..."     
 
       
 
