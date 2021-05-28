@@ -190,7 +190,7 @@ LAB COPPER
   echo "Copper support installed."
   echo ""
   delete >NIL: SYS:Temp/Copper_enable
-  ask "Press RETURN to continue."
+  
   
 
 
@@ -201,46 +201,19 @@ LAB COPPER
   resident C:Protect PURE
   resident C:Filenote PURE
   
-  protect DH1:#? +RWED ALL QUIET
-  protect DH1:#? -HA ALL QUIET
-  list >RAM:attrib DH1: ALL p=#?.info LFORMAT="Protect *"%p%n*" -ES ALL QUIET"
-  execute RAM:attrib
-  delete RAM:attrib ALL QUIET
+
   filenote DH0:#? ALL QUIET
   protect FONTS:#? +RWED ALL QUIET
   SYS:System/FixFonts
 
-  protect DH1:MyFiles/Install/A1200ADVSP/SFS/Install_SFS_Support +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/SFS/Remove_SFS_Support +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Startup-Sequence30 +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/S/Startup-Sequence +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install_Icons +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Install_Icons_Support +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove_Icons +S QUIET
-  protect DH1:MyFiles/Install/A1200ADVSP/Icons/Remove_Icons_Support +S QUIET
-
-  protect DH1:MyFiles/Install/A4000P96/SFS/Install_SFS_Support +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/SFS/Remove_SFS_Support +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Startup-Sequence30 +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Enable/S/Startup-Sequence +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Install +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Install_Icons +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Install_Icons_Support +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Remove +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Remove_Icons +S QUIET
-  protect DH1:MyFiles/Install/A4000P96/Icons/Remove_Icons_Support +S QUIET
 
 
 
-LAB FINISH
 
-IF EXISTS SYS:Temp.info
   delete >NIL: SYS:Temp ALL
-  delete >NIL: SYS:Temp.info
+
   
-EndIF
+
 
 
 cls
