@@ -9,6 +9,10 @@
 
 
 if [ ! -d /home/pi/Amiga/dir/WB ]; then
+      sudo python3 -m pip install -U pip
+      sudo python3 -m pip install -U setuptools
+      sudo pip install amitools  
+      
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/WB
       #xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/dir/WB
@@ -53,17 +57,17 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       echo " "
       echo "  Configure System_ADVSP ...   " 
       
-      #mkdir /home/pi/Amiga/dir/System_ADVSP
-      #cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      #xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
+      mkdir /home/pi/Amiga/dir/System_ADVSP
+      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       
-      #cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
-      #cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      #cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
-      #cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      #cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
-      #cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_ADVSP/System/
-      #cp -rf /home/pi/Amiga/dir/Games/Kickstarts /home/pi/Amiga/dir/System_ADVSP/System/Devs/
+      cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_ADVSP/System/
+      cp -rf /home/pi/Amiga/dir/Games/Kickstarts /home/pi/Amiga/dir/System_ADVSP/System/Devs/
       
       echo " "
       echo " "
