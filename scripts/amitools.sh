@@ -48,8 +48,8 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       fi
       
-      rm -rf  /home/pi/Amiga/dir/System_P96/
-      rm -rf  /home/pi/Amiga/dir/System_ADVSP/
+      sudo rm -rf  /home/pi/Amiga/dir/System_P96/
+      sudo rm -rf  /home/pi/Amiga/dir/System_ADVSP/
       
       
       echo " "
