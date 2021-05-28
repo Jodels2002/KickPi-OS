@@ -89,12 +89,7 @@ delete >NIL: SYS:S/Install3.1
 delete >NIL: SYS:S/Storage3.1
 delete >NIL: SYS:S/Locale3.1
 
-IF EXISTS SYS:T/z
-  delete >NIL: SYS:T/z
-EndIF
-IF EXISTS SYS:T/zz
-  delete >NIL: SYS:T/zz
-EndIF
+
 
 IF EXISTS SYS:System/FBlit/FBlit
   copy DH1:MyFiles/Install/A1200ADVSP/Icons/Startup-Sequence30 DH1:MyFiles/Install/A1200ADVSP/Icons/Enable/S/Startup-Sequence CLONE
@@ -104,14 +99,14 @@ EndIF
 
 
 
-LAB OPTIONS
+
 
   cd SYS:
   C:MakeDir RAM:T RAM:Clipboards RAM:ENV RAM:ENV/Sys
   copy >NIL: ENVARC: RAM:ENV ALL NOREQ
   C:Assign >NIL: ENV: RAM:ENV
 
-LAB PALETTE
+
 
 
   unzip >NIL: -o SYS:Temp/hicolour.zip -d SYS:
@@ -127,20 +122,12 @@ LAB PALETTE
   echo ""
   echo "Installing..."
   echo ""
-  wait 4
+ 
   unzip >NIL: -o SYS:Temp/regen.zip -d SYS:
   echo ""
   echo "Re-Gen Theme installed."
   echo "" 
-  IF $default EQ 1
-    unzip >NIL: -o SYS:Temp/default.zip -d SYS:
-  EndIF
-  IF $default EQ 2
-    unzip >NIL: -o SYS:Temp/optimized.zip -d SYS:
-  EndIF
-  IF $default EQ 3
-    unzip >NIL: -o SYS:Temp/defaultregen.zip -d SYS:
-  EndIF
+
   delete >NIL: SYS:Temp/retro.zip
   delete >NIL: SYS:Temp/regen.zip
   delete >NIL: SYS:Temp/default.zip
@@ -171,12 +158,12 @@ EndIF
 
 
 
-LAB DISABLE
+
 
   delete >NIL: SYS:Temp/oldicons.zip
-  wait 2
 
-LAB COPPER
+
+
 
 
 
@@ -202,8 +189,7 @@ LAB COPPER
   resident C:Filenote PURE
   
 
-  filenote DH0:#? ALL QUIET
-  protect FONTS:#? +RWED ALL QUIET
+
   SYS:System/FixFonts
 
 
