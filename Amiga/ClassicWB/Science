@@ -1,7 +1,8 @@
 ;ClassicWB Startup-Sequence
 ;--------------------------
 ;FULL ADV ADVSP UAE
-
+Run >NIL: Patchpens
+C:LoadModule LIBS:icon.library
 IF EXISTS DEVS:scsi.device
   C:LoadModule DEVS:scsi.device
 EndIF
@@ -125,3 +126,4 @@ EndIF
 
 C:LoadWB
 EndCLI >NIL:
+Run >NIL: C:FixScalos
