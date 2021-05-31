@@ -6,6 +6,9 @@ C:LoadModule LIBS:icon.library
 IF EXISTS DEVS:scsi.device
   C:LoadModule DEVS:scsi.device
 EndIF
+IF EXISTS LIBS:icon.library
+C:LoadModule LIBS:icon.library
+EndIF
 
 C:GetMouseInput LOCAL
 
