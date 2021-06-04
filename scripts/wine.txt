@@ -1,3 +1,7 @@
+
+sudo apt -y install coreutils dialog memtest86+ genisoimage genisoimage findutils grub-pc xorriso syslinux os-prober bash passwd sed squashfs-tools live-boot live-config live-config-sysvinit live-boot-initramfs-tools rsync mount laptop-detect util-linux hwdata
+
+
 Aros Replace
 https://en.wikibooks.org/wiki/Aros/Platforms/68k_support#Emu68_(68k_on_ARM_hardware)
 
