@@ -236,7 +236,7 @@ KickPi-OS_Tools() {
       sudo apt install -y mc zip unzip 
       sudo apt install -y rpi-imager
       sudo apt install -y snapd
-      sudo snap install -y p7zip-desktop p7zip-full
+      sudo snap install -y p7zip-desktop p7zip-full gparted
       sudo apt install -y git usbmount gparted
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
