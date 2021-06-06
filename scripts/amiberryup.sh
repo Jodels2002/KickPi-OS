@@ -14,8 +14,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi 4 OS 64 bit SDL-Dispmanx"
       echo ""
     
-      #make -j2 PLATFORM=pi64
-      make -j2 PLATFORM=pi64-dispmanx
+      make -j2 PLATFORM=pi64
+      #make -j2 PLATFORM=pi64-dispmanx
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
