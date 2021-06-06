@@ -234,16 +234,17 @@ KickPi-OS_Tools() {
 
           
       sudo apt install -y mc zip unzip 
-      sudo apt install -y rpi-imager
+      sudo apt install -y rpi-imager gparted
       sudo apt install -y snapd
-      sudo snap install -y p7zip-desktop p7zip-full gparted
-      sudo apt install -y git usbmount gparted
+      sudo snap install core
+     
+      sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-      #if [ ! -d /home/$USER/pi-apps/]; then
+      if [ ! -d /home/$USER/pi-apps/]; then
       cd
-      wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+      #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
       #else
       clear
       #fi
