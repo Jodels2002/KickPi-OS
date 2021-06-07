@@ -200,7 +200,7 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-      sudo apt-get -y upgrade
+     
       
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
@@ -212,7 +212,14 @@ KickPi-OS_Update() {
       else 
       echo " "
       # First installation
-      
+       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+       sudo apt purge -y raspberrypi-ui-mods 
+       sudo apt purge -y cups cups-client cups-common cups-server-common
+       sudo update-rc.d motd remove
+       sudo apt-get -y update
+       sudo apt-get -y upgrade
+       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
+       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       
       fi
 
@@ -240,17 +247,16 @@ KickPi-OS_Tools() {
      
       sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
-      sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
-      sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+      
      
-     #if [ ! -d /home/$USER/pi-apps/]; then
+     if [ ! -d /home/$USER/pi-apps/]; then
       cd
-      #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-      #else
+      wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+      else
       clear
-      #fi
+      fi
       toilet "KickPi-OS" --metal
-      #fi
+      fi
      
      #Some little Amiga stuff....
       sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
@@ -394,11 +400,11 @@ KickPi-OS_Games() {
 	#else 
 	  
 	
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
-      sudo update-rc.d motd remove
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      #sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      #sudo apt purge -y raspberrypi-ui-mods 
+      #sudo apt purge -y cups cups-client cups-common cups-server-common
+      #sudo update-rc.d motd remove
+      #sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
