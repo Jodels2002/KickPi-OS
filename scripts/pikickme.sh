@@ -169,8 +169,7 @@ KickPi-OS_64bit_pre() {
      sudo apt purge -y raspberrypi-ui-mods 
      sudo apt purge -y cups cups-client cups-common cups-server-common
      sudo apt-get -y purge libraspberrypi-dev 
-     sudo apt-get -y update
-     sudo apt-get -y upgrade
+     
      #sudo apt-get install -y libraspberrypi-dev 
      #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
      #sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
@@ -200,7 +199,8 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-     
+       sudo apt-get -y update
+       sudo apt-get -y upgrade
       
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
@@ -216,8 +216,7 @@ KickPi-OS_Update() {
        sudo apt purge -y raspberrypi-ui-mods 
        sudo apt purge -y cups cups-client cups-common cups-server-common
        sudo update-rc.d motd remove
-       sudo apt-get -y update
-       sudo apt-get -y upgrade
+       
        sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
        sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
       
