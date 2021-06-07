@@ -43,8 +43,7 @@ cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
      sudo apt purge -y raspberrypi-ui-mods 
      sudo apt purge -y cups cups-client cups-common cups-server-common
-     sudo apt-get -y update
-     sudo apt-get -y upgrade
+    
  if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    sudo rm -rf /home/pi/tmp
    sudo mkdir /home/pi/tmp
@@ -199,6 +198,8 @@ KickPi-OS_Update() {
       echo " "
       echo " "
      
+      sudo apt-get -y update
+      sudo apt-get -y upgrade
      
      
        
