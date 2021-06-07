@@ -27,6 +27,7 @@
 #************************************************  #Amiberry Version   ************************************************
 #Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
 #Amiberry64=amiberry-v3.3-rpi4-64bit.zip
+mkdir /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 #***********************************************  #Are you runing Desktop?  ***********************************
@@ -38,7 +39,9 @@ cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
-
+     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+     sudo apt purge -y raspberrypi-ui-mods 
+     sudo apt purge -y cups cups-client cups-common cups-server-common
 
  if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    sudo rm -rf /home/pi/tmp
@@ -51,7 +54,7 @@ cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    clear
    echo "Amiga RAM Disk always installed..." 
 fi   
-sudo mount -a
+
 
 
 clear
@@ -164,16 +167,10 @@ KickPi-OS_64bit_pre() {
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-     echo "RetroPie64"
-     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-     sudo apt purge -y raspberrypi-ui-mods 
-     sudo apt purge -y cups cups-client cups-common cups-server-common
-     sudo apt-get -y purge libraspberrypi-dev 
      
-     #sudo apt-get install -y libraspberrypi-dev 
-     #sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev  libflac-dev 
-     #sudo apt-get install -y libxml2-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-     	
+    
+        sudo apt-get -y purge libraspberrypi-dev 
+          	
 	sudo apt-get -y remove pulseaudio
 	sudo apt-get -y install pulseaudio
 	sudo /etc/init.d/alsa-utils reset
@@ -199,8 +196,10 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-       sudo apt-get -y update
-       sudo apt-get -y upgrade
+     
+     
+     
+       
       
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
@@ -216,12 +215,15 @@ KickPi-OS_Update() {
        sudo apt purge -y raspberrypi-ui-mods 
        sudo apt purge -y cups cups-client cups-common cups-server-common
        sudo update-rc.d motd remove
-       
+       sudo apt-get -y update
+       sudo apt-get -y upgrade
        sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
        sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+       
+       
       
       fi
-
+       
 }
 
 #*********************************************  #Installing KickPi-OS_Tools*********************************
