@@ -771,7 +771,6 @@ fi
           fi
 	  
       
-      sudo chmod -R 777 /home/$USER/Amiga
     }    
    
 
