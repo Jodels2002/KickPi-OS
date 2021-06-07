@@ -20,29 +20,31 @@
 # consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram
 # https://github.com/raspberrypi/linux/blob/rpi-4.0.y/Documentation/kernel-parameters.txt
 # https://github.com/Drewsif/PiShrink/blob/master/pishrink.sh
-#Amiberry64=amiberry-v3.3-rpi4-64bit.zip
+#***********************************************  #Preinstall stuff *****************************************
+#*************************************************************************************************************
+clear
+      toilet "KickPi-OS" --metal
 
-#***********************************************  #Are you runing Desktop?  ***********************************
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      echo " "
+      echo "Installing KickPi-OS Update System ..."
+      echo " "
+      echo " "
 
-#************************************************  #Amiberry Version   ************************************************
-#Amiberry32=amiberry-v3.3-rpi4-dmx-32bit.zip
-#Amiberry64=amiberry-v3.3-rpi4-64bit.zip
 mkdir /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
-#***********************************************  #Are you runing Desktop?  ***********************************
-#if  xset q &>/dev/null; then
-   # echo "Please dont´t run this script under Linux Desktop" >&2
-   # sleep 15s
-   # exit 1
-#fi 
 
-#***********************************************  #Preinstall stuff *****************************************
-#*************************************************************************************************************
+
+
      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
      sudo apt purge -y raspberrypi-ui-mods 
      sudo apt purge -y cups cups-client cups-common cups-server-common
-
+     sudo apt-get -y update
+     sudo apt-get -y upgrade
  if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    sudo rm -rf /home/pi/tmp
    sudo mkdir /home/pi/tmp
@@ -215,10 +217,8 @@ KickPi-OS_Update() {
        sudo apt purge -y raspberrypi-ui-mods 
        sudo apt purge -y cups cups-client cups-common cups-server-common
        sudo update-rc.d motd remove
-       sudo apt-get -y update
-       sudo apt-get -y upgrade
-       sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4    
-       sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+       
+      
        
        
       
@@ -365,7 +365,7 @@ KickPi-OS_Internet() {
        toilet "KickPi-OS" --metal
        toilet -F gay Internet
        
-       sudo apt install -y youtube-dl minitube transmission chromium-browser
+       sudo apt install -y transmission chromium-browser
 }
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
@@ -405,7 +405,7 @@ KickPi-OS_Games() {
       #sudo apt purge -y raspberrypi-ui-mods 
       #sudo apt purge -y cups cups-client cups-common cups-server-common
       #sudo update-rc.d motd remove
-      #sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
