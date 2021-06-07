@@ -256,7 +256,11 @@ KickPi-OS_Tools() {
       else
       clear
       fi
+      clear
       toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       
      
      #Some little Amiga stuff....
@@ -280,6 +284,11 @@ KickPi-OS_Tools() {
       
 
       else 
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       echo " Tools up to date :) "
       # Configured
       
@@ -311,7 +320,7 @@ KickPi-OS_Office() {
 KickPi-OS_Video() {
 
       clear
-       toilet "KickPi-OS" --metal
+      toilet "KickPi-OS" --metal
 
       echo " "
       echo " "
@@ -324,14 +333,17 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       # Update is running
       sudo apt install -y gimp 
        clear
-       toilet "KickPi-OS" --metal
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
        toilet -F gay PhotoGimp
        
        curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
        sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
        echo " PhotoGimp by Diolinux installed..."
       
-      sleep 3s
+  
       else 
       
       echo " Gimp is already installed..."
@@ -342,8 +354,10 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
        
        
        clear
-       toilet "KickPi-OS" --metal
-       
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       
       #sudo apt install -y  kdenlive kdenlive-data inkscape
 }
@@ -354,11 +368,11 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 KickPi-OS_Internet() {
 
       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay Internet
+      toilet "KickPi-OS" --metal
 
       echo " "
       echo " "
+      
       echo "            Internet:)              "
      
       clear
@@ -373,8 +387,7 @@ KickPi-OS_Internet() {
 KickPi-OS_Games() {
 
       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay Games
+      toilet "KickPi-OS" --metal
 
       echo " "
       echo " "
@@ -392,7 +405,10 @@ KickPi-OS_Games() {
  #if  xset q &>/dev/null; then
  setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
     	    clear
-		toilet "KickPi-OS" --metal
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
 		echo "KickPI-OS ROM Operating System and Libraris" 
 		echo "Version V1.5 2020-2021 KickPi-OS "
 		echo "No Rights Reserved.  "
@@ -493,11 +509,17 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       git clone --depth=1 https://github.com/x64k/amitk
       clear
       toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
       
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       clear
       toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
@@ -514,9 +536,11 @@ fi
      
 
       # Settings XFCE4 Rasperry OS
-       clear
-       toilet "KickPi-OS" --metal
-   
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
        
        #sudo raspi-config nonint do_boot_behaviour B4
        else
@@ -540,8 +564,11 @@ fi
                sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
                if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-       clear
-       toilet "KickPi-OS" --metal
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
        toilet -F gay 64bit
        echo " "
        echo " "
@@ -562,9 +589,15 @@ fi
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
 		clear
       		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
                 unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
 		clear
-                toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+     		echo " "
+      		echo " "
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
                 sudo rm -rf  /home/amibian/.config/autostart/
@@ -599,8 +632,11 @@ fi
        echo " "
        echo " ... here comes Amiberry 64 bit   :-)"
        if [ ! -f /home/$USER/Amiga/amiberry ]; then
-      
-      echo "Amiberry is updatet" 
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
      echo "  ... here comes Amiberry 64 bit :-) "
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
@@ -609,7 +645,11 @@ fi
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
           sudo chmod -R 777 /home/$USER/Amiga/
       else 
-      
+      clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
           echo "  ... here comes Amiberry 64 bit :-) "
 	  cd /home/$USER/KickPi-OS/Amiga
       	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
@@ -625,10 +665,13 @@ fi
               
       
     else
-       clear
-       toilet "Amiberry" --metal
-       toilet -F gay 32bit
-       
+      clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
+      toilet -F gay 32bit
+      echo " "
       if [ ! -d /home/$USER/amiberry/ ]; then
       
       echo "  ... here comes Amiberry 32 bit :-) "
@@ -639,7 +682,11 @@ fi
       
      
       else 
-      
+           clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
            echo "Amiberry is updatet" 
    
       
@@ -663,8 +710,7 @@ fi
       
            
       if [ ! -f /home/$USER/Amiga.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
+       echo " "
       cd ~
       cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
@@ -691,7 +737,10 @@ fi
       unzip -u ./ClassicWB_P96_v28.zip
       else 
       clear
-      toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       fi
       
           
@@ -706,7 +755,11 @@ fi
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
       else 
-      echo " "
+     clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
          
       #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       #clear
@@ -785,7 +838,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
 	if [ ! -d /home/$USER/games/vice/ ]; then
 	clear
-     	toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
 	echo "Vice64"
      	echo " "
      	echo " "
@@ -801,9 +857,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 
        else
        	clear
-     	toilet "KickPi-OS" --metal
-     	echo " "
-     	echo " "
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
      	echo "Vice64 always installed"
    
        fi
@@ -830,8 +887,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       #Install PiKISS    
       if [ ! -d "/home/$USER/PiKISS/" ]; then
       clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       echo "Here comes PiKiss and Cool Retro Term" 
       echo " "
       cd
@@ -850,8 +909,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       mkdir /home/$USER/sc/
       clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       echo "Here comes Cool Retro Term" 
       echo " "
       cd /home/$USER/KickPi-OS/config/
@@ -873,7 +934,11 @@ KickPi-OS_Retropie() {
 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
+ clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
      echo "RetroPie64 experimental"
      cd
      
@@ -888,7 +953,10 @@ KickPi-OS_Retropie() {
       	cd /home/$USER/KickPi-OS/Retropie/
       	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
       	clear
-      	toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       	#-----Config Amiberry for Retropie
@@ -911,7 +979,10 @@ KickPi-OS_Retropie() {
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
       	clear
-      	toilet "RetroPie" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	toilet -F gay Amiberry
 	sudo mkdir /opt/retropie/emulators/amiberry
 	cd /home/$USER/KickPi-OS/Retropie/
@@ -968,13 +1039,19 @@ KickPi-OS_Retropie() {
       	cd /home/$USER/RetroPie-Setup/ 
       	sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       	clear
-      	toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       	cd /home/$USER/KickPi-OS/Retropie/
       	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
       	clear
-      	toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
       	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       	#-----Config Amiberry for Retropie
@@ -1001,7 +1078,11 @@ KickPi-OS_Retropie() {
       	fi
       
       	if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
-      	toilet "KickPi-OS" --metal
+      	clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	toilet -F gay Amiberry
       	cd /home/$USER/KickPi-OS/Retropie/
       	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
@@ -1024,7 +1105,10 @@ KickPi-OS_Retropie() {
       	unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
       	clear
-      	toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
       	toilet -F gay C64
       	cd /home/$USER/KickPi-OS/Retropie/
       	unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
@@ -1041,8 +1125,11 @@ fi
   
       
       if [ "$(getconf LONG_BIT)" == "64" ]; then
-          clear
-      	  toilet "KickPi-OS" --metal
+         clear
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
           echo "Amiberry 64 bit for RetroPie"
           sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
 	  sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
@@ -1084,7 +1171,10 @@ fi
 cd ~
 
 clear
-toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
 
 case $CHOICE in
         
@@ -1139,8 +1229,7 @@ case $CHOICE in
 esac
 
 
-echo " "
-      echo " "
+
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
@@ -1163,7 +1252,10 @@ echo " "
       sudo chmod -R 777 /home/$USER/Amiga
 
 clear
-toilet "KickPi-OS" --metal
+      		toilet "KickPi-OS" --metal
+
+      		echo " "
+      		echo " "
 if  xset q &>/dev/null; then
 cd
 clear
