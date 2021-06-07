@@ -256,7 +256,7 @@ KickPi-OS_Tools() {
       clear
       fi
       toilet "KickPi-OS" --metal
-      fi
+      
      
      #Some little Amiga stuff....
       sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
