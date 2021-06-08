@@ -22,13 +22,11 @@
 # https://github.com/Drewsif/PiShrink/blob/master/pishrink.sh
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
-clear
+      clear
       toilet "KickPi-OS" --metal
-
       echo " "
       echo " "
       echo "            Time to update:)              "
-      echo " "
       echo " "
       echo "Installing KickPi-OS Update System ..."
       echo " "
@@ -53,6 +51,9 @@ cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    	echo 'tmpfs /home/pi/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
    	else
    	clear
+        toilet "KickPi-OS" --metal
+        echo " "
+        echo " "
    	echo "Amiga RAM Disk always installed..." 
 fi   
 
@@ -61,17 +62,23 @@ fi
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 64 bit is running..."
       echo ""
+
       sudo update-rc.d motd remove
     else 
       clear
+      toilet "KickPi-OS" --metal
+      toilet "32 bit" --metal
+      echo " "
+      echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-      toilet "KickPi-OS" --metal
+
       
 fi    
       
@@ -196,7 +203,7 @@ KickPi-OS_Update() {
       echo " "
       echo "Installing KickPi-OS Update System ..."
       echo " "
-      echo " "
+
      
       sudo apt-get -y update
       sudo apt-get -y upgrade
@@ -208,12 +215,20 @@ KickPi-OS_Update() {
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
 #
       clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
       # Update is running
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       else 
+      clear
+      toilet "KickPi-OS" --metal
       echo " "
-      # First installation
+      echo " "
+      echo "  First installation "
+      echo " "
        sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
        sudo apt purge -y raspberrypi-ui-mods 
        sudo apt purge -y cups cups-client cups-common cups-server-common
@@ -239,7 +254,7 @@ KickPi-OS_Tools() {
       echo " "
       echo "            Lets install some usefull Tools:)              "
       echo " "
-      echo " "
+ 
 
           
       sudo apt install -y mc zip unzip 
@@ -263,7 +278,7 @@ KickPi-OS_Tools() {
       echo " "
       echo " "
       echo "Some little Amiga stuff...."
-    
+      echo " "
       sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
       toilet "KickPi-OS" --metal
@@ -275,8 +290,12 @@ KickPi-OS_Tools() {
   
       # Preconfigure Worker
       if [ ! -f /home/$USER/.worker/.worker.zip ]; then
-      # First installation
       clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "  First installation "
+      echo " "
       cd /home/$USER/KickPi-OS/.pac/
       unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
@@ -345,8 +364,13 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       
   
       else 
-      
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
       echo " Gimp is already installed..."
+      echo " "
+     
       
      
           
@@ -369,15 +393,12 @@ KickPi-OS_Internet() {
 
       clear
       toilet "KickPi-OS" --metal
-
+      toilet -F gay Internet
       echo " "
+      echo " "
+      echo "            Internet:)              "
       echo " "
       
-      echo "            Internet:)              "
-     
-      clear
-      toilet "KickPi-OS" --metal
-      toilet -F gay Internet
        
       sudo apt install -y transmission chromium-browser
 }
@@ -388,7 +409,6 @@ KickPi-OS_Games() {
 
       clear
       toilet "KickPi-OS" --metal
-
       echo " "
       echo " "
       echo "            Games :)              "
@@ -406,7 +426,6 @@ KickPi-OS_Games() {
  setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
     	clear
       	toilet "KickPi-OS" --metal
-
       	echo " "
       	echo " "
 		echo "KickPI-OS ROM Operating System and Libraris" 
@@ -425,8 +444,11 @@ KickPi-OS_Games() {
       
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
-      # First installation
-      clear
+    
+        clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
       mkdir $HOME/.backup/profile.d
       sudo mv  /etc/rc.local ~/.backup/
       
@@ -438,7 +460,12 @@ KickPi-OS_Games() {
       sudo systemctl mask cups-browsed.service
       
       else 
-      echo " System optimized :) "
+        clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+        echo " System optimized :) "
+        echo " "
       # Configured
   fi    
           
@@ -501,7 +528,12 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
       else 
-      echo " "
+        clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+        echo " System optimized :) "
+        echo " "
 fi     
 
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
@@ -525,7 +557,12 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       else 
-      echo " "
+        clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+        echo " System optimized :) "
+        echo " "
       
 fi
   
@@ -596,8 +633,9 @@ fi
 		clear
       		toilet "KickPi-OS" --metal
 
-     		echo " "
       		echo " "
+      		echo " " "
+      		
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
                 sudo rm -rf  /home/amibian/.config/autostart/
@@ -710,7 +748,11 @@ fi
       
            
       if [ ! -f /home/$USER/Amiga.zip ]; then
-       echo " "
+        clear
+      	toilet "KickPi-OS" --metal
+
+      	echo " "
+	echo " "
       cd ~
       cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
@@ -718,7 +760,11 @@ fi
       
       
       else 
-      echo " "
+        clear
+      	toilet "KickPi-OS" --metal
+
+      	echo " "
+	echo " "
       fi
       
       cd /home/$USER/Amiga/hdf
@@ -731,7 +777,7 @@ fi
       echo " "
       echo "  Configure ClassicWB_P96_v28 ...     " 
       echo " "
-      echo " "
+
       
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip -u ./ClassicWB_P96_v28.zip
@@ -751,7 +797,7 @@ fi
       echo " "
       echo "  Configure ClassicWB_68K_v28 ...     " 
       echo " "
-      echo " "
+
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
       else 
@@ -763,12 +809,11 @@ fi
       #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
       #clear
       #toilet "KickPi-OS" --metal
-      #toilet "full 64bit" --metal
       #echo " "
       #echo " "
       #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
       #echo " "
-      #echo " "
+    
       #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       #unzip -u ./ClassicWB_OS39_v28.zip
       #else 
@@ -811,7 +856,12 @@ fi
      
 
       if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
-	  clear
+	
+	clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+	
 	else
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
