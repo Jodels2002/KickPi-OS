@@ -606,10 +606,8 @@ fi
 
       		echo " "
       		echo " "
-      		toilet -F gay 64bit
-      		echo " "
-      		echo " "
-       
+      		
+      		
      
                	sudo chmod -R 777 ~/.backup/
                	cp -rf ~/.config/ ~/.backup/.config
@@ -634,7 +632,7 @@ fi
       		toilet "KickPi-OS" --metal
 
       		echo " "
-      		echo " " "
+      		echo " " 
       		
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
                 cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
