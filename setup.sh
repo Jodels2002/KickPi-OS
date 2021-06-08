@@ -16,8 +16,15 @@ echo " "
 
 
 if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
-	  clear
+	 clear
+         toilet "KickPi-OS" --metal
+         echo " "
+         echo " "
 	else
+	  clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
@@ -27,9 +34,15 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
           fi
 
 if    [ ! -d "/media/usb0/Shared/" ]; then
-          clear
+         clear
+         toilet "KickPi-OS" --metal
+         echo " "
+         echo " "
 	else
 	  clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
           echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files to Amibian will take 2-5 min "
@@ -82,21 +95,7 @@ sudo reboot
 
 fi
 	 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      clear
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
-      
-      sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
-      sleep 3s
-    else 
-      clear
-      echo "Raspberry Pi OS 32 bit is running... "
-      echo ""
-      
-      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
-      sleep 3s
-fi  
+
 
 if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    sudo rm -rf /home/pi/tmp
@@ -111,7 +110,27 @@ if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
 fi  
 
 sudo mount -a   
-
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 64 bit is running..."
+      echo "rebooting now ..."
+      
+      sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
+      sleep 4s
+    else 
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo "rebooting now ...
+      
+      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+      sleep 4s
+fi  
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
