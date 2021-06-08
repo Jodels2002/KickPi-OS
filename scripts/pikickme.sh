@@ -262,9 +262,8 @@ KickPi-OS_Tools() {
 
       echo " "
       echo " "
-      
-     
-     #Some little Amiga stuff....
+      echo "Some little Amiga stuff...."
+    
       sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
       toilet "KickPi-OS" --metal
@@ -333,16 +332,16 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       clear
       # Update is running
       sudo apt install -y gimp 
-       clear
+      clear
       toilet "KickPi-OS" --metal
 
       echo " "
       echo " "
-       toilet -F gay PhotoGimp
+      toilet -F gay PhotoGimp
        
-       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
-       sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
-       echo " PhotoGimp by Diolinux installed..."
+      curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
+      sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
+      echo " PhotoGimp by Diolinux installed..."
       
   
       else 
@@ -377,10 +376,10 @@ KickPi-OS_Internet() {
       echo "            Internet:)              "
      
       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay Internet
+      toilet "KickPi-OS" --metal
+      toilet -F gay Internet
        
-       sudo apt install -y transmission chromium-browser
+      sudo apt install -y transmission chromium-browser
 }
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
@@ -565,25 +564,25 @@ fi
                sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
                if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-      clear
-      toilet "KickPi-OS" --metal
+      		clear
+      		toilet "KickPi-OS" --metal
 
-      echo " "
-      echo " "
-       toilet -F gay 64bit
-       echo " "
-       echo " "
+      		echo " "
+      		echo " "
+      		toilet -F gay 64bit
+      		echo " "
+      		echo " "
        
      
-               sudo chmod -R 777 ~/.backup/
-               cp -rf ~/.config/ ~/.backup/.config
-               cp -rf ~/.local/ ~/.backup/.local
-               cp -rf /usr/local/bin ~/.backup/usr
-	       cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
-	       clear
-               toilet "KickPi-OS" --metal
-               cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
-               sudo rm -rf /home/$USER/.config
+               	sudo chmod -R 777 ~/.backup/
+               	cp -rf ~/.config/ ~/.backup/.config
+               	cp -rf ~/.local/ ~/.backup/.local
+               	cp -rf /usr/local/bin ~/.backup/usr
+	       	cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
+	       	clear
+               	toilet "KickPi-OS" --metal
+               	cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
+               	sudo rm -rf /home/$USER/.config
                
                
                 cd  /home/amibian/KickPi-OS/.pac/amibian/
