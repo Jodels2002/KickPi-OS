@@ -23,13 +23,9 @@ sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot
 echo "#!/bin/bash
 setarch linux32 -L $HOME/wine/bin/wine"' "$@"' | sudo tee /usr/local/bin/wine >/dev/null
 sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/wineserver /usr/local/bin/winecfg
-
-#winetricks pre-patched
-#see https://discord.com/channels/670543161525010442/736736690932285481/793931182302560277
 sudo wget https://cdn.discordapp.com/attachments/736736690932285481/793931182249213972/winetricks -O /usr/local/bin/winetricks || error "Failed to get winetricks!"
-#winetricks patch (doesn't work)
-sudo sed -i 's|echo "${arg%%=*}"=\""${arg#*=}"\"|echo ${arg%%=*}=\"${arg#*=}\"|g' /usr/local/bin/winetricks
-
+sudo sed -i 's|echo "${arg%%=*}"=\""${arg#*=}"\"|echo ${arg%%=*}=\"${arg#*=}\"|g' sudo chmod +x /usr/local/bin/wine
+sudo chmod +x sudo chmod +x /usr/local/bin/winetricks 
 
 
 
@@ -101,6 +97,7 @@ setsid wine wineboot -u
       
       cd
       wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
-      wine msiexec /i ~/Desktop/AmigaForever9Plus.msi
-      wine msiexec /i InstallWinUAE4400.msi
       
+      wine msiexec /i InstallWinUAE4400.msi
+      #wget https://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe
+      #wine msiexec /i ~/Desktop/AmigaForever9Plus.msi
