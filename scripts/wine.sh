@@ -96,8 +96,8 @@ setsid wine wineboot -u
       
       
       cd
-      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
+       #wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
       
-      wine msiexec /i InstallWinUAE4400.msi
+       #wine msiexec /i InstallWinUAE4400.msi
       #wget https://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe
-      #wine msiexec /i ~/Desktop/AmigaForever9Plus.msi
+     wine msiexec /i ~/Desktop/AmigaForever9Plus.msi
