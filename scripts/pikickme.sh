@@ -32,7 +32,7 @@
       echo " "
       echo " "
 
-mkdir /home/$USER/.bashrc
+
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 
