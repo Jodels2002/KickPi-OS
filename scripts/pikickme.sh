@@ -78,7 +78,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-
+      wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
       
 fi    
       
@@ -229,9 +229,7 @@ KickPi-OS_Update() {
       echo " "
       echo "  First installation "
       echo " "
-       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-       sudo apt purge -y raspberrypi-ui-mods 
-       sudo apt purge -y cups cups-client cups-common cups-server-common
+       
        sudo update-rc.d motd remove
        
       
@@ -259,19 +257,13 @@ KickPi-OS_Tools() {
           
       sudo apt install -y mc zip unzip 
       sudo apt install -y rpi-imager gparted
-      sudo apt install -y snapd
-      sudo snap install core
+         
      
       sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       
      
-     if [ ! -d /home/$USER/pi-apps/]; then
-      cd
-      wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-      else
-      clear
-      fi
+     
       clear
       toilet "KickPi-OS" --metal
 
