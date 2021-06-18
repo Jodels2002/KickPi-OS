@@ -3,6 +3,7 @@
 # B.Titze 2021
 # KickPi-OS updater
 LED
+sudo rm -rf ~/KickPi-OS
 sleep 1s
 LED_off
 sudo apt -y --fix-broken install
@@ -17,11 +18,6 @@ sudo apt-get -y upgrade
 LED_body
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
-
-else
-    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
-fi
-
 
 if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
@@ -43,6 +39,12 @@ fi
       sudo chmod -R 777 KickPi-OS
       LED_off
       /home/$USER/KickPi-OS/scripts/pikickme.sh
+else
+    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
+fi
+
+
+
       
 
 
