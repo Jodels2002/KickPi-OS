@@ -3,8 +3,8 @@ sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libxml2-de
 sudo rm -rf /home/$USER/amiberry/
 
  cd
-      # git clone -b dev https://github.com/midwan/amiberry
-      git clone https://github.com/midwan/amiberry
+      git clone -b dev https://github.com/midwan/amiberry
+      # git clone https://github.com/midwan/amiberry
       cd amiberry
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
