@@ -1,20 +1,16 @@
 ;ClassicWB Startup-Sequence
 ;--------------------------
-;FULL ADV ADVSP UAE
-Run >NIL: Patchpens
-C:LoadModule LIBS:icon.library
-IF EXISTS DEVS:scsi.device >NIL:
+
+
+IF EXISTS DEVS:scsi.device
   C:LoadModule DEVS:scsi.device
 EndIF
+
+
 IF EXISTS LIBS:icon.library
-C:LoadModule LIBS:icon.library >NIL:
+ C:LoadModule LIBS:icon.library
 EndIF
 
-IF EXISTS C:PatchPens
-C:PatchPens >NIL:
-EndIF
-
-EndIF
 C:GetMouseInput LOCAL
 
 IF $MouseInput EQ 1
@@ -43,10 +39,7 @@ EndIF
 C:Version >NIL:
 FailAt 21
 
-IF EXISTS SYS:WBstartupD
-  C:Rename >NIL: SYS:WBStartup SYS:WBStartupM
-  C:Rename >NIL: SYS:WBStartupD SYS:WBStartup
-EndIF
+
 
 Resident >NIL: C:IconX PURE
 Resident >NIL: C:WBRun PURE
@@ -82,15 +75,6 @@ Assign >NIL: HELP: LOCALE:Help DEFER
 
 IF NOT EXISTS SYS:Fonts
   Assign FONTS:
-EndIF
-
-IF EXISTS C:BlazeWCP
-  C:BlazeWCP
-EndIF
-
-IF EXISTS SYS:System/FBlit/FBlit
-  SYS:System/FBlit/FBlit
-  SYS:System/FBlit/FText
 EndIF
 
 BindDrivers
@@ -134,4 +118,3 @@ EndIF
 
 C:LoadWB
 EndCLI >NIL:
-Run >NIL: C:FixScalos
