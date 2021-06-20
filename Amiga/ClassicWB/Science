@@ -105,6 +105,10 @@ C:ConClip
 
 Path >NIL: RAM: C: SYS:Utilities SYS:Rexxc SYS:System S: SYS:Prefs SYS:WBStartup SYS:Tools SYS:Tools/Commodities
 
+IF EXISTS S:Assign-Startup
+  Execute S:Assign-Startup
+EndIF
+
 IF EXISTS S:User-Startup
   Execute S:User-Startup
 EndIF
