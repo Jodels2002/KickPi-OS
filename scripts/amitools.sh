@@ -23,7 +23,7 @@ if [ ! -d /home/pi/Amiga/dir/WB ]; then
       xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/dir/WB
       xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/dir/WB
      fi 
-      mkdir /home/pi/tmp/DH0/
+      
       mkdir /home/pi/Amiga/Install
       
 
