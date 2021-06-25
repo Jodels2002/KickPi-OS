@@ -1,5 +1,16 @@
 
-sudo apt -y install coreutils dialog memtest86+ genisoimage genisoimage findutils grub-pc xorriso syslinux os-prober bash passwd sed squashfs-tools live-boot live-config live-config-sysvinit live-boot-initramfs-tools rsync mount laptop-detect util-linux hwdata
+git clone https://gitlab.com/qemu-project/qemu.git
+
+mkdir build
+cd build
+../configure
+make
+
+Download ReactOS Live ISO from https://reactos.org/getbuilds/. You have to download version 0.4.14 or above of ReactOS because older versions do not work with Qemu. Extract the ISO from the downloaded .7Z archive to a folder, for example, to D:\ISO.
+Download and install Qemu from https://qemu.weilnetz.de/.
+Optionally, add Qemu installation folder (usually C:\Program Files\Qemu) to Windows PATH variable.
+Launch a command prompt (Win+X and select Command Prompt).
+In the command prompt, enter: qemu-system-i386 -cdrom D:\ISO\reactos-livecd-0.4.14.iso -m 128
 
 
 Aros Replace
