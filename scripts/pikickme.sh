@@ -42,22 +42,6 @@ cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
      sudo apt purge -y raspberrypi-ui-mods 
      sudo apt purge -y cups cups-client cups-common cups-server-common
     
- if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
-   	sudo rm -rf /home/pi/tmp
-   	sudo mkdir /home/pi/tmp
-   	sudo chmod -R 777 /home/pi/tmp
-   	sudo chmod -R 777 /etc/fstab
-   	sudo  echo '# Amiga RAM Drive' >> /etc/fstab
-   	echo 'tmpfs /home/pi/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
-   	else
-   	clear
-        toilet "KickPi-OS" --metal
-        echo " "
-        echo " "
-   	echo "Amiga RAM Disk always installed..." 
-fi   
-
-
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
