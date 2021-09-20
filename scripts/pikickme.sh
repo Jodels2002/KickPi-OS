@@ -62,7 +62,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-      wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+    
       
 fi    
       
@@ -189,7 +189,7 @@ KickPi-OS_Update() {
       echo " "
 
      
-      sudo apt-get -y update
+      #sudo apt-get -y update
       sudo apt-get -y upgrade
      
      
@@ -239,8 +239,8 @@ KickPi-OS_Tools() {
  
 
           
-      sudo apt install -y mc zip unzip 
-      sudo apt install -y rpi-imager gparted
+      #sudo apt install -y mc zip unzip 
+      sudo apt install -y gparted
          
      
       sudo apt install -y git usbmount 
@@ -255,7 +255,7 @@ KickPi-OS_Tools() {
       echo " "
       echo "Some little Amiga stuff...."
       echo " "
-      sudo apt-get -y install  amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
+      sudo apt-get -y install grafx2 protracker worker 
       clear
       toilet "KickPi-OS" --metal
       echo " "
@@ -389,7 +389,7 @@ KickPi-OS_Games() {
       echo " "
       echo "            Games :)              "
       echo " "
-      # sudo apt install -y games-finest much to long
+      sudo apt install -y games-finest
      
 
 }
@@ -412,10 +412,6 @@ KickPi-OS_Games() {
 	#else 
 	  
 	
-      #sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      #sudo apt purge -y raspberrypi-ui-mods 
-      #sudo apt purge -y cups cups-client cups-common cups-server-common
-      #sudo update-rc.d motd remove
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
   # Preconfigure Silent Boot
@@ -537,90 +533,11 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       	toilet "KickPi-OS" --metal
       	echo " "
       	echo " "
-        echo " System optimized :) "
+        echo " Amiga System look optimized :) "
         echo " "
       
 fi
-  
-  
-     
-  
-  if [ $USER == "pi" ]; then
-     
 
-      # Settings XFCE4 Rasperry OS
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-       
-       #sudo raspi-config nonint do_boot_behaviour B4
-       else
-       # Settings XFCE4 Amibian
-               clear
-               toilet -F gay Amibian
-               echo ""
-               echo ""
-               echo "Hello Amibian User,"
-               echo ""
-               echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
-               echo "There is nothing to improve here. :-)"
-               echo ""
-               echo "Only the look of the desktop is adjusted a little ..."
-               echo ".. and in addition we add things like Retropie, PiKiss, ... :-)"
-	       echo ""
-               sleep 1s
-               echo "Backup Settings.... "
-     
-               #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-               sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
-               if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-      		clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
-      		
-      		
-     
-               	sudo chmod -R 777 ~/.backup/
-               	cp -rf ~/.config/ ~/.backup/.config
-               	cp -rf ~/.local/ ~/.backup/.local
-               	cp -rf /usr/local/bin ~/.backup/usr
-	       	cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
-	       	clear
-               	toilet "KickPi-OS" --metal
-               	cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/
-               	sudo rm -rf /home/$USER/.config
-               
-               
-                cd  /home/amibian/KickPi-OS/.pac/amibian/
-                unzip -u /home/amibian/KickPi-OS/.pac/amibian/.config.zip
-		clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
-                unzip -u /home/amibian/KickPi-OS/.pac/amibian/.local.zip
-		clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " " 
-      		
-                cp -rf /home/amibian/KickPi-OS/.pac/amibian/.config/ /home/$USER/
-                cp -rf /home/amibian/KickPi-OS/.pac/amibian/.local/ /home/$USER/  
-                sudo rm -rf  /home/amibian/.config/autostart/
-                cd ~
-                mkdir /home/amibian/Amiga/conf/ 
-                cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/conf/
-                cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-                cp -rf /home/amibian/KickPi-OS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-      fi 
-
-fi
 }
 
 
@@ -829,20 +746,7 @@ fi
       cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
      
 
-      if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
-	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-	
-	else
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-          cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Documents/FS-UAE/Configurations/
-	  
-          fi
-	  
+      
       
     }    
    
@@ -947,7 +851,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Cool Retro Term is always installed"
       echo " "
       
-      fi  
+      fi 
+      
+        wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 }
 
 
