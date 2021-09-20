@@ -52,54 +52,79 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	  cp -rf /media/usb0/Shared/* ~/Amiga  
 	  
           fi
-	 
-	 REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+	  
+sudo chmod -R 777 /home/$USER/Amiga 
+sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin	 
+
+REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
 
 if [ "$REVCODE" = "a02082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
-	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-        sudo raspi-config nonint is_pi
+	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
-sudo chmod -R 777 /home/$USER/Amiga   
+  
 sudo reboot
 
 fi
 if [ "$REVCODE" = "a020d3" ]; then
     PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
-	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-        sudo raspi-config nonint is_pi
+	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
-sudo chmod -R 777 /home/$USER/Amiga   
+   
 sudo reboot
 
 fi
+if [ "$REVCODE" = "9000C1" ]; then
+    PIMODEL="Raspberry Pi Zero W"
+	echo "$PIMODEL ($REVCODE)"
+	sudo raspi-config nonint is_pi
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
+sudo raspi-config nonint do_boot_behaviour B2
+
+sudo chmod -R 777 /home/$USER/Amiga 
+clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo "rebooting now ..."
+      
+      
+      sleep 4s
+
+sudo reboot
+
+fi
+
+
 if [ "$REVCODE" = "a22082" ]; then
     PIMODEL="Raspberry Pi 3 Model B, 2 GB RAM"
 	echo "$PIMODEL ($REVCODE)"
-	sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-        sudo raspi-config nonint is_pi
+	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
-sudo chmod -R 777 /home/$USER/Amiga   
+  
 sudo reboot
 
 fi
 	 
 
-sudo mount -a   
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+sudo chmod -R 777 /home/$USER/Amiga   
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
@@ -118,15 +143,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo "rebooting now ..."
       
-      #sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sleep 4s
 fi  
-sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 
-cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-
-sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
-#sudo raspi-config nonint get_i2c
-sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
