@@ -8,7 +8,7 @@ echo "Welcome to KickPi-OS"
 echo " "
 echo " "
 
-      sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+     
       sudo apt -y update
       sudo apt-get install -y toilet dialog mc zip unzip
       clear
@@ -55,6 +55,7 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	  
 sudo chmod -R 777 /home/$USER/Amiga 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin	 
+sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
 
@@ -63,6 +64,7 @@ if [ "$REVCODE" = "a02082" ]; then
 	echo "$PIMODEL ($REVCODE)"
 	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
