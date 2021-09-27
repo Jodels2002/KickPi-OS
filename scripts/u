@@ -42,7 +42,7 @@ else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
 fi
 
-
+sudo apt -y autoremove
 
       
 
