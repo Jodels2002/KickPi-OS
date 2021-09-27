@@ -103,7 +103,7 @@ clear
       echo "rebooting now ..."
       
       
-      sleep 4s
+
 
 sudo reboot
 
@@ -136,7 +136,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "rebooting now ..."
       
       sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
-      sleep 4s
+    
     else 
       clear
       toilet "KickPi-OS" --metal
@@ -146,7 +146,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "rebooting now ..."
       
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
-      sleep 4s
+   
 fi  
 
 sudo reboot
