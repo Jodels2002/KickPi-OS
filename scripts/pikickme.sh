@@ -929,6 +929,12 @@ KickPi-OS_Retropie() {
 	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+	
+	cd ~/RetroPie/retropiemenu/
+	rm "Auto-Amiga Install.sh"
+	wget https://raw.githubusercontent.com/HoraceAndTheSpider/RetroPieAmigaSetup/master/Auto-Amiga%20Install.sh
+	chmod +x "Auto-Amiga Install.sh"
+	
 	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
 	sudo chmod -R 777 /opt/retropie/configs/amiga
 	
