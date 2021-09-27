@@ -4,7 +4,6 @@
 # KickPi-OS updater
 LED
 sudo rm -rf ~/KickPi-OS
-sleep 1s
 LED_off
 sudo apt -y --fix-broken install
 wget -q --spider http://google.com
@@ -32,8 +31,7 @@ if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
       echo "Default config for Amiberry found...  "
       
 fi
-      cd
-      sudo apt -y upgrade
+  
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
       sudo chmod -R 777 KickPi-OS
