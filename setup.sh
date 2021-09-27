@@ -2,6 +2,7 @@
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
 #******************************************** #startup-sequence  :-) ************* ********************************************
+sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 clear
 echo "Welcome to KickPi-OS"
@@ -67,7 +68,7 @@ cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
+#sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
   
 sudo reboot
@@ -80,7 +81,7 @@ if [ "$REVCODE" = "a020d3" ]; then
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
+#sudo raspi-config nonint get_ssh
 #sudo raspi-config nonint get_i2c
    
 sudo reboot
