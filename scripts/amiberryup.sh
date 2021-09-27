@@ -52,6 +52,15 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	     
 	      make -j2 PLATFORM=rpi4
 fi  
+
+if [ "$REVCODE" = "9000C1" ]; then
+    PIMODEL="Raspberry Pi Zero W"
+	echo "$PIMODEL ($REVCODE)"
+	sudo raspi-config nonint is_pi
+        make PLATFORM=rpi1
+
+fi
+
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
 
