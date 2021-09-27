@@ -1,6 +1,31 @@
 # Test Makefile 48  CPUFLAGS = -mcpu=cortex-a72 -mfpu=neon-fp-armv8 -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits -mtune=cortex-a72
 sudo apt-get install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-sudo apt-get install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+sudo apt-get install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev g++
+
+
+if [ ! -d "/home/$USER/PiKISS/" ]; then
+     
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Here comes PiKiss and Cool Retro Term" 
+      echo " "
+      cd
+      git clone --depth=1 https://github.com/jmcerrejon/PiKISS
+      sudo chmod -R 777 /home/$USER/PiKISS
+      cd PiKISS
+   
+      
+      else 
+      
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      
+     fi
+
 sudo rm -rf /home/$USER/amiberry/
 
  cd
