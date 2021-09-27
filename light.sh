@@ -8,6 +8,7 @@ echo "Welcome to KickPi-OS"
 echo " "
 echo "Assign >NIL:  Install KickPi-OS"
 echo "Assign >NIL:  B.Titze 2021 "
+sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 # https://silocitylabs.com/post/2019/06/13/ultra-minimal-raspbian-image-for-pi-zero-and-zero-w/
 # dwc_otg.lpm_enable=0 console=tty1 root=PARTUUID=8b037108-02 rootfstype=ext4 elevator=deadline fsck.repair=no quiet rootwait
@@ -59,7 +60,7 @@ apt-get clean
 mkdir /home/$USER/Amiga   
 sudo chmod -R 777 /home/$USER/Amiga 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin	 
-sudo cp -R /boot/config.txt /boot/config_backup.txt
+
 # cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo raspi-config nonint do_boot_behaviour B2
