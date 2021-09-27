@@ -10,6 +10,7 @@ echo "Assign >NIL:  Install KickPi-OS"
 echo "Assign >NIL:  B.Titze 2021 "
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
+# https://github.com/HoraceAndTheSpider/RetroPieAmigaSetup
 # https://silocitylabs.com/post/2019/06/13/ultra-minimal-raspbian-image-for-pi-zero-and-zero-w/
 # dwc_otg.lpm_enable=0 console=tty1 root=PARTUUID=8b037108-02 rootfstype=ext4 elevator=deadline fsck.repair=no quiet rootwait
 apt-get purge --yes --auto-remove openssh-server
