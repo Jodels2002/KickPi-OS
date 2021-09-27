@@ -1165,8 +1165,8 @@ case $CHOICE in
 	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
-            #KickPi-OS_Tools
-	    #KickPi-OS_Internet
+            KickPi-OS_Tools
+	    KickPi-OS_Internet
             #KickPi-OS_Amiberry
             #Configure_Amiga
             #KickPi-OS_Retropie
