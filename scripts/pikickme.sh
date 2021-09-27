@@ -412,7 +412,7 @@ KickPi-OS_Games() {
 	#else 
 	  
 	
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
+      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xinit
       
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
