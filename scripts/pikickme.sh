@@ -20,6 +20,7 @@
 # consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram
 # https://github.com/raspberrypi/linux/blob/rpi-4.0.y/Documentation/kernel-parameters.txt
 # https://github.com/Drewsif/PiShrink/blob/master/pishrink.sh
+# https://eab.abime.net/showthread.php?t=95784   HTTPS Downgrader
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
       clear
