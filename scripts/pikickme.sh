@@ -2,11 +2,6 @@
 #***********************************************  #KickPi-OS install script  ***********************************
 # Install KickPi-OS
 # B.Titze 2021
-#***********************************************  #Some Info for the future  ***********************************
-## PWR-LED (green) 
-#dtoverlay = pwr-led, gpio = 17
-# HDD LED (orange)
-#dtoverlay = act-led, gpio = 27
 #************************************************  #History   ************************************************
 #16.02 add TwisterOS, Bugfix Update optimiced, RetroPie Bugfix (Autoconfig Amiberry)  Bugfix 64 bit, Worker preconfigured / OK
 #16.02 Bugfix Reboot, Speedup
@@ -21,6 +16,7 @@
 # https://github.com/raspberrypi/linux/blob/rpi-4.0.y/Documentation/kernel-parameters.txt
 # https://github.com/Drewsif/PiShrink/blob/master/pishrink.sh
 # https://eab.abime.net/showthread.php?t=95784   HTTPS Downgrader
+# https://github.com/atauenis/webone
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
       clear
