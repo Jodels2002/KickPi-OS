@@ -21,7 +21,7 @@ draw = oled.canvas   # "draw" onto this canvas, then call display() to send the 
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
 padding = 2
-shape_width = 20
+shape_width = 15
 top = padding
 bottom = oled.height - padding - 1
 # Draw a rectangle of the same size of screen
@@ -55,15 +55,15 @@ oled.display()
 sleep(3)
 
 # Write two lines of text.
-draw.text((x, top),    'Hello',  font=font, fill=1)
-draw.text((x, top+40), 'World!', font=font, fill=1)
+draw.text((x, top),    'Amiga3000',  font=font, fill=1)
+draw.text((x, top+40), 'mini!', font=font, fill=1)
 oled.display()
 sleep(3)
 draw.rectangle((0, 0, oled.width-1, oled.height-1), outline=255, fill=1)
 oled.display()
 sleep(3)
 logo = Image.open('pi_logo.png')
-draw.bitmap((32, 0), logo, fill=0)
+draw.bitmap((34, 0), logo, fill=0)
 
 oled.display()
 sleep(3)
@@ -75,19 +75,19 @@ oled.display()
 sleep(3)
 draw.rectangle((0, 0, oled.width-1, oled.height-1), outline=1, fill=0)
 font = ImageFont.truetype('FreeSans.ttf', 10)
-draw.text((0, 0), 'Hello me very good mateys ...', font=font, fill=1)
-draw.text((0, 10), 'Well now, what would you like', font=font, fill=1)
-draw.text((0, 20), 'to be told this sunny Sunday?', font=font, fill=1)
-draw.text((0, 30), 'Would a wild story amuse you?', font=font, fill=1)
-draw.text((0, 40), 'This is a very long statement,', font=font, fill=1)
-draw.text((0, 50), 'so believe it if you like.', font=font, fill=1)
+draw.text((0, 0), 'Amiga3000 mini', font=font, fill=1)
+draw.text((0, 10), '', font=font, fill=1)
+draw.text((0, 20), 'booting now...?', font=font, fill=1)
+draw.text((0, 30), '', font=font, fill=1)
+draw.text((0, 40), '', font=font, fill=1)
+draw.text((0, 50), '', font=font, fill=1)
 oled.display()
 
 
 sleep(3)
 draw.rectangle((0, 0, oled.width-1, oled.height-1), outline=20, fill=0)
 font = ImageFont.truetype('FreeSans.ttf', 14)
-draw.text((0, 0), 'Hello me good mateys', font=font, fill=1)
+draw.text((0, 0), 'Amiga3000 mini', font=font, fill=1)
 draw.text((0, 15), 'What would you like', font=font, fill=1)
 draw.text((0, 30), 'to be told this day?', font=font, fill=1)
 draw.text((0, 45), 'This is a long story,', font=font, fill=1)
