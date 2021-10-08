@@ -1,6 +1,7 @@
 #!/bin/bash
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
+# https://indibit.de/raspberry-pi-oled-display-128x64-mit-python-ansteuern-i2c/
 #******************************************** #startup-sequence  :-) ************* ********************************************
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
