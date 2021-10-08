@@ -120,6 +120,12 @@ CHOICE=$(dialog --clear \
 
 #Poser() {
 
+# https://indibit.de/raspberry-pi-oled-display-128x64-mit-python-ansteuern-i2c/
+
+sudo apt-get -y install python-smbus i2c-tools git python-pil
+git clone https://github.com/BLavery/lib_oled96
+chmod -R 777 lib_oled96
+
 #sudo apt install -y python-dev
 #sudo apt install -y python-smbus i2c-tools
 #sudo apt install -y python-pil
@@ -130,6 +136,9 @@ CHOICE=$(dialog --clear \
 #sudo apt install -y python-pil
 #sudo apt install -y python-pip
 #sudo apt install -y python-setuptools 
+
+
+
 
 #its ok but dissabled
 #cd /home/$USER/.KickPi-OS/OLED
