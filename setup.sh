@@ -150,5 +150,5 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
    
 fi  
-
+sudo raspi-config nonint do_boot_behaviour B2
 sudo reboot
