@@ -5,7 +5,7 @@ sudo apt-get -y install make g++
 
 
 
-sudo rm -rf /home/$USER/amiberry/
+sudo rm -rf amiberry
 
  cd
       git clone -b dev https://github.com/midwan/amiberry
