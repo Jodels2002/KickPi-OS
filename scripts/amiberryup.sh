@@ -1,7 +1,7 @@
 
-sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev g++
-sudo apt-get -y install make
+sudo apt-get install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libraspberrypi-dev
+sudo apt-get install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev 
+sudo apt-get -y install make g++
 
 
 
@@ -19,8 +19,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi 4 OS 64 bit SDL-Dispmanx"
       echo ""
     
-  
-      make -j4 PLATFORM=rpi4-64-dmx
+      make -j4 PLATFORM=PLATFORM=rpi4-64-sdl2
+      #make -j4 PLATFORM=rpi4-64-dmx
     else 
       clear
       echo "Raspberry Pi OS 32 bit is running... "
