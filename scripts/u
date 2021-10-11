@@ -9,7 +9,7 @@ sudo dpkg --configure -a
 sudo apt -y --fix-broken install
 wget -q --spider http://google.com
 
-if [ $? -eq 0 ]; then
+# if [ $? -eq 0 ]; then
 
 sudo apt -y autoremove
 LED_front
@@ -39,9 +39,9 @@ fi
       sudo chmod -R 777 KickPi-OS
       LED_off
       /home/$USER/KickPi-OS/scripts/pikickme.sh
-else
+# else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
-fi
+# fi
 
 sudo apt -y autoremove
 
