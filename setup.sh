@@ -2,6 +2,7 @@
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
 # https://indibit.de/raspberry-pi-oled-display-128x64-mit-python-ansteuern-i2c/
+# https://www.quartoknows.com/page/raspberry-pi-shutdown-button#:~:text=Press%20the%20shutdown%20button.,stopped%2C%20aborting%20the%20shutdown%20procedure.
 #******************************************** #startup-sequence  :-) ************* ********************************************
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
