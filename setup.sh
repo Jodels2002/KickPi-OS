@@ -156,7 +156,10 @@ fi
 
  sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
  sudo systemctl enable splash
- sudo echo -n "console=tty1 consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram" >> /boot/cmdline.txt
+ sudo cp -R /boot/cmdline.txt /home/pi/Documents/cmdline.txt
+ sudo chmod -R 777 /home/pi/Documents/cmdline.txt
+ printf %s " console=tty1 consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram" >> /home/pi/Documents/cmdline.txt
+ sudo cp -Rf  /home/pi/Documents/cmdline.txt /boot/cmdline.txt
 
 sudo raspi-config nonint do_boot_behaviour B2
 sudo reboot
