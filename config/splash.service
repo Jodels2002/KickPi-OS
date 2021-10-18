@@ -4,7 +4,7 @@ DefaultDependencies=no
 After=local-fs.target
 
 [Service]
-ExecStart=/usr/bin/fbi -d /dev/fb0 --noverbose -a /home/pi/.config/Booting.png
+ExecStart=/usr/bin/fbi -d /dev/fb0 --noverbose -a /home/pi/.KickPi-OS/config/splash/Booting.png
 StandardInput=tty
 StandardOutput=tty
 
