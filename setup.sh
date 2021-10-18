@@ -155,7 +155,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 fi 
 
  sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
- sudo systemctl enable splashs
+ sudo systemctl enable splash
  sudo echo -n "console=tty1 consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram" >> /boot/cmdline.txt
 
 sudo raspi-config nonint do_boot_behaviour B2
