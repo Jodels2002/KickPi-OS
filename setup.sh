@@ -150,8 +150,12 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo "rebooting now ..."
       
-      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+     sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
    
-fi  
+fi 
+
+ sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
+ sudo systemctl enable splashs
+
 sudo raspi-config nonint do_boot_behaviour B2
 sudo reboot
