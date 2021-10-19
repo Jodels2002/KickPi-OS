@@ -2,22 +2,6 @@
 #***********************************************  #KickPi-OS install script  ***********************************
 # Install KickPi-OS
 # B.Titze 2021
-#************************************************  #History   ************************************************
-#16.02 add TwisterOS, Bugfix Update optimiced, RetroPie Bugfix (Autoconfig Amiberry)  Bugfix 64 bit, Worker preconfigured / OK
-#16.02 Bugfix Reboot, Speedup
-#20.02 Photogimp, Autoboot to Amiberry
-#20.02 Bootmenu, Speedup Boot time  ->
-# 64 bitRetropie Amiberry, pi-apps, Vice64, Amiberry V4 RC1, Menu Amiberry updater, fix 64bit boot to amiberry
-# sudo update-rc.d motd remove
-# consoleblank=0  /boot/cmdline.txt
-# ExecStart=-/sbin/agetty --skip-login --noclear --noissue --login-options "-f pi" %I $TERM
-# quiet splash plymouth.ignore-serial-consoles
-# consoleblank=1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram
-# https://github.com/raspberrypi/linux/blob/rpi-4.0.y/Documentation/kernel-parameters.txt
-# https://github.com/Drewsif/PiShrink/blob/master/pishrink.sh
-# https://eab.abime.net/showthread.php?t=95784   HTTPS Downgrader
-# https://github.com/atauenis/webone
-#***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
       clear
       toilet "KickPi-OS" --metal
@@ -32,13 +16,7 @@
 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
-
-
-
-     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-     sudo apt purge -y raspberrypi-ui-mods 
-     sudo apt purge -y cups cups-client cups-common cups-server-common
-    
+   
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -194,9 +172,11 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
 
+     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+     sudo apt purge -y raspberrypi-ui-mods 
+     sudo apt purge -y cups cups-client cups-common cups-server-common
      
-      #sudo apt-get -y update
-      sudo apt-get -y upgrade
+     sudo apt-get -y upgrade
      
      
        
@@ -312,7 +292,7 @@ KickPi-OS_Office() {
       echo " "
       
       sudo apt install -y libreoffice   
-      #sudo apt install -y default-jdk tooo long install time libreoffice-gnome libreoffice-gtk3 
+     
 }
 
 #*********************************************  #Video & Graphic  **********************************************
@@ -811,55 +791,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       tar xzf  ./vice-3.4-bin-rpi.tar.gz
       #rm ./vice-3.4-bin-rpi.tar.gz
      fi
-      #Install PiKISS    
-      if [ ! -d "/home/$USER/PiKISS/" ]; then
      
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Here comes PiKiss and Cool Retro Term" 
-      echo " "
-      cd
-      git clone --depth=1 https://github.com/jmcerrejon/PiKISS
-      sudo chmod -R 777 /home/$USER/PiKISS
-      cd PiKISS
-   
-      
-      else 
-      
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      
-     fi
      
  fi
- if [ ! -d /home/$USER/sc/cool-retro-term/ ]; then
-      
-      mkdir /home/$USER/sc/
-      
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Here comes Cool Retro Term" 
-      echo " "
-      
-      cd /home/$USER/KickPi-OS/config/
-      ./retro-term.sh
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Cool Retro Term is always installed"
-      echo " "
-      
-      fi 
-      
-        wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+
 }
 
 
