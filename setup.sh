@@ -1,10 +1,6 @@
 #!/bin/bash
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
-# https://indibit.de/raspberry-pi-oled-display-128x64-mit-python-ansteuern-i2c/
-# https://www.quartoknows.com/page/raspberry-pi-shutdown-button#:~:text=Press%20the%20shutdown%20button.,stopped%2C%20aborting%20the%20shutdown%20procedure
-# https://yingtongli.me/blog/2016/12/21/splash.html   -> Banner Screen
-
 #******************************************** #startup-sequence  :-) ************* ********************************************
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
@@ -72,8 +68,7 @@ cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
-#sudo raspi-config nonint get_ssh
-#sudo raspi-config nonint get_i2c
+
   
 sudo reboot
 
@@ -84,9 +79,7 @@ if [ "$REVCODE" = "a020d3" ]; then
 	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
-sudo raspi-config nonint do_boot_behaviour B2
-#sudo raspi-config nonint get_ssh
-#sudo raspi-config nonint get_i2c
+
    
 sudo reboot
 
@@ -121,10 +114,7 @@ if [ "$REVCODE" = "a22082" ]; then
 	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
-sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
-#sudo raspi-config nonint get_i2c
-  
+
 sudo reboot
 
 fi
@@ -162,4 +152,6 @@ fi
  sudo cp -Rf  /home/pi/Documents/cmdline.txt /boot/cmdline.txt
 
 sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint get_ssh
+sudo raspi-config nonint get_i2c
 sudo reboot
