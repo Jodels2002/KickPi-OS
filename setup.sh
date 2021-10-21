@@ -2,6 +2,7 @@
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
 # https://www.instructables.com/Raspberry-Pi-Monitoring-System-Via-OLED-Display-Mo/
+# https://elektro.turanis.de/html/prj369/index.html
 #******************************************** #startup-sequence  :-) ************* ********************************************
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
