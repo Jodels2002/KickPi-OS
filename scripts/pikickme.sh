@@ -759,7 +759,7 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
  
 #else 
     
-      fi
+   
       
       #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
       #clear
