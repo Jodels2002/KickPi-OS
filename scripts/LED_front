@@ -1,6 +1,0 @@
-#!/bin/bash
-# Install Pimiga 
-# B.Titze 2020
-# all LEDs on
-cd /usr/local/bin/ 
-python LED_front.py
