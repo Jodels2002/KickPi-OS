@@ -81,14 +81,14 @@ time.sleep(3)
 
 
 # *************  Draw  Amiberry Logo  ********************
-image = Image.open('Amiberry.pbm').convert('1')
+image = Image.open('AmigaLogo.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
 time.sleep(4)
 
 
-image = Image.open('AmigaLogo.pgm').convert('1')
+image = Image.open('AmigaMini.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
