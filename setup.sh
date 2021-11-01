@@ -155,5 +155,5 @@ fi
 
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
-sudo raspi-config nonint get_i2c
+sudo raspi-config nonint do_i2c 0
 sudo reboot
