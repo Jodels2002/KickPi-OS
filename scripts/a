@@ -1,25 +1,11 @@
-if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
+mount -L KICK /media/kick/
 
-     
-      clear
-      toilet "KickPi-OS" --metal
-           
-       omxplayer --no-osd  "/home/$USER/.KickPi-OS/config/splash/Boot.mp4"  
-      cd /home/$USER/Amiga/
-       ./amiberry
-       
-    else
-      clear
-            toilet "Amiberry" --metal
-             sudo cp -rf /home/$USER/.KickPi-OS/config/kick.sh /etc/profile.d/kick.sh
-             sudo chmod -R 777 /etc/profile.d/kick.sh
-             sudo raspi-config nonint do_boot_behaviour B2
-             echo " "
-             echo " "
-             echo "System reboots to Amiga" 
-             echo " "
-             echo "Rebooting now..."
-             sleep 7s
-             reboot
-fi
-cd     
+USBDEV="/dev/sda1"
+	if mount | grep -q /dev/sda1; then USBDEV="dev/sdb1";fi
+mount $USBDEV /media/usb
+
+
+sudo ./romcheck.sh
+
+cd /amiberry
+./amiberry  --config conf/A1200.uae -G
