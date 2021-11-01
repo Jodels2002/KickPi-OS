@@ -13,7 +13,7 @@
       echo " "
       echo " "
 
-
+boot.sh
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    
@@ -95,6 +95,8 @@ CHOICE=$(dialog --clear \
    
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
 #****************************************************************************************************************
+
+KickPi-OS.sh
 
 OLED() {
 
