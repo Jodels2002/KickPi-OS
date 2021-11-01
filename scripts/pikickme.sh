@@ -96,43 +96,44 @@ CHOICE=$(dialog --clear \
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
 #****************************************************************************************************************
 
-Poser() {
+OLED() {
 
-# https://indibit.de/raspberry-pi-oled-display-128x64-mit-python-ansteuern-i2c/
-sudo raspi-config nonint get_i2c
-sudo apt-get -y install python-smbus i2c-tools git python-pil
-git clone https://github.com/BLavery/lib_oled96
-chmod -R 777 lib_oled96
-
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-
-
-
-
-#its ok but dissabled
-#cd /home/$USER/.KickPi-OS/OLED
-#sudo chmod -R 777 /home/$USER/.KickPi-OS/OLED
-
-
-# Test OLED
-#i2cdetect -y 1
-#echo " Should Say: "3C""
-#python Amiga.py
-
-#cd /home/$USER/.KickPi-OS/LED
-#python LED.py
-
-
-}
+ sudo cp -rf /home/$USER/Pimiga-addon/Scripts/* /usr/local/bin/
+       sudo chmod -R 777 /usr/local/bin/
+  
+       sudo apt-get install -y python3-pip
+       pip3 install adafruit-circuitpython-ssd1306
+       
+       sudo raspi-config nonint do_i2c 0
+       sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
+       sudo apt install -y python3
+       sudo apt install -y python-dev
+       sudo apt install -y python-smbus i2c-tools
+       sudo apt install -y python-pil
+       sudo apt install -y python-pip
+       sudo apt install -y python-setuptools 
+       sudo apt install -y python-dev
+       sudo apt install -y python-smbus i2c-tools
+       sudo apt install -y python-pil
+       sudo apt install -y python-pip
+       sudo apt install -y python-setuptools 
+       cd /home/pi
+       sudo python -m pip install --upgrade pip setuptools wheel
+       sudo pip install Adafruit-SSD1306
+       sudo python -m pip install --upgrade pip setuptools wheel
+   
+       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
+     
+ 
+       
+       sudo chmod -R 777 /OLED/
+       sudo chmod -R 777 /usr/local/bin/
+       sudo chmod -R 777 /etc/rc.local
+       sudo chmod -R 777 /home/pi/.bashrc
+       
+       }
 
 #**********************************************  #Install 64 bit pre      ***************************************
 #****************************************************************************************************************
@@ -1190,7 +1191,7 @@ case $CHOICE in
         
         3)
            
-            #Poser
+            OLED
 	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
@@ -1201,7 +1202,7 @@ case $CHOICE in
 	    KickPi-OS_Addons
             KickPi-OS_Office
 	    KickPi-OS_Video
-	    KickPi-OS_Games
+	    #KickPi-OS_Games
             KickPi-OS_Internet
             
             ;;
