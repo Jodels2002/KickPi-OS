@@ -1174,11 +1174,9 @@ case $CHOICE in
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
 	    KickPi-OS_Internet
-            #KickPi-OS_Amiberry
-            #Configure_Amiga
-            #KickPi-OS_Retropie
-	    #KickPi-OS_Addons
-	    #KickPi-OS_Video
+            KickPi-OS_Amiberry
+            Configure_Amiga
+        
             
             ;;
         2)
