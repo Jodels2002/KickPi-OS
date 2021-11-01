@@ -15,4 +15,8 @@
  
 sudo dmesg --console-off
 
+sudo /usr/local/bin/LED
+sudo /usr/local/bin/boot.sh
+
+
 exit 0
