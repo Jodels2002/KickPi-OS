@@ -51,6 +51,10 @@ hdmi_drive=2
 #dtoverlay=gpio-ir,gpio_pin=17
 #dtoverlay=gpio-ir-tx,gpio_pin=18
 
+#Für die ACT-LED (gelb)
+dtoverlay=act-led,gpio=27
+
+
 # Additional overlays and parameters are documented /boot/overlays/README
 
 # Enable audio (loads snd_bcm2835)
