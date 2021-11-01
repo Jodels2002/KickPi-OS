@@ -13,7 +13,7 @@
       echo " "
       echo " "
 
-boot.sh
+KickPi-OS.sh
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    
@@ -96,7 +96,7 @@ CHOICE=$(dialog --clear \
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
 #****************************************************************************************************************
 
-KickPi-OS.sh
+
 
 OLED() {
 
@@ -163,6 +163,7 @@ KickPi-OS_64bit_pre() {
 #****************************************************************************************************************
 
 KickPi-OS_Update() {
+      update.sh
 
       clear
       toilet "KickPi-OS" --metal
@@ -217,7 +218,7 @@ KickPi-OS_Update() {
 #**********************************************************************************************************
 
 KickPi-OS_Tools() {
-
+Update_Tools.sh
       clear
       toilet "KickPi-OS" --metal
 
@@ -302,7 +303,7 @@ KickPi-OS_Office() {
 #****************************************************************************************************************
 
 KickPi-OS_Video() {
-
+Update_Grafic.sh
       clear
       toilet "KickPi-OS" --metal
 
@@ -387,6 +388,9 @@ KickPi-OS_Games() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
+ 
+ KickPi-OS.sh
+ 
  #if  xset q &>/dev/null; then
  setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
     	clear
@@ -536,7 +540,7 @@ fi
      
  KickPi-OS_Amiberry() {
   
-  
+  Update_Amiberry.sh  
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
       
@@ -864,6 +868,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
   
 KickPi-OS_Retropie() {
+Update_Retropie.sh
 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -1240,6 +1245,8 @@ clear
 
       		echo " "
       		echo " "
+		KickPi-OS.sh
+		
 if  xset q &>/dev/null; then
 cd
 clear
@@ -1261,5 +1268,6 @@ echo "1.>  ( c ) Raspi-Config                            "
 echo "1.>  ( s ) Shutdown                                "  
 echo ""
 	else 
+
 startx
 fi
