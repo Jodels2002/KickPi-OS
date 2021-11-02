@@ -1,11 +1,5 @@
-mount -L KICK /media/kick/
 
-USBDEV="/dev/sda1"
-	if mount | grep -q /dev/sda1; then USBDEV="dev/sdb1";fi
-mount $USBDEV /media/usb
-
-
-sudo ./romcheck.sh
 
 cd /amiberry
-./amiberry  --config conf/A1200.uae -G
+./amiberry
+#./amiberry  --config conf/A1200.uae -G
