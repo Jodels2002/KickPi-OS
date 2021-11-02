@@ -43,7 +43,7 @@ fi
       LED_off
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       /home/$USER/KickPi-OS/scripts/pikickme.sh
-# else
+ else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
  fi
 
