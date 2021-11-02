@@ -547,11 +547,13 @@ fi
      
      
  KickPi-OS_Amiberry() {
+ 
+ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then 
   
   Update_Amiberry.sh  
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
-      
+     
  
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
@@ -574,19 +576,16 @@ fi
 	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
 	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-          sudo chmod -R 777 /home/$USER/Amiga/
+  
       else 
       	clear
       	toilet "KickPi-OS" --metal
       	echo " "
       	echo " "
-          echo "  ... here comes Amiberry 64 bit :-) "
-	  cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
-	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
-	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-          sudo chmod -R 777 /home/$USER/Amiga/
+          echo "  ... Amiberry 64 bit :-) found "
+	 
+	 
+         
 	  
           
       
@@ -624,7 +623,7 @@ fi
 	 
          
     fi
-
+        sudo chmod -R 777 /home/$USER/Amiga/
 }
 
 
