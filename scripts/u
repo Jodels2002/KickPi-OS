@@ -18,6 +18,7 @@ LED_front
 sudo apt-get -y update
 LED_off
 sudo apt-get -y upgrade
+sudo apt -y autoremove
 LED
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
@@ -44,9 +45,9 @@ fi
       /home/$USER/KickPi-OS/scripts/pikickme.sh
 # else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
-# fi
+ fi
 
-sudo apt -y autoremove
+
 
       
 
