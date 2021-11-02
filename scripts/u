@@ -13,7 +13,7 @@ wget -q --spider http://google.com
 
  if [ $? -eq 0 ]; then
 
-sudo apt -y autoremove
+
 LED_front
 sudo apt-get -y update
 LED_off
