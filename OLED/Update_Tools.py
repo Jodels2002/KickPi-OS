@@ -58,13 +58,13 @@ draw = ImageDraw.Draw(image)
 
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 draw = ImageDraw.Draw(image)
-font = ImageFont.truetype('Display.ttf', 20)
+font = ImageFont.truetype('Display.ttf', 16)
 draw.text((8, 0), 'Update...', font=font, fill=1)
 font = ImageFont.truetype('Display.ttf', 32)
-draw.text((8, 30), 'Tools', font=font, fill=1)
+draw.text((8, 26), 'Tools', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(3)
+time.sleep(.3)
 
 
 
