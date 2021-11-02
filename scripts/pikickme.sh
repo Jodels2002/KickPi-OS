@@ -311,7 +311,7 @@ KickPi-OS_Office() {
 #****************************************************************************************************************
 
 KickPi-OS_Video() {
-Update_Grafic.sh
+Update_Graphic.py
       clear
       toilet "KickPi-OS" --metal
 
