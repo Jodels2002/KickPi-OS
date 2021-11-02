@@ -107,14 +107,18 @@ while True:
   # Display Monitor.
     disp.image(image)
     disp.display()
-    time.sleep(5)
+    time.sleep(10)
     
    # *************  Draw Pimiga Logo  ******************************
    
     # Display Logo
-    image = Image.open('Pimiga.pgm').convert('1')
+    image = Image.open('AmigaLogo.pgm').convert('1')
     draw = ImageDraw.Draw(image)
     disp.image(image)
     disp.display()
-    time.sleep(15)
+    time.sleep(.1)
+    
+    End = subprocess.check_output(cmd, False )
    
+
+ 
