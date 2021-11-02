@@ -2,6 +2,8 @@ crontab -e
 and setup it to be
 */10 * * * * /full/path/to/script.py
 
+(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+
 
 #!/bin/bash
 #***********************************************  #KickPi-OS Retropie content loader  ***********************************
