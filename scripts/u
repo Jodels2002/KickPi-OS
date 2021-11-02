@@ -11,7 +11,7 @@ sudo dpkg --configure -a
 sudo apt -y --fix-broken install
 wget -q --spider http://google.com
 
-# if [ $? -eq 0 ]; then
+ if [ $? -eq 0 ]; then
 
 sudo apt -y autoremove
 LED_front
