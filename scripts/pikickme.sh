@@ -94,13 +94,14 @@ CHOICE=$(dialog --clear \
                 
    
 #*********************************************  #OLED & LED comming soon, maybe :)  *****************************
-#****************************************************************************************************************
+#**********************(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -***********
 
 
 
 OLED() {
+if [ ! -d /OLED/ ]; then
 
- sudo cp -rf /home/$USER/Pimiga-addon/Scripts/* /usr/local/bin/
+
        sudo chmod -R 777 /usr/local/bin/
   
        sudo apt-get install -y python3-pip
@@ -134,7 +135,14 @@ OLED() {
        sudo chmod -R 777 /usr/local/bin/
        sudo chmod -R 777 /etc/rc.local
        sudo chmod -R 777 /home/pi/.bashrc
+       (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
        
+       else 
+       clear
+       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+       sudo chmod -R 777 /OLED/
+       sudo chmod -R 777 /usr/local/bin/
+       fi
        }
 
 #**********************************************  #Install 64 bit pre      ***************************************
