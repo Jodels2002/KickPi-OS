@@ -614,13 +614,7 @@ fi
       
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/WB
-      #xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-workbench.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-extras.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-fonts.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-locale.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/dir/WB
+      
      fi 
       
       mkdir /home/pi/Amiga/Install
@@ -643,6 +637,22 @@ fi
 
       	echo " "
 	echo " "
+      fi
+      if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
+      
+      cd /home/pi/Amiga/Install
+      
+      
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      
+        else 
+      echo " "
+      
       fi
       
       cd /home/$USER/Amiga/hdf
