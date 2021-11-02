@@ -548,7 +548,7 @@ fi
      
  KickPi-OS_Amiberry() {
  
- if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then 
+if [ ! -f /home/$USER/Amiga/amiberry ]; then
   
   Update_Amiberry.sh  
   mkdir /home/$USER/Amiga/
