@@ -679,27 +679,9 @@ fi
       cd /home/$USER/Amiga/hdf
       
       
-     if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
+      if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
       
-      cd /home/pi/Amiga/Install
-      
-      
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
-      
-        else 
-      echo " "
-      
-      fi
-      
-      sudo rm -rf  /home/pi/Amiga/dir/System_P96/
-      sudo rm -rf  /home/pi/Amiga/dir/System_ADVSP/
-      
-      
+     
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
@@ -733,59 +715,14 @@ fi
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_P96/System/    
     
-      #rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
-      
- 
-
-if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+      else
       clear
-      toilet "KickOS" --metal
+      toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      cd /home/pi/Amiga/Install
-      #get http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      #unzip -u ./ClassicWB_68K_v28.zip
+      fi
       
-
-      
-    else 
-      echo " "
-    fi 
-    
-    
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      #clear
-      #toilet "KickPi-OS" --metal
-      #echo " "
-      #echo " "
-      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
-      #echo " "
-    
-      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      #unzip -u ./ClassicWB_OS39_v28.zip
-      #else 
-      #echo " "
-      
-      #fi
-      
- 
-#else 
-    
    
-      
-      #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
-      #clear
-      #toilet "KickPi-OS" --metal
-      #echo " "
-      #echo " "
-      #echo "  Configure AmigaForever workbench-311 ...     " 
-      #echo " "
-      #echo " "
-      
-     # fi
   
   if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
       cd /home/$USER/KickPi-OS/Amiga
