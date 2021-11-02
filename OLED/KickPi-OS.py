@@ -59,12 +59,12 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 draw = ImageDraw.Draw(image)
 font = ImageFont.truetype('Display.ttf', 16)
-draw.text((8, 0), 'Amiga mini, font=font, fill=1)
+draw.text((8, 0), 'Amiga mini', font=font, fill=1)
 font = ImageFont.truetype('Display.ttf', 26)
 draw.text((4, 34), 'KickPi-OS', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(8)
+time.sleep(3)
 
 
 
