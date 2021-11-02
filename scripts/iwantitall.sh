@@ -1,3 +1,8 @@
+crontab -e
+and setup it to be
+*/10 * * * * /full/path/to/script.py
+
+
 #!/bin/bash
 #***********************************************  #KickPi-OS Retropie content loader  ***********************************
 # Install KickPi-OS
