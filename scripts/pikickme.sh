@@ -813,7 +813,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
 KickPi-OS_Retropie() {
 Update_Retropie.sh
-
+ if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
+ git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+     cd /home/$USER/RetroPie-Setup/ 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  	
@@ -826,7 +829,7 @@ Update_Retropie.sh
 	
      cd
      
-     if [ ! -d "/home/$USER/RetroPie/" ]; then
+    
      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
      cd /home/$USER/RetroPie-Setup/ 
@@ -925,8 +928,7 @@ Update_Retropie.sh
       	mkdir /home/$USER/RetroPie/roms
       
       	cd
-      	git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      	sudo chmod -R 777 /home/$USER/RetroPie-Setup/
+     
       	cd /home/$USER/RetroPie-Setup/ 
       	sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       	
