@@ -1,27 +1,27 @@
 #!/bin/bash
-#***********************************************  #PimigaX install script  ***********************************
-# Install PimigaX
+#***********************************************  #Kick-Pi-OS install script  ***********************************
+# Install Kick-Pi-OS
 # B.Titze 2021
 #*************************************************************************************************************
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       echo "            Time to update:)              "
       echo " "
-      echo "Installing PimigaX Update System ..."
+      echo "Installing Kick-Pi-OS Update System ..."
       echo " "
       echo " "
 
-PimigaX.sh
-sudo cp -R /home/$USER/PimigaX/scripts/* /usr/local/bin
+Kick-Pi-OS.sh
+sudo cp -R /home/$USER/Kick-Pi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       toilet "64 bit" --metal
       echo " "
       echo " "
@@ -31,7 +31,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo update-rc.d motd remove
     else 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       toilet "32 bit" --metal
       echo " "
       echo " "
@@ -45,7 +45,7 @@ fi
       echo " "
       echo "1>	Hi Guys,"
       echo " "
-      echo "1>	welcome to the "PimigaX" installer! "
+      echo "1>	welcome to the "Kick-Pi-OS" installer! "
       echo "1>CLI"
       echo "1>CLI"
       echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
@@ -69,19 +69,19 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
      
-#******************************************** #PimigaX mini  Menu ********************************************
+#******************************************** #Kick-Pi-OS mini  Menu ********************************************
 #****************************************************************************************************************
 
 HEIGHT=20
 WIDTH=70
 CHOICE_HEIGHT=4
-BACKTITLE="PimigaX"
-TITLE="Witch PimigaX you want?"
+BACKTITLE="Kick-Pi-OS"
+TITLE="Witch Kick-Pi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install PimigaX       (recommended)            (ca. 20 min)"
-	 2 "Install PimigaX       + with RetroPie   	     (ca. 30 min)"
-         3 "Install PimigaX       all                      (ca. 50 min)")
+OPTIONS=(1 "Install Kick-Pi-OS       (recommended)            (ca. 20 min)"
+	 2 "Install Kick-Pi-OS       + with RetroPie   	     (ca. 30 min)"
+         3 "Install Kick-Pi-OS       all                      (ca. 50 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -125,9 +125,9 @@ if [ ! -d /OLED/ ]; then
        sudo pip install Adafruit-SSD1306
        sudo python -m pip install --upgrade pip setuptools wheel
    
-       sudo cp -rf /home/pi/PimigaX/OLED/ /
-       sudo cp -rf /home/pi/PimigaX/conf/rc.local /etc/
-       sudo cp -rf /home/pi/PimigaX/conf/.bashrc /home/pi/
+       sudo cp -rf /home/pi/Kick-Pi-OS/OLED/ /
+       sudo cp -rf /home/pi/Kick-Pi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/pi/Kick-Pi-OS/conf/.bashrc /home/pi/
      
  
        
@@ -139,7 +139,7 @@ if [ ! -d /OLED/ ]; then
        
        else 
        clear
-       sudo cp -rf /home/pi/PimigaX/OLED/ /
+       sudo cp -rf /home/pi/Kick-Pi-OS/OLED/ /
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        fi
@@ -149,7 +149,7 @@ if [ ! -d /OLED/ ]; then
 #****************************************************************************************************************
   
   
-PimigaX_64bit_pre() {
+Kick-Pi-OS_64bit_pre() {
 
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -170,18 +170,18 @@ PimigaX_64bit_pre() {
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
 
-PimigaX_Update() {
+Kick-Pi-OS_Update() {
       update.sh
 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
       echo "            Time to update:)              "
       echo " "
       echo " "
-      echo "Installing PimigaX Update System ..."
+      echo "Installing Kick-Pi-OS Update System ..."
       echo " "
 
      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
@@ -194,10 +194,10 @@ PimigaX_Update() {
        
       
       # Update allways Routine
-      if [ ! -d /home/$USER/.PimigaX/ ]; then
+      if [ ! -d /home/$USER/.Kick-Pi-OS/ ]; then
 #
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -206,7 +206,7 @@ PimigaX_Update() {
       
       else 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       echo "  First installation "
@@ -222,13 +222,13 @@ PimigaX_Update() {
        
 }
 
-#*********************************************  #Installing PimigaX_Tools*********************************
+#*********************************************  #Installing Kick-Pi-OS_Tools*********************************
 #**********************************************************************************************************
 
-PimigaX_Tools() {
+Kick-Pi-OS_Tools() {
 Update_Tools.sh
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -247,7 +247,7 @@ Update_Tools.sh
      
      
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -255,7 +255,7 @@ Update_Tools.sh
       echo " "
       sudo apt-get -y install grafx2 protracker worker 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       cd /home/$USER
@@ -265,20 +265,20 @@ Update_Tools.sh
       # Preconfigure Worker
       if [ ! -f /home/$USER/.worker/.worker.zip ]; then
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       echo "  First installation "
       echo " "
-      cd /home/$USER/PimigaX/.pac/
-      unzip -u  /home/$USER/PimigaX/.pac/.worker.zip
-      cp -rf /home/$USER/PimigaX/.pac/.worker /home/$USER/
+      cd /home/$USER/Kick-Pi-OS/.pac/
+      unzip -u  /home/$USER/Kick-Pi-OS/.pac/.worker.zip
+      cp -rf /home/$USER/Kick-Pi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
       
 
       else 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -293,10 +293,10 @@ Update_Tools.sh
 #*********************************************  #Office  **********************************************
 #****************************************************************************************************************
 
-PimigaX_Office() {
+Kick-Pi-OS_Office() {
 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -310,10 +310,10 @@ PimigaX_Office() {
 #*********************************************  #Video & Graphic  **********************************************
 #****************************************************************************************************************
 
-PimigaX_Video() {
+Kick-Pi-OS_Video() {
 Update_Graphic.py
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -326,20 +326,20 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       # Update is running
       sudo apt install -y gimp 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
       toilet -F gay PhotoGimp
        
-      curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/PimigaX/PhotoGIMP.zip && unzip /home/$USER/PimigaX/PhotoGIMP.zip -d /home/$USER/PimigaX/ 
-      sudo cp -R /home/$USER/PimigaX/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
+      curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/Kick-Pi-OS/PhotoGIMP.zip && unzip /home/$USER/Kick-Pi-OS/PhotoGIMP.zip -d /home/$USER/Kick-Pi-OS/ 
+      sudo cp -R /home/$USER/Kick-Pi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
       echo " PhotoGimp by Diolinux installed..."
       
   
       else 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       echo " Gimp is already installed..."
@@ -352,7 +352,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
        
        
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
@@ -363,10 +363,10 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 #*********************************************  #Internet  **********************************************
 #****************************************************************************************************************
 
-PimigaX_Internet() {
+Kick-Pi-OS_Internet() {
 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       toilet -F gay Internet
       echo " "
       echo " "
@@ -379,10 +379,10 @@ PimigaX_Internet() {
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
 
-PimigaX_Games() {
+Kick-Pi-OS_Games() {
 
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       echo "            Games :)              "
@@ -392,21 +392,21 @@ PimigaX_Games() {
 
 }
 
-#*********************************************  #Installing PimigaX Desktop*********************************
+#*********************************************  #Installing Kick-Pi-OS Desktop*********************************
 #**********************************************************************************************************
  
- PimigaX_Desktop() {
+ Kick-Pi-OS_Desktop() {
  
- PimigaX.sh
+ Kick-Pi-OS.sh
  
  #if  xset q &>/dev/null; then
  setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
     	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
-		echo "PimigaX-OS ROM Operating System and Libraris" 
-		echo "Version V1.5 2020-2021 PimigaX "
+		echo "Kick-Pi-OS-OS ROM Operating System and Libraris" 
+		echo "Version V1.5 2020-2021 Kick-Pi-OS "
 		echo "No Rights Reserved.  "
 		echo ""
 
@@ -419,13 +419,13 @@ PimigaX_Games() {
       if [ ! -f ~/.backup/rc.local ]; then
     
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
       mkdir $HOME/.backup/profile.d
       sudo mv  /etc/rc.local ~/.backup/
       
-      sudo cp -rf /home/$USER/PimigaX/config/rc.local /etc/rc.local
+      sudo cp -rf /home/$USER/Kick-Pi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
       sudo systemctl mask plymouth-start.service
       sudo systemctl mask syslog.service
@@ -434,7 +434,7 @@ PimigaX_Games() {
       
       else 
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
         echo " System optimized :) "
@@ -463,29 +463,29 @@ PimigaX_Games() {
   
       
       
-      sudo chmod -R 777 /home/$USER/PimigaX
+      sudo chmod -R 777 /home/$USER/Kick-Pi-OS
       sudo chmod -R 777 /home/$USER/.config
       sudo chmod -R 777 ~/.local
-      sudo cp -rf ~/PimigaX ~/.PimigaX
+      sudo cp -rf ~/Kick-Pi-OS ~/.Kick-Pi-OS
       sudo rm -rf /home/$USER/.cache
-      cd /home/$USER/PimigaX/
-      cp -rf ~/PimigaX/config/Desktop/* /home/$USER/Desktop/
+      cd /home/$USER/Kick-Pi-OS/
+      cp -rf ~/Kick-Pi-OS/config/Desktop/* /home/$USER/Desktop/
 
        if [ "$(getconf LONG_BIT)" == "64" ]; then
        
-           sudo unzip ~/PimigaX/.pac/.data64.pac
-	   cp -rf ~/PimigaX/.data/.config/ /home/$USER/
-           cp -rf ~/PimigaX/.data/.local/ /home/$USER/ 
+           sudo unzip ~/Kick-Pi-OS/.pac/.data64.pac
+	   cp -rf ~/Kick-Pi-OS/.data/.config/ /home/$USER/
+           cp -rf ~/Kick-Pi-OS/.data/.local/ /home/$USER/ 
           
           sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
 	  
 	  else
-	   sudo unzip ~/PimigaX/.pac/.data.pac
-	   cp -rf ~/PimigaX/.data/.config/ /home/$USER/
-           cp -rf ~/PimigaX/.data/.local/ /home/$USER/ 
+	   sudo unzip ~/Kick-Pi-OS/.pac/.data.pac
+	   cp -rf ~/Kick-Pi-OS/.data/.config/ /home/$USER/
+           cp -rf ~/Kick-Pi-OS/.data/.local/ /home/$USER/ 
 	  fi
 
-      sudo chmod -R 777 /home/$USER/PimigaX
+      sudo chmod -R 777 /home/$USER/Kick-Pi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
       sudo rm -rf /home/$USER/.cache
@@ -495,14 +495,14 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
       
-      sudo cp -rf /home/$USER/PimigaX/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo cp -rf /home/$USER/Kick-Pi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
       else 
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
         echo " System optimized :) "
@@ -510,28 +510,28 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 fi     
 
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
-      cd /home/$USER/PimigaX
+      cd /home/$USER/Kick-Pi-OS
       git clone --depth=1 https://github.com/x64k/amitk
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
-      sudo cp -rf /home/$USER/PimigaX/amitk /usr/share/themes
+      sudo cp -rf /home/$USER/Kick-Pi-OS/amitk /usr/share/themes
       
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
 
       echo " "
       echo " "
-      sudo cp -rf /home/$USER/PimigaX/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo cp -rf /home/$USER/Kick-Pi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-      sudo cp -rf /home/$USER/PimigaX/config/rpd-wallpaper/* /usr/share/backgrounds/
+      sudo cp -rf /home/$USER/Kick-Pi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       else 
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
         echo " Amiga System look optimized :) "
@@ -546,7 +546,7 @@ fi
 #****************************************************************************************************************
      
      
- PimigaX_Amiberry() {
+ Kick-Pi-OS_Amiberry() {
  
 
   
@@ -558,7 +558,7 @@ fi
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
        clear
-       toilet "PimigaX" --metal
+       toilet "Kick-Pi-OS" --metal
        toilet -F gay 64bit
        echo " "
        echo " "
@@ -566,27 +566,27 @@ fi
        
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
     	echo "  ... here comes Amiberry 64 bit :-) "
 	
-	  cd /home/$USER/PimigaX/Amiga
-      	  unzip -u /home/$USER/PimigaX/Amiga/amiberry-rpi4-64bit.zip
-	  cp -rf /home/$USER/PimigaX/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
+	  cd /home/$USER/Kick-Pi-OS/Amiga
+      	  unzip -u /home/$USER/Kick-Pi-OS/Amiga/amiberry-rpi4-64bit.zip
+	  cp -rf /home/$USER/Kick-Pi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
 	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-	  cp -rf /home/$USER/PimigaX/Amiga/conf/* /home/$USER/Amiga/conf/ 
+	  cp -rf /home/$USER/Kick-Pi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
   
       else 
       	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
           echo "  ... here comes Amiberry 32 bit :-) "
 	  
-          cd /home/$USER/PimigaX/Amiga
-      	  unzip -u /home/$USER/PimigaX/Amiga/amiberry-rpi4-dmx-32bit.zip 
-	  cp -rf /home/$USER/PimigaX/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
+          cd /home/$USER/Kick-Pi-OS/Amiga
+      	  unzip -u /home/$USER/Kick-Pi-OS/Amiga/amiberry-rpi4-dmx-32bit.zip 
+	  cp -rf /home/$USER/Kick-Pi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
       
 
          
@@ -621,26 +621,26 @@ fi
            
       if [ ! -f /home/$USER/Amiga.zip ]; then
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 
       	echo " "
 	echo " "
       cd ~
-      cp -rf /home/$USER/PimigaX/Amiga/Amiga.zip /home/$USER
+      cp -rf /home/$USER/Kick-Pi-OS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
       rm ./Amiga.zip
       
       
       else 
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 
       	echo " "
 	echo " "
       fi
       if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       toilet "full" --metal
       
       cd /home/pi/Amiga/Install
@@ -670,10 +670,10 @@ fi
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_ADVSP/System/
       
       
@@ -685,18 +685,18 @@ fi
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
       cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/System/T/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       
       cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
-      cp -rf /home/pi/.PimigaX/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/.Kick-Pi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_P96/System/    
     
       else
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       fi
@@ -704,21 +704,21 @@ fi
    
   
   if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
-      cd /home/$USER/PimigaX/Amiga
-      unzip -u /home/$USER/PimigaX/Amiga/AROS.zip
+      cd /home/$USER/Kick-Pi-OS/Amiga
+      unzip -u /home/$USER/Kick-Pi-OS/Amiga/AROS.zip
       mkdir /home/$USER/Amiga/dir/AROS/
-     cp -rf /home/$USER/PimigaX/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+     cp -rf /home/$USER/Kick-Pi-OS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
   fi
       cd /home/$USER/Amiga/hdf
       
       cd ~/Amiga
      
       clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
       
-      cp -rf /home/$USER/PimigaX/Amiga/conf/* /home/$USER/Amiga/conf/ 
+      cp -rf /home/$USER/Kick-Pi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
      
 
       
@@ -727,34 +727,34 @@ fi
    
 
     
-#****************************************   #PimigaX_Addons  ****************************************************
+#****************************************   #Kick-Pi-OS_Addons  ****************************************************
 #****************************************************************************************************************
 
-PimigaX_Addons() {
+Kick-Pi-OS_Addons() {
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
 	if [ ! -d /home/$USER/games/vice/ ]; then
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
 	echo "Vice64"
      	echo " "
      	echo " "
      	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
-     	cd /home/$USER/PimigaX/.pac/
-      	unzip -u  /home/$USER/PimigaX/.pac/vice.zip
-      	unzip -u  /home/$USER/PimigaX/.pac/Vice2.zip
+     	cd /home/$USER/Kick-Pi-OS/.pac/
+      	unzip -u  /home/$USER/Kick-Pi-OS/.pac/vice.zip
+      	unzip -u  /home/$USER/Kick-Pi-OS/.pac/Vice2.zip
       	sudo mkdir /home/$USER/games
-      	sudo cp -rf /home/$USER/PimigaX/.pac/vice /home/$USER/games
-      	sudo cp -rf /home/$USER/PimigaX/.pac/Vice2/* /home/$USER/games/vice/
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/.pac/vice /home/$USER/games
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/.pac/Vice2/* /home/$USER/games/vice/
    
       	sudo chmod -R 777 /home/$USER/games/vice/
 
        else
   	clear
-      toilet "PimigaX" --metal
+      toilet "Kick-Pi-OS" --metal
       echo " "
       echo " "
      	echo "Vice64 always installed"
@@ -763,7 +763,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       else 
       	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	toilet "full" --metal
       	echo " "
       	echo " "
@@ -791,7 +791,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 #****************************************************************************************************************
   
   
-PimigaX_Retropie() {
+Kick-Pi-OS_Retropie() {
 Update_Retropie.sh
  if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
  git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
@@ -801,7 +801,7 @@ Update_Retropie.sh
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  	
 	clear
-	toilet "PimigaX" --metal
+	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
      	echo "RetroPie64 experimental"
@@ -817,16 +817,16 @@ Update_Retropie.sh
      
      sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
-      	cd /home/$USER/PimigaX/Retropie/
-      	sudo unzip -u /home/$USER/PimigaX/Retropie/data.zip
+      	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	sudo unzip -u /home/$USER/Kick-Pi-OS/Retropie/data.zip
 	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
       	
-	sudo chmod -R 777  /home/$USER/PimigaX/Retropie/
-      	cp -rf /home/$USER/PimigaX/Retropie/roms/* /home/$USER/RetroPie/roms
+	sudo chmod -R 777  /home/$USER/Kick-Pi-OS/Retropie/
+      	cp -rf /home/$USER/Kick-Pi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       	#-----Config Amiberry for Retropie
       	clear
 	toilet -F gay NOTE!
@@ -848,21 +848,21 @@ Update_Retropie.sh
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
       	
 	clear
-	toilet "PimigaX" --metal
+	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo " "
       	toilet -F gay Amiberry
 	sudo mkdir /opt/retropie/emulators/amiberry
-	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/amiga.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/amiga /opt/retropie/configs/
-	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/amiberry.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/amiberry /opt/retropie/emulators/
-	sudo cp -rf /home/$USER/PimigaX/Amiga/amiberry /opt/retropie/emulators/amiberry/
+	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/amiga.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/amiga /opt/retropie/configs/
+	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/amiberry.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/amiberry /opt/retropie/emulators/
+	sudo cp -rf /home/$USER/Kick-Pi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
-	sudo cp -rf /home/$USER/PimigaX/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/es_systems.cfg /etc/emulationstation/
+	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/es_systems.cfg /etc/emulationstation/
 	
 	cd ~/RetroPie/retropiemenu/
 	rm "Auto-Amiga Install.sh"
@@ -876,7 +876,7 @@ Update_Retropie.sh
      else
      
      	clear
-     	toilet "PimigaX" --metal
+     	toilet "Kick-Pi-OS" --metal
      	echo " "
      	echo " "
      	echo "RetroPie64 always installed"
@@ -894,7 +894,7 @@ Update_Retropie.sh
       	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
@@ -913,24 +913,24 @@ Update_Retropie.sh
       	sudo __nodialog=1 ./retropie_packages.sh setup basic_install
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
       	
 	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
-      	cd /home/$USER/PimigaX/Retropie/
-      	sudo unzip -u /home/$USER/PimigaX/Retropie/data.zip
+      	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	sudo unzip -u /home/$USER/Kick-Pi-OS/Retropie/data.zip
 	
       	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
       	
-	sudo chmod -R 777  /home/$USER/PimigaX/Retropie/
-      	cp -rf /home/$USER/PimigaX/Retropie/roms/* /home/$USER/RetroPie/roms
+	sudo chmod -R 777  /home/$USER/Kick-Pi-OS/Retropie/
+      	cp -rf /home/$USER/Kick-Pi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
       	#-----Config Amiberry for Retropie
 	clear
       	toilet -F gay NOTE!
@@ -953,7 +953,7 @@ Update_Retropie.sh
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
@@ -963,63 +963,63 @@ Update_Retropie.sh
       	if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	toilet -F gay Amiberry
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
       	
-      	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/amiberry.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/amiberry /opt/retropie/emulators/
+      	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/amiberry.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/amiberry /opt/retropie/emulators/
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	toilet -F gay Amiberry
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
       	
-	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/amiga.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/amiga /opt/retropie/configs/
+	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/amiga.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/amiga /opt/retropie/configs/
       
       	else 
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	echo " "
        	echo " "
       	echo " Amiberry already installed..."
       	fi
       
       	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
       	toilet -F gay C64
-      	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/lr-vice.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/lr-vice /opt/retropie/libretrocores/    
+      	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/lr-vice.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
       	
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	toilet -F gay C64
       	echo " "
        	echo " "
       	
-	cd /home/$USER/PimigaX/Retropie/
-      	unzip -u  /home/$USER/PimigaX/Retropie/c64.zip
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/c64 /opt/retropie/configs/
+	cd /home/$USER/Kick-Pi-OS/Retropie/
+      	unzip -u  /home/$USER/Kick-Pi-OS/Retropie/c64.zip
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/c64 /opt/retropie/configs/
       	else 
 	clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	echo " "
        	echo " "
       	echo " C64 (lr-vice) already installed..."
 	echo " "
       	fi     
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/es_systems.cfg /etc/emulationstation/
-      	cp -rf /home/$USER/.PimigaX/config/splash/*  /home/$USER/RetroPie/splashscreens/
-      	sudo cp -rf /home/$USER/PimigaX/Retropie/splashscreen.list  /etc/
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+      	cp -rf /home/$USER/.Kick-Pi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
+      	sudo cp -rf /home/$USER/Kick-Pi-OS/Retropie/splashscreen.list  /etc/
 fi     
    
   
@@ -1027,19 +1027,19 @@ fi
       if [ "$(getconf LONG_BIT)" == "64" ]; then
       
          	clear
-      		toilet "PimigaX" --metal
+      		toilet "Kick-Pi-OS" --metal
 		toilet -F gay C64
       		echo " "
        		echo " "
 	        echo "Amiberry 64 bit for RetroPie"
 	  	echo " "
 		
-          sudo cp -rf /home/$USER/PimigaX/Amiga/amiberry /opt/retropie/emulators/amiberry/
+          sudo cp -rf /home/$USER/Kick-Pi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
 	  sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	  sudo chmod -R 777 /opt/retropie/emulators/amiberry/
       else 
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	echo " "
        	echo " "
         clear
@@ -1051,14 +1051,14 @@ fi
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
         clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	echo " "
        	echo " "
       
       
       else 
       clear
-      	toilet "PimigaX" --metal
+      	toilet "Kick-Pi-OS" --metal
 	echo " "
        	echo " "
      
@@ -1067,7 +1067,7 @@ fi
       sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
       fi
       
-      sudo chmod -R 777 /home/$USER/.PimigaX/
+      sudo chmod -R 777 /home/$USER/.Kick-Pi-OS/
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       sudo chmod -R 777 /home/$USER/.emulationstation/
@@ -1086,7 +1086,7 @@ fi
 cd ~
 
 clear
-      		toilet "PimigaX" --metal
+      		toilet "Kick-Pi-OS" --metal
 
       		echo " "
       		echo " "
@@ -1095,44 +1095,44 @@ case $CHOICE in
         
         1)
             OLED
-	    PimigaX_Update
-	    PimigaX_64bit_pre
-	    PimigaX_Desktop
+	    Kick-Pi-OS_Update
+	    Kick-Pi-OS_64bit_pre
+	    Kick-Pi-OS_Desktop
            
         
             
             ;;
         2)
             OLED
-	    PimigaX_Update
-	    PimigaX_64bit_pre
-	    PimigaX_Desktop
-            PimigaX_Tools
-            PimigaX_Amiberry
+	    Kick-Pi-OS_Update
+	    Kick-Pi-OS_64bit_pre
+	    Kick-Pi-OS_Desktop
+            Kick-Pi-OS_Tools
+            Kick-Pi-OS_Amiberry
             Configure_Amiga
-            PimigaX_Retropie
-	    PimigaX_Addons
-	    PimigaX_Internet
-            #PimigaX_Office
-	    #PimigaX_Video
+            Kick-Pi-OS_Retropie
+	    Kick-Pi-OS_Addons
+	    Kick-Pi-OS_Internet
+            #Kick-Pi-OS_Office
+	    #Kick-Pi-OS_Video
 	    
             ;;
         
         3)
            
             OLED
-	    PimigaX_Update
-	    PimigaX_64bit_pre
-	    PimigaX_Desktop
-            PimigaX_Tools
-            PimigaX_Amiberry
+	    Kick-Pi-OS_Update
+	    Kick-Pi-OS_64bit_pre
+	    Kick-Pi-OS_Desktop
+            Kick-Pi-OS_Tools
+            Kick-Pi-OS_Amiberry
             Configure_Amiga
-            PimigaX_Retropie
-	    PimigaX_Addons
-            PimigaX_Office
-	    PimigaX_Video
-	    #PimigaX_Games
-            PimigaX_Internet
+            Kick-Pi-OS_Retropie
+	    Kick-Pi-OS_Addons
+            Kick-Pi-OS_Office
+	    Kick-Pi-OS_Video
+	    #Kick-Pi-OS_Games
+            Kick-Pi-OS_Internet
             
             ;;
                   
@@ -1143,13 +1143,13 @@ esac
 
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
-      cp  /home/$USER/PimigaX/scripts/.bashrc /home/$USER/.bashrc
-      sudo cp  /home/$USER/PimigaX/config/rc.local /etc/
-      sudo cp  /home/$USER/PimigaX/config/login /etc/pam.d/
+      cp  /home/$USER/Kick-Pi-OS/scripts/.bashrc /home/$USER/.bashrc
+      sudo cp  /home/$USER/Kick-Pi-OS/config/rc.local /etc/
+      sudo cp  /home/$USER/Kick-Pi-OS/config/login /etc/pam.d/
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
       
-      sudo rm -rf ~/PimigaX
+      sudo rm -rf ~/Kick-Pi-OS
       touch ~/.hushlogin
       #sudo rm -rf ~/amigafonts/
       
@@ -1163,25 +1163,25 @@ esac
       sudo chmod -R 777 /home/$USER/Amiga
 
 clear
-      		toilet "PimigaX" --metal
+      		toilet "Kick-Pi-OS" --metal
 
       		echo " "
       		echo " "
-		PimigaX.sh
+		Kick-Pi-OS.sh
 		
 if  xset q &>/dev/null; then
 cd
 clear
-toilet "Pimiga" --metal
-echo "Pimiga-OS ROM Operating System and Libraries" 
-echo "Version V1.5 2020-2021 PimigaX "
+toilet "KickPi-OS" --metal
+echo "KickPi-OS ROM Operating System and Libraries" 
+echo "Version V1.5 2020-2021 Kick-Pi-OS "
 echo "No Rights Reserved.  "
 echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 echo ""
 echo "1.>  "
-echo "1.>  ( a ) Start Pimiga                            " 
-echo "1.>  ( d ) Pimiga Desktop                          " 
+echo "1.>  ( a ) Start Amiga                            " 
+echo "1.>  ( d ) Amiga Desktop                          " 
 echo "1.>  ( e ) Emulationstation              (RetroPie)" 
 echo "1.>  ( r ) Emulationstation Setup                  "
 echo "1.>  ( u ) Pimiga Update                        "
