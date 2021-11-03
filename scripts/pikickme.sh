@@ -1098,10 +1098,7 @@ case $CHOICE in
 	    PimigaX_Update
 	    PimigaX_64bit_pre
 	    PimigaX_Desktop
-            PimigaX_Tools
-	    PimigaX_Internet
-            PimigaX_Amiberry
-            Configure_Amiga
+           
         
             
             ;;
@@ -1183,7 +1180,7 @@ echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 echo ""
 echo "1.>  "
-echo "1.>  ( a ) Boot to Amiberry if default config exist" 
+echo "1.>  ( a ) Start Pimiga                            " 
 echo "1.>  ( d ) Pimiga Desktop                          " 
 echo "1.>  ( e ) Emulationstation              (RetroPie)" 
 echo "1.>  ( r ) Emulationstation Setup                  "
