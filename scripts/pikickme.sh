@@ -548,82 +548,53 @@ fi
      
  KickPi-OS_Amiberry() {
  
- if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then 
+   if [ ! -f /home/$USER/Amiga/amiberry ]; then
   
   Update_Amiberry.sh  
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
      
  
- if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 	if [ "$(getconf LONG_BIT)" == "64" ]; then
  
-       clear
-       toilet "KickPi-OS" --metal
-       toilet -F gay 64bit
-       echo " "
-       echo " "
-       echo " ... here comes Amiberry 64 bit   :-)"
-       if [ ! -f /home/$USER/Amiga/amiberry ]; then
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-    	echo "  ... here comes Amiberry 64 bit :-) "
-	
-	  cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
-	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
-	  cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+	       clear
+	       toilet "KickPi-OS" --metal
+	       toilet -F gay 64bit
+	       echo " "
+	       echo " "
+	       echo " ... here comes Amiberry 64 bit   :-)"
+
+
+		clear
+		toilet "KickPi-OS" --metal
+		echo " "
+		echo " "
+		echo "  ... here comes Amiberry 64 bit :-) "
+
+		cd /home/$USER/KickPi-OS/Amiga
+		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
+		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
+		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
+		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
   
-      else 
-      	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-          echo "  ... Amiberry 64 bit :-) found "
+      	else 
+      		clear
+      		toilet "KickPi-OS" --metal
+      		echo " "
+      		echo " "
+        	echo "  ... here comes Amiberry 32 bit :-) "
+	  
+          	cd /home/$USER/KickPi-OS/Amiga
+      	  	unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit.zip 
+	  	cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
 	 
 	 
          
 	  fi
           
       
-       fi  
-       
-              
-      
-    else
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      toilet -F gay 32bit
-      echo " "
-      if [ ! -d /home/$USER/amiberry/ ]; then
-      
-      echo "  ... here comes Amiberry 32 bit :-) "
-	  
-          cd /home/$USER/KickPi-OS/Amiga
-      	  unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit.zip 
-	  cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
-      
-     
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-
-      	echo " "
-	echo " "
-        echo "Amiberry is updatet" 
+fi  
    
-      
-       fi  
-	 
-         
-    fi
-    
 }
 
 
