@@ -1,3 +1,3 @@
 cd /OLED
-python Update_Amiberry.py
+python Amiberry.py
 cd
