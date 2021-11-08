@@ -23,19 +23,7 @@ LED
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
 
-if [ ! -f "/home/$USER/Amiga/conf/default.uae" ]; then
 
-     clear
-     toilet "KickPi-OS" --metal
-       
-    else
-    
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo "Default config for Amiberry found...  "
-      
-fi
   
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
