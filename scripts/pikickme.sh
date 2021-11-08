@@ -1108,7 +1108,7 @@ case $CHOICE in
 	    KickPi-OS_Internet
             #KickPi-OS_Office
 	    #KickPi-OS_Video
-	    
+	    OLED
             ;;
         
         3)
