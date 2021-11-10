@@ -1,5 +1,0 @@
-clear
-toilet "KickPi-OS" --metal
-cd /home/$USER/RetroPie-Setup/
-sudo ./retropie_setup.sh
-p
