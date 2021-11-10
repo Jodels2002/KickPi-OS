@@ -1088,7 +1088,7 @@ case $CHOICE in
         1)
             
 	    KickPi-OS_Update
-	    #KickPi-OS_64bit_pre
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
 	    KickPi-OS_Internet
@@ -1099,7 +1099,7 @@ case $CHOICE in
             ;;
         2)
             KickPi-OS_Update
-	    #KickPi-OS_64bit_pre
+	    KickPi-OS_64bit_pre
 	    OLED
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
@@ -1118,7 +1118,7 @@ case $CHOICE in
           
 	    KickPi-OS_Update
 	    OLED
-	    #KickPi-OS_64bit_pre
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
