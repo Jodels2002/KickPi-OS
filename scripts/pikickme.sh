@@ -102,14 +102,9 @@ OLED() {
 if [ ! -d /OLED/ ]; then
 
 
-       sudo chmod -R 777 /usr/local/bin/
-  
-       sudo apt-get install -y python3-pip
-       pip3 install adafruit-circuitpython-ssd1306
-       
        sudo raspi-config nonint do_i2c 0
-       sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
-       sudo apt install -y python3
+      
+       
        sudo apt install -y python-dev
        sudo apt install -y python-smbus i2c-tools
        sudo apt install -y python-pil
@@ -120,6 +115,12 @@ if [ ! -d /OLED/ ]; then
        sudo apt install -y python-pil
        sudo apt install -y python-pip
        sudo apt install -y python-setuptools 
+       
+       #sudo apt-get install -y python3-pip
+       #pip3 install adafruit-circuitpython-ssd1306
+       #sudo apt install -y python3
+       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
+       
        cd /home/pi
        sudo python -m pip install --upgrade pip setuptools wheel
        sudo pip install Adafruit-SSD1306
@@ -187,8 +188,8 @@ KickPi-OS_Update() {
      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
      sudo apt purge -y raspberrypi-ui-mods 
      sudo apt purge -y cups cups-client cups-common cups-server-common
-     
      sudo apt-get -y upgrade
+     sudo apt-get -y update
      
      
        
@@ -1085,9 +1086,9 @@ clear
 case $CHOICE in
         
         1)
-            #Poser
+            
 	    KickPi-OS_Update
-	    KickPi-OS_64bit_pre
+	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
 	    KickPi-OS_Internet
@@ -1098,7 +1099,8 @@ case $CHOICE in
             ;;
         2)
             KickPi-OS_Update
-	    KickPi-OS_64bit_pre
+	    #KickPi-OS_64bit_pre
+	    OLED
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
@@ -1108,14 +1110,15 @@ case $CHOICE in
 	    KickPi-OS_Internet
             #KickPi-OS_Office
 	    #KickPi-OS_Video
-	    OLED
+	    
             ;;
         
         3)
            
-            OLED
+          
 	    KickPi-OS_Update
-	    KickPi-OS_64bit_pre
+	    OLED
+	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
