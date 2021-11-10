@@ -1,7 +1,8 @@
 
-sudo apt-get install -y libsdl2-2.0-0 -y libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libraspberrypi-dev
-sudo apt-get install -y libs-y dl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev 
-sudo apt-get -y install make g++
+  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
+  sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+  sudo apt-get install -y  libraspberrypi-dev
+
 
 
 
