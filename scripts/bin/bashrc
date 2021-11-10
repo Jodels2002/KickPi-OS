@@ -1,0 +1,3 @@
+# KickPi-OS Init Script starter
+
+/home/$USER/KickPi-OS/scripts/pikickme.sh

@@ -1,0 +1,3 @@
+clear
+sudo raspi-config
+p
