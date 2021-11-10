@@ -22,4 +22,6 @@ sudo cp -R /media/pi/rootfs/home/pi/pimiga/ /home/pi
       echo "       configure files ..."
       
       sudo chmod -R 777 pimiga 
-      
+      sudo cp -R /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
+      sudo cp -R /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
+      sudo cp -R /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/
