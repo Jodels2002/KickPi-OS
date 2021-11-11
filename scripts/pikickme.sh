@@ -12,8 +12,11 @@
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-
+      
+if [ -d /OLED/ ]; then
 KickPi-OS.sh
+fi
+
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
    
@@ -93,7 +96,7 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
                 
    
-#*********************************************  #OLED & LED comming soon, maybe :)  *****************************
+#*********************************************  #OLED :)  *****************************
 #**********************(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -***********
 
 
@@ -144,6 +147,11 @@ if [ ! -d /OLED/ ]; then
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        fi
+       
+       if [ -d /OLED/ ]; then
+       KickPi-OS.sh
+       fi
+       
        }
 
 #**********************************************  #Install 64 bit pre      ***************************************
@@ -151,7 +159,10 @@ if [ ! -d /OLED/ ]; then
   
   
 KickPi-OS_64bit_pre() {
+
+if [ -d /OLED/ ]; then
 update.sh
+fi
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
@@ -172,8 +183,10 @@ update.sh
 #****************************************************************************************************************
 
 KickPi-OS_Update() {
-      update.sh
 
+if [ -d /OLED/ ]; then
+      update.sh
+fi
       clear
       toilet "KickPi-OS" --metal
 
@@ -185,11 +198,11 @@ KickPi-OS_Update() {
       echo "Installing KickPi-OS Update System ..."
       echo " "
 
-     sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-     sudo apt purge -y raspberrypi-ui-mods 
-     sudo apt purge -y cups cups-client cups-common cups-server-common
-     sudo apt-get -y upgrade
-     sudo apt-get -y update
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
+      sudo apt-get -y upgrade
+      sudo apt-get -y update
      
      
        
@@ -227,7 +240,10 @@ KickPi-OS_Update() {
 #**********************************************************************************************************
 
 KickPi-OS_Tools() {
+
+if [ -d /OLED/ ]; then
 Update_Tools.sh
+fi
       clear
       toilet "KickPi-OS" --metal
 
@@ -295,7 +311,10 @@ Update_Tools.sh
 #****************************************************************************************************************
 
 KickPi-OS_Office() {
+
+if [ -d /OLED/ ]; then
       update.sh
+fi      
       clear
       toilet "KickPi-OS" --metal
 
@@ -312,7 +331,10 @@ KickPi-OS_Office() {
 #****************************************************************************************************************
 
 KickPi-OS_Video() {
+
+if [ -d /OLED/ ]; then
 Update_Grafic.sh
+fi
       clear
       toilet "KickPi-OS" --metal
 
@@ -365,7 +387,10 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 #****************************************************************************************************************
 
 KickPi-OS_Internet() {
+
+if [ -d /OLED/ ]; then
       update.sh
+fi
       clear
       toilet "KickPi-OS" --metal
       toilet -F gay Internet
@@ -398,20 +423,22 @@ KickPi-OS_Games() {
  
  KickPi-OS_Desktop() {
  
+ if [ -d /OLED/ ]; then
  KickPi-OS.sh
+ fi
  
- #if  xset q &>/dev/null; then
- setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,de,fr,it,gr,dk        
-    	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
+
+       
+    	        clear
+      	        toilet "KickPi-OS" --metal
+      	        echo " "
+      	        echo " "
 		echo "KickPI-OS ROM Operating System and Libraris" 
 		echo "Version V1.5 2020-2021 KickPi-OS "
 		echo "No Rights Reserved.  "
 		echo ""
 
-	#else 
+	
 	  
 	
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xinit
@@ -539,6 +566,7 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
         echo " "
       
 fi
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk  
 
 }
 
@@ -551,7 +579,10 @@ fi
  
    if [ ! -f /home/$USER/Amiga/amiberry ]; then
   
-  Update_Amiberry.sh  
+  if [ -d /OLED/ ]; then
+  Update_Amiberry.sh
+  fi
+  
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
      
@@ -605,7 +636,26 @@ fi
      
       Configure_Amiga() {
        
-             
+      if [ ! -d /home/$USER/Amiga/adf/sysinfo.ADF ]; then
+        clear
+      	toilet "KickPi-OS" --metal
+
+      	echo " "
+	echo " "
+        cd ~
+        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+        unzip -u ./Amiga.zip
+        rm ./Amiga.zip
+      
+      
+      else 
+        clear
+      	toilet "KickPi-OS" --metal
+
+      	echo " "
+	echo " "
+      fi
+      
       cd ~/Amiga
       mkdir /home/$USER/Amiga/conf/ 
       
@@ -627,25 +677,7 @@ fi
       
       mkdir /home/pi/Amiga/Install
            
-      if [ ! -f /home/$USER/Amiga.zip ]; then
-        clear
-      	toilet "KickPi-OS" --metal
-
-      	echo " "
-	echo " "
-      cd ~
-      cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-      unzip -u ./Amiga.zip
-      rm ./Amiga.zip
       
-      
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-
-      	echo " "
-	echo " "
-      fi
       
       cd /home/$USER/Amiga/hdf
       
@@ -723,7 +755,11 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
+
+if [ -d /OLED/ ]; then
 update.sh
+fi
+
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
 	if [ ! -d /home/$USER/games/vice/ ]; then
@@ -784,13 +820,18 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
   
 KickPi-OS_Retropie() {
+
+if [ -d /OLED/ ]; then
 Update_Retropie.sh
+fi
+
 cd
  if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
- git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
      cd /home/$USER/RetroPie-Setup/ 
- #Install Retropie/Setup Preinstall
+     
+     #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  	
 	clear
@@ -840,7 +881,11 @@ cd
       	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
-      	Update_Retropie.sh
+      	
+	if [ -d /OLED/ ]; then
+	Update_Retropie.sh
+	fi
+	
 	clear
 	toilet "KickPi-OS" --metal
       	echo " "
@@ -857,7 +902,11 @@ cd
 	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
+	
+	if [ -d /OLED/ ]; then
 	Update_Retropie.sh
+	fi
+	
 	cd ~/RetroPie/retropiemenu/
 	rm "Auto-Amiga Install.sh"
 	wget https://raw.githubusercontent.com/HoraceAndTheSpider/RetroPieAmigaSetup/master/Auto-Amiga%20Install.sh
@@ -882,7 +931,9 @@ cd
    
      
   else 
-  
+        if [ -d /OLED/ ]; then
+        Update_Retropie.sh
+        fi
       
       sudo apt install -y omxplayer chromium-codecs-ffmpeg   
       	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
@@ -936,7 +987,12 @@ cd
       	echo "Use only if you have the original!  "
       	echo "(Original Amiga, Amiga Forever,...)"
       	echo " "
-      	cd  /home/$USER/RetroPie/
+	
+	if [ -d /OLED/ ]; then
+        Update_Retropie.sh
+        fi
+      	
+	cd  /home/$USER/RetroPie/
       	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
       	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
       	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
@@ -1016,7 +1072,9 @@ cd
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
 fi     
    
-  
+  if [ -d /OLED/ ]; then
+   Update_Retropie.sh
+  fi
       
       if [ "$(getconf LONG_BIT)" == "64" ]; then
       
@@ -1039,8 +1097,11 @@ fi
         clear
       # Configure RetroPi32Bit
        
-      fi     
-     Update_Retropie.sh
+      fi  
+      
+      if [ -d /OLED/ ]; then
+      Update_Retropie.sh
+      fi
       
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
@@ -1137,8 +1198,10 @@ case $CHOICE in
 
 esac
 
-
+      if [ -d /OLED/ ]; then
       update.sh
+      fi
+      
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
@@ -1165,7 +1228,10 @@ clear
 
       		echo " "
       		echo " "
+		
+		if [ -d /OLED/ ]; then
 		KickPi-OS.sh
+		fi
 		
 if  xset q &>/dev/null; then
 cd
