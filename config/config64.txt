@@ -51,7 +51,7 @@ dtparam=i2c_arm=on
 #dtoverlay=gpio-ir,gpio_pin=17
 #dtoverlay=gpio-ir-tx,gpio_pin=18
 
-#Für die ACT-LED (gelb)
+#HDD Act Power LED Port 27
 dtoverlay=act-led,gpio=27
 
 
