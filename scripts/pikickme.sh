@@ -198,9 +198,7 @@ fi
       echo "Installing KickPi-OS Update System ..."
       echo " "
 
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
+      
       sudo apt-get -y upgrade
       sudo apt-get -y update
      
@@ -227,7 +225,9 @@ fi
       echo " "
        
        sudo update-rc.d motd remove
-       
+       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+       sudo apt purge -y raspberrypi-ui-mods 
+       sudo apt purge -y cups cups-client cups-common cups-server-common
       
        
        
