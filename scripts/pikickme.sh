@@ -695,12 +695,12 @@ fi
       
    
   
-  if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
-      cd /home/$USER/KickPi-OS/Amiga
-      unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
-      mkdir /home/$USER/Amiga/dir/AROS/
-     cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
-  fi
+  #if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
+     #  cd /home/$USER/KickPi-OS/Amiga
+     #  unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
+     #  mkdir /home/$USER/Amiga/dir/AROS/
+     #  cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+  #fi
       cd /home/$USER/Amiga/hdf
       
       cd ~/Amiga
