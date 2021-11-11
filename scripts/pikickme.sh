@@ -785,6 +785,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
 KickPi-OS_Retropie() {
 Update_Retropie.sh
+cd
  if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
  git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
