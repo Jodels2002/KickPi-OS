@@ -40,18 +40,16 @@ Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
 
 # But I definitely recommend a Raspberry 4 or Pi400
 
-Please note that the 64 bit version also works, but ... in prgogress... .
+.
 
 # Preparation:
 
 Installed Raspberry Pi OS 32/64 bit or TwisterOS using Raspberry Pi Imager
 https://www.raspberrypi.org/software/
 
-(Recommended)
-https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-01-12/2021-01-11-raspios-buster-armhf.zip
 
 
-Optional for Amiga Forever owners:
+# Optional for Amiga Forever owners:
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
 - Copy the "Shared" folder from the Amiga Forever installation
 -> "AMIGA/Shared/*here are your Amiga Forever files*"
