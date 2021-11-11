@@ -1,4 +1,3 @@
-# Install Pimiga - not for use!!!
 # B.Titze 2020
 
 # Status LED
