@@ -151,7 +151,7 @@ if [ ! -d /OLED/ ]; then
   
   
 KickPi-OS_64bit_pre() {
-
+update.sh
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
@@ -295,7 +295,7 @@ Update_Tools.sh
 #****************************************************************************************************************
 
 KickPi-OS_Office() {
-
+      update.sh
       clear
       toilet "KickPi-OS" --metal
 
@@ -365,7 +365,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 #****************************************************************************************************************
 
 KickPi-OS_Internet() {
-
+      update.sh
       clear
       toilet "KickPi-OS" --metal
       toilet -F gay Internet
@@ -723,7 +723,7 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Addons() {
-
+update.sh
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
 	if [ ! -d /home/$USER/games/vice/ ]; then
@@ -807,7 +807,7 @@ cd
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
      cd /home/$USER/RetroPie-Setup/ 
      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-     
+     Update_Retropie.sh
      sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       	cd /home/$USER/KickPi-OS/Retropie/
@@ -830,6 +830,7 @@ cd
       	echo "Use only if you have the original!  "
       	echo "(Original Amiga, Amiga Forever,...)"
       	echo " "
+	Update_Retropie.sh
       	cd  /home/$USER/RetroPie/
       	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
       	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
@@ -839,7 +840,7 @@ cd
       	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
-      	
+      	Update_Retropie.sh
 	clear
 	toilet "KickPi-OS" --metal
       	echo " "
@@ -856,7 +857,7 @@ cd
 	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
-	
+	Update_Retropie.sh
 	cd ~/RetroPie/retropiemenu/
 	rm "Auto-Amiga Install.sh"
 	wget https://raw.githubusercontent.com/HoraceAndTheSpider/RetroPieAmigaSetup/master/Auto-Amiga%20Install.sh
@@ -910,7 +911,7 @@ cd
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
-      	
+      	Update_Retropie.sh
 	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       	cd /home/$USER/KickPi-OS/Retropie/
@@ -984,7 +985,7 @@ cd
        	echo " "
       	echo " Amiberry already installed..."
       	fi
-      
+        Update_Retropie.sh
       	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
       	toilet "KickPi-OS" --metal
       	toilet -F gay C64
@@ -1039,7 +1040,7 @@ fi
       # Configure RetroPi32Bit
        
       fi     
-     
+     Update_Retropie.sh
       
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
@@ -1137,7 +1138,7 @@ case $CHOICE in
 esac
 
 
-
+      update.sh
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
