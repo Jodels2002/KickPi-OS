@@ -42,9 +42,5 @@ sudo sh -c "cat ../src/bridge/sshd-reauthorize.pam >> /etc/pam.d/sshd"
 sudo systemctl start cockpit.socket 
 sudo systemctl enable cockpit.socket
 
-echo "Installation de cockpit terminée. Accessible sur http://<adresse du serveur>:9090
+echo "Installation completed.  http://<Raspberry  Hostname or IP >:9090
 sudo reboot
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Secur
