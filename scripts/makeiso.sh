@@ -13,3 +13,9 @@ $ sudo pishrink.sh raspberry-pi.img
 ### Image verkleinern und Original behalten:
 $ sudo pishrink.sh raspberry-pi.img raspberry-pi_pishrink.img
 
+
+
+# Retropei Manager
+
+
+https://libraries.io/github/botolo78/RetroPie-Manager
