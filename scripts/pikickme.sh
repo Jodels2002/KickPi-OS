@@ -646,7 +646,10 @@ fi
         cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
         unzip -u ./Amiga.zip
         rm ./Amiga.zip
-      
+        
+      sudo python3 -m pip install -U pip
+      sudo python3 -m pip install -U setuptools
+      sudo pip install amitools
       
       else 
         clear
@@ -674,8 +677,25 @@ fi
       xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/dir/WB
       xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/dir/WB
      fi 
+       mkdir /home/pi/Amiga/Install
+      if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "full" --metal
       
-      mkdir /home/pi/Amiga/Install
+      cd /home/pi/Amiga/Install
+      
+      
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      
+        else 
+      echo " "
+      
+      fi
+      
+      
            
       
       
@@ -998,9 +1018,9 @@ cd
       	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
       	rm -r /home/$USER/RetroPie/RetroPieBIOS/
       	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/A500.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/A1200.rom
       	
 	clear
       	toilet "KickPi-OS" --metal
