@@ -19,6 +19,9 @@ $ sudo pishrink.sh raspberry-pi.img raspberry-pi_pishrink.img
 - HTMLTemplate: https://html5up.net/hyperspace
 - https://www.fabianflu.ch/raspberry-pi-webradio-extended-edition/ 
 
+Webmin
+https://raspberrytips.com/install-webmin-raspberry-pi/
+
 
 https://libraries.io/github/botolo78/RetroPie-Manager
 
