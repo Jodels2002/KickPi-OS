@@ -16,10 +16,13 @@
 if [ -d /OLED/ ]; then
 KickPi-OS.sh
 fi
-
+sudo chmod -R 777 /home/$USER/KickPi-OS
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
-   
+
+      
+      cd /home/$USER/KickPi-OS/
+         
 
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -216,7 +219,9 @@ fi
 
       echo " "
       echo " "
-      # Update is running
+      echo "  First installation "
+      
+      
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       else 
@@ -224,8 +229,8 @@ fi
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      echo "  First installation "
-      echo " "
+      
+      echo "Update is running "
        
        
       
@@ -491,13 +496,7 @@ KickPi-OS_Games() {
   
       
       
-      sudo chmod -R 777 /home/$USER/KickPi-OS
-      sudo chmod -R 777 /home/$USER/.config
-      sudo chmod -R 777 ~/.local
-      sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
-      sudo rm -rf /home/$USER/.cache
-      cd /home/$USER/KickPi-OS/
-      cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+      
 
        if [ "$(getconf LONG_BIT)" == "64" ]; then
        
@@ -566,7 +565,8 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
         echo " "
       
 fi
-setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk  
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
+cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
 }
 
@@ -1210,11 +1210,10 @@ esac
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
       
+      sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
       touch ~/.hushlogin
       #sudo rm -rf ~/amigafonts/
-      
-      
       
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
