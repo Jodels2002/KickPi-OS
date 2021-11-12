@@ -898,9 +898,9 @@ cd
       	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
       	rm -r /home/$USER/RetroPie/RetroPieBIOS/
       	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/kick34005.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/kick40063.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/kick40068.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/A500.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
+      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/A1200.rom
       	
 	if [ -d /OLED/ ]; then
 	Update_Retropie.sh
