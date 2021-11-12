@@ -23,16 +23,18 @@ $ sudo pishrink.sh raspberry-pi.img raspberry-pi_pishrink.img
 https://libraries.io/github/botolo78/RetroPie-Manager
 
 #Cockpit: 
+cd
+
 rmdir --ignore-fail-on-non-empty cockpit-0.99
 
-sudo apt-get install -y libpam-dev libkeyutils-dev glib-networking
+sudo apt-get install -y libpam-dev libkeyutils-dev glib-networking npm
 sudo apt-get install -y autoconf intltool libglib2.0-dev libsystemd-journal-dev libjson-glib-dev libpolkit-agent-1-dev libkrb5-dev libssh-dev
 
 wget https://github.com/cockpit-project/cockpit/archive/0.99.zip && unzip 0.99.zip
+chmod -R 777 cockpit-0.99
 cd cockpit-0.99
-mkdir build
-cd build
-../autogen.sh --disable-pcp --disable-doc
+
+./autogen.sh --disable-pcp --disable-doc
 
 make
 sudo make install
@@ -44,3 +46,4 @@ sudo systemctl enable cockpit.socket
 
 echo "Installation completed.  http://<Raspberry  Hostname or IP >:9090
 sudo reboot
+
