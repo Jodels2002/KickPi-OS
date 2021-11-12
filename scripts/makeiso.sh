@@ -16,6 +16,35 @@ $ sudo pishrink.sh raspberry-pi.img raspberry-pi_pishrink.img
 
 
 # Retropei Manager
+- HTMLTemplate: https://html5up.net/hyperspace
+- https://www.fabianflu.ch/raspberry-pi-webradio-extended-edition/ 
 
 
 https://libraries.io/github/botolo78/RetroPie-Manager
+
+#Cockpit: 
+rmdir --ignore-fail-on-non-empty cockpit-0.99
+
+sudo apt-get install -y libpam-dev libkeyutils-dev glib-networking
+sudo apt-get install -y autoconf intltool libglib2.0-dev libsystemd-journal-dev libjson-glib-dev libpolkit-agent-1-dev libkrb5-dev libssh-dev
+
+wget https://github.com/cockpit-project/cockpit/archive/0.99.zip && unzip 0.99.zip
+cd cockpit-0.99
+mkdir build
+cd build
+../autogen.sh --disable-pcp --disable-doc
+
+make
+sudo make install
+sudo cp ../src/bridge/cockpit.pam.insecure /etc/pam.d/cockpit
+sudo sh -c "cat ../src/bridge/sshd-reauthorize.pam >> /etc/pam.d/sshd"
+
+sudo systemctl start cockpit.socket 
+sudo systemctl enable cockpit.socket
+
+echo "Installation de cockpit terminée. Accessible sur http://<adresse du serveur>:9090
+sudo reboot
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Secur
