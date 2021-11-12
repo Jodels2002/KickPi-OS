@@ -202,35 +202,36 @@ fi
       echo " "
 
       
-      sudo apt-get -y upgrade
+     
       sudo apt-get -y update
-      sudo update-rc.d motd remove
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
+      
      
        
       
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
-#
+      rm /home/$USER/Amiga/conf/retroarch.cfg
+      
       clear
       toilet "KickPi-OS" --metal
 
       echo " "
       echo " "
-      echo "  First installation "
+      echo "Update is running "
       
       
-      rm /home/$USER/Amiga/conf/retroarch.cfg
+      
       
       else 
       clear
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      
-      echo "Update is running "
+      echo "  First installation "
+      sudo update-rc.d motd remove
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
        
        
       
