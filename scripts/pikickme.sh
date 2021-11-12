@@ -217,9 +217,12 @@ fi
 
       echo " "
       echo " "
-      echo "Update is running "
-      
-      
+      echo "  First installation "     
+      sudo update-rc.d motd remove
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
+             
       
       
       else 
@@ -227,12 +230,7 @@ fi
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      echo "  First installation "
-      sudo update-rc.d motd remove
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
-       
+      echo "Update is running "      
        
       
        
