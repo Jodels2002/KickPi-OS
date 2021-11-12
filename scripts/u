@@ -9,6 +9,8 @@ sudo rm -rf ~/KickPi-OS
 LED_off
 sudo dpkg --configure -a
 sudo apt -y --fix-broken install
+sudo apt -f -y install
+
 wget -q --spider http://google.com
 
  if [ $? -eq 0 ]; then
