@@ -22,7 +22,7 @@ amiberry.active_priority=2
 amiberry.kbd_led_num=1
 ; common
 use_gui=no
-kickstart_rom_file=/home/pi/Amiga/kickstarts/kick40068.rom
+kickstart_rom_file=/home/$USER/RetroPie/BIOS/kick40068.A1200
 kickstart_rom_file_id=1483A091,KS ROM v3.1 (A1200)
 kickstart_ext_rom_file=
 ide_mb_rom_file=:ENABLED
