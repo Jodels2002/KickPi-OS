@@ -204,8 +204,9 @@ fi
       
      
       sudo apt-get -y update
-      
-     
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common     
        
       
       # Update allways Routine
@@ -219,9 +220,7 @@ fi
       echo " "
       echo "  First installation "     
       sudo update-rc.d motd remove
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
+      
              
       
       
