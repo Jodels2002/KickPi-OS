@@ -710,6 +710,7 @@ fi
       
      
       clear
+      toilet "ClassicWB" --metal
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
