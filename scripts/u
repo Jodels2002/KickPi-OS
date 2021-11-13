@@ -16,12 +16,7 @@ wget -q --spider http://google.com
  if [ $? -eq 0 ]; then
 
 
-LED_front
-sudo apt-get -y update
-LED_off
-sudo apt-get -y upgrade
-sudo apt -y autoremove
-LED
+
 sudo rm -rf /home/$USER/KickPi-OS/
 sudo rm -rf /home/$USER/.KickPi-OS/
 
