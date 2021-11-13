@@ -1227,6 +1227,7 @@ esac
       sudo cp  /home/$USER/KickPi-OS/config/login /etc/pam.d/
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
+      sudo rm -rf ~/.KickPi-OS
       
       sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
