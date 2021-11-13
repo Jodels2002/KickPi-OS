@@ -301,7 +301,10 @@ fi
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
       
-
+      wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
+      sudo dpkg -i webmin_1.930_all.deb
+      sudo apt -f -y install
+      
       else 
       clear
       toilet "KickPi-OS" --metal
