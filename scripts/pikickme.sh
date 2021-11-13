@@ -114,21 +114,26 @@ if [ ! -d /OLED/ ]; then
       
        
        
-       sudo apt install -y python3
-       sudo apt-get install -y python3-pip
-       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306       
-       #sudo apt install -y python-dev
-       #sudo apt install -y python-smbus i2c-tools
-       #sudo apt install -y python-pil
-       #sudo apt install -y python-pip
-       #sudo apt install -y python-setuptools 
-            
-       cd /home/pi
-       #sudo python -m pip install --upgrade pip setuptools wheel
-       #sudo pip install Adafruit-SSD1306       
+       sudo apt install -y python-dev
+       sudo apt install -y python-smbus i2c-tools
+       sudo apt install -y python-pil
+       sudo apt install -y python-pip
+       sudo apt install -y python-setuptools 
+       sudo apt install -y python-dev
        
-       sudo python3 -m pip install --upgrade pip setuptools wheel
-       sudo pip3 install Adafruit-SSD1306
+       #sudo apt-get install -y python3-pip
+       #pip3 install adafruit-circuitpython-ssd1306
+       #sudo apt install -y python3
+       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
+       
+       cd /home/pi
+       sudo python -m pip install --upgrade pip setuptools wheel
+       sudo pip install Adafruit-SSD1306
+       sudo python -m pip install --upgrade pip setuptools wheel
+   
+       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
        
    
        sudo cp -rf /home/pi/KickPi-OS/OLED/ /
@@ -492,7 +497,7 @@ KickPi-OS_Games() {
     fi      
   
            cd ~/KickPi-OS/
-	   sudo unzip ~/KickPi-OS/.pac/data64.pac
+	   sudo unzip ~/KickPi-OS/.pac/data.pac
 	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
            cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
                 
@@ -1159,7 +1164,7 @@ clear
 case $CHOICE in
         
         1)
-            
+            OLED	    
 	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
@@ -1171,9 +1176,9 @@ case $CHOICE in
             
             ;;
         2)
-            KickPi-OS_Update
+            OLED
+	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
-	    OLED
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
@@ -1188,9 +1193,8 @@ case $CHOICE in
         
         3)
            
-          
+            OLED
 	    KickPi-OS_Update
-	    OLED
 	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
