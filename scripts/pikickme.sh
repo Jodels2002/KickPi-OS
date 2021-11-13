@@ -202,15 +202,16 @@ fi
       echo " "
       echo "Installing KickPi-OS Update System ..."
       echo " "
-
-      
-     
-      sudo apt-get -y update
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common     
-       
-      
+      	
+      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      	sudo apt purge -y raspberrypi-ui-mods man*
+      	sudo apt purge -y cups cups-client cups-common cups-server-common     
+       	LED_front
+	sudo apt-get -y update
+	LED_off
+	sudo apt-get -y upgrade
+	sudo apt -y autoremove
+	LED      
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
@@ -1239,8 +1240,8 @@ esac
       sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
       touch ~/.hushlogin
-      #sudo rm -rf ~/amigafonts/
-      
+      sudo rm -rf ~/amigafonts/
+      sudo apt -f -y install
       sudo apt-get -y autoremove
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
