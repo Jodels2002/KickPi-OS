@@ -491,24 +491,11 @@ KickPi-OS_Games() {
         mkdir $HOME/Videos
     fi      
   
-      
-      
-      
-
-       if [ "$(getconf LONG_BIT)" == "64" ]; then
        
-           sudo unzip ~/KickPi-OS/.pac/.data64.pac
+           sudo unzip ~/KickPi-OS/.pac/data64.pac
 	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
            cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
-          
-          sudo chmod -R 777 /home/$USER/.config/xfce4/panel/
-	  
-	  else
-	   sudo unzip ~/KickPi-OS/.pac/.data.pac
-	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
-           cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
-	  fi
-
+                
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
