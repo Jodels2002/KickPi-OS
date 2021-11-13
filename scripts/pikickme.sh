@@ -491,8 +491,8 @@ KickPi-OS_Games() {
         mkdir $HOME/Videos
     fi      
   
-       
-           sudo unzip ~/KickPi-OS/.pac/data64.pac
+           cd ~/KickPi-OS/
+	   sudo unzip ~/KickPi-OS/.pac/data64.pac
 	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
            cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
                 
