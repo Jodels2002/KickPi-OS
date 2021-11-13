@@ -7,7 +7,9 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc  
-            
+      
+       LED
+       
       clear
       toilet "KickPi-OS" --metal
       echo " "
@@ -125,7 +127,7 @@ if [ ! -d /OLED/ ]; then
        #pip3 install adafruit-circuitpython-ssd1306
        #sudo apt install -y python3
        #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
-       
+       LED_off
        cd /home/pi
        sudo python -m pip install --upgrade pip setuptools wheel
        sudo pip install Adafruit-SSD1306
@@ -154,7 +156,7 @@ if [ ! -d /OLED/ ]; then
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        fi
-       
+       LED
        if [ -d /OLED/ ]; then
        KickPi-OS.sh
        fi
@@ -338,6 +340,7 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Video() {
+LED_off
 
 if [ -d /OLED/ ]; then
 Update_Grafic.sh
@@ -388,6 +391,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       echo " "
       
       #sudo apt install -y  kdenlive kdenlive-data inkscape
+      LED
 }
 
 #*********************************************  #Internet  **********************************************
@@ -429,6 +433,7 @@ KickPi-OS_Games() {
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
+ LED_off
  
  if [ -d /OLED/ ]; then
  KickPi-OS.sh
@@ -449,7 +454,7 @@ KickPi-OS_Games() {
 	  
 	
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xinit
-      
+      LED
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
     
@@ -476,7 +481,7 @@ KickPi-OS_Games() {
         echo " "
       # Configured
   fi    
-          
+      LED    
  
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
@@ -556,6 +561,7 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
 fi
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
 cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+
 
 }
 
