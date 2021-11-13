@@ -714,12 +714,11 @@ fi
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
-      
-      mkdir /home/pi/Amiga/dir/System_ADVSP
+            mkdir /home/pi/Amiga/dir/System_ADVSP
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       
-      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_ADVSP/System/T/
+      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
@@ -734,7 +733,7 @@ fi
       mkdir /home/pi/Amiga/dir/System_P96
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_P96/System/T/
+      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
