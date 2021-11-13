@@ -687,9 +687,11 @@ fi
       mkdir /home/pi/Amiga/Install/
       cd /home/pi/Amiga/Install
       
-      
+      clear
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      clear
       unzip -u ./ClassicWB_UAE_v28.zip
+      clear
       mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/Work
       
         else 
@@ -707,6 +709,7 @@ fi
       if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
       
      
+      clear
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
@@ -715,12 +718,12 @@ fi
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       
-      cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
+      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_ADVSP/System/T/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_ADVSP/System/
+      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
       
       
       echo " "
@@ -730,7 +733,7 @@ fi
       mkdir /home/pi/Amiga/dir/System_P96
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/System/T/
+      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_P96/System/T/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
@@ -738,7 +741,7 @@ fi
       
       cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
       cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_P96/System/    
+      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/    
     
       else
       clear
