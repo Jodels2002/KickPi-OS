@@ -220,20 +220,19 @@ fi
 
       echo " "
       echo " "
-      echo "  First installation "     
+           
       sudo update-rc.d motd remove
-      
-             
-      
-      
+      echo "Update is running "             
+      echo " "
+      echo " "      
       else 
       clear
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      echo "Update is running "      
-       
-      
+      echo "  First installation "
+      echo " "
+      echo " "      
        
        
       
