@@ -512,8 +512,7 @@ KickPi-OS_Games() {
            cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
                 
       sudo chmod -R 777 /home/$USER/KickPi-OS
-      sudo chmod -R 777 /home/$USER/.local
-      sudo chmod -R 777 /home/$USER/.config
+      
       sudo rm -rf /home/$USER/.cache
       # Fresh install Amiga Desktop
     
@@ -557,7 +556,8 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
-           
+      sudo chmod -R 777 /usr/share/images/desktop-base/default
+      sudo chmod -R 777 /usr/share/images/desktop-base/  
       else 
         clear
       	toilet "KickPi-OS" --metal
@@ -1250,8 +1250,8 @@ esac
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
-
-clear
+      
+      clear
       		toilet "KickPi-OS" --metal
 
       		echo " "
