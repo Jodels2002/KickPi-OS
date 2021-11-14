@@ -68,5 +68,6 @@ if [ "$REVCODE" = "9000C1" ]; then
 fi
 
 sudo chmod -R 777 /home/$USER/amiberry
+cp -rf /home/$USER/amiberry/amiberry  /home/$USER/amiberry/amiberry_old
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
 
