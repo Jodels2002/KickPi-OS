@@ -1,2 +1,2 @@
 cd /OLED
-python loop.py
+python3 loop.py
