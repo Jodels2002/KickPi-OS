@@ -1232,7 +1232,7 @@ esac
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       sudo cp  /home/$USER/KickPi-OS/config/rc.local /etc/
-      sudo cp  /home/$USER/KickPi-OS/config/login /etc/pam.d/
+     
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.KickPi-OS
