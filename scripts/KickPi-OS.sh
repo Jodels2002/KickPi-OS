@@ -1,2 +1,2 @@
 cd /OLED
-python KickPi-OS.py
+python3 KickPi-OS.py
