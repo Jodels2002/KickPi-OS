@@ -1,3 +1,3 @@
 cd /OLED
-python Update_Tools.py
+python3 Update_Tools.py
 cd
