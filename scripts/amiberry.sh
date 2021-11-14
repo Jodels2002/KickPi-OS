@@ -1,6 +1,6 @@
 
 
 cd /OLED
-python Amiberry.py
+python3 Amiberry.py
 cd /home/pi/Amiga/
 ./amiberry
