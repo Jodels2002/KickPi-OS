@@ -382,9 +382,6 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       echo " "
       echo " Gimp is already installed..."
       echo " "
-     
-      
-     
           
       fi     
        
@@ -588,7 +585,10 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
   
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
-     
+  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
+  sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
+  sudo apt-get install -y  libraspberrypi-dev
+
  
  	if [ "$(getconf LONG_BIT)" == "64" ]; then
  
