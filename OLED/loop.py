@@ -77,10 +77,9 @@ while True:
     cmd = "df -h | awk '$NF==\"/\"{printf \"%s\", $5}'"
     Disk = subprocess.check_output(cmd, shell = True )
     
-    cmd = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
-    Temperature = subprocess.check_output(cmd, shell = True )
-    
-   
+    #cmd = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
+    #Temperature = subprocess.check_output(cmd, shell = True )
+    Temperature = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
     # Icon Wifi
     #draw.text((x+0, top+2), unichr(61931),  font=font2, fill=200)
     # Text IP addresss  
