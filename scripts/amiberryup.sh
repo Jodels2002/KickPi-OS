@@ -1,15 +1,16 @@
-
-  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
-  sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-  sudo apt-get install -y  libraspberrypi-dev
-
+#!/bin/bash
+# Install KickPi-OS
+# B.Titze 2021
 
 
-
-sudo rm -rf amiberry
+Update_Amiberry.sh
+  
+  
 
  cd
-      git clone -b dev https://github.com/midwan/amiberry
+ sudo rm -rf amiberry
+ 
+ git clone -b dev https://github.com/midwan/amiberry
       # git clone https://github.com/midwan/amiberry
       cd amiberry
 
