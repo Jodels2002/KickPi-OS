@@ -556,7 +556,7 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
-      sudo chmod -R 777 /usr/share/images/desktop-base/default
+   
       sudo chmod -R 777 /usr/share/images/desktop-base/  
       else 
         clear
