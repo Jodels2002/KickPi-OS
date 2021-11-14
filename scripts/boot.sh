@@ -1,2 +1,2 @@
 cd /OLED
-python boot.py
+python3 boot.py
