@@ -110,8 +110,12 @@ while True:
     
    # *************  Draw Pimiga Logo  ******************************
    
-    
-    
+image = Image.open('AmigaLogo.pgm').convert('1')
+draw = ImageDraw.Draw(image)
+disp.image(image)
+disp.display()
+time.sleep(.4)    
+
     End = subprocess.check_output(cmd, False )
    
 
