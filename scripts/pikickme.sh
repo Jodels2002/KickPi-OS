@@ -6,8 +6,7 @@
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      
-      
+      sudo cp /home/$USER/KickPi-OS /home/$USER/.KickPi-OS      
        LED
        
       clear
@@ -1237,7 +1236,7 @@ esac
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.KickPi-OS
       
-      sudo cp -rf ~/KickPi-OS ~/.KickPi-OS
+      
       sudo rm -rf ~/KickPi-OS
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
