@@ -6,7 +6,7 @@
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc  
+      
       
        LED
        
@@ -1227,7 +1227,7 @@ esac
       
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
-      cp  /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+      cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       sudo cp  /home/$USER/KickPi-OS/config/rc.local /etc/
       sudo cp  /home/$USER/KickPi-OS/config/login /etc/pam.d/
       sudo rm -rf ~/.local/share/Trash/
