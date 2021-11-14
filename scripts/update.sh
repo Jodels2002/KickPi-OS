@@ -1,4 +1,4 @@
 cd /OLED
-python Update.py
+python3 Update.py
 
 cd
