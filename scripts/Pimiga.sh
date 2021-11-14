@@ -1,4 +1,4 @@
 cd /OLED
-python pimiga.py
+python3 pimiga.py
 
 cd
