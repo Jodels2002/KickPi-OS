@@ -1,7 +1,7 @@
 #!/bin/bash
 #***********************************************  #KickPi-OS install script  ***********************************
 # Install KickPi-OS
-# B.Titze 2021
+# B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
