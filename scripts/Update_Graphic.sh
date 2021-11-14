@@ -1,3 +1,3 @@
 cd /OLED
-python Update_Graphic.py
+python3 Update_Graphic.py
 cd
