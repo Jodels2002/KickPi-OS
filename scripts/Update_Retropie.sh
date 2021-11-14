@@ -1,3 +1,3 @@
 cd /OLED
-python Update_Retropie.py
+python3 Update_Retropie.py
 cd
