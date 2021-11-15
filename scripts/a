@@ -3,5 +3,5 @@
 cd /OLED
 python Amiberry.py
 cd /home/pi/Amiga/
-./amiberry
-#./amiberry  --config conf/A1200.uae -G
+./amiberry_sdl --config conf/default.uae -G
+#./amiberry  --config conf/default.uae -G
