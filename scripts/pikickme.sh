@@ -6,7 +6,7 @@
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo cp -rf /home/$USER/KickPi-OS /home/$USER/.KickPi-OS      
+      #sudo cp -rf /home/$USER/KickPi-OS /home/$USER/.KickPi-OS      
        LED
        
       clear
@@ -413,7 +413,7 @@ fi
       echo " "
       
        
-      sudo apt install -y transmission chromium-browser
+      sudo apt install -y transmission firefox-esr
 }
 #*********************************************  #Games  **********************************************
 #****************************************************************************************************************
@@ -1238,8 +1238,6 @@ esac
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/.KickPi-OS
-      
-      
       sudo rm -rf ~/KickPi-OS
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
