@@ -7,13 +7,13 @@ The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
 
 Software that is installed and pre-configured:
 
-Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
+Amiberry,Linux Desktop, Retropie ...
 * For licensing reasons, the Workbench files and Kickstart Rom files are not included!
 
 
 #Requirements:
 
-- Raspberry Pi OS 32 bit / 64 bit
+- Raspberry Pi 4
 
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
@@ -44,8 +44,9 @@ Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
 
 # Preparation:
 
-Installed Raspberry Pi OS 32/64 bit or TwisterOS using Raspberry Pi Imager
-https://www.raspberrypi.org/software/
+Installed Raspberry Pi OS64 bit 
+
+http://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-11-08/2021-10-30-raspios-bullseye-arm64.zip
 
 
 
@@ -83,14 +84,4 @@ https://github.com/midwan/amiberry
 RetroPie
 https://github.com/RetroPie
 
-PiKiss
-https://github.com/jmcerrejon/PiKISS
 
-
-Source of Game:
-
-Internet Archive Archive.org
-
-https://amigaland.de/1318-2
-
-All games are subject to the copyrights of the respective manufacturer, Amigaland.de has a license for all games offered here, which allows these Amiga games to be offered for free download. These games are for private use only and may not be used commercially! 
