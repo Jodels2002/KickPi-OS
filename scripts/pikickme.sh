@@ -88,9 +88,9 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS       (recommended)            (ca. 20 min)"
-	 2 "Install KickPi-OS       + with RetroPie   	     (ca. 30 min)"
-         3 "Install KickPi-OS       all                      (ca. 50 min)")
+OPTIONS=(1 "Update KickPi-OS    ( use this for updating!)                 "
+	 2 "Install KickPi-OS     Basic        	              (ca. 30 min)"
+         3 "Install KickPi-OS     all ( Retropie, Office...)  (ca. 50 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -1181,11 +1181,11 @@ case $CHOICE in
             OLED	    
 	    KickPi-OS_Update
 	    KickPi-OS_64bit_pre
-	    KickPi-OS_Desktop
-            KickPi-OS_Tools
-	    KickPi-OS_Internet
-            KickPi-OS_Amiberry
-            Configure_Amiga
+	    #KickPi-OS_Desktop
+            #KickPi-OS_Tools
+	    #KickPi-OS_Internet
+            #KickPi-OS_Amiberry
+            #Configure_Amiga
         
             
             ;;
@@ -1197,7 +1197,7 @@ case $CHOICE in
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
-            KickPi-OS_Retropie
+            #KickPi-OS_Retropie
 	    KickPi-OS_Addons
 	    KickPi-OS_Internet
             #KickPi-OS_Office
