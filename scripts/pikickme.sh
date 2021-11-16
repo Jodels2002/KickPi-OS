@@ -1237,8 +1237,10 @@ esac
      
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
+      sudo rm -rf ~/.mozilla
       sudo rm -rf ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
+      
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
       sudo apt -f -y install
