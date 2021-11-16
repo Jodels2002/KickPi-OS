@@ -212,7 +212,7 @@ fi
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       	sudo apt purge -y raspberrypi-ui-mods man*
       	sudo apt purge -y cups cups-client cups-common cups-server-common     
-       	LED_front
+       	LED
 	sudo apt-get -y update
 	LED_off
 	sudo apt-get -y upgrade
