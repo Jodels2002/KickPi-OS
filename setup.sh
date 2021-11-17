@@ -1,7 +1,24 @@
 #!/bin/bash
 # Assign >NIL:  Install KickPi-OS
 # Assign >NIL:  B.Titze 2021
+
+#******************************************** #todo ************* ********************************************
+#  - Retropie Amiga - rm CDTV7CD32
+#  - 
+#  - Pimiga zip & upgrde MF -> Menu
+#
+#  - RClone Rsync-> update always job - Video Tutorials & more
+#  -  Speed up Cronjobs & more
+
+
+
+
 #******************************************** #startup-sequence  :-) ************* ********************************************
+
+
+
+
+
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 clear
