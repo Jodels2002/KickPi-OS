@@ -3,7 +3,6 @@
 # Install KickPi-OS
 # B.Titze 2021
 
-sudo chmod -R 777 /usr/local/bin/
 pimigainst.sh
 clear
       toilet "KickPi-OS" --metal
@@ -19,15 +18,19 @@ clear
 sudo mkdir /home/pi/pimiga/
 sudo mkdir /home/pi/pimiga/disks/
 
-sudo rsync --info=progress2 -auvz /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga/disks/
+sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga/disks/
 sudo chmod -R 777 /home/pi/pimiga
  
   Pimiga.sh   
       clear
+      echo " "
+      echo " "
       echo " copy finished "
       echo "      ..configure files ..."
       
-      sudo chmod -R 777 pimiga 
+      sudo chmod -R 777 /home/pi/pimiga/
+      echo " "
+      echo " "
       echo "      ready ..."
       
       
