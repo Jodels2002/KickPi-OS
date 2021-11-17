@@ -22,6 +22,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          c "Boot to Console          "
          u "Update KickPi-OS         "
          n "Update Amiberry          "
+         m "Import Pimiga            "  
          s "Shutdown                 ")
         
 
@@ -129,6 +130,13 @@ case $CHOICE in
             clear
             u
             ;;  
+            
+          m)
+            #update
+            clear
+            Pimiga-imp.sh
+            ;;  
+            
           n)
             #update
             clear
