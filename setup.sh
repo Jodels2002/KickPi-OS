@@ -164,6 +164,11 @@ fi
  sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
  sudo cp -R /home/$USER/KickPi-OS/config/splash/Booting.png /etc/systemd/system/Booting.png
  sudo systemctl enable splash
+ 
+ sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/update_allways.service
+ sudo systemctl enable update_allways
+ 
+ 
  sudo cp -R /boot/cmdline.txt /home/pi/Documents/cmdline.txt
  sudo chmod -R 777 /home/pi/Documents/cmdline.txt
  
