@@ -1241,6 +1241,7 @@ esac
       sudo rm -rf ~/.mozilla
       sudo rm -rf ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
+      sudo rm -rf ~/RetroPie-Setup/tmp/swap
       
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
