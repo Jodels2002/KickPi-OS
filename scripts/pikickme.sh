@@ -237,10 +237,11 @@ fi
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      echo "  First installation "
+      echo "Update is running "
       echo " "
-      echo " "      
-       
+      echo "reconfigure sound "      
+      echo " "
+      echo " " 
        
       
       fi
