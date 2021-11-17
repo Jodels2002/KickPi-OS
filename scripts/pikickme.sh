@@ -185,7 +185,7 @@ fi
 	sudo apt-get -y install pulseaudio
 	sudo /etc/init.d/alsa-utils reset
 	sudo apt-get -y install pi-bluetooth
-	sudo apt-get -y install bluez bluez-firmware
+	sudo apt-get -y install bluez bluez-firmware baobab 
 	sudo usermod -G bluetooth -a pi
 
   fi
