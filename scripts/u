@@ -28,6 +28,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
       sudo cp -rf /home/$USER/KickPi-OS /home/$USER/.KickPi-OS    
       LED_off
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+        sudo cp -f -R /home/$USER/KickPi-OS/scripts/.bashrc /usr/local/bin
       sudo chmod -R 777 /usr/local/bin
       /home/$USER/KickPi-OS/scripts/pikickme.sh
  else
