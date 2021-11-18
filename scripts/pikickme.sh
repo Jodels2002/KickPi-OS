@@ -239,7 +239,7 @@ fi
       echo " "
       echo "Update is running "
       echo " "
-      echo "reconfigure sound "      
+      echo " System optimized :) "
       echo " "
       echo " " 
        
