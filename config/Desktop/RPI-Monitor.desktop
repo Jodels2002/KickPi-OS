@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=RPI-Monitor
+Comment=
+Icon=novell-button
+URL=https://localhost:10000/sysinfo.cgi?xnavigation=1
