@@ -6,7 +6,7 @@
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      #sudo cp -rf /home/$USER/KickPi-OS /home/$USER/.KickPi-OS      
+      sudo mv /usr/local/bin/uk /usr/local/bin/u     
        LED
        
       clear
