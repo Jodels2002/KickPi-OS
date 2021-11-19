@@ -2,7 +2,7 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
-sudo raspi-config nonint do_expand_rootfs
+
 LED
 update.sh
 sudo rm -rf ~/KickPi-OS
