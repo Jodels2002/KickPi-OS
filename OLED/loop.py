@@ -107,7 +107,7 @@ while True:
   # Display Monitor.
     disp.image(image)
     disp.display()
-    time.sleep(8)
+    time.sleep(12)
     
    # *************  Draw Pimiga Logo  ******************************
    
@@ -116,7 +116,7 @@ while True:
     draw = ImageDraw.Draw(image)
     disp.image(image)
     disp.display()
-    time.sleep(4)
+    time.sleep(8)
     
     # Display Logo till next cronjob
     image = Image.open('AmigaLogo.pgm').convert('1')
