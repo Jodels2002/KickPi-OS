@@ -1,14 +1,14 @@
 #!/bin/bash
 # Install KickPi-OS
 # B.Titze 2021
-
+sudo apt-get install -y libraspberrypi-dev
 
 Update_Amiberry.sh
   
   
 
- cd
- sudo rm -rf amiberry
+ cd /home/pi/Amiga/Install/
+
  
  git clone -b dev https://github.com/midwan/amiberry
       # git clone https://github.com/midwan/amiberry
@@ -68,7 +68,8 @@ if [ "$REVCODE" = "9000C1" ]; then
 
 fi
 
+
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/$USER/amiberry/amiberry_old
-cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/ 
-
+cp -rf /home/pi/Amiga/Install/amiberry/amiberry  /home/$USER/Amiga/ 
+sudo rm -rf /home/pi/Amiga/Install/amiberry
