@@ -505,9 +505,9 @@ KickPi-OS_Games() {
     fi      
   
            cd ~/KickPi-OS/
-	   sudo unzip ~/KickPi-OS/.pac/data.pac
-	   cp -rf ~/KickPi-OS/.data/.config/ /home/$USER/
-           cp -rf ~/KickPi-OS/.data/.local/ /home/$USER/ 
+	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
+	   cp -rf /home/$USER/KickPi-OS/.data/.config/ /home/$USER/
+           cp -rf /home/$USER/KickPi-OS/.data/.local/ /home/$USER/ 
                 
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
