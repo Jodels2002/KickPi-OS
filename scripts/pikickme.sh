@@ -150,7 +150,7 @@ if [ ! -d /OLED/ ]; then
        sudo chmod -R 777 /usr/local/bin/
        sudo chmod -R 777 /etc/rc.local
        sudo chmod -R 777 /home/pi/.bashrc
-       (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+      # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
        
        else 
        clear
@@ -304,9 +304,9 @@ fi
       cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
       
-      wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
-      sudo dpkg -i webmin_1.930_all.deb
-      sudo apt -f -y install
+      #wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
+      #sudo dpkg -i webmin_1.930_all.deb
+      #sudo apt -f -y install
       
       else 
       clear
