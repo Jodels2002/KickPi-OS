@@ -1,3 +1,31 @@
+# https://www.piprojects.net/usb-bootstick-selbst-erstellen/
+
+cd
+sudo  apt-get install syslinux
+syslinux --mbr --active --directory /boot/syslinux/ --install /dev/sdb #im Beispiel wäre der USB Stick sdb
+
+#syslinux.cfg
+#DEFAULT vesamenu.c32 # ist nötig damit man weiter untenMENU BACKGROUND ein Bild als Hintergrund einfügen kann
+#PROMPT 0
+#MENU TITLE PiProjects Tech-CD v1.0 # könnt Ihr ändern in einen Titel der euch gefällt
+#MENU BACKGROUND splash.jpg # Das besagte Bild
+#TIMEOUT 60 # nach welcher Zeit automatisch von HDD gestartet werden soll
+#MENU WIDTH 78 # Breite des Menüs
+#MENU ROWS 14 # Zeilen für die Auswahl
+#MENU TIMEOUTROW 17 # Zeile in der die Timeout Zeit angezeigt wird
+#MENU TABMSGROW 18 #
+#MENU CMDLINEROW 18 #
+#MENU HELPMSGROW 24 # Hilfsanzeige mit Infos zur jeweiligen auswahl
+#MENU HELPMSGENDROW 25
+#MENU IMMEDIATE
+
+
+
+
+
+
+
+
 https://partclone.org/
 
 partclone.dd -d -s /dev/hda1 -o hda1.dd.img
