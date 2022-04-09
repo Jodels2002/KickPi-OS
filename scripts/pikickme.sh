@@ -514,7 +514,6 @@ KickPi-OS_Games() {
       sudo rm -rf /home/$USER/.cache
       # Fresh install Amiga Desktop
     
-if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
 
       cd /usr/share/icons/
       
@@ -523,16 +522,9 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-        echo " System optimized :) "
-        echo " "
-fi     
 
-if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
+
+
       cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
       clear
@@ -556,15 +548,7 @@ if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
    
       sudo chmod -R 777 /usr/share/images/desktop-base/  
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-        echo " Amiga System look optimized :) "
-        echo " "
-      
-fi
+
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
 cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
