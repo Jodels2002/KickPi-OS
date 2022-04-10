@@ -108,7 +108,17 @@ CHOICE=$(dialog --clear \
 
 
 OLED() {
-if [ ! -d /OLED/ ]; then
+
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "64 bit" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 64 bit is running..."
+      echo ""
+      
+      if [ ! -d /OLED/ ]; then
 
 
        sudo raspi-config nonint do_i2c 0
@@ -151,6 +161,11 @@ if [ ! -d /OLED/ ]; then
        sudo chmod -R 777 /etc/rc.local
        sudo chmod -R 777 /home/pi/.bashrc
       # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+      
+       LED
+       if [ -d /OLED/ ]; then
+       KickPi-OS.sh
+       fi
        
        else 
        clear
@@ -158,10 +173,23 @@ if [ ! -d /OLED/ ]; then
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        fi
-       LED
-       if [ -d /OLED/ ]; then
-       KickPi-OS.sh
-       fi
+      
+
+      sudo update-rc.d motd remove
+    else 
+      clear
+      toilet "KickPi-OS" --metal
+      toilet "32 bit" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo ""
+    
+      
+fi    
+
+
+      
        
        }
 
@@ -591,12 +619,9 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 		echo " "
 		echo "  ... here comes Amiberry 64 bit :-) "
 
-		cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+	
   
+                 
       	else 
       		clear
       		toilet "KickPi-OS" --metal
@@ -605,8 +630,18 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
         	echo "  ... here comes Amiberry 32 bit :-) "
 	  
           	cd /home/$USER/KickPi-OS/Amiga
-      	  	unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit.zip 
-	  	cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
+		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios/* /home/$USER/Amiga/
+		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
+		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_sdl
+		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+  
+                cd /home/$USER/KickPi-OS/Amiga
+		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
+		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie/* /home/$USER/Amiga/
+		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
+		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_dev
+		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
 	 
 	 
          
@@ -647,122 +682,7 @@ fi
 	echo " "
       fi
       
-      cd ~/Amiga
-      
-      
-      if [ ! -d /home/pi/Amiga/dir/WB ]; then
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools  
-      
-      cd /home/pi/Amiga/adf/
-      mkdir /home/pi/Amiga/dir/WB
-      #xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-workbench.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-extras.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-fonts.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-locale.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/dir/WB
-      xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/dir/WB
-     fi 
-       mkdir /home/$USER/Amiga/conf/ 
-               
-      if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      
-      mkdir /home/pi/Amiga/dir/Work
-      mkdir /home/pi/Amiga/Install/
-      cd /home/pi/Amiga/Install
-      
-      clear
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      clear
-      unzip -u ./ClassicWB_UAE_v28.zip
-      clear
-      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/Work
-      
-        else 
-      echo " "
-      
-      fi
-      
-      
-           
-      
-      
-      cd /home/$USER/Amiga/hdf
-      
-      
-      if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
-      
      
-      clear
-      toilet "ClassicWB" --metal
-      echo " "
-      echo " "
-      echo "  Configure System_ADVSP ...   " 
-            mkdir /home/pi/Amiga/dir/System_ADVSP
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
-      
-      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
-      
-      
-      echo " "
-      echo " "
-      echo "  Configure System_P96 ...   " 
-      
-      mkdir /home/pi/Amiga/dir/System_P96
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /home/pi/Amiga/dir/WB/ /home/pi/Amiga/dir/System_P96/System/T/Workbench31
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
-      
-      cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
-      cp -rf /home/pi/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/    
-    
-      else
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      fi
-      
-   
-  
-  #if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
-     #  cd /home/$USER/KickPi-OS/Amiga
-     #  unzip -u /home/$USER/KickPi-OS/Amiga/AROS.zip
-     #  mkdir /home/$USER/Amiga/dir/AROS/
-     #  cp -rf /home/$USER/KickPi-OS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
-  #fi
-      cd /home/$USER/Amiga/hdf
-      
-      cd ~/Amiga
-     
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      
-      cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-     
-
-      
-      
-    }    
-   
 
     
 #****************************************   #KickPi-OS_Addons  ****************************************************
