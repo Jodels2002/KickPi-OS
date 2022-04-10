@@ -248,7 +248,8 @@ fi
 	sudo apt -y autoremove
 	LED     
 	sudo apt install -y gnome-com*
-	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
