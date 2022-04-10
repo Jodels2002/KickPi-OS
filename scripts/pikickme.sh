@@ -238,7 +238,8 @@ fi
       echo " "
       	
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	#sudo apt purge -y raspberrypi-ui-mods man*
+      	sudo apt purge -y raspberrypi-ui-mods 
+	sudo apt purge -y xser* xor* xin*
       	sudo apt purge -y cups cups-client cups-common cups-server-common     
        	LED
 	sudo apt-get -y update
@@ -247,6 +248,7 @@ fi
 	sudo apt -y autoremove
 	LED     
 	sudo apt install -y gnome-com*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini*
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
@@ -485,7 +487,7 @@ KickPi-OS_Games() {
 	
 	  
 	
-      sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xinit
+      
       LED
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
