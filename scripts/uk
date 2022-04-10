@@ -2,9 +2,26 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+GREY='\033[1;30m'
 
+cd
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$GREY "
 LED
-update.sh
+      if [ -d /OLED/ ]; then
+		KickPi-OS.sh
+	fi
+
+
 sudo rm -rf ~/KickPi-OS
 LED_off
 sudo dpkg --configure -a
@@ -18,20 +35,27 @@ wget -q --spider http://google.com
 
 
 sudo rm -rf /home/$USER/KickPi-OS/
-#sudo rm -rf /home/$USER/.KickPi-OS/
 
 
-  
       cd
       git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git
       sudo mv /home/$USER/KickPi-OS_up /home/$USER/KickPi-OS  
       sudo chmod -R 777 KickPi-OS
-        
-      LED_off
+      
+      
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-        sudo cp -f -R /home/$USER/KickPi-OS/scripts/.bashrc /usr/local/bin
+      sudo rm -rf /opt/KickPi-OS
+      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
+      
       sudo chmod -R 777 /usr/local/bin
+      sudo chmod -R 777 /opt/KickPi-OS
+      
       /home/$USER/KickPi-OS/scripts/pikickme.sh
+ 
  else
-    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
+    whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1
+ 
  fi
+
+
+      
