@@ -176,6 +176,8 @@ fi
  #printf %s " console=tty1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram" >> /home/pi/Documents/cmdline.txt
  #sudo cp -Rf  /home/pi/Documents/cmdline.txt /boot/cmdline.txt
 
+sudo cp -R  /boot/config_backup.txt /boot/config.txt
+
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo raspi-config nonint do_i2c 0
