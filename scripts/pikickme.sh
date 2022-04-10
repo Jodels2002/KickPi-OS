@@ -238,7 +238,7 @@ fi
       echo " "
       	
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	sudo apt purge -y raspberrypi-ui-mods man*
+      	#sudo apt purge -y raspberrypi-ui-mods man*
       	sudo apt purge -y cups cups-client cups-common cups-server-common     
        	LED
 	sudo apt-get -y update
