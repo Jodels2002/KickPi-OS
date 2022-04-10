@@ -245,7 +245,8 @@ fi
 	LED_off
 	sudo apt-get -y upgrade
 	sudo apt -y autoremove
-	LED      
+	LED     
+	sudo apt install -y gnome-com*
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
