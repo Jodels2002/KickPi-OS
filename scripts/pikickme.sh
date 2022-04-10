@@ -537,8 +537,8 @@ KickPi-OS_Games() {
   
            cd ~/KickPi-OS/
 	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
-	   cp -rf /home/$USER/KickPi-OS/.data/.config/ /home/$USER/
-           cp -rf /home/$USER/KickPi-OS/.data/.local/ /home/$USER/ 
+	   cp -rf /home/$USER/KickPi-OS/data/.config/ /home/$USER/
+           cp -rf /home/$USER/KickPi-OS/data/.local/ /home/$USER/ 
                 
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
@@ -548,7 +548,7 @@ KickPi-OS_Games() {
 
       cd /usr/share/icons/
       
-      sudo cp -rf /home/$USER/KickPi-OS/.data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo cp -rf /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
