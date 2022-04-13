@@ -287,7 +287,7 @@ fi
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       	sudo apt purge -y raspberrypi-ui-mods 
 	sudo apt purge -y xser* xor* xin*
-      	
+      	sudo apt purge -y gnome*
        	LED
 	sudo apt-get -y update
 	LED_off
