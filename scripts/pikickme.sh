@@ -38,6 +38,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo ""
 
       sudo update-rc.d motd remove
+      sudo rm -r /boot/config.txt
+      sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
+      
     else 
       clear
       toilet "KickPi-OS" --metal
@@ -46,7 +49,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-    
+      sudo rm -r /boot/config.txt
+      sudo cp -R /home/$USER/KickPi-OS/config/config32.txt /boot/config.txt
       
 fi    
       
