@@ -408,7 +408,13 @@ fi
       # Configured
       
       fi
-        
+     #PiKiss
+     cd
+     git clone --depth=1 https://github.com/jmcerrejon/PiKISS.git
+     sudo chmod -R 777 PiKISS
+     cd PiKISS
+     ./piKiss.sh
+
       
 }
 
