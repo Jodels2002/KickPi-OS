@@ -7,7 +7,8 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo mv /usr/local/bin/uk /usr/local/bin/u     
-       LED
+      LED
+      sudo apt-get install -y fs-uae*
        
       clear
       toilet "KickPi-OS" --metal
