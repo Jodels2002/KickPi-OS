@@ -193,6 +193,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
        
        sudo apt-get install --reinstall python-pip
+       sudo apt install -y python3
+       sudo apt-get install -y python3-pip
        sudo apt install -y python-dev
        sudo apt install -y python-smbus 
        sudo apt install -y i2c-tools
@@ -211,7 +213,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        cd /home/pi
        sudo pip install Adafruit-SSD1306
        sudo python3 -m pip install --upgrade pip setuptools wheel
-   
+       sudo python3 -m pip install Adafruit-SSD1306
+       sudo python3 -m pip install -U pip
+       sudo python3 -m pip install -U setuptools
+       sudo python3 -m pip install amitools
+       
+       
+       
        sudo cp -rf /home/pi/KickPi-OS/OLED/ /
        sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
        sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
