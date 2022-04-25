@@ -356,8 +356,9 @@ fi
  
 
           
-      #sudo apt install -y mc zip unzip 
+      #sudo apt install -y mc zip unzip mednaffe 
       sudo apt install -y gparted
+      sudo apt install -y mednaffe
          
      
       sudo apt install -y git usbmount 
