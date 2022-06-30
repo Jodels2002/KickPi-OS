@@ -83,7 +83,7 @@ if [ "$REVCODE" = "a02082" ]; then
 	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
-sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
+#sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 sudo raspi-config nonint do_boot_behaviour B2
 
   
@@ -130,7 +130,7 @@ if [ "$REVCODE" = "a22082" ]; then
 	echo "$PIMODEL ($REVCODE)"
 	sudo raspi-config nonint is_pi
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
+#sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
 
 sudo reboot
 
