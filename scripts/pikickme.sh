@@ -146,25 +146,25 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
        #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
        LED_off
-       cd /home/pi
+       cd /home/$USER
        sudo pip install Adafruit-SSD1306
        sudo python3 -m pip install --upgrade pip setuptools wheel
    
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
        
    
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
      
  
        
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        sudo chmod -R 777 /etc/rc.local
-       sudo chmod -R 777 /home/pi/.bashrc
+       sudo chmod -R 777 /home/$USER/.bashrc
       # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
       
        LED
@@ -174,7 +174,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        
        else 
        clear
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        fi
@@ -210,7 +210,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
        #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
        LED_off
-       cd /home/pi
+       cd /home/$USER
        sudo pip install Adafruit-SSD1306
        sudo python3 -m pip install --upgrade pip setuptools wheel
        sudo python3 -m pip install Adafruit-SSD1306
@@ -220,21 +220,21 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        
        
        
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
        
    
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-       sudo cp -rf /home/pi/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/pi/KickPi-OS/conf/.bashrc /home/pi/
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
      
  
        
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/local/bin/
        sudo chmod -R 777 /etc/rc.local
-       sudo chmod -R 777 /home/pi/.bashrc
+       sudo chmod -R 777 /home/$USER/.bashrc
       # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
       
        LED
