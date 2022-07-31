@@ -190,7 +190,12 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
              
-       
+     #PiKiss
+     cd
+     git clone --depth=1 https://github.com/jmcerrejon/PiKISS.git
+     sudo chmod -R 777 PiKISS
+     #cd PiKISS
+     #./piKiss.sh
        
       
 fi    
@@ -360,12 +365,7 @@ fi
       # Configured
       
       fi
-     #PiKiss
-     cd
-     git clone --depth=1 https://github.com/jmcerrejon/PiKISS.git
-     sudo chmod -R 777 PiKISS
-     cd PiKISS
-     ./piKiss.sh
+  
 
       
 }
