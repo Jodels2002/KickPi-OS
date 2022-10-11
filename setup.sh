@@ -4,15 +4,8 @@
 
 #******************************************** #todo ************* ********************************************
 #  - Retropie Amiga - rm CDTV7CD32
-#  - https://gist.github.com/yangxuan8282/f1c8c19cc92a69d6f170ed03191ca1f1     Basilisk
-#  - Pimiga zip & upgrde MF -> Menu
-#
-#  - RClone Rsync-> update always job - Video Tutorials & more
+#  - https://github.com/jaromaz/MacintoshPi     Basilisk
 #  -  Speed up Cronjobs & more
-
-
-
-
 #******************************************** #startup-sequence  :-) ************* ********************************************
 
 
