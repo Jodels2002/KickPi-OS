@@ -21,7 +21,8 @@ echo " "
 
      
       sudo apt -y update
-      sudo apt-get install -y toilet dialog mc zip unzip
+      sudo apt-get install -y toilet dialog mc zip unzip wget
+      sudo apt-get install -y network-*
       clear
       toilet "KickPi-OS" --metal
      
