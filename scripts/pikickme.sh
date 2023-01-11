@@ -306,8 +306,8 @@ fi
       	
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       	sudo apt purge -y raspberrypi-ui-mods 
-	sudo apt purge -y xser* xor* xin*
-      	sudo apt purge -y gnome*
+	# sudo apt purge -y xser* xor* xin*
+      	# sudo apt purge -y gnome*
        	LED
 	sudo apt-get -y update
 	LED_off
@@ -345,7 +345,7 @@ fi
        
       
       fi
-      sudo apt purge -y cups cups-client cups-common cups-server-common     
+      # sudo apt purge -y cups cups-client cups-common cups-server-common     
        
 }
 
