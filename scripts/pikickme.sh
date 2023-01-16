@@ -153,12 +153,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
        sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-       
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-     
+         
  
        
        sudo chmod -R 777 /OLED/
@@ -176,7 +171,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        clear
        sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
        sudo chmod -R 777 /OLED/
-       sudo chmod -R 777 /usr/local/bin/
+    
        fi
       
 
