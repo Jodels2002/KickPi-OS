@@ -288,59 +288,8 @@ KickPi-OS_Update() {
 if [ -d /OLED/ ]; then
       update.sh
 fi
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo "            Time to update:)              "
-      echo " "
-      echo " "
-      echo "Installing KickPi-OS Update System ..."
-      echo " "
-      	
-      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	sudo apt purge -y raspberrypi-ui-mods 
-	# sudo apt purge -y xser* xor* xin*
-      	# sudo apt purge -y gnome*
-       	LED
-	sudo apt-get -y update
-	LED_off
-	sudo apt-get -y upgrade
-	sudo apt -y autoremove
-	LED     
-	sudo apt install -y gnome-com*
-	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	sudo apt install -y xfce4-te*
-	sudo apt install -y chromium-b*
-      # Update allways Routine
-      if [ ! -d /home/$USER/.KickPi-OS/ ]; then
-      rm /home/$USER/Amiga/conf/retroarch.cfg
-      
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-           
-      sudo update-rc.d motd remove
-      echo "Update is running "             
-      echo " "
-      echo " "      
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Update is running "
-      echo " "
-      echo " System optimized :) "
-      echo " "
-      echo " " 
-       
-      
-      fi
-      # sudo apt purge -y cups cups-client cups-common cups-server-common     
+     sudo apt upgrade -y
+        
        
 }
 
@@ -535,6 +484,59 @@ KickPi-OS_Games() {
  
  KickPi-OS_Desktop() {
  LED_off
+ 
+  clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      echo " "
+      echo "Installing KickPi-OS Update System ..."
+      echo " "
+      	
+      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      	sudo apt purge -y raspberrypi-ui-mods 
+	# sudo apt purge -y xser* xor* xin*
+      	# sudo apt purge -y gnome*
+       	LED
+	sudo apt-get -y update
+	LED_off
+	sudo apt-get -y upgrade
+	sudo apt -y autoremove
+	LED     
+	sudo apt install -y gnome-com*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
+	sudo apt install -y chromium-b*
+      # Update allways Routine
+      if [ ! -d /home/$USER/.KickPi-OS/ ]; then
+      rm /home/$USER/Amiga/conf/retroarch.cfg
+      
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+           
+      sudo update-rc.d motd remove
+      echo "Update is running "             
+      echo " "
+      echo " "      
+      else 
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Update is running "
+      echo " "
+      echo " System optimized :) "
+      echo " "
+      echo " " 
+       
+      
+      fi
  
  if [ -d /OLED/ ]; then
  KickPi-OS.sh
