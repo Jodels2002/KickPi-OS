@@ -7,8 +7,7 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo mv /usr/local/bin/uk /usr/local/bin/u     
-      LED
-      sudo apt-get install -y fs-uae*
+    
        
       clear
       toilet "KickPi-OS" --metal
@@ -510,6 +509,9 @@ KickPi-OS_Games() {
 	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
 	sudo apt install -y chromium-b*
+
+        sudo apt-get install -y fs-uae*
+	
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
@@ -1155,6 +1157,9 @@ clear
 case $CHOICE in
         
         1)
+	
+	   export DISTRO=focal-stable
+           wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
          
 	    KickPi-OS_Update
 	 
