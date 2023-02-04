@@ -93,7 +93,7 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Update KickPi-OS            ( only Update )                                           "
+OPTIONS=(1 "Install RockPi                                                     "
 	 2 "Install KickPi-OS     Basic (  Desktop, Amiberry...      	              (ca. 30 min)"
          3 "Install KickPi-OS     all   ( Retropie, Amibery, Office...)               (ca. 50 min)")
         
@@ -1155,15 +1155,19 @@ clear
 case $CHOICE in
         
         1)
-            OLED	    
+         
 	    KickPi-OS_Update
-	    #KickPi-OS_64bit_pre
-	    #KickPi-OS_Desktop
+	 
+	    KickPi-OS_Desktop
             KickPi-OS_Tools
-	    KickPi-OS_Internet
-            KickPi-OS_Amiberry
-            Configure_Amiga
-        
+           
+         
+          
+	 
+            KickPi-OS_Office
+	    KickPi-OS_Video
+	    #KickPi-OS_Games
+            KickPi-OS_Internet
             
             ;;
         2)
