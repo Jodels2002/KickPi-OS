@@ -1173,6 +1173,29 @@ case $CHOICE in
 	    KickPi-OS_Video
 	    #KickPi-OS_Games
             KickPi-OS_Internet
+	    cd
+	    
+	   git clone --depth=1 https://github.com/Jodels2002/RockPi
+	   sudo chmod -R 777 RockPi
+
+	       
+         sudo mv /home/$USER/RockPi /home/$USER/KickPi-OS  
+         sudo chmod -R 777 KickPi-OS
+      
+            if [ ! -d /opt/Backup/ ]; then
+		sudo mkdir /opt/Backup/
+	fi
+      
+      
+      sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo rm -rf /opt/KickPi-OS
+      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
+      
+      
+      sudo chmod -R 777 /usr/local/bin
+      sudo chmod -R 777 /opt/KickPi-OS
+      
+      /home/$USER/KickPi-OS/scripts/pikickme.sh
             
             ;;
         2)
