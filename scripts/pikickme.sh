@@ -1160,10 +1160,9 @@ case $CHOICE in
 	
 	   export DISTRO=focal-stable
            wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
-         
+            
+	    OLED
 	    KickPi-OS_Update
-	    
-	 
             KickPi-OS_Tools
             KickPi-OS_Amiberry
             Configure_Amiga
