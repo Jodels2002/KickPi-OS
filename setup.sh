@@ -22,7 +22,21 @@ echo " "
      
       sudo apt -y update
       sudo apt-get install -y toilet dialog mc zip unzip wget
-      sudo apt-get install -y network-*
+      # sudo apt-get install -y network-*
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      	sudo apt purge -y raspberrypi-ui-mods 
+	# sudo apt purge -y xser* xor* xin*
+      	# sudo apt purge -y gnome*
+       	LED
+	sudo apt-get -y update
+	LED_off
+	sudo apt-get -y upgrade
+	sudo apt -y autoremove
+	LED     
+	sudo apt install -y gnome-com*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
+	sudo apt install -y chromium-b*
       sudo apt install ntfs-*
 
       clear
