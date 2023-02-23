@@ -254,6 +254,81 @@ fi
        
        }
 
+#**********************************************  #Install DietPi      ***************************************
+#****************************************************************************************************************
+  
+  
+KickPi-OS_Dietpi() {
+if [ ! -d $HOME/Desktop ]; then
+     # DietPi, Pimiga.... as Host Distri not ready 
+
+      
+     cd
+      git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
+      sudo chmod -R 777 raspi-config
+      sudo cp -rf $HOME/raspi-config/* /usr/bin/
+      rm raspi-config
+
+        mkdir $HOME/Desktop
+        mkdir $HOME/Downloads
+        mkdir $HOME/Documents
+        mkdir $HOME/Music
+        mkdir $HOME/Pictures
+        mkdir $HOME/Videos
+    fi      
+  
+           cd ~/KickPi-OS/
+	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
+	   cp -rf /home/$USER/KickPi-OS/data/.config/ /home/$USER/
+           cp -rf /home/$USER/KickPi-OS/data/.local/ /home/$USER/ 
+                
+      sudo chmod -R 777 /home/$USER/KickPi-OS
+      
+      sudo rm -rf /home/$USER/.cache
+      # Fresh install Amiga Desktop
+    
+
+      cd /usr/share/icons/
+      
+      sudo cp -rf /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
+      sudo rm -rf /usr/share/icons/default
+      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      
+
+
+
+      cd /home/$USER/KickPi-OS
+      git clone --depth=1 https://github.com/x64k/amitk
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+      sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
+      
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+      sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -rf /usr/share/themes/Default/xfwm4/
+      sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /var/lib/dietpi/dietpi-software/installed/desktop/wallpapers/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
+   
+      sudo chmod -R 777 /var/lib/dietpi/dietpi-software/installed/desktop/wallpapers/
+
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
+cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+
+
+}
+
+
 #**********************************************  #Install 64 bit pre      ***************************************
 #****************************************************************************************************************
   
@@ -1162,6 +1237,7 @@ case $CHOICE in
            wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
             
 	    OLED
+	    KickPi-OS_Dietpi
 	    KickPi-OS_Update
             KickPi-OS_Tools
             KickPi-OS_Amiberry
