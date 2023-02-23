@@ -1235,6 +1235,9 @@ case $CHOICE in
 	
 	   export DISTRO=focal-stable
            wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
+	   
+	   export DISTRO=stretch-testing # update more frequently but maybe unstable
+           echo "deb http://apt.radxa.com/$DISTRO/ stretch main" | sudo tee /etc/apt/sources.list.d/apt-radxa-com.list
             
 	    OLED
 	    KickPi-OS_Dietpi
