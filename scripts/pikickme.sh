@@ -38,8 +38,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo ""
 
       sudo update-rc.d motd remove
-      #sudo rm -r /boot/config.txt
-      #sudo cp -R /home/$USER/KickPi-OS/config/config64.txt /boot/config.txt
+      #
       
     else 
       clear
@@ -49,8 +48,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-      #sudo rm -r /boot/config.txt
-      #sudo cp -R /home/$USER/KickPi-OS/config/config32.txt /boot/config.txt
+    
       
 fi    
       
@@ -183,7 +181,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo ""
-sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
+
       sudo raspi-config nonint do_i2c 0
       curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
       python get-pip.py --force-reinstall
