@@ -1231,11 +1231,7 @@ case $CHOICE in
         
         1)
 	
-	   export DISTRO=focal-stable
-           wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
-	   
-	   export DISTRO=stretch-testing # update more frequently but maybe unstable
-           echo "deb http://apt.radxa.com/$DISTRO/ stretch main" | sudo tee /etc/apt/sources.list.d/apt-radxa-com.list
+	
             
 	    OLED
 	    KickPi-OS_Dietpi
@@ -1277,7 +1273,7 @@ case $CHOICE in
         2)
             OLED
 	    KickPi-OS_Update
-	    KickPi-OS_64bit_pre
+	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
@@ -1294,7 +1290,7 @@ case $CHOICE in
            
             OLED
 	    KickPi-OS_Update
-	    KickPi-OS_64bit_pre
+	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
             KickPi-OS_Tools
             KickPi-OS_Amiberry
