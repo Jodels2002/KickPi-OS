@@ -383,7 +383,7 @@ fi
  
 
           
-      #sudo apt install -y mc zip unzip mednaffe 
+      sudo apt install -y mc zip unzip
       sudo apt install -y gparted
       sudo apt install -y mednaffe
          
@@ -400,7 +400,8 @@ fi
       echo " "
       echo "Some little Amiga stuff...."
       echo " "
-      sudo apt-get -y install grafx2 protracker worker 
+      sudo apt-get -y install grafx2
+      sudo apt-get -y install worker 
       clear
       toilet "KickPi-OS" --metal
       echo " "
