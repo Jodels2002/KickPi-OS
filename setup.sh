@@ -34,9 +34,9 @@ echo " "
 	sudo apt -y autoremove
 	LED     
 	sudo apt install -y gnome-com*
-	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	sudo apt install -y xfce4-te*
-	sudo apt install -y chromium-b*
+	#sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	#sudo apt install -y xfce4-te*
+	#sudo apt install -y chromium-b*
       sudo apt install ntfs-*
 
       clear
@@ -94,17 +94,6 @@ sudo chmod -R 777 /home/$USER/Amiga
  sudo cp -R /home/$USER/KickPi-OS/config/splash/Booting.png /etc/systemd/system/Booting.png
  sudo systemctl enable splash
  
- #sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/update_allways.service
- #sudo systemctl enable update_allways
- 
- 
- #sudo cp -R /boot/cmdline.txt /home/pi/Documents/cmdline.txt
- #sudo chmod -R 777 /home/pi/Documents/cmdline.txt
- 
- 
- #printf %s " console=tty1 logo.nologo quiet loglevel=0 plymouth.enable=0 vt.global_cursor_default=0 plymouth.ignore-serial-consoles splash fastboot noatime nodiratime noram" >> /home/pi/Documents/cmdline.txt
- #sudo cp -Rf  /home/pi/Documents/cmdline.txt /boot/cmdline.txt
-
 
 
 sudo raspi-config nonint do_boot_behaviour B2
