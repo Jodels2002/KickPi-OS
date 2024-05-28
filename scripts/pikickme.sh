@@ -90,7 +90,7 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install RockPi   - not for Raspberry Pi                                               "
+OPTIONS=(1 "Install KickPi-OS   - Light                                             "
 	 2 "Install KickPi-OS     Basic (  Desktop, Amiberry...      	              (ca. 30 min)"
          3 "Install KickPi-OS     all   ( Retropie, Amibery, Office...)               (ca. 50 min)")
         
@@ -1235,17 +1235,17 @@ case $CHOICE in
 	
             
 	    OLED
-	    KickPi-OS_Dietpi
+	    #KickPi-OS_Dietpi
 	    KickPi-OS_Update
             KickPi-OS_Tools
-            KickPi-OS_Amiberry
-            Configure_Amiga
-            KickPi-OS_Retropie
-	    KickPi-OS_Addons
-            KickPi-OS_Office
-	    KickPi-OS_Video
+            #KickPi-OS_Amiberry
+            #Configure_Amiga
+            #KickPi-OS_Retropie
+	    #KickPi-OS_Addons
+            #KickPi-OS_Office
+	    #KickPi-OS_Video
 	   
-            KickPi-OS_Internet
+            #KickPi-OS_Internet
 	    cd
 	    
 	   git clone --depth=1 https://github.com/Jodels2002/RockPi
