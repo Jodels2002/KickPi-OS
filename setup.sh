@@ -83,7 +83,7 @@ if    [ ! -d "/media/usb0/Shared/" ]; then
 	  
 sudo chmod -R 777 /home/$USER/Amiga 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin	 
-sudo cp -R /boot/config.txt /boot/config_backup.txt
+
 	 
 
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
