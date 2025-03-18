@@ -744,59 +744,15 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
   Update_Amiberry.sh
   fi
   
-  mkdir /home/$USER/Amiga/
-  mkdir /home/$USER/Amiga/conf/ 
+  sudo mkdir /opt/Amiga/
+  sudo mkdir /opt/Amiga/conf/ 
   sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
   sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
   sudo apt-get install -y  libraspberrypi-dev
 
  
- 	if [ "$(getconf LONG_BIT)" == "64" ]; then
+ 	
  
-	       clear
-	       toilet "KickPi-OS" --metal
-	       toilet -F gay 64bit
-	       echo " "
-	       echo " "
-	       echo " ... here comes Amiberry 64 bit   :-)"
-
-
-		clear
-		toilet "KickPi-OS" --metal
-		echo " "
-		echo " "
-		echo "  ... here comes Amiberry 64 bit :-) "
-
-	
-  
-                 
-      	else 
-      		clear
-      		toilet "KickPi-OS" --metal
-      		echo " "
-      		echo " "
-        	echo "  ... here comes Amiberry 32 bit :-) "
-	  
-          	cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_sdl
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-  
-                cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_dev
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-	 
-	 
-         
-	  fi
-          
-      
-fi  
    
 }
 
@@ -1248,10 +1204,7 @@ case $CHOICE in
             #KickPi-OS_Internet
 	    cd
 	    
-	   git clone --depth=1 https://github.com/Jodels2002/RockPi
-	   sudo chmod -R 777 RockPi
-
-	       
+	 	       
          sudo mv /home/$USER/RockPi /home/$USER/KickPi-OS  
          sudo chmod -R 777 KickPi-OS
       
@@ -1268,7 +1221,7 @@ case $CHOICE in
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
       
-      /home/$USER/KickPi-OS/scripts/pikickme.sh
+
             
             ;;
         2)
