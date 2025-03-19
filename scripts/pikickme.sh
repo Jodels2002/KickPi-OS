@@ -1194,8 +1194,8 @@ case $CHOICE in
 	    #KickPi-OS_Dietpi
 	    KickPi-OS_Update
             KickPi-OS_Tools
-            KickPi-OS_Amiberry
-            Configure_Amiga
+            #KickPi-OS_Amiberry
+            #Configure_Amiga
             #KickPi-OS_Retropie
 	    #KickPi-OS_Addons
             #KickPi-OS_Office
