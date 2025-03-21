@@ -157,7 +157,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo chmod -R 777 /usr/local/bin/
        sudo chmod -R 777 /etc/rc.local
        sudo chmod -R 777 /home/$USER/.bashrc
-      # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+       (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
       
        LED
        if [ -d /OLED/ ]; then
