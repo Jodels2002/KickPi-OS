@@ -34,10 +34,7 @@ echo " "
 	sudo apt -y autoremove
 	LED     
 	sudo apt install -y gnome-com*
-	#sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	#sudo apt install -y xfce4-te*
-	#sudo apt install -y chromium-b*
-      sudo apt install ntfs-*
+        sudo apt install -y ntfs-*
 
       clear
       toilet "KickPi-OS" --metal
