@@ -749,6 +749,7 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
   sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
   sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
   sudo apt-get install -y  libraspberrypi-dev
+  sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
 
  
  	if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -1239,8 +1240,8 @@ case $CHOICE in
 	    KickPi-OS_Update
             KickPi-OS_Tools
 	    KickPi-OS_Desktop
-            #KickPi-OS_Amiberry
-            #Configure_Amiga
+            KickPi-OS_Amiberry
+            Configure_Amiga
             #KickPi-OS_Retropie
 	    #KickPi-OS_Addons
             #KickPi-OS_Office
