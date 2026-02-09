@@ -3,11 +3,6 @@
 # Assign >NIL:  B.Titze 2021
 
 #******************************************** #startup-sequence  :-) ************* ********************************************
-
-
-
-
-
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 clear
@@ -18,23 +13,16 @@ echo " "
      
       sudo apt -y update
       sudo apt-get install -y toilet dialog mc zip unzip wget
-   
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	sudo apt purge -y raspberrypi-ui-mods 
-	sudo apt install -y gnome-com*
-        sudo apt install -y ntfs-*
+      sudo apt purge -y raspberrypi-ui-mods 
+	  sudo apt install -y gnome-com*
+      sudo apt install -y ntfs-*
 
       clear
       toilet "KickPi-OS" --metal
      
-
-
-	  
 sudo chmod -R 777 /home/$USER/Amiga 
 sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin	 
-
-	 
-
 cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 
  sudo cp -R /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
