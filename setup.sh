@@ -129,7 +129,8 @@ if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
         sudo raspi-config nonint do_expand_rootfs
     fi
 fi
-sudo apt install -y gnome* || true
+sudo apt purge -y gnome* || true
+sudo apt purge -y gdm3 || true
 
 echo "Installation complete."
 sleep 2
