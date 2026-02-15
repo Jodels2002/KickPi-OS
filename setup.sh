@@ -135,7 +135,7 @@ if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
         sudo raspi-config nonint do_expand_rootfs
     fi
 fi
-
+sudo apt purge -y gnome*
 echo "Installation complete."
 sleep 2
 
