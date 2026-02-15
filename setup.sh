@@ -106,7 +106,7 @@ if [ -d "/home/$USER/KickPi-OS/scripts" ]; then
 fi
 
 if [ -f "/home/$USER/KickPi-OS/scripts/bashrc" ]; then
-    cp /home/$USER/KickPi-OS/scripts/bashrc /home/pi/.bashrc
+    sudo cp /home/$USER/KickPi-OS/scripts/bashrc /home/pi/.bashrc
 fi
 
 #********************************************
