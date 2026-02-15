@@ -3,9 +3,14 @@
 # Assign >NIL:  B.Titze 2021
 # Optimized Version 2026
 #******************************************** #startup-sequence  :-) ************* ********************************************
+HOME_DIR="/home/pi"
+
+
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
 set -e
+
+
 
 echo "Detecting system architecture..."
 
@@ -64,8 +69,21 @@ else
     sudo useradd -m -s /bin/bash pi
 fi
 
-echo "Setting password for user 'pi'..."
+#!/bin/bash
+
+# Prüfen ob User existiert
+if id "pi" &>/dev/null; then
+    echo "User 'pi' already exists."
+else
+    echo "User 'pi' does not exist. Creating..."
+    sudo useradd -m -s /bin/bash pi
+fi
+
+echo "Setting temporary password for user 'pi'..."
 echo "pi:03223" | sudo chpasswd
+
+echo "Forcing password change on first login..."
+sudo chage -d 0 pi
 
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
@@ -75,6 +93,17 @@ sudo chage -M 99999 pi
 sudo chage -m 0 pi
 sudo chage -I -1 pi
 sudo chage -E -1 pi
+
+echo "Creating standard user directories..."
+
+
+
+sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlagen,Öffentlich}
+
+echo "Setting correct ownership..."
+sudo chown -R pi:pi $HOME_DIR
+
+echo "Done."
 
 
 
@@ -97,16 +126,14 @@ toilet "KickPi-OS" --metal
 #********************************************
 # File Permissions & Script Deployment
 #********************************************
-if [ -d "/home/$USER/Amiga" ]; then
-    sudo chmod -R 777 /home/$USER/Amiga
-fi
+
 
 if [ -d "/home/$USER/KickPi-OS/scripts" ]; then
     sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
 fi
 
 if [ -f "/home/$USER/KickPi-OS/scripts/bashrc" ]; then
-    sudo cp /home/$USER/KickPi-OS/scripts/bashrc /home/pi/.bashrc
+    sudo cp /home/$USER/KickPi-OS/scripts/bashrc $HOME_DIR/.bashrc
 fi
 
 #********************************************
