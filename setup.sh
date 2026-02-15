@@ -76,13 +76,7 @@ sudo chage -m 0 pi
 sudo chage -I -1 pi
 sudo chage -E -1 pi
 
-sudo  mkdir /home/pi
-sudo mkdir /home/Desktop
-sudo mkdir /home/Downloads
-sudo mkdir /home/Documents
-sudo mkdir /home/Music
-sudo mkdir /home/Pictures
-sudo mkdir /home/Videos
+
 
 echo "Disabling password complexity rules..."
 if [ -f /etc/pam.d/common-password ]; then
@@ -95,7 +89,7 @@ fi
 sudo apt purge -y lxde lxde-common lxde-core openbox-lxde-session || true
 sudo apt purge -y raspberrypi-ui-mods || true
 
-sudo apt install -y gnome-core || true
+
 
 clear
 toilet "KickPi-OS" --metal
@@ -135,7 +129,8 @@ if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
         sudo raspi-config nonint do_expand_rootfs
     fi
 fi
-sudo apt purge -y gnome*
+sudo apt install -y gnome* || true
+
 echo "Installation complete."
 sleep 2
 
