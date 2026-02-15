@@ -65,7 +65,7 @@ else
 fi
 
 echo "Setting password for user 'pi'..."
-echo "pi:03223" | sudo chpasswd
+#echo "pi:03223" | sudo chpasswd
 
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
