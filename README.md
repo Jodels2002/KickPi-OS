@@ -60,6 +60,8 @@ On the Raspberry you open a terminal window and type following commands:
 
 sudo rm -rf ~/KickPi-OS
 
+sudo apt install -y git
+
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
 
 sudo chmod -R 777 KickPi-OS
