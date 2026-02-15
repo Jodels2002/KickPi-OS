@@ -109,20 +109,109 @@ apt_update_upgrade
 # ----------------------------------------------------------
 KickPi_OS_Desktop() {
 
-clear
 toilet "KickPi-OS" --metal
-echo "Installing Desktop..."
 
-sudo apt purge -y lxde lxde-common lxde-core openbox-lxde-session || true
-raspi_only sudo apt purge -y raspberrypi-ui-mods
+      echo " "
+      echo " "
+      echo "            Time to update:)              "
+      echo " "
+      echo " "
+      echo "Installing KickPi-OS Update System ..."
+      echo " "
+      	
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+	# sudo apt purge -y xser* xor* xin*
 
-apt_update_upgrade
-sudo apt autoremove -y
+	LED     
+	sudo apt install -y gnome-com*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
+	sudo apt install -y chromium-b*
+	  clear
+      	        toilet "KickPi-OS" --metal
+      	        echo " "
+      	        echo " "
+		echo "KickPI-OS ROM Operating System and Libraris" 
+		echo "Version V1.5 2020-2021 KickPi-OS "
+		echo "No Rights Reserved.  "
+		echo ""
 
-apt_install gnome-core xserver-xorg xfce4 xfce4-goodies \
-            chromium-browser fs-uae
+	
+  # Preconfigure Silent Boot
 
-raspi_only sudo update-rc.d motd remove
+      mkdir /home/$USER/.backup/profile.d
+      sudo mv  /etc/rc.local ~/.backup/
+      
+      sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
+      sudo chmod -R 777 /etc/rc.local
+      sudo systemctl mask plymouth-start.service
+      sudo systemctl mask syslog.service
+      sudo systemctl mask cups.service
+      sudo systemctl mask cups-browsed.service
+            
+     cd
+      git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
+      sudo chmod -R 777 raspi-config
+      sudo cp -rf $HOME/raspi-config/* /usr/bin/
+      rm raspi-config
+
+        mkdir $HOME/Desktop
+        mkdir $HOME/Downloads
+        mkdir $HOME/Documents
+        mkdir $HOME/Music
+        mkdir $HOME/Pictures
+        mkdir $HOME/Videos
+      
+  
+       cd ~/KickPi-OS/
+	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
+	   cp -rf /home/$USER/KickPi-OS/data/.config/ /home/$USER/
+       cp -rf /home/$USER/KickPi-OS/data/.local/ /home/$USER/ 
+                
+      sudo chmod -R 777 /home/$USER/KickPi-OS
+      sudo rm -rf /home/$USER/.cache
+     
+	  # Fresh install Amiga Desktop
+    
+
+      cd /usr/share/icons/
+      
+      sudo cp -rf /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
+      sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
+      sudo rm -rf /usr/share/icons/default
+      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      
+
+
+
+      cd /home/$USER/KickPi-OS
+      git clone --depth=1 https://github.com/x64k/amitk
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+      sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
+      
+      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      clear
+      toilet "KickPi-OS" --metal
+
+      echo " "
+      echo " "
+      sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -rf /usr/share/themes/Default/xfwm4/
+      sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
+   
+      sudo chmod -R 777 /usr/share/images/desktop-base/  
+
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
+cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+
 }
 
 # ----------------------------------------------------------
