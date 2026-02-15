@@ -143,20 +143,14 @@ sudo cp -rf "$HOME/amigafonts/ttf/"* /usr/share/fonts/truetype/ 2>/dev/null || t
 }
 
 # ----------------------------------------------------------
-# Amiberry (ARM only sinnvoll)
+# Amiberry 
 # ----------------------------------------------------------
 KickPi_OS_Amiberry() {
 
-if [[ "$SYSTEM" != "ARM" ]]; then
-    echo "Skipping Amiberry (not ARM system)"
-    return
-fi
 
 mkdir -p "$HOME/Amiga/conf"
 
-apt_install libsdl2-2.0-0 libsdl2-ttf-2.0-0 \
-            libsdl2-image-2.0-0 flac mpg123 \
-            build-essential cmake git
+  sudo apt install -y  build-essential git cmake libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev
 
 if [ "$BITS" == "64" ]; then
     echo "Installing Amiberry 64bit..."
@@ -166,14 +160,11 @@ fi
 }
 
 # ----------------------------------------------------------
-# RetroPie (nur ARM)
+# RetroPie 
 # ----------------------------------------------------------
 KickPi_OS_Retropie() {
 
-if [[ "$SYSTEM" != "ARM" ]]; then
-    echo "RetroPie only supported on ARM"
-    return
-fi
+
 
 if [ ! -d "$HOME/RetroPie-Setup" ]; then
     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git "$HOME/RetroPie-Setup"
