@@ -76,6 +76,14 @@ sudo chage -m 0 pi
 sudo chage -I -1 pi
 sudo chage -E -1 pi
 
+sudo  mkdir /home/pi
+sudo mkdir /home/Desktop
+sudo mkdir /home/Downloads
+sudo mkdir /home/Documents
+sudo mkdir /home/Music
+sudo mkdir /home/Pictures
+sudo mkdir /home/Videos
+
 echo "Disabling password complexity rules..."
 if [ -f /etc/pam.d/common-password ]; then
     sudo sed -i 's/^password\s\+requisite\s\+pam_pwquality.so/#&/' /etc/pam.d/common-password
@@ -104,7 +112,7 @@ if [ -d "/home/$USER/KickPi-OS/scripts" ]; then
 fi
 
 if [ -f "/home/$USER/KickPi-OS/scripts/bashrc" ]; then
-    cp /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+    cp /home/$USER/KickPi-OS/scripts/bashrc /home/pi/.bashrc
 fi
 
 #********************************************
