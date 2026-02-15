@@ -5,9 +5,6 @@
 #******************************************** #startup-sequence  :-) ************* ********************************************
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
-
-
-
 set -e
 
 echo "Detecting system architecture..."
@@ -53,6 +50,36 @@ sudo apt install -y \
     unzip \
     wget \
     ntfs-3g
+
+#********************************************
+# Ensure user 'pi' exists with sudo rights
+#********************************************
+
+echo "Checking for user 'pi'..."
+
+if id "pi" &>/dev/null; then
+    echo "User 'pi' already exists."
+else
+    echo "User 'pi' does not exist. Creating..."
+    sudo useradd -m -s /bin/bash pi
+fi
+
+echo "Setting password for user 'pi'..."
+echo "pi:03223" | sudo chpasswd
+
+echo "Adding user 'pi' to sudo group..."
+sudo usermod -aG sudo pi
+
+echo "Removing password aging restrictions..."
+sudo chage -M 99999 pi
+sudo chage -m 0 pi
+sudo chage -I -1 pi
+sudo chage -E -1 pi
+
+echo "Disabling password complexity rules..."
+if [ -f /etc/pam.d/common-password ]; then
+    sudo sed -i 's/^password\s\+requisite\s\+pam_pwquality.so/#&/' /etc/pam.d/common-password
+fi
 
 #********************************************
 # Desktop environment changes
