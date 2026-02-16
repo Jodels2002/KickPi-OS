@@ -62,12 +62,6 @@ sudo apt install -y \
 
 echo "Checking for user 'pi'..."
 
-if id "pi" &>/dev/null; then
-    echo "User 'pi' already exists."
-else
-    echo "User 'pi' does not exist. Creating..."
-    sudo useradd -m -s /bin/bash pi
-fi
 
 #!/bin/bash
 
@@ -77,7 +71,7 @@ if id "pi" &>/dev/null; then
 else
     echo "User 'pi' does not exist. Creating..."
     sudo useradd -m -s /bin/bash pi
-fi
+
 
 echo "Setting temporary password for user 'pi'..."
 echo "pi:03223" | sudo chpasswd
@@ -104,8 +98,7 @@ echo "Setting correct ownership..."
 sudo chown -R pi:pi $HOME_DIR
 
 echo "Done."
-
-
+fi
 
 echo "Disabling password complexity rules..."
 if [ -f /etc/pam.d/common-password ]; then
