@@ -271,21 +271,21 @@ sudo __nodialog=1 ./retropie_packages.sh setup basic_install
 # Office
 # ----------------------------------------------------------
 KickPi_OS_Office() {
-apt_install libreoffice
+sudo apt install -y libreoffice
 }
 
 # ----------------------------------------------------------
 # Video
 # ----------------------------------------------------------
 KickPi_OS_Video() {
-apt_install gimp
+sudo apt install -y gimp
 }
 
 # ----------------------------------------------------------
 # Internet
 # ----------------------------------------------------------
 KickPi_OS_Internet() {
-apt_install transmission firefox-esr
+sudo apt install -y transmission firefox-esr
 }
 
 # ----------------------------------------------------------
