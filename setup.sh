@@ -157,4 +157,4 @@ sudo apt purge -y gdm3 || true
 echo "Installation complete."
 sleep 2
 
-sudo reboot now
+#sudo reboot now
