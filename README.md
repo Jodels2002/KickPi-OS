@@ -11,31 +11,21 @@ Amiberry,Linux Desktop, Retropie ...
 * For licensing reasons, the Workbench files and Kickstart Rom files are not included!
 
 
-#Requirements:
-
-- Raspberry Pi 4
 
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
 
 # Disclaimer
 
-The whole thing here is a hobby project. Use at your own risk ;-)
-I'm far from being good at scripting ;-) It works.
 
-But: if someone has suggestions for improvement, constructive criticism or whatever - bring them on. 
-A warm welcome
+The whole thing here is a hobby project. Use at your own risk ;-)
+I'm far from being good at scripting ;-) It works
+
+pi: 03223   |  Passwort
 
 Greetings Bernd
-bernd.titze@me.com
 
-# I like to have a coffee so be so kind and buy me one :-)   
 
-https://paypal.me/BerndTitze68?locale.x=de_DE
-
-# Supported hardware:
-
-Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
 
 
 # But I definitely recommend a Raspberry 4 or Pi400
