@@ -76,9 +76,6 @@ else
 echo "Setting temporary password for user 'pi'..."
 echo "pi:03223" | sudo chpasswd
 
-echo "Forcing password change on first login..."
-sudo chage -d 0 pi
-
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
 
@@ -96,6 +93,8 @@ sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlage
 
 echo "Setting correct ownership..."
 sudo chown -R pi:pi $HOME_DIR
+
+sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
 
 echo "Done."
 fi
