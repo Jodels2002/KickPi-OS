@@ -69,34 +69,46 @@ echo "Checking for user 'pi'..."
 if id "pi" &>/dev/null; then
     echo "User 'pi' already exists."
 else
+#!/bin/bash
+
+echo "Checking if user 'pi' exists..."
+if id "pi" &>/dev/null; then
+    echo "User 'pi' already exists."
+else
     echo "User 'pi' does not exist. Creating..."
     sudo useradd -m -s /bin/bash pi
-
+fi
 
 echo "Setting temporary password for user 'pi'..."
-echo "pi:03223" | sudo chpasswd
+echo "pi:raspberry" | sudo chpasswd  # temporäres Passwort, nur für den ersten Login
+
+echo "Forcing password change on first login..."
+sudo passwd -e pi  # Ablauf des Passworts sofort erzwingen
 
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
 
 echo "Removing password aging restrictions..."
-sudo chage -M 99999 pi
-sudo chage -m 0 pi
-sudo chage -I -1 pi
-sudo chage -E -1 pi
+sudo chage -M 99999 pi  # keine automatische Ablaufgrenze
+sudo chage -m 0 pi      # minimale Passwortgültigkeit 0 Tage
+sudo chage -I -1 pi     # keine Inaktivitätsgrenze
+sudo chage -E -1 pi     # kein Ablaufdatum für den Account
+
+HOME_DIR="/home/pi"
 
 echo "Creating standard user directories..."
-
-
-
 sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlagen,Öffentlich}
 
 echo "Setting correct ownership..."
 sudo chown -R pi:pi $HOME_DIR
 
-sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
+if [ -d "/home/$USER/KickPi-OS" ]; then
+    echo "Copying KickPi-OS directory..."
+    sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
+fi
 
 echo "Done."
+
 fi
 
 echo "Disabling password complexity rules..."
