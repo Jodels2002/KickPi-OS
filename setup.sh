@@ -75,7 +75,7 @@ else
 
 
 echo "Setting temporary password for user 'pi'..."
-echo "pi:03223" | sudo chpasswd  # temporäres Passwort, nur für den ersten Login
+echo "pi:03223" | sudo chpasswd  # Passwort, nur für den Login
 
 
 
