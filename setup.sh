@@ -69,21 +69,15 @@ echo "Checking for user 'pi'..."
 if id "pi" &>/dev/null; then
     echo "User 'pi' already exists."
 else
-#!/bin/bash
 
-echo "Checking if user 'pi' exists..."
-if id "pi" &>/dev/null; then
-    echo "User 'pi' already exists."
-else
     echo "User 'pi' does not exist. Creating..."
     sudo useradd -m -s /bin/bash pi
-fi
+
 
 echo "Setting temporary password for user 'pi'..."
-echo "pi:raspberry" | sudo chpasswd  # temporäres Passwort, nur für den ersten Login
+echo "pi:03223" | sudo chpasswd  # temporäres Passwort, nur für den ersten Login
 
-echo "Forcing password change on first login..."
-sudo passwd -e pi  # Ablauf des Passworts sofort erzwingen
+
 
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
@@ -166,4 +160,4 @@ sudo apt purge -y gdm3 || true
 echo "Installation complete."
 sleep 2
 
-#sudo reboot now
+sudo reboot now
