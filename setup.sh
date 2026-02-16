@@ -73,8 +73,11 @@ else
     sudo useradd -m -s /bin/bash pi
 
 
-echo "Setting temporary password for user 'pi'..."
-echo "pi:03223" | sudo chpasswd
+#echo "Setting temporary password for user 'pi'..."
+#echo "pi:03223" | sudo chpasswd
+
+echo "Forcing password change on first login..."
+sudo chage -d 0 pi
 
 echo "Adding user 'pi' to sudo group..."
 sudo usermod -aG sudo pi
