@@ -212,6 +212,10 @@ toilet "KickPi-OS" --metal
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
 cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
+cd ~/KickPi-OS/
+	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
+	   cp -rf /home/$USER/KickPi-OS/data/.config/ /home/$USER/
+       cp -rf /home/$USER/KickPi-OS/data/.local/ /home/$USER/ 
 }
 
 # ----------------------------------------------------------
