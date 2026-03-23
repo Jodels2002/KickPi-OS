@@ -1,74 +1,68 @@
-# Copyright (c) 2017 Adafruit Industries
-# Author: Tony DiCola & James DeVito
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
 import time
-import Adafruit_GPIO.SPI as SPI
-import Adafruit_SSD1306
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-import subprocess
+import os
+import board
+import busio
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_ssd1306
 
-RST = None     
-DC = 23
-SPI_PORT = 0
-SPI_DEVICE = 0
-disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
- 
-disp.begin()
-disp.clear()
-disp.display()
 # ********************************************************
-# *************  Variables  ******************************
+# *************  Display Setup (I2C) **********************
 # ********************************************************
+
+WIDTH = 128
+HEIGHT = 64
+
+i2c = busio.I2C(board.SCL, board.SDA)
+disp = adafruit_ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c)
+
+disp.fill(0)
+disp.show()
+
+# ********************************************************
+# *************  Paths ************************************
+# ********************************************************
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+FONT1_PATH = os.path.join(BASE_PATH, "Display.ttf")
+FONT2_PATH = os.path.join(BASE_PATH, "Righton-Script.ttf")
+
+# ********************************************************
+# *************  Helper ***********************************
+# ********************************************************
+
+def load_font(path, size):
+    try:
+        return ImageFont.truetype(path, size)
+    except Exception:
+        print(f"Font fehlt: {path} -> fallback")
+        return ImageFont.load_default()
+
+# ********************************************************
+# *************  Variables *******************************
+# ********************************************************
+
+width = WIDTH
+height = HEIGHT
 x = 0
 top = 0
-width = disp.width
-height = disp.height
-
-font = ImageFont.load_default()
-# ********************************************************
-
 
 # ********************************************************
-# *************  Draw Boot Sequence  *********************
+# *************  Draw Screen ******************************
 # ********************************************************
 
 image = Image.new('1', (width, height))
 draw = ImageDraw.Draw(image)
 
+draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-draw.rectangle((0,0,width,height), outline=0, fill=0)
-draw = ImageDraw.Draw(image)
-font = ImageFont.truetype('Display.ttf', 16)
-draw.text((8, 0), 'Update...', font=font, fill=1)
-font = ImageFont.truetype('Righton-Script.ttf', 30)
-draw.text((x+4, top+22), 'Amiberry', font=font, fill=1)
+font_small = load_font(FONT1_PATH, 16)
+font_script = load_font(FONT2_PATH, 30)
+
+draw.text((8, 0), 'Update...', font=font_small, fill=255)
+draw.text((x + 4, top + 22), 'Amiberry', font=font_script, fill=255)
+
 disp.image(image)
-disp.display()
-time.sleep(.3)
+disp.show()
 
-
-
-
-
-
-
+time.sleep(0.3)
