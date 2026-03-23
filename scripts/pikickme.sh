@@ -1220,17 +1220,18 @@ case $CHOICE in
             ;;
         2)
             OLED
+	       OLED
 	    KickPi-OS_Update
 	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
-            KickPi-OS_Tools
-            KickPi-OS_Amiberry
-            Configure_Amiga
-            #KickPi-OS_Retropie
+        KickPi-OS_Tools
+        KickPi-OS_Amiberry
+        Configure_Amiga
 	    KickPi-OS_Addons
-	    KickPi-OS_Internet
-            #KickPi-OS_Office
-	    #KickPi-OS_Video
+        KickPi-OS_Office
+	    KickPi-OS_Video
+	    #KickPi-OS_Games
+        KickPi-OS_Internet
 	    
             ;;
         
@@ -1240,15 +1241,15 @@ case $CHOICE in
 	    KickPi-OS_Update
 	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
-            KickPi-OS_Tools
-            KickPi-OS_Amiberry
-            Configure_Amiga
-            KickPi-OS_Retropie
+        KickPi-OS_Tools
+        KickPi-OS_Amiberry
+        Configure_Amiga
+        KickPi-OS_Retropie
 	    KickPi-OS_Addons
-            KickPi-OS_Office
+        KickPi-OS_Office
 	    KickPi-OS_Video
 	    #KickPi-OS_Games
-            KickPi-OS_Internet
+        KickPi-OS_Internet
             
             ;;
                   
