@@ -15,7 +15,6 @@ set -e
 echo "Detecting system architecture..."
 
 ARCH=$(uname -m)
-
 if [[ "$ARCH" == "arm"* || "$ARCH" == "aarch64" ]]; then
     SYSTEM_TYPE="ARM"
 elif [[ "$ARCH" == "x86_64" || "$ARCH" == "i386" || "$ARCH" == "i686" ]]; then
@@ -23,100 +22,54 @@ elif [[ "$ARCH" == "x86_64" || "$ARCH" == "i386" || "$ARCH" == "i686" ]]; then
 else
     SYSTEM_TYPE="UNKNOWN"
 fi
-
 echo "System architecture detected: $SYSTEM_TYPE ($ARCH)"
 sleep 2
 
 #********************************************
-# Backup boot config (only if exists)
+# System Update & Required Packages
 #********************************************
-if [ -f /boot/config.txt ]; then
-    sudo cp /boot/config.txt /boot/config_backup.txt
-fi
-
-clear
-echo "Welcome to KickPi-OS"
-echo " "
-echo " "
-
-#********************************************
-# System Update
-#********************************************
+echo "Updating system and installing required packages..."
 sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y toilet dialog mc zip unzip wget ntfs-3g
 
 #********************************************
-# Install required packages
+# Ensure 'pi' user exists with sudo rights
 #********************************************
-sudo apt install -y \
-    toilet \
-    dialog \
-    mc \
-    zip \
-    unzip \
-    wget \
-    ntfs-3g
-
-#********************************************
-# Ensure user 'pi' exists with sudo rights
-#********************************************
-
-echo "Checking for user 'pi'..."
-
-
-#!/bin/bash
-
-# Prüfen ob User existiert
 if id "pi" &>/dev/null; then
-    echo "User 'pi' already exists."
+    echo "User 'pi' exists."
 else
-
-    echo "User 'pi' does not exist. Creating..."
+    echo "Creating user 'pi'..."
     sudo useradd -m -s /bin/bash pi
+    echo "pi:03223" | sudo chpasswd
+    sudo usermod -aG sudo pi
+    sudo chage -M 99999 pi
+    sudo chage -m 0 pi
+    sudo chage -I -1 pi
+    sudo chage -E -1 pi
 
+    echo "Creating standard user directories..."
+    sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlagen,Öffentlich}
+    sudo chown -R pi:pi $HOME_DIR
 
-echo "Setting temporary password for user 'pi'..."
-echo "pi:03223" | sudo chpasswd  # Passwort, nur für den Login
-
-
-
-echo "Adding user 'pi' to sudo group..."
-sudo usermod -aG sudo pi
-
-echo "Removing password aging restrictions..."
-sudo chage -M 99999 pi  # keine automatische Ablaufgrenze
-sudo chage -m 0 pi      # minimale Passwortgültigkeit 0 Tage
-sudo chage -I -1 pi     # keine Inaktivitätsgrenze
-sudo chage -E -1 pi     # kein Ablaufdatum für den Account
-
-HOME_DIR="/home/pi"
-
-echo "Creating standard user directories..."
-sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlagen,Öffentlich}
-
-echo "Setting correct ownership..."
-sudo chown -R pi:pi $HOME_DIR
-
-if [ -d "/home/$USER/KickPi-OS" ]; then
-    echo "Copying KickPi-OS directory..."
-    sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
+    if [ -d "/home/$USER/KickPi-OS" ]; then
+        echo "Copying KickPi-OS directory..."
+        sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
+        sudo chown -R pi:pi $HOME_DIR/KickPi-OS
+    fi
 fi
 
-echo "Done."
-
-fi
-
-echo "Disabling password complexity rules..."
+#********************************************
+# Disable password complexity rules
+#********************************************
 if [ -f /etc/pam.d/common-password ]; then
     sudo sed -i 's/^password\s\+requisite\s\+pam_pwquality.so/#&/' /etc/pam.d/common-password
 fi
 
 #********************************************
-# Desktop environment changes
+# Desktop environment cleanup
 #********************************************
-sudo apt purge -y lxde lxde-common lxde-core openbox-lxde-session || true
-sudo apt purge -y raspberrypi-ui-mods || true
-
-
+sudo apt purge -y lxde* openbox* raspberrypi-ui-mods gnome* gdm3 || true
 
 clear
 toilet "KickPi-OS" --metal
@@ -124,40 +77,42 @@ toilet "KickPi-OS" --metal
 #********************************************
 # File Permissions & Script Deployment
 #********************************************
-
-
-if [ -d "/home/$USER/KickPi-OS/scripts" ]; then
-    sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+if [ -d "$HOME_DIR/KickPi-OS/scripts" ]; then
+    sudo cp -R "$HOME_DIR/KickPi-OS/scripts/"* /usr/local/bin/
+    sudo chmod -R 755 /usr/local/bin/
 fi
 
-if [ -f "/home/$USER/KickPi-OS/scripts/bashrc" ]; then
-    sudo cp /home/$USER/KickPi-OS/scripts/bashrc $HOME_DIR/.bashrc
+if [ -f "$HOME_DIR/KickPi-OS/scripts/bashrc" ]; then
+    sudo cp "$HOME_DIR/KickPi-OS/scripts/bashrc" $HOME_DIR/.bashrc
+    sudo chown pi:pi $HOME_DIR/.bashrc
+    sudo chmod 644 $HOME_DIR/.bashrc
 fi
 
 #********************************************
 # Splash Screen Service
 #********************************************
-if [ -f "/home/$USER/KickPi-OS/config/splash.service" ]; then
-    sudo cp /home/$USER/KickPi-OS/config/splash.service /etc/systemd/system/splash.service
-    sudo cp /home/$USER/KickPi-OS/config/splash/Booting.png /etc/systemd/system/Booting.png
+if [ -f "$HOME_DIR/KickPi-OS/config/splash.service" ]; then
+    sudo cp "$HOME_DIR/KickPi-OS/config/splash.service" /etc/systemd/system/splash.service
+    sudo cp "$HOME_DIR/KickPi-OS/config/splash/Booting.png" /etc/systemd/system/Booting.png
     sudo systemctl enable splash
 fi
 
 #********************************************
-# Raspberry Pi specific configuration (only ARM)
+# Raspberry Pi specific configuration
 #********************************************
 if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
     if command -v raspi-config &> /dev/null; then
-        sudo raspi-config nonint do_boot_behaviour B2
-        sudo raspi-config nonint get_ssh
-        sudo raspi-config nonint do_i2c 0
-        sudo raspi-config nonint do_expand_rootfs
+        echo "Applying Raspberry Pi configurations..."
+        sudo raspi-config nonint do_boot_behaviour B2      # Console autologin
+        sudo raspi-config nonint do_i2c 0                 # Enable I2C
+        sudo raspi-config nonint do_expand_rootfs         # Expand root filesystem
+        sudo raspi-config nonint get_ssh                  # Check SSH
     fi
 fi
-sudo apt purge -y gnome* || true
-sudo apt purge -y gdm3 || true
 
-echo "Installation complete."
-sleep 2
+echo "Final cleanup..."
+sudo apt autoremove -y
 
+echo "Installation complete. Rebooting in 5 seconds..."
+sleep 5
 sudo reboot now
