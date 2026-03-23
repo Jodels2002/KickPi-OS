@@ -111,143 +111,94 @@ CHOICE=$(dialog --clear \
 
 OLED() {
 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "64 bit" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
-      
-      if [ ! -d /OLED/ ]; then
+clear
+toilet "KickPi-OS" --metal
 
+ARCH=$(getconf LONG_BIT)
 
- set -e
+if [ "$ARCH" == "64" ]; then
+    toilet "64 bit" --metal
+    echo ""
+    echo "Raspberry Pi OS 64 bit detected"
+else
+    toilet "32 bit" --metal
+    echo ""
+    echo "Raspberry Pi OS 32 bit detected"
+fi
 
-echo "== Aktiviere I2C =="
-sudo raspi-config nonint do_i2c 0
+echo ""
 
-echo "== System aktualisieren =="
-sudo apt update
-sudo apt upgrade -y
+# Nur installieren wenn noch nicht vorhanden
+if [ ! -d /OLED/ ]; then
 
-echo "== Installiere benötigte Pakete =="
-sudo apt install -y \
-    python3 \
-    python3-pip \
-    python3-dev \
-    python3-smbus \
-    i2c-tools \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libopenjp2-7 \
-    libtiff6
+    set -e
 
-echo "== Python Tools aktualisieren =="
-python3 -m pip install --upgrade pip setuptools wheel
+    echo "== Aktiviere I2C =="
+    sudo raspi-config nonint do_i2c 0
 
-echo "== WICHTIG: Alte Adafruit Lib installieren (für dein Script) =="
-python3 -m pip install Adafruit-SSD1306
-python3 -m pip install Adafruit-GPIO
+    echo "== System Update =="
+    sudo apt update
+    sudo apt upgrade -y
 
-echo "== Pillow installieren (ersetzt python-pil) =="
-python3 -m pip install Pillow
+    echo "== Installiere Basis-Pakete =="
+    sudo apt install -y \
+        python3 \
+        python3-pip \
+        python3-dev \
+        python3-smbus \
+        i2c-tools \
+        libjpeg-dev \
+        libfreetype6-dev \
+        libopenjp2-7 \
+        libtiff6 \
+        libffi-dev \
+        libssl-dev
 
-echo "== Dateien kopieren =="
-sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+    echo "== Python Umgebung vorbereiten =="
+    python3 -m pip install --upgrade pip setuptools wheel
 
-echo "== Berechtigungen setzen =="
-sudo chmod -R 755 /OLED/
-sudo chmod -R 755 /usr/local/bin/
-sudo chmod 755 /etc/rc.local
-sudo chmod 644 /home/$USER/.bashrc
+    echo "== Installiere neue OLED Libraries =="
+    python3 -m pip install \
+        adafruit-blinka \
+        adafruit-circuitpython-ssd1306 \
+        pillow
 
-echo "== Cronjob setzen =="
-(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+    echo "== Kopiere Dateien =="
+    sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+    sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
 
-echo "== Optional: LED Steuerung =="
-command -v LED_off >/dev/null && LED_off
+    # rc.local ist optional / legacy
+    if [ -f /home/$USER/KickPi-OS/conf/rc.local ]; then
+        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+        sudo chmod 755 /etc/rc.local
+    fi
 
-echo "== Starte KickPi wenn vorhanden =="
+    echo "== Rechte setzen =="
+    sudo chmod -R 755 /OLED/
+    sudo chmod -R 755 /usr/local/bin/
+    sudo chmod 644 /home/$USER/.bashrc
+
+    echo "== Cronjob setzen =="
+    (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+
+    echo "== LED Status (optional) =="
+    command -v LED_off >/dev/null && LED_off
+
+    echo "== Installation abgeschlossen =="
+
+fi
+
+# Alte MOTD entfernen (optional)
+sudo update-rc.d motd remove 2>/dev/null || true
+
+echo "== Starte KickPi =="
 if [ -d /OLED/ ]; then
     command -v KickPi-OS.sh >/dev/null && KickPi-OS.sh
 fi
 
 command -v LED >/dev/null && LED
 
-echo "== Fertig =="
-    
-       fi
-      
-
-      sudo update-rc.d motd remove
-    else 
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "32 bit" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 32 bit is running... "
-      echo ""
-
-      sudo raspi-config nonint do_i2c 0
-      curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-      python get-pip.py --force-reinstall
-      python3 -m pip install --user --upgrade pip
-      
-       sudo apt-get install python3-dev libffi-dev libssl-dev python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
-       sudo apt-get install python3-rpi.gpio python3-pip -y
-
-       sudo apt install -y python3
-       sudo apt-get install -y python3-pip
-       sudo apt install -y python-dev
-       sudo apt install -y python-smbus 
-       sudo apt install -y i2c-tools
-       sudo apt install -y python-pil
-       sudo apt install -y python-pip
-       sudo apt install -y python-setuptools 
-       sudo apt install -y python-dev
-       
-       
-       
-       sudo python3 -m pip install -U pip
-       sudo python3 -m pip install -U setuptools       
-       sudo apt-get install -y python3-pip
-       #pip3 install adafruit-circuitpython-ssd1306
-      
-       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
-       LED_off
-       cd /home/$USER
-       sudo pip install Adafruit-SSD1306
-       sudo python3 -m pip install --upgrade pip setuptools wheel
-       sudo  pip install Adafruit_BBIO
-       sudo pip install amitools
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-       
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-     
- 
-       
-       sudo chmod -R 777 /OLED/
-       sudo chmod -R 777 /usr/local/bin/
-       sudo chmod -R 777 /etc/rc.local
-       sudo chmod -R 777 /home/$USER/.bashrc
-      # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
-      
-       LED
-       if [ -d /OLED/ ]; then
-       KickPi-OS.sh
-       fi
-       
+}
      #PiKiss
      cd
      git clone --depth=1 https://github.com/jmcerrejon/PiKISS.git
