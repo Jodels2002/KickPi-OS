@@ -123,7 +123,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       if [ ! -d /OLED/ ]; then
 
 
-      set -e
+ set -e
 
 echo "== Aktiviere I2C =="
 sudo raspi-config nonint do_i2c 0
@@ -132,26 +132,27 @@ echo "== System aktualisieren =="
 sudo apt update
 sudo apt upgrade -y
 
-echo "== Installiere Pakete =="
+echo "== Installiere benötigte Pakete =="
 sudo apt install -y \
     python3 \
     python3-pip \
     python3-dev \
     python3-smbus \
     i2c-tools \
-    python3-pil \
-    python3-setuptools \
-    python3-wheel
+    libjpeg-dev \
+    libfreetype6-dev \
+    libopenjp2-7 \
+    libtiff6
 
-echo "== Python-Pakete aktualisieren =="
+echo "== Python Tools aktualisieren =="
 python3 -m pip install --upgrade pip setuptools wheel
 
-echo "== OLED Library installieren =="
-# Moderne Adafruit Lib (empfohlen)
-python3 -m pip install adafruit-circuitpython-ssd1306
+echo "== WICHTIG: Alte Adafruit Lib installieren (für dein Script) =="
+python3 -m pip install Adafruit-SSD1306
+python3 -m pip install Adafruit-GPIO
 
-# Falls dein Code noch die alte braucht:
-# python3 -m pip install Adafruit-SSD1306
+echo "== Pillow installieren (ersetzt python-pil) =="
+python3 -m pip install Pillow
 
 echo "== Dateien kopieren =="
 sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
@@ -159,7 +160,6 @@ sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
 sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
 
 echo "== Berechtigungen setzen =="
-# Unsicher, aber wie im Original:
 sudo chmod -R 755 /OLED/
 sudo chmod -R 755 /usr/local/bin/
 sudo chmod 755 /etc/rc.local
