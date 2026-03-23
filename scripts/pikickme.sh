@@ -123,51 +123,62 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       if [ ! -d /OLED/ ]; then
 
 
-       sudo raspi-config nonint do_i2c 0
-      
-       
-       sudo apt install -y python3
-       sudo apt-get install -y python3-pip
-       sudo apt install -y python-dev
-       sudo apt install -y python-smbus 
-       sudo apt install -y i2c-tools
-       sudo apt install -y python-pil
-       sudo apt install -y python-pip
-       sudo apt install -y python-setuptools 
-       sudo apt install -y python-dev
-       
-       sudo python3 -m pip install -U pip
-       sudo python3 -m pip install -U setuptools       
-       sudo apt-get install -y python3-pip
-       #pip3 install adafruit-circuitpython-ssd1306
-      
-       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
-       LED_off
-       cd /home/$USER
-       sudo pip install Adafruit-SSD1306
-       sudo python3 -m pip install --upgrade pip setuptools wheel
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-         
- 
-       
-       sudo chmod -R 777 /OLED/
-       sudo chmod -R 777 /usr/local/bin/
-       sudo chmod -R 777 /etc/rc.local
-       sudo chmod -R 777 /home/$USER/.bashrc
-       (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
-      
-       LED
-       if [ -d /OLED/ ]; then
-       KickPi-OS.sh
-       fi
-       
-       else 
-       clear
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo chmod -R 777 /OLED/
+      set -e
+
+echo "== Aktiviere I2C =="
+sudo raspi-config nonint do_i2c 0
+
+echo "== System aktualisieren =="
+sudo apt update
+sudo apt upgrade -y
+
+echo "== Installiere Pakete =="
+sudo apt install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    python3-smbus \
+    i2c-tools \
+    python3-pil \
+    python3-setuptools \
+    python3-wheel
+
+echo "== Python-Pakete aktualisieren =="
+python3 -m pip install --upgrade pip setuptools wheel
+
+echo "== OLED Library installieren =="
+# Moderne Adafruit Lib (empfohlen)
+python3 -m pip install adafruit-circuitpython-ssd1306
+
+# Falls dein Code noch die alte braucht:
+# python3 -m pip install Adafruit-SSD1306
+
+echo "== Dateien kopieren =="
+sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+
+echo "== Berechtigungen setzen =="
+# Unsicher, aber wie im Original:
+sudo chmod -R 755 /OLED/
+sudo chmod -R 755 /usr/local/bin/
+sudo chmod 755 /etc/rc.local
+sudo chmod 644 /home/$USER/.bashrc
+
+echo "== Cronjob setzen =="
+(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+
+echo "== Optional: LED Steuerung =="
+command -v LED_off >/dev/null && LED_off
+
+echo "== Starte KickPi wenn vorhanden =="
+if [ -d /OLED/ ]; then
+    command -v KickPi-OS.sh >/dev/null && KickPi-OS.sh
+fi
+
+command -v LED >/dev/null && LED
+
+echo "== Fertig =="
     
        fi
       
