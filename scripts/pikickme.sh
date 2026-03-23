@@ -145,6 +145,10 @@ if [ ! -d /OLED/ ]; then
     echo "== Python Umgebung vorbereiten =="
 python3 -m venv myenv
 source myenv/bin/activate
+pip install pillow
+pip install adafruit-blinka pillow adafruit-circuitpython-ssd1306
+pip install adafruit-circuitpython-ssd1306
+
 pip install --upgrade pip setuptools wheel
 python3 -m pip install --upgrade pip setuptools wheel
 
