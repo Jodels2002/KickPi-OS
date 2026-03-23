@@ -1,81 +1,84 @@
-# Copyright (c) 2017 Adafruit Industries
-# Author: Tony DiCola & James DeVito
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
 import time
+import os
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-import subprocess
+from PIL import Image, ImageDraw, ImageFont
 
-RST = None     
+# ********************************************************
+# *************  Display Setup  ***************************
+# ********************************************************
+
+RST = None
 DC = 23
 SPI_PORT = 0
 SPI_DEVICE = 0
+
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
- 
+
 disp.begin()
 disp.clear()
 disp.display()
+
 # ********************************************************
-# *************  Variables  ******************************
+# *************  Paths (WICHTIG!) *************************
 # ********************************************************
-x = 0
-top = 0
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+FONT1_PATH = os.path.join(BASE_PATH, "Display.ttf")
+FONT2_PATH = os.path.join(BASE_PATH, "Righton-Script.ttf")
+IMAGE_PATH = os.path.join(BASE_PATH, "Amiberry.pbm")
+
+# ********************************************************
+# *************  Variables  *******************************
+# ********************************************************
+
 width = disp.width
 height = disp.height
-
-font = ImageFont.load_default()
-# ********************************************************
-
+x = 0
+top = 0
 
 # ********************************************************
-# *************  Draw Boot Sequence  *********************
+# *************  Safe Font Loader *************************
+# ********************************************************
+
+def load_font(path, size):
+    try:
+        return ImageFont.truetype(path, size)
+    except Exception:
+        print(f"Font nicht gefunden: {path} -> nutze Default")
+        return ImageFont.load_default()
+
+# ********************************************************
+# *************  Draw Boot Screen *************************
 # ********************************************************
 
 image = Image.new('1', (width, height))
 draw = ImageDraw.Draw(image)
 
-
 disp.clear()
-draw.rectangle((0,0,width,height), outline=0, fill=0)
-font = ImageFont.truetype('Display.ttf', 22)
-draw.text((x+20, top+10),    'Starting',  font=font, fill=1)
-font = ImageFont.truetype('Righton-Script.ttf', 30)
-draw.text((x+4, top+28), 'Amiberry', font=font, fill=1)
+draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+font_big = load_font(FONT1_PATH, 22)
+font_logo = load_font(FONT2_PATH, 30)
+
+draw.text((x + 20, top + 10), 'Starting', font=font_big, fill=1)
+draw.text((x + 4, top + 28), 'Amiberry', font=font_logo, fill=1)
+
 disp.image(image)
 disp.display()
+
 time.sleep(3)
 
+# ********************************************************
+# *************  Show Logo *******************************
+# ********************************************************
 
+try:
+    image = Image.open(IMAGE_PATH).convert('1')
+    disp.image(image)
+    disp.display()
+except Exception as e:
+    print(f"Bild konnte nicht geladen werden: {e}")
 
-# *************  Draw  Amiberry Logo  ********************
-image = Image.open('Amiberry.pbm').convert('1')
-draw = ImageDraw.Draw(image)
-disp.image(image)
-disp.display()
-time.sleep(.1)
-
-
-
-
-
+time.sleep(0.1)
