@@ -1275,7 +1275,9 @@ esac
       sudo rm -rf ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/RetroPie-Setup/tmp/swap
-      
+      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      	sudo apt purge -y raspberrypi-ui-mods man*
+      	sudo apt purge -y cups cups-client cups-common cups-server-common  
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
       sudo apt -f -y install
