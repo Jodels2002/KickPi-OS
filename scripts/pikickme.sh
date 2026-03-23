@@ -114,19 +114,7 @@ OLED() {
 clear
 toilet "KickPi-OS" --metal
 
-ARCH=$(getconf LONG_BIT)
 
-if [ "$ARCH" == "64" ]; then
-    toilet "64 bit" --metal
-    echo ""
-    echo "Raspberry Pi OS 64 bit detected"
-else
-    toilet "32 bit" --metal
-    echo ""
-    echo "Raspberry Pi OS 32 bit detected"
-fi
-
-echo ""
 
 # Nur installieren wenn noch nicht vorhanden
 if [ ! -d /OLED/ ]; then
@@ -196,7 +184,7 @@ if [ -d /OLED/ ]; then
     command -v KickPi-OS.sh >/dev/null && KickPi-OS.sh
 fi
 
-command -v LED >/dev/null && LED
+
 
 }
      #PiKiss
