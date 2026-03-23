@@ -143,7 +143,10 @@ if [ ! -d /OLED/ ]; then
         libssl-dev
 
     echo "== Python Umgebung vorbereiten =="
-    python3 -m pip install --upgrade pip setuptools wheel
+python3 -m venv myenv
+source myenv/bin/activate
+pip install --upgrade pip setuptools wheel
+python3 -m pip install --upgrade pip setuptools wheel
 
     echo "== Installiere neue OLED Libraries =="
     python3 -m pip install \
