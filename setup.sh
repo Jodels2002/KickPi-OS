@@ -23,7 +23,7 @@ else
     SYSTEM_TYPE="UNKNOWN"
 fi
 echo "System architecture detected: $SYSTEM_TYPE ($ARCH)"
-sleep 2
+
 
 #********************************************
 # System Update & Required Packages
@@ -113,6 +113,6 @@ fi
 echo "Final cleanup..."
 sudo apt autoremove -y
 
-echo "Installation complete. Rebooting in 5 seconds..."
-sleep 5
+echo "Installation complete. Rebooting ..."
+sleep 1
 sudo reboot now
