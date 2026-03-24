@@ -19,9 +19,7 @@
       echo " "
       echo " "
       
-if [ -d /OLED/ ]; then
-KickPi-OS.sh
-fi
+
 
       
       cd /home/$USER/KickPi-OS/
@@ -162,19 +160,16 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     echo "== Cronjob setzen =="
     (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
 
-    echo "== LED Status (optional) =="
-    command -v LED_off >/dev/null && LED_off
 
-    echo "== Installation abgeschlossen =="
+
+   
 	
 
 
 fi
 
-# Alte MOTD entfernen (optional)
-sudo update-rc.d motd remove 2>/dev/null || true
+ echo "== OLED Installation abgeschlossen =="
 
-echo "== Starte KickPi =="
 
 }
 
@@ -188,9 +183,7 @@ echo "== Starte KickPi =="
   
 KickPi-OS_64bit_pre() {
 
-if [ -d /OLED/ ]; then
-update.sh
-fi
+
  #Install Retropie/Setup Preinstall
  if [ "$(getconf LONG_BIT)" == "64" ]; then
  
@@ -202,7 +195,7 @@ fi
 	sudo apt-get -y install pulseaudio
 	sudo /etc/init.d/alsa-utils reset
 	sudo apt-get -y install pi-bluetooth
-	sudo apt-get -y install bluez bluez-firmware baobab 
+	
 	sudo usermod -G bluetooth -a pi
 
   fi
@@ -214,9 +207,7 @@ fi
 
 KickPi-OS_Tools() {
 
-if [ -d /OLED/ ]; then
-Update_Tools.sh
-fi
+
       clear
       toilet "KickPi-OS" --metal
 
@@ -229,8 +220,8 @@ fi
           
       sudo apt install -y mc zip unzip
       sudo apt install -y gparted
-      sudo apt install -y mednaffe
-         
+      
+      sudo apt-get -y install bluez bluez-firmware baobab   
      
       sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
@@ -291,9 +282,7 @@ fi
 
 KickPi-OS_Office() {
 
-if [ -d /OLED/ ]; then
-      update.sh
-fi      
+  
       clear
       toilet "KickPi-OS" --metal
 
@@ -310,11 +299,9 @@ fi
 #****************************************************************************************************************
 
 KickPi-OS_Video() {
-LED_off
 
-if [ -d /OLED/ ]; then
-Update_Grafic.sh
-fi
+
+
       clear
       toilet "KickPi-OS" --metal
 
@@ -358,7 +345,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
       echo " "
       
       #sudo apt install -y  kdenlive kdenlive-data inkscape
-      LED
+ 
 }
 
 #*********************************************  #Internet  **********************************************
@@ -366,8 +353,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 
 KickPi-OS_Internet() {
 
-if [ -d /OLED/ ]; then
-      update.sh
+
 fi
       clear
       toilet "KickPi-OS" --metal
@@ -380,27 +366,13 @@ fi
        
       sudo apt install -y transmission firefox-esr
 }
-#*********************************************  #Games  **********************************************
-#****************************************************************************************************************
 
-KickPi-OS_Games() {
-
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "            Games :)              "
-      echo " "
-      sudo apt install -y games-finest
-     
-
-}
 
 #*********************************************  #Installing KickPi-OS Desktop*********************************
 #**********************************************************************************************************
  
  KickPi-OS_Desktop() {
- LED_off
+ 
  
   clear
       toilet "KickPi-OS" --metal
@@ -418,7 +390,7 @@ KickPi-OS_Games() {
 	# sudo apt purge -y xser* xor* xin*
 
 	
-	LED     
+  
 	sudo apt install -y gnome-com*
 	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
@@ -453,10 +425,6 @@ KickPi-OS_Games() {
       
       fi
  
- if [ -d /OLED/ ]; then
- KickPi-OS.sh
- fi
- 
 
        
     	        clear
@@ -472,7 +440,7 @@ KickPi-OS_Games() {
 	  
 	
       
-      LED
+   
   # Preconfigure Silent Boot
       if [ ! -f ~/.backup/rc.local ]; then
     
@@ -496,7 +464,7 @@ KickPi-OS_Games() {
         echo " "
       # Configured
   fi    
-      LED    
+        
  
  if [ ! -d $HOME/Desktop ]; then
      # DietPi, Pimiga.... as Host Distri not ready 
@@ -576,9 +544,6 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
  
    if [ ! -f /home/$USER/Amiga/amiberry ]; then
   
-  if [ -d /OLED/ ]; then
-  Update_Amiberry.sh
-  fi
   
   mkdir /home/$USER/Amiga/
   mkdir /home/$USER/Amiga/conf/ 
@@ -675,9 +640,6 @@ fi
 
 KickPi-OS_Addons() {
 
-if [ -d /OLED/ ]; then
-update.sh
-fi
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
      	
@@ -740,9 +702,6 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   
 KickPi-OS_Retropie() {
 
-if [ -d /OLED/ ]; then
-Update_Retropie.sh
-fi
 
 cd
  if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
@@ -801,9 +760,6 @@ cd
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/A1200.rom
       	
-	if [ -d /OLED/ ]; then
-	Update_Retropie.sh
-	fi
 	
 	clear
 	toilet "KickPi-OS" --metal
@@ -822,9 +778,6 @@ cd
 	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
 	
-	if [ -d /OLED/ ]; then
-	Update_Retropie.sh
-	fi
 	
 	cd ~/RetroPie/retropiemenu/
 	rm "Auto-Amiga Install.sh"
@@ -850,9 +803,6 @@ cd
    
      
   else 
-        if [ -d /OLED/ ]; then
-        Update_Retropie.sh
-        fi
       
       sudo apt install -y omxplayer chromium-codecs-ffmpeg   
       	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
@@ -881,7 +831,7 @@ cd
       	echo " "
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
-      	Update_Retropie.sh
+      	
 	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       	cd /home/$USER/KickPi-OS/Retropie/
@@ -907,9 +857,6 @@ cd
       	echo "(Original Amiga, Amiga Forever,...)"
       	echo " "
 	
-	if [ -d /OLED/ ]; then
-        Update_Retropie.sh
-        fi
       	
 	cd  /home/$USER/RetroPie/
       	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
@@ -960,7 +907,7 @@ cd
        	echo " "
       	echo " Amiberry already installed..."
       	fi
-        Update_Retropie.sh
+        
       	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
       	toilet "KickPi-OS" --metal
       	toilet -F gay C64
@@ -991,9 +938,6 @@ cd
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
 fi     
    
-  if [ -d /OLED/ ]; then
-   Update_Retropie.sh
-  fi
       
       if [ "$(getconf LONG_BIT)" == "64" ]; then
       
@@ -1018,9 +962,6 @@ fi
        
       fi  
       
-      if [ -d /OLED/ ]; then
-      Update_Retropie.sh
-      fi
       
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
@@ -1115,8 +1056,7 @@ case $CHOICE in
 	    KickPi-OS_Addons
         KickPi-OS_Office
 	    KickPi-OS_Video
-	    #KickPi-OS_Games
-        KickPi-OS_Internet
+	    KickPi-OS_Internet
 	    
             ;;
         
@@ -1124,7 +1064,7 @@ case $CHOICE in
            
         OLED
 	    
-	    #KickPi-OS_64bit_pre
+	    KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
         KickPi-OS_Tools
         KickPi-OS_Amiberry
@@ -1133,17 +1073,14 @@ case $CHOICE in
 	    KickPi-OS_Addons
         KickPi-OS_Office
 	    KickPi-OS_Video
-	    #KickPi-OS_Games
-        KickPi-OS_Internet
+	    KickPi-OS_Internet
             
             ;;
                   
 
 esac
 
-      if [ -d /OLED/ ]; then
-      update.sh
-      fi
+
       
       echo "  ... cleanup and finish setup  " 
 	  sudo apt -y autoremove
@@ -1177,9 +1114,7 @@ esac
       		echo " "
       		echo " "
 		
-		if [ -d /OLED/ ]; then
-		KickPi-OS.sh
-		fi
+
 		
 if  xset q &>/dev/null; then
 cd
