@@ -416,19 +416,14 @@ KickPi-OS_Games() {
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       	sudo apt purge -y raspberrypi-ui-mods 
 	# sudo apt purge -y xser* xor* xin*
-      	# sudo apt purge -y gnome*
-       	LED
-	sudo apt-get -y update
-	LED_off
-	sudo apt-get -y upgrade
-	sudo apt -y autoremove
+
+	
 	LED     
 	sudo apt install -y gnome-com*
 	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
-	sudo apt install -y chromium-b*
+	
 
-        sudo apt-get install -y fs-uae*
 	
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
@@ -490,10 +485,7 @@ KickPi-OS_Games() {
       
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
-      sudo systemctl mask plymouth-start.service
-      sudo systemctl mask syslog.service
-      sudo systemctl mask cups.service
-      sudo systemctl mask cups-browsed.service
+ 
       
       else 
         clear
@@ -1153,7 +1145,8 @@ esac
       update.sh
       fi
       
-      echo "  ... cleanup and finish setup  "  
+      echo "  ... cleanup and finish setup  " 
+	  sudo apt -y autoremove
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       sudo cp  /home/$USER/KickPi-OS/config/rc.local /etc/
