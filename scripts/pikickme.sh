@@ -225,8 +225,8 @@ KickPi-OS_Tools() {
      
       sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
-      
-     
+      sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
+      sudo apt install -y usba*
      
       clear
       toilet "KickPi-OS" --metal
