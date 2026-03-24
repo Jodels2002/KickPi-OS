@@ -182,12 +182,7 @@ fi
 
 
 }
-     #PiKiss
-     cd
-     git clone --depth=1 https://github.com/jmcerrejon/PiKISS.git
-     sudo chmod -R 777 PiKISS
-     #cd PiKISS
-     #./piKiss.sh
+
        
       
 
@@ -217,18 +212,7 @@ fi
 
   fi
 }
-#*********************************************  #Time to update:)  **********************************************
-#****************************************************************************************************************
 
-KickPi-OS_Update() {
-
-if [ -d /OLED/ ]; then
-      update.sh
-fi
-     sudo apt upgrade -y
-        
-       
-}
 
 #*********************************************  #Installing KickPi-OS_Tools*********************************
 #**********************************************************************************************************
@@ -1034,7 +1018,7 @@ fi
 	        echo "Amiberry 64 bit for RetroPie"
 	  	echo " "
 		
-          sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
+      sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
 	  sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
 	  sudo chmod -R 777 /opt/retropie/emulators/amiberry/
       else 
@@ -1074,7 +1058,7 @@ fi
       sudo chmod -R 777 /home/$USER/RetroPie/
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       sudo chmod -R 777 /home/$USER/.emulationstation/
-      sudo chmod -R 777 /opt/retropie/
+      sudo chmod -R 777 /opt/
       sudo chmod -R 777 /etc/emulationstation/
       
     
@@ -1101,12 +1085,10 @@ case $CHOICE in
 	
             
 	    OLED
-	   
-	    KickPi-OS_Update
-     KickPi-OS_Tools
+     	KickPi-OS_Tools
 	    KickPi-OS_Desktop
-            KickPi-OS_Amiberry
-            Configure_Amiga
+        KickPi-OS_Amiberry
+        Configure_Amiga
          
 	  
 	    cd
@@ -1137,7 +1119,7 @@ case $CHOICE in
         2)
             
 	    OLED
-	    KickPi-OS_Update
+	
 	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
         KickPi-OS_Tools
@@ -1154,7 +1136,7 @@ case $CHOICE in
         3)
            
         OLED
-	    KickPi-OS_Update
+	    
 	    #KickPi-OS_64bit_pre
 	    KickPi-OS_Desktop
         KickPi-OS_Tools
@@ -1187,9 +1169,9 @@ esac
       sudo rm -rf ~/.KickPi-OS
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/RetroPie-Setup/tmp/swap
-      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	sudo apt purge -y raspberrypi-ui-mods man*
-      	sudo apt purge -y cups cups-client cups-common cups-server-common  
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods man*
+      sudo apt purge -y cups cups-client cups-common cups-server-common  
       touch ~/.hushlogin
       sudo rm -rf ~/amigafonts/
       sudo apt -f -y install
@@ -1198,7 +1180,8 @@ esac
       sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      sudo chmod -R 777 /home/$USER/Amiga
+      sudo chmod -R 777 /home/$USER/Amiga/
+	  sudo chmod -R 777 /opt/
       
       clear
       		toilet "KickPi-OS" --metal
