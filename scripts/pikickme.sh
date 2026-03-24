@@ -3,11 +3,11 @@
 # Install KickPi-OS
 # B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
-      mkdir /home/$USER/.backup
+
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo mv /usr/local/bin/uk /usr/local/bin/u     
-    
+      sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
        
       clear
       toilet "KickPi-OS" --metal
@@ -120,13 +120,11 @@ toilet "KickPi-OS" --metal
 if [ ! -d /OLED/ ]; then
 
     set -e
+	sudo apt purge -y python3*
 
     echo "== Aktiviere I2C =="
     sudo raspi-config nonint do_i2c 0
 
-    echo "== System Update =="
-    sudo apt update
-    sudo apt upgrade -y
 
     echo "== Installiere Basis-Pakete =="
     sudo apt install -y \
@@ -148,7 +146,7 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
 
     echo "== Kopiere Dateien =="
     sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-    sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+    
 
     # rc.local ist optional / legacy
     if [ -f /home/$USER/KickPi-OS/conf/rc.local ]; then
