@@ -354,7 +354,7 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 KickPi-OS_Internet() {
 
 
-fi
+
       clear
       toilet "KickPi-OS" --metal
       toilet -F gay Internet
