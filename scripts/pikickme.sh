@@ -1,1142 +1,219 @@
 #!/bin/bash
-#***********************************************  #KickPi-OS install script  ***********************************
-# Install KickPi-OS
-# B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
-#*************************************************************************************************************
+set -e
 
-      sudo chmod -R 777 /home/$USER/KickPi-OS
-      sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo mv /usr/local/bin/uk /usr/local/bin/u     
-      sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-       
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "            Time to update:)              "
-      echo " "
-      echo "Installing KickPi-OS Update System ..."
-      echo " "
-      echo " "
-      
+# -------------------------------------------------------
+# KickPi‑OS Installer – Optimierte Version
+# -------------------------------------------------------
 
+USER_HOME="/home/$USER"
+KICKPI="$USER_HOME/KickPi-OS"
+BIT=$(getconf LONG_BIT)
 
-      
-      cd /home/$USER/KickPi-OS/
-         
+log() {
+    echo -e "\n[KickPi‑OS] $1\n"
+}
 
-clear
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "64 bit" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
+header() {
+    clear
+    toilet "KickPi‑OS" --metal
+    [ -n "$1" ] && toilet "$1" --metal
+}
 
-      sudo update-rc.d motd remove
-      #
-      
-    else 
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "32 bit" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 32 bit is running... "
-      echo ""
-    
-      
-fi    
-      
-      echo ""
-      echo " "
-      echo "1>	Hi Guys,"
-      echo " "
-      echo "1>	welcome to the "KickPi-OS" installer! "
-      echo "1>CLI"
-      echo "1>CLI"
-      echo "1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)!  "
-      echo "1>CLI"
-      echo "1>	So only use this image if you own the original Amigas, Amiga Forever."
-      echo "1>CLI: "
-      echo "1>                  Greetings your´s "
-      echo "1>Assign >NIL:      Bernd Titze"
-      echo " "
-      echo " " 
-      echo "	LOADWB ...  :-)"
-      sleep 4s
-      echo " "
-      echo " "     
-      
-      
-sudo rm -rf /home/$USER/.local/share/Trash/*
-  
-      sudo chmod -R 777 /usr/local/bin/
-      sudo chmod -R 777 /usr/local/share/
-      sudo chmod -R 777 /home/$USER/.config/
-      sudo chmod -R 777 /home/$USER/.local/
-     
-#******************************************** #KickPi-OS mini  Menu ********************************************
-#****************************************************************************************************************
+require_dir() {
+    [ ! -d "$1" ] && mkdir -p "$1"
+}
 
-HEIGHT=20
-WIDTH=70
-CHOICE_HEIGHT=4
-BACKTITLE="KickPi-OS"
-TITLE="Witch KickPi-OS you want?"
-MENU="Please select:"
+safe_copy() {
+    [ -e "$1" ] && sudo cp -rf "$1" "$2"
+}
 
-OPTIONS=(1 "Install KickPi-OS   - Light ( only Desktop  )                                         "
-	 2 "Install KickPi-OS     Basic (  Desktop, Amiberry...      	              (ca. 30 min)"
-         3 "Install KickPi-OS     all   ( Retropie, Amibery, Office...)               (ca. 50 min)")
-        
+fix_permissions() {
+    sudo chown -R $USER:$USER "$KICKPI"
+    sudo chmod -R u+rwX,go+rX "$KICKPI"
+}
 
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-                
-   
-#*********************************************  #OLED :)  *****************************
-#**********************(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -***********
+# -------------------------------------------------------
+# OLED Installation
+# -------------------------------------------------------
 
+install_oled() {
+    header "OLED"
 
+    if [ ! -d "/OLED" ]; then
+        log "Aktiviere I2C"
+        sudo raspi-config nonint do_i2c 0
 
-OLED() {
+        log "Installiere OLED‑Pakete"
+        sudo apt install -y python3 python3-pip python3-dev python3-smbus \
+            i2c-tools libjpeg-dev libfreetype6-dev libopenjp2-7 libtiff6 \
+            libffi-dev libssl-dev
 
-clear
-toilet "KickPi-OS" --metal
+        python3 -m pip install --break-system-packages \
+            adafruit-blinka adafruit-circuitpython-ssd1306 pillow
 
+        log "Kopiere OLED‑Dateien"
+        sudo cp -rf "$KICKPI/OLED" /
 
+        if [ -f "$KICKPI/conf/rc.local" ]; then
+            sudo cp "$KICKPI/conf/rc.local" /etc/
+            sudo chmod 755 /etc/rc.local
+        fi
 
-# Nur installieren wenn noch nicht vorhanden
-if [ ! -d /OLED/ ]; then
-
-    set -e
-	
-
-    echo "== Aktiviere I2C =="
-    sudo raspi-config nonint do_i2c 0
-
-
-    echo "== Installiere Basis-Pakete =="
-    sudo apt install -y \
-        python3 \
-        python3-pip \
-        python3-dev \
-        python3-smbus \
-        i2c-tools \
-        libjpeg-dev \
-        libfreetype6-dev \
-        libopenjp2-7 \
-        libtiff6 \
-        libffi-dev \
-        libssl-dev
-
-    echo "== Python Umgebung vorbereiten =="
-python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitpython-ssd1306 pillow
-
-
-    echo "== Kopiere Dateien =="
-    sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-    
-
-    # rc.local ist optional / legacy
-    if [ -f /home/$USER/KickPi-OS/conf/rc.local ]; then
-        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-        sudo chmod 755 /etc/rc.local
+        log "Cronjob setzen"
+        (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
     fi
 
-    echo "== Rechte setzen =="
-    sudo chmod -R 755 /OLED/
-    sudo chmod -R 755 /usr/local/bin/
-    sudo chmod 644 /home/$USER/.bashrc
-
-    echo "== Cronjob setzen =="
-    (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
-
-
-
-   
-	
-
-
-fi
-
- echo "== OLED Installation abgeschlossen =="
-
-
+    log "OLED Installation abgeschlossen"
 }
 
-       
-      
+# -------------------------------------------------------
+# Desktop Installation
+# -------------------------------------------------------
 
+install_desktop() {
+    header "Desktop"
 
-#**********************************************  #Install 64 bit pre      ***************************************
-#****************************************************************************************************************
-  
-  
-KickPi-OS_64bit_pre() {
+    log "Entferne LXDE"
+    sudo apt purge -y lxde* raspberrypi-ui-mods
 
+    log "Installiere XFCE"
+    sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
 
- #Install Retropie/Setup Preinstall
- if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     
-    
-        sudo apt-get -y purge libraspberrypi-dev 
-          	
-	sudo apt-get -y remove pulseaudio
-	sudo apt-get -y install pulseaudio
-	sudo /etc/init.d/alsa-utils reset
-	sudo apt-get -y install pi-bluetooth
-	
-	sudo usermod -G bluetooth -a pi
+    for d in Desktop Documents Downloads Music Pictures Videos; do
+        require_dir "$USER_HOME/$d"
+    done
 
-  fi
+    log "Installiere Amiga‑Themes"
+    sudo unzip -o "$KICKPI/data/AMIGAOSLINUX.zip" -d /usr/share/icons/
+    sudo cp -rf /usr/share/icons/AMIGAOSLINUX /usr/share/icons/default
+
+    log "Installiere XFWM4‑Themes"
+    git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes "$KICKPI/amigaos_xfwm4_themes"
+    sudo cp -rf "$KICKPI/amigaos_xfwm4_themes"/* /usr/share/themes/
 }
 
+# -------------------------------------------------------
+# Tools
+# -------------------------------------------------------
 
-#*********************************************  #Installing KickPi-OS_Tools*********************************
-#**********************************************************************************************************
+install_tools() {
+    header "Tools"
 
-KickPi-OS_Tools() {
+    sudo apt install -y mc zip unzip gparted bluez bluez-firmware baobab \
+        git usbmount geany geany-plugins-common xmlstarlet \
+        build-essential cmake libsdl3-dev libsdl3-image-dev libflac-dev \
+        libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev \
+        libportmidi-dev libenet-dev libpcap-dev libzstd-dev \
+        libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
 
-
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo "            Lets install some usefull Tools:)              "
-      echo " "
- 
-
-          
-      sudo apt install -y mc zip unzip
-      sudo apt install -y gparted
-      
-      sudo apt-get -y install bluez bluez-firmware baobab   
-     
-      sudo apt install -y git usbmount 
-      sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
-      sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
-      sudo apt install -y usba*
-     
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo "Some little Amiga stuff...."
-      echo " "
-      sudo apt-get -y install grafx2
-      sudo apt-get -y install worker 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      cd /home/$USER
-      git clone --depth=1 https://github.com/rewtnull/amigafonts
-      sudo cp -rf /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
-  
-      # Preconfigure Worker
-      if [ ! -f /home/$USER/.worker/.worker.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "  First installation "
-      echo " "
-      cd /home/$USER/KickPi-OS/.pac/
-      unzip -u  /home/$USER/KickPi-OS/.pac/.worker.zip
-      cp -rf /home/$USER/KickPi-OS/.pac/.worker /home/$USER/
-      sudo chmod -R 777 /home/$USER/.worker/
-      
-      #wget http://prdownloads.sourceforge.net/webadmin/webmin_1.930_all.deb
-      #sudo dpkg -i webmin_1.930_all.deb
-      #sudo apt -f -y install
-      
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo " Tools up to date :) "
-      # Configured
-      
-      fi
-  
-
-      
+    log "Installiere Amiga‑Fonts"
+    git clone --depth=1 https://github.com/rewtnull/amigafonts "$KICKPI/amigafonts"
+    sudo cp -rf "$KICKPI/amigafonts/ttf"/* /usr/share/fonts/truetype/
 }
 
-#*********************************************  #Office  **********************************************
-#****************************************************************************************************************
+# -------------------------------------------------------
+# Amiberry
+# -------------------------------------------------------
 
-KickPi-OS_Office() {
+install_amiberry() {
+    header "Amiberry"
 
-  
-      clear
-      toilet "KickPi-OS" --metal
+    require_dir "$USER_HOME/Amiga"
+    require_dir "$USER_HOME/Amiga/conf"
 
-      echo " "
-      echo " "
-      echo "            Office Tools:)              "
-      echo " "
-      
-      sudo apt install -y libreoffice   
-     
+    sudo apt install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 \
+        flac mpg123 libmpeg2-4 libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev \
+        libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+
+    if [ "$BIT" = "64" ]; then
+        log "Installiere Amiberry 64‑bit (manuelle Installation erforderlich)"
+    else
+        log "Installiere Amiberry 32‑bit"
+        unzip -o "$KICKPI/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip" -d "$USER_HOME/Amiga"
+        unzip -o "$KICKPI/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip" -d "$USER_HOME/Amiga"
+        cp -rf "$KICKPI/Amiga/conf"/* "$USER_HOME/Amiga/conf/"
+    fi
 }
 
-#*********************************************  #Video & Graphic  **********************************************
-#****************************************************************************************************************
+# -------------------------------------------------------
+# Amiga Grundsystem
+# -------------------------------------------------------
 
-KickPi-OS_Video() {
+configure_amiga() {
+    header "Amiga"
 
+    if [ ! -f "$USER_HOME/Amiga/adf/sysinfo.ADF" ]; then
+        cp "$KICKPI/Amiga/Amiga.zip" "$USER_HOME"
+        unzip -o "$USER_HOME/Amiga.zip" -d "$USER_HOME"
+        rm "$USER_HOME/Amiga.zip"
 
-
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo "            Video & Graphics:)              "
-      echo " "
-           
-if [ ! -d /home/$USER/.config/GIMP/ ]; then
-#
-      clear
-      # Update is running
-      sudo apt install -y gimp 
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      toilet -F gay PhotoGimp
-       
-      curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
-      sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
-      echo " PhotoGimp by Diolinux installed..."
-      
-  
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo " Gimp is already installed..."
-      echo " "
-          
-      fi     
-       
-       
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      
-      #sudo apt install -y  kdenlive kdenlive-data inkscape
- 
+        sudo python3 -m pip install -U pip setuptools
+        sudo pip install amitools
+    fi
 }
 
-#*********************************************  #Internet  **********************************************
-#****************************************************************************************************************
+# -------------------------------------------------------
+# RetroPie
+# -------------------------------------------------------
 
-KickPi-OS_Internet() {
+install_retropie() {
+    header "RetroPie"
 
+    if [ ! -d "$USER_HOME/RetroPie-Setup" ]; then
+        git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git "$USER_HOME/RetroPie-Setup"
+        sudo chmod -R 755 "$USER_HOME/RetroPie-Setup"
+    fi
 
-
-      clear
-      toilet "KickPi-OS" --metal
-      toilet -F gay Internet
-      echo " "
-      echo " "
-      echo "            Internet:)              "
-      echo " "
-      
-       
-      sudo apt install -y transmission firefox-esr
+    sudo __nodialog=1 "$USER_HOME/RetroPie-Setup/retropie_packages.sh" setup basic_install
 }
 
+# -------------------------------------------------------
+# Menü
+# -------------------------------------------------------
 
-#*********************************************  #Installing KickPi-OS Desktop*********************************
-#**********************************************************************************************************
- 
- KickPi-OS_Desktop() {
- 
- 
-  clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      echo "            Time to update:)              "
-      echo " "
-      echo " "
-      echo "Installing KickPi-OS Update System ..."
-      echo " "
-      	
-      	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      	sudo apt purge -y raspberrypi-ui-mods 
-	# sudo apt purge -y xser* xor* xin*
-
-	
-  
-	sudo apt install -y gnome-com*
-	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	sudo apt install -y xfce4-te*
-	
-
-	
-      # Update allways Routine
-      if [ ! -d /home/$USER/.KickPi-OS/ ]; then
-      rm /home/$USER/Amiga/conf/retroarch.cfg
-      
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-           
-      sudo update-rc.d motd remove
-      echo "Update is running "             
-      echo " "
-      echo " "      
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Update is running "
-      echo " "
-      echo " System optimized :) "
-      echo " "
-      echo " " 
-       
-      
-      fi
- 
-
-       
-    	        clear
-      	        toilet "KickPi-OS" --metal
-      	        echo " "
-      	        echo " "
-		echo "KickPI-OS ROM Operating System and Libraris" 
-		echo "Version V1.5 2020-2021 KickPi-OS "
-		echo "No Rights Reserved.  "
-		echo ""
-
-	
-	  
-	
-      
-   
-  # Preconfigure Silent Boot
-      if [ ! -f ~/.backup/rc.local ]; then
-    
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-      mkdir /home/$USER/.backup/profile.d
-      sudo mv  /etc/rc.local ~/.backup/
-      
-      sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
-      sudo chmod -R 777 /etc/rc.local
- 
-      
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-        echo " System optimized :) "
-        echo " "
-      # Configured
-  fi    
-        
- 
- if [ ! -d $HOME/Desktop ]; then
-     # DietPi, Pimiga.... as Host Distri not ready 
-
-      
-     cd
-      git clone --depth=1 https://github.com/RPi-Distro/raspi-config.git
-      sudo chmod -R 777 raspi-config
-      sudo cp -rf $HOME/raspi-config/* /usr/bin/
-      rm raspi-config
-
-        mkdir $HOME/Desktop
-        mkdir $HOME/Downloads
-        mkdir $HOME/Documents
-        mkdir $HOME/Music
-        mkdir $HOME/Pictures
-        mkdir $HOME/Videos
-    fi      
-  
-           cd ~/KickPi-OS/
-	   unzip -u /home/$USER/KickPi-OS/.pac/data.pac
-	   cp -rf /home/$USER/KickPi-OS/data/.config/ /home/$USER/
-           cp -rf /home/$USER/KickPi-OS/data/.local/ /home/$USER/ 
-                
-      sudo chmod -R 777 /home/$USER/KickPi-OS
-      
-      sudo rm -rf /home/$USER/.cache
-      # Fresh install Amiga Desktop
-    
-
-      cd /usr/share/icons/
-      
-      sudo cp -rf /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
-      sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
-      sudo rm -rf /usr/share/icons/default
-      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-      
-
-
-
-      cd /home/$USER/KickPi-OS
-      git clone --depth=1 https://github.com/x64k/amitk
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      sudo cp -rf /home/$USER/KickPi-OS/amitk /usr/share/themes
-      
-      git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-      sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
-      sudo rm -rf /usr/share/themes/Default/xfwm4/
-      sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
-      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
-      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
-   
-      sudo chmod -R 777 /usr/share/images/desktop-base/  
-
-setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
-cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
-
-
+show_menu() {
+    dialog --clear \
+        --backtitle "KickPi‑OS" \
+        --title "Welche Version installieren?" \
+        --menu "Bitte auswählen:" 20 70 4 \
+        1 "KickPi‑OS Light (nur Desktop)" \
+        2 "KickPi‑OS Basic (Desktop + Amiberry)" \
+        3 "KickPi‑OS Full (inkl. RetroPie)" \
+        2>&1 >/dev/tty
 }
 
+# -------------------------------------------------------
+# Hauptablauf
+# -------------------------------------------------------
 
-#***************************************** # Install Amiberry  *********************************************
-#****************************************************************************************************************
-     
-     
- KickPi-OS_Amiberry() {
- 
-   if [ ! -f /home/$USER/Amiga/amiberry ]; then
-  
-  
-  mkdir /home/$USER/Amiga/
-  mkdir /home/$USER/Amiga/conf/ 
-  sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
-  sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
-  sudo apt-get install -y  libraspberrypi-dev
-  sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
+main() {
+    CHOICE=$(show_menu)
 
- 
- 	if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-	       clear
-	       toilet "KickPi-OS" --metal
-	       toilet -F gay 64bit
-	       echo " "
-	       echo " "
-	       echo " ... here comes Amiberry 64 bit   :-)"
-
-
-		clear
-		toilet "KickPi-OS" --metal
-		echo " "
-		echo " "
-		echo "  ... here comes Amiberry 64 bit :-) "
-
-	
-  
-                 
-      	else 
-      		clear
-      		toilet "KickPi-OS" --metal
-      		echo " "
-      		echo " "
-        	echo "  ... here comes Amiberry 32 bit :-) "
-	  
-          	cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_sdl
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-  
-                cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_dev
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-	 
-	 
-         
-	  fi
-          
-      
-fi  
-   
-}
-
-
-#***************************************** # Configure Amiga *********************************************
-#****************************************************************************************************************
-     
-     
-      Configure_Amiga() {
-       
-      if [ ! -d /home/$USER/Amiga/adf/sysinfo.ADF ]; then
-        clear
-      	toilet "KickPi-OS" --metal
-
-      	echo " "
-	echo " "
-        cd ~
-        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-        unzip -u ./Amiga.zip
-        rm ./Amiga.zip
-        
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools
-      
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-
-      	echo " "
-	echo " "
-      fi
-      
-  }   
-
-    
-#****************************************   #KickPi-OS_Addons  ****************************************************
-#****************************************************************************************************************
-
-KickPi-OS_Addons() {
-
-
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-     	
-	if [ ! -d /home/$USER/games/vice/ ]; then
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-	echo "Vice64"
-     	echo " "
-     	echo " "
-     	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
-     	cd /home/$USER/KickPi-OS/.pac/
-      	unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
-      	unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
-      	sudo mkdir /home/$USER/games
-      	sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
-      	sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
-   
-      	sudo chmod -R 777 /home/$USER/games/vice/
-
-       else
-  	clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-     	echo "Vice64 always installed"
-   
-       fi
-      
-      else 
-      	clear
-      	toilet "KickPi-OS" --metal
-      	toilet "full" --metal
-      	echo " "
-      	echo " "
-      	echo "Commodore Vice 32bit" 
-      	echo " "
-      	echo " "
-      	cd
-      
-      if [ ! -f /home/$USER/games/vice-3.4-bin-rpi.tar.gz ]; then
-      
-      mkdir $HOME/games
-      cd $HOME/games
-      wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
-      tar xzf  ./vice-3.4-bin-rpi.tar.gz
-      #rm ./vice-3.4-bin-rpi.tar.gz
-     fi
-     
-     
- fi
-
-}
-
-
-#**********************************************  #Install Retropie/Setup  ***************************************
-#****************************************************************************************************************
-  
-  
-KickPi-OS_Retropie() {
-
-
-cd
- if [ ! -d "/home/$USER/RetroPie-Setup/" ]; then
-     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-     cd /home/$USER/RetroPie-Setup/ 
-     
-     #Install Retropie/Setup Preinstall
- if [ "$(getconf LONG_BIT)" == "64" ]; then
- 	
-	clear
-	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-     	echo "RetroPie64 experimental"
-     	echo " "
-	
-     cd
-     
-    
-     git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-     sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-     cd /home/$USER/RetroPie-Setup/ 
-     sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-     Update_Retropie.sh
-     sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-      
-      	cd /home/$USER/KickPi-OS/Retropie/
-      	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
-	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-      	
-	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
-      	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      	#-----Config Amiberry for Retropie
-      	clear
-	toilet -F gay NOTE!
-      	echo " "
-      	echo " "
-      	echo "The roms and workbench files are under copyrigt! "
-      	echo " "
-      	echo "Use only if you have the original!  "
-      	echo "(Original Amiga, Amiga Forever,...)"
-      	echo " "
-	Update_Retropie.sh
-      	cd  /home/$USER/RetroPie/
-      	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-      	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
-      	rm -r /home/$USER/RetroPie/RetroPieBIOS/
-      	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/A500.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/A1200.rom
-      	
-	
-	clear
-	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-      	toilet -F gay Amiberry
-	sudo mkdir /opt/retropie/emulators/amiberry
-	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
-	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
-	sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
-	sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
-	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
-	
-	
-	cd ~/RetroPie/retropiemenu/
-	rm "Auto-Amiga Install.sh"
-	wget https://raw.githubusercontent.com/HoraceAndTheSpider/RetroPieAmigaSetup/master/Auto-Amiga%20Install.sh
-	chmod +x "Auto-Amiga Install.sh"
-	
-	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
-	sudo chmod -R 777 /opt/retropie/configs/amiga
-	
-	
-     else
-     
-     	clear
-     	toilet "KickPi-OS" --metal
-     	echo " "
-     	echo " "
-     	echo "RetroPie64 always installed"
-     	echo " "
-     
-     fi
-     
-          
-   
-     
-  else 
-      
-      sudo apt install -y omxplayer chromium-codecs-ffmpeg   
-      	if [ ! -f "/home/$USER/RetroPie-Setup/retropie_packages.sh" ]; then     
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      
-      	sudo rm /etc/emulationstation/
-      	sudo rm/opt/retropie/
-      
-      	mkdir /home/$USER/RetroPie/
-      	mkdir /home/$USER/RetroPie/BIOS/
-      	mkdir /home/$USER/RetroPie/splashscreens/
-      	mkdir /home/$USER/RetroPie/roms
-      
-      	cd
-     
-      	cd /home/$USER/RetroPie-Setup/ 
-      	sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      	
-	sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-      
-      	cd /home/$USER/KickPi-OS/Retropie/
-      	sudo unzip -u /home/$USER/KickPi-OS/Retropie/data.zip
-	
-      	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      	
-	sudo chmod -R 777  /home/$USER/KickPi-OS/Retropie/
-      	cp -rf /home/$USER/KickPi-OS/Retropie/roms/* /home/$USER/RetroPie/roms
-      	#-----Config Amiberry for Retropie
-	clear
-      	toilet -F gay NOTE!
-      	echo " "
-      	echo " "
-      	echo "The roms and workbench files are under copyrigt! "
-      	echo " "
-      	echo " "
-      	echo "Use only if you have the original!  "
-      	echo "(Original Amiga, Amiga Forever,...)"
-      	echo " "
-	
-      	
-	cd  /home/$USER/RetroPie/
-      	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
-      	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
-      	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
-      	rm -r /home/$USER/RetroPie/RetroPieBIOS/
-      	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/A500.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
-      	cp -rf /home/$USER/RetroPie/BIOS/kick40068.A1200 /home/$USER/Amiga/kickstarts/A1200.rom
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      	
-	fi
-      
-      	if [ ! -d /opt/retropie/emulators/amiberry/ ]; then
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-	toilet -F gay Amiberry
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      	
-      	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiberry.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiberry /opt/retropie/emulators/
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-	toilet -F gay Amiberry
-      	echo " "
-      	echo "  ... here comes Retropie :-)     "   
-      	echo " "
-      	
-	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/amiga.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/amiga /opt/retropie/configs/
-      
-      	else 
-	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-       	echo " "
-      	echo " Amiberry already installed..."
-      	fi
-        
-      	if [ ! -d /opt/retropie/libretrocores/lr-vice/ ]; then
-      	toilet "KickPi-OS" --metal
-      	toilet -F gay C64
-      	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/lr-vice.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/lr-vice /opt/retropie/libretrocores/    
-      	
-	clear
-      	toilet "KickPi-OS" --metal
-	toilet -F gay C64
-      	echo " "
-       	echo " "
-      	
-	cd /home/$USER/KickPi-OS/Retropie/
-      	unzip -u  /home/$USER/KickPi-OS/Retropie/c64.zip
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/c64 /opt/retropie/configs/
-      	else 
-	clear
-      	toilet "KickPi-OS" --metal
-	echo " "
-       	echo " "
-      	echo " C64 (lr-vice) already installed..."
-	echo " "
-      	fi     
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
-      	cp -rf /home/$USER/.KickPi-OS/config/splash/*  /home/$USER/RetroPie/splashscreens/
-      	sudo cp -rf /home/$USER/KickPi-OS/Retropie/splashscreen.list  /etc/
-fi     
-   
-      
-      if [ "$(getconf LONG_BIT)" == "64" ]; then
-      
-         	clear
-      		toilet "KickPi-OS" --metal
-		toilet -F gay C64
-      		echo " "
-       		echo " "
-	        echo "Amiberry 64 bit for RetroPie"
-	  	echo " "
-		
-      sudo cp -rf /home/$USER/KickPi-OS/Amiga/amiberry /opt/retropie/emulators/amiberry/
-	  sudo cp -rf /home/$USER/Amiga/capsimg.so /opt/retropie/emulators/amiberry/
-	  sudo chmod -R 777 /opt/retropie/emulators/amiberry/
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-	echo " "
-       	echo " "
-        clear
-      # Configure RetroPi32Bit
-       
-      fi  
-      
-      
-      if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
-      # First deinstall
-        clear
-      	toilet "KickPi-OS" --metal
-	echo " "
-       	echo " "
-      
-      
-      else 
-      clear
-      	toilet "KickPi-OS" --metal
-	echo " "
-       	echo " "
-     
-      # Configured
-      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
-      sudo rm /home/$USER/RetroPie/BIOS/kick20.rom
-      fi
-      
-      sudo chmod -R 777 /home/$USER/.KickPi-OS/
-      sudo chmod -R 777 /home/$USER/RetroPie/
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      sudo chmod -R 777 /home/$USER/.emulationstation/
-      sudo chmod -R 777 /opt/
-      sudo chmod -R 777 /etc/emulationstation/
-      
-    
-      
-  
-}
-
-
-#**********************************************  #Finish setup  ***************************************
-#****************************************************************************************************************
-
-cd ~
-
-clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
-
-case $CHOICE in
-        
+    case $CHOICE in
         1)
-	
-	
-            
-	    OLED
-     	KickPi-OS_Tools
-	    KickPi-OS_Desktop
-        KickPi-OS_Amiberry
-        Configure_Amiga
-         
-	  
-	    cd
-	    
-	   git clone --depth=1 https://github.com/Jodels2002/RockPi
-	   sudo chmod -R 777 RockPi
-
-	       
-         sudo mv /home/$USER/RockPi /home/$USER/KickPi-OS  
-         sudo chmod -R 777 KickPi-OS
-      
-            if [ ! -d /opt/Backup/ ]; then
-		sudo mkdir /opt/Backup/
-	fi
-      
-      
-      sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo rm -rf /opt/KickPi-OS
-      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
-      
-      
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/KickPi-OS
-      
-      /home/$USER/KickPi-OS/scripts/pikickme.sh
-            
+            install_oled
+            install_tools
+            install_desktop
             ;;
         2)
-            
-	    OLED
-	
-	    #KickPi-OS_64bit_pre
-	    KickPi-OS_Desktop
-        KickPi-OS_Tools
-        KickPi-OS_Amiberry
-        Configure_Amiga
-	    KickPi-OS_Addons
-        KickPi-OS_Office
-	    KickPi-OS_Video
-	    KickPi-OS_Internet
-	    
+            install_oled
+            install_desktop
+            install_tools
+            install_amiberry
+            configure_amiga
             ;;
-        
         3)
-           
-        OLED
-	    
-	    KickPi-OS_64bit_pre
-	    KickPi-OS_Desktop
-        KickPi-OS_Tools
-        KickPi-OS_Amiberry
-        Configure_Amiga
-        KickPi-OS_Retropie
-	    KickPi-OS_Addons
-        KickPi-OS_Office
-	    KickPi-OS_Video
-	    KickPi-OS_Internet
-            
+            install_oled
+            install_desktop
+            install_tools
+            install_amiberry
+            configure_amiga
+            install_retropie
             ;;
-                  
+    esac
 
-esac
+    fix_permissions
+    log "Installation abgeschlossen!"
+}
 
-
-      
-      echo "  ... cleanup and finish setup  " 
-	  sudo apt -y autoremove
-      sudo rm -rf /home/$USER/.bashrc
-      cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-      sudo cp  /home/$USER/KickPi-OS/config/rc.local /etc/
-      sudo raspi-config nonint get_ssh
-      sudo rm -rf ~/.local/share/Trash/
-      sudo rm -rf ~/.cache/
-      sudo rm -rf ~/.mozilla
-      sudo rm -rf ~/.KickPi-OS
-      sudo rm -rf ~/KickPi-OS
-      sudo rm -rf ~/RetroPie-Setup/tmp/swap
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods man*
-      sudo apt purge -y cups cups-client cups-common cups-server-common  
-      touch ~/.hushlogin
-      sudo rm -rf ~/amigafonts/
-      sudo apt -f -y install
-      sudo apt-get -y autoremove
-      sudo chmod -R 777 /usr/local/bin/
-      sudo chmod -R 777 /usr/local/share/
-      sudo chmod -R 777 /home/$USER/.config/
-      sudo chmod -R 777 /home/$USER/.local/
-      sudo chmod -R 777 /home/$USER/Amiga/
-	  sudo chmod -R 777 /opt/
-      
-      clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
-		
-
-		
-if  xset q &>/dev/null; then
-cd
-clear
-toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraries" 
-echo "Version V1.5 2020-2021 KickPi-OS "
-echo "No Rights Reserved.  "
-echo ""
-echo "Type 'd' to boot into Kick-OS Workbench"
-echo ""
-echo "1.>  "
-echo "1.>  ( a ) Boot to Amiberry if default config exist" 
-echo "1.>  ( d ) KickPi Desktop                          " 
-echo "1.>  ( e ) Emulationstation              (RetroPie)" 
-echo "1.>  ( r ) Emulationstation Setup                  "
-echo "1.>  ( u ) KickPi-OS Update                        "
-echo "1.>  ( m ) Boot select                             " 
-echo "1.>  ( c ) Raspi-Config                            "
-echo "1.>  ( s ) Shutdown                                "  
-echo ""
-	else 
-
-startx
-fi
+main
