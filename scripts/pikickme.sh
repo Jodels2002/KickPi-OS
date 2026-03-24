@@ -120,7 +120,7 @@ toilet "KickPi-OS" --metal
 if [ ! -d /OLED/ ]; then
 
     set -e
-	sudo apt purge -y python3*
+	
 
     echo "== Aktiviere I2C =="
     sudo raspi-config nonint do_i2c 0
@@ -175,11 +175,6 @@ fi
 sudo update-rc.d motd remove 2>/dev/null || true
 
 echo "== Starte KickPi =="
-if [ -d /OLED/ ]; then
-KickPi-OS.sh
-fi
-
-
 
 }
 
