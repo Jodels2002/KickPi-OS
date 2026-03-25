@@ -387,37 +387,6 @@ KickPi-OS_Internet() {
 	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
 	sudo apt install -y xfce4-te*
 	
-
-	
-      # Update allways Routine
-      if [ ! -d /home/$USER/.KickPi-OS/ ]; then
-    
-      
-      clear
-      toilet "KickPi-OS" --metal
-
-      echo " "
-      echo " "
-           
-      sudo update-rc.d motd remove
-      echo "Update is running "             
-      echo " "
-      echo " "      
-      else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Update is running "
-      echo " "
-      echo " System optimized :) "
-      echo " "
-      echo " " 
-       
-      
-      fi
- 
-
        
     	        clear
       	        toilet "KickPi-OS" --metal
