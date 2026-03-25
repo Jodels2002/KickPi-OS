@@ -391,7 +391,7 @@ KickPi-OS_Internet() {
 	
       # Update allways Routine
       if [ ! -d /home/$USER/.KickPi-OS/ ]; then
-      rm /home/$USER/Amiga/conf/retroarch.cfg
+    
       
       clear
       toilet "KickPi-OS" --metal
