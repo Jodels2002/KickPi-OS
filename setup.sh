@@ -79,13 +79,13 @@ toilet "KickPi-OS" --metal
 #********************************************
 if [ -d "$HOME_DIR/KickPi-OS/scripts" ]; then
     sudo cp -R "$HOME_DIR/KickPi-OS/scripts/"* /usr/local/bin/
-    sudo chmod -R 755 /usr/local/bin/
+    sudo chmod -R 777 /usr/local/bin/
 fi
 
 if [ -f "$HOME_DIR/KickPi-OS/scripts/bashrc" ]; then
     sudo cp "$HOME_DIR/KickPi-OS/scripts/bashrc" $HOME_DIR/.bashrc
     sudo chown pi:pi $HOME_DIR/.bashrc
-    sudo chmod 644 $HOME_DIR/.bashrc
+    sudo chmod 777 $HOME_DIR/.bashrc
 fi
 
 #********************************************
