@@ -109,6 +109,12 @@ if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
         sudo raspi-config nonint get_ssh                  # Check SSH
     fi
 fi
+#********************************************
+# Raspberry Pi HDD auf Pin 27
+#********************************************
+if ! grep -q "^dtparam=act_led_gpio=27" /boot/config.txt; then
+    echo "dtparam=act_led_gpio=27" | sudo tee -a /boot/config.txt > /dev/null
+fi
 
 echo "Final cleanup..."
 sudo apt autoremove -y
