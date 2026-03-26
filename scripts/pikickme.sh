@@ -409,8 +409,8 @@ KickPi-OS_Internet() {
       	toilet "KickPi-OS" --metal
       	echo " "
       	echo " "
-      mkdir /home/$USER/.backup/profile.d
-      sudo mv  /etc/rc.local ~/.backup/
+      
+      sudo mv  /etc/rc.local /opt/
       
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
