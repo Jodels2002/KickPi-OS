@@ -82,15 +82,15 @@ sudo rm -rf /home/$USER/.local/share/Trash/*
 #****************************************************************************************************************
 
 HEIGHT=20
-WIDTH=70
+WIDTH=75
 CHOICE_HEIGHT=4
 BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS     Light ( only Desktop  )                                         "
-	     2 "Install KickPi-OS     Basic (  Desktop, Amiberry, Retroie...      	            (ca. 30 min)"
-         3 "Install KickPi-OS     Full  ( Retropie, Amibery, Office, Gimp...)               (ca. 50 min)")
+OPTIONS=(1 "Install KickPi-OS  Light ( only Desktop                       )                                         "
+	     2 "Install KickPi-OS  Basic (  Desktop, Amiberry, Retropie,...   )"
+         3 "Install KickPi-OS  Full  ( Retropie, Amibery, Office, Gimp... )")
         
 
 CHOICE=$(dialog --clear \
