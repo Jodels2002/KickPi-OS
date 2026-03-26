@@ -88,9 +88,9 @@ BACKTITLE="KickPi-OS"
 TITLE="Witch KickPi-OS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickPi-OS   - Light ( only Desktop  )                                         "
-	 2 "Install KickPi-OS     Basic (  Desktop, Amiberry...      	              (ca. 30 min)"
-         3 "Install KickPi-OS     all   ( Retropie, Amibery, Office...)               (ca. 50 min)")
+OPTIONS=(1 "Install KickPi-OS     Light ( only Desktop  )                                         "
+	     2 "Install KickPi-OS     Basic (  Desktop, Amiberry, Retroie...      	            (ca. 30 min)"
+         3 "Install KickPi-OS     Full  ( Retropie, Amibery, Office, Gimp...)               (ca. 50 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -147,10 +147,10 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     
 
     # rc.local ist optional / legacy
-    if [ -f /home/$USER/KickPi-OS/conf/rc.local ]; then
+
         sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-        sudo chmod 755 /etc/rc.local
-    fi
+     
+   
 
     echo "== Rechte setzen =="
     sudo chmod -R 755 /OLED/
@@ -988,9 +988,8 @@ case $CHOICE in
         KickPi-OS_Amiberry
         Configure_Amiga
 	    KickPi-OS_Addons
-        KickPi-OS_Office
-	    KickPi-OS_Video
 	    KickPi-OS_Internet
+		KickPi-OS_Retropie
 	    
             ;;
         
