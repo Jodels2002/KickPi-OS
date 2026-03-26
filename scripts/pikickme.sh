@@ -388,23 +388,6 @@ KickPi-OS_Internet() {
 	sudo apt install -y xfce4-te*
 	
        
-    	        clear
-      	        toilet "KickPi-OS" --metal
-      	        echo " "
-      	        echo " "
-		echo "KickPI-OS ROM Operating System and Libraris" 
-		echo "Version V1.5 2020-2021 KickPi-OS "
-		echo "No Rights Reserved.  "
-		echo ""
-
-	
-	  
-	
-      
-   
-  # Preconfigure Silent Boot
-      if [ ! -f ~/.backup/rc.local ]; then
-    
         clear
       	toilet "KickPi-OS" --metal
       	echo " "
@@ -414,17 +397,7 @@ KickPi-OS_Internet() {
       
       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/rc.local
       sudo chmod -R 777 /etc/rc.local
- 
-      
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-        echo " System optimized :) "
-        echo " "
-      # Configured
-  fi    
+   
         
  
  if [ ! -d $HOME/Desktop ]; then
