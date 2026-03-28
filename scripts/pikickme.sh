@@ -454,8 +454,9 @@ KickPi-OS_Internet() {
 
       echo " "
       echo " "
+	  sudo rm -rf /usr/share/themes/Default/xfwm4/*
+	  sudo rm -rf /usr/share/themes/Ami*
       sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
-      sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
      
