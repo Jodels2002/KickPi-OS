@@ -149,13 +149,6 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     echo "== Kopiere Dateien =="
     sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
     
-
-    # rc.local ist optional / legacy
-
-        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-     
-   
-
     echo "== Rechte setzen =="
     sudo chmod -R 755 /OLED/
     sudo chmod -R 755 /usr/local/bin/
