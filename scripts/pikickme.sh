@@ -154,23 +154,6 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     sudo chmod -R 755 /usr/local/bin/
     sudo chmod 644 /home/$USER/.bashrc
 
-	# Pfad zum Script
-SCRIPT_PATH="/usr/local/bin/Loop.sh"
-
-# Cronjob Definition (alle 4 Minuten)
-CRON_JOB="*/4 * * * * $SCRIPT_PATH"
-
-# Prüfen, ob der Cronjob bereits existiert
-crontab -l 2>/dev/null | grep -F "$CRON_JOB" >/dev/null
-
-if [ $? -eq 0 ]; then
-    echo "Cronjob existiert bereits."
-else
-    # Cronjob hinzufügen
-    (crontab -l 2>/dev/null; echo "$CRON_JOB") | crontab -
-    echo "Cronjob wurde hinzugefügt."
-fi
-
 
 
 
