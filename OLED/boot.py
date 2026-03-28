@@ -77,5 +77,3 @@ except Exception as e:
     print(f"Bild Fehler: {e}")
 
 time.sleep(0.4)
-
-
