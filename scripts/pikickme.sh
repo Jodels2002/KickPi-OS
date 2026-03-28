@@ -539,9 +539,7 @@ fi
       	echo " "
 	echo " "
         cd ~
-        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-        unzip -u ./Amiga.zip
-        rm ./Amiga.zip
+       
         
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
