@@ -155,7 +155,7 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     sudo chmod -R 755 /usr/local/bin/
     sudo chmod 644 /home/$USER/.bashrc
 
-
+sudo crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh" | crontab -
 
 
  echo "== OLED Installation abgeschlossen =="
