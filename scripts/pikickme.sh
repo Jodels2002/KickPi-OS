@@ -532,26 +532,18 @@ fi
      
       Configure_Amiga() {
        
-      if [ ! -d /home/$USER/Amiga/adf/sysinfo.ADF ]; then
-        clear
-      	toilet "KickPi-OS" --metal
+sudo apt update
+sudo apt install python3-venv python3-full -y
 
-      	echo " "
-	echo " "
-        cd ~
-       
-        
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools
-      
-      else 
-        clear
-      	toilet "KickPi-OS" --metal
+# create venv
+python3 -m venv ~/myenv
 
-      	echo " "
-	echo " "
-      fi
+# activate it
+source ~/myenv/bin/activate
+
+# now install packages safely
+pip install --upgrade pip setuptools
+pip install amitools
       
   }   
 
