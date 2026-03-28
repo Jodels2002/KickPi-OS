@@ -119,7 +119,7 @@ toilet "KickPi-OS" --metal
 
 
 # Nur installieren wenn noch nicht vorhanden
-if [ ! -d /OLED/ ]; then
+
 
     set -e
 	
@@ -179,7 +179,7 @@ else
 fi
 
 
-fi
+
 
  echo "== OLED Installation abgeschlossen =="
 
