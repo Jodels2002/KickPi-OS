@@ -463,7 +463,7 @@ KickPi-OS_Internet() {
    
 
 
-cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
+
 
 
 }
