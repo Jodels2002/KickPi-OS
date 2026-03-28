@@ -3,7 +3,8 @@
 # Install KickPi-OS
 # B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
-
+      set +e
+	  
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo mv /usr/local/bin/uk /usr/local/bin/u     
@@ -427,11 +428,13 @@ KickPi-OS_Internet() {
     
 
       cd /usr/share/icons/
-      
+
+	  sudo rm -rf /usr/share/icons/default
+	  sudo rm -rf /usr/share/icons/AMIGAOSLINUX/
       sudo cp -rf /home/$USER/KickPi-OS/data/AMIGAOSLINUX.zip /usr/share/icons
       sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
-      sudo rm -rf /usr/share/icons/default
-      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+      sudo cp -r /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
+
       
 
 
@@ -458,7 +461,7 @@ KickPi-OS_Internet() {
      
    
 
-setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
+
 cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
 
 
