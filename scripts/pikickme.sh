@@ -8,6 +8,10 @@
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo mv /usr/local/bin/uk /usr/local/bin/u     
       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+
+	  sudo mkdir /opt/Amiga/
+  	  sudo mkdir /opt/Amiga/conf/ 
+  	  sudo ln -s /opt/Amiga/ /home/$USER/Amiga/
        
       clear
       toilet "KickPi-OS" --metal
@@ -479,8 +483,8 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
    if [ ! -f /home/$USER/Amiga/amiberry ]; then
   
   
-  mkdir /home/$USER/Amiga/
-  mkdir /home/$USER/Amiga/conf/ 
+  
+  
   sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
   sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
   sudo apt-get install -y  libraspberrypi-dev
