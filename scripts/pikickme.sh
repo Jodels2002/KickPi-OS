@@ -462,10 +462,8 @@ KickPi-OS_Internet() {
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
-      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
-      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
+     
    
-      sudo chmod -R 777 /usr/share/images/desktop-base/  
 
 setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,uk,de,fr,it,gr,dk
 cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
@@ -517,20 +515,7 @@ cp -rf ~/KickPi-OS/config/Desktop/* /home/$USER/Desktop/
       		echo " "
         	echo "  ... here comes Amiberry 32 bit :-) "
 	  
-          	cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-sdl2-32bit-rpios/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_sdl
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-  
-                cd /home/$USER/KickPi-OS/Amiga
-		unzip -u /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
-		cp -rf /home/$USER/KickPi-OS/Amiga/amiberry-v5.0-rpi4-dmx-32bit-retropie/* /home/$USER/Amiga/
-		cp -rf /home/$USER/amiberry/*  /home/$USER/Amiga/  
-		cp -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_dev
-		cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-	 
+     
 	 
          
 	  fi
