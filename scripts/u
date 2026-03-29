@@ -41,14 +41,9 @@ echo " Version V2.0 2020–2021 KickPi-OS"
 echo " No Rights Reserved."
 echo -e "$GREY"
 
-# OLED-Check
-if [[ -d /OLED ]]; then
-    KickPi-OS.sh
-fi
 
-# LED aus
-command -v LED >/dev/null && LED
-command -v LED_off >/dev/null && LED_off
+
+
 
 info "Bereinige alte Installation…"
 rm -rf "$TARGET"
