@@ -1020,16 +1020,8 @@ esac
       sudo chmod -R 777 /home/$USER/Amiga/
 	  sudo chmod -R 777 /opt/
       
-      clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
 		
 
-		
-if  xset q &>/dev/null; then
-cd
 clear
 toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraries" 
@@ -1037,19 +1029,5 @@ echo "Version V1.5 2020-2021 KickPi-OS "
 echo "No Rights Reserved.  "
 echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
-echo ""
-echo "1.>  "
-echo "1.>  ( a ) Boot to Amiberry if default config exist" 
-echo "1.>  ( d ) KickPi Desktop                          " 
-echo "1.>  ( e ) Emulationstation              (RetroPie)" 
-echo "1.>  ( r ) Emulationstation Setup                  "
-echo "1.>  ( u ) KickPi-OS Update                        "
-echo "1.>  ( m ) Boot select                             " 
-echo "1.>  ( c ) Raspi-Config                            "
-echo "1.>  ( s ) Shutdown                                "  
-echo ""
-	else 
 
-startx
-fi
 /usr/local/bin/u
