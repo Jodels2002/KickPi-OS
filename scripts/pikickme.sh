@@ -911,6 +911,55 @@ fi
 #**********************************************  #Finish setup  ***************************************
 #****************************************************************************************************************
 
+#!/bin/bash
+# Disable all Raspberry Pi power saving features
+# Optimiert für Debian Bookworm/Trixie
+
+
+
+echo "[INFO] Deaktiviere Bildschirm-Timeout…"
+sudo sed -i '/^BLANK_TIME/d' /etc/xdg/lxsession/LXDE-pi/autostart 2>/dev/null || true
+sudo sed -i '/^@xset s/d' /etc/xdg/lxsession/LXDE-pi/autostart 2>/dev/null || true
+
+sudo bash -c 'cat >> /etc/xdg/lxsession/LXDE-pi/autostart <<EOF
+@xset s off
+@xset -dpms
+@xset s noblank
+EOF'
+
+echo "[INFO] Deaktiviere Konsolen-Blanking…"
+sudo sed -i 's/^BLANK_TIME=.*/BLANK_TIME=0/' /etc/kbd/config || \
+sudo bash -c 'echo "BLANK_TIME=0" >> /etc/kbd/config'
+
+sudo systemctl restart keyboard-setup.service || true
+
+echo "[INFO] Deaktiviere WLAN Power Saving…"
+if command -v iw >/dev/null; then
+    IFACE=$(iw dev | awk '$1=="Interface"{print $2}')
+    if [[ -n "$IFACE" ]]; then
+        sudo iw dev "$IFACE" set power_save off || true
+    fi
+fi
+
+# dauerhaft abschalten
+sudo bash -c 'cat > /etc/NetworkManager/conf.d/wifi-powersave.conf <<EOF
+[connection]
+wifi.powersave = 2
+EOF'
+
+echo "[INFO] Deaktiviere USB Autosuspend…"
+sudo sed -i 's/^GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="usbcore.autosuspend=-1"/' /etc/default/grub || true
+sudo update-grub || true
+
+echo "[INFO] Deaktiviere systemd Sleep Targets…"
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+echo "[INFO] Raspberry Pi bleibt jetzt dauerhaft wach."
+
+
+
+
+
 cd ~
 
 clear
