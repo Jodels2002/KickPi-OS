@@ -181,7 +181,6 @@ KickPi-OS_64bit_pre() {
 	sudo apt-get -y install pulseaudio
 	sudo /etc/init.d/alsa-utils reset
 	sudo apt-get -y install pi-bluetooth
-	
 	sudo usermod -G bluetooth -a pi
 
   fi
@@ -206,6 +205,8 @@ KickPi-OS_Tools() {
           
       sudo apt install -y mc zip unzip
       sudo apt install -y gparted
+	  sudo apt install -y mednaffe
+	  sudo apt install -y fs-uae*
       
       sudo apt-get -y install bluez bluez-firmware baobab   
      
