@@ -538,6 +538,12 @@ source ~/myenv/bin/activate
 # now install packages safely
 pip install --upgrade pip setuptools
 pip install amitools
+
+        cd ~
+        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /opt/
+        unzip -u ./Amiga.zip
+        rm ./Amiga.zip
+
       
   }   
 
