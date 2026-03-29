@@ -8,7 +8,7 @@ HOME_DIR="/home/pi"
 
 sudo cp -R /boot/config.txt /boot/config_backup.txt
 
-set -e
+
 
 
 
