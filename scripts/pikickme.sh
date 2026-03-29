@@ -11,7 +11,7 @@
 
 	  sudo mkdir /opt/Amiga/
   	  sudo mkdir /opt/Amiga/conf/ 
-  	  sudo ln -s /opt/Amiga/ /home/$USER/Amiga/
+  	  sudo ln -s /opt/Amiga/ /home/$USER/Amiga
        
       clear
       toilet "KickPi-OS" --metal
