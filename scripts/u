@@ -2,7 +2,7 @@
 # KickPi‑OS Installer / Updater
 # 2026
 
-set -euo pipefail
+
 
 # Farben
 BLACK='\033[0;39m'
