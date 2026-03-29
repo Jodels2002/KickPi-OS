@@ -541,9 +541,11 @@ pip install amitools
 
         cd ~
         cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /opt/
+		cd /opt
         unzip -u ./Amiga.zip
         rm ./Amiga.zip
-
+		sudo rm -rf /opt/__MACOSX
+         
       
   }   
 
@@ -726,8 +728,8 @@ cd
       	echo "  ... here comes Retropie :-)     "   
       	echo " "
       
-      	sudo rm /etc/emulationstation/
-      	sudo rm/opt/retropie/
+      	sudo rm -rf /etc/emulationstation/
+      	sudo rm -rf /opt/retropie/
       
       	mkdir /home/$USER/RetroPie/
       	mkdir /home/$USER/RetroPie/BIOS/
@@ -775,7 +777,7 @@ cd
       	git clone --depth=1 https://github.com/archtaurus/RetroPieBIOS.git
       	mv /home/$USER/RetroPie/RetroPieBIOS/BIOS/* /home/$USER/RetroPie/BIOS/
       	sudo chmod -R 777 /home/$USER/RetroPie/RetroPieBIOS/
-      	rm -r /home/$USER/RetroPie/RetroPieBIOS/
+      	sudo rm -rf /home/$USER/RetroPie/RetroPieBIOS/
       	cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       	cp -rf /home/$USER/RetroPie/BIOS/kick34005.A500 /home/$USER/Amiga/kickstarts/A500.rom
       	cp -rf /home/$USER/RetroPie/BIOS/kick40063.A600 /home/$USER/Amiga/kickstarts/A600.rom
