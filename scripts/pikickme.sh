@@ -7,7 +7,6 @@
 	  
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo mv /usr/local/bin/uk /usr/local/bin/u     
       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
 
 	  sudo mkdir /opt/Amiga/
