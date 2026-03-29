@@ -434,9 +434,7 @@ KickPi-OS_Internet() {
 
       
 
-
-
-      cd /home/$USER/KickPi-OS
+    cd /home/$USER/KickPi-OS
       git clone --depth=1 https://github.com/x64k/amitk
       clear
       toilet "KickPi-OS" --metal
@@ -451,14 +449,14 @@ KickPi-OS_Internet() {
 
       echo " "
       echo " "
-	  
-	  sudo rm -rf /usr/share/themes/Ami*
       sudo cp -rf /home/$USER/KickPi-OS/amigaos_xfwm4_themes/* /usr/share/themes/
+      sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/backgrounds/
-     
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/* /usr/share/images/desktop-base/  
+      sudo cp -rf /home/$USER/KickPi-OS/config/rpd-wallpaper/16bitMemories.png /usr/share/images/desktop-base/default
    
-
+      sudo chmod -R 777 /usr/share/images/desktop-base/  
 
 
 
