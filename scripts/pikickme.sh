@@ -3,7 +3,7 @@
 # Install KickPi-OS
 # B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
-      set +e
+    
 	  
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
@@ -121,7 +121,7 @@ toilet "KickPi-OS" --metal
 # Nur installieren wenn noch nicht vorhanden
 
 
-    set -e
+    
 	
 
     echo "== Aktiviere I2C =="
@@ -149,10 +149,7 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
     echo "== Kopiere Dateien =="
     sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
     
-    echo "== Rechte setzen =="
-    sudo chmod -R 755 /OLED/
-    sudo chmod -R 755 /usr/local/bin/
-    sudo chmod 644 /home/$USER/.bashrc
+ 
 
 sudo crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh" | crontab -
 
