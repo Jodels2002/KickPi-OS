@@ -1052,3 +1052,4 @@ echo ""
 
 startx
 fi
+/usr/local/bin/u
