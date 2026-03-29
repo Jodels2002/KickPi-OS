@@ -206,7 +206,7 @@ KickPi-OS_Tools() {
       sudo apt install -y mc zip unzip
       sudo apt install -y gparted
 	  sudo apt install -y mednaffe
-	  sudo apt install -y fs-uae*
+	  
       
       sudo apt-get -y install bluez bluez-firmware baobab   
      
@@ -528,7 +528,7 @@ fi
        
 sudo apt update
 sudo apt install python3-venv python3-full -y
-
+sudo apt install -y fs-uae*
 # create venv
 python3 -m venv ~/myenv
 
