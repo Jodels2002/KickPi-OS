@@ -1,61 +1,83 @@
 #!/bin/bash
-# Install KickPi-OS
-# B.Titze 2021
-# KickPi-OS updater
+# KickPi‑OS Installer / Updater
+# 2026
+
+set -euo pipefail
+
+# Farben
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
-cd
+REPO_URL="https://github.com/Jodels2002/KickPi-OS_up.git"
+TARGET="$HOME/KickPi-OS"
+OPT_DIR="/opt/KickPi-OS"
+SCRIPT_DIR="$TARGET/scripts"
+
+# --- Funktionen -------------------------------------------------------------
+
+info()  { echo -e "${BLUE}[INFO]${BLACK} $1"; }
+error() { echo -e "${RED}[ERROR]${BLACK} $1"; exit 1; }
+
+check_internet() {
+    wget -q --spider http://google.com
+}
+
+safe_install_scripts() {
+    [[ -d "$SCRIPT_DIR" ]] || error "Script-Verzeichnis fehlt: $SCRIPT_DIR"
+    sudo install -m 755 "$SCRIPT_DIR"/* /usr/local/bin/
+}
+
+# --- Start ------------------------------------------------------------------
+
+cd || exit 1
 clear
-      toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$GREY "
-LED
-      if [ -d /OLED/ ]; then
-		KickPi-OS.sh
-	fi
 
+toilet "KickPi-OS" --metal
+echo -e "$BLUE KickPI-OS ROM Operating System and Libraries"
+echo " Version V2.0 2020–2021 KickPi-OS"
+echo " No Rights Reserved."
+echo -e "$GREY"
 
-sudo rm -rf ~/KickPi-OS
-LED_off
+# OLED-Check
+if [[ -d /OLED ]]; then
+    KickPi-OS.sh
+fi
+
+# LED aus
+command -v LED >/dev/null && LED
+command -v LED_off >/dev/null && LED_off
+
+info "Bereinige alte Installation…"
+rm -rf "$TARGET"
+
+info "Repariere Paketstatus…"
 sudo dpkg --configure -a
-sudo apt -y --fix-broken install
-sudo apt -f -y install
+sudo apt-get -y --fix-broken install
 
-wget -q --spider http://google.com
-
- if [ $? -eq 0 ]; then
-
-
-
-sudo rm -rf /home/$USER/KickPi-OS/
-
-
-      cd
-      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git
-      sudo mv /home/$USER/KickPi-OS_up /home/$USER/KickPi-OS  
-      sudo chmod -R 777 KickPi-OS
-      
-      
-      sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo rm -rf /opt/KickPi-OS
-      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
-      
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/KickPi-OS
-      
-      /home/$USER/KickPi-OS/scripts/pikickme.sh
- 
- else
+info "Prüfe Internetverbindung…"
+if ! check_internet; then
     whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1
- 
- fi
+    exit 1
+fi
 
+info "Klone Repository…"
+git clone --depth=1 "$REPO_URL" "$TARGET"
 
-      
+info "Setze sichere Berechtigungen…"
+chmod -R u+rwX,go+rX "$TARGET"
+
+info "Installiere Skripte nach /usr/local/bin…"
+safe_install_scripts
+
+info "Ersetze /opt/KickPi-OS…"
+sudo rm -rf "$OPT_DIR"
+sudo cp -r "$TARGET" "$OPT_DIR"
+sudo chmod -R u+rwX,go+rX "$OPT_DIR"
+
+info "Starte KickPi-OS Setup…"
+/home/"$USER"/KickPi-OS/scripts/pikickme.sh
+
+info "KickPi‑OS Installation abgeschlossen."
