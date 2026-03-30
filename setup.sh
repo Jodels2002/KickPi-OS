@@ -81,15 +81,13 @@ fi
 #********************************************
 # Raspberry Pi specific configuration
 #********************************************
-if [[ "$SYSTEM_TYPE" == "ARM" ]]; then
-    if command -v raspi-config &> /dev/null; then
+
         echo "Applying Raspberry Pi configurations..."
         sudo raspi-config nonint do_boot_behaviour B2      # Console autologin
         sudo raspi-config nonint do_i2c 0                 # Enable I2C
         sudo raspi-config nonint do_expand_rootfs         # Expand root filesystem
         sudo raspi-config nonint get_ssh                  # Check SSH
-    fi
-fi
+
 #********************************************
 # Raspberry Pi HDD auf Pin 27
 #********************************************
