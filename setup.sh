@@ -5,25 +5,7 @@
 #******************************************** #startup-sequence  :-) ************* ********************************************
 HOME_DIR="/home/pi"
 
-
-sudo cp -R /boot/config.txt /boot/config_backup.txt
-
-
-
-
-
 echo "Detecting system architecture..."
-
-ARCH=$(uname -m)
-if [[ "$ARCH" == "arm"* || "$ARCH" == "aarch64" ]]; then
-    SYSTEM_TYPE="ARM"
-elif [[ "$ARCH" == "x86_64" || "$ARCH" == "i386" || "$ARCH" == "i686" ]]; then
-    SYSTEM_TYPE="X86"
-else
-    SYSTEM_TYPE="UNKNOWN"
-fi
-echo "System architecture detected: $SYSTEM_TYPE ($ARCH)"
-
 
 #********************************************
 # System Update & Required Packages
