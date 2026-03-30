@@ -88,13 +88,12 @@ if [ -f "$HOME_DIR/KickPi-OS/scripts/bashrc" ]; then
     sudo chmod 777 $HOME_DIR/.bashrc
 fi
 
-#********************************************
-# Splash Screen Service
-#********************************************
+
 if [ -f "$HOME_DIR/KickPi-OS/config/splash.service" ]; then
     sudo cp "$HOME_DIR/KickPi-OS/config/splash.service" /etc/systemd/system/splash.service
     sudo cp "$HOME_DIR/KickPi-OS/config/splash/Booting.png" /etc/systemd/system/Booting.png
     sudo systemctl enable splash
+    sudo sed -i 's/$/ quiet splash loglevel=0 vt.global_cursor_default=0/' /boot/cmdline.txt
 fi
 
 #********************************************
