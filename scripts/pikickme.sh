@@ -22,10 +22,7 @@
       echo "Installing KickPi-OS Update System ..."
       echo " "
       echo " "
-      
-
-
-      
+            
       cd /home/$USER/KickPi-OS/
          
 
@@ -116,13 +113,7 @@ OLED() {
 clear
 toilet "KickPi-OS" --metal
 
-
-
 # Nur installieren wenn noch nicht vorhanden
-
-
-    
-	
 
     echo "== Aktiviere I2C =="
     sudo raspi-config nonint do_i2c 0
@@ -158,10 +149,6 @@ python3 -m pip install --break-system-packages adafruit-blinka adafruit-circuitp
 
 
 }
-
-       
-      
-
 
 #**********************************************  #Install 64 bit pre      ***************************************
 #****************************************************************************************************************
@@ -200,21 +187,14 @@ KickPi-OS_Tools() {
       echo " "
       echo "            Lets install some usefull Tools:)              "
       echo " "
- 
-
-          
+           
       sudo apt install -y mc zip unzip
       sudo apt install -y gparted
-	  
-	  
-      
       sudo apt-get -y install bluez bluez-firmware baobab   
-     
       sudo apt install -y git usbmount 
       sudo apt install -y geany geany-plugins-common geany-common xmlstarlet
       sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
-      
-     
+        
       clear
       toilet "KickPi-OS" --metal
 
@@ -259,9 +239,7 @@ KickPi-OS_Tools() {
       # Configured
       
       fi
-  
-
-      
+     
 }
 
 #*********************************************  #Office  **********************************************
@@ -288,10 +266,8 @@ KickPi-OS_Office() {
 KickPi-OS_Video() {
 
 
-
       clear
       toilet "KickPi-OS" --metal
-
       echo " "
       echo " "
       echo "            Video & Graphics:)              "
@@ -324,10 +300,8 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
           
       fi     
        
-       
       clear
       toilet "KickPi-OS" --metal
-
       echo " "
       echo " "
       
@@ -339,8 +313,6 @@ if [ ! -d /home/$USER/.config/GIMP/ ]; then
 #****************************************************************************************************************
 
 KickPi-OS_Internet() {
-
-
 
       clear
       toilet "KickPi-OS" --metal
@@ -374,15 +346,10 @@ KickPi-OS_Internet() {
       	
       	sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       	sudo apt purge -y raspberrypi-ui-mods 
-	# sudo apt purge -y xser* xor* xin*
-
-	
-  
-	sudo apt install -y gnome-com*
-	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
-	sudo apt install -y xfce4-te*
-	
-       
+		sudo apt install -y gnome-com*
+	    sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	    sudo apt install -y xfce4-te*
+	       
         clear
       	toilet "KickPi-OS" --metal
       	echo " "
@@ -459,8 +426,6 @@ KickPi-OS_Internet() {
       sudo chmod -R 777 /usr/share/images/desktop-base/  
 
 
-
-
 }
 
 
@@ -507,11 +472,8 @@ KickPi-OS_Internet() {
       		echo " "
         	echo "  ... here comes Amiberry 32 bit :-) "
 	  
-     
-	 
          
 	  fi
-          
       
 fi  
    
@@ -543,8 +505,7 @@ pip install amitools
         unzip -u ./Amiga.zip
         rm ./Amiga.zip
 		sudo rm -rf /opt/__MACOSX
-         
-      
+               
   }   
 
     
@@ -689,11 +650,9 @@ cd
 	    sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
       	sudo cp -rf /home/$USER/KickPi-OS/Retropie/es_systems.cfg /etc/emulationstation/
 	
-	sudo chmod -R 777 /opt/retropie/emulators/amiberry/
-	sudo chmod -R 777 /opt/retropie/configs/amiga
-	
- 
-      
+	    sudo chmod -R 777 /opt/retropie/emulators/amiberry/
+	    sudo chmod -R 777 /opt/retropie/configs/amiga
+	 
       
       if [ ! -f /home/$USER/RetroPie/BIOS/kick20.rom ]; then
       # First deinstall
@@ -722,7 +681,6 @@ cd
       sudo chmod -R 777 /etc/emulationstation/
       
  fi   
-      
   
 }
 
@@ -733,8 +691,6 @@ cd
 #!/bin/bash
 # Disable all Raspberry Pi power saving features
 # Optimiert für Debian Bookworm/Trixie
-
-
 
 echo "[INFO] Deaktiviere Bildschirm-Timeout…"
 sudo sed -i '/^BLANK_TIME/d' /etc/xdg/lxsession/LXDE-pi/autostart 2>/dev/null || true
@@ -776,9 +732,6 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 echo "[INFO] Raspberry Pi bleibt jetzt dauerhaft wach."
 
 
-
-
-
 cd ~
 
 clear
@@ -790,26 +743,21 @@ clear
 case $CHOICE in
         
         1)
-	
-	
-            
+	           
 	    OLED
      	KickPi-OS_Tools
 	    KickPi-OS_Desktop
         KickPi-OS_Amiberry
         Configure_Amiga
-         
-	  
+           
 	    cd
 	    
 	   git clone --depth=1 https://github.com/Jodels2002/RockPi
-	   sudo chmod -R 777 RockPi
-
-	       
-         sudo mv /home/$USER/RockPi /home/$USER/KickPi-OS  
-         sudo chmod -R 777 KickPi-OS
+	   sudo chmod -R 777 RockPi	       
+       sudo mv /home/$USER/RockPi /home/$USER/KickPi-OS  
+       sudo chmod -R 777 KickPi-OS
       
-            if [ ! -d /opt/Backup/ ]; then
+	if [ ! -d /opt/Backup/ ]; then
 		sudo mkdir /opt/Backup/
 	fi
       
@@ -817,8 +765,7 @@ case $CHOICE in
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo rm -rf /opt/KickPi-OS
       sudo cp -f -R /home/$USER/KickPi-OS/ /opt
-      
-      
+            
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
       
@@ -888,8 +835,6 @@ esac
       sudo chmod -R 777 /home/$USER/Amiga/
 	  sudo chmod -R 777 /opt/
       
-		
-
 clear
 toilet "KickPi-OS" --metal
 echo "KickPI-OS ROM Operating System and Libraries" 
