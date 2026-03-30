@@ -1,10 +1,13 @@
 [Unit]
-Description=Splash screen
+Description=Splash Screen
 DefaultDependencies=no
 After=local-fs.target
+Before=getty@tty1.service
 
 [Service]
-ExecStart=fbi -d /dev/fb0 --noverbose -a /etc/systemd/system/Booting.png
+ExecStart=/usr/bin/fbi -T 1 -noverbose -a /etc/systemd/system/Booting.png
+ExecStop=/usr/bin/killall fbi
+RemainAfterExit=yes
 StandardInput=tty
 StandardOutput=tty
 
