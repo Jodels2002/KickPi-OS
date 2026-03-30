@@ -846,33 +846,5 @@ sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 sudo apt-get clean -y
 
-#--- Internet prüfen ---
-if check_internet; then
-    run_step "Updating package lists" sudo apt update
-    display_info
 
-    echo -e "${BLUE}Updating KickPi-OS...${NC}"
-    sudo rm -rf "$HOME/KickPi-OS/"
-
-    git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git "$HOME/KickPi-OS_up"
-
-    sudo rm -rf "$HOME/KickPi-OS"
-    sudo mv "$HOME/KickPi-OS_up" "$HOME/KickPi-OS"
-
-    sudo chmod -R 777 "$HOME/KickPi-OS"
-
-    sudo mkdir -p /opt/Backup/
-
-    sudo cp -r "$HOME/KickPi-OS/scripts/"* /usr/local/bin/
-
-    sudo rm -rf /opt/KickPi-OS
-    sudo cp -r "$HOME/KickPi-OS" /opt/
-
-
-    # Script starten
-    "$HOME/KickPi-OS/scripts/pikickme.sh"
-
-else
-    whiptail --msgbox "No internet connection detected." 10 50
-fi
 
