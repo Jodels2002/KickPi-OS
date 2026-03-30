@@ -499,12 +499,7 @@ source ~/myenv/bin/activate
 pip install --upgrade pip setuptools
 pip install amitools
 
-        cd ~
-        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /opt/
-		cd /opt
-        unzip -u ./Amiga.zip
-        rm ./Amiga.zip
-		sudo rm -rf /opt/__MACOSX
+   
                
   }   
 
@@ -807,7 +802,12 @@ case $CHOICE in
 
 esac
 
-
+        cd ~
+        cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /opt/
+		cd /opt
+        unzip -u ./Amiga.zip
+        rm ./Amiga.zip
+		sudo rm -rf /opt/__MACOSX
       
       echo "  ... cleanup and finish setup  " 
 	  sudo apt -y autoremove
@@ -834,6 +834,8 @@ esac
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga/
 	  sudo chmod -R 777 /opt/
+
+	 
       
 clear
 toilet "KickPi-OS" --metal
@@ -843,4 +845,4 @@ echo "No Rights Reserved.  "
 echo ""
 echo "Type 'd' to boot into Kick-OS Workbench"
 
-/usr/local/bin/u
+
