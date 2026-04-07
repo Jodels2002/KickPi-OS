@@ -81,6 +81,26 @@ fi
 #********************************************
 # Raspberry Pi specific configuration
 #********************************************
+echo "Installing required dependencies..."
+sudo apt install -y whiptail lua5.1 alsa-utils
+
+echo "Cloning raspi-config repository..."
+git clone https://github.com/RPi-Distro/raspi-config.git
+
+cd raspi-config
+
+echo "Making raspi-config executable..."
+chmod +x raspi-config
+
+echo "Installing raspi-config system-wide..."
+sudo cp raspi-config /usr/local/bin/
+
+echo "Cleaning up..."
+cd ..
+rm -rf raspi-config
+
+echo "Done! You can now run 'raspi-config'"
+
 
         echo "Applying Raspberry Pi configurations..."
         sudo raspi-config nonint do_boot_behaviour B2      # Console autologin
