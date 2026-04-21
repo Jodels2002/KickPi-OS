@@ -445,8 +445,11 @@ KickPi-OS_Internet() {
   sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 
   sudo apt-get install -y libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev
   sudo apt-get install -y  libraspberrypi-dev
-  sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
-
+  sudo apt install -y libsdl3-dev libsdl3-image-dev 
+  sudo apt install -y build-essential git cmake libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
+  
+  curl -fsSL https://packages.amiberry.com/install.sh | sudo sh
+  sudo apt install amiberry 
  
  	if [ "$(getconf LONG_BIT)" == "64" ]; then
  
