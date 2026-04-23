@@ -18,28 +18,47 @@ sudo apt install -y toilet dialog mc zip unzip wget ntfs-3g
 #********************************************
 # Ensure 'pi' user exists with sudo rights
 #********************************************
-if id "pi" &>/dev/null; then
-    echo "User 'pi' exists."
-else
-    echo "Creating user 'pi'..."
-    sudo useradd -m -s /bin/bash pi
-    echo "pi:03223" | sudo chpasswd
-    sudo usermod -aG sudo pi
-    sudo chage -M 99999 pi
-    sudo chage -m 0 pi
-    sudo chage -I -1 pi
-    sudo chage -E -1 pi
+USER="pi"
+PASS="03223"
 
-    echo "Creating standard user directories..."
-    sudo mkdir -p $HOME_DIR/{Dokumente,Bilder,Downloads,Musik,Videos,Desktop,Vorlagen,Öffentlich}
-    sudo chown -R pi:pi $HOME_DIR
-
-    if [ -d "/home/$USER/KickPi-OS" ]; then
-        echo "Copying KickPi-OS directory..."
-        sudo cp -R /home/$USER/KickPi-OS $HOME_DIR/
-        sudo chown -R pi:pi $HOME_DIR/KickPi-OS
-    fi
+if ! command -v chpasswd &>/dev/null; then
+    echo "chpasswd not found. Installing package..."
+    sudo apt-get update
+    sudo apt-get install -y passwd
 fi
+
+# User anlegen, falls nicht vorhanden
+if id "$USER" &>/dev/null; then
+    echo "User '$USER' exists. Updating settings..."
+else
+    echo "Creating user '$USER'..."
+    sudo useradd -m -s /bin/bash "$USER"
+fi
+
+# Temporär schwache Passwörter erlauben (Debian 13 / PAM)
+PAM_FILE="/etc/pam.d/common-password"
+
+echo "Adjusting PAM settings to allow weak password..."
+sudo cp "$PAM_FILE" "${PAM_FILE}.bak"
+
+# Entfernt minlen / pwquality Einschränkungen (falls vorhanden)
+sudo sed -i 's/\(pam_pwquality.so.*\)/\1 minlen=1/g' "$PAM_FILE"
+
+# Passwort setzen
+echo "$USER:$PASS" | sudo chpasswd
+
+# Einstellungen setzen
+sudo usermod -aG sudo "$USER"
+sudo chage -M 99999 "$USER"
+sudo chage -m 0 "$USER"
+sudo chage -I -1 "$USER"
+sudo chage -E -1 "$USER"
+
+# PAM wieder zurücksetzen
+echo "Restoring PAM settings..."
+sudo mv "${PAM_FILE}.bak" "$PAM_FILE"
+
+echo "Done."
 
 #********************************************
 # Disable password complexity rules
