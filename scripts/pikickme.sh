@@ -3,7 +3,8 @@
 # Install KickPi-OS
 # B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
-    
+
+
 	  
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
@@ -691,6 +692,21 @@ cd
 #!/bin/bash
 # Disable all Raspberry Pi power saving features
 # Optimiert für Debian Bookworm/Trixie
+      
+	  echo "Installing PipeWire audio stack..."
+      sudo apt install -y pipewire pipewire-audio wireplumber pipewire-pulse \
+      libspa-0.2-bluetooth alsa-utils alsa-tools firmware-linux-free
+
+echo "Enabling PipeWire for user..."
+systemctl --user daemon-reexec
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+
+echo "Unmuting ALSA (just in case)..."
+amixer sset Master unmute || true
+amixer sset PCM unmute || true
+
+echo "Reloading ALSA..."
+sudo alsa force-reload || true
 
 echo "[INFO] Deaktiviere Bildschirm-Timeout…"
 sudo sed -i '/^BLANK_TIME/d' /etc/xdg/lxsession/LXDE-pi/autostart 2>/dev/null || true
