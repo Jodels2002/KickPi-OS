@@ -73,6 +73,6 @@ sudo cp -r "$TARGET" "$OPT_DIR"
 sudo chmod -R u+rwX,go+rX "$OPT_DIR"
 
 info "Starte KickPi-OS Setup…"
-pikickme.sh
+/usr/local/bin/pikickme.sh
 
 info "KickPi‑OS Installation abgeschlossen."
