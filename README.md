@@ -1,15 +1,46 @@
-# KickPi-OS
+# KickPi‑OS
 
+KickPi‑OS is built for Amiga fans who want to revive the classic Amiga experience on a Raspberry Pi.  
+The focus is simple: **easy handling**, **Workbench‑like look & feel**, and a pre‑configured environment that feels familiar and fun.
 
+Included and pre‑configured software:
 
-KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
-The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
+- **Amiberry**
+- **Linux Desktop (Workbench‑style)**
+- **RetroPie**
+- …plus various helper scripts
 
-Software that is installed and pre-configured:
+> **Note:**  
+> For licensing reasons, **Workbench files** and **Kickstart ROMs** are **not included**.
 
-Amiberry,Linux Desktop, Retropie ...
-* For licensing reasons, the Workbench files and Kickstart Rom files are not included!
+KickPi‑OS is part of my *Amiga 3000 Mini* 3D‑print project, but it’s equally interesting for any Amiga enthusiast who wants a clean, ready‑to‑use setup.
 
+---
+
+## Disclaimer
+
+KickPi‑OS is a **hobby project**.  
+Use at your own risk.  
+I’m far from being a scripting expert — but it works 😊
+
+**Default login:**  
+- **User:** pi  
+- **Password:** 03223
+
+Greetings,  
+**Bernd**
+
+---
+
+## Recommended Hardware
+
+A **Raspberry Pi 4** or **Pi 400** is strongly recommended for best performance.
+
+---
+
+## Preparation
+
+Install **Raspberry Pi OS (64‑bit)**:
 
 
 
@@ -45,21 +76,17 @@ http://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-11-08/2
 - Copy the "Shared" folder from the Amiga Forever installation
 -> "AMIGA/Shared/*here are your Amiga Forever files*"
 
-# Installation:
-On the Raspberry you open a terminal window and type following commands:
+## Installation
+
+Open a terminal on your Raspberry Pi and run:
+
 
 sudo rm -rf ~/KickPi-OS
-
 sudo apt install -y git
-
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
-
 sudo chmod -R 777 KickPi-OS
-
 cd KickPi-OS
-
 ./setup.sh
-
 # Update
 
 To bring KickPi-OS up to date, just type "u" + return in the command line. 
