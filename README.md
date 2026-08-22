@@ -75,18 +75,25 @@ http://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-11-08/2
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
 - Copy the "Shared" folder from the Amiga Forever installation
 -> "AMIGA/Shared/*here are your Amiga Forever files*"
-
+---
 ## Installation
 
 Open a terminal on your Raspberry Pi and run:
 
 
 sudo rm -rf ~/KickPi-OS
+
 sudo apt install -y git
+
 git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
+
 sudo chmod -R 777 KickPi-OS
+
 cd KickPi-OS
+
 ./setup.sh
+
+---
 # Update
 
 To bring KickPi-OS up to date, just type "u" + return in the command line. 
@@ -94,8 +101,7 @@ To bring KickPi-OS up to date, just type "u" + return in the command line.
 # RetroPie:
 To use Retropie just copy your Bios and Rom files into the (Home) Retropie folder. 
 See also: https://retropie.org.uk/docs/First-Installation/
-
-
+---
 # Used 3rd party tools:
 
 
