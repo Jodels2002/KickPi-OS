@@ -599,7 +599,7 @@ cd
      sudo apt install -y omxplayer  
      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-	 sudo chmod -R 777 etc/emulationstation/
+	 sudo chmod -R 777 /etc/emulationstation/
      cd /home/$USER/RetroPie-Setup/ 
      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
      Update_Retropie.sh
